@@ -29,6 +29,7 @@ exports.submit = function(data){
     var projectLocation = utilModule.buildAbsolutePath(nameOfGitRepo);
 		sonarModule.analyze(targetLanguage, projectLocation);
 */		var nameOfGitRepo;
+		var interval = 10000;//10s
 		flow.series([
 			function(callback){
 				console.log("--->first callback");
@@ -41,12 +42,12 @@ exports.submit = function(data){
 					console.log("--->second callback");
 	        gitModule.cloneRepo(link);
 	        callback();
-	      },5000); //should be 10 000
+	      },interval); 
 			},
 			function(callback){
 				console.log("--->third callback");
 				 var projectLocation = utilModule.buildAbsolutePath(nameOfGitRepo);
-				 sonarModule.analyze(targetLanguage, projectLocation, link);
+				 sonarModule.analyze(targetLanguage, projectLocation, link, nameOfGitRepo);
 			}
 
 			]);
