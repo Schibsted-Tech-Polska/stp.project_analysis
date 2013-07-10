@@ -1,0 +1,12 @@
+{
+	'link': 'https://github.com/tomekl007/mulitmethods_like_clojure',
+	'targetLanguage': 'java'
+}
+
+
+curl -H "Content-Type: application/json" --data @bost:3000/userInput
+
+
+//this is good request
+curl -X POST -H "Content-Type: application/json" -d '{"link": "https://github.com/tomekl007/mulitmethods_like_clojure",
+	"targetLanguage": "java"}' http://localhost:3000/inputForm
