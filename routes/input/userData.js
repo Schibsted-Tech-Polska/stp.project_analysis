@@ -6,7 +6,6 @@ var flow = require('nimble');
 exports.form = function(req, res){
 res.render('inputForm', {
 	title: 'analysis tool'
-	
 	});
 };
 
@@ -49,7 +48,7 @@ exports.submit = function(data){
 				 	'projectLocation' : projectLocation,
 				 	'link' : link,
 				 	'nameOfGitRepo' : nameOfGitRepo
-				 }
+				 };
 				 sonarModule.analyze(properties);
 				 console.log("---->third finished");
 			}
