@@ -8,8 +8,8 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path')
-  , userData = require('./routes/input/userData');
-  //, gitModule = require('./custom_modules/gitModule');
+  , projectMetainfo = require('./routes/input/projectMetainfo');
+
 
 var app = express();
 
@@ -31,9 +31,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-//app.post('/', userData.submit(app.get('/')));
-app.get('/inputForm', userData.form );
-app.post('/inputForm', userData.submit(app.get('input')));
+
+app.get('/qualityAnalysis', projectMetainfo.form );
+app.post('/qualityAnalysis', projectMetainfo.submit(app.get('qualityAnalysis')));
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
