@@ -18,16 +18,10 @@ exports.submit = function(data){
 		console.log('receive data ' + link);
 		var targetLanguage = req.body.targetLanguage;
 		console.log('targetLanguage : ' + targetLanguage);
+		var javaBuildCommand = req.body.command;
+		console.log('javaBuildCommand: ' + javaBuildCommand);
 
-
-		/*var nameOfGitRepo = gitModule.getNameOfRepo(link);
-		console.log("nameOfGitRepo : " + nameOfGitRepo);
-		gitModule.cloneRepo(link);
-
-        
-    var projectLocation = utilModule.buildAbsolutePath(nameOfGitRepo);
-		sonarModule.analyze(targetLanguage, projectLocation);
-*/		var nameOfGitRepo;
+     	var nameOfGitRepo;
 		var interval = 15000;//10s
 		flow.series([
 			function(callback){
@@ -47,7 +41,8 @@ exports.submit = function(data){
 				 	'targetLanguage' : targetLanguage,
 				 	'projectLocation' : projectLocation,
 				 	'link' : link,
-				 	'nameOfGitRepo' : nameOfGitRepo
+				 	'nameOfGitRepo' : nameOfGitRepo,
+				 	'javaBuildCommand' : javaBuildCommand
 				 };
 				 sonarModule.analyze(properties);
 				 console.log("---->third finished");
