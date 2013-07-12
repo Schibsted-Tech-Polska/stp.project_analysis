@@ -14,28 +14,41 @@ exports.submit = function(data){
 	
 	
 	return function(req, res, next){
+
 		var link = req.body.link;
 		console.log('receive data ' + link);
 		var language = req.body.targetLanguage;
 		console.log('targetLanguage : ' + language);
 		var javaBuildCommand = req.body.command;
 		console.log('javaBuildCommand: ' + javaBuildCommand);
-    
-     	var nameOfGitRepo;
+
+        startAnalysisProcess(link, language, javaBuildCommand);
+
+        var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(link);
+		console.log("-------link to analyzed project : " + linkToAnalyzedProject);
+		res.setHeader('202');
+		res.redirect(linkToAnalyzedProject);
+
+     };
+}
+
+function startAnalysisProcess(link, language, javaBuildCommand){
+
+        
+
+        var nameOfGitRepo;
 		//TODO make 3 functions
 		flow.series([
 			function(callback){
-				console.log("--->callback : " + callback);
-				console.log("--->first callback");
 				nameOfGitRepo = gitModule.getNameOfRepo(link);
-				console.log("nameOfGitRepo : " + nameOfGitRepo);
 				callback();//inlnie
 			},
 			function(callback){
-				console.log("--->second callback");
-	        	gitModule.cloneRepo(link,callback);
+				gitModule.cloneRepo(link,callback);
 			},
 			function(callback){
+
+
 				 console.log("--->third callback");
 				 var projectLocation = utilModule.buildAbsolutePath(nameOfGitRepo);
 				 var properties = {
@@ -51,10 +64,6 @@ exports.submit = function(data){
 			}
 
 		]);
-        var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(link);
-		console.log("-------link to analyzed project : " + linkToAnalyzedProject);
-		res.setHeader('202');
-		res.redirect(linkToAnalyzedProject);
 
-     };
+
 }
