@@ -1,0 +1,18 @@
+<div id="eventInfoDialog">
+    <div class="woEventInfo">
+        <div class="woEventInfoTitle">
+            {{html eventName}}
+        </div>
+        <div class="woEventInfoShortDescription">
+            {{html shortDescr}}
+        </div>
+        <div class="woEventInfoDescription">
+            {{html descr}}
+        </div>
+        {{each occurences}}
+            <div class="woEventInfoTime">
+                {{html date}} <b>{{html note}}</b>
+            </div>
+        {{/each}}
+    </div>
+</div>

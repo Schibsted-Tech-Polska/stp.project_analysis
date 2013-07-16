@@ -1,0 +1,81 @@
+<div id="companyText" class="bodyText">
+    {{if (hasLogo === true)}}
+        <span id="companyName">${companyName}</span>
+    {{else}}
+        <img class="imageLeft" id="companyLogo"
+             src="http://${lisaLevel}.aftenposten.no/utils/img.php?src=${mainImage}&amp;maxWidth=${imgWidth}"
+             alt="${companyName}"/>
+    {{/if}}
+    {{if (!published)}}
+        <p>Annonsen er ikke aktiv</p>
+    {{/if}}
+</div>
+
+<div id="adText" class="bodyText">
+    <h1>${streetaddress}<br/>${postaddress}</h1>
+    <table>
+        <tr>
+        {{if (price !== '')}}
+            <th>Prisantydning</th>
+            <td>
+                ${price},-
+            </td>
+        </tr>
+        {{/if}}
+
+        {{if (monthlyCost !== '')}}
+        <tr>
+            <th>Felleskostnader</th>
+            <td>${monthlyCost},-</td>
+        </tr>
+        {{/if}}
+
+        {{if (viewings.length > 0)}}
+        <tr>
+            <th>Visning</th>
+            <td>
+            {{each(i, value) viewings}}
+            	${value}
+            {{/each}}
+            </td>
+        </tr>
+        {{/if}}
+
+        {{if (size !== undefined)}}
+        <tr>
+            <th>Areal</th>
+            <td>${size}m<sup>2</sup></td>
+        </tr>
+        {{/if}}
+
+        {{if (rooms !== undefined)}}
+        <tr>
+            <th>Rom</th>
+            <td>${rooms}</td>
+        </tr>
+        {{/if}}
+
+        {{if (finnlink !== undefined)}}
+        <tr>
+            <td colspan="2"><a target="_blank" href="${finnlink}" alt="Se prospektet">Se hele prospektet</a></td>
+        </tr>
+        {{/if}}
+    </table>
+
+    <div class="adMap map"></div>
+
+    {{if companyUrl !== ''}}
+    <a href="${companyUrl}" target="_blank">${companyName}</a><br/>
+    {{else}}
+    ${companyName}
+    {{/if}}
+
+    {{if phone !== undefined}}
+    <b>Firmatelefon: </b>${phone}{{if phone2 !== undefined}}, ${phone2}{{/if}}
+    {{/if}}
+    {{if email !== undefined}}
+    <b>Epost: </b>${email}
+    {{/if}}
+
+    {{html adclicktag}}
+</div>

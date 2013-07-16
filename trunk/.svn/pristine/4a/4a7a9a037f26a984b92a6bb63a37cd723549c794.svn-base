@@ -1,0 +1,7 @@
+# user Activity
+userActivity.widget.create.text=created
+userActivity.widget.rate.text=rated
+userActivity.widget.update.text=updated
+userActivity.widget.favorite.text=likes
+userActivity.widget.comment.text=commented on
+userActivity.widget.tag.text=tagged

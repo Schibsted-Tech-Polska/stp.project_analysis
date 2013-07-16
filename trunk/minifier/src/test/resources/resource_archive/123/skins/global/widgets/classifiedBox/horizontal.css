@@ -1,0 +1,1269 @@
+/* line 6, horizontal.scss */
+.widget.classifiedBox.horizontal {
+  float: left;
+  width: 978px;
+  background-color: white;
+  border: 1px solid black;
+  clear: both;
+  height: 232px;
+  margin: 40px 0 20px 0;
+  padding: 0;
+  position: relative;
+  text-shadow: 0 0 0 white;
+  visibility: hidden;
+}
+/* line 17, horizontal.scss */
+.widget.classifiedBox.horizontal.rowTheme:before, .widget.classifiedBox.horizontal.rowTheme:after {
+  content: none;
+}
+/* line 20, horizontal.scss */
+.widget.classifiedBox.horizontal.blackTheme {
+  background-color: #111111;
+}
+/* line 22, horizontal.scss */
+.widget.classifiedBox.horizontal.blackTheme .overviewLink {
+  color: white;
+}
+/* line 25, horizontal.scss */
+.widget.classifiedBox.horizontal.blackTheme .carouselHolder {
+  padding: 0 60px;
+  /* beacuse of the above padding */
+}
+/* line 29, horizontal.scss */
+.span2 .widget.classifiedBox.horizontal.blackTheme .carouselHolder {
+  width: 60px;
+}
+/* line 29, horizontal.scss */
+.span3 .widget.classifiedBox.horizontal.blackTheme .carouselHolder {
+  width: 160px;
+}
+/* line 29, horizontal.scss */
+.span4 .widget.classifiedBox.horizontal.blackTheme .carouselHolder {
+  width: 260px;
+}
+/* line 29, horizontal.scss */
+.span5 .widget.classifiedBox.horizontal.blackTheme .carouselHolder {
+  width: 360px;
+}
+/* line 29, horizontal.scss */
+.span6 .widget.classifiedBox.horizontal.blackTheme .carouselHolder {
+  width: 460px;
+}
+/* line 29, horizontal.scss */
+.span7 .widget.classifiedBox.horizontal.blackTheme .carouselHolder {
+  width: 560px;
+}
+/* line 29, horizontal.scss */
+.span8 .widget.classifiedBox.horizontal.blackTheme .carouselHolder {
+  width: 660px;
+}
+/* line 29, horizontal.scss */
+.span9 .widget.classifiedBox.horizontal.blackTheme .carouselHolder {
+  width: 760px;
+}
+/* line 29, horizontal.scss */
+.span10 .widget.classifiedBox.horizontal.blackTheme .carouselHolder {
+  width: 860px;
+}
+/* line 32, horizontal.scss */
+.widget.classifiedBox.horizontal.blackTheme .carouselHolder .itemList li .itemWrap .itemInner {
+  border-color: white;
+}
+/* line 35, horizontal.scss */
+.widget.classifiedBox.horizontal.blackTheme .carouselHolder .listNavHolder {
+  background-color: #111111;
+}
+/* line 39, horizontal.scss */
+.widget.classifiedBox.horizontal.blackTheme .listNav {
+  background: #333333;
+  background: -moz-linear-gradient(top, #333333 0%, #111111 100%);
+  background: -webkit-linear-gradient(top, #333333 0%, #111111 100%);
+  background: -o-linear-gradient(top, #333333 0%, #111111 100%);
+  background: -ms-linear-gradient(top, #333333 0%, #111111 100%);
+  background: linear-gradient(top, #333333 0%, #111111 100%);
+  border-color: white;
+}
+/* line 42, horizontal.scss */
+.widget.classifiedBox.horizontal.blackTheme .listNav:hover {
+  background: #444444;
+  background: -moz-linear-gradient(top, #444444 0%, #222222 100%);
+  background: -webkit-linear-gradient(top, #444444 0%, #222222 100%);
+  background: -o-linear-gradient(top, #444444 0%, #222222 100%);
+  background: -ms-linear-gradient(top, #444444 0%, #222222 100%);
+  background: linear-gradient(top, #444444 0%, #222222 100%);
+}
+/* line 46, horizontal.scss */
+.widget.classifiedBox.horizontal.blackTheme .listScrollLeft span {
+  border-right-color: white;
+}
+/* line 49, horizontal.scss */
+.widget.classifiedBox.horizontal.blackTheme .listScrollRight span {
+  border-left-color: white;
+}
+/* line 53, horizontal.scss */
+.widget.classifiedBox.horizontal.blackTheme .itemWrap .listScrollLeft {
+  border-left-color: white;
+}
+/* line 56, horizontal.scss */
+.widget.classifiedBox.horizontal.blackTheme .itemWrap .listScrollRight {
+  border-right-color: white;
+}
+/* line 61, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme {
+  background-color: #014687;
+  border: 1px solid #012c54;
+}
+/* line 64, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .overviewLink {
+  color: white;
+}
+/* line 67, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .headlineWrap {
+  border-left: 1px solid #012c54;
+  border-right: 1px solid #012c54;
+  border-top: 1px solid #012c54;
+}
+/* line 73, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .carouselHolder .listNavHolder {
+  background-color: #014687;
+}
+/* line 78, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap .itemInner {
+  border-color: white;
+}
+/* line 80, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap .itemInner .listPrice {
+  background-color: #0159ac;
+}
+/* line 83, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap .itemInner .itemThumb {
+  border-top: 1px solid #014687;
+}
+/* line 88, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .listNav {
+  background: #0159ac;
+  background: -moz-linear-gradient(top, #0159ac 0%, #014687 100%);
+  background: -webkit-linear-gradient(top, #0159ac 0%, #014687 100%);
+  background: -o-linear-gradient(top, #0159ac 0%, #014687 100%);
+  background: -ms-linear-gradient(top, #0159ac 0%, #014687 100%);
+  background: linear-gradient(top, #0159ac 0%, #014687 100%);
+  border-color: white;
+}
+/* line 91, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .listNav:hover {
+  background: #015fb7;
+  background: -moz-linear-gradient(top, #015fb7 0%, #004d95 100%);
+  background: -webkit-linear-gradient(top, #015fb7 0%, #004d95 100%);
+  background: -o-linear-gradient(top, #015fb7 0%, #004d95 100%);
+  background: -ms-linear-gradient(top, #015fb7 0%, #004d95 100%);
+  background: linear-gradient(top, #015fb7 0%, #004d95 100%);
+}
+/* line 95, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .listScrollLeft span {
+  border-right-color: white;
+}
+/* line 98, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .listScrollRight span {
+  border-left-color: white;
+}
+/* line 102, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme {
+  width: 100%;
+  padding: 0!important;
+}
+@media (max-width: 320px) {
+  /* line 102, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme {
+    height: 186px;
+  }
+}
+@media (min-width : 321px) {
+  /* line 102, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme {
+    height: 220px;
+  }
+}
+/* line 112, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme.itemsCount_2 {
+  width: 100%;
+}
+/* line 115, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme .headlineWrap .categoriesList {
+  float: right;
+  margin-left: 0;
+  width: 95%!important;
+}
+/* line 121, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme .categories strong {
+  color: white;
+  float: left;
+  font-size: 14px;
+  line-height: 32px;
+}
+/* line 127, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme .categories .dropdown {
+  background-color: #b7b7b7;
+  color: #515151;
+}
+/* line 132, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme .carouselHolder {
+  padding: 0!important;
+  width: 100%!important;
+}
+@media (max-width: 320px) {
+  /* line 132, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .carouselHolder {
+    height: 186px;
+    margin-top: -93px;
+  }
+}
+@media (min-width : 321px) {
+  /* line 132, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .carouselHolder {
+    height: 220px;
+    margin-top: -110px;
+  }
+}
+/* line 143, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme .carouselHolder .itemList {
+  margin-left: 0;
+}
+@media (max-width: 320px) {
+  /* line 143, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .carouselHolder .itemList {
+    margin-top: -93px;
+  }
+}
+@media (min-width : 321px) {
+  /* line 143, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .carouselHolder .itemList {
+    margin-top: -110px;
+  }
+}
+@media (max-width: 320px) {
+  /* line 151, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .carouselHolder .itemList li {
+    height: 186px;
+    width: 160px;
+  }
+}
+@media (min-width : 321px) {
+  /* line 151, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .carouselHolder .itemList li {
+    height: 220px;
+    width: 240px;
+  }
+}
+/* line 163, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap {
+  width: 100%;
+}
+@media (max-width: 320px) {
+  /* line 163, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap {
+    height: 186px;
+  }
+}
+@media (min-width : 321px) {
+  /* line 163, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap {
+    height: 220px;
+  }
+}
+/* line 171, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+}
+@media (max-width: 320px) {
+  /* line 171, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner {
+    height: 186px;
+  }
+}
+@media (min-width : 321px) {
+  /* line 171, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner {
+    height: 220px;
+  }
+}
+@media (max-width: 320px) {
+  /* line 181, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .listPrice:before {
+    left: -20px;
+  }
+}
+@media (min-width : 321px) {
+  /* line 181, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .listPrice:before {
+    left: -55px;
+  }
+}
+@media (max-width: 320px) {
+  /* line 189, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .listPrice:after {
+    right: -20px;
+  }
+}
+@media (min-width : 321px) {
+  /* line 189, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .listPrice:after {
+    right: -55px;
+  }
+}
+@media (max-width: 320px) {
+  /* line 180, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .listPrice {
+    top: 130px;
+  }
+}
+/* line 200, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .listPrice span {
+  display: block;
+  padding: 0 5px;
+  width: 90px;
+}
+/* line 206, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .imgWrap {
+  border-bottom: 2px solid white;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+@media (max-width: 320px) {
+  /* line 206, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .imgWrap {
+    height: 103px;
+  }
+}
+@media (min-width : 321px) {
+  /* line 206, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .imgWrap {
+    height: 150px;
+  }
+}
+/* line 220, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .itemThumb {
+  border: 0;
+  position: static;
+  height: auto;
+  width: 100%;
+}
+@media (max-width: 320px) {
+  /* line 226, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .itemOrganization {
+    top: 103px;
+  }
+}
+@media (max-width: 320px) {
+  /* line 231, horizontal.scss */
+  .widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .address {
+    top: 120px;
+  }
+}
+/* line 236, horizontal.scss */
+.widget.classifiedBox.horizontal.mobile.btBlueTheme .itemWrap .itemInner .itemText {
+  display: none;
+}
+/* line 242, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme {
+  border-color: #b5b5b5;
+  border-top: 0;
+  height: 260px;
+}
+/* line 248, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .headlineWrap {
+  background: #2771aa;
+  background: -moz-linear-gradient(top, #2771aa 0%, #122358 100%);
+  background: -webkit-linear-gradient(top, #2771aa 0%, #122358 100%);
+  background: -o-linear-gradient(top, #2771aa 0%, #122358 100%);
+  background: -ms-linear-gradient(top, #2771aa 0%, #122358 100%);
+  background: linear-gradient(top, #2771aa 0%, #122358 100%);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top: 0;
+  top: -32px;
+}
+/* line 254, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .headlineWrap .categoriesList {
+  float: left;
+  margin-left: 35px;
+}
+/* line 260, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .categories li {
+  border: 0;
+}
+/* line 262, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .categories li a, .widget.classifiedBox.horizontal.btBlueTheme .categories li span, .widget.classifiedBox.horizontal.btBlueTheme .categories li strong {
+  border-right: 1px solid rgba(64, 139, 196, 0.4);
+  border-left: 1px solid rgba(35, 56, 122, 0.4);
+  color: white;
+  float: left;
+  font-size: 12px;
+  padding: 5px 7px;
+  text-shadow: none;
+}
+/* line 271, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .categories li strong {
+  border: 0;
+  display: block;
+  font-size: 14px;
+  padding-right: 70px;
+}
+/* line 277, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .categories li span {
+  border-left: 0;
+  display: block;
+  font-weight: bold;
+}
+/* line 282, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .categories li.selected a, .widget.classifiedBox.horizontal.btBlueTheme .categories li a:hover {
+  background: #408bc4;
+  background: -moz-linear-gradient(top, #408bc4 0%, #23387a 100%);
+  background: -webkit-linear-gradient(top, #408bc4 0%, #23387a 100%);
+  background: -o-linear-gradient(top, #408bc4 0%, #23387a 100%);
+  background: -ms-linear-gradient(top, #408bc4 0%, #23387a 100%);
+  background: linear-gradient(top, #408bc4 0%, #23387a 100%);
+}
+/* line 287, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .carouselHolder {
+  background-color: #1d4485;
+  height: 260px;
+  margin-top: -130px;
+  position: absolute;
+  padding: 0 39px;
+  /* beacuse of the above padding */
+}
+/* line 295, horizontal.scss */
+.span2 .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder {
+  width: 100px;
+}
+/* line 295, horizontal.scss */
+.span3 .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder {
+  width: 200px;
+}
+/* line 295, horizontal.scss */
+.span4 .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder {
+  width: 300px;
+}
+/* line 295, horizontal.scss */
+.span5 .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder {
+  width: 400px;
+}
+/* line 295, horizontal.scss */
+.span6 .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder {
+  width: 500px;
+}
+/* line 295, horizontal.scss */
+.span7 .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder {
+  width: 600px;
+}
+/* line 295, horizontal.scss */
+.span8 .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder {
+  width: 700px;
+}
+/* line 295, horizontal.scss */
+.span9 .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder {
+  width: 800px;
+}
+/* line 295, horizontal.scss */
+.span10 .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder {
+  width: 900px;
+}
+/* line 298, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .itemList {
+  margin: -130px 0 0 40px;
+  left: 0;
+}
+/* line 301, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .itemList li {
+  height: 260px;
+  margin: 0;
+  width: 225px;
+}
+/* line 308, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .listNavHolder {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 260px;
+  top: 0;
+  width: 39px;
+}
+/* line 315, horizontal.scss */
+.ie .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .listNavHolder {
+  background-color: #e6e6e6;
+}
+/* line 318, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .listNavHolder .listNav {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: none transparent;
+  border: 0 none;
+  font-size: 70px;
+  font-weight: bold;
+  height: 100%;
+  margin: 0;
+  text-decoration: none;
+  top: 0;
+  width: 100%;
+}
+/* line 329, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .listNavHolder .listNav span {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 0 none;
+  color: black;
+  height: 33px;
+  left: 10px;
+  line-height: 28px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 0;
+  top: 45%;
+  width: 25px;
+  text-shadow: none;
+}
+/* line 330, horizontal.scss */
+.ie7 .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .listNavHolder .listNav span {
+  height: 39px;
+  line-height: 39px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  /* line 329, horizontal.scss */
+  .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .listNavHolder .listNav span {
+    font-weight: normal;
+  }
+}
+/* line 337, horizontal.scss */
+.ie9 .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .listNavHolder .listNav span {
+  height: 35px;
+  line-height: 40px;
+}
+/* line 341, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .listNavHolder .listNav span.fix {
+  height: 36px;
+  left: 2px;
+  width: 34px;
+}
+/* line 360, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .listNavHolder .listNav.disabled span {
+  color: rgba(255, 255, 255, 0.2);
+}
+/* line 361, horizontal.scss */
+.ie .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .listNavHolder .listNav.disabled span {
+  color: white;
+}
+/* line 369, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap {
+  height: 260px;
+  width: 225px;
+}
+/* line 372, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner {
+  background-color: #1d4485;
+  border-top: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  height: 260px;
+  text-align: center;
+  width: 223px;
+}
+/* line 373, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner:before, .widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner:after {
+  position: absolute;
+  width: 15px;
+  height: 100%;
+  content: '';
+  top: 0;
+}
+/* line 380, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner:before {
+  background: rgba(255, 255, 255, 0.1);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  left: 0;
+}
+/* line 384, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner:after {
+  background: rgba(0, 0, 0, 0);
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  right: 0;
+}
+/* line 398, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .itemThumb {
+  border-bottom: 2px solid white;
+  border-top: 0;
+  font-size: 0;
+  height: 150px;
+  top: 0;
+  width: auto;
+}
+/* line 406, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .itemOrganization {
+  height: 25px;
+  line-height: 25px;
+  margin-top: -12px;
+  margin-left: -50%;
+  position: absolute;
+  top: 150px;
+  width: 200%;
+  z-index: 1;
+}
+/* line 415, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .itemOrganization img {
+  border: 1px solid white;
+  height: 25px;
+  margin: 0 auto;
+  width: auto!important;
+}
+/* line 422, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .address {
+  color: white;
+  height: 25px;
+  line-height: 25px;
+  position: relative;
+  top: 165px;
+}
+/* line 429, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .listPrice {
+  -moz-box-shadow: 0 0 0 0 transparent;
+  -webkit-box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0 0 0 0 transparent;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: #1d4485;
+  display: inline-block;
+  font-size: 14px;
+  height: 25px;
+  line-height: 25px;
+  padding: 0;
+  position: relative;
+  right: auto;
+  top: 165px;
+}
+/* line 441, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .listPrice:before, .widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .listPrice:after {
+  background-color: #457FCC;
+  content: "+";
+  font-weight: normal;
+  height: 1px;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  width: 112.5px;
+  z-index: -1;
+}
+/* line 452, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .listPrice:before {
+  left: -51.25px;
+  text-align: left;
+}
+/* line 456, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .listPrice:after {
+  right: -51.25px;
+  text-align: right;
+}
+/* line 460, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .listPrice span {
+  background-color: #1d4485;
+  padding: 0 15px;
+}
+/* line 465, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .itemText {
+  text-overflow: clip;
+  visibility: visible;
+  white-space: normal;
+  word-wrap: normal;
+  background-color: transparent;
+  color: white;
+  font-size: 12px;
+  height: auto;
+  line-height: 15px;
+  max-height: 30px;
+  margin: 10px 0;
+  padding: 0 5%;
+  position: absolute;
+}
+/* line 476, horizontal.scss */
+.widget.classifiedBox.horizontal.btBlueTheme .itemWrap .itemInner .itemText:after {
+  bottom: 0;
+  content: "...";
+  position: absolute;
+  right: 2px;
+}
+/* line 487, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .scrollLeft, .widget.classifiedBox.horizontal.blueTheme .scrollRight {
+  color: #014687;
+}
+/* line 489, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .scrollLeft:hover, .widget.classifiedBox.horizontal.blueTheme .scrollRight:hover {
+  background-color: #014687;
+}
+/* line 493, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .categories li {
+  border-right: 3px solid #014687;
+}
+/* line 495, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .categories li a {
+  color: #014687;
+}
+/* line 497, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .categories li a:hover {
+  background-color: #014687;
+}
+/* line 501, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .categories li.selected a {
+  background-color: #014687;
+}
+/* line 505, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap {
+  background-color: rgba(0, 52, 100, 0.65);
+}
+/* line 508, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap.zoom .listNav.disabled {
+  background: none repeat scroll 0 0 #4D89C2;
+  border-color: #246db1 !important;
+}
+/* line 512, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap.zoom .listScrollLeft.disabled span {
+  border-right-color: #246db1;
+}
+/* line 515, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap.zoom .listScrollRight.disabled span {
+  border-left-color: #246db1;
+}
+/* line 519, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap.zoom .itemInner .itemText {
+  background-color: rgba(0, 52, 100, 0.65);
+}
+/* line 524, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap .listScrollLeft {
+  border-left-color: white;
+}
+/* line 526, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap .listScrollLeft:hover span {
+  border-right-color: #8ac2f7;
+}
+/* line 530, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap .listScrollRight {
+  border-right-color: white;
+}
+/* line 532, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap .listScrollRight:hover span {
+  border-left-color: #8ac2f7;
+}
+/* line 536, horizontal.scss */
+.widget.classifiedBox.horizontal.blueTheme .itemWrap .listNav:hover {
+  background: #0f75d5;
+  background: -moz-linear-gradient(top, #0f75d5 0%, #0159ac 100%);
+  background: -webkit-linear-gradient(top, #0f75d5 0%, #0159ac 100%);
+  background: -o-linear-gradient(top, #0f75d5 0%, #0159ac 100%);
+  background: -ms-linear-gradient(top, #0f75d5 0%, #0159ac 100%);
+  background: linear-gradient(top, #0f75d5 0%, #0159ac 100%);
+  border-color: #65abed!important;
+  cursor: pointer;
+}
+/* line 543, horizontal.scss */
+.widget.classifiedBox.horizontal.priceBadge .carouselHolder .itemList li .itemWrap .itemInner .listPrice {
+  right: -5px;
+  top: 28px;
+  -moz-transform: rotate(5deg);
+  -webkit-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+}
+/* line 548, horizontal.scss */
+.widget.classifiedBox.horizontal.itemsCount_1 {
+  width: 287px;
+}
+/* line 552, horizontal.scss */
+.widget.classifiedBox.horizontal.itemsCount_2 {
+  width: 518px;
+}
+/* line 556, horizontal.scss */
+.widget.classifiedBox.horizontal.itemsCount_3 {
+  width: 749px;
+}
+/* line 559, horizontal.scss */
+.widget.classifiedBox.horizontal .overviewLink {
+  bottom: 4px;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 21px;
+  position: absolute;
+  right: 60px;
+  text-decoration: none;
+}
+/* line 570, horizontal.scss */
+.ie7 .widget.classifiedBox.horizontal .overviewLink {
+  float: right;
+  width: 100px;
+  height: 21px;
+}
+/* line 574, horizontal.scss */
+.widget.classifiedBox.horizontal .overviewLink span {
+  float: right;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 1px 0 0 5px;
+}
+/* line 579, horizontal.scss */
+.ie7 .widget.classifiedBox.horizontal .overviewLink span {
+  float: none;
+}
+/* line 584, horizontal.scss */
+.widget.classifiedBox.horizontal .themeHeadline {
+  position: absolute;
+  top: -32px;
+  visibility: hidden;
+  z-index: 5;
+}
+/* line 590, horizontal.scss */
+.widget.classifiedBox.horizontal .headlineWrap {
+  float: left;
+  width: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  height: 32px;
+  left: -1px;
+  position: relative;
+  top: -33px;
+}
+/* line 599, horizontal.scss */
+.widget.classifiedBox.horizontal .headlineWrap .categoriesList {
+  float: right;
+  overflow: hidden;
+}
+/* line 602, horizontal.scss */
+.ie7 .widget.classifiedBox.horizontal .headlineWrap .categoriesList {
+  position: relative!important;
+}
+/* line 607, horizontal.scss */
+.widget.classifiedBox.horizontal .categories {
+  font-family: 'ClanWeb',Arial,sans-serif;
+  font-size: 25px;
+  line-height: 22px;
+  position: relative!important;
+  z-index: 1;
+}
+/* line 615, horizontal.scss */
+.widget.classifiedBox.horizontal .categories .dropdown {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  float: right;
+  font-size: 12px;
+  font-weight: bold;
+  height: 32px;
+  padding: 1px 1px 1px 5px;
+  margin: 0;
+  border: 0;
+}
+/* line 625, horizontal.scss */
+.widget.classifiedBox.horizontal .categories li {
+  border-right: 3px solid black;
+  border-left-width: 0px;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+/* line 631, horizontal.scss */
+.widget.classifiedBox.horizontal .categories li a, .widget.classifiedBox.horizontal .categories li span {
+  display: block;
+  padding: 6px 10px 3px;
+}
+/* line 635, horizontal.scss */
+.widget.classifiedBox.horizontal .categories li a {
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+}
+/* line 639, horizontal.scss */
+.widget.classifiedBox.horizontal .categories li a:hover {
+  background-color: black;
+  color: white;
+}
+/* line 644, horizontal.scss */
+.widget.classifiedBox.horizontal .categories li.selected a {
+  background-color: black;
+  color: white;
+}
+/* line 650, horizontal.scss */
+.widget.classifiedBox.horizontal .carouselHolder {
+  height: 264px;
+  margin-top: -148px;
+  overflow: hidden;
+  position: relative;
+  top: 50%;
+}
+/* line 657, horizontal.scss */
+.ie7 .widget.classifiedBox.horizontal .carouselHolder {
+  left: 0px!important;
+}
+/* line 660, horizontal.scss */
+.widget.classifiedBox.horizontal .carouselHolder .itemList {
+  float: left;
+  width: 9000px;
+  list-style-type: none;
+  margin: -92px 0 10px 60px;
+  position: absolute;
+  top: 50%;
+}
+/* line 666, horizontal.scss */
+.widget.classifiedBox.horizontal .carouselHolder .itemList li {
+  float: left;
+  width: 210px;
+  color: white;
+  font-size: 12px;
+  height: 192px;
+  margin-bottom: 10px;
+  margin-right: 6px;
+  position: relative;
+}
+/* line 676, horizontal.scss */
+.widget.classifiedBox.horizontal .carouselHolder .listNavHolder {
+  background-color: white;
+  height: 212px;
+  position: absolute;
+  top: 32px;
+  width: 56px;
+  z-index: 4;
+}
+/* line 683, horizontal.scss */
+.widget.classifiedBox.horizontal .carouselHolder .listNavHolder.left {
+  position: absolute;
+  left: 0;
+}
+/* line 687, horizontal.scss */
+.widget.classifiedBox.horizontal .carouselHolder .listNavHolder.right {
+  position: absolute;
+  right: 0;
+}
+/* line 691, horizontal.scss */
+.widget.classifiedBox.horizontal .carouselHolder .listNavHolder .listNav {
+  border-width: 3px;
+  font-size: 4px;
+  height: 76px;
+  margin-top: -38px;
+  width: 76px;
+}
+/* line 700, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap {
+  float: left;
+  width: 210px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 0 solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  height: 192px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+}
+/* line 711, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .itemInner {
+  float: left;
+  width: 210px;
+  background-color: white;
+  border: 1px solid #3f3f3f;
+  color: black;
+  height: 190px;
+  margin-left: -1px;
+  overflow: hidden;
+  position: absolute;
+}
+/* line 720, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .itemInner .itemOrganization {
+  font-size: 11px;
+  font-weight: bold;
+  height: 20px;
+  line-height: 20px;
+  padding: 0;
+  position: relative;
+}
+/* line 729, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .itemInner .itemOrganization img {
+  height: 20px;
+  width: 100%!important;
+  z-index: 1;
+}
+/* line 735, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .itemInner .listPrice {
+  background: #333333;
+  border-radius: 3px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 10px;
+  position: absolute;
+  right: 5px;
+  text-decoration: none;
+  top: 20px;
+  z-index: 4;
+}
+/* line 753, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .itemInner .itemThumb {
+  border-top: 1px solid white;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+/* line 759, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .itemInner .itemText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+  background-color: white;
+  bottom: 0;
+  font-size: 10px;
+  height: 24px;
+  left: 0;
+  line-height: 24px;
+  padding: 0 5% 3px;
+  position: absolute;
+  width: 90%;
+  z-index: 4;
+}
+/* line 773, horizontal.scss */
+.ie .widget.classifiedBox.horizontal .itemWrap {
+  background-color: #7f7f7f;
+}
+/* line 776, horizontal.scss */
+.ie7 .widget.classifiedBox.horizontal .itemWrap {
+  border: 0px solid #7f7f7f;
+}
+/* line 779, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap.zoom {
+  z-index: 6;
+}
+/* line 781, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner {
+  margin: 0;
+  border-color: white;
+}
+/* line 784, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .itemOrganization {
+  font-size: 14px;
+}
+/* line 786, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .itemOrganization img {
+  width: 350px;
+  height: 33px;
+  top: 0;
+}
+/* line 792, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .listPrice {
+  display: block;
+  top: 32px;
+}
+/* line 796, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .itemThumb {
+  border: 0;
+  top: 34px;
+}
+/* line 800, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .itemText {
+  text-overflow: clip;
+  visibility: visible;
+  white-space: normal;
+  word-wrap: normal;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 0 none;
+  color: white;
+  display: inline;
+  font-size: 14px;
+  height: auto;
+  line-height: 16px;
+  margin-bottom: 0;
+  padding: 5px 5%;
+}
+/* line 811, horizontal.scss */
+.ie .widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .itemText {
+  background-color: #7f7f7f;
+}
+/* line 816, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap.zoom .listNav {
+  display: block;
+}
+/* line 818, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap.zoom .listNav.disabled {
+  background: none repeat scroll 0 0 #666666;
+  border-color: #555555 !important;
+  cursor: default;
+}
+/* line 825, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .listNav {
+  display: none;
+  height: 50px;
+  margin-top: -25px;
+}
+/* line 829, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .listNav:hover {
+  background: #555555;
+  background: -moz-linear-gradient(top, #555555 0%, #333333 100%);
+  background: -webkit-linear-gradient(top, #555555 0%, #333333 100%);
+  background: -o-linear-gradient(top, #555555 0%, #333333 100%);
+  background: -ms-linear-gradient(top, #555555 0%, #333333 100%);
+  background: linear-gradient(top, #555555 0%, #333333 100%);
+  border-color: #cccccc !important;
+  cursor: pointer;
+}
+/* line 836, horizontal.scss */
+.widget.classifiedBox.horizontal .listNav {
+  background: white;
+  background: -moz-linear-gradient(top, white 0%, #eeeeee 100%);
+  background: -webkit-linear-gradient(top, white 0%, #eeeeee 100%);
+  background: -o-linear-gradient(top, white 0%, #eeeeee 100%);
+  background: -ms-linear-gradient(top, white 0%, #eeeeee 100%);
+  background: linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+  border: 1px solid #b2b2b2;
+  font-size: 1px;
+  /* scale inner element borders with EM because % scaling is not supported - 1px = 1em */
+  height: 25px;
+  margin-top: -12px;
+  position: absolute;
+  top: 50%;
+  width: 25px;
+  z-index: 4;
+}
+/* line 846, horizontal.scss */
+.widget.classifiedBox.horizontal .listNav:hover {
+  background: #fafafa;
+  background: -moz-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+  background: -webkit-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+  background: -o-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+  background: -ms-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+  background: linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+  z-index: 5;
+}
+/* line 850, horizontal.scss */
+.widget.classifiedBox.horizontal .listNav span {
+  height: 0;
+  position: absolute;
+  text-indent: -1000em;
+  top: 50%;
+  width: 0;
+}
+/* line 856, horizontal.scss */
+.ie7 .widget.classifiedBox.horizontal .listNav span {
+  margin-top: -2em;
+}
+/* line 861, horizontal.scss */
+.widget.classifiedBox.horizontal .listScrollLeft {
+  border-bottom-right-radius: 50%;
+  border-left: 0 none;
+  border-top-right-radius: 50%;
+  left: 0;
+}
+/* line 866, horizontal.scss */
+.widget.classifiedBox.horizontal .listScrollLeft span {
+  border-bottom: 6em solid transparent;
+  border-right: 9em solid #777777;
+  border-top: 6em solid transparent;
+  left: 3em;
+  margin-top: -6em;
+}
+/* line 874, horizontal.scss */
+.widget.classifiedBox.horizontal .listScrollRight {
+  border-bottom-left-radius: 50%;
+  border-right: 0 none;
+  border-top-left-radius: 50%;
+  right: 0;
+}
+/* line 879, horizontal.scss */
+.widget.classifiedBox.horizontal .listScrollRight span {
+  border-bottom: 6em solid transparent;
+  border-left: 9em solid #777777;
+  border-top: 6em solid transparent;
+  margin-top: -6em;
+  right: 3em;
+}
+/* line 889, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap.zoom .listScrollLeft.disabled span {
+  border-right-color: #555555;
+}
+/* line 892, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap.zoom .listScrollRight.disabled span {
+  border-left-color: #555555;
+}
+/* line 896, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .listScrollLeft {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50% 0 0 50%;
+  border-right: 0 none;
+  left: 5px;
+}
+/* line 901, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .listScrollLeft span {
+  left: 7em;
+}
+/* line 904, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .listScrollLeft:hover span {
+  border-right-color: #eeeeee;
+}
+/* line 908, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .listScrollRight {
+  border-left: 0 none;
+  border-radius: 0 50% 50% 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  right: 5px;
+}
+/* line 913, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .listScrollRight span {
+  right: 7em;
+}
+/* line 916, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .listScrollRight:hover span {
+  border-left-color: #eeeeee;
+}
+/* line 920, horizontal.scss */
+.widget.classifiedBox.horizontal .itemWrap .listNav span {
+  border-bottom: 12em solid transparent;
+  border-top: 12em solid transparent;
+  margin-top: -12em;
+}
+/* line 924, horizontal.scss */
+.ie7 .widget.classifiedBox.horizontal .itemWrap .listNav span {
+  margin-top: -1em;
+}
+
+/* BT horizontal arrows entities FF fix */
+@-moz-document url-prefix() {
+  /* line 933, horizontal.scss */
+  .widget.classifiedBox.horizontal.btBlueTheme .carouselHolder .listNavHolder .listNav span {
+    line-height: 23px;
+    width: 20px;
+  }
+}
+
+/* line 939, horizontal.scss */
+.surround > section:last-child {
+  display: none;
+}

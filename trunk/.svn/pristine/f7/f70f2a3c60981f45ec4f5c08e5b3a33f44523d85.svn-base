@@ -1,0 +1,28 @@
+<header class="header">
+    <h2>Din reaksjon </h2>
+</header>
+    <div class="text">
+        <div>Jeg <span class="inlineMood mood mood${userRatingValue}">{{each(i, item) items}}{{if item.scaleValue == userRatingValue}}${item.scaleValueText}{{/if}}{{/each}}</span> av &aring; lese denne artikkelen.</div>
+    </div>
+
+
+
+<div class="barChart">
+    {{each(i, value) items}}
+        <span class="barChartBar moodBg${value.scaleValue}" data-id="${value.scaleValue}" title="${value.scaleValueText}" style="height:{{if value.resultItem && totalCount > 0}}${value.resultItem.ratio * 200+2}px{{else}}2px{{/if}};">
+            <span class="count mood${value.scaleValue} {{if value.resultItem}}{{if value.resultItem.ratio < 0.2}}tiny{{else value.resultItem.ratio < 0.4}}small{{else value.resultItem.ratio > 0.8}}huge{{else value.resultItem.ratio > 0.6}}large{{else}}medium{{/if}}{{else}}tiny{{/if}}">
+                {{if value.resultItem}}
+                    ${Math.round(value.resultItem.ratio * 100)}% <!--${value.resultItem.ratingValue}-->
+                {{else}}
+                    0%
+                {{/if}}
+            </span>
+            <span class="label mood mood${value.scaleValue}">
+                ${value.scaleValueText}
+            </span>
+        </span>
+    {{/each}}
+</div>
+<div class="text">
+    <div>Antall stemmer: ${totalCount}</div>
+</div>

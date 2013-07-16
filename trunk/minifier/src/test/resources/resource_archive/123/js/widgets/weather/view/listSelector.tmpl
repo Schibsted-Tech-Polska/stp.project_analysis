@@ -1,0 +1,9 @@
+<select class="weatherSelect">
+    {{each(i, cat) allCategories}}
+        <optgroup label='{{html cat.name}}'>
+            {{each(j, item) cat.list}}
+                <option value="${cat.id}_${item.listId}">{{html item.name}}</option>
+            {{/each}}
+        </optgroup>
+    {{/each}}
+</select>

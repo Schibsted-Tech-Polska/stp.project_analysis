@@ -1,0 +1,80 @@
+{{each items}}
+    <div id="scoreDesc">
+    {{if status != 1}}
+            {{if description}}
+                <p>{{html description}}</p>
+            {{/if}}
+            <p class="quizResult">Du fikk <strong>${points}</strong> rette av <strong>${total}</strong> mulige</p>
+         {{/if}}
+        {{if drawdate}}
+            {{if register}}
+                <form action="${SITEURL}quiz/" method="get" name="quiz">
+                    <p class="description">
+                        Send inn kontaktinformasjon for &aring; v&aelig;re med i premietrekningen ${day}.${month}.${year}
+                        Kontaktinformasjonen benyttes  kun i forbindelse med denne konkurransen, dersom det ikke er opplyst om annet.
+                    </p>
+                    <fieldset>
+                        <div class="rightAlignedLabels">
+                            <label for="name">Navn:</label><input id="name" type="text" name="particpant_name" value="" />
+                            <label for="phone">Tlf:</label><input type="text" id="phone" name="phone" value="" />
+                            <label for="email">Epost:</label><input type="email" id="email" name="email" value="" />
+                            <label for="comment">Kommentar:</label>
+                            <textarea rows="3" cols="50" name="comment" id="comment" maxLength="255"></textarea>
+                            <button id="quizRegister" value="Send inn">Send inn</button>
+                        </div>
+                    </fieldset>
+                </form>
+            {{else}}
+                <p class="">Takk for at du deltok, du vil bli kontaktet pr epost dersom du er den heldige vinner!
+            {{/if}}
+        {{/if}}
+
+        {{if resultDescription}}
+            {{each resultDescription}}
+                <p>
+                    {{if to}}
+                        ${from}-${to}
+                    {{else}}
+                        ${from}
+                    {{/if}}
+                    poeng:${text}
+                </p>
+            {{/each}}
+        {{/if}}
+        <p>Denne quizen er fullf&oslash;rt ${completedCount} ganger.</p>
+        <a class="lnkFacebook" target="_blank" style="font-size:11px" href="http://www.facebook.com/share.php?u=${SITEURL}quiz/?id=${quizId}&quizTitle=${quizTitle}&quizResult=Jeg fikk ${points} rette av ${total} mulige!">Del p&aring; Facebook</a>
+
+    </div>
+    <div id="rating"></div>
+
+
+    <ul class="finished">
+        {{each answers}}
+            <li class="question">
+
+                <h2>
+                    <span class="number">${number}</span>
+                    {{html questionText}}
+
+                    {{if hint}}
+                        <a href="${hint}" target="_blank" class="f-small">Les mer</a>
+                    {{/if}}
+                </h2>
+                {{if img}}
+                    <div class="media imageRight">
+                        <img src="${img}" alt="" />
+                    </div>
+                {{/if}}
+                <ol>
+                    {{each alternatives}}
+                        <li class="${state}">
+                            {{html answer}}
+                            {{if percentage}}
+                                <meter class="bar" value="${percentage}" max="100" min="0"><div class="bar-inner" style="width:${percentage}%"><span class="text">${percentage}%</span></div></meter>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ol>
+        {{/each}}
+    </ul>
+{{/each}}

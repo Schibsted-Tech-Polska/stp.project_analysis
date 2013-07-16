@@ -1,0 +1,358 @@
+@import "main";
+
+$verticalWidth: 100%;
+$verticalMobileWidth: 100%;
+$verticalLeftWidth: 190px;
+$verticalBorderColor: #B2B2B2;
+
+.widget.classifiedBox.vertical {
+    clear: both;
+    width: $verticalWidth;
+    margin: 10px 0;
+    padding: 0 !important;
+
+    .header {
+        @include floatWide(left,100%);
+        @include backgroundGradient(top,0%,100%,$pureWhite,lighten($lightGray, 25%));
+        border: 1px solid $verticalBorderColor;
+        clear: both;
+
+        h2 {
+            @include floatWide(left,$verticalLeftWidth);
+            color: $themeBlueIntense;
+            font-size: 12pt;
+            font-weight: bold;
+            margin-left: 5px;
+            margin-top: 12px;
+            white-space: nowrap;
+        }
+
+        div.categories {
+            float: right;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+    }
+
+    .resultListBox {
+        @include floatWide(left,inherit);
+        clear: both;
+        display: block;
+
+        .loader {
+            height: 11px;
+            width: 16px;
+        }
+
+        .resultItemResultList {
+            border-bottom: 1px solid $verticalBorderColor;
+            max-height: 320px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-bottom: 15px;
+
+            li {
+                clear: both;
+                height: 102px;
+                margin: 10px 0px;
+                overflow: hidden;
+            }
+        }
+
+        .resultItemLink {
+            color: $trueBlack;
+            text-decoration: none;
+            text-shadow: none;
+
+            .resultItemThumb {
+                @include floatWide(left,200px);
+                height: 125px;
+            }
+        }
+    }
+
+    .resultItemLink {
+        .resultItemMeta {
+            @include floatWide(left,150px);
+            padding: 0 5px;
+
+            .resultItemAddress {
+                color: $trueBlack;
+                font-size: 8pt;
+                font-weight: bold;
+                width: 100%;
+            }
+
+            .resultItemPrice {
+                clear: both;
+                color: $trueBlack;
+                display: block;
+                font-size: 10pt;
+                font-weight: bold;
+                padding-right: 10px;
+                padding-top: 0;
+                padding-bottom: 0;
+                line-height: 1;
+                text-align: left;
+                width: 100%;
+            }
+        }
+
+        .resultItemInfo {
+            @include floatWide(left,150px);
+            overflow: hidden;
+            padding: 0 5px;
+        }
+
+        .resultItemText {
+            color: $themeBlack * 9;
+            float: left;
+            font-size: 8pt;
+            line-height: 14px;
+            min-height: 42px;
+        }
+
+        .resultItemLogo {
+            clear: both;
+            height: 17px;
+        }
+    }
+
+    .overviewLink {
+        clear: both;
+        color: $themeBlueIntense;
+        display: none;
+
+        span {
+            color: $themeBlueIntense;
+            padding-left: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .widget.classifiedBox.vertical .resultListBox .resultItemLink .resultItemThumb {
+        width: 150px !important;
+        height: 95px !important;
+    }
+}
+
+
+
+
+
+.widget.classifiedBox.vertical.blackTheme {
+    width: auto;
+}
+
+
+.widget.classifiedBox.vertical.blackTheme .resultListBox .resultItemResultList {
+    max-height: inherit;
+}
+
+.widget.classifiedBox.vertical.blackTheme .resultListBox .resultItemResultList li {
+    overflow: visible;
+    height: 200px;
+}
+
+.widget.classifiedBox.vertical.blackTheme .resultItemLink .resultItemText {
+    min-height: inherit;
+}
+
+.widget.classifiedBox.vertical.blackTheme .header {
+    background: none;
+    border: 0;
+    position: relative;
+}
+
+.widget.classifiedBox.vertical.blackTheme .header h2 {
+    background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    display: block;
+    font-family: ClanWeb,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    line-height: 20px;
+    margin-top: 0;
+    padding: 4px 0 0 27px;
+    width: 150px;
+}
+.widget.classifiedBox.vertical.blackTheme .resultListBox .resultItemResultList {
+    border: 0;
+}
+.widget.classifiedBox.vertical.blackTheme .header h2:before {
+    background: url("/skins/publications/ap/gfx/sprite.png") no-repeat scroll 0 -50px transparent;
+    content: " ";
+    float: left;
+    height: 20px;
+    margin: -2px 0 0 -24px;
+    width: 20px;
+}
+
+.widget.classifiedBox.vertical.blackTheme .categories {
+
+}
+
+.widget.classifiedBox.vertical.blackTheme .overviewLink {
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    margin-left: 80px;
+    text-decoration: none;
+    display: block;
+    width: 105px;
+}
+
+.ie7 .widget.classifiedBox.vertical.blackTheme .overviewLink {
+    float:right;
+    width: 100px;
+    height:21px;
+}
+
+.widget.classifiedBox.vertical.blackTheme .overviewLink span {
+    color: #000000;
+    float: right;
+    font-size: 16px;
+    line-height: 15px;
+    padding: 1px 0 0 5px;
+}
+
+.ie7 .widget.classifiedBox.vertical.blackTheme .overviewLink span {
+    float:none;
+    padding-top: 5px;
+}
+
+.ie8 .widget.classifiedBox.vertical.blackTheme .overviewLink span {
+    padding-top: 5px;
+}
+
+.ie9 .widget.classifiedBox.vertical.blackTheme .overviewLink span {
+    padding-top: 3px;
+}
+
+.widget.classifiedBox.vertical.blackTheme .categories {
+    clear: both;
+    font-size: 11px;
+    padding-top: 25px;
+    text-align: right;
+}
+
+.widget.classifiedBox.vertical.blackTheme .categories a {
+    color: #000;
+}
+
+.widget.classifiedBox.vertical.blackTheme {
+    margin: 20px 0;
+}
+
+.widget.classifiedBox.vertical.blackTheme .resultItemResultList {
+    list-style-type: none;
+}
+
+.widget.classifiedBox.vertical.blackTheme .resultItemResultList li {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+    display: block;
+    margin-bottom: 10px;
+    width: 180px;
+}
+
+.ie7 .widget.classifiedBox.vertical.blackTheme .resultItemResultList li,
+.ie8 .widget.classifiedBox.vertical.blackTheme .resultItemResultList li {
+    border: 1px solid #D2D2D2;
+}
+
+.widget.classifiedBox.vertical.blackTheme .resultListBox .resultItemLogo {
+    /*border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);*/
+    height: 17px;
+    left: 0;
+    position: absolute;
+    top: inherit;
+    /*padding-top: 13px;*/
+    width: 180px;
+}
+.widget.classifiedBox.vertical.blackTheme .resultListBox .resultItemLink {
+    color: #000000;
+    clear: both;
+    display: block;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    text-shadow: none;
+    width: 180px;
+}
+
+
+.widget.classifiedBox.vertical.blackTheme .resultListBox .resultItemName {
+    color: #000000;
+    cursor: pointer;
+    display: block;
+    line-height: 1;
+    /*margin: 2px 0 3px;*/
+    text-decoration: none;
+    text-rendering: optimizelegibility;
+    word-wrap: break-word;
+}
+
+.widget.classifiedBox.vertical.blackTheme .resultListBox .resultItemPrice {
+    background: none repeat scroll 0 0 #393939;
+    border: 1px solid #000000;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35);
+    color: #FFFFFF;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 5px;
+    position: absolute;
+    right: 5px;
+    top: 17px;
+    width: 55px;
+    z-index: 1;
+}
+
+.ie .widget.classifiedBox.vertical.blackTheme .resultListBox .resultItemPrice {
+    padding: 2px 8px;
+}
+
+.ie9 .widget.classifiedBox.vertical.blackTheme .resultListBox .resultItemPrice {
+    width: 65px;
+}
+
+.widget.classifiedBox.vertical.blackTheme.priceBadge .resultListBox .resultItemPrice {
+    right: 5px;
+    top: 20px;
+    -moz-transform: rotate(5deg);
+    -webkit-transform:rotate(5deg);
+    -o-transform:rotate(5deg);
+    -ms-transform:rotate(5deg);
+}
+
+.widget.classifiedBox.vertical.blackTheme .resultListBox .resultItemThumb {
+    border-top: 1px solid #333333;
+    height: 120px;
+    position: absolute;
+    top: 17px;
+    width: 100%;
+}
+
+.widget.classifiedBox.vertical.blackTheme .resultListBox .resultItemText {
+    background-color: rgba(255, 255, 255, 0.75);
+    bottom: 0;
+    color: #000000;
+    cursor: pointer;
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 1.25;
+    padding: 4px 5px 3px;
+    position: absolute;
+    text-decoration: none;
+    text-rendering: optimizelegibility;
+    word-wrap: break-word;
+}

@@ -1,0 +1,50 @@
+.widget.tip .adjustLeft {
+    position:absolute;
+    left:-10000px;
+}
+
+.widget.tip input,
+.widget.tip textarea {
+    -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        border-radius:5px;
+}
+
+.widget.tip .additionalInfo {
+    background:#000;
+    color:#fff;
+    padding:10px;
+}
+
+.widget.tip .additionalInfo p {
+    margin-bottom:0;
+}
+
+.widget.tip .additionalInfo a{
+    color:#97c3d3;
+}
+
+.widget.tip dt,
+.widget.tip dd {
+    display:-moz-inline-stack;
+    display:inline-block;
+}
+
+.widget.tip dd {
+    border-right:1px solid #999;
+    margin-right:4px;
+    padding: 0 4px;
+}
+
+.widget.tip dd:last-of-type {
+    border-right:0 none;
+}
+
+.widget.tip dt {
+    font-weight:bold;
+}
+
+.ie7 .widget.tip dt,
+.ie7 .widget.tip dd {
+    display:inline;
+}

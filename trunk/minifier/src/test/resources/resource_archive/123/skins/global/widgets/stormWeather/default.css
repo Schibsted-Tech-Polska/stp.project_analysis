@@ -1,0 +1,88 @@
+/**
+ Weather Icons
+ - note that Storm and Yr have icon 2 & 3 inverted
+ */
+.stormWeather .stormWeather-symbol {
+    background: url(/skins/global/gfx/weather/icons_25x25.png) no-repeat 0 0;
+    display:inline-block;
+    width: 30px;
+        height: 25px;
+}
+.stormWeather .icon1 {
+    background-position: 0 -25px;
+}
+.stormWeather .icon2 {
+    background-position: 0 -75px;
+}
+.stormWeather .icon3 {
+    background-position: 0 -50px;
+}
+.stormWeather .icon4 {
+    background-position: 0 -100px;
+}
+.stormWeather .icon5 {
+    background-position: 0 -125px;
+}
+.stormWeather .icon6 {
+    background-position: 0 -150px;
+}
+.stormWeather .icon7 {
+    background-position: 0 -175px;
+}
+.stormWeather .icon8 {
+    background-position: 0 -200px;
+}
+.stormWeather .icon9 {
+    background-position: 0 -225px;
+}
+.stormWeather .icon10 {
+    background-position: 0 -250px;
+}
+.stormWeather .icon11 {
+    background-position: 0 -275px;
+}
+.stormWeather .icon12 {
+    background-position: 0 -300px;
+}
+.stormWeather .icon13 {
+    background-position: 0 -325px;
+}
+.stormWeather .icon14 {
+    background-position: 0 -350px;
+}
+.stormWeather .icon15 {
+    background-position: 0 -375px;
+}
+.stormWeather .icon16 {
+    background-position: 0 -400px;
+}
+.stormWeather .icon17 {
+    background-position: 0 -425px;
+}
+.stormWeather .icon18 {
+    background-position: 0 -450px;
+}
+.stormWeather .icon19 {
+    background-position: 0 -475px;
+}
+.stormWeather .ico20 {
+    background-position: 0 -500px;
+}
+.stormWeather .icon21 {
+    background-position: 0 -525px;
+}
+.stormWeather .icon22 {
+    background-position: 0 -550px;
+}
+.stormWeather .icon23 {
+    background-position: 0 -575px;
+}
+.stormWeather .icon24 {
+    background-position: 0 -600px;
+}
+.stormWeather .icon25 {
+    background-position: 0 -625px;
+}
+.stormWeather .icon26 {
+    background-position: 0 -650px;
+}

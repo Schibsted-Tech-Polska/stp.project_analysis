@@ -1,0 +1,39 @@
+.specialHeader .sprekSearch {
+    margin-top:36px;
+}
+.sprekSearch .search {
+    background-image:url(/skins/global/gfx/icons/magnify.png);
+    background-repeat:no-repeat;
+    background-position: 4px 8px;
+    height:25px;
+    line-height:25px;
+    padding-left:25px;
+    width:250px;
+}
+
+.sprekSearch .submit {
+    background-color:#95d95a ;
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#95d95a', endColorstr='#7bc040');
+       -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#95d95a', endColorstr='#7bc040')";
+       background-image: -moz-linear-gradient(top, #95d95a , #7bc040);
+       background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #95d95a),color-stop(1, #7bc040));
+       background-image: -webkit-linear-gradient(top, #95d95a, #7bc040 );
+       background-image: linear-gradient(top, #95d95a , #7bc040 );
+    border:1px solid #60a524;
+    font-weight:bold;
+    height:31px;
+    padding: 0 10px;
+    text-shadow:0 1px 0 #306424;
+}
+
+.sprekSearch .helpText {
+    color:#666;
+        font-size:11px;
+        text-align:right;
+    width:277px;
+}
+
+.sprekSearch .helpText a {
+    color:#666;
+    text-decoration:underline;
+}

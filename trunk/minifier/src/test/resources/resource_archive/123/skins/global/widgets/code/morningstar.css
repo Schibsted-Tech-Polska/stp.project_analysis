@@ -1,0 +1,36 @@
+.morningstar iframe {
+    margin: 0 15px;
+}
+
+.morningstar table {
+    width: 100%;
+}
+.morningstar th.value, .morningstar td.value {
+    text-align: right;
+    width: 70px;
+}
+.morningstar thead tr {
+    color: #222;
+        font-size: 11px;
+    padding: 0 4px;
+}
+
+.morningstar .positive {
+    color: #0066cc;
+}
+.morningstar .negative {
+    color: #cc0000;
+}
+
+.morningstar .flag {
+    float: left;
+    margin: 3px 4px 0 0;
+}
+
+.morningstar footer {
+    font-size: 12px;
+}
+.morningstar footer span {
+    color: #888;
+    float: right;
+}

@@ -1,0 +1,122 @@
+section.articleLongtermForecast .horizontalData div.timeperiod_hours{
+    font-size: 0.8em;
+}
+
+section.articleLongtermForecast table {
+    width: 100%;
+}
+
+section.articleLongtermForecast th {
+    font-size: 0.8em;
+        font-weight: normal;
+        text-align: center;
+    padding: 10px 0;
+}
+section.articleLongtermForecast .verticalData th.timeperiod,
+section.articleLongtermForecast th.row {
+    background: #ccc;
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr='#cccccc', endColorstr='#999999');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#cccccc', endColorstr='#999999')";
+        background-image: -moz-linear-gradient(left, #ccc 70%, #999);
+        background-image: -webkit-gradient(linear, left top,right top, color-stop(0.7, #ccc), color-stop(1, #999));
+        background-image: -webkit-linear-gradient(left, #ccc 70%, #999));
+        background-image: linear-gradient(left, #ccc 70%, #999);
+    text-align: left;
+    padding: 0;
+    width:10px;
+}
+
+section.articleLongtermForecast th.row {
+    padding: 0 5px;
+}
+
+section.articleLongtermForecast .verticalData th.timeperiod div {
+    display:block;
+    text-align:right;
+    -ms-transform:rotate(270deg);
+        -moz-transform:rotate(270deg);
+        -webkit-transform:rotate(270deg);
+        -o-transform:rotate(270deg);
+        transform:rotate(270deg);
+    -ms-transform-origin: top left;
+        -moz-transform-origin: top left;
+        -webkit-transform-origin: top left;
+        -o-transform-origin: top left;
+        transform-origin:top left;
+    height: 0;
+}
+
+.span5 section.articleLongtermForecast .verticalData th.timeperiod div {
+    margin-top: 40px;
+}
+
+.span6 section.articleLongtermForecast .verticalData th.timeperiod div {
+    margin-top: 40px;
+}
+
+section.articleLongtermForecast .verticalData th.timeperiod div span.time{
+    width: 40px;
+    display:inline-block;
+}
+
+section.articleLongtermForecast .horizontalData th.timeperiod div span.time{
+    display:inline-block;
+}
+
+section.articleLongtermForecast th.expandCollapse{
+    background: #fff;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+section.articleLongtermForecast td {
+    padding: 4px;
+}
+
+section.articleLongtermForecast tr {
+    border-bottom: 0 none;
+}
+section.articleLongtermForecast td {
+    border-bottom: 1px solid #ccc;
+}
+
+section.weather.articleLongtermForecast .verticalData td.hover {
+    background-color: rgba(153, 191, 209, 0.3);
+}
+section.weather.articleLongtermForecast .horizontalData tr:hover {
+    background-color: rgba(153, 191, 209, 0.3);
+}
+
+section.articleLongtermForecast .temp,
+section.articleLongtermForecast .speed {
+    white-space: nowrap;
+}
+
+section.articleLongtermForecast .direction,
+section.articleLongtermForecast .speed {
+    display: inline-block;
+}
+
+section.articleLongtermForecast .temp {
+    text-align: center;
+}
+
+section.articleLongtermForecast .wind {
+    color: #333;
+        font-size: 0.8em;
+        text-align: center;
+    margin: 0 auto;
+    width: 50px;
+}
+section.articleLongtermForecast .direction {
+    margin-right: 8px;
+}
+
+section.articleLongtermForecast .wind.hideWind {
+    display: none;
+}
+
+section.articleLongtermForecast div.timeperiod_hours.hidden{
+    visibility: hidden;
+    position:absolute;
+}

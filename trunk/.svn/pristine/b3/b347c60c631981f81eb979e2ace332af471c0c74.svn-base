@@ -1,0 +1,35 @@
+<ul class="rating">
+    <li>
+    <span id="${id}_ratingCount">${itemCount}</span> leser(e) mener
+    <div id="${id}_ratingUsers">
+    <img id="${id}_usrrat_1" alt="" src="${starOff.src}">
+    <img id="${id}_usrrat_2" alt="" src="${starOff.src}">
+    <img id="${id}_usrrat_3" alt="" src="${starOff.src}">
+    <img id="${id}_usrrat_4"alt="" src="${starOff.src}">
+    <img id="${id}_usrrat_5" alt="" src="${starOff.src}">
+    </div>
+    </li>
+    <li >
+        <span>hva mener du?</span>
+        <div id="user">
+            <input id="${id}_rating" type="hidden" value="${usersVote}" name="rating">
+            <a id="${id}_userLink_1" href="#">
+                <img id="${id}_userstar_1" title="Hva mener du?" alt="" src="${starOff.src}">
+            </a>
+            <a id="${id}_userLink_2" href="#">
+                <img id="${id}_userstar_2" title="Hva mener du?" alt="" src="${starOff.src}">
+            </a>
+            <a id="${id}_userLink_3" href="#">
+                <img id="${id}_userstar_3" title="Hva mener du?" alt="" src="${starOff.src}">
+            </a>
+            <a id="${id}_userLink_4" href="#">
+                <img id="${id}_userstar_4" title="Hva mener du?" alt="" src="${starOff.src}">
+            </a>
+            <a id="${id}_userLink_5" href="#">
+                <img id="${id}_userstar_5" title="Hva mener du?" alt="" src="${starOff.src}">
+            </a>
+          </div>
+    </li>
+
+
+</ul>

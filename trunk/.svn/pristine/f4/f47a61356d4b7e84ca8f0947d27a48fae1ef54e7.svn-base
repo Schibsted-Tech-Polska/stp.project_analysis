@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+
+  <!-- field group definitions for User Activity widget -->
+    <field-group name="userActivity-widget-general-fields">
+      <field name="actions" type="enumeration" multiple="true">
+        <ui:label>Activities</ui:label>
+        <ui:description>The actions to be displayed</ui:description>
+        <enumeration value="view">
+          <ui:label>View</ui:label>
+        </enumeration>
+        <enumeration value="create">
+          <ui:label>Create</ui:label>
+        </enumeration>
+        <enumeration value="update">
+          <ui:label>Update</ui:label>
+        </enumeration>
+        <enumeration value="tag">
+          <ui:label>Tag</ui:label>
+        </enumeration>
+        <enumeration value="rate">
+          <ui:label>Rate</ui:label>
+        </enumeration>
+        <enumeration value="comment">
+          <ui:label>Comment</ui:label>
+        </enumeration>
+        <enumeration value="favorite">
+          <ui:label>Favorite</ui:label>
+        </enumeration>
+        <constraints>
+          <required>true</required>
+        </constraints>
+      </field>
+
+      <field name="user" type="enumeration">
+        <ui:label>User</ui:label>
+        <ui:description>Action of all users of current user to be displayed.</ui:description>
+        <enumeration value="all">
+          <ui:label>All users</ui:label>
+        </enumeration>
+        <enumeration value="blog">
+          <ui:label>User blog being viwed</ui:label>
+        </enumeration>
+        <enumeration value="current">
+          <ui:label>Logged-in user</ui:label>
+        </enumeration>
+        <ui:value-if-unset>all</ui:value-if-unset>
+      </field>
+
+      <field name="maxActivity" type="number">
+        <ui:label>Maximum number of user activitis</ui:label>
+        <ui:description>Maximum number of activitis to be displayed by the widget</ui:description>
+        <constraints>
+          <minimum>1</minimum>
+        </constraints>
+        <ui:value-if-unset>6</ui:value-if-unset>
+        <format>###</format>
+      </field>
+
+      <field name="numberOfDays" type="number">
+        <ui:label>Number of previous days to look for user activities</ui:label>
+        <ui:description>Number of previous days to look for user activities</ui:description>
+        <constraints>
+          <minimum>1</minimum>
+        </constraints>
+        <ui:value-if-unset>3</ui:value-if-unset>
+        <format>###</format>
+      </field>
+    </field-group>
+
+    <field-group name="userActivity-advanced-fields">
+      <field name="showDateDifference" type="boolean">
+         <ui:label>Show activity date as relative</ui:label>
+         <ui:description>A relative time figures out how long ago an item was created and shows "2 hours ago" or "5 weeks ago" and so on.</ui:description>
+         <ui:boolean-label value="true">Time is shown relative to current time</ui:boolean-label>
+         <ui:boolean-label value="false">Time is shown as a full date</ui:boolean-label>
+         <ui:value-if-unset>true</ui:value-if-unset>
+       </field>
+
+      <field type="basic" mime-type="text/plain" name="dateFormat">
+        <ui:label>Activity date format</ui:label>
+        <ui:description>The simple date format, that will be used for displaying date</ui:description>
+        <ui:value-if-unset>EEEE dd MMMM yyyy</ui:value-if-unset>
+      </field>
+
+      <field name="showAvatar" type="boolean">
+         <ui:label>Show avatar</ui:label>
+         <ui:description>Configures if avatar will be shown or not</ui:description>
+         <ui:boolean-label value="true">Show user avatar</ui:boolean-label>
+         <ui:boolean-label value="false">Do not show user avatar</ui:boolean-label>
+         <ui:value-if-unset>true</ui:value-if-unset>
+      </field>
+
+      <field name="avatarImageVersion" type="enumeration">
+        <ui:label>Avatar size</ui:label>
+        <ui:description>The size of the avatar picture to be used in profile menu</ui:description>
+        <enumeration value="w24">
+          <ui:label>24 x 24</ui:label>
+        </enumeration>
+        <enumeration value="w48">
+          <ui:label>48 x 48</ui:label>
+        </enumeration>
+        <enumeration value="w64">
+          <ui:label>64 x 64</ui:label>
+        </enumeration>
+        <enumeration value="w96">
+          <ui:label>96 x 96</ui:label>
+        </enumeration>
+        <ui:value-if-unset>w48</ui:value-if-unset>
+      </field>
+
+      <field name="showSummary" type="boolean">
+         <ui:label>Show activity summary</ui:label>
+         <ui:description>Configures if summary will be shown or not</ui:description>
+         <ui:boolean-label value="true">Show activity summary</ui:boolean-label>
+         <ui:boolean-label value="false">Do not show activity summary</ui:boolean-label>
+         <ui:value-if-unset>false</ui:value-if-unset>
+      </field>
+
+      <field name="maxSummaryChar" type="number">
+        <ui:label>Maximum number of characters in summary</ui:label>
+        <ui:description>Maximum number of characters to be displayed in summary</ui:description>
+        <constraints>
+          <minimum>1</minimum>
+        </constraints>
+        <ui:value-if-unset>200</ui:value-if-unset>
+        <format>###</format>
+      </field>
+
+      <field name="contentTypes" type="basic" mime-type="text/plain">
+        <ui:label>Content types</ui:label>
+        <ui:description>The comma separated contentType names for which the user activities list will be created</ui:description>
+        <ui:value-if-unset>news,blogPost,picture,iod,simpleVideo,youtubeVideo,posting</ui:value-if-unset>
+      </field>
+
+      <field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Identifier for CSS declarations</ui:description>
+      </field>
+      <field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style Class</ui:label>
+        <ui:description>Class for CSS declarations</ui:description>
+      </field>
+    </field-group>
+<!--content type definition for User Activity widget -->
+  <content-type name="widget_userActivity">
+    <ui:label>User Activity Widget</ui:label>
+    <ui:description>This widget is used for displaying User Activities.</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The general configuration fields</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="userActivity-widget-general-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>Advanced configuration fields</ui:description>
+      <ref-field-group name="userActivity-advanced-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Content summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+        <ui:description>The name of the widget</ui:description>
+      </field>
+    </summary>
+  </content-type>
+ </content-types>

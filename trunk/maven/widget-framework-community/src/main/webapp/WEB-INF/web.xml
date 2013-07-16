@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/branches/1.4/widget-framework-community/src/main/webapp/WEB-INF/web.xml#1 $
+ * Last edited by : $Author: shah $ $Date: 2010/10/18 $
+ * Version        : $Revision: #1 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+  <!-- context parameters for community engine -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/community-plugin-beans.xml</param-value>
+  </context-param>
+
+  <!--community engine related filters -->
+  <filter>
+    <filter-name>cookieFilter</filter-name>
+    <filter-class>
+      com.ndc.usercontent.filter.UserCookieFilter
+    </filter-class>
+    <init-param>
+      <param-name>profileArticleType</param-name>
+      <param-value>userProfile</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>securityFilter</filter-name>
+    <filter-class>com.ndc.auth.filter.SecurityFilter</filter-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/security.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>login</param-name>
+      <param-value>/?view=login</param-value>
+    </init-param>
+    <init-param>
+      <param-name>error</param-name>
+      <param-value>/?view=error</param-value>
+    </init-param>
+    <init-param>
+      <param-name>unauthorized</param-name>
+      <param-value>/?view=unauthorized</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>tagPageFilter</filter-name>
+    <filter-class>
+      com.ndc.tag.plugin.filter.TagPageFilter
+    </filter-class>
+    <init-param>
+      <param-name>sectionUniqueName</param-name>
+      <param-value>tag</param-value>
+    </init-param>
+  </filter>
+
+  <!-- community engine related filter mappings -->
+  <filter-mapping>
+    <filter-name>cookieFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>securityFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>tagPageFilter</filter-name>
+    <url-pattern>/tag/*</url-pattern>
+  </filter-mapping>
+
+  <!-- Listener for Community Engine -->
+  <listener>
+    <description>ECOME Context Loader Listener</description>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <!-- Standard Action Servlet Configuration (with debugging) -->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>
+        /WEB-INF/struts-config-search.xml,
+        /WEB-INF/struts-config-forum.xml,
+        /WEB-INF/struts-config-poll.xml,
+        /WEB-INF/struts-config-email.xml,
+        /WEB-INF/struts-config-community.xml,
+        /WEB-INF/struts-config.xml
+      </param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>dwr-invoker</servlet-name>
+    <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>dwr-invoker</servlet-name>
+    <url-pattern>/dwr/*</url-pattern>
+  </servlet-mapping>
+</web-app>

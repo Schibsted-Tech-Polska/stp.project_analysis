@@ -1,0 +1,6 @@
+&nbsp;
+<dl class="${olClass}">
+    {{each items}}
+        <dt class="${dtClass}">{{html dt}}</dt><dd class="${ddClass}">{{html dd}}</dd>
+    {{/each}}
+</dl>

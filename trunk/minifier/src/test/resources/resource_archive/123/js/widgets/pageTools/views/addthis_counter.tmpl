@@ -1,0 +1,13 @@
+{{each(i, value) items}}
+
+    {{if value == 'facebook'}}
+        <a class="shareButton addthis_16x16_style addthis_button_facebook_like" fb:like:layout="button_count" fb:like:action="recommend" fb:like:width="125"></a>
+    {{else value == 'twitter'}}
+        <a class="shareButton addthis_16x16_style addthis_button_tweet" tw:count="horizontal"></a>
+    {{else value == 'google'}}
+        <a class="shareButton addthis_16x16_style addthis_button_google_plusone" g:plusone:size="medium"></a>
+    {{else}}
+        <a class="shareButton addthis_16x16_style addthis_button_${value}"></a>
+    {{/if}}
+
+{{/each}}

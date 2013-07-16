@@ -1,0 +1,229 @@
+#preHeader .gridUnit > * {
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-bottom: -1px;
+    margin-top: 0;
+    background-color: #fff;
+}
+
+#header {
+    background-color: transparent;
+    margin: 0 0 0;
+    padding: 0;
+    width: 100%;
+}
+
+#header .logo img {
+    display: block;
+    float: left;
+    margin: 10px 2% 20px;
+    width:76%;
+        max-width: 415px;
+}
+
+#header .mainHeader {
+    overflow: visible;
+}
+
+#header .mainHeader > .gridRow {
+    margin: 0;
+}
+
+#header .mainHeader .menuBar {
+    border-top: 0 none;
+    -moz-border-radius-topleft:0;
+        -webkit-border-top-left-radius:0;
+        border-top-left-radius:0;
+    -moz-border-radius-topright:0;
+        -webkit-border-top-right-radius:0;
+        border-top-right-radius:0;
+    margin-left: 0;
+        margin-right: 0;
+    padding-left: 0;
+        padding-right: 0;
+    width:100%;
+    z-index: 999999999;
+}
+#header .menuBarHook:after,
+#header .menuBarHook:before {
+    display: none;
+}
+
+/* menu items */
+#header .menuBar a:hover {
+    text-decoration: none;
+}
+
+#header .menuBar a.item,
+#header .menuBar .item > a {
+    -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    border-left: 1px solid rgba(255,255,255,0.1);
+        border-right: 1px solid rgba(0,0,0,0.1);
+    float:left;
+    line-height: 45px;
+    margin:0;
+    text-align: center;
+    width:25%;
+        height:45px;
+}
+
+#header .menuBar .item:first-child {
+    border-left: 0 none;
+}
+#header .menuBar .item:last-child {
+    border-right: 0 none;
+}
+
+#header .menuBar .item.icon,
+#header .menuBar .item .icon {
+    color:#fff;
+    font-size: 25px !important;
+        text-shadow: 0 0 1px rgba(0, 0, 0, .5);
+}
+
+#header .menuBar .item.storedArticles.storedArticlesTrigger .icon,
+#header .menuBar .item.storedArticles.storedArticlesTrigger .icon {
+    font-size: 30px !important;
+}
+
+
+
+#header .menuBar .item .icon .count,
+#header .menuBar .item.icon .count {
+    font-size:12px;
+    left:4px;
+    top:-8px;
+}
+
+#header .menuBar .item .text,
+#header .menuBar .item .login {
+    display: none;
+}
+
+/* weather */
+
+#header .nowForecastForHeader.large  {
+    width: 10%;
+    margin-right: 0;
+}
+
+#header .nowForecastForHeader span {
+    color: #999;
+    float: left;
+}
+
+#header .nowForecastForHeader span.weather-icon {
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+#header .nowForecastForHeader .temp {
+    position: absolute;
+    top: 2px;
+    right: 30px;
+}
+#header .nowForecastForHeader .sted {
+    text-transform: inherit !important;
+    position: absolute;
+        top: 40px;
+        right: 0;
+    display: none;
+}
+
+#header .nowForecastForHeader.large .weather-icon {
+    float: right;
+}
+
+/* sub menu */
+#header .subMenu {
+    border-bottom: 0 none;
+}
+
+#header .navigation.pagetitle h5 {
+    margin-left: 10px;
+    letter-spacing: -0.05em;
+}
+
+/* ie / windows mobile tweaks */
+.iemobile #header .sideMenuTrigger span,
+.iemobile #header .storedArticlesTrigger .icon,
+.iemobile #header .widget.paywall .userAccount,
+.iemobile #header .widget.tip.form span {
+    background-image: url('/skins/publications/fvn/gfx/sprite_mobile_480.png');
+    display: block;
+    margin: 7px 0 0 25px;
+    text-indent: -3000px;
+    width: 38px;
+}
+.iemobile #header .sideMenuTrigger span {
+    margin: 9px 0 0 30px;
+    background-position:-10px -12px;
+}
+.iemobile #header .storedArticlesTrigger .icon {
+    background-position:-76px -8px;
+}
+
+.iemobile #header .storedArticlesTrigger.item .icon .count {
+    display: block;
+    margin: 0;
+    position: relative;
+    top: -38px;
+    left: 5px;
+    text-indent: 0;
+    vertical-align: middle;
+    line-height: 100%;
+    width:20px;
+}
+
+.iemobile #header .widget.paywall .userAccount {
+    background-position:-370px -10px;
+}
+
+.iemobile #header .widget.tip.form span {
+    background-position:-435px -9px;
+    width:24px;
+}
+.iemobile #header .widget.tip.form span:before {
+    content: "";
+}
+
+#header .breakingnews {
+    padding: 5px 0 !important;
+        margin: 0 10px !important;
+}
+
+/* screen size tweaks */
+@media only screen and (max-width : 320px) {
+    #header .logo {
+        margin-left: 0;
+    }
+    #header .logo img {
+    }
+
+    .menuBar .mnoDropdown {
+        margin-top: 3px;
+    }
+}
+@media only screen and (min-width : 321px) and (max-width : 600px) {
+    #header .logo {
+        margin-left: 5px;
+    }
+    #header .logo img {
+    }
+
+    .menuBar .mnoDropdown {
+        margin-top: 3px;
+    }
+}
+@media only screen and (min-width : 601px) {
+    .mainHeader {
+        max-width:1000px
+    }
+
+    #header nav li {
+        padding: 0 95px;
+    }
+}

@@ -1,0 +1,5 @@
+<span class="fontWrapper">
+{{each(i, value) items}}
+    <a class="font" href="#" id="${value}">a</a>
+{{/each}}
+</span>

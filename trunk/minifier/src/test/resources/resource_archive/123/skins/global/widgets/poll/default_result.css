@@ -1,0 +1,27 @@
+.pollLabels {
+    -moz-box-shadow: 0 0 5px #aaf;
+    -webkit-box-shadow: 0 0 5px #aaf;
+    box-shadow: 0 0 5px #aaf;
+    float:right;
+    font-size:12px;
+        line-height:1;
+    margin-top:5px;
+    width:47%;
+}
+
+.pollLabels li {
+    padding:3px 3px 3px 13px;
+    position:relative;
+}
+
+.pollLabels .label {
+    position:absolute;
+        top:5px;
+        left:3px;
+    width:7px;
+        height:7px
+}
+
+.pollLabels .f-small {
+    font-size:8px;
+}

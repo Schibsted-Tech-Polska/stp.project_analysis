@@ -1,0 +1,32 @@
+.expandMenuContainer{
+    background-color: #ccc;
+}
+
+.expandMenu h3{
+    border-bottom:3px solid #005395;
+    margin-bottom: 10px;
+}
+
+.expandMenuToggleButton{
+    height:20px;
+
+}
+.expandMenuToggleButton span{
+    cursor:pointer;
+    display:block;
+    float:right;
+}
+
+.expandMenuToggleButton .arrowRight{
+    background-color:red;
+}
+.expandMenuToggleButton .arrowDown{
+    background-color:green; 
+}
+
+.expandMenuToggleButton .arrow{
+    margin-right: 5px;
+        margin-top: 6px;
+    width:10px;
+        height:10px;
+}

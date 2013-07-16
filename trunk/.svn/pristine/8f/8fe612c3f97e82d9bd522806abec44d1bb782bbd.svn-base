@@ -1,0 +1,35 @@
+<ul>
+    {{each(i, value) topItems}}
+        <li class="gridUnit ${split} {{if (i%splitNum === 0)}} firstChild{{/if}}">
+            <label>
+                <input name="categoryId" type="checkbox" value="${value.categoryId}" {{html value.checked}}/>
+                <a href="{{html jobbUrl}}?freetextsearch=&submit=S\u00F8k&categoryId=${value.categoryId}" title="Se alle stillinger i kategorien {{html value.categoryName}}">
+                    {{html value.categoryName}} <span class="f-small">(${value.countedAds})</span>
+                </a>
+            </label>
+        </li>
+    {{/each}}
+</ul>
+
+{{if (topItems.length !== 0)}}
+    <div class="showCategories catButton"><a href="#">(+) Se alle kategorier</a></div>
+    <div class="hideCategories catButton"><a href="#">(-) Skjul liste</a></div>
+
+    <ul class="other">
+{{else}}
+    <ul>
+{{/if}}
+
+    {{each(i, value) otherItems}}
+        <li class="gridUnit ${split} {{if (i%splitNum === 0)}} firstChild{{/if}}">
+            <label>
+                <input name="categoryId" type="checkbox" value="${value.categoryId}" {{html value.checked}}/>
+                <a href="{{html jobbUrl}}?freetextsearch=&categoryId=${value.categoryId}" title="Se alle stillinger i kategorien {{html value.categoryName}}">
+                    {{html value.categoryName}} <span class="f-small">(${value.countedAds})</span>
+                </a>
+            </label>
+        </li>
+    {{/each}}
+</ul>
+
+<div class="seAllAds"><a href="{{html jobbUrl}}?freetextsearch=&showAll=true">Se alle stillinger</a></div>

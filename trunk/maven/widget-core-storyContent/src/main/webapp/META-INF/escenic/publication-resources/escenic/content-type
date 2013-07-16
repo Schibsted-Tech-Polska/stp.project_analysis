@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!-- field groups for story content widget-->
+  <field-group name="storyContent-widget-basic-fields">
+    <field name="view" type="enumeration">
+      <ui:label>View</ui:label>
+      <ui:description>The view chosen for the story content widget</ui:description>
+      <enumeration value="article">
+        <ui:label>Article</ui:label>
+      </enumeration>
+      <enumeration value="section">
+        <ui:label>Section</ui:label>
+      </enumeration>
+      <ui:value-if-unset>article</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="storyContent-widget-article-fields">
+    <field name="storyFields" type="enumeration" multiple="true">
+      <ui:label>Story Fields</ui:label>
+      <ui:description>The fields of the story (news) content type</ui:description>
+      <enumeration value="title">
+        <ui:label>Title</ui:label>
+      </enumeration>
+      <enumeration value="subtitle">
+        <ui:label>Subtitle</ui:label>
+      </enumeration>
+      <enumeration value="byline">
+        <ui:label>Byline</ui:label>
+      </enumeration>
+      <enumeration value="dateline">
+        <ui:label>Date line</ui:label>
+      </enumeration>
+      <enumeration value="leadtext">
+        <ui:label>Lead Text</ui:label>
+      </enumeration>
+      <enumeration value="quote">
+        <ui:label>Quote text</ui:label>
+      </enumeration>
+      <enumeration value="body">
+        <ui:label>Body</ui:label>
+      </enumeration>
+      <enumeration value="tags">
+        <ui:label>Tags</ui:label>
+      </enumeration>
+    </field>
+  </field-group>
+
+  <field-group name="storyContent-widget-section-fields">
+    <field name="source" type="enumeration">
+      <ui:label>Source</ui:label>
+      <ui:description>This option is used to select the source for the story content widget in a section context.
+      </ui:description>
+      <enumeration value="desked">
+        <ui:label>Desked content</ui:label>
+      </enumeration>
+      <enumeration value="automatic">
+        <ui:label>Automatic</ui:label>
+      </enumeration>
+      <enumeration value="articleId">
+        <ui:label>Article Id</ui:label>
+      </enumeration>
+      <ui:value-if-unset>desked</ui:value-if-unset>
+    </field>
+
+    <field name="groupName" type="basic" mime-type="text/plain">
+      <ui:label>Group name</ui:label>
+      <ui:description>The name of the group from where the widget will fetch content</ui:description>
+      <constraints>
+        <required>false</required>
+      </constraints>
+    </field>
+
+    <field name="listSort" type="enumeration">
+      <ui:label>Automatic List sorting</ui:label>
+      <ui:description>If the source for the story content widget is automatic, this will decide if we sort by publish
+        date or last modified date.
+      </ui:description>
+      <enumeration value="publishDate">
+        <ui:label>Publish Date (newest first)</ui:label>
+      </enumeration>
+      <enumeration value="lastModifiedDate">
+        <ui:label>Last Modified Date (newest first)</ui:label>
+      </enumeration>
+      <enumeration value="+publishDate">
+        <ui:label>Publish Date (oldest first)</ui:label>
+      </enumeration>
+      <enumeration value="+lastModifiedDate">
+        <ui:label>Last Modified Date (oldest first)</ui:label>
+      </enumeration>
+      <ui:value-if-unset>publishDate</ui:value-if-unset>
+    </field>
+
+    <field name="contentType" type="basic" mime-type="text/plain">
+      <ui:label>Content type</ui:label>
+      <ui:description>Specify the name of the content type that the widget will use.
+        Can be multiple content types, comma separated. Other content types will be ignored by the widget.
+      </ui:description>
+      <ui:value-if-unset>news</ui:value-if-unset>
+    </field>
+
+    <field name="sectionUniqueName" type="basic" mime-type="text/plain">
+      <ui:label>Section Unique Name</ui:label>
+      <ui:description>Section uniquename of the section the widget will look into for a group with content to be
+        displayed in the widget.
+        Setting this parameter will override the default current section.
+      </ui:description>
+    </field>
+
+    <field name="articleId" type="basic" mime-type="text/plain">
+      <ui:label>Article Id</ui:label>
+      <ui:description>The id of the article that the widget will use to display content</ui:description>
+      <constraints>
+        <required>false</required>
+      </constraints>
+    </field>
+
+    <field name="storyFieldsSection" type="enumeration" multiple="true">
+      <ui:label>Story Fields</ui:label>
+      <ui:description>The fields of the story (news) content type</ui:description>
+      <enumeration value="title">
+        <ui:label>Title</ui:label>
+      </enumeration>
+      <enumeration value="byline">
+        <ui:label>Byline</ui:label>
+      </enumeration>
+      <enumeration value="dateline">
+        <ui:label>Date line</ui:label>
+      </enumeration>
+      <enumeration value="leadtext">
+        <ui:label>Lead Text</ui:label>
+      </enumeration>
+      <enumeration value="quote">
+        <ui:label>Quote text</ui:label>
+      </enumeration>
+      <enumeration value="body">
+        <ui:label>Body</ui:label>
+      </enumeration>
+    </field>
+  </field-group>
+
+  <field-group name="storyContent-widget-advanced-fields">
+    <field type="basic" mime-type="text/plain" name="dateFormat">
+      <ui:label>Date format</ui:label>
+      <ui:description>The simple date format, that will be used for the date</ui:description>
+      <ui:value-if-unset>dd MMMM yyyy hh:mm a</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="storyContent-widget-advanced-pageTools-fields">
+    <field name="useFontSelector" type="boolean">
+      <ui:label>Allow different fonts</ui:label>
+      <ui:description>Check this field if you want font selection option in pageTools Widget</ui:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+
+  <!-- content type definition for storyContent widget  -->
+  <content-type name="widget_storyContent">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Story Content Widget</ui:label>
+    <ui:description>This widget will display a set of selected fields from a story</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The basic configuration fields for story content widget</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="storyContent-widget-basic-fields"/>
+    </panel>
+
+    <panel name="article">
+      <ui:label>Article</ui:label>
+      <ui:description>The article configuration fields</ui:description>
+      <ref-field-group name="storyContent-widget-article-fields"/>
+    </panel>
+
+    <panel name="section">
+      <ui:label>Section</ui:label>
+      <ui:description>The section configuration fields</ui:description>
+      <ref-field-group name="storyContent-widget-section-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="storyContent-widget-advanced-fields"/>
+      <ref-field-group name="storyContent-widget-advanced-pageTools-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-public-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Content Summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

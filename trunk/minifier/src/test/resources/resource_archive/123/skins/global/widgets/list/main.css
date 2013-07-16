@@ -1,0 +1,23 @@
+.list a {
+    text-decoration: none;
+}
+
+.list a:hover {
+    text-decoration: underline;
+}
+
+.list .withDate li {
+    padding-left:40px;
+}
+
+.list .withDate time {
+    color:#666;
+    font-size:10px;
+    line-height:16px;
+    float:left;
+    margin-left: -37px;
+}
+
+.hoverFix {
+    padding-right: 40px;
+}

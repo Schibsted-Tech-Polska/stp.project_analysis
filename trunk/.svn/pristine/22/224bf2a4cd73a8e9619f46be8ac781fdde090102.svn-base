@@ -1,0 +1,75 @@
+.surround {
+    background-color: #333;
+    overflow:hidden;
+    position:absolute;
+        top:0;
+        left:0;
+    width:100%;
+}
+
+.iemobile #page,
+.notiemobile #page {
+    position: relative;
+    overflow: hidden;
+}
+
+.ios50 #page,
+.ios4 #page {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+#sideMenu{
+    position:absolute;
+}
+
+#sideMenu nav {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+}
+
+#sideMenu nav .menuHeader {
+    background-color: #333;
+    width:100%;
+    text-align: center;
+    padding: 10px;
+}
+
+#sideMenu nav li {
+    background-color: #000;
+    border-bottom: 1px solid #000;
+        border-top: 1px solid #333;
+    display: block;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+#sideMenu nav li .link {
+    display: inline-block;
+    padding: 10px 0 10px 10px;
+}
+
+#sideMenu nav li li .link {
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+#sideMenu nav .closed {
+    display: none;
+}
+
+#sideMenu nav li .openclose {
+    display: inline;
+    float: right;
+    padding: 0;
+    margin-right: 20px;
+}
+
+#sideMenu nav .openclose:before {
+    content: "+";
+}
+
+#sideMenu nav li.activeSection {
+    background: #555;
+}

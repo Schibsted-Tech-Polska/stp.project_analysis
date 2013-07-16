@@ -1,0 +1,10 @@
+.jobAdListings.latest li a {
+    display:block;
+    font-weight:bold;
+}
+
+.jobAdListings.latest li span {
+    display:block;
+    font-size:12px;
+        color:#666;
+}

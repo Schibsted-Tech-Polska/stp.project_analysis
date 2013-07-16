@@ -1,0 +1,14 @@
+<header>Prisdetalier</header>
+<ul class="features">
+    {{each costs}}
+    <li>
+        <span class="label">${label}</span>
+        <span class="value">${value}</span>
+    </li>
+    {{/each}}
+</ul>
+{{if obj.salesCosts}}
+<div class="salesCosts">
+    ${obj.salesCosts}
+</div>
+{{/if}}

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!-- field groups for related contents widget  -->
+  <!-- general fields -->
+  <field-group name="relatedContents-widget-general-fields">
+    <field name="view" type="enumeration">
+      <ui:label>View</ui:label>
+      <ui:description>The view to be used to render the widget</ui:description>
+      <enumeration value="stories">
+        <ui:label>Stories</ui:label>
+      </enumeration>
+      <enumeration value="pictures">
+        <ui:label>Pictures</ui:label>
+      </enumeration>
+      <enumeration value="videos">
+        <ui:label>Videos</ui:label>
+      </enumeration>
+      <enumeration value="media">
+        <ui:label>Media</ui:label>
+      </enumeration>
+      <enumeration value="links">
+        <ui:label>Links</ui:label>
+      </enumeration>
+      <enumeration value="factboxes">
+        <ui:label>Fact Boxes</ui:label>
+      </enumeration>
+      <ui:value-if-unset>stories</ui:value-if-unset>
+    </field>
+  </field-group>
+  <!-- related stories fields -->
+  <field-group name="relatedContents-widget-stories-fields">
+    <field name="showIntroStories" type="boolean">
+      <ui:label>Show lead text</ui:label>
+      <ui:boolean-label value="true">Show lead text of the content item</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show lead text of the content item</ui:boolean-label>
+      <ui:description>Showing the lead text will show a few lines of lead text from the related item</ui:description>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="maxCharactersStories" type="number">
+      <ui:label>Max Characters</ui:label>
+      <ui:description>Maximum number of characters of the lead text that will be displayed</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>###</format>
+    </field>
+    <field name="dateline" type="enumeration">
+      <ui:label>Dateline</ui:label>
+      <ui:description>
+        Option to configure the display of dateline. Three valid values:
+        'hide' option will not display the dateline at all.
+        'published' option will display the published date.
+        'lastModified' option will display the last modified date.
+      </ui:description>
+      <enumeration value="hide">
+        <ui:label>Hide</ui:label>
+      </enumeration>
+      <enumeration value="published">
+        <ui:label>Published date</ui:label>
+      </enumeration>
+      <enumeration value="lastModified">
+        <ui:label>Last modified date</ui:label>
+      </enumeration>
+      <ui:value-if-unset>hide</ui:value-if-unset>
+    </field>
+    <field type="basic" mime-type="text/plain" name="dateFormat">
+      <ui:label>Date format</ui:label>
+      <ui:description>The simple date format, that will be used for the date</ui:description>
+      <ui:value-if-unset>dd MMMM yyyy</ui:value-if-unset>
+    </field>
+  </field-group>
+  <!-- related pictures fields -->
+  <field-group name="relatedContents-widget-pictures-fields">
+    <field name="showCaption" type="boolean">
+      <ui:label>Show caption</ui:label>
+      <ui:description>Defines if the widget will display the caption of the picture</ui:description>
+      <ui:boolean-label value="true">Yes</ui:boolean-label>
+      <ui:boolean-label value="false">No</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="captionStyle" type="enumeration">
+      <ui:label>Caption style</ui:label>
+      <ui:description>
+        Option to configure the style of displaying picture caption. Two valid options:
+        'default' option will display the caption just bottom of the picture,
+        'overlay' option will display the caption in a semi-transparent overlay at the bottom of the picture.
+      </ui:description>
+      <enumeration value="overlay">
+        <ui:label>Semi-transparent overlay</ui:label>
+      </enumeration>
+      <enumeration value="default">
+        <ui:label>Default</ui:label>
+      </enumeration>
+      <ui:value-if-unset>overlay</ui:value-if-unset>
+    </field>
+    <field name="softCrop" type="boolean">
+      <ui:label>Soft cropping</ui:label>
+      <ui:description>Defines if the widget should use the the original uncropped image or
+        if the widget should ise a cropped image.
+        Cropped images are recommended for full width images.
+        Original image is recommended for portrait image
+      </ui:description>
+      <ui:boolean-label value="true">Use cropped image</ui:boolean-label>
+      <ui:boolean-label value="false">Use original image</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+  <!-- related videos fields -->
+  <field-group name="relatedContents-widget-videos-fields">
+    <field name="video" type="enumeration">
+      <ui:label>Video display style</ui:label>
+      <enumeration value="player">
+        <ui:label>Video player</ui:label>
+      </enumeration>
+      <enumeration value="link">
+        <ui:label>Video link</ui:label>
+      </enumeration>
+      <ui:value-if-unset>player</ui:value-if-unset>
+    </field>
+  </field-group>
+  <!-- related media fields -->
+  <field-group name="relatedContents-widget-media-fields">
+    <field name="showMimetype" type="boolean">
+      <ui:label>Show mime-type</ui:label>
+      <ui:description>Defines if the widget will display the mime-type of the media</ui:description>
+      <ui:boolean-label value="true">Yes</ui:boolean-label>
+      <ui:boolean-label value="false">No</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="showIntroMedia" type="boolean">
+      <ui:label>Show lead text</ui:label>
+      <ui:boolean-label value="true">Show lead text of the content item</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show lead text of the content item</ui:boolean-label>
+      <ui:description>Showing the lead text will show a few lines of lead text from the related item</ui:description>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="maxCharactersMedia" type="number">
+      <ui:label>Max Characters</ui:label>
+      <ui:description>Maximum number of characters of the lead text that will be displayed</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>###</format>
+    </field>
+  </field-group>
+  <!-- related links fields -->
+  <field-group name="relatedContents-widget-links-fields">
+    <field name="target" type="enumeration">
+      <ui:label>Target of the link</ui:label>
+      <ui:description>Target of the link. Link can open in same window or in a different window</ui:description>
+      <enumeration value="blank"/>
+      <enumeration value="self"/>
+      <ui:value-if-unset>blank</ui:value-if-unset>
+    </field>
+    <field name="linkType" type="enumeration">
+      <ui:label>Link Type</ui:label>
+      <ui:description>Choose if you want to show related links or pingbacks to this article</ui:description>
+      <enumeration value="linkRel">
+        <ui:label>Related Links</ui:label>
+      </enumeration>
+      <enumeration value="pingbackRel">
+        <ui:label>Bloglinks to this article(pingbacks)</ui:label>
+      </enumeration>
+      <ui:value-if-unset>linkRel</ui:value-if-unset>
+    </field>
+  </field-group>
+  <!-- related factbox fields -->
+  <field-group name="relatedContents-widget-factboxes-fields">
+    <field name="showTitleFactBox" type="boolean">
+      <ui:label>Show title</ui:label>
+      <ui:description>Defines if the widget will display the title of the factbox</ui:description>
+      <ui:boolean-label value="true">Yes</ui:boolean-label>
+      <ui:boolean-label value="false">No</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="showBodyFactBox" type="boolean">
+      <ui:label>Show body</ui:label>
+      <ui:description>Defines if the widget will display the body of the factbox</ui:description>
+      <ui:boolean-label value="true">Yes</ui:boolean-label>
+      <ui:boolean-label value="false">No</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="showImageFactBox" type="boolean">
+      <ui:label>Show image</ui:label>
+      <ui:description>Defines if the widget will display the image of the factbox</ui:description>
+      <ui:boolean-label value="true">Yes</ui:boolean-label>
+      <ui:boolean-label value="false">No</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="softCropFactBox" type="boolean">
+      <ui:label>Soft crop</ui:label>
+      <ui:description>Defines if the widget should use the the original uncropped image or
+        if the widget should ise a cropped image.
+        Cropped images are recommended for full width images.
+        Original image is recommended for portrait image
+      </ui:description>
+      <ui:boolean-label value="true">Use cropped image</ui:boolean-label>
+      <ui:boolean-label value="false">Use original image</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+  <!-- advanced fields -->
+  <field-group name="relatedContents-widget-advanced-fields">
+    <field name="showHeadline" type="boolean">
+      <ui:label>Show widget title</ui:label>
+      <ui:description>Defines if the widget will display the widget title at the top</ui:description>
+      <ui:boolean-label value="true">Show the title of the widget at the top</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the title of the widget</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="begin" type="number">
+      <ui:label>Begin</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+      <ui:value-if-unset>1</ui:value-if-unset>
+    </field>
+    <field name="end" type="number">
+      <ui:label>End</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+    </field>
+  </field-group>
+
+  <!-- content type definition for relatedContents widget  -->
+  <content-type name="widget_relatedContents">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Related Contents Widget</ui:label>
+    <ui:description>This widget will display the related contents of a story</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The basic configuration fields for related contents widget</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="relatedContents-widget-general-fields"/>
+    </panel>
+
+    <panel name="stories">
+      <ui:label>Stories</ui:label>
+      <ui:description>The configuration fields for related stories view</ui:description>
+      <ref-field-group name="relatedContents-widget-stories-fields"/>
+    </panel>
+
+    <panel name="pictures">
+      <ui:label>Pictures</ui:label>
+      <ui:description>The configuration fields for related pictures view</ui:description>
+      <ref-field-group name="relatedContents-widget-pictures-fields"/>
+    </panel>
+
+    <panel name="videos">
+      <ui:label>Videos</ui:label>
+      <ui:description>The configuration fields for related video view</ui:description>
+      <ref-field-group name="relatedContents-widget-videos-fields"/>
+    </panel>
+
+    <panel name="media">
+      <ui:label>Media</ui:label>
+      <ui:description>The configuration fields for related media view</ui:description>
+      <ref-field-group name="relatedContents-widget-media-fields"/>
+    </panel>
+
+    <panel name="links">
+      <ui:label>Links</ui:label>
+      <ui:description>The configuration fields for related links view</ui:description>
+      <ref-field-group name="relatedContents-widget-links-fields"/>
+    </panel>
+
+    <panel name="factboxes">
+      <ui:label>Fact Boxes</ui:label>
+      <ui:description>The configuration fields for related fact boxes view</ui:description>
+      <ref-field-group name="relatedContents-widget-factboxes-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="relatedContents-widget-advanced-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-public-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Content Summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

@@ -1,0 +1,72 @@
+#jobAdSearch-categoryList {
+    margin-top:10px;
+}
+
+#jobAdSearch-categoryList li {
+    margin-bottom: 2px;
+    font-size: 11.7px;
+}
+
+#jobAdSearch-categoryList.padded10 .span1,
+#jobAdSearch-categoryList.padded10 .span1:first-child {
+    margin-left:0;
+    width:100%;
+}
+
+#jobAdSearch-categoryList.padded10 .span2 {
+    width:178px;
+    margin:0;
+}
+
+#jobAdSearch-categoryList.padded10 .split3 {
+    width:185px;
+    margin:0;
+}
+
+#jobAdSearch-categoryList li a,
+#jobAdSearch-categoryList li a:visited {
+    color: #000;
+}
+
+#jobAdSearch-categoryList label {
+    display:block;
+    margin-right:5px;
+    padding-left:20px;
+    font-size: 90%;
+}
+#jobAdSearch-categoryList input {
+    float:left;
+    margin-left:-20px;
+}
+
+#jobAdSearch-categoryList .other{
+    display:none;
+}
+
+.catButton{
+    float:left;
+    width:100%;
+    font-size: 12px;
+}
+
+.showCategories{
+    display:block;
+    margin: 5px 0;
+}
+.hideCategories{
+    display:none;
+    margin: 5px 0;
+}
+
+.seAllAds{
+    width:100%;
+    float:left;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* IE 7 BUG */
+.ie7 #jobAdSearch-categoryList li a {
+    float: left;
+    margin-top: 5px;
+}

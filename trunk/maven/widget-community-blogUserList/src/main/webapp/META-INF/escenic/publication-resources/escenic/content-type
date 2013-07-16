@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+
+  <!-- field group definitions for blogUserList widget -->
+
+  <field-group name="blogUserList-widget-blogs-fields">
+    <field name="maxBlogs" type="number">
+      <ui:label>Maximum number of blogs</ui:label>
+      <ui:description>Maximum number of blogs to be displayed by the widget</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>3</ui:value-if-unset>
+      <format>###</format>
+    </field>
+
+    <field name="maxBlogPostsBlogs" type="number">
+      <ui:label>Maximum number of blog posts per blog</ui:label>
+      <ui:description>Maximum number of blog posts to be displayed per blog</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>3</ui:value-if-unset>
+      <format>###</format>
+    </field>
+
+    <field name="showBodyBlogs" type="boolean">
+      <ui:label>Show blog-post body for the first item</ui:label>
+      <ui:description>Configures if body will be shown or not</ui:description>
+      <ui:boolean-label value="true">Show blog-post body</ui:boolean-label>
+      <ui:boolean-label value="false">Do not show blog-post body</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+    </field>
+
+    <field name="maxBodyCharBlogs" type="number">
+      <ui:label>Maximum number of characters in first blog-post body</ui:label>
+      <ui:description>Maximum number of characters to be displayed in body</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>140</ui:value-if-unset>
+      <format>###</format>
+    </field>
+
+    <field name="showAvatarBlogs" type="boolean">
+      <ui:label>Show blogger avatar</ui:label>
+      <ui:description>Configures if avatar will be shown or not</ui:description>
+      <ui:boolean-label value="true">Show blogger avatar</ui:boolean-label>
+      <ui:boolean-label value="false">Do not show blogger avatar</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+    </field>
+
+    <field name="avatarImageVersionBlogs" type="enumeration">
+      <ui:label>Avatar size</ui:label>
+      <ui:description>The size of the avatar picture of the blogger</ui:description>
+      <enumeration value="w24">
+        <ui:label>24 x 24</ui:label>
+      </enumeration>
+      <enumeration value="w48">
+        <ui:label>48 x 48</ui:label>
+      </enumeration>
+      <enumeration value="w64">
+        <ui:label>64 x 64</ui:label>
+      </enumeration>
+      <enumeration value="w96">
+        <ui:label>96 x 96</ui:label>
+      </enumeration>
+      <ui:value-if-unset>w48</ui:value-if-unset>
+    </field>
+
+    <field name="showSeeMoreLinkBlogs" type="boolean">
+      <ui:label>Show link to Blogs section</ui:label>
+      <ui:description>Configures if see more link will be shown or not</ui:description>
+      <ui:boolean-label value="true">Show Blogs section link</ui:boolean-label>
+      <ui:boolean-label value="false">Do not show Blogs section link</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+    </field>
+
+    <field name="seeMoreSectionBlogs" type="basic" mime-type="text/plain">
+      <ui:label>Blogs section unique name</ui:label>
+      <ui:description>The section unique name of the linked section.</ui:description>
+      <ui:value-if-unset>blogs</ui:value-if-unset>
+    </field>
+
+    <field name="seeMoreLabelBlogs" type="basic" mime-type="text/plain">
+      <ui:label>Blogs section link-text</ui:label>
+      <ui:description>The label of the see more link to be displayed</ui:description>
+      <ui:value-if-unset>See more</ui:value-if-unset>
+    </field>
+
+    <field name="contentTypeBlogs" type="basic" mime-type="text/plain">
+      <ui:label>Blog-posts content type</ui:label>
+      <ui:description>The name of content types to be displayed by the widget</ui:description>
+      <ui:value-if-unset>blogPost</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="blogUserList-widget-advanced-fields">
+    <field name="styleId" type="basic" mime-type="text/plain">
+      <ui:label>Style Id</ui:label>
+      <ui:description>The styleId of the div that will wrap the output of the widget</ui:description>
+    </field>
+    <field name="customStyleClass" type="basic" mime-type="text/plain">
+      <ui:label>Style Class</ui:label>
+      <ui:description>Class for CSS declarations</ui:description>
+    </field>
+  </field-group>
+  <!--content type definition for blogUserList widget -->
+  <content-type name="widget_blogUserList">
+    <ui:label>Blog List Widget</ui:label>
+    <ui:description>Generates lists with various items from a blog</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The general configuration fields</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="blogUserList-widget-blogs-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>Advanced configuration fields</ui:description>
+      <ref-field-group name="blogUserList-widget-advanced-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Content summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+        <ui:description>The name of the widget</ui:description>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

@@ -1,0 +1,42 @@
+.popularList.mostSharedFromAddThis.horizontal {
+    border-top: 2px solid #ccc;
+        border-bottom: 2px solid #ccc;
+    color:#000;
+    overflow: hidden;
+    margin-bottom:10px;
+    padding: 5px;
+    position:relative;
+}
+
+.popularList.mostSharedFromAddThis.horizontal h2 {
+    font-size:16px;
+    margin-bottom:0;
+}
+
+.popularList.mostSharedFromAddThis.horizontal article {
+    border-left: 1px solid #ccc;
+    float:left;
+    margin-bottom:0;
+    padding: 0 4px;
+    width:213px;
+}
+
+.popularList.mostSharedFromAddThis.horizontal a {
+    color:#000;
+}
+
+.popularList.mostSharedFromAddThis.horizontal img {
+    float:left;
+    margin-right:5px;
+}
+
+.popularList.mostSharedFromAddThis.horizontal header {
+    float:left;
+    margin-bottom:0;
+    width:80px;
+}
+
+.popularList.mostSharedFromAddThis.horizontal header h2 {
+    color:#000;
+    font-size:30px;
+}

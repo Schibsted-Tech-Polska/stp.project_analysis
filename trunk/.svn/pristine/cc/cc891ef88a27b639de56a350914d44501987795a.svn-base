@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <mProperties>
+        <entry>
+            <string>BODYTEXT</string>
+            <string>&lt;p&gt;Den 64 år gamle tidligere Høyre-representanten Anders Talleraas bekreftet mandag overfor NTB at han anker dommen på seks måneders fengsel for grovt uaktsomt bedrageri for urettmessig å ha tatt imot full stortingspensjon.&lt;img alt=&quot;&quot; height=&quot;&quot; id=&quot;_e732d185-0d6e-4055-b4ef-9f43c54df629&quot; src=&quot;http://bttest2.medianorge.no/webservice/binary/picture/984&quot; title=&quot;&quot; width=&quot;120&quot; /&gt;&lt;/p&gt;&lt;p&gt;Magnus Stangeland besluttet allerede i helgen å anke fredagens dom fra Oslo tingrett. Den tidligere Sp-representanten ble dømt til 60 dagers fengsel i samme sak.&lt;/p&gt;&lt;p&gt;Både Talleraas og Stangeland ble dømt til å dekke sakskostnader med 100.000 kroner hver.&lt;/p&gt;</string>
+        </entry>
+    </mProperties>
+    <mContentDescriptor>http://bttest2.medianorge.no/webservice/publication/bt/content-descriptions/news
+        <use-summary>false</use-summary>
+    </mContentDescriptor>
+</content>

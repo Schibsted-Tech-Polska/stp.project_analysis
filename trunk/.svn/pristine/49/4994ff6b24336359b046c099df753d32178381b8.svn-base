@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <mProperties>
+        <entry>
+            <string>FRONTPAGETITLE</string>
+            <string>Talleraas anker pensjonsdommen</string>
+        </entry>
+        <entry>
+            <string>com.escenic.createDate</string>
+            <date>2011-01-10 15:13:46 +0100</date>
+        </entry>
+    </mProperties>
+    <mContentDescriptor>http://bttest2.medianorge.no/webservice/publication/bt/content-descriptions/news
+        <use-summary>false</use-summary>
+    </mContentDescriptor>
+</content>

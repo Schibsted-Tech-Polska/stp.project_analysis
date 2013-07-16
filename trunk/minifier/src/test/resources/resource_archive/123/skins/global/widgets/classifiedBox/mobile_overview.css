@@ -1,0 +1,167 @@
+/* line 5, mobile_overview.scss */
+.widget.classifiedBox.overview {
+  float: left;
+  width: 100%;
+  padding: 0!important;
+}
+/* line 8, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList {
+  float: left;
+  width: 100%;
+}
+/* line 10, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList li {
+  float: left;
+  width: 100%;
+  background-color: #f2f2f2;
+  border-bottom: 1.5px solid #142f5b;
+  height: 105px;
+  margin-bottom: 10px;
+  position: relative;
+}
+/* line 17, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList li:before {
+  background: rgba(0, 0, 0, 0.1);
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  height: 7.5px;
+  content: '';
+  position: absolute;
+  top: 0;
+}
+/* line 25, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList li .left, .widget.classifiedBox.overview .resultItemResultList li .right {
+  float: left;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+@media (orientation: landscape) {
+  /* line 31, mobile_overview.scss */
+  .widget.classifiedBox.overview .resultItemResultList li .left {
+    width: 30%;
+  }
+}
+/* line 36, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList li .right {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 12px;
+}
+@media (orientation: landscape) {
+  /* line 36, mobile_overview.scss */
+  .widget.classifiedBox.overview .resultItemResultList li .right {
+    float: right;
+    width: 65%;
+  }
+}
+/* line 44, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList li img {
+  margin: 0;
+}
+/* line 47, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList li .resultItemThumb {
+  height: 100%;
+  margin: 0 auto;
+  width: auto;
+  border-right: 1px solid gray;
+}
+/* line 53, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList li .resultItemLogo {
+  border: 1px solid white;
+  height: 14px;
+  margin: -7.5px auto 0 auto;
+  width: auto;
+}
+/* line 59, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList li span {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+}
+/* line 63, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList li .resultItemText {
+  color: #595959;
+  font-size: 9px;
+  line-height: 10px;
+  max-height: 30px;
+}
+/* line 69, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList li .resultItemAddress {
+  color: #999999;
+  font-size: 9px;
+  line-height: 12.5px;
+  margin: 10px 0;
+  max-height: 12.5px;
+}
+/* line 76, mobile_overview.scss */
+.widget.classifiedBox.overview .resultItemResultList li .resultItemPrice {
+  color: #142f5b;
+  font-size: 17.5px;
+  line-height: 17.5px;
+  max-height: 17.5px;
+}
+/* line 84, mobile_overview.scss */
+.widget.classifiedBox.overview .pagelinks {
+  float: left;
+  width: 100%;
+  background: #2771aa;
+  background: -moz-linear-gradient(top, #2771aa 0%, #122358 100%);
+  background: -webkit-linear-gradient(top, #2771aa 0%, #122358 100%);
+  background: -o-linear-gradient(top, #2771aa 0%, #122358 100%);
+  background: -ms-linear-gradient(top, #2771aa 0%, #122358 100%);
+  background: linear-gradient(top, #2771aa 0%, #122358 100%);
+  font-family: 'ClanWeb',Arial,sans-serif;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+/* line 91, mobile_overview.scss */
+.widget.classifiedBox.overview .pagelinks li {
+  display: inline-block;
+}
+/* line 94, mobile_overview.scss */
+.widget.classifiedBox.overview .pagelinks li.current a {
+  background: #408bc4;
+  background: -moz-linear-gradient(top, #408bc4 0%, #23387a 100%);
+  background: -webkit-linear-gradient(top, #408bc4 0%, #23387a 100%);
+  background: -o-linear-gradient(top, #408bc4 0%, #23387a 100%);
+  background: -ms-linear-gradient(top, #408bc4 0%, #23387a 100%);
+  background: linear-gradient(top, #408bc4 0%, #23387a 100%);
+}
+/* line 98, mobile_overview.scss */
+.widget.classifiedBox.overview .pagelinks li a, .widget.classifiedBox.overview .pagelinks li.skip {
+  border-right: 1px solid rgba(64, 139, 196, 0.4);
+  border-left: 1px solid rgba(35, 56, 122, 0.4);
+  color: white;
+  display: block;
+  font-size: 12px;
+  line-height: 35px;
+  padding: 0 5px;
+  width: 14px;
+}
+/* line 108, mobile_overview.scss */
+.widget.classifiedBox.overview .pagelinks li.skip {
+  display: inline-block;
+}
+/* line 113, mobile_overview.scss */
+.widget.classifiedBox.overview .categories select {
+  float: right;
+}
+
+/* line 118, mobile_overview.scss */
+body > section:last-child {
+  display: none;
+}
+
+/* line 122, mobile_overview.scss */
+.gridUnit .widget.classifiedBox.overview .loader {
+  width: 16px;
+  height: 11px;
+}

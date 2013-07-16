@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+		"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- User-content plugin -->
+
+	<bean
+		id="userContentPlugin"
+		factory-bean="userContentPluginFactory"
+		factory-method="getInstance" />
+
+	<bean
+		id="userContentPluginFactory"
+		class="com.ndc.usercontent.plugin.UserContentPluginFactory" />
+
+	<bean
+		name="fieldValidator"
+		class="com.ndc.usercontent.plugin.util.FieldValidator">
+		<constructor-arg ref="userContentPlugin" />
+	</bean>
+
+	<bean
+		name="newFieldValidator"
+		class="com.ndc.usercontent.struts.validator.ArticleValidator" />
+
+	<bean
+		id="userContentAjaxAccess"
+		class="com.ndc.usercontent.ajax.UserContentAjax">
+		<property
+			name="userContentPlugin"
+			ref="userContentPlugin" />
+	</bean>
+
+	<!-- Qualication plugin -->
+
+	<bean
+		id="qualificationPluginFactory"
+		class="com.ndc.qualification.plugin.QualificationPluginFactory" />
+
+	<bean
+		id="qualificationPlugin"
+		factory-bean="qualificationPluginFactory"
+		factory-method="getInstance" />
+
+	<bean
+		id="qualificationPluginAjaxBean"
+		class="com.ndc.qualification.ajax.QualificationPluginAjax" />
+
+	<bean
+		id="qualificationPluginAjax"
+		class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property
+			name="target"
+			ref="qualificationPluginAjaxBean" />
+		<property name="interceptorNames">
+			<idref local="qualificationPluginAjaxInterceptor" />
+		</property>
+	</bean>
+
+	<bean
+		id="qualificationPluginAjaxInterceptor"
+		class="com.ndc.auth.filter.ajax.SecurityInterceptor" />
+
+	<!-- Community plugin -->
+
+	<bean
+		id="communityPlugin"
+		factory-bean="communityPluginFactory"
+		factory-method="getInstance" />
+
+	<bean
+		id="communityPluginFactory"
+		class="com.ndc.community.plugin.CommunityPluginFactory" />
+
+	<bean
+		id="communityPluginAjaxAccess"
+		class="com.ndc.community.ajax.CommunityPluginAjax">
+		<property
+			name="communityPlugin"
+			ref="communityPlugin" />
+	</bean>
+
+	<!-- Auth plugin -->
+
+	<bean
+		id="authPlugin"
+		factory-bean="authPluginFactory"
+		factory-method="getInstance" />
+
+	<bean
+		id="authPluginFactory"
+		class="com.ndc.auth.plugin.AuthPluginFactory" />
+
+	<!-- Tag plugin -->
+
+  <bean
+      id="tagPluginFactory"
+      class="com.ndc.tag.plugin.TagPluginFactory" />
+
+  <bean
+      id="tagPlugin"
+      factory-bean="tagPluginFactory"
+      factory-method="getInstance" />
+
+  <bean
+      id="tagPluginAjax"
+      class="com.ndc.tag.ajax.TagPluginAjax" />
+
+  <bean
+      id="tagAjaxAccess"
+      class="org.springframework.aop.framework.ProxyFactoryBean">
+      <property
+          name="target"
+          ref="tagPluginAjax" />
+      <property name="interceptorNames">
+          <idref local="securityAjaxInterceptor" />
+      </property>
+  </bean>
+
+  <bean
+      id="securityAjaxInterceptor"
+      class="com.ndc.auth.filter.ajax.SecurityInterceptor" />
+
+
+	<!-- MESSAGING plugin -->
+
+	<bean
+		id="messagingPluginAjax"
+		class="com.ndc.messaging.ajax.MessagingPluginAjax"/>
+
+	<!-- Stats plugin -->
+
+	<bean
+		id="statsPluginFactory"
+		class="com.ndc.statistics.plugin.StatisticsPluginFactory" />
+
+	<bean
+		id="statsPlugin"
+		factory-bean="statsPluginFactory"
+		factory-method="getInstance" />
+
+	<bean
+		id="statisticsPluginAjax"
+		class="com.ndc.statistics.ajax.StatisticsPluginAjax" />
+
+</beans>

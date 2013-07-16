@@ -1,0 +1,13 @@
+<ul>
+    {{each(i,category) items}}
+    <li>
+        <h3>{{html category.categoryName}}</h3>
+        <ul>
+        {{each(i,ad) category.notificationAds}}
+        <li><a href="${adUrl}?notificationAdId=${ad.notificationAdId}">{{html ad.adTitle}}</a></li>
+        {{/each}}
+        </ul>
+        <a href="${sokUrl}?categoryId=${category.categoryId}">Se flere</a>
+    </li>
+    {{/each}}
+</ul>

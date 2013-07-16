@@ -1,0 +1,26 @@
+.negativ .poll .header {
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 0 none;
+}
+.negativ .poll .header h3 {
+    background-color: transparent;
+    text-shadow: none;
+}
+.negativ .poll .pollLabels {
+    -moz-box-shadow: 0 0 5px #fff;
+    -webkit-box-shadow: 0 0 5px #fff;
+    box-shadow: 0 0 5px #fff;
+}
+.negativ .poll .f-small {
+    color: #aaa;
+}
+.negativ .poll .button {
+    background-color: #fff;
+}
+.negativ .poll a.button,
+.negativ .poll a.button:hover,
+.negativ .poll a.button:visited,
+.negativ .poll a.button:active {
+    color: #aaa;
+}

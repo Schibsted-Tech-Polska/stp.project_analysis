@@ -1,0 +1,19 @@
+.pagePreview img {
+    cursor:pointer;
+}
+.pagePreview .largeImg {
+    border:1px solid #666;
+    -moz-box-shadow:0 0 100px #000;
+        -webkit-box-shadow:0 0 100px #000;
+        box-shadow:0 0 100px #000;
+    position:relative;
+        z-index:100;
+}
+
+.pagePreview .previewLink {
+    clear:both;
+    display:block;
+    text-align:right;
+    position:relative;
+        z-index:101;
+}

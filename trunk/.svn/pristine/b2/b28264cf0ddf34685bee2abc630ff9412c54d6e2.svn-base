@@ -1,0 +1,84 @@
+<header class="section header">
+    <h2>Langtidsvarselet for {{html place}}</h2>
+</header>
+
+<div class="forecast">
+    <table class="horizontalData">
+        <thead>
+            <tr>
+                <th {{if expandable}}class="expandCollapse"{{/if}}>&nbsp;</th>
+                {{each(j, pts) periodsToShow}}
+                    <th scope="col" class="timeperiod">
+                        <div>
+                            <span>
+                                {{if pts==0}}
+                                    Natt
+                                {{else pts==1}}
+                                    Morgen
+                                {{else pts==2}}
+                                    Dag
+                                {{else}}
+                                    Kveld
+                                {{/if}}
+                            </span>
+                            <br/><span class="time">&nbsp;</span>
+                        </div>
+                    </th>
+                {{/each}}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {{each(i, per) periods}}
+                    {{if i==0 || per.period == 0}}
+                        <tr {{if i>12 && expandable}}class="collapsable"{{/if}}>
+                            <th class="row" scope="row">
+                                <div>
+                                    ${getDate(per.time_from_millis)}
+                                </div>
+                                <div>
+                                    {{if getDate(per.time_from_millis) == today}}
+                                        I dag
+                                    {{else}}
+                                        ${getDay(per.time_from_millis)}
+                                    {{/if}}
+                                </div>
+                            </th>
+                    {{/if}}
+
+                    {{if i==0}}
+                        {{if per.period==1}}
+                            <td>&nbsp;</td>
+                        {{else per.period==2}}
+                            <td>&nbsp;</td><td>&nbsp;</td>
+                        {{else per.period==3}}
+                            <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+                        {{/if}}
+                    {{/if}}
+
+                    <td>
+                        <div class="timeperiod_hours period${per.period} hidden">${getHours(per.time_from_millis)}-${getHours(per.time_to_millis)}</div>
+                        <div class="weather">
+                            <div class="weather-icon {{if per.symbol_var.indexOf('n')!=-1}}night{{/if}} icon${per.symbol_number}" title="${per.symbol_name}">
+                                &nbsp;
+                            </div>
+                            <div class="temp {{if per.temperature_value > 0}}warm{{else}}cold{{/if}}">
+                                ${per.temperature_value}&deg;C
+                            </div>
+                        </div>
+                        <div class="wind {{if hideWind}}hideWind{{/if}}">
+                            <div class="direction ${getWindSymbolClass(per.windSpeed_mps)} degree${per.windDirection_code}" title="${per.windDirection_name}">
+                            </div>
+                            <div class="speed" title="${per.windSpeed_name}">
+                               ${round(per.windSpeed_mps)}m/s
+                            </div>
+                        </div>
+                    </td>
+
+                    {{if per.period==3 || i==periods.length-1}}
+                        </tr>
+                    {{/if}}
+                {{/each}}
+        </tbody>
+    </table>
+</div>

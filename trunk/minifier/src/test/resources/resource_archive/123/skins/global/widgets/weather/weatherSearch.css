@@ -1,0 +1,104 @@
+.weather.weatherSearch input {
+    width:350px;
+}
+
+.span4 .weather.weatherSearch input {
+    width:215px;
+}
+
+.span10 .weather.weatherSearch.mobile input {
+    width:180px;
+}
+
+.weatherSearch form{
+    overflow: hidden;
+    width:100%;
+}
+
+.weather.weatherSearch.large input {
+    width:350px;
+}
+
+.ui-autocomplete .flag{
+    float:right;
+}
+
+.weather.weatherSearch.large form:after {
+    display:none;
+}
+
+.weather.weatherSearch.large input {
+    padding-top:7px;
+    padding-bottom:7px;
+}
+
+.weather.weatherSearch.large button,
+.weather.weatherSearch.large .button {
+    padding-top:4px;
+    padding-bottom:4px;
+}
+
+.weatherSearch.large .pillBox button:before {
+    height:24px;
+}
+
+.weatherSearch .pillBox {
+    margin-right:10px;
+}
+
+.ui-autocomplete{
+    width: 200px;
+    background-color: white;
+    margin-left: 10px;
+    border: solid 1px #333;
+    -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        border-radius:5px;
+}
+
+.ui-autocomplete a.ui-state-hover{
+    background-color:#ffffcc;
+}
+
+.ui-autocomplete a{
+    display: block;
+    width: 95%;
+    height: 95%;
+    padding: 5px;
+    margin: 2px;
+    -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        border-radius:5px;
+}
+
+
+.ui-autocomplete li.ui-menu-item a{
+    color: black;
+}
+
+#searchResultOptions{
+    display:none;
+    vertical-align:top;
+    margin-top: 5px;
+    margin-bottom:50px;
+}
+
+#searchResultOptions h3{
+    float:left;
+    margin-right: 20px;
+}
+
+#searchResultOptions ul{
+    float:left;
+    clear:both;
+}
+
+#searchResultOptions li{
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#currentPlace .name{
+    text-align: center;
+    font-weight:bold;
+}

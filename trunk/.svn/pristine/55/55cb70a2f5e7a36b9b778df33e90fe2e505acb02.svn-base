@@ -1,0 +1,3 @@
+.jobAdListings.frontpageCompanies li {
+    font-size:12px;
+}

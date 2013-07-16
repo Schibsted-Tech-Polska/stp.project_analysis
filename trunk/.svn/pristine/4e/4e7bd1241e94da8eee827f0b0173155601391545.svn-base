@@ -1,0 +1,37 @@
+<div class="content cells">
+<div class="gridRow">
+{{each(i,specialCategory) items}}
+    {{if i%2 == 0 && i != 0}}
+    </div><div class="gridRow">
+    {{/if}}
+    <div class="gridUnit span2">
+        {{if specialCategory.url}}
+            <a href="${rubrikkUrl}statistics/?companyId=${specialCategory.companies[0].companyId}&amp;objectType=COMPANY_LOGO_RECRUITING_COMPANIES&amp;redirect={{html Base64.encode(specialCategory.url)}}">
+                {{if specialCategory.specialCategoryLogos[0]}}
+                    <img alt="${specialCategory.name}" src="http://${lisaLevel}.aftenposten.no/utils/img.php?src=${specialCategory.specialCategoryLogos[0].specialCategoryLogoPath}&amp;maxWidth=140&amp;maxHeight=40"/>
+                {{else}}
+                    ${specialCategory.name}
+                {{/if}}
+            </a>
+        {{else}}
+            {{if specialCategory.specialCategoryLogos[0]}}
+                <img alt="${specialCategory.name}" src="http://${lisaLevel}.aftenposten.no/utils/img.php?src=${specialCategory.specialCategoryLogos[0].specialCategoryLogoPath}&amp;maxWidth=140&amp;maxHeight=40"/>
+            {{else}}
+                ${specialCategory.name}
+            {{/if}}
+        {{/if}}
+        {{if specialCategory.jobAds.length}}
+            <ul>
+                {{each(i,jobad) specialCategory.jobAds}}
+                <li>
+                    <a href="${rubrikkUrl}statistics/?jobAdId=${jobad.jobAdId}&amp;objectType=JOB_AD_LINK_RECRUITING_COMPANIES&amp;redirect={{html Base64.encode(jobSectionUrl + '?jobAdId='+jobad.jobAdId+'&adTitle='+jobad.adTitle+'&cName='+jobad.name+'&catText=&att='+jobad.adTeaserText.xmlCDataContent)}}">
+                        {{html jobad.adTitle}}
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    </div>
+{{/each}}
+</div>
+</div>

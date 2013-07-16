@@ -1,0 +1,26 @@
+.factboxes h3 {
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.factboxes .content {
+    background:#f9f9f9;
+    border:1px solid #ccc;
+    border-top:0 none;
+    font-size:12px;
+    padding:20px;
+    position:relative;
+    overflow: hidden;
+}
+
+.factboxes .header {
+    margin-bottom:0;
+}
+
+.factboxes img {
+    float: right;
+    max-width:50%;
+        height:auto;
+    margin-bottom: 0;
+    margin-left: 8px;
+}

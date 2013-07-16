@@ -1,0 +1,38 @@
+/**
+  Footer
+  Global footer styles
+  @fileinfo
+  */
+
+/**
+  Footer
+  @group structure
+  @style
+  #footer Parent of footer section
+  */
+
+#footer {
+    overflow: hidden;
+    width:100%;
+}
+
+#footer #mnodigital {
+    text-align:center;
+    filter:alpha(opacity=40);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+        -moz-opacity: 0.4;
+        opacity: 0.4;
+}
+#footer:hover #mnodigital {
+    filter:alpha(opacity=100);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        -moz-opacity: 1;
+        opacity: 1;
+}
+#footer #mnodigital:after {
+    color: #fff;
+        font-size: 10px;
+        text-align: center;
+    content: "\00A9 Schibsted Norge Digital";
+    display: block;
+}

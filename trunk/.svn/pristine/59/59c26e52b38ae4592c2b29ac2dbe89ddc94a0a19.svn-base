@@ -1,0 +1,53 @@
+#page .mobileStoryContent [role=tablist] {
+    padding-left:5px;
+    border-bottom:  1px solid #999;
+}
+
+.mobileStoryContent [role=tabpanel] {
+    border:  0 none;
+}
+
+.mobileStoryContent #disqus_thread {
+    margin-top:0;
+}
+
+div[role="tabpanel"], section[role="tabpanel"] {
+    -moz-box-shadow: 0 0 0 rgba(0, 0, 0, .3 );
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 0 0 rgba(0, 0, 0, .3);
+    top:2px;
+}
+
+li[role="tab"] {
+    background-color: #E0E0E0;
+    height: 25px;
+}
+
+/* reviewFields */
+.reviewFields {
+    border-bottom: 1px solid #f4f4f4;
+        border-top: 1px solid #f4f4f4;
+    padding: 10px 0;
+        margin: 10px 0;
+}
+
+.reviewFields dl {
+    display: inline-block;
+    width: 90%;
+}
+
+.reviewFields dt,
+.reviewFields dd {
+    display: inline-block;
+}
+.reviewFields dt {
+    width: 30%;
+}
+.reviewFields dd {
+    font-weight: bold;
+    width: 55%;
+}
+
+.reviewFields .reviewScore {
+    vertical-align: top;
+}

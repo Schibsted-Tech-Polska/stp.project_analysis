@@ -1,0 +1,16 @@
+#temperatureContainer,#windContainer{
+    float:left;
+}
+
+.webCamFpContainer.p0{
+    float:left;
+}
+
+.webCamFpContainer.p1{
+    float:right;
+}
+widget.storyContent.weather {
+  clear: both;
+  position: relative;
+  height: 360px;
+}

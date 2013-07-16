@@ -1,0 +1,219 @@
+#footer {
+    background: #222;
+    background-image:-moz-linear-gradient(top, rgba(0,0,0,1), rgba(0,0,0,0) 4%);
+        background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,0,0,1)), color-stop(0.04, rgba(0,0,0,0)));
+        background-image:-webkit-linear-gradient(top, rgba(0,0,0,1), rgba(0,0,0,0) 4%);
+        background-image:-o-linear-gradient(top, rgba(0,0,0,1), rgba(0,0,0,0) 4%);
+        background-image:linear-gradient(top, rgba(0,0,0,1), rgba(0,0,0,0) 4%);
+    color: #fff;
+    line-height: 1.3;
+    text-shadow: 0 -1px #000;
+}
+.ie9 #footer {
+    background-image:url(/skins/global/gfx/gradient.jsp?type=linear&y1=0&x1=0&y2=100&x2=0&noCircle=true&colorStop=000000|0|1,000000|4|0);
+}
+
+#footer a,
+#footer a:active,
+#footer a:hover,
+#footer a:visited {
+    color: #fff;
+    text-decoration: underline;
+}
+#footer a:hover,
+#footer .logo a,
+#footer .switch a,
+#footer ul a {
+    text-decoration: none;
+}
+
+#footer .logo {
+    padding-top: 15px;
+}
+
+#footer #mnodigital {
+    position: relative;
+        bottom: -266px;
+}
+
+#footer .icon.white {
+    background-color: #fff !important;
+    color: #333;
+        text-shadow: none;
+}
+
+#footer a.widget.tip span,
+#footer .social {
+    float: right;
+    margin-top: 15px;
+}
+#footer .social a {
+    text-decoration: none;
+    display: inline-block;
+        margin: 0 30px 0 15px;
+}
+#footer .social a .text {
+    color: #fff;
+        text-shadow: 0 -1px #000;
+    display: block;
+        margin-left: -25px;
+    width: 80px;
+}
+
+#footer a.widget.tip {
+    text-decoration: none;
+}
+#footer a.widget.tip span {
+    color: inherit;
+        font-size: 15px;
+        text-align: center;
+        text-transform: none;
+    width: 60px;
+}
+#footer a.widget.tip span:before {
+    background-color: #fff;
+    color: #333;
+        font-size: 15px;
+        text-shadow: none;
+    content: "b";
+    display: block;
+    line-height: 25px;
+    -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        border-radius: 15px;
+    width: 25px;
+        height: 25px;
+    margin: 1px 0 2px 15px;
+}
+
+#footer .gridUnit.span10 {
+    border-top: 1px solid #333;
+        border-bottom: 1px solid #000;
+    margin-left: 0;
+        padding: 15px 0;
+}
+#footer .gridRow.firstChild .gridUnit.span10 {
+    border-top: 0 none;
+}
+#footer .gridRow.lastChild .gridUnit.span10  {
+    border-bottom: 0 none;
+}
+
+.footerInfo .gridUnit > section,
+.footerInfo .gridUnit > dl,
+.footerInfo .gridUnit > div {
+    margin-bottom: 15px;
+        margin-left: 5px;
+    padding-left: 40px;
+}
+
+#footer .gridUnit.columnLines .gridUnit {
+    border-right: 1px solid #333;
+        border-left: 1px solid #000;
+    height: 316px;
+    margin-left: -1px;
+        margin-right: -1px;
+}
+.ie #footer .gridUnit.columnLines .gridUnit {
+    height: 360px;
+}
+#footer .gridUnit.columnLines .gridUnit.firstChild,
+#footer .gridUnit.columnLines .gridUnit:first-child {
+    border-left: 0 none;
+}
+#footer .gridUnit.columnLines .gridUnit.lastChild,
+#footer .gridUnit.columnLines .gridUnit:last-child {
+    border-right: 0 none;
+}
+
+#footer h4 {
+    font-family: georgia, times, serif;
+        font-weight: bold;
+    display: block;
+    line-height: 1.4;
+}
+
+#footer .footerInfo .icon {
+    display: block;
+    float: left;
+    margin-left: -38px;
+    position: absolute;
+}
+#footer .footerInfo .icon.large {
+    font-size: 24px !important;
+}
+
+#footer .footerIcon:before {
+    color: #fff;
+        font-family: fvn, sans-serif;
+        font-size: 24px;
+    display: block;
+    margin-left: -40px;
+    position: absolute;
+}
+.ie #footer .footerIcon:before {
+    font-family: fvnEOT, sans-serif;
+}
+#footer .footerInfo .icon.large.rounded,
+#footer .footerIcon.rounded:before {
+    background-color: #fff;
+    color: #333;
+        font-size: 20px !important;
+        text-shadow: none;
+    line-height: 25px !important;
+    -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        border-radius: 15px;
+    width: 25px;
+        height: 25px;
+}
+
+#footer .footerIcon.publisher:before {
+    content: "b";
+    text-indent: 2px;
+}
+#footer .footerIcon.editor:before {
+    content: "C";
+}
+#footer .footerIcon.tips:before {
+    content: "p";
+}
+#footer .footerIcon.contact:before {
+    content: "A";
+}
+#footer .footerIcon.invoice:before {
+    content: "i";
+}
+
+#footer .publisher dt:first-of-type {
+    display: none;
+}
+
+#footer dt {
+    clear: left;
+    margin-right: 5px;
+}
+#footer dt,
+#footer dd {
+    float: left;
+}
+
+#footer .socialTips div,
+#footer .socialTips dl {
+    padding: 0;
+}
+#footer .socialTips dt,
+#footer .socialTips dd {
+    clear: none;
+    float: none;
+    margin-right: 0;
+}
+
+#footer ul {
+    list-style: disc;
+    margin-left: 18px;
+}
+
+#footer .standardMenu a {
+    background: transparent;
+}

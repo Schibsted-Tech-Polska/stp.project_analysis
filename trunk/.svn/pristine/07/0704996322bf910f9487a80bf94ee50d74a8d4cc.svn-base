@@ -1,0 +1,17 @@
+.rssInternationalNews .feed .header,
+.rssInternationalNews .feed .header h2,
+.rssInternationalNews .ie7 .feed .header h2 {
+    background:none;
+    padding: 0;
+}
+
+.rssInternationalNews .feed .header h2:before {
+    display:none;
+}
+
+.rssInternationalNews .feed .header {
+    background: #edede8;
+    border-top: 2px solid #a7a48b;
+        border-bottom: 2px solid #a7a48b;
+    padding:2px 2px 0;
+}

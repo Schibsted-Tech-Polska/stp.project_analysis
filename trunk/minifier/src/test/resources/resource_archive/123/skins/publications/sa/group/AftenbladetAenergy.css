@@ -1,0 +1,25 @@
+.AenergyForeigner{
+    border: 1px solid #ddd;
+    padding-left: 5px;
+}
+
+.AenergyForeigner h3{
+    font-size: 13px;
+    font-family: sans-serif;
+}
+
+.AenergyForeigner p.teaserText,
+.eksterneFeeds h3,
+.eksterneFeeds p{
+    font-size: 11px !important;
+    font-family: sans-serif;
+}
+
+.AenergyForeigner li,
+.eksterneFeeds li{
+    border-bottom: 0;
+}
+
+.eksterneFeeds{
+    background-color: #f4f6f8;
+}

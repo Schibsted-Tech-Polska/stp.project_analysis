@@ -1,0 +1,9 @@
+#actionLinks widget
+actionLinks.widget.profile.linkText=My profile
+actionLinks.widget.addStory.linkText=Post a story
+actionLinks.widget.editStory.linkText=Edit this story
+actionLinks.widget.deleteStory.linkText=Delete this story
+actionLinks.widget.addPicture.linkText=Upload a picture
+actionLinks.widget.editPicture.linkText=Edit this picture
+actionLinks.widget.deletePicture.linkText=Delete this picture
+actionLinks.widget.logout.linkText=Log out

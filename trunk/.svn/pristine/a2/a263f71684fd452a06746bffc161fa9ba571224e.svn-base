@@ -1,0 +1,15 @@
+<ul class="contactInfo features" xmlns="http://www.w3.org/1999/html">
+    {{if obj['contact.name']}}<li class="contactName">${obj['contact.name']}</li>{{/if}}
+    {{if obj['contact.label']}}<li class="contactLabel">${obj['contact.label']}</li>{{/if}}
+    {{if obj['contact.mobile']}}<li class="contactMobile">Mobil ${obj['contact.mobile']}</li>{{/if}}
+    {{if obj['contact.phone']}}<li class="contactPhone">Telefon ${obj['contact.phone']}</li>{{/if}}
+    <img class="logo" alt="${obj['org.name']}" src="${obj['org.logo']}" />
+</ul>
+<div class="brokerLinks">
+    {{if obj['contact.url']}}
+    <a class="button" href="${obj['contact.url']}">Eiendoms hjemmeside</a>
+    {{/if}}
+    {{each obj['moreInfoUrls']}}
+        <a class="button" href="${url}" target="_blank">${text}</a>
+    {{/each}}
+</div>

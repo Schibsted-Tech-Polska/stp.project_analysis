@@ -1,0 +1,52 @@
+.netmeeting dd,
+.netmeeting dt {
+    word-wrap: break-word;
+    break-word: break-all;
+}
+
+.netmeeting dt {
+    background:#fff;
+    font-weight:bold;
+    padding: 0 0 10px;
+}
+.netmeeting dt .author {
+    color:#666;
+    display:block;
+    font-size:10px;
+        font-style: italic;
+    margin-top:.8em;
+}
+
+.netmeeting dd {
+    border-bottom: 1px solid #ccc;
+    margin-bottom:20px;
+    padding: 0 0 20px 160px;
+}
+.netmeeting dd:last-of-type {
+	border-bottom: 0 none;
+}
+
+.statusTxt {
+    border:1px solid #ccc;
+    -moz-border-radius:5px;
+        -webkit-border-radius: 5px;
+        border-radius:5px;
+    display:block;
+    margin:10px 0;
+    padding:10px;
+}
+
+.statusTxt.pending {
+    background:#ffb;
+}
+
+.statusTxt.live,
+.statusTxt.open {
+    background:#bfb;
+}
+
+.statusTxt.inactive,
+.statusTxt.finished {
+    background:#900;
+    color:#fff;
+}

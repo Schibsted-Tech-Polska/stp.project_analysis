@@ -1,0 +1,4 @@
+.widget.realEstateInfo.keyInfo .address {
+    font-size: 17px;
+    padding: 0 20px 8px 20px;
+}

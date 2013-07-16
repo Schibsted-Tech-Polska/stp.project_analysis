@@ -1,0 +1,10 @@
+.embedSilverlight,
+.embedSilverlight div{
+    height:100%;
+}
+
+body.embedSilverlight div#viewport{
+    min-height:0;
+    width:100%;
+    height:100%;
+}

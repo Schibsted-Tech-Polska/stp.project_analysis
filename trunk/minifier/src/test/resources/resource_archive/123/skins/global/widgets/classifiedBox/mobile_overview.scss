@@ -1,0 +1,125 @@
+@import 'main';
+
+$itemHeight: $mobileUnitSize * 21;
+
+.widget.classifiedBox.overview {
+    @include floatWide(left,100%);
+    padding: 0!important;
+    .resultItemResultList {
+        @include floatWide(left,100%);
+        li {
+            @include floatWide(left,100%);
+            background-color: darken($pureWhite,5%);
+            border-bottom: ($mobileUnitSize * 0.3) solid darken($btBGbase,10%);
+            height: $itemHeight;
+            margin-bottom: $mobileUnitSize * 2;
+            position: relative;
+            &:before {
+                @include backgroundGradient(top,0%,100%,rgba($trueBlack,.1),rgba($trueBlack,.0));
+                width: 100%;
+                height: $mobileUnitSize * 1.5;
+                content: '';
+                position: absolute;
+                top: 0;
+            }
+            .left,.right {
+                @include floatWide(left,50%);
+                height: 100%;
+                position: relative;
+                text-align: center;
+            }
+            .left {
+                @media (orientation: landscape) {
+                    width: 30%;
+                }
+            }
+            .right {
+                @include boxSizing(border-box);
+                padding: $mobileUnitSize * 2.4;
+                @media (orientation: landscape) {
+                    float: right;
+                    width: 65%;
+                }
+            }
+            img {
+                margin: 0;
+            }
+            .resultItemThumb {
+                height:100%;
+                margin: 0 auto;
+                width: auto;
+                border-right: 1px solid lighten($trueBlack,50%);
+            }
+            .resultItemLogo {
+                border: 1px solid $pureWhite;
+                height: $mobileUnitSize * 2.8;
+                margin: ($mobileUnitSize * -1.5) auto 0 auto;
+                width: auto;
+            }
+            span {
+                @include floatWide(left,100%);
+                overflow: hidden;
+            }
+            .resultItemText {
+                color: lighten($gray,10%);
+                font-size: $mobileUnitSize * 1.8;
+                line-height: $mobileUnitSize * 2;
+                max-height: $mobileUnitSize * 6;
+            }
+            .resultItemAddress {
+                color: $themeBlack * 9;
+                font-size: $mobileUnitSize * 1.8;
+                line-height: $mobileUnitSize * 2.5;
+                margin: ($mobileUnitSize * 2) 0;
+                max-height: $mobileUnitSize * 2.5;
+            }
+            .resultItemPrice {
+                color: darken($btBGbase,10%);
+                font-size: $mobileUnitSize * 3.5;
+                line-height: $mobileUnitSize * 3.5;
+                max-height: $mobileUnitSize * 3.5;
+            }
+        }
+    }
+    .pagelinks {
+        @include floatWide(left,100%);
+        @include backgroundGradient(top,0%,100%,$btGradientStart,$btGradientStop);
+        font-family: 'ClanWeb',Arial,sans-serif;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        li {
+            display: inline-block;
+            &.current {
+                a {
+                    @include backgroundGradient(top,0%,100%,$startColor,$endColor);
+                }
+            }
+            a, &.skip {
+                border-right: 1px solid rgba($startColor,.4);
+                border-left: 1px solid rgba($endColor,.4);
+                color: $pureWhite;
+                display: block;
+                font-size: $mobileUnitSize * 2.4;
+                line-height: $mobileUnitSize * 7;
+                padding: 0 ($mobileUnitSize * 1);
+                width: $mobileUnitSize * 2.8;
+            }
+            &.skip {
+                display: inline-block;
+            }
+        }
+    }
+    .categories select {
+        float: right;
+    }
+}
+
+body > section:last-child {
+    display: none;
+}
+
+.gridUnit .widget.classifiedBox.overview .loader {
+    width: 16px;
+    height: 11px;
+}

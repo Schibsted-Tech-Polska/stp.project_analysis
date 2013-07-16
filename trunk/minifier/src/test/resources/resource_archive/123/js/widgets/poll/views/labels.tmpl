@@ -1,0 +1,5 @@
+<ul class="pollLabels">
+{{each(i, value) items}}
+    <li><span class="label" style="background:${colors[i]}">&nbsp;</span>${value[0]} <span class="f-small">${value[1]}%</span></li>
+{{/each}}
+</ul>

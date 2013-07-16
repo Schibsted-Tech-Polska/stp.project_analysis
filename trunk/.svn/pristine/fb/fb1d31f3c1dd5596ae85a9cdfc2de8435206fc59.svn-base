@@ -1,0 +1,313 @@
+############################################################################
+# This software is produced by Mobiletech AS. Unauthorized redistribution, #
+# reproduction or usage of this software in whole or in part without the   #
+# express written consent of Mobiletech AS is strictly prohibited.         #
+# Copyright \u00A9 2007 Mobiletech AS                                           #
+# ALL RIGHTS RESERVED                                                      #
+############################################################################
+
+############################################################################
+# Dextella Frame Configuration File                                        #
+#                                                                          #
+# Server configuration file.  This file has some mandatory configuration   #
+# entries, and a lot of optional configuration entries.                    #
+#                                                                          #
+# Normally, the optional configuration entries don't need to be touched    #
+# for a development server.                                                #
+#                                                                          #
+# Please note that many of these values are case sensitive!                #
+############################################################################
+
+### ------------------------------------------------------------------- ###
+### ----------------------------------------------------- Mandatory --- ###
+### ------------------------------------------------------------------- ###
+
+############################################################################
+# Content Provider ID (CPID)
+############################################################################
+# DXF needs to know the CPID and Secret Key that is assigned to you from 
+# Mobiletech. The id and key is used to identify transactions coming from 
+# this publication to other products such as stats/measure, messaging
+# billing, ads etc.
+#
+# It is possible to configure more than one publication on one webapplication 
+# by specifying:
+# 
+# frame_cp_id_{publicationname}={value}
+# frame_secret_key_{publicationname}={value}
+#
+# Example:
+# frame_cp_id_publication2=7778
+# frame_secret_key_publication2=RC+5_hHzLtest234test2343oTJJT7sx
+# 
+# You can then specify the publication name in the tags. 
+# 
+# Default:
+#	none 
+############################################################################
+frame_cp_id=7777
+frame_secret_key=RC+5_hHzLtest123test1233oTJJT7sx
+
+### ------------------------------------------------------------------- ###
+### ----------------------------------------------------- Optional  --- ###
+### ------------------------------------------------------------------- ###
+
+############################################################################
+# Image server 
+############################################################################
+# If images should be served by a separat image server, please specify the
+# url here. (With trailing slash)
+# 
+# Example:
+#  image_server_url=http://media.mobiletech.no/ 
+# 
+# Default:
+#	none = use the internal servlets for serving images
+############################################################################
+#image_server_url=/wf-escenic-times/
+image_server_url=/
+jpg_compression=0.0
+
+
+
+
+
+############################################################################
+# Widgets
+############################################################################
+# Define the default scripts
+#
+# Example:
+#  image_server_url=http://media.mobiletech.no/
+#
+# Default:
+#	none = use the internal servlets for serving images
+############################################################################
+
+#widget_master_scripts=jquery-1.2.6.min.js, history.js, livequery.js,frame-1.0.0.js,init.js
+#widget_plugin_scripts=
+compress_javascript=false
+compress_css=false
+use_cache_on_widget_js=true
+use_cache_on_widget_css=true
+#preserve_ctx_path_for_pack=true
+
+
+############################################################################
+# Use a database
+############################################################################
+# A boolean value that specifies if DXF should use a databse or not.
+# For Standalone installation and Escenic installation this should be 'false'
+# 
+# Example:
+#  frame_use_db=false 
+# 
+# Default:
+#	true 
+############################################################################
+frame_use_db=false
+############################################################################
+# Webapp path
+############################################################################
+# How do we get to the root of the webapp
+# 
+# Default:
+#	/ 
+############################################################################
+#webapp_path=/wf-escenic-times/
+webapp_path=/
+
+############################################################################
+# formatting by the dxf:out tag
+############################################################################
+# dxf:out is a tag that formats text so that it turns 'mobile friendly'
+# 
+# Some flags:
+# * cleanHtml - removes 'invalid' html such as <object>, <table> etc.
+# * escapeXML - escapes XML. Ex: '<' is escaped to &lt; 
+# 
+# Default:
+#	none 
+############################################################################
+dxfout_escapeXml=false
+dxfout_cleanHtml=true
+
+
+#####################   jquery     ###########
+jquery_path=/resources/js/mno/utils/jquery-1.9.1.min.js
+jquery_location=http
+
+
+############################################################################
+# More dxf:out START
+############################################################################
+# Below is the regular expressions used by dxf:out.
+#
+# *Note that all spesial java characters such as \ need to be escaped
+# *Tags need to be replaced with DML tags (Dextella Markup Language). This
+#   is because we need to make sure that tags are multiserved to all markups.
+############################################################################
+#validates an email address
+regex_email=^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$
+
+#remove bold and italic for chtml and wml
+regex_invalid_wml_tags=(?s)(?i)</?[bi]\\s?>
+regex_invalid_chtml_tags=(?s)(?i)</?[b]\\s?>
+
+
+#regex for replacing links, it is possible to specify 0-n rules. 
+#example: article rule 
+regex_replace_links_1=true
+regex_valid_link_1=(?s)(?i)<a\\shref=\"(http://[^<>]*?(sa\\.no|ba\\.no|rogalandsavis\\.no).*?[^\"]*?)\"[^<>]*?>(.*?)</a>
+regex_link_replacement_1=[DML href="$1"]$2[/DML]
+#then rewrite all other adresses to the exit servlet
+regex_replace_links_2=true
+regex_valid_link_2=(?s)(?i)<a\\shref=\"(http://.*?[^\"<>]*?)\"[^<>]*?>(.*?)</a>
+regex_link_replacement_2=[DML href="$1"]$2[/DML]
+
+
+#regex for the general cleaning algorithm:
+#1 - find_all_tags
+#2 - allow_valid_tags
+regex_find_all_tags=(?s)(?i)</?.*?>
+regex_valid_tags=(?s)(?i)</?[bpi]\\s?>|<br\\s?/?>|</?link\\s?.*?>|</?p\\s?.*?>
+
+#replace <p> tags with <br/>?
+regex_replace_p_tags=true
+############################################################################
+# More dxf:out END
+############################################################################
+
+############################################################################
+# Dextella Ads
+############################################################################
+# Defines the URL to dextella ads
+# 
+# *Note: no slash at end of URL
+# 
+############################################################################
+dextella_ads_url=http://bh.mobiletech.no/ads/click
+dextella_ads_image_url=http://bh.mobiletech.no/ads/img
+
+############################################################################
+# Dextella Measure
+############################################################################
+# Defines the URL to dextella ads
+# 
+# *Note: no slash at end of URL
+# 
+############################################################################
+measure_url=http://bh.mobiletech.no/measure/
+
+############################################################################
+# Cache Settings
+############################################################################
+# Cache settings that are used in servlet response headers
+# 
+############################################################################
+image_cache_time_seconds=3600
+css_cache_time_seconds=21600
+rss_cache_time_seconds=1000
+feed_cache_url=http://wapapp.mobiletech.no/dextella-cache-wars-cache/Cache
+frame_cache_module_url=http://wapapp.mobiletech.no/dextella-cache-wars-cache/Cache
+############################################################################
+# OSCache of Images Settings
+############################################################################
+# DXF uses OSCache to cache images. In an standalone or Escenic installation
+# this flag should be set to 'true'.
+#
+# Default:
+#	false 
+############################################################################
+use_oscache_for_images_file=true
+
+############################################################################
+# OSCache delete strategy
+############################################################################
+# what should the cache maintainer do when it is run? The cache maintainer 
+# can be scheduled further down in this file
+#  
+# 1 = delete all cache that is expired
+# 2 = delete all cache
+# Default:
+#	1 
+############################################################################
+oscache_maintenance_delete_strategy=1
+
+############################################################################
+# OSCache path
+############################################################################
+# The folder where the cached files will be stored
+# default:
+#  System property: "java.io.tmpdir"
+############################################################################
+image_filecache_folder=/data/media/ap/mobileimages
+
+############################################################################
+# OSCache - Time to live
+############################################################################
+# How long should cached images be kept? the time is in milliseconds
+# examples:
+# 1 hour = 3600000, 1 day =  86400000, 1 week = 604800000, 
+# 1 month (31 days) =  18748800000
+############################################################################
+image_disk_cache_time_to_live=259000000
+
+############################################################################
+# WURFL
+############################################################################
+# WURFL is DXF's device repository. It contains 1 main file (from the
+# WURFL community, and several patch files provided by Mobiletech.  
+# 
+# These settings define the the local wurfl location, the wurfl repository
+# and which wurfl files that should be downloaded
+############################################################################
+local_wurfl_location=WEB-INF/
+wurfl_url=http://www.mobiletech.no/wurfl/
+wurfl_files=wurfl.xml,wurfl_patch.xml,wurfl_patch_robots.xml,web_browsers_patch.xml
+
+
+############################################################################
+# Scheduling
+############################################################################
+# Dextella Frame is dependent on some daily tasks:
+#
+# - updating wurfl
+# - cleaning cache
+# 
+# This is cron expressions. Ex: "0 15 10 * * ? *" (Fire at 10:15am every day)
+############################################################################
+schedule_wurfl=0 5 05 * * ? 2000
+schedule_maintain_oscache_file_cache=0 5 05 * * ? 2000
+
+############################################################################
+# Server settings
+############################################################################
+# Dextella Frame is dependent on some daily tasks:
+#
+# - updating wurfl
+# - cleaning cache
+# 
+# This is cron expressions. Ex: "0 15 10 * * ? *" (Fire at 10:15am every day)
+############################################################################
+mail.smtp.host=localhost
+#local_server_address=http://ecedemo5/wf-escenic-times/
+local_server_address=/
+
+
+############################################################################
+# REF settings
+############################################################################
+# REF is used for backlinks in the footer when linking in to this site. It 
+# is possible to add 0-n REF's. A REF can also be a string.
+# 
+# Example: http://mymobilesite.mobi/?REF=1 will show a link to 
+# Telia SurfPort in the footer.
+############################################################################
+
+href_1=http://mobil.teliasurfport.se/
+title_1=Telia SurfPort
+
+
+#ADDED FOR ESCENIC DEMO
+subtractPixelsFromImage=20

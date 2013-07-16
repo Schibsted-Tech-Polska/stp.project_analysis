@@ -1,0 +1,25 @@
+.navigators {
+    display:none;
+}
+
+.navigators .remove {
+    color:#000;
+}
+
+.navigators .remove span {
+    background:#f00;
+    border:1px solid #900;
+    color:#000;
+    display:inline-block;
+    font-family:"Arial Black", Arial,sans-serif;
+        font-size:8px;
+        font-weight:bold;
+    line-height:10px;
+    margin-right:5px;
+    position:relative;
+        top:-2px;
+    text-align:center;
+    text-shadow:0 1px 1px #fff;
+    width:11px;
+        height:11px;
+}
