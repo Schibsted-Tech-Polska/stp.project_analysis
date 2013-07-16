@@ -1,9 +1,0 @@
-<header>Areal og bygge&aring;r</header>
-<ul class="features">
-    {{each info}}
-    <li>
-        <span class="label">${label}</span>
-        <span class="value">${value}</span>
-    </li>
-    {{/each}}
-</ul>

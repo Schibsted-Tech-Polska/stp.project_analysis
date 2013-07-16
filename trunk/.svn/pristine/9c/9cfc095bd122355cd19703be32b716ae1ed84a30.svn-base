@@ -1,4 +1,0 @@
-.media.block img.bloggBigThumb,
-.media.block img.bloggSmallThumb{
-    width:100%;   
-}

@@ -1,8 +1,0 @@
-.relatedContents.pictures img {
-    border:1px solid #666;
-    display:block;
-}
-
-.relatedContents.pictures .hmedia + .hmedia {
-    margin-top:10px;
-}

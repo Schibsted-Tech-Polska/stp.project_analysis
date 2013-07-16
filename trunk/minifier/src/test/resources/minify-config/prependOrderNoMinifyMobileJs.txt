@@ -1,8 +1,0 @@
-jquery.jcarousel.min.js
-swfobject.js
-jquerytmpl.js
-spring.js
-audiencescience.js
-utils/webtoolkit.base64.js
-utils/tfclient_nor.js
-

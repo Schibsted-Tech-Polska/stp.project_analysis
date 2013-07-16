@@ -1,5 +1,0 @@
-<div class="${type}Bar">
-    <div class="gridRow grid12">
-        <a class="gridUnit span10" href="${href}">{{html text}}</a>
-    </div>
-</div>

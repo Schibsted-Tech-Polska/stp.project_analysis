@@ -1,4 +1,0 @@
-global/charset.css
-global/reset.css
-global/grid.css
-global/mno.css

@@ -1,5 +1,0 @@
-<a href="${searchPage}" target="_top" class="label"><!-- ?${placeQuery} -->
-    <span class="weather-icon {{if weather.symbol_var.indexOf('n')!=-1}}{{/if}} icon${weather.symbol_number}"></span>
-    <span class="temp {{if weather.temperature_value > 0}}warm{{else}}cold{{/if}}">${weather.temperature_value}&deg;</span>
-    <span class="sted">${place}</span>
-</a>
