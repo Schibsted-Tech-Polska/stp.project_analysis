@@ -1,4 +1,0 @@
-.widget.livestudio.stream .informationItem .itemContent q,
-.widget.livestudio.stream .informationItem .itemContent .quote:before {
-    color: #323232;
-}

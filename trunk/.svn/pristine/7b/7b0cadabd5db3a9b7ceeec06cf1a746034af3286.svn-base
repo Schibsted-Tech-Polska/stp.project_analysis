@@ -1,7 +1,0 @@
-.widget.relatedContents.stories .header h4{
-    float: left;
-    margin-top: -5px;
-    margin-bottom: 0;
-    padding-right: 3px;
-    background: white;
-}

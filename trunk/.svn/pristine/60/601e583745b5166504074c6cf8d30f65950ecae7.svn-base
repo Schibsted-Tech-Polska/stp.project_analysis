@@ -1,7 +1,0 @@
-.list.netmeeting .content a:hover {
-    background:#e8e6e9;
-}
-
-.list.netmeeting .content  {
-    max-height:190px;
-}

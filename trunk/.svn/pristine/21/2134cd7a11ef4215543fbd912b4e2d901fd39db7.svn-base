@@ -1,9 +1,0 @@
-.scrubber .mobileTabbedMenu a,
-.scrubber .mobileTabbedMenu .link,
-.scrubber .mobileTabbedMenu li:nth-child(even) a,
-.scrubber .mobileTabbedMenu li:nth-child(even) .link,
-.scrubber .mobileTabbedMenu li:nth-child(odd) a,
-.scrubber .mobileTabbedMenu li:nth-child(odd) .link {
-    color:#000;
-    font-weight:bold;
-}

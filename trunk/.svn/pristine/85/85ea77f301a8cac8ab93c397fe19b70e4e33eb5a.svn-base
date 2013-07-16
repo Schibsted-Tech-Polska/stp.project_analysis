@@ -1,8 +1,0 @@
-.factboxes .content ul,
-.factboxes .content ol {
-    padding: 0 0 0 1em;
-    margin: 0;
-}
-.relatedContents.factboxes header {
-    margin-bottom: 0;
-}

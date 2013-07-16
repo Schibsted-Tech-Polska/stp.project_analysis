@@ -1,6 +1,0 @@
-# poll widget
-poll.widget.result.label=Total number of votes:
-poll.widget.vote.linkText=Submit your vote
-poll.widget.form.results.linkText=View results
-poll.widget.form.submit.button=Vote
-poll.widget.revote.linkText=Vote again?

@@ -1,5 +1,0 @@
-.relatedContents.stories ul {
-    color:#014687;
-    list-style:square outside;
-    margin-left:15px;
-}

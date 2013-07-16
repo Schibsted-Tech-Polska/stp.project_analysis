@@ -1,3 +1,0 @@
-$class = com.escenic.syndication.xml.filter.DebugFilter
-filename = /data/import/migration/debug-pre-tidy-%c.xml
-

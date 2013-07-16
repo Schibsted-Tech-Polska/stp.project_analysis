@@ -1,5 +1,0 @@
-<div id="mnoDialogBg" style="height:${docHeight}px;">&nbsp;</div>
-<div id="mnoDialog">
-    <div id="mnoDialogContent" class="load" style="width:${width}px;"></div>
-    <div id="mnoDialogClose">X</div>
-</div>

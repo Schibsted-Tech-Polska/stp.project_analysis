@@ -1,6 +1,0 @@
-.smbContainer p {
-    color: #00A2DC;
-}
-section.smb-full {
-  border-left: 3px solid #00A2DC;
-}

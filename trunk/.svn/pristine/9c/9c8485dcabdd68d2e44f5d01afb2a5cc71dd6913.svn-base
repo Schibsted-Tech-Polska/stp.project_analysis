@@ -1,2 +1,0 @@
-$class=com.escenic.syndication.xml.filter.XSLFilter
-filter=/opt/escenic_fvn5/config/common/com/escenic/migration/filter/article2.xsl

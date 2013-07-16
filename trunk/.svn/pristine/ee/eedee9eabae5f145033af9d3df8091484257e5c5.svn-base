@@ -1,8 +1,0 @@
-<h3>Mente du...?</h3>
-<ul>
-{{each(i, place) places}}
-    {{if i>0 && i<6}}
-        <li><span class="name"><a href="{{html searchPage}}?${getPlaceQuery(name, kommune, fylke, countryCode)}">{{html name}} ({{html fylke}}, {{html countryCode}})</a></span></li>
-    {{/if}}
-{{/each}}
-</ul>
