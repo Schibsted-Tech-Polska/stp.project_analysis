@@ -1,0 +1,55 @@
+.popularList a {
+    text-decoration: none;
+}
+
+.popularList a:hover {
+    text-decoration: underline;
+}
+.span3 .popularList .mostRead img {
+    border: 1px;
+    float: left;
+    margin: 0 5px 0 0;
+    vertical-align: bottom;
+}
+
+.popularList .withDate li {
+    padding-left:40px;
+}
+
+.popularList .withDate time {
+    color:#666;
+    font-size:10px;
+    line-height:16px;
+    float:left;
+    margin-left: -37px;
+}
+
+.popularList .sectionLink{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 10px;
+    display: block;
+}
+
+.popularList .leftLink{
+    float: right;
+    margin-left: 50px;
+}
+
+.popularList .rightLink{
+    float: right;
+    margin-right: 50px;
+}
+
+.popularList .lowPicOuter{
+    display: block;
+    height: 115px;
+    overflow: hidden;
+    position: relative;
+}
+
+.popularList .lowPicInner{
+    height: 130px;
+    position: absolute;
+    top: -30px;
+}

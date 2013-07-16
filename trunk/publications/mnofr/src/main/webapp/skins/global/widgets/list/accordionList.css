@@ -1,0 +1,50 @@
+.accordionList .accordionContent {
+    background-color:#E8E8E8;
+    height:300px;
+    overflow-y:hidden;
+}
+
+.accordionList .accordionContent:hover {
+    overflow-y:scroll;
+}
+
+.accordionList .accordionContent  li {
+    background:#faf9f8;
+    border-top:1px solid #fff;
+    border-bottom:1px solid #b6b5b1;
+    padding:10px 19px 10px 10px;
+}
+
+.accordionList .accordionContent  li:nth-of-type(odd) {
+    background:#f0ece8;
+}
+
+.accordionList .accordionContent:hover  li {
+    padding-right:0;
+}
+
+.accordionList .accordionContent h2 {
+    font-size:18px;
+}
+
+.accordionList .accordionContent h3 {
+    font-size:14px;
+}
+
+.accordionList .accordionContent hgroup {
+    margin-bottom:.5em;
+}
+
+.accordionList .accordionContent .readMore {
+    font-size:10px;
+    text-transform:uppercase;
+}
+
+.accordionList .reviewContainer {
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 5px;
+}
+
+.accordionList .last {
+    border-bottom: 0;
+}

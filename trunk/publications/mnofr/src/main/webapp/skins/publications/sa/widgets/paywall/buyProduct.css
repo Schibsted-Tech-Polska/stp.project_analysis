@@ -1,0 +1,97 @@
+.saleposter {
+    margin-bottom: 40px;
+}
+.saleposter .productAnnouncement {
+    color: #a0a0a0;
+    font-size: 24px;
+    padding-top: 25px;
+    padding-left: 70px;
+    margin-bottom: 25px;
+}
+
+.subscription-types {
+    padding-left: 30px;
+    padding-bottom: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.subscription-types div {
+    float: left;
+    width: 190px;
+    text-align: center;
+}
+.subscription-types h4 {
+    display: block;
+    font-size: 19px;
+    color: #a0a0a0;
+    margin-bottom: 15px;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-weight: normal;
+}
+.subscription-types a.btn {
+    display: inline-block;
+    line-height: 45px;
+    height: 45px;
+    min-width: 132px;
+    padding: 0 16px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    color: #507eb2;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+
+    border: 1px solid #e3dfe0;
+    background-color: #fbfbfb;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0.4, #fbfbfb), to(#e4e0df));
+    background-image: -webkit-linear-gradient(#fbfbfb 40%, #e4e0df);
+    background-image: -moz-linear-gradient(#fbfbfb 40%, #e4e0df);
+    background-image: -o-linear-gradient(#fbfbfb 40%, #e4e0df);
+    background-image: linear-gradient(#fbfbfb 40%, #e4e0df);
+    -webkit-box-shadow: 4px 4px 5px rgba(0,0,0,.1);
+    box-shadow: 4px 4px 5px rgba(0,0,0,.1);
+}
+.subscription-types a.btn:hover {
+    text-shadow: none;
+}
+.paywall-login-btns {
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 14px;
+}
+.paywall-login-btns div {
+    overflow: hidden;
+}
+.paywall-login-btns p {
+    color: #a0a0a0;
+    float: left;
+}
+.paywall-login-btns a {
+    color: #507eb2;
+    margin-left: 5px;
+}
+.saleposter-preview {
+    width: 280px;
+    padding: 5px 16px 30px;
+    border: 1px solid #aeaeae;
+    -webkit-box-shadow: 4px 4px 5px rgba(0,0,0,.2);
+    box-shadow: 4px 4px 5px rgba(0,0,0,.2);
+}
+.saleposter-preview h1 {
+    font-size: 26px;
+    color: #a0a0a0;
+}
+.saleposter-preview section {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.saleposter-preview section img {
+    max-width: 100%;
+}
+.saleposter-preview .leadText {
+    margin-bottom: 0;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    color: #a0a0a0;
+}

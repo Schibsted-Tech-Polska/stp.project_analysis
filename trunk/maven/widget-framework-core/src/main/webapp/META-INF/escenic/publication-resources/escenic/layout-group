@@ -1,0 +1,1605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * File           : $Header: //depot/projects/widget-framework/src/main/webapp/META-INF/escenic/publication-resources/escenic/layout-group#1 $
+ * Last edited by : $Author: shaon $ $Date: 2009/06/22 $
+ * Version        : $Revision: #1 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<groups xmlns="http://xmlns.escenic.com/2008/layout-group"
+        xmlns:ct="http://xmlns.escenic.com/2008/content-type"
+        xmlns:ui="http://xmlns.escenic.com/2008/interface-hints">
+  <!-- group definition for content section -->
+  <group name="content" root="true">
+    <ui:label>Content</ui:label>
+    <area name="contentArea">
+      <ref-group name="header1"/>
+      <ref-group name="header2"/>
+      <ref-group name="header3"/>
+      <ref-group name="top1"/>
+      <ref-group name="top2"/>
+      <ref-group name="top3"/>
+      <ref-group name="left1"/>
+      <ref-group name="left2"/>
+      <ref-group name="left3"/>
+      <ref-group name="topStories"/>
+      <ref-group name="featuredStories"/>
+      <ref-group name="carousel"/>
+      <ref-group name="poll"/>
+      <ref-group name="stats"/>
+      <ref-group name="main1"/>
+      <ref-group name="main2"/>
+      <ref-group name="main3"/>
+      <ref-group name="right1"/>
+      <ref-group name="right2"/>
+      <ref-group name="right3"/>
+      <ref-group name="bottom1"/>
+      <ref-group name="bottom2"/>
+      <ref-group name="bottom3"/>
+      <ref-group name="footer1"/>
+      <ref-group name="footer2"/>
+      <ref-group name="footer3"/>
+    </area>
+  </group>
+
+  <!--Group definitions for the 'single column' design -->
+  <group name="x940-config" root="true">
+    <ui:label>Single Column Config</ui:label>
+    <area name="meta"/>
+    <area name="header">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x380x300x220"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+    <area name="main">
+      <ref-group name="x620x300" />
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x380x300x220"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+      <ref-group name="switchingGroup" />
+    </area>
+    <area name="footer">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+  </group>
+
+  <!--Group definitions for the extended 'single column' design -->
+  <group name="x940-extended-config" root="true">
+    <ui:label>Single Column Config (Extended)</ui:label>
+    <area name="meta"/>
+    <area name="outer" />
+    <area name="header">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x380x300x220"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+    <area name="main">
+      <ref-group name="x620x300" />
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x380x300x220"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+    </area>
+    <area name="footer">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+  </group>
+
+  <!--Group definitions for the 'two column' design -->
+  <group name="x620x300-config" root="true">
+    <ui:label>Two Column Config</ui:label>
+    <area name="meta"/>
+    <area name="header">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x380x300x220"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+    <area name="main">
+      <ref-group name="x300x300"/>
+      <ref-group name="x140x140x140x140"/>
+      <ref-group name="x380x220"/>
+      <ref-group name="x220x220x140"/>
+      <ref-group name="x300x140x140"/>
+      <ref-group name="x460x140" />
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="floatingGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+    <area name="right">
+      <ref-group name="x140x140"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+    <area name="footer">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+  </group>
+
+  <!--Group definitions for the extended 'two column' design -->
+  <group name="x620x300-extended-config" root="true">
+    <ui:label>Two Column Config (Extended)</ui:label>
+    <area name="meta"/>
+    <area name="outer"/>
+    <area name="header">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x380x300x220"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+    <area name="main">
+      <ref-group name="x300x300"/>
+      <ref-group name="x140x140x140x140"/>
+      <ref-group name="x380x220"/>
+      <ref-group name="x220x220x140"/>
+      <ref-group name="x300x140x140"/>
+      <ref-group name="x460x140" />
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="floatingGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+    <area name="right">
+      <ref-group name="x140x140"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+    <area name="footer">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+    </area>
+  </group>
+
+  <!--Group definitions for the 'newsletter' design -->
+  <group name="newsletter-config" root="true">
+    <ui:label>Newsletter Config</ui:label>
+    <area name="meta"/>
+    <area name="header">
+    </area>
+    <area name="main">
+    </area>
+    <area name="right">
+    </area>
+    <area name="footer">
+    </area>
+  </group>
+
+  <!-- root group for master config section -->
+  <group name="master-config" root="true">
+    <ui:label>Master Config</ui:label>
+    <area name="master-config-area">
+
+      <!-- top and bottom area groups-->
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x380x300x220"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="x620x300"/>
+      <ref-group name="x140x140x140"/>
+
+      <!-- main area groups -->
+      <ref-group name="x300x300"/>
+      <ref-group name="x140x140x140x140"/>
+      <ref-group name="x380x220"/>
+      <ref-group name="x220x220x140"/>
+      <ref-group name="x300x140x140"/>
+      <ref-group name="x460x140" />
+      <ref-group name="x300x140"/>
+      <ref-group name="x220x220"/>
+      <ref-group name="x380x300"/>
+      <ref-group name="x220x220x220"/>
+
+      <!-- right area groups -->
+      <ref-group name="x140x140"/>
+
+      <!-- common groups -->
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="floatingGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="switchingGroup"/>
+    </area>
+  </group>
+
+  <group name="x140x460x300-config" root="true">
+    <ui:label>Three Column Config</ui:label>
+    <area name="meta"/>
+    <area name="outer"/>
+    <area name="header">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="top">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="left">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="main">
+      <ref-group name="x300x140"/>
+      <ref-group name="x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="floatingGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="right">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="bottom">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="footer">
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x220x220x220x220"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+
+  <!--These groups are relevant only for the config pages  -->
+  <group name="x620x300">
+  	<ui:label>Columns (620, 300)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="x300x300"/>
+      <ref-group name="x140x140x140x140"/>
+      <ref-group name="x380x220"/>
+      <ref-group name="x220x220x140"/>
+      <ref-group name="x300x140x140"/>
+      <ref-group name="x460x140" />
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+      <ref-group name="switchingGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="x140x140"/>
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+  <group name="x460x460">
+  	<ui:label>Columns (460, 460)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+    </area>
+  </group>
+  <group name="x700x220">
+  	<ui:label>Columns (700, 220)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="x380x300" />
+      <ref-group name="x220x220x220" />
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+
+  <group name="x300x300x300">
+  	<ui:label>Columns (300, 300, 300)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+    </area>
+    <area name="column-3">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+    </area>
+  </group>
+
+  <group name="x380x300x220">
+  	<ui:label>Columns (380, 300, 220)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+    </area>
+    <area name="column-3">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="menuGroup"/>
+      <ref-group name="floatingGroup" />
+    </area>
+  </group>
+  <group name="x220x220x220x220">
+  	<ui:label>Columns (220, 220, 220, 220)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-3">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-4">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+  <group name="x380x300">
+  	<ui:label>Columns (380, 300)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="floatingGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="floatingGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+  <group name="x460x140">
+  	<ui:label>Columns (460, 140)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="floatingGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+  
+  <group name="x220x220x220">
+  	<ui:label>Columns (220, 220, 220)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-3">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+  <group name="x140x140">
+  	<ui:label>Columns (140, 140)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+  <group name="x300x300">
+  	<ui:label>Columns (300, 300)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="floatingGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="floatingGroup" />
+    </area>
+  </group>
+  <group name="x140x140x140x140">
+  	<ui:label>Columns (140, 140, 140, 140)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-3">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-4">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+
+  <group name="x380x220">
+    <ui:label>Columns (380, 220)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="floatingGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+
+  <group name="x220x220x140">
+    <ui:label>Columns (220, 220, 140)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-3">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+
+  <group name="x300x140x140">
+  	<ui:label>Columns (300, 140, 140)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+      <ref-group name="floatingGroup" />
+    </area>
+    <area name="column-2">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+    <area name="column-3">
+      <ref-group name="tabbingGroup" />
+      <ref-group name="configCarouselGroup" />
+      <ref-group name="boxGroup" />
+    </area>
+  </group>
+
+  <group name="x300x140">
+    <ui:label>Columns (300, 140)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1"/>
+    <area name="column-2"/>
+  </group>
+
+  <group name="x220x220">
+    <ui:label>Columns (220, 220)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1"/>
+    <area name="column-2"/>
+  </group>
+
+  <group name="x140x140x140">
+    <ui:label>Columns (140, 140, 140)</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the column group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the column group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="column-1"/>
+    <area name="column-2"/>
+    <area name="column-3"/>
+  </group>
+
+  <group name="boxGroup">
+    <ui:label>Box</ui:label>
+    <area name="header" />
+    <area name="main" />
+    <area name="footer" />
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the box group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the box group</ui:description>
+      </ct:field>
+    </ct:options>
+  </group>
+
+  <group name="floatingGroup">
+    <ui:label>Wrap</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for main contents of the wrap group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the main contents of the wrap group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="mainContents">
+      <ui:label>Main content</ui:label>
+    </area>
+    <area name="floatingContents">
+      <ui:label>Wrapped content</ui:label>
+      <ct:options>
+        <ct:field name="width" type="enumeration">
+          <ui:label>Width</ui:label>
+          <ui:description>The width of the wrapped element.</ui:description>
+          <ct:enumeration value="140">
+            <ui:label>140px</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="220">
+            <ui:label>220px</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="300">
+            <ui:label>300px</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>140</ui:value-if-unset>
+        </ct:field>
+        <ct:field name="position" type="enumeration">
+          <ui:label>Position</ui:label>
+          <ui:description>The position of the wrapped element: (left / right)</ui:description>
+          <ct:enumeration value="right">
+            <ui:label>Right</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="left">
+            <ui:label>Left</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>right</ui:value-if-unset>
+        </ct:field>
+        <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+          <ui:label>Style class</ui:label>
+          <ui:description>Custom style class for wrapped content inside the wrap group</ui:description>
+        </ct:field>
+        <ct:field name="styleId" type="basic" mime-type="text/plain">
+          <ui:label>Style Id</ui:label>
+          <ui:description>Style id for  wrapped content inside the wrap group</ui:description>
+        </ct:field>
+      </ct:options>
+    </area>
+  </group>
+
+  <!--definition of menu group -->
+  <group name="menuGroup">
+    <ui:label>Menu</ui:label>
+    <ct:options>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the menu group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the menu group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="menuGroup-area">
+      <ref-group name="menuPaneGroup"/>
+    </area>
+  </group>
+
+  <!-- definition of menuPane group -->
+  <group name="menuPaneGroup">
+    <ui:label>Menu Pane</ui:label>
+    <ct:options>
+      <ct:field name="linkText" type="basic" mime-type="text/plain">
+        <ui:label>Link Text</ui:label>
+        <ui:description>Link Text</ui:description>
+      </ct:field>
+      <ct:field name="width" type="number">
+        <ui:label>width</ui:label>
+        <ui:description>The width of the menu pane group</ui:description>
+        <ct:constraints>
+          <ct:minimum>1</ct:minimum>
+        </ct:constraints>
+        <ct:format>####</ct:format>
+      </ct:field>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Custom Style Class</ui:label>
+        <ui:description>Custom style class for the menu pane group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the menu pane group</ui:description>
+      </ct:field>
+      <ct:field name="reference" type="enumeration">
+        <ui:label>Reference</ui:label>
+        <ui:description>This field decides which item the menu pane will point to</ui:description>
+        <ct:enumeration value="sectionUniqueName">
+          <ui:label>Section Unique Name</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="url">
+          <ui:label>URL</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="articleId">
+          <ui:label>Article Id</ui:label>
+        </ct:enumeration>
+        <ui:value-if-unset>sectionUniqueName</ui:value-if-unset>
+      </ct:field>
+      <ct:field name="sectionUniqueName" type="basic" mime-type="text/plain">
+        <ui:label>Section Unique Name</ui:label>
+        <ui:description>The unique name of the section which the menu pane will point to</ui:description>
+      </ct:field>
+      <ct:field name="url" type="uri">
+        <ui:label>URL</ui:label>
+        <ui:description>The URL which the menu pane will point to</ui:description>
+      </ct:field>
+      <ct:field name="articleId" type="number">
+        <ui:label>Article Id</ui:label>
+        <ui:description>The id of the article which the menu pane will point to</ui:description>
+        <ct:constraints>
+          <ct:minimum>1</ct:minimum>
+        </ct:constraints>
+        <ct:format>######</ct:format>
+      </ct:field>
+    </ct:options>
+    <area name="menuPaneGroup-area">
+      <!-- main area groups -->
+      <ref-group name="x300x300"/>
+      <ref-group name="x140x140x140x140"/>
+      <ref-group name="x380x220"/>
+      <ref-group name="x220x220x140"/>
+      <ref-group name="x300x140x140"/>
+      <ref-group name="x460x140"/>
+
+      <!-- 460px wide column groups -->
+      <ref-group name="x300x140"/>
+      <ref-group name="x140x140x140"/>
+
+      <!-- top and bottom area groups-->
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x380x300x220"/>
+      <ref-group name="x220x220x220x220"/>
+
+      <!-- right area groups -->
+      <ref-group name="x140x140"/>
+    </area>
+  </group>
+
+  <group name="tabbingGroup">
+    <ui:label>Tabs</ui:label>
+    <ct:options>
+      <ct:field name="changeUrl" type="boolean">
+        <ui:label>Change url</ui:label>
+        <ui:boolean-label value="true">Chage url with changing tab</ui:boolean-label>
+        <ui:boolean-label value="false">Don't chage url with changing tab</ui:boolean-label>
+        <ui:value-if-unset>true</ui:value-if-unset>
+        <constraints>
+          <required>true</required>
+        </constraints>
+      </ct:field>
+      <ct:field name="effect" type="enumeration">
+        <ui:label>Effect</ui:label>
+        <ui:description>The effect of the tab</ui:description>
+        <ct:enumeration value="default">
+          <ui:label>Default</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="accordions">
+          <ui:label>Accordions</ui:label>
+        </ct:enumeration>
+        <ui:value-if-unset>default</ui:value-if-unset>
+      </ct:field>
+      <ct:field name="event" type="enumeration">
+        <ui:label>Event</ui:label>
+        <ui:description>The event of the tab</ui:description>
+        <ct:enumeration value="click">
+          <ui:label>On click</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="mouseover">
+          <ui:label>On mouse over</ui:label>
+        </ct:enumeration>
+        <ui:value-if-unset>click</ui:value-if-unset>
+      </ct:field>
+      <ct:field name="width" type="enumeration">
+        <ui:label>Width</ui:label>
+        <ui:description>The width of the tab group</ui:description>
+        <ct:enumeration value="auto">
+          <ui:label>Auto width</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="220">
+          <ui:label>220px</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="300">
+          <ui:label>300px</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="380">
+          <ui:label>380px</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="460">
+          <ui:label>460px</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="620">
+          <ui:label>620px</ui:label>
+        </ct:enumeration>
+        <ui:value-if-unset>auto</ui:value-if-unset>
+      </ct:field>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the tab group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the tab group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="tabbingGroup-area">
+      <ref-group name="tabPaneGroup" />
+    </area>
+  </group>
+
+  <group name="configCarouselGroup">
+    <ui:label>Carousel</ui:label>
+    <ct:options>
+      <ct:field name="showNavigation" type="boolean">
+        <ui:label>Indicaor</ui:label>
+        <ui:boolean-label value="true">Show slide navigation indicator</ui:boolean-label>
+        <ui:boolean-label value="false">Don't show slide navigation indicator</ui:boolean-label>
+        <ui:value-if-unset>true</ui:value-if-unset>
+        <constraints>
+          <required>true</required>
+        </constraints>
+      </ct:field>
+      <ct:field name="showPreviousNext" type="boolean">
+        <ui:label>Navigation</ui:label>
+        <ui:boolean-label value="true">Show slide navigation buttons</ui:boolean-label>
+        <ui:boolean-label value="false">Don't show slide navigation buttons</ui:boolean-label>
+        <ui:value-if-unset>true</ui:value-if-unset>
+        <constraints>
+          <required>true</required>
+        </constraints>
+      </ct:field>
+      <ct:field name="autoplay" type="boolean">
+        <ui:label>Autoplay</ui:label>
+        <ui:boolean-label value="true">Turn on autoplay</ui:boolean-label>
+        <ui:boolean-label value="false">Turn off autoplay</ui:boolean-label>
+        <ui:value-if-unset>false</ui:value-if-unset>
+        <constraints>
+          <required>true</required>
+        </constraints>
+      </ct:field>
+      <ct:field name="autoplayInterval" type="number">
+        <ui:label>Autoplay interval</ui:label>
+        <ui:description>Autoplay interval (in seconds)</ui:description>
+        <ct:constraints>
+          <ct:minimum>1</ct:minimum>
+        </ct:constraints>
+        <ui:value-if-unset>5</ui:value-if-unset>
+        <ct:format>##</ct:format>
+      </ct:field>
+      <ct:field name="width" type="enumeration">
+        <ui:label>Width</ui:label>
+        <ui:description>The width of the carousel group</ui:description>
+        <ct:enumeration value="auto">
+          <ui:label>Auto</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="220">
+          <ui:label>220px</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="300">
+          <ui:label>300px</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="380">
+          <ui:label>380px</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="460">
+          <ui:label>460px</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="620">
+          <ui:label>620px</ui:label>
+        </ct:enumeration>
+        <ui:value-if-unset>auto</ui:value-if-unset>
+      </ct:field>
+      <ct:field name="heightOption" type="enumeration">
+        <ui:label>Height option</ui:label>
+        <ui:description>The height option of the carousel group</ui:description>
+        <ct:enumeration value="auto">
+          <ui:label>Auto</ui:label>
+        </ct:enumeration>
+        <ct:enumeration value="fixed">
+          <ui:label>Fixed</ui:label>
+        </ct:enumeration>
+        <ui:value-if-unset>auto</ui:value-if-unset>
+      </ct:field>
+      <ct:field name="height" type="number">
+        <ui:label>Height (px)</ui:label>
+        <ui:description>Height of the carousel group</ui:description>
+        <ct:constraints>
+          <ct:minimum>100</ct:minimum>
+        </ct:constraints>
+        <ui:value-if-unset>100</ui:value-if-unset>
+        <ct:format>####</ct:format>
+      </ct:field>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the carousel group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the carousel group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="carouselGroup-area">
+      <ref-group name="tabPaneGroup" />
+    </area>
+  </group>
+
+  <!-- definition of tabPane group -->
+  <group name="tabPaneGroup">
+    <ui:label>Pane</ui:label>
+    <ct:options>
+      <ct:field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+        <ui:description>The title of the pane group</ui:description>
+      </ct:field>
+      <ct:field name="name" type="basic" mime-type="text/plain">
+        <ui:label>Name</ui:label>
+        <ui:description>The name of the pane group</ui:description>
+      </ct:field>
+      <ct:field name="reloadPage" type="boolean">
+        <ui:label>Page reload</ui:label>
+        <ui:boolean-label value="true">Reload page when the tab is clicked</ui:boolean-label>
+        <ui:boolean-label value="false">Do not reload page when the tab is clicked</ui:boolean-label>
+        <ui:description>Page will be reloaded when this tab is clicked</ui:description>
+        <constraints>
+          <required>true</required>
+        </constraints>
+      </ct:field>
+      <ct:field name="customStyleClass" type="basic" mime-type="text/plain">
+        <ui:label>Style class</ui:label>
+        <ui:description>Custom style class for the tab pane group</ui:description>
+      </ct:field>
+      <ct:field name="styleId" type="basic" mime-type="text/plain">
+        <ui:label>Style Id</ui:label>
+        <ui:description>Style id for the tab pane group</ui:description>
+      </ct:field>
+    </ct:options>
+    <area name="tabPaneGroup-area">
+      <!-- main area groups -->
+      <ref-group name="x300x300"/>
+      <ref-group name="x140x140x140x140"/>
+      <ref-group name="x380x220"/>
+      <ref-group name="x220x220x140"/>
+      <ref-group name="x300x140x140"/>
+      <ref-group name="x460x140" />
+      <ref-group name="x620x300"/>
+
+      <!-- 460px wide column groups -->
+      <ref-group name="x300x140"/>
+      <ref-group name="x140x140x140"/>
+
+      <!-- top and bottom area groups-->
+      <ref-group name="x460x460"/>
+      <ref-group name="x700x220"/>
+      <ref-group name="x300x300x300"/>
+      <ref-group name="x380x300x220"/>
+      <ref-group name="x220x220x220x220"/>
+
+      <!-- right area groups -->
+      <ref-group name="x140x140"/>
+    </area>
+  </group>
+
+  <!-- These groups are relevant only for the content pages -->
+  <group name="header1">
+    <ui:label>header1</ui:label>
+    <area name="header1-area" />
+  </group>
+
+  <group name="header2">
+    <ui:label>header2</ui:label>
+    <area name="header2-area" />
+  </group>
+
+  <group name="header3">
+    <ui:label>header3</ui:label>
+    <area name="header3-area" />
+  </group>
+
+  <!--
+  <group name="header4">
+    <ui:label>header4</ui:label>
+    <area name="header4-area" />
+  </group>
+
+  <group name="header5">
+    <ui:label>header5</ui:label>
+    <area name="header5-area" />
+  </group>
+  -->
+
+  <group name="top1">
+    <ui:label>top1</ui:label>
+    <area name="top1-area" />
+  </group>
+
+  <group name="top2">
+    <ui:label>top2</ui:label>
+    <area name="top2-area" />
+  </group>
+
+  <group name="top3">
+    <ui:label>top3</ui:label>
+    <area name="top3-area" />
+  </group>
+
+  <!--
+  <group name="top4">
+    <ui:label>top4</ui:label>
+    <area name="top4-area" />
+  </group>
+
+  <group name="top5">
+    <ui:label>top5</ui:label>
+    <area name="top5-area" />
+  </group>
+  -->
+
+  <group name="main1">
+    <ui:label>main1</ui:label>
+    <area name="main1-area">
+      <ct:options>
+        <ct:field name="teaserOptions" type="enumeration">
+          <ui:label>Teaser Options</ui:label>
+          <ui:description>Teaser Options to customize the appearance of article teasers</ui:description>
+          <ct:enumeration value="default">
+            <ui:label>Default</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="breakingNews">
+            <ui:label>Breaking News</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="exclusive">
+            <ui:label>Exclusive</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>default</ui:value-if-unset>
+        </ct:field>
+      </ct:options>
+    </area>
+  </group>
+
+  <group name="main2">
+    <ui:label>main2</ui:label>
+    <area name="main2-area">
+      <ct:options>
+        <ct:field name="teaserOptions" type="enumeration">
+          <ui:label>Teaser Options</ui:label>
+          <ui:description>Teaser Options to customize the appearance of article teasers</ui:description>
+          <ct:enumeration value="default">
+            <ui:label>Default</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="breakingNews">
+            <ui:label>Breaking News</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="exclusive">
+            <ui:label>Exclusive</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>default</ui:value-if-unset>
+        </ct:field>
+      </ct:options>
+    </area>
+  </group>
+
+  <group name="main3">
+    <ui:label>main3</ui:label>
+    <area name="main3-area">
+      <ct:options>
+        <ct:field name="teaserOptions" type="enumeration">
+          <ui:label>Teaser Options</ui:label>
+          <ui:description>Teaser Options to customize the appearance of article teasers</ui:description>
+          <ct:enumeration value="default">
+            <ui:label>Default</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="breakingNews">
+            <ui:label>Breaking News</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="exclusive">
+            <ui:label>Exclusive</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>default</ui:value-if-unset>
+        </ct:field>
+      </ct:options>
+    </area>
+  </group>
+
+  <!--
+  <group name="main4">
+    <ui:label>main4</ui:label>
+    <area name="main4-area">
+      <ct:options>
+        <ct:field name="teaserOptions" type="enumeration">
+          <ui:label>Teaser Options</ui:label>
+          <ui:description>Teaser Options to customize the appearance of article teasers</ui:description>
+          <ct:enumeration value="default">
+            <ui:label>Default</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="breakingNews">
+            <ui:label>Breaking News</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="exclusive">
+            <ui:label>Exclusive</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>default</ui:value-if-unset>
+        </ct:field>
+      </ct:options>
+    </area>
+  </group>
+
+  <group name="main5">
+    <ui:label>main5</ui:label>
+    <area name="main5-area">
+      <ct:options>
+        <ct:field name="teaserOptions" type="enumeration">
+          <ui:label>Teaser Options</ui:label>
+          <ui:description>Teaser Options to customize the appearance of article teasers</ui:description>
+          <ct:enumeration value="default">
+            <ui:label>Default</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="breakingNews">
+            <ui:label>Breaking News</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="exclusive">
+            <ui:label>Exclusive</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>default</ui:value-if-unset>
+        </ct:field>
+      </ct:options>
+    </area>
+  </group>
+  -->
+  <group name="topStories">
+    <ui:label>topStories</ui:label>
+    <area name="topStories-area">
+      <ct:options>
+        <ct:field name="teaserOptions" type="enumeration">
+          <ui:label>Teaser Options</ui:label>
+          <ui:description>Teaser Options to customize the appearance of article teasers</ui:description>
+          <ct:enumeration value="default">
+            <ui:label>Default</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="breakingNews">
+            <ui:label>Breaking News</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="exclusive">
+            <ui:label>Exclusive</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>default</ui:value-if-unset>
+        </ct:field>
+      </ct:options>
+    </area>
+  </group>
+
+  <group name="featuredStories">
+    <ui:label>featuredStories</ui:label>
+    <area name="featuredStories-area">
+      <ct:options>
+        <ct:field name="teaserOptions" type="enumeration">
+          <ui:label>Teaser Options</ui:label>
+          <ui:description>Teaser Options to customize the appearance of article teasers</ui:description>
+          <ct:enumeration value="default">
+            <ui:label>Default</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="breakingNews">
+            <ui:label>Breaking News</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="exclusive">
+            <ui:label>Exclusive</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>default</ui:value-if-unset>
+        </ct:field>
+      </ct:options>
+    </area>
+  </group>
+
+  <group name="carousel">
+    <ui:label>Carousel</ui:label>
+    <area name="carousel-area">
+      <ct:options>
+        <ct:field name="teaserOptions" type="enumeration">
+          <ui:label>Teaser Options</ui:label>
+          <ui:description>Teaser Options to customize the appearance of article teasers</ui:description>
+          <ct:enumeration value="default">
+            <ui:label>Default</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="breakingNews">
+            <ui:label>Breaking News</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="exclusive">
+            <ui:label>Exclusive</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>default</ui:value-if-unset>
+        </ct:field>
+      </ct:options>
+    </area>
+  </group>
+
+  <group name="poll">
+    <ui:label>poll</ui:label>
+    <area name="poll-area">
+      <ct:options>
+        <ct:field name="teaserOptions" type="enumeration">
+          <ui:label>Teaser Options</ui:label>
+          <ui:description>Teaser Options to customize the appearance of article teasers</ui:description>
+          <ct:enumeration value="default">
+            <ui:label>Default</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="breakingNews">
+            <ui:label>Breaking News</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="exclusive">
+            <ui:label>Exclusive</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>default</ui:value-if-unset>
+        </ct:field>
+      </ct:options>
+    </area>
+  </group>
+
+   <group name="stats">
+    <ui:label>stats</ui:label>
+    <area name="stats-area">
+      <ct:options>
+        <ct:field name="teaserOptions" type="enumeration">
+          <ui:label>Teaser Options</ui:label>
+          <ui:description>Teaser Options to customize the appearance of article teasers</ui:description>
+          <ct:enumeration value="default">
+            <ui:label>Default</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="breakingNews">
+            <ui:label>Breaking News</ui:label>
+          </ct:enumeration>
+          <ct:enumeration value="exclusive">
+            <ui:label>Exclusive</ui:label>
+          </ct:enumeration>
+          <ui:value-if-unset>default</ui:value-if-unset>
+        </ct:field>
+      </ct:options>
+    </area>
+  </group>
+
+  <group name="left1">
+    <ui:label>left1</ui:label>
+    <area name="left1-area" />
+  </group>
+
+  <group name="left2">
+    <ui:label>left2</ui:label>
+    <area name="left2-area" />
+  </group>
+
+  <group name="left3">
+    <ui:label>left3</ui:label>
+    <area name="left3-area" />
+  </group>
+
+  <!--
+  <group name="left4">
+    <ui:label>left4</ui:label>
+    <area name="left4-area" />
+  </group>
+
+  <group name="left5">
+    <ui:label>left5</ui:label>
+    <area name="left5-area" />
+  </group>
+  -->
+
+  <group name="right1">
+    <ui:label>right1</ui:label>
+    <area name="right1-area" />
+  </group>
+
+  <group name="right2">
+    <ui:label>right2</ui:label>
+    <area name="right2-area" />
+  </group>
+
+  <group name="right3">
+    <ui:label>right3</ui:label>
+    <area name="right3-area" />
+  </group>
+
+  <!--
+  <group name="right4">
+    <ui:label>right4</ui:label>
+    <area name="right4-area" />
+  </group>
+
+  <group name="right5">
+    <ui:label>right5</ui:label>
+    <area name="right5-area" />
+  </group>
+  -->
+  <group name="bottom1">
+    <ui:label>bottom1</ui:label>
+    <area name="bottom1-area" />
+  </group>
+
+  <group name="bottom2">
+    <ui:label>bottom2</ui:label>
+    <area name="bottom2-area" />
+  </group>
+
+  <group name="bottom3">
+    <ui:label>bottom3</ui:label>
+    <area name="bottom3-area" />
+  </group>
+
+  <!--
+  <group name="bottom4">
+    <ui:label>bottom4</ui:label>
+    <area name="bottom4-area" />
+  </group>
+
+  <group name="bottom5">
+    <ui:label>bottom5</ui:label>
+    <area name="bottom5-area" />
+  </group>
+  -->
+  <group name="footer1">
+    <ui:label>footer1</ui:label>
+    <area name="footer1-area" />
+  </group>
+
+  <group name="footer2">
+    <ui:label>footer2</ui:label>
+    <area name="footer2-area" />
+  </group>
+
+  <group name="footer3">
+    <ui:label>footer3</ui:label>
+    <area name="footer3-area" />
+  </group>
+
+  <group name="switchingGroup">
+    <ui:label>Switch</ui:label>
+    <area name="switchingGroup-area">
+      <ref-group name="tabPaneGroup" />
+    </area>
+  </group>
+
+  <!--
+  <group name="footer4">
+    <ui:label>footer4</ui:label>
+    <area name="footer4-area" />
+  </group>
+
+  <group name="footer5">
+    <ui:label>footer5</ui:label>
+    <area name="footer5-area" />
+  </group> -->
+</groups>

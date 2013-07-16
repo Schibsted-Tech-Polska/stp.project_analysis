@@ -1,0 +1,234 @@
+.artTheme,
+.rowTheme {
+    position:relative;
+    text-shadow: none;
+    color:#000;
+}
+
+section.rowTheme header,
+article.artTheme header {
+    border-bottom: 0 none;
+    margin-bottom: 0;
+}
+
+#page .artTheme {
+    overflow: visible;
+}
+
+.rowTheme {
+    background-color: #fff;
+    box-shadow: none;
+    margin-top:4px;
+}
+
+.gridRow.rowTheme {
+    margin-bottom:19px;
+    margin-top: 3px;
+}
+
+.rowTheme.hasThemeHeadline:before,
+.rowTheme.hasThemeHeadline:after,
+.artTheme.hasThemeHeadline:before,
+.artTheme.hasThemeHeadline:after {
+    background: #000;
+    content:' ';
+    display:block;
+    visibility: visible;
+    border-radius: 0;
+    width:100%;
+    height:3px;
+}
+
+.rowTheme:before,
+.artTheme:before {
+    position:absolute;
+    top:-3px;
+    left:0;
+}   /* All this because of webkit */
+
+.rowTheme:after,
+.artTheme:after {
+    margin-left:-10px;
+    padding: 0 10px;
+    position:relative;
+    bottom:-7px;
+}
+
+.ie .artTheme.roundCorner {
+    behavior:'';
+}
+
+.rowTheme .themeHeadline,
+.artTheme .themeHeadline {
+    border-bottom: medium none;
+}
+
+.rowTheme .themeHeadline h1,
+.artTheme .themeHeadline h2 {
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: none;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.rowTheme > .themeHeadline h1,
+.artTheme > .themeHeadline h2 {
+    background: #000;
+
+    color: #fff;
+    line-height: 20px;
+    border-radius:0;
+    padding: 0 10px;
+    position:absolute;
+    left:0;
+    top:-3px;
+}
+
+.rowTheme.hasThemeHeadline {
+    padding-top:30px;
+}
+
+.artTheme.hasThemeHeadline {
+    margin-top:9px;
+    padding-top: 30px;
+}
+.artTheme.hasThemeHeadline + .artTheme {
+    margin-top: 20px;
+}
+
+.sectionPage .media,
+.list .media {
+    border: 0 none;
+}
+.artTheme.noThemeHeadline {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/************************ colors ***************************/
+
+/* black */
+.black h1 a,
+.black h2 a,
+.black h3 a,
+.black h4 a {
+    color: #fff;
+}
+.black h1 a:hover,
+.black h2 a:hover,
+.black h3 a:hover,
+.black h4 a:hover {
+    color: #fff;
+}
+
+.artTheme.black,
+.rowTheme.black {
+    background-color:#222;
+    color: #fff;
+}
+
+/* blue */
+.blue.hasThemeHeadline:before,
+.blue.hasThemeHeadline:after,
+.blue.rowTheme > .themeHeadline h1,
+.blue.artTheme > .themeHeadline h2 {
+    background: #123466;
+}
+.artTheme.blue,
+.rowTheme.blue {
+    background-color:#E8EBF0;
+}
+
+/* red */
+.red.hasThemeHeadline:before,
+.red.hasThemeHeadline:after,
+.red.rowTheme > .themeHeadline h1,
+.red.artTheme > .themeHeadline h2 {
+    background: #b32525;
+}
+.artTheme.red,
+.rowTheme.red {
+    background-color:#f5eaea;
+}
+
+/* light red */
+.lightRed.hasThemeHeadline:before,
+.lightRed.hasThemeHeadline:after,
+.lightRed.rowTheme > .themeHeadline h1,
+.lightRed.artTheme > .themeHeadline h2 {
+    background-color: #ed3c39;
+}
+
+.artTheme.lightRed,
+.rowTheme.lightRed {
+    background-color:#f5eaea;
+}
+
+/* light grey */
+.lightGray.hasThemeHeadline:before,
+.lightGray.hasThemeHeadline:after,
+.lightGray.rowTheme > .themeHeadline h1,
+.lightGray.artTheme > .themeHeadline h2 {
+    background: lightSlateGray;
+}
+.artTheme.lightGray,
+.rowTheme.lightGray {
+    background-color:#ECECEC;
+}
+
+/* orange */
+.orange.hasThemeHeadline:before,
+.orange.hasThemeHeadline:after,
+.orange.rowTheme > .themeHeadline h1,
+.orange.artTheme > .themeHeadline h2{
+    background: #F60;
+}
+
+.artTheme.orange,
+.rowTheme.orange {
+    background-color:#FFF0E6;
+}
+
+/* dark orange */
+.darkOrange.hasThemeHeadline:before,
+.darkOrange.hasThemeHeadline:after,
+.darkOrange.rowTheme > .themeHeadline h1,
+.darkOrange.artTheme > .themeHeadline h2 {
+    background-color:#d65120;
+    color: #fff;
+}
+.artTheme.darkOrange,
+.rowTheme.darkOrange{
+    background-color:#FFF0E6;
+}
+
+/* green */
+.green.hasThemeHeadline:before,
+.green.hasThemeHeadline:after,
+.green.rowTheme > .themeHeadline h1,
+.green.artTheme > .themeHeadline h2 {
+    background: #9AAE06;
+}
+.artTheme.green,
+.rowTheme.green {
+    background-color:#F5F7E7;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover {
+    color: #000;
+}
+
+/* tip us */
+.green p.moreToFollow,
+.orange p.moreToFollow,
+.lightRed p.moreToFollow {
+    color: #000;
+}

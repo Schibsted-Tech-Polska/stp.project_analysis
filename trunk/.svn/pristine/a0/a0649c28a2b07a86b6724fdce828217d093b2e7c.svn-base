@@ -1,0 +1,4 @@
+mobileStoryContent.widget.published.label=Published:
+mobileStoryContent.widget.updated.label=Updated:
+mobileStoryContent.error.message=The Mobile Story Content Widget is supposed to be used only in article context, and only in the context of news type articles.
+mobileStoryContent.tags.label=Tags

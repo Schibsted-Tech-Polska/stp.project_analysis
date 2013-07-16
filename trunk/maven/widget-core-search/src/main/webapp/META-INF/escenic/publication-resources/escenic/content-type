@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!-- field groups for search widget -->
+  <field-group name="search-widget-general-fields">
+    <field type="enumeration" name="view">
+      <ui:label>View</ui:label>
+      <ui:description>This option is used to set the view of search widget.</ui:description>
+      <enumeration value="simpleForm">
+        <ui:label>Simple form</ui:label>
+      </enumeration>
+      <enumeration value="advancedForm">
+        <ui:label>Advanced form</ui:label>
+      </enumeration>
+      <enumeration value="searchResult">
+        <ui:label>Search result</ui:label>
+      </enumeration>
+      <ui:value-if-unset>simpleForm</ui:value-if-unset>
+    </field>
+  </field-group>
+  <field-group name="search-widget-simple-form-fields">
+    <field name="articleTypes" type="basic" mime-type="text/plain">
+      <ui:label>Content types</ui:label>
+      <ui:description>
+        Comma separated list of article-types.
+        If it's empty, then all the article-types will be included in the search.
+      </ui:description>
+      <ui:value-if-unset>news</ui:value-if-unset>
+    </field>
+    <field name="pageLength" type="number">
+      <ui:label>Page length</ui:label>
+      <ui:description>The number of search items per page</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+      <ui:value-if-unset>5</ui:value-if-unset>
+    </field>
+    <field name="searchAllSections" type="boolean">
+      <ui:label>Sections</ui:label>
+      <ui:description>If this item is enabled, the results will contain items from all sections. If the item is
+        disabled, retults will come from the current section
+      </ui:description>
+      <ui:boolean-label value="true">Search through all sections</ui:boolean-label>
+      <ui:boolean-label value="false">Only search through current section</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="includeSubSections" type="boolean">
+      <ui:label>Search in subsections</ui:label>
+      <ui:description>This option is not in effect if "Sections" is set to "all sections"</ui:description>
+      <ui:boolean-label value="true">Search for content in subsections</ui:boolean-label>
+      <ui:boolean-label value="false">Search for content excluding subsections</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+
+  <field-group name="search-widget-advanced-fields">
+    <field name="searchEngineName" type="basic" mime-type="text/plain">
+      <ui:label>Search engine name</ui:label>
+      <ui:value-if-unset>LucySearchEngine</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="search-widget-advanced-form-fields">
+    <field name="articleTypesAdvanced" type="basic" mime-type="text/plain">
+      <ui:label>Content types</ui:label>
+      <ui:description>
+        Comma separated list of article-types.
+        If it's empty, then all the article-types will be included in the search.
+      </ui:description>
+      <ui:value-if-unset>news</ui:value-if-unset>
+    </field>
+    <field name="pageLengthAdvanced" type="number">
+      <ui:label>Page length</ui:label>
+      <ui:description>The number of search items per page</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+      <ui:value-if-unset>5</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="search-widget-result-fields">
+    <field name="showLeadTextResult" type="boolean">
+      <ui:label>Show lead text</ui:label>
+      <ui:boolean-label value="true">Show lead text</ui:boolean-label>
+      <ui:boolean-label value="false">Do not show lead text</ui:boolean-label>
+      <ui:description>If this item is enabled, the lead text will be shown in search result</ui:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="showImageResult" type="boolean">
+      <ui:label>Show image</ui:label>
+      <ui:boolean-label value="true">Show image</ui:boolean-label>
+      <ui:boolean-label value="false">Do not show image</ui:boolean-label>
+      <ui:description>If this item is enabled, the related image will be shown in search result</ui:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="imageVersionResult" type="basic" mime-type="text/plain">
+      <ui:label>Image representation</ui:label>
+      <ui:description>The name of the image representation to be used</ui:description>
+    </field>
+    <field name="showPublishedDateResult" type="boolean">
+      <ui:label>Show published date</ui:label>
+      <ui:boolean-label value="true">Show published date</ui:boolean-label>
+      <ui:boolean-label value="false">Do not show published date</ui:boolean-label>
+      <ui:description>If this item is enabled, the published date will be shown in search result</ui:description>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="showLastModifiedDateResult" type="boolean">
+      <ui:label>Show last modified date</ui:label>
+      <ui:boolean-label value="true">Show last modified date</ui:boolean-label>
+      <ui:boolean-label value="false">Do not show last modified date</ui:boolean-label>
+      <ui:description>If this item is enabled, the last modified date will be shown in search result</ui:description>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field type="basic" mime-type="text/plain" name="dateFormatResult">
+      <ui:label>Date format</ui:label>
+      <ui:description>The simple date format, that will be used for for published date and last modified date
+      </ui:description>
+      <ui:value-if-unset>dd MMMM yyyy</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <!-- content type for search widget -->
+  <content-type name="widget_search">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Search Widget</ui:label>
+    <ui:description>A widget that displays a simple search box</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The general configuration fields</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="search-widget-general-fields"/>
+    </panel>
+
+    <panel name="simpleForm">
+      <ui:label>Simple form</ui:label>
+      <ui:description>The configuration fields for simple query</ui:description>
+      <ref-field-group name="search-widget-simple-form-fields"/>
+    </panel>
+
+    <panel name="advancedForm">
+      <ui:label>Advanced form</ui:label>
+      <ui:description>The configuration fields for advanced query</ui:description>
+      <ref-field-group name="search-widget-advanced-form-fields"/>
+    </panel>
+
+    <panel name="searchResult">
+      <ui:label>Search result</ui:label>
+      <ui:description>The configuration fields for search result</ui:description>
+      <ref-field-group name="search-widget-result-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="search-widget-advanced-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-public-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Summary</ui:label>
+      <field type="basic" mime-type="text/plain" name="title">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

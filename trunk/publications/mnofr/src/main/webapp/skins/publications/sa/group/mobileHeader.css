@@ -1,0 +1,81 @@
+#header {
+    background: #123466;
+    border-bottom: 0 none;
+    margin-bottom:10px;
+}
+
+#header .gridRow {
+    margin: 0;
+}
+
+/* logo */
+#header .widget.logo {
+    float:left;
+    padding: 12px 0;
+}
+
+@media only screen and (max-width : 480px) {
+    .logo {
+        max-width:50%;
+    }
+}
+
+.logo img {
+    display:block;
+    width:100%;
+    max-width:150px;
+}
+
+/* menu */
+.menuBar {
+    background-color: #ccc;
+    -moz-box-shadow:0 5px 5px #666 inset;
+        -webkit-box-shadow:0 5px 5px #666 inset;
+        -o-box-shadow:0 5px 5px #666 inset;
+        box-shadow:0 5px 5px #666 inset;
+}
+
+#page .mobileHeader.scrubber {
+    background: transparent;
+    border-top: 0 none;
+    -moz-box-shadow:none;
+        -webkit-box-shadow:none;
+        box-shadow:none;
+}
+
+#page .mobileHeader.scrubber:before,
+#page .mobileHeader.scrubber:after {
+    color: #000;
+}
+
+#page .mobileHeader.scrubber:before {
+    background-image: -moz-linear-gradient(left, rgba(255,255,255,1) 20%, rgba(255,255,255,0));
+        background-image: -webkit-gradient(linear, left top, right top, color-stop(0.2, rgba(255,255,255,1)), color-stop(1,rgba(255,255,255,0)));
+        background-image: -webkit-linear-gradient(left, rgba(255,255,255,1 20%), rgba(255,255,255,0));
+        background-image: linear-gradient(left, rgba(255,255,255,1) 20%, rgba(255,255,255,0));
+    left:0;
+}
+
+#page .mobileHeader.scrubber:after {
+    background-image: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1) 80%);
+        background-image: -webkit-gradient(linear, left top, right top, color-stop(.8, rgba(255,255,255,1)), color-stop(0,rgba(255,255,255,0)));
+        background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1) 80%);
+        background-image: linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1) 80%);
+    right:0;
+}
+
+/* weather */
+#header .nowForecastForHeader span.weather-icon {
+    float: left;
+    margin-right: 5px !important;
+}
+
+#header .nowForecastForHeader {
+    top: 11px;
+    margin: 0 !important;
+    line-height: 25px !important;
+}
+
+#header .nowForecastForHeader .sted {
+    display: none;
+}

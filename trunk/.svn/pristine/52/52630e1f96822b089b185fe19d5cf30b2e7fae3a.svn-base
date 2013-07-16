@@ -1,0 +1,11 @@
+/* Hestesko ad */
+
+.hestesko{
+    left:-180px;
+    top:0;
+    position:absolute !important;
+}
+#hestesko_topp img{
+    position:absolute;
+    left:0;
+}

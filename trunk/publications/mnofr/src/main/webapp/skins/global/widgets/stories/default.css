@@ -1,0 +1,279 @@
+.stories .teaserText {
+    margin-bottom:0;
+}
+
+.stories ul {
+    list-style: outside square;
+    padding-left:20px;
+}
+
+.stories .reviewPerformer{
+    border:none;
+}
+
+/* live studio */
+.stories .preview {
+    margin: 10px 0;
+}
+
+.stories .preview .latestNews {
+    background-color: #fff;
+    list-style-type: none;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.stories .preview .latestNews li {
+    background-color: #fff;
+    border-top: 1px solid #EDEDED;
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    margin: 0;
+    padding-right: 24px;
+    position: relative;
+}
+
+.stories .preview .latestNews li:nth-child(2n) {
+    background-color: #F5F5F5;
+}
+
+.stories .preview .latestNews .timestamp {
+    background-color: #999;
+    color: #fff;
+    display: inline-block;
+    float: left;
+    line-height: 23px;
+    margin: -1px 5px 0 0;
+    padding: 0 4px;
+    text-shadow: none;
+}
+
+.stories .preview .latestNews img {
+    margin: 1px 5px;
+    position: absolute;
+    right: -3px;
+}
+
+.ie7 .stories .preview .latestNews img {
+    margin: -2px 5px 1px 5px;
+}
+
+.stories .preview .latestNews q {
+    padding: 0 2px;
+    text-overflow: ellipsis;
+}
+
+.stories .preview .readmore {
+    float: right;
+    text-decoration: none;
+}
+
+/* most shared icon */
+.stories img.mostShared {
+    margin: 5px 0;
+    width: 108px;
+        height: 20px;
+}
+
+/* timestamp */
+.stories .timestamp {
+    background-color: #333;
+    color: #fff;
+    float: left;
+    font-size: 12px;
+    padding: 0 4px;
+        margin-right: 5px;
+}
+
+/* Videomarker - copied from storyContent */
+.videoMarker {
+    background:url(/skins/global/gfx/icons/playicon_tv.png) no-repeat center;
+        opacity: 0.7;
+    display:block;
+    position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.ie6 .videoMarker, .ie7 .videoMarker, .ie8 .videoMarker {
+    display: none;
+}
+
+.playerWrapper { overflow: hidden; }
+
+.videoMarkerIE {
+    position: absolute;
+        z-index: 100;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0 !important;
+    border: 0 !important;
+}
+
+.videoMarkerIE tr {
+    background-color: transparent !important;
+}
+
+.ie6 .videoMarkerIE, .ie7 .videoMarkerIE { top: 21%; }
+
+.videoMarkerIE span {
+    overflow: hidden;
+    width: 37px;
+    height: 37px;
+    cursor: pointer;
+}
+
+.videoMarkerIE img {
+    margin: 0 auto;
+}
+
+/* Breaking news icon */
+.moreToFollow {
+    color:#900;
+    font-weight:bold;
+        text-shadow:none;
+        text-transform:uppercase;
+    margin:5px 0;
+    position:relative;
+}
+
+.moreToFollow:before {
+    background: url(/skins/global/gfx/icons/breakingNews.gif) no-repeat center center;
+    content:' ';
+    display:inline-block;
+    margin-right:5px;
+    position:relative;
+        left:0;
+    width:24px;
+        height:10px;
+}
+
+.moreToFollow.large {
+    font-size:20px;
+    margin-top:0;
+}
+
+.moreToFollow.large:before {
+    background: url(/skins/global/gfx/icons/breakingNewsLarge.gif) no-repeat center center;
+    width:36px;
+        height:20px;
+}
+
+.negativ .moreToFollow.large:before,
+.black .moreToFollow.large:before {
+    background: url(/skins/global/gfx/icons/breakingNewsLargeBlack.gif) no-repeat center center;
+}
+
+.negativ .moreToFollow:before,
+.black .moreToFollow:before {
+    background:url(/skins/global/gfx/icons/breakingNewsBlack.gif) no-repeat center center;
+}
+
+.black .moreToFollow {
+    color:#c00;
+}
+
+/* End breaking news */
+
+.videoMarkerIE td {
+    vertical-align: middle;
+}
+
+.videoMarker:hover {
+    -moz-transition: opacity 1s ease 0;
+    -webkit-transition: opacity 1s ease 0;
+    -o-transition: opacity 1s ease 0s;
+    transition: opacity 1s ease 0;
+    opacity: 1;
+}
+
+/* poll */
+.negativ .poll .header {
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 0 none;
+}
+.negativ .poll .header h3 {
+    background-color: transparent;
+    text-shadow: none;
+}
+.negativ .poll .pollLabels {
+    -moz-box-shadow: 0 0 5px #fff;
+    -webkit-box-shadow: 0 0 5px #fff;
+    box-shadow: 0 0 5px #fff;
+}
+.negativ .poll .f-small {
+    color: #aaa;
+}
+.negativ .poll .button {
+    background-color: #fff;
+}
+.negativ .poll a.button,
+.negativ .poll a.button:hover,
+.negativ .poll a.button:visited,
+.negativ .poll a.button:active {
+    color: #aaa;
+}
+
+/* form */
+.poll fieldset {
+    border:0 none;
+    overflow:hidden;
+    position:relative;
+    -moz-box-shadow:none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+}
+
+.poll label {
+    padding:0 0 10px;
+}
+
+.poll .button {
+    margin-left: 10px;
+}
+
+.poll header a{
+    float:right;
+}
+
+.poll .validation{
+    color: red;
+    font-size: 10px;
+    position: relative;
+}
+
+/* result */
+.pollLabels {
+    float:right;
+    font-size:14px;
+        line-height:1;
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-top:5px;
+    width:47%;
+}
+
+.pollLabels li {
+    padding:3px 3px 3px 13px;
+    position:relative;
+}
+
+.pollLabels .label {
+    position:absolute;
+        top:5px;
+        left:3px;
+    width:7px;
+        height:7px
+}
+
+.pollLabels .f-small {
+    font-size:12px;
+}

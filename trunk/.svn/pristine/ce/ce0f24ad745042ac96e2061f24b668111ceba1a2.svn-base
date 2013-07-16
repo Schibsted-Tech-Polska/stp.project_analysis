@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!-- field group definitions for mobileTwitter widget -->
+  <field-group name="mobile-twitter-widget-general-fields">
+    <field name="mode" type="enumeration">
+      <ui:label>Mode</ui:label>
+      <ui:description>How to get the tweets</ui:description>
+      <enumeration value="username">
+        <ui:label>Username</ui:label>
+      </enumeration>
+      <enumeration value="search">
+        <ui:label>Search</ui:label>
+      </enumeration>
+      <ui:value-if-unset>username</ui:value-if-unset>
+    </field>
+
+    <field name="userName" type="basic" mime-type="text/plain">
+      <ui:label>User name</ui:label>
+      <ui:description>The name of the twitter user to fetch</ui:description>
+    </field>
+
+    <field name="searchWord" type="basic" mime-type="text/plain">
+      <ui:label>Searchword</ui:label>
+      <ui:description>The word to search for</ui:description>
+    </field>
+
+    <field name="count" type="number">
+      <ui:label>Count</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+      <ui:value-if-unset>5</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <!-- content type definition for mobileTwitter widget -->
+  <content-type name="widget_mobileTwitter">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Mobile Twitter Widget</ui:label>
+    <ui:description>A widget that presents a user timeline from twitter</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>General configuration of the widget</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="mobile-twitter-widget-general-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Content Summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

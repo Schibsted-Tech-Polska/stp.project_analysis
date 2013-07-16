@@ -1,0 +1,27 @@
+.relatedContents.poll header {
+    border-bottom: 3px solid rgb(75,134,198);
+    margin-bottom: 5px;
+    line-height: 1.1em;
+}
+.relatedContents.poll h3 {
+    font-family: Tahoma, Arial, sans-serif;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 0;
+}
+.relatedContents.poll h3:after {
+    content: '';
+    background-color: rgb(157, 0, 0);
+    border-radius: 1em;
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: 0;
+}
+.poll h2 {
+    font-size: 1.2em;
+    padding: 4px 0 10px;
+}

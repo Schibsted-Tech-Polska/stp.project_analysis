@@ -1,0 +1,18 @@
+.customerMenu {
+    float: right;
+}
+
+.customerMenu nav {
+    float:left;
+}
+
+.customerMenu li > a,
+.customerMenu > a {
+    background: none;
+	float: left;
+    font-weight: normal;
+        line-height: 20px;
+    height: 20px;
+    margin: 5px 0;
+    font-size: 15px;
+}

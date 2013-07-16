@@ -1,0 +1,27 @@
+.widget.realEstateInfo.keyInfoBar {
+    clear: both;
+    position: relative;
+}
+
+.widget.realEstateInfo.keyInfoBar .propertyPrice {
+    font-weight: bold;
+    font-size: 22px;
+    padding: 5px 10px;
+}
+
+.widget.realEstateInfo.keyInfoBar .keyFeatures {
+    float: right;
+    padding: 5px 0;
+}
+
+.widget.realEstateInfo.keyInfoBar .keyFeatures li {
+    display: inline;
+}
+
+.widget.realEstateInfo.keyInfoBar .keyFeatures li:after {
+    content: " | ";
+}
+
+.widget.realEstateInfo.keyInfoBar .keyFeatures li:last-child:after {
+    content: "";
+}

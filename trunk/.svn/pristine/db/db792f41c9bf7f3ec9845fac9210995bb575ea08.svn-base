@@ -1,0 +1,136 @@
+/* arrows */
+.weather .direction{
+    background: url(/skins/global/gfx/weather/icons_25x25.png) no-repeat 0 0;
+    width: 25px;
+    height: 25px;
+}
+
+.weather .strength1{
+    background-position: 0 -875px;
+}
+.weather .strength2{
+    background-position: 0 -900px;
+}
+.weather .strength3{
+    background-position: 0 -925px;
+}
+.weather .strength4{
+    background-position: 0 -950px;
+}
+.weather .strength5{
+    background-position: 0 -975px;
+}
+.weather .strength6{
+    background-position: 0 -1000px;
+}
+.weather .strength7{
+    background-position: 0 -1025px;
+}
+.weather .strength8{
+    background-position: 0 -1050px;
+}
+.weather .strength9{
+    background-position: 0 -1075px;
+}
+.weather .strength10{
+    background-position: 0 -1100px;
+}
+.weather .strength11{
+    background-position: 0 -1125px;
+}
+.weather .strength12{
+    background-position: 0 -1150px;
+}
+
+/* starting point arrow up */
+.weather .degreeN {
+    transform:rotate(180deg);
+        -ms-transform:rotate(180deg);
+        -moz-transform:rotate(180deg);
+        -webkit-transform:rotate(180deg);
+        -o-transform:rotate(180deg);
+}
+.weather .degreeNNE {
+    transform:rotate(202deg);
+        -ms-transform:rotate(202deg);
+        -moz-transform:rotate(202deg);
+        -webkit-transform:rotate(202deg);
+        -o-transform:rotate(202deg);
+}
+.weather .degreeNE {
+    transform:rotate(225deg);
+        -ms-transform:rotate(225deg);
+        -moz-transform:rotate(225deg);
+        -webkit-transform:rotate(225deg);
+        -o-transform:rotate(225deg);
+}
+.weather .degreeENE {
+    transform:rotate(247deg);
+        -ms-transform:rotate(247deg);
+        -moz-transform:rotate(247deg);
+        -webkit-transform:rotate(247deg);
+        -o-transform:rotate(247deg);
+}
+.weather .degreeE {
+    transform:rotate(270deg);
+        -ms-transform:rotate(270deg);
+        -moz-transform:rotate(270deg);
+        -webkit-transform:rotate(270deg);
+        -o-transform:rotate(270deg);
+}
+.weather .degreeESE {
+    transform:rotate(295deg);
+        -ms-transform:rotate(295deg);
+        -moz-transform:rotate(295deg);
+        -webkit-transform:rotate(295deg);
+        -o-transform:rotate(295deg);
+}
+.weather .degreeSE {
+    transform:rotate(315deg);
+        -ms-transform:rotate(315deg);
+        -moz-transform:rotate(315deg);
+        -webkit-transform:rotate(315deg);
+        -o-transform:rotate(315deg);
+}
+.weather .degreeSSE {
+    transform:rotate(337deg);
+        -ms-transform:rotate(337deg);
+        -moz-transform:rotate(337deg);
+        -webkit-transform:rotate(337deg);
+        -o-transform:rotate(337deg);
+}
+.weather .degreeS {
+    transform:rotate(0deg);
+        -ms-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+}
+.weather .degreeSSW {
+    transform:rotate(22deg);
+        -ms-transform:rotate(22deg);
+        -moz-transform:rotate(22deg);
+        -webkit-transform:rotate(22deg);
+        -o-transform:rotate(22deg);
+}
+.weather .degreeSW {
+    transform:rotate(45deg);
+        -ms-transform:rotate(45deg);
+        -moz-transform:rotate(45deg);
+        -webkit-transform:rotate(45deg);
+        -o-transform:rotate(45deg);
+}
+.weather .degreeWSW {
+    transform:rotate(67deg);
+        -ms-transform:rotate(67deg);
+        -moz-transform:rotate(67deg);
+        -webkit-transform:rotate(67deg);
+        -o-transform:rotate(67deg);
+}
+.weather .degreeW {
+    transform:rotate(90deg);
+        -ms-transform:rotate(90deg);
+        -moz-transform:rotate(90deg);
+        -webkit-transform:rotate(90deg);
+        -o-transform:rotate(90deg);
+}

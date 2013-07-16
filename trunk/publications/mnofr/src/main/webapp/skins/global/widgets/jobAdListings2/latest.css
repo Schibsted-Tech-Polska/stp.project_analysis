@@ -1,0 +1,61 @@
+.jobAdListings2.latest {
+    font-family: Klavika, Helvetica, Arial, sans-serif;
+    padding: 0 5px;
+}
+
+.jobAdListings2.latest header {
+    padding: 5px 0;
+}
+
+.jobAdListings2.latest header h2 {
+    background: none;
+    color: #4c4c4c;
+    font-family: Klavika, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    padding: 0;
+}
+
+.jobAdListings2.latest li {
+    border-top: none;
+    border-bottom: 1px dotted #4c4c4c;
+    line-height: 30px;
+    margin: 0!important;
+    padding: 1px 0;
+}
+
+.jobAdListings2.latest li:first-child {
+    border-top: 1px dotted #4c4c4c;
+}
+
+.jobAdListings2.latest li a {
+    color: #4c4c4c;
+    float: left;
+    text-decoration: none;
+    width: 100%;
+}
+
+.jobAdListings2.latest li a .ellipsis {
+    float: left;
+    width: 60%;
+}
+
+.jobAdListings2.latest li .logoWrap {
+    float: right;
+    overflow: hidden;
+    width: 40%;
+}
+
+.jobAdListings2.latest li img {
+    height: 30px;
+    float: right;
+}
+
+.jobAdListings2.latest footer {
+    line-height: 30px;
+}
+
+.jobAdListings2.latest footer a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}

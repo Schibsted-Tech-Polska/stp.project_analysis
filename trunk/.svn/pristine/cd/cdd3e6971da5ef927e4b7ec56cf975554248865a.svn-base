@@ -1,0 +1,154 @@
+.jobAdSearch2.searchbox {
+    display: inline-block;
+}
+
+.jobAdSearch2.searchbox h2 {
+    color: #4c4c4c;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+.jobAdSearch2.searchbox form {
+    display: inline-block;
+}
+
+.jobAdSearch2.searchbox .pillBox {
+    border: 0 none;
+    border-radius: 0;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.jobAdSearch2 .pillBox .button {
+    background: none;
+    color: #000;
+    cursor: pointer;
+    padding-top: 0;
+    float: right;
+}
+
+.jobAdSearch2 .selectDropDown {
+    cursor: pointer;
+}
+
+.jobAdSearch2 .jobAdSearch2Categories {
+    display: block;
+    height: 44px;
+    cursor: pointer;
+}
+
+.jobAdSearch2.searchbox input[type="text"] {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    box-shadow: none;
+    color: #000;
+    font-size: 12px;
+    height: 17px;
+    width: 160px;
+    margin: 0 8px 0 0;
+}
+
+.jobAdSearch2.searchbox input[type="text"]::-webkit-input-placeholder {
+    color: #000;
+    text-transform: uppercase;
+}
+.jobAdSearch2.searchbox input[type="text"]:-moz-placeholder {/* ff 18- */
+    color: #000;
+    text-transform: uppercase;
+}
+.jobAdSearch2.searchbox input[type="text"]::-moz-placeholder {/* ff 19 + */
+    color: #000;
+    text-transform: uppercase;
+}
+.jobAdSearch2.searchbox input[type="text"]:-ms-input-placeholder {
+    color: #000;
+    text-transform: uppercase;
+}
+
+.ie8 .jobAdSearch2.searchbox input.text {
+    width: auto!important;
+}
+
+.jobAdSearch2.searchbox input[type="submit"] {
+    border-radius: 0;
+    box-shadow: none;
+    float: left;
+    height: 25px;
+    padding: 0 10px;
+}
+
+.jobAdSearch2.searchbox div {
+    margin-bottom: 10px;
+}
+
+.jobAdSearch2.searchbox li {
+    border-bottom: 1px dotted #f2f2f2;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: #000;
+    font-size: 14px;
+    height: 25px;
+    line-height: 18px;
+    margin: 0;
+    padding: 2px 0 2px 30px;
+    position: relative;
+    overflow: hidden;
+    -o-text-overflow:ellipsis;
+    -ms-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    width: 50%;
+}
+
+.jobAdSearch2.searchbox li a {
+    color: #000;
+    height: 20px;
+    text-decoration: none;
+}
+
+.jobAdSearch2.searchbox li a span {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    color: #000;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    padding: 2px 4px;
+    position: absolute;
+    right: 0;
+}
+
+.jobAdSearch2.searchbox li input[type="checkbox"] {
+    position: absolute;
+    left: 8px;
+    top: 5px;
+}
+
+.jobAdSearch2.searchbox .jobButton {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+}
+
+/* screen size tweaks */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .jobAdSearch2.searchbox input[type="text"] {
+        height: 13px;
+    }
+}
+
+@media only screen and (max-width : 320px) and (min-device-width : 320px) and (max-device-width : 480px) {
+    .jobAdSearch2.searchbox input[type="text"] {
+        width: 177px;
+    }
+}
+
+@media only screen and (min-width : 321px) and (min-device-width : 320px) and (max-device-width : 480px) {
+    .jobAdSearch2.searchbox input[type="text"] {
+        width: 336px;
+    }
+}

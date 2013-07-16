@@ -1,0 +1,71 @@
+.sectionMenu {
+    float: left;
+    margin-top: 20px;
+}
+
+.sectionMenu a,
+.sectionMenu a:visited {
+    background: none;
+    color:#fff;
+    font-family:'ClanWeb', Arial, sans-serif;
+        font-size:18px;
+        font-weight:normal;
+    margin-left:16px;
+    padding:0 0 5px;
+    height: auto;
+}
+
+.ie .sectionMenu a,
+.ie .sectionMenu a:visited {
+    font-family:'ClanWebNormal', Arial, sans-serif;
+}
+
+.sectionMenu li.first a,
+.sectionMenu li:first-of-type a {
+    margin-left: 0;
+}
+
+.sectionMenu a:hover,
+.sectionMenu .activeSection a {
+    color: #fff;
+}
+
+.sectionMenu a,
+.sectionMenu a:visited {
+    text-shadow: none;
+}
+
+.sectionMenu ul,
+.sectionTitle {
+    float: left;
+    position: relative;
+    z-index: 597;
+}
+
+.sectionMenu li {
+    line-height: 1;
+}
+
+.sectionMenu li.frontpageSubMenu {
+    display: none;
+}
+
+h1.sectionTitle {
+    border-right: 2px solid #fff;
+    display: block;
+    font-family: 'ClanWeb', Arial, sans-serif;
+        font-size: 50px;
+        font-weight: normal;
+        letter-spacing: -2px;
+    padding-right: 10px;
+	margin: -2px 10px 0 -2px;
+}
+
+.ie h1.sectionTitle {
+    font-family: 'ClanWebNormal', Arial, sans-serif;
+}
+
+.sectionTitle a,
+.sectionTitle a:hover {
+    color: #fff;
+}

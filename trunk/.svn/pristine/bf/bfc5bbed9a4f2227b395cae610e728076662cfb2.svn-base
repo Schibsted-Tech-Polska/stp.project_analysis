@@ -1,0 +1,29 @@
+.span10 .slider, .span10 input[type='range']{
+    width: 960px;
+}
+
+.span7 .slider, .span7 input[type='range']{
+    width: 660px;
+}
+
+.span6 .slider, .span6 input[type='range']{
+    width: 560px;
+}
+
+.span4 .slider, .span4 input[type='range']{
+    width: 360px;
+}
+
+/* MOBIL */
+.span10 .mobile .map{
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 360px;
+    width: auto;
+}
+
+.span10 .mobile .slider, .span6 .mobile input[type='range']{
+    width: 280px;
+}
+
+

@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+							 xmlns:doc="http://xmlns.vizrt.com/2010/documentation"
+               version="4">
+  <!--field group for carousel widgets-->
+  <field-group name="carousel-widget-basic-fields">
+    <field name="view" type="enumeration">
+      <ui:label>View</ui:label>
+      <ui:description>The view to be used to render the widget</ui:description>
+      <enumeration value="simple">
+        <ui:label>Simple</ui:label>
+				<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+					<p>Select this view if you want a single carousel containing content items from the same group in the same section.</p>
+				</doc:description>
+      </enumeration>
+      <enumeration value="complex">
+        <ui:label>Complex</ui:label>
+				<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+					<p>Select this view if you want a tabbed carousel in which each tab contains a different set of content items from a different section/group.</p>
+				</doc:description>
+      </enumeration>
+      <ui:value-if-unset>simple</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="carousel-widget-simple-fields">
+    <field name="sectionUniqueNameSimple" type="basic" mime-type="text/plain">
+      <ui:label>Section Unique Name</ui:label>
+      <ui:description>The unique name of the section from where articles will be fetched</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Enter the <em>unique name</em> of the section containing the content items you want to display
+        in the carousel.</p>
+			</doc:description>
+    </field>
+    <field name="groupNameSimple" type="basic" mime-type="text/plain">
+      <ui:label>Group Name</ui:label>
+      <ui:description>The name of the group from where the articles to be displayed will be fetched</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Enter the name of the section page group containing the content items you want to display in the carousel.</p>
+			</doc:description>
+    </field>
+    <field name="contentTypesSimple" type="basic" mime-type="text/plain">
+      <ui:label>Content types</ui:label>
+      <ui:description>The comma-separated names of the content types</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>If you only want certain types of content item to be selected for display in the carousel, enter the names of
+          content types in this field, separated by commas. Only content items of the types you specify will then be 
+          displayed in the carousel. You can use this field to ensure that only content items with suitable content 
+          are selected for inclusion - the content items selected must, for example, have a related image that can
+          be displayed in the carousel.</p>
+
+        <p>If you leave this field empty then all content items in the selected group are included in the carousel.</p>
+			</doc:description>
+    </field>
+    <field name="showFilmstripSimple" type="boolean">
+      <ui:label>Show filmstrip</ui:label>
+      <ui:boolean-label value="true">Show filmstrip</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show filmstrip</ui:boolean-label>
+      <ui:description>Showing the filmstrip will show thumbnails of items</ui:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want a film strip showing thumbnail versions of items in the carousel 
+          to be displayed below the main display. The film strip contains four thumbnails by default, but you
+          can change this with the <em>Maximum number of items per page in filmstrip</em> option.</p>
+			</doc:description>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showNavigationArrowsSimple" type="boolean">
+      <ui:label>Show filmstrip navigation arrows</ui:label>
+      <ui:boolean-label value="true">Show filmstrip navigation arrows</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show filmstrip navigation arrows</ui:boolean-label>
+      <ui:description>Showing the filmstrip navigation arrows will show arrows to navigate filmstrip items
+      </ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want navigation arrows to be displayed at either end of the film strip.
+          If you check this option and the carousel contains more than one page, then the reader
+          can use these arrows to navigate through the complete set of thumbnails, one page at a time.</p>
+			</doc:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showNavigationIndicatorsSimple" type="boolean">
+      <ui:label>Show filmstrip navigation indicators</ui:label>
+      <ui:boolean-label value="true">Show filmstrip navigation indicators</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show filmstrip navigation indicators</ui:boolean-label>
+      <ui:description>Showing the filmstrip navigation indicators will show indicators to navigate filmstrip items
+      </ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want navigation indicators to be displayed below the film strip. The
+          indicators are a row of buttons, one for each page of items in the carousel. One of the 
+          indicators is highlighted to show the current page displayed in the film strip. The reader can
+          navigate to other pages by clicking on the indicators.</p>
+			</doc:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showOverlaySimple" type="boolean">
+      <ui:label>Show overlay</ui:label>
+      <ui:boolean-label value="true">Show overlay</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show overlay</ui:boolean-label>
+      <ui:description>Showing overlay will show the title, lead text, no. of comments etc. over the display picture of
+        carousel
+      </ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want titles (and possibly other information) to be overlaid on the images 
+          displayed in the carousel.</p>
+			</doc:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showLeadTextSimple" type="boolean">
+      <ui:label>Show lead text</ui:label>
+      <ui:boolean-label value="true">Show lead text</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show lead text</ui:boolean-label>
+      <ui:description>Showing lead text will show the lead text of the content</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want the overlay text displayed by the <em>Show overlay</em> option to 
+          include the content item's lead text.</p>
+			</doc:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showCommentCountSimple" type="boolean">
+      <ui:label>Show comment count</ui:label>
+      <ui:boolean-label value="true">Show comment count</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show comment count</ui:boolean-label>
+      <ui:description>Showing comment count will show the number of comments of the content</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want the overlay text displayed by the <em>Show overlay</em> option to 
+          include the content item's comment count.</p>
+			</doc:description>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showRelatedItemsSimple" type="boolean">
+      <ui:label>Show related items</ui:label>
+      <ui:boolean-label value="true">Show related items</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show related items</ui:boolean-label>
+      <ui:description>Showing related items will show the items related to the content of the active article
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want the overlay text displayed by the <em>Show overlay</em> option to 
+          include the content item's related content items.</p>
+			</doc:description>
+      </ui:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+
+  <field-group name="carousel-widget-complex-fields">
+    <field type="complex" name="tabs">
+      <ui:label>Tabs</ui:label>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Click on the <em>Add</em> button to add a new tab to the carousel, then fill in the displayed fields to
+          define the new tab.</p>
+			</doc:description>
+      <complex>
+        <field name="tabTitleComplex" type="basic" mime-type="text/plain">
+          <ui:label>Tab title</ui:label>
+          <ui:description>The title of the tab.</ui:description>
+		      <doc:description xmlns="http://www.w3.org/1999/xhtml" >
+			      <p>Enter the title of the tab. The name you enter will be displayed on the tab.</p>
+		      </doc:description>
+          <ui:value-if-unset>tab</ui:value-if-unset>
+        </field>
+        <field name="sectionUniqueNameComplex" type="basic" mime-type="text/plain">
+          <ui:label>Section Unique Name</ui:label>
+          <ui:description>The unique name of the section from where articles will be fetched</ui:description>
+			    <doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				    <p>Enter the <em>unique name</em> of the section containing the content items you want to display
+            on this tab of the carousel.</p>
+			    </doc:description>
+        </field>
+        <field name="groupNameComplex" type="basic" mime-type="text/plain">
+          <ui:label>Group Name</ui:label>
+          <ui:description>The name of the group from where the articles to be displayed will be fetched</ui:description>
+        </field>
+        <field name="contentTypesComplex" type="basic" mime-type="text/plain">
+          <ui:label>Content types</ui:label>
+          <ui:description>The comma-separated names of the content types</ui:description>
+			    <doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				    <p>Enter the name of the section page group containing the content items you want to display on this tab of the carousel.</p>
+			    </doc:description>
+        </field>
+      </complex>
+      <array default="1" max="10"/>
+    </field>
+    <field name="showFilmstripComplex" type="boolean">
+      <ui:label>Show filmstrip</ui:label>
+      <ui:boolean-label value="true">Show filmstrip</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show filmstrip</ui:boolean-label>
+      <ui:description>Showing the filmstrip will show thumbnails of items</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want a film strip showing thumbnail versions of items in the carousel 
+          to be displayed below the main display. The film strip contains four thumbnails by default, but you
+          can change this with the <em>Maximum number of items per page in filmstrip</em> option.</p>
+			</doc:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showNavigationArrowsComplex" type="boolean">
+      <ui:label>Show filmstrip navigation arrows</ui:label>
+      <ui:boolean-label value="true">Show filmstrip navigation arrows</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show filmstrip navigation arrows</ui:boolean-label>
+      <ui:description>Showing the filmstrip navigation arrows will show arrows to navigate filmstrip items
+      </ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want navigation arrows to be displayed at either end of the film strip.
+          If you check this option and the current carousel tab contains more than one page, then the 
+          reader can use these arrows to navigate through the complete set of thumbnails, one page at a time.</p>
+			</doc:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showNavigationIndicatorsComplex" type="boolean">
+      <ui:label>Show filmstrip navigation indicators</ui:label>
+      <ui:boolean-label value="true">Show filmstrip navigation indicators</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show filmstrip navigation indicators</ui:boolean-label>
+      <ui:description>Showing the filmstrip navigation indicators will show indicators to navigate filmstrip items
+      </ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want navigation indicators to be displayed below the film strip. The
+          indicators are a row of buttons, one for each page in the current carousel tab. One of the 
+          indicators is highlighted to show the current page displayed in the film strip. The reader can
+          navigate to other pages by clicking on the indicators.</p>
+			</doc:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showOverlayComplex" type="boolean">
+      <ui:label>Show overlay</ui:label>
+      <ui:boolean-label value="true">Show overlay</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show overlay</ui:boolean-label>
+      <ui:description>Showing overlay will show the title, lead text, no. of comments etc. over the display picture of
+        carousel
+      </ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want titles (and possibly other information) to be overlaid on the images 
+          displayed in the carousel.</p>
+			</doc:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showLeadTextComplex" type="boolean">
+      <ui:label>Show lead text</ui:label>
+      <ui:boolean-label value="true">Show lead text</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show lead text</ui:boolean-label>
+      <ui:description>Showing lead text will show the lead text of the content</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want the overlay text displayed by the <em>Show overlay</em> option to 
+          include the content item's lead text.</p>
+			</doc:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showCommentCountComplex" type="boolean">
+      <ui:label>Show comment count</ui:label>
+      <ui:boolean-label value="true">Show comment count</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show comment count</ui:boolean-label>
+      <ui:description>Showing comment count will show the number of comments of the content</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want the overlay text displayed by the <em>Show overlay</em> option to 
+          include the content item's comment count.</p>
+			</doc:description>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showRelatedItemsComplex" type="boolean">
+      <ui:label>Show related items</ui:label>
+      <ui:boolean-label value="true">Show related items</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show related items</ui:boolean-label>
+      <ui:description>Showing related items will show the items related to the content of the active article
+      </ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want the overlay text displayed by the <em>Show overlay</em> option to 
+          include the content item's related content items.</p>
+			</doc:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+
+  <field-group name="carousel-widget-advanced-fields">
+    <field name="overlayPosition" type="enumeration">
+      <ui:label>Overlay position</ui:label>
+      <ui:description>Defines the position of the overlay containing title, lead text etc.</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>You can use this field to set the position of the overlay text displayed by the 
+          <em>Show overlay</em> option.</p>
+			</doc:description>
+      <enumeration value="left">
+        <ui:label>Left</ui:label>
+      </enumeration>
+      <enumeration value="right">
+        <ui:label>Right</ui:label>
+      </enumeration>
+      <enumeration value="top">
+        <ui:label>Top</ui:label>
+      </enumeration>
+      <enumeration value="bottom">
+        <ui:label>Bottom</ui:label>
+      </enumeration>
+      <ui:value-if-unset>bottom</ui:value-if-unset>
+    </field>
+
+    <field name="titleMaxLength" type="number">
+      <ui:label>Maximum length of title</ui:label>
+      <ui:description>The maximum length of title displayed in carousel</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>You can use this field to set the maximum length of the title in the overlay displayed by the 
+          <em>Show overlay</em> option.</p>
+			</doc:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>80</ui:value-if-unset>
+      <format>###</format>
+    </field>
+
+    <field name="leadtextMaxLength" type="number">
+      <ui:label>Maximum length of lead text</ui:label>
+      <ui:description>The maximum length of lead text displayed in carousel</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>You can use this field to set the maximum length of the lead text in the overlay displayed by the 
+          <em>Show overlay</em> option.</p>
+			</doc:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>200</ui:value-if-unset>
+      <format>###</format>
+    </field>
+
+    <field name="maxRelatedItemsCount" type="number">
+      <ui:label>Maximum no. of related items</ui:label>
+      <ui:description>Maximum no. of related items to be shown in the overlay of the carousel</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>You can use this field to set the maximum number of related items to be included in the overlay 
+          displayed by the <em>Show overlay</em> option.</p>
+			</doc:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>4</ui:value-if-unset>
+      <format>##</format>
+    </field>
+
+    <field name="filmstripPosition" type="enumeration">
+      <ui:label>Filmstrip position</ui:label>
+      <ui:description>Defines the position of the filmstrip</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>You can use this field to set the position of the film strip.</p>
+			</doc:description>
+      <enumeration value="left">
+        <ui:label>Left</ui:label>
+      </enumeration>
+      <enumeration value="right">
+        <ui:label>Right</ui:label>
+      </enumeration>
+      <enumeration value="top">
+        <ui:label>Top</ui:label>
+      </enumeration>
+      <enumeration value="bottom">
+        <ui:label>Bottom</ui:label>
+      </enumeration>
+      <ui:value-if-unset>bottom</ui:value-if-unset>
+    </field>
+
+    <field name="filmstripPageSize" type="number">
+      <ui:label>Maximum number of items per page in filmstrip</ui:label>
+      <ui:description>Maximum number of items per page in filmstrip</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>You can use this field to specify how many thumbnails are to be displayed in the film strip.</p>
+			</doc:description>
+      <constraints>
+        <minimum>3</minimum>
+      </constraints>
+      <ui:value-if-unset>4</ui:value-if-unset>
+      <format>###</format>
+    </field>
+
+    <field name="filmstripTitleStyle" type="enumeration">
+      <ui:label>Filmstrip title style</ui:label>
+      <ui:description>Style of the title in filmstrip</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>You can use this field to set the position/visibility of thumbnail titles in the film strip.</p>
+			</doc:description>
+      <enumeration value="beside">
+        <ui:label>Beside thumbnail</ui:label>
+      </enumeration>
+      <enumeration value="over">
+        <ui:label>Over thumbnail</ui:label>
+      </enumeration>
+      <enumeration value="hidden">
+        <ui:label>Hidden</ui:label>
+      </enumeration>
+      <ui:value-if-unset>beside</ui:value-if-unset>
+    </field>
+
+    <field name="maxCharactersFilmstripTitle" type="number">
+      <ui:label>Maximum length of title in filmstrip</ui:label>
+      <ui:description>Maximum number of characters of the title displayed in filmstrip</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>You can use this field to set the maximum length of thumbnail titles in the film strip.</p>
+			</doc:description>
+      <constraints>
+        <minimum>5</minimum>
+      </constraints>
+      <ui:value-if-unset>40</ui:value-if-unset>
+      <format>###</format>
+    </field>
+
+    <field name="showPrevNextArrows" type="boolean">
+      <ui:label>Show slide navigation arrows</ui:label>
+      <ui:boolean-label value="true">Show slide navigation arrows</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show slide navigation arrows</ui:boolean-label>
+      <ui:description>If checked, slide navigation previous next buttons will be shown.</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want to display slide navigation arrows with the carousel. These buttons allow the 
+          reader to display the next/previous image in the carousel. They control the main carousel image, not the 
+          film strip.</p>
+			</doc:description>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="prevNexArrowPosition" type="enumeration">
+      <ui:label>Slide navigation arrow position</ui:label>
+      <ui:description>Defines the position of the slide navigation arrows</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>You can use this field to set the orientation of the slide navigation arrows.</p>
+			</doc:description>
+      <enumeration value="horizontal">
+        <ui:label>Horizontal</ui:label>
+			  <doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				  <p>The slide navigation arrows are horizontally oriented and placed on either side of the carousel image.</p>
+			  </doc:description>
+      </enumeration>
+      <enumeration value="vertical">
+        <ui:label>Vertical</ui:label>
+			  <doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				  <p>The slide navigation arrows are vertically oriented and placed above and below the carousel image.</p>
+			  </doc:description>
+      </enumeration>
+      <ui:value-if-unset>horizontal</ui:value-if-unset>
+    </field>
+
+    <field name="maxItemCount" type="number">
+      <ui:label>Maximum number of items in Carousel</ui:label>
+      <ui:description>Maximum no. of items to be shown in the carousel</ui:description>
+			  <doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				  <p>You can use this field to set the maximum number of items in the carousel. If your selection criteria
+            select more than this amount, only the first <i>x</i> items are actually included in the carousel.</p>
+			  </doc:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>15</ui:value-if-unset>
+      <format>###</format>
+    </field>
+
+    <field name="autoplay" type="boolean">
+      <ui:label>Enable autoplay</ui:label>
+      <ui:boolean-label value="true">Start rotating items automatically</ui:boolean-label>
+      <ui:boolean-label value="false">Don't start rotating items automatically</ui:boolean-label>
+		  <doc:description xmlns="http://www.w3.org/1999/xhtml" >
+			  <p>Check this option if you want the carousel to change images automatically.</p>
+		  </doc:description>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="autoplayInterval" type="number">
+      <ui:label>Autoplay interval (in seconds)</ui:label>
+      <ui:description>Autoplay Interval (in seconds).</ui:description>
+		  <doc:description xmlns="http://www.w3.org/1999/xhtml" >
+			  <p>You can use this field to set the interval between image changes (if <em>Enable autoplay</em>
+          is checked). The interval is specified in seconds.</p>
+		  </doc:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>5</ui:value-if-unset>
+      <format>##</format>
+    </field>
+
+    <field name="imageVersion" type="basic" mime-type="text/plain">
+      <ui:label>Image representation</ui:label>
+      <ui:description>Image representation used for showing picture</ui:description>
+		  <doc:description xmlns="http://www.w3.org/1999/xhtml" >
+			  <p>You can use this field to specify that a particular image representation is to be used for 
+          display in the carousel.</p>
+		  </doc:description>
+    </field>
+  </field-group>
+
+  <!-- content type definition for carousel widget-->
+  <content-type name="widget_carousel">
+    <ui:label>Carousel Widget</ui:label>
+    <ui:description>Carousel Widget</ui:description>
+		<doc:description xmlns="http://www.w3.org/1999/xhtml">
+			<p>Displays a carousel. A carousel displays a constantly-changing sequence of images. Optionally, the
+        displayed image may have an overlay displaying the title and lead text of the content item the image
+        represents.</p>
+
+      <p>By default a <em>film strip</em> is displayed below the main image, showing thumbnail views
+        of other items in the carousel. This filmstrip displays a limited number of images (four by default), 
+        but can include navigation buttons that allow the reader to view all the images in the carousel. 
+        Clicking on an image in the film strip displays it in the carousel's main view. Clicking on the 
+        main view displays the content item represented by the image.</p> 
+		</doc:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The general configuration fields for carousel widget</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="carousel-widget-basic-fields"/>
+    </panel>
+
+    <panel name="simple">
+      <ui:label>Simple</ui:label>
+      <ui:description>The fields associated with the simple view of the widget</ui:description>
+      <ref-field-group name="carousel-widget-simple-fields"/>
+    </panel>
+
+    <panel name="complex">
+      <ui:label>Complex</ui:label>
+      <ui:description>The fields associated with the complex view of the widget</ui:description>
+      <ref-field-group name="carousel-widget-complex-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields of carousel widget</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="carousel-widget-advanced-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-public-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Content Summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

@@ -1,0 +1,80 @@
+.jobSearchFilters {
+    display: inline-block;
+}
+
+.jobSearchFilters .clearAllFilters {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-weight: bold;
+    padding-left: 0;
+    text-align: left;
+}
+
+.jobSearchFilters > ul > li {
+    margin-bottom: 25px;
+}
+
+.jobSearchFilters > ul > li label {
+    float: left;
+    white-space: nowrap;
+}
+
+.jobSearchFilters .category {
+    float: left;
+    width: 100%;
+}
+
+.jobSearchFilters .f-small {
+    color: #000;
+    float: left;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.jobSearchFilters ul li h2 {
+    color: #4c4c4c;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.jobSearchFilters ul {
+    color: #4c4c4c;
+    line-height: 19px;
+    font-size: 12px;
+}
+
+.jobSearchFilters a {
+    color: #000;
+    float: left;
+    max-width: 230px;
+    text-decoration: none;
+}
+
+.jobSearchFilters .checked a {
+    text-decoration: underline;
+}
+
+.jobSearchFilters input {
+    vertical-align: text-top;
+}
+
+.jobSearchFilters input[type="checkbox"] {
+    display:none;
+}
+
+.jobSearchFilters input[type="checkbox"] + label span {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin: 2px 4px 0 0;
+    vertical-align: middle;
+    background: url(/skins/global/gfx/icons/job2_sprite.png) 16px -80px;
+    cursor: pointer;
+}
+
+.jobSearchFilters input[type="checkbox"]:checked + label span {
+    background-position: 16px -64px;
+}

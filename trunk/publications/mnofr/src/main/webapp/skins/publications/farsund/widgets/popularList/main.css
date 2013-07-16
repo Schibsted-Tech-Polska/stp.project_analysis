@@ -1,0 +1,51 @@
+.popularList a {
+    text-decoration: none;
+}
+
+.popularList a:hover {
+    text-decoration: underline;
+}
+
+.popularList header{
+	background : url(/skins/publications/farsund/gfx/logos_sprite.png);
+	background-repeat:no-repeat;
+	padding-left: 83px;
+	border:none;
+}
+
+.popularList header h2 {
+	padding-left:10px; 
+	background-color: black;
+	font-weight:bold;
+	color:white;
+	text-transform:uppercase;
+	line-height: 22px;
+}
+.hoverFix {
+    padding-right: 40px;
+}
+
+.sectionPage .span3 .popularList.simple .content {
+    height:118px;
+    overflow:hidden;
+}
+
+.sectionPage .span3 .popularList.simple .content:hover {
+    overflow-y:auto;
+}
+
+.sectionPage .span3 .popularList.simple .content a, .sectionPage .span3 .popularList.simple .content a time, .popularList .withDate time,  .popularList .withDate a {
+    font-size: 12px;
+    color: black;
+    font-weight: 500;
+}
+.sectionPage .span3 .popularList.simple .content a, {
+    padding-right:19px;
+}
+
+.sectionPage .span3 .popularList.simple .content:hover a {
+    padding-right:0;
+}
+.singleLine.popularList .content li {
+    border-bottom:none;
+}

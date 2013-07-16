@@ -1,0 +1,81 @@
+/*#videoTeaser{*/
+/*}*/
+
+#videoTeaserPrev{
+    float:left;
+    top:43px;
+    position:relative;
+    height:26px;
+    width:17px;
+}
+
+#videoTeaserNext{
+    float:left;
+    top:43px;
+    position:relative;
+    height: 26px;
+    width: 1px;
+}
+
+.span2.videoTeaserElement{
+    display: inline-block;
+    float:left;
+    /*width:160px;*/
+    overflow:hidden;
+    /*margin-right: 11px;*/
+    /*height:138px;*/
+}
+
+.span3.videoTeaserElement{
+    display: inline-block;
+    float:left;
+    width:270px;
+    overflow:hidden;
+    margin-right: 3px;
+    /*height:138px;*/
+}
+
+.videoTeaserElementMargin{
+    margin-left: 17px;
+}
+
+.span3 .videoTeaserElementOuter{
+    display:block;
+    height:160px;
+    /*overflow:hidden;*/
+    position:relative;
+    margin-top:11px;
+    /*width:169px*/
+}
+.span2 .videoTeaserElementOuter{
+    display:block;
+    height:91px;
+    /*overflow:hidden;*/
+    position:relative;
+    margin-top:11px;
+    /*width:169px*/
+}
+
+.videoTeaserElementInner{
+    /*position:absolute;*/
+    /*top:-10px;*/
+    /*left:-10px;*/
+}
+
+
+.videoTeaserElementTitle{
+    margin-top:10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.videoTeaserElementTitle a{
+    color: #000000;
+}
+
+.videoTeaserDate{
+    color: #666;
+    font-size: 10px;
+}
+

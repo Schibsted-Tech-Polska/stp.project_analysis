@@ -1,0 +1,25 @@
+.pageTools.article {
+    margin-bottom: 0;
+    overflow: visible;
+}
+
+.pageTools.article .shareButton {
+    border-right:0 none;
+    margin: 0 0 3px;
+    padding:0;
+    vertical-align:top;
+    width:auto;
+        height:auto;
+}
+
+.pageTools.article .shareButton .at300bs {
+    margin:0;
+}
+
+.addthis_default_style .at300b, .addthis_default_style .at300m {
+    padding: 0;
+}
+
+.pageTools.article .font {
+    display: none;
+}

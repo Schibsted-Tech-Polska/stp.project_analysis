@@ -1,0 +1,124 @@
+#disqus_thread {
+    position: relative;
+    clear:both;
+}
+
+/* INFO: included in Disqus admin - BT (houdini theme)
+#disqus_thread #rules {
+	right: 427px;
+	top: 15px;
+	z-index: 100;
+}
+#disqus_thread #rules ul {
+    background-color: rgba(119,119,119,0.9);
+}
+
+#disqus_thread span.rules { disable on blogg.bt.no
+	margin-top: 20px;
+	text-shadow: 1px 1px #666;
+}
+#disqus_thread span.rules:hover { disable on blogg.bt.no
+	color: #fff;
+}
+
+#dsq-content #dsq-global-toolbar { disable on blogg.bt.no
+	margin-top: 0;
+}
+.dsq-reply {
+	margin-top: 0;
+}
+#disqus_thread #dsq-content h3 {
+	font-size: 0.9em;
+	margin-bottom: 1em;
+}
+#dsq-sort-by {
+	margin-bottom: 0.2em;
+}
+.dsq-textarea-reply {
+	margin-bottom: 1em;
+}
+#dsq-content .dsq-comment {
+	margin-bottom: 1em;
+}
+.dsq-comment-header {
+	margin-bottom: 0.5em;
+}
+.dsq-comment-message {
+	margin-bottom: 0.5em;
+}
+#dsq-content #dsq-footer {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#dsq-content .dsq-toolbar-label {
+	text-shadow: 1px 1px #666;
+}
+#dsq-content .dsq-more-button,
+#dsq-content .dsq-more-button:hover {
+	background: url(/1316468151/images/toolbar/toolbar-bg.png) repeat scroll 0 0 transparent;
+	border: 0 none;
+	box-shadow: none;
+	color: #ddd;
+	text-shadow: 1px 1px #666;
+	cursor: pointer;
+	margin-bottom: 1em;
+	padding: 8px 20px;
+}
+#dsq-content .dsq-more-button:hover,
+#dsq-content .dsq-toolbar-label:hover {
+	color: #fff;
+}
+
+.dsq-textarea-wrapper {
+	min-height: 58px;
+}
+.dsq-post-tools .dsq-post-as .dsq-button {
+	height: 20px;
+	padding: 6px 20px;
+}
+*/
+
+/* INFO: included in Disqus admin - SA (narcissus theme)
+#dsq-content #dsq-global-toolbar {
+	margin-top 0;
+}
+#dsq-content #dsq-new-post h3 {
+	display: none;
+}
+#dsq-content h3 {
+	font-size: 12px;
+}
+button.dsq-button {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+button.dsq-button-small {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+#dsq-content .dsq-comment-message,
+#dsq-content .dsq-comment-footer {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+#dsq-content .dsq-request-user-info,
+#dsq-content .dsq-options {
+	margin-bottom: 0.5em;
+}
+#dsq-content .dsq-textarea .dsq-textarea-wrapper {
+	min-height: 58px;
+}
+
+#dsq-content .dsq-header-avatar a.dsq-avatar {
+	padding: 0;
+}
+#dsq-content .dsq-comment .dsq-header-avatar a.dsq-avatar img,
+#dsq-content .dsq-comment:hover .dsq-header-avatar a.dsq-avatar img {
+	background: none;
+	border: 0 none;
+	box-shadow: none;
+	margin: 0;
+	padding: 0;
+}
+*/

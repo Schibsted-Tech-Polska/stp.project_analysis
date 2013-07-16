@@ -1,0 +1,27 @@
+#sisteBlogger li {
+    padding-left:100px;
+    position:relative;
+    width:auto;
+}
+
+#sisteBlogger .imageLeft {
+    margin-left:-100px;
+}
+
+#sisteBlogger img {
+    background:#fff;
+    border:1px solid #ddd;
+    padding:1px;
+    width: 80px;
+}
+
+#sisteBlogger hgroup h3 a {
+    color:#666;
+        font-size: 11px;
+        font-weight: bold;
+        text-decoration: none;
+}
+
+#sisteBlogger hgroup h2 {
+    font-size:22px;
+}

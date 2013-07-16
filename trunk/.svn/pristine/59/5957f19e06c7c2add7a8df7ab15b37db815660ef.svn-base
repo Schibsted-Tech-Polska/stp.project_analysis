@@ -1,0 +1,27 @@
+.mostRead.videos header h2 {
+    font-size: 14px;
+}
+.mostRead.videos .content {
+    margin: 10px 0 0 0;
+    background: #000;
+    color: #fff;
+}
+.mostRead.videos .content a,
+.mostRead.videos .content a:visited {
+    color: #fff;
+}
+.mostRead.videos .content .info {
+    width: auto;
+    padding: 7px;
+    margin: 0;
+}
+.mostRead.videos .content .info h4 {
+    line-height: 17px;
+    margin-bottom: 5px;
+}
+.mostRead.videos .content .leadtext {
+    margin: 0;
+}
+.mostRead.videos .content .article {
+    margin-bottom: 7px;
+}

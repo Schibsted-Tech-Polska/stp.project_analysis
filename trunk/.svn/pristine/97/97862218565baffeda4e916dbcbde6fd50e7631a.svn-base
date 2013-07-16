@@ -1,0 +1,107 @@
+#header .searchField {
+    position: relative;
+    height:14px;
+}
+
+#header .searchField form {
+    position:absolute;
+        top:-8px;
+}
+
+#header .mobileHeader .searchField {
+    float:left;
+}
+
+#header .mobileHeader .searchField form {
+    margin: 5px auto;
+    position: static;
+        top:auto;
+    overflow: hidden;
+    width:270px;
+}
+
+#header .searchField .pillBox {
+    border: 3px solid #fff;
+        -moz-border-radius: 14px;
+        -webkit-border-radius: 14px;
+        border-radius: 14px;
+    float:right;
+}
+
+#header .searchField input,
+#header .searchField button {
+    line-height: 15px !important;
+}
+
+#header .searchField input[type="text"] {
+    height: 16px;
+        width: 217px;
+}
+
+#header .searchField .pillBox button:before {
+    content: ' ';
+    background: url(/skins/publications/ap/gfx/sprite_2.png) 5px -196px no-repeat;
+    display: block;
+    width: 30px;
+        height: 21px;
+}
+#header .searchField .pillBox button {
+    background-color: #4a4a4a;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#FF000000');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#FF000000')";
+        background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1));
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(0,0,0,0)),color-stop(1, rgba(0,0,0,1)));
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1));
+        background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1));
+    border-color: #000;
+    width: 24px;
+    height: 22px;
+    text-indent: -9999px;
+}
+
+.ie7 #header .searchField .pillBox button {
+    text-indent: 0;
+}
+
+.ie #header .searchField .pillBox button {
+    height:23px;
+}
+
+#header .pillBox input,
+#header .pillBox button,
+#header .pillBox .button,
+#header .pillBox *:first-child,
+#header .pillBox .first,
+#header .pillBox *:last-child,
+#header .pillBox .last {
+	border: 1px solid #000;
+}
+
+.ie #header .pillBox input {
+    border: 1px solid #000;
+}
+
+#header .pillBox *:first-child,
+#header .pillBox .first{
+	border-right:0 none;
+		-moz-border-radius-topleft: 12px;
+		-webkit-border-top-left-radius: 12px;
+		border-top-left-radius: 12px;
+		-moz-border-radius-bottomleft: 12px;
+		-webkit-border-bottom-left-radius: 12px;
+		border-bottom-left-radius: 12px;
+}
+
+#header .pillBox *:last-child,
+#header .pillBox .last {
+		-moz-border-radius-topright: 12px;
+		-webkit-border-top-right-radius: 12px;
+		border-top-right-radius: 12px;
+		-moz-border-radius-bottomright: 12px;
+		-webkit-border-bottom-right-radius: 12px;
+		border-bottom-right-radius: 12px;
+}
+
+.ie7 #header .searchField .pillBox button {
+    width:auto;
+}

@@ -1,0 +1,160 @@
+.widget.realEstateCarousel.vertical .allLink {
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 21px;
+    margin-left: 80px;
+    position: absolute;
+    text-decoration: none;
+}
+
+.ie7 .widget.realEstateCarousel.vertical .allLink {
+    float:right;
+    width: 100px;
+    height:21px;
+}
+
+.widget.realEstateCarousel.vertical .allLink span {
+    float: right;
+    font-size: 16px;
+    line-height: 15px;
+    padding: 1px 0 0 5px;
+}
+
+.ie7 .widget.realEstateCarousel.vertical .allLink span {
+    float:none;
+    padding-top: 5px;
+}
+
+.ie8 .widget.realEstateCarousel.vertical .allLink span {
+    padding-top: 5px;
+}
+
+.ie9 .widget.realEstateCarousel.vertical .allLink span {
+    padding-top: 3px;
+}
+
+.widget.realEstateCarousel.vertical .categoryLinks {
+    clear: both;
+    font-size: 11px;
+    padding-top: 25px;
+    text-align: right;
+}
+
+.widget.realEstateCarousel.vertical .categoryLinks a {
+    color: #000;
+}
+
+.widget.realEstateCarousel.vertical {
+    margin: 20px 0;
+}
+
+.widget.realEstateCarousel.vertical .resultItemResultList {
+    list-style-type: none;
+}
+
+.widget.realEstateCarousel.vertical .resultItemResultList li {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+    display: block;
+    margin-bottom: 10px;
+    width: 180px;
+}
+
+.ie7 .widget.realEstateCarousel.vertical .resultItemResultList li,
+.ie8 .widget.realEstateCarousel.vertical .resultItemResultList li {
+    border: 1px solid #D2D2D2;
+}
+
+.widget.realEstateCarousel.vertical .resultListBox .resultItemLogo {
+    /*border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);*/
+    height: 17px;
+    left: 0;
+    position: absolute;
+    top: inherit;
+    /*padding-top: 13px;*/
+    width: 180px;
+}
+.widget.realEstateCarousel.vertical .resultListBox .resultItemLink {
+    color: #000000;
+    clear: both;
+    display: block;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    text-shadow: none;
+    width: 180px;
+}
+
+
+.widget.realEstateCarousel.vertical .resultListBox .resultItemName {
+    color: #000000;
+    cursor: pointer;
+    display: block;
+    line-height: 1;
+    /*margin: 2px 0 3px;*/
+    text-decoration: none;
+    text-rendering: optimizelegibility;
+    word-wrap: break-word;
+}
+
+.widget.realEstateCarousel.vertical .resultListBox .resultItemPrice {
+    background: none repeat scroll 0 0 #393939;
+    border: 1px solid #000000;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35);
+    color: #FFFFFF;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 5px;
+    position: absolute;
+    right: 5px;
+    top: 17px;
+    width: 55px;
+    z-index: 1;
+}
+
+.ie .widget.realEstateCarousel.vertical .resultListBox .resultItemPrice {
+    padding: 2px 8px;
+}
+
+.ie9 .widget.realEstateCarousel.vertical .resultListBox .resultItemPrice {
+    width: 65px;
+}
+
+.widget.realEstateCarousel.vertical.priceBadge .resultListBox .resultItemPrice {
+    right: 5px;
+    top: 20px;
+    -moz-transform: rotate(5deg);
+    -webkit-transform:rotate(5deg);
+    -o-transform:rotate(5deg);
+    -ms-transform:rotate(5deg);
+}
+
+.widget.realEstateCarousel.vertical .resultListBox .resultItemThumb {
+    border-top: 1px solid #333333;
+    height: 120px;
+    position: absolute;
+    top: 17px;
+    width: 100%;
+}
+
+.widget.realEstateCarousel.vertical .resultListBox .resultItemText {
+    background-color: rgba(255, 255, 255, 0.75);
+    bottom: 0;
+    color: #000000;
+    cursor: pointer;
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 1.25;
+    padding: 4px 5px 3px;
+    position: absolute;
+    text-decoration: none;
+    text-rendering: optimizelegibility;
+    word-wrap: break-word;
+}

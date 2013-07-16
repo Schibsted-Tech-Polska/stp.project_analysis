@@ -1,0 +1,7 @@
+.quiz.categories .gridUnit {
+    text-align:center;
+}
+.quiz.categories .quizIconSmall {
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,85 @@
+#footer {
+    background-color: rgb(239,229,220);
+}
+#footer #mnodigital {
+    margin-top:-50px;
+}
+#colophon {
+    font-size: 11px;
+    font-weight:bold;
+    margin-top: 5px;
+}
+
+#colophon dd {
+    margin-left: 0;
+}
+
+#colophon a {
+    color: #4b86c6
+}
+
+#colophon section:nth-child(3) {
+    font-size:10px;
+    text-align:center;
+
+}
+
+.startside{
+    font-size:13px;
+    text-align:left;
+    width:100%;
+    float:left;
+    font-weight:normal;
+}
+
+.facebook {
+    width: 100%;
+    background: url(/skins/publications/bygdanytt/gfx/liker.png);
+    display: block;
+    float: left;
+    background-repeat: no-repeat;
+    text-align: left;
+    padding-left: 27px;
+    font-size: 19px;
+    font-weight:normal;
+    margin-top:0px;
+}
+
+dt.rss {
+    color:#f13d37;
+    margin-top:10px;
+}
+
+.tipstelefon, .telefon{
+    color: #f13d37;
+    font-size:11px;
+}
+
+a.footerBygdanyttLogo{
+display:block;
+    background: url(/skins/publications/bygdanytt/gfx/logo.png);
+    float: left;
+    background-repeat: no-repeat;
+    width:155px;
+    height:36px;
+    margin-top:10px;
+}
+
+a.footerAwardLogo{
+ display:block;
+    width:155px;
+    height:23px;
+    background: url(/skins/publications/bygdanytt/gfx/newspaper.png);
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top:20px;
+}
+
+#footer #mnodigital::after {
+    color:#646464;
+}
+.footerLogo{
+    margin:0 auto;
+    float: none;
+}

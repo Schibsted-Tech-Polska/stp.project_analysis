@@ -1,0 +1,31 @@
+.sectionPage .span3 .list.simple .content {
+    height:118px;
+    overflow:hidden;
+}
+
+.sectionPage .span3 .list.simple .content:hover {
+    overflow-y:auto;
+}
+ .withDate a {
+    font-size: 12px;
+    color: rgb(75,134,198);
+    font-weight: 500;
+}
+.sectionPage .span3 .list.simple .content a{
+	padding-right:19px;
+}
+
+.list .withDate time {
+    color: #666;
+    font-size: 10px;
+    line-height: 16px;
+    float: left;
+    margin-left: -37px;
+}
+
+.sectionPage .span3 .list.simple .content:hover a {
+    padding-right:0;
+}
+.singleLineList .content li {
+	border-bottom:none;
+}

@@ -1,0 +1,3 @@
+$class = com.escenic.syndication.xml.filter.DebugFilter
+filename = /data/import/migration/debug-pre-article1-%c.xml
+

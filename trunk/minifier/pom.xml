@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/branches/1.4/widget-framework-dist/src/publications/demo/pom.xml#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/10/18 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>no.medianorge</groupId>
+  <artifactId>minifier</artifactId>
+  <version>2.10-SNAPSHOT</version>
+  <name>minifier</name>
+  <packaging>jar</packaging>
+
+
+  <properties>
+    <junit.version>4.10</junit.version>
+  </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>nexus.internal</id>
+      <name>Internal Release Repository</name>
+      <url>http://maven.schibsted-it.no/nexus/content/repositories/releases/</url>
+    <!--  <url>http://pintern.medianorge.no:8081/nexus/content/repositories/releases/</url> -->
+    </repository>
+    <snapshotRepository>
+      <id>nexus.snapshots</id>
+      <name>Internal Snapshot Repository</name>
+      <url>http://maven.schibsted-it.no/nexus/content/repositories/snapshots/</url>
+      <!-- <url>http://pintern.medianorge.no:8081/nexus/content/repositories/snapshots/</url> -->
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <build>
+    <!--<finalName>minifier</finalName>-->
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <testSourceDirectory>src/test/java</testSourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+      </testResource>
+    </testResources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <showDeprecation>true</showDeprecation>
+        </configuration>
+      </plugin>
+      <!-- Prevent the tests being executed as they are just for development purposes -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.12.3</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <!--the framework code -->
+    <!-- the order is important here, because of the way shade merges war files -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.yahoo.platform.yui</groupId>
+      <artifactId>yuicompressor</artifactId>
+      <version>2.4.7</version>
+      <exclusions>
+        <exclusion>
+          <groupId>rhino</groupId>
+          <artifactId>js</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.9</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

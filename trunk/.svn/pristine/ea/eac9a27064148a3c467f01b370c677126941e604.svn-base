@@ -1,0 +1,25 @@
+.accordionList .accordionHandle {
+    background:#000;
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#20000000'); /* IE6 & IE7 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#20000000')"; /* IE8 */
+        background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,.15)); /* FF3.6 */
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(0,0,0,0)),color-stop(1, rgba(0,0,0,.15))); /* Saf4+, Chrome */
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.15)); /* FF3.6 */
+        background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.15)); /* FF3.6 */
+    color:#fff;
+    cursor:pointer;
+    -moz-border-radius: 3px 3px 0 0;
+        -webkit-border-radius: 3px 3px 0 0;
+        border-radius: 3px 3px 0 0;
+    font-family:arial, sans-serif;
+        font-size:16px;
+    text-shadow:0 1px 2px #000;
+    padding:5px 10px 4px;
+}
+
+.accordionList {
+    border-bottom:10px solid #000;
+    -moz-border-radius: 0 0 3px 3px;
+        -webkit-border-radius: 0 0 3px 3px;
+        border-radius: 0 0 3px 3px;
+}

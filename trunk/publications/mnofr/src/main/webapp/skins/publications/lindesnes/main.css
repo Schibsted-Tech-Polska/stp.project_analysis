@@ -1,0 +1,346 @@
+body {
+    font-family: "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+    color: #272425;
+    background-color: #e0e0e2;
+    font-size: 15px;
+}
+#page {
+    background: #fefefe;
+
+}
+
+#adRight{
+margin-left: 10px;
+}
+
+#viewport #page {
+    border: 0 none;
+    padding-top: 10px;
+}
+
+#smallHeader .logo {
+    margin-right:20px;
+}
+
+.specialHeader {
+    height:99px;
+}
+
+.specialHeader .logo {
+    height:99px;
+    line-height:99px;
+}
+
+section header,
+article header {
+    border-bottom: 3px solid #014687;
+    margin-bottom: 5px;
+}
+
+.bluePane {
+    background:#e5ecf3;
+    border:1px solid #b2c7db;
+        -moz-border-radius:3px;
+        -webkit-border-radius:3px;
+        border-radius:3px;
+    padding:10px;
+}
+
+.bluePane header {
+    border-bottom:0 none;
+}
+
+.relatedPicture {
+    background: #f0f0f0;
+}
+
+.relatedArticle h3 {
+    margin: 15px 0 5px;
+}
+
+.relatedArticle header {
+    margin-bottom: 0;
+}
+
+.relatedArticle .content {
+    background: #f0f0f0;
+}
+
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .social-icons{
+        display:none;
+    }
+    .e-avis{
+        display:none;
+    }
+
+}
+
+.subTitle {
+    padding-left: 20px;
+    margin: 10px 0 15px;
+}
+
+.subTitle:before {
+    background: #999;
+    content: " ";
+    float: left;
+    margin-left: -20px;
+    margin-top: 5px;
+    width: 15px;
+    height: 15px;
+}
+
+.ie .subTitle {
+    border-left: 15px solid #999;
+    padding-left: 5px;
+}
+
+section header h2,
+article header h2,
+section header h3,
+article header h3 {
+    margin-bottom: 0;
+}
+
+input[type=submit],
+input[type=button],
+button,
+.button {
+    background-color: #014687;
+}
+
+a {
+    color: #014687;
+}
+
+a:hover {
+    -moz-transition:all 250ms ease-in;
+        -webkit-transition:all 250ms ease-in;
+        -ms-transition:all 250ms ease-in;
+        -khtml-transition:all 250ms ease-in;
+        -o-transition:all 250ms ease-in;
+        transition:all 250ms ease-in;
+    text-decoration:underline;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover {
+    color:#333;
+    text-decoration:none;
+}
+
+form label {
+    font-size: 12px;
+}
+
+section .header h1,
+article .header h1,
+section .header h2,
+article .header h2,
+section .header h3,
+article .header h3 {
+    color: #000;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.span1 section .header h2,
+.span1 section .header h3,
+.span2 section .header h2,
+.span2 section .header h3,
+.span1 article .header h2,
+.span1 article .header h3,
+.span2 article .header h2,
+.span2 article .header h3 {
+    font-size:10px;    
+}
+
+.lap2 header {
+    text-align: right;
+}
+
+section footer,
+article footer {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+section footer,
+article footer {
+    font-size: 10px;
+    line-height:1;
+}
+
+section footer a,
+article footer a {
+    border-right:1px solid #999;
+    margin-right:5px;
+    padding-right:5px;
+}
+
+section footer a:last-child,
+article footer a:last-child {
+    border-right:0 none;
+}
+
+section footer a.lastChild,
+article footer a.lastChild{
+    border-right:0 none;
+}
+
+.relatedArticle h3 {
+    font-size: 18px;
+}
+
+h2.subTitle {
+    font-size: 24px;
+}
+
+/* 3 - Events */
+body.ie6 {
+    behavior: url(/skins/global/csshover3.htc);
+}
+
+#viewport {
+    min-height: 1000px;
+   }
+
+/* ie uses behaviors for round corner */
+.roundCorner {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+}
+
+.roundCornerBottom {
+    -moz-border-radius: 0 0 3px 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+/* topInfo is first gridRow with informations links */
+.topInfoGridRow {
+    border: dotted 1px;
+    margin-bottom: 10px !important;
+    width: 978px;
+}
+
+.topInfoGridRow  .unit-topInfo {
+    font-size:12px;
+    padding: 5px 10px;
+}
+
+.topInfoGridRow .customerService-topInfo {
+    background-color: #ff6600;
+}
+
+.topInfoGridRow a {
+    color: #000;
+}
+
+.topInfoGridRow a:visited {
+    color: #000;
+}
+
+.topInfoGridRow a:hover {
+    text-decoration: underline;
+}
+/* second gridRow contains logo, weather/links and menu */
+
+
+/* style for date, links, weather, and tipAndSearch */
+.tipAndSearch .icon {
+    display: none;
+}
+
+.searchField .pillBox {
+    float:right;
+}
+
+.searchField .pillBox button {
+    width: 24px;
+}
+
+.ie7 .searchField .pillBox button {
+    width:auto;
+}
+
+.search .pillBox {
+    width: auto;
+}
+
+.search input {
+    width: 130px;
+    height: 17px;
+}
+
+.ie7 .search button {
+    height: 24px;
+}
+
+/* end second gridRow */
+#page, #preFooter {
+    width: 980px;
+}
+
+/* widgets general styling */
+.widget header {
+    border-bottom: 0 none;
+}
+.widget header h2 {
+    background: rgb(189,27,32);
+    font-weight:bold;
+    color:white;
+    text-transform:uppercase;
+    line-height: 22px;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+
+/* Tip us */
+.tipUs {
+    display: inline-block;
+    background: rgb(189,27,32);
+    color: #fff;
+    border: 0 none;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 1.6em;
+    margin: 10px 0;
+    padding: 0 12px;
+}
+.tipUs .prefix {
+    background: transparent;
+    filter: none;
+    background-image: none;
+    border-radius: 0;
+    position: static;
+    width: auto;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+.tipUs .prefix-inner {
+    font-size: 14px;
+    margin: 0;
+    position: static;
+    text-align: left;
+    text-shadow:none;
+}
+.tipUs a {
+    color: #fff;
+    font-weight: normal;
+}
+
+.tipUs .prefix-inner {
+    text-shadow: none;
+}

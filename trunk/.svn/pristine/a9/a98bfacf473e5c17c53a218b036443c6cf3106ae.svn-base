@@ -1,0 +1,22 @@
+#!/bin/bash
+
+vertical="$2"
+foldername="$1"
+app_location="$( cd "$( dirname "$0" )" && pwd )"
+
+if [ "$foldername" = "" ]
+then
+	echo "Missing foldername"
+	exit
+fi 
+if [ "$vertical" = "" ]
+then
+	echo "Missing vertical parameter"
+	exit
+fi 
+if [ -d ${foldername} ]; then
+	cd $foldername
+	find . -maxdepth 1 -name "*.xml" -type f -exec $app_location/process_teaser {} ${vertical} \;
+fi
+#find . -depth 1 -name "*.xml" -amin +1 -exec process_teaser {} \;
+#find . -depth 1 -name "*.xml" -atime +1m -exec process_teaser {} \;

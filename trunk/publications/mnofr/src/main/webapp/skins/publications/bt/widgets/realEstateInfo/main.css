@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400italic,400&subset=latin,latin-ext);
+
+.widget.realEstateInfo {
+    font-size: 13px;
+}
+
+.widget.realEstateInfo ul.features li {
+    background-color: #f5f3eb;
+    clear: both;
+}
+
+.widget.realEstateInfo ul.features li:nth-child(2n+1) {
+    background-color: #ffffff;
+}
+
+.widget.realEstateInfo > header,
+.widget.realEstateInfo.generalInfo header,
+.widget.realEstateInfo.keyInfoBar {
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent;
+}
+.widget.realEstateInfo header,
+.widget.realEstateInfo.keyInfoBar {
+    color: #004687;
+    text-transform: uppercase;
+    -moz-border-image: url(data:image/gif;base64,R0lGODlhFQAVAKECAGVlZeLi4v///////yH5BAEKAAIALAAAAAAVABUAQAIylGGpiusPG0ySTnazq5ML/3jgppVHKaKkJgHuCwTyHMCvxZr6zvfXuGjZYjTZsKUyFAAAOw==) 7 repeat;
+    -webkit-border-image: url(data:image/gif;base64,R0lGODlhFQAVAKECAGVlZeLi4v///////yH5BAEKAAIALAAAAAAVABUAQAIylGGpiusPG0ySTnazq5ML/3jgppVHKaKkJgHuCwTyHMCvxZr6zvfXuGjZYjTZsKUyFAAAOw==) 7 repeat;
+    -o-border-image: url(data:image/gif;base64,R0lGODlhFQAVAKECAGVlZeLi4v///////yH5BAEKAAIALAAAAAAVABUAQAIylGGpiusPG0ySTnazq5ML/3jgppVHKaKkJgHuCwTyHMCvxZr6zvfXuGjZYjTZsKUyFAAAOw==) 7 repeat;
+    border-image: url(data:image/gif;base64,R0lGODlhFQAVAKECAGVlZeLi4v///////yH5BAEKAAIALAAAAAAVABUAQAIylGGpiusPG0ySTnazq5ML/3jgppVHKaKkJgHuCwTyHMCvxZr6zvfXuGjZYjTZsKUyFAAAOw==) 7 repeat;
+}
+
+.widget.realEstateInfo .informationItem:nth-child(2n) header {
+    -moz-border-image: url(data:image/gif;base64,R0lGODlhFQAVAKEDAGVlZeLi4vXz6////yH5BAEKAAMALAAAAAAVABUAAAJCnGGpitsLX5JwToBz2DzkPwniSI7UAJSqeKZreQ5vWcnzWN94pYt5/9MFbxWXrtUTIHuPj6azcWIsNUakanVgqYMCADs=) 7 repeat;
+    -webkit-border-image: url(data:image/gif;base64,R0lGODlhFQAVAKEDAGVlZeLi4vXz6////yH5BAEKAAMALAAAAAAVABUAAAJCnGGpitsLX5JwToBz2DzkPwniSI7UAJSqeKZreQ5vWcnzWN94pYt5/9MFbxWXrtUTIHuPj6azcWIsNUakanVgqYMCADs=) 7 repeat;
+    -o-border-image: url(data:image/gif;base64,R0lGODlhFQAVAKEDAGVlZeLi4vXz6////yH5BAEKAAMALAAAAAAVABUAAAJCnGGpitsLX5JwToBz2DzkPwniSI7UAJSqeKZreQ5vWcnzWN94pYt5/9MFbxWXrtUTIHuPj6azcWIsNUakanVgqYMCADs=) 7 repeat;
+    border-image: url(data:image/gif;base64,R0lGODlhFQAVAKEDAGVlZeLi4vXz6////yH5BAEKAAMALAAAAAAVABUAAAJCnGGpitsLX5JwToBz2DzkPwniSI7UAJSqeKZreQ5vWcnzWN94pYt5/9MFbxWXrtUTIHuPj6azcWIsNUakanVgqYMCADs=) 7 repeat;
+}
+
+

@@ -1,0 +1,81 @@
+.negativ .poll .header {
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 0 none;
+}
+.negativ .poll .header h3 {
+    background-color: transparent;
+    text-shadow: none;
+}
+.negativ .poll .pollLabels {
+    -moz-box-shadow: 0 0 5px #fff;
+    -webkit-box-shadow: 0 0 5px #fff;
+    box-shadow: 0 0 5px #fff;
+}
+.negativ .poll .f-small {
+    color: #aaa;
+}
+.negativ .poll .button {
+    background-color: #fff;
+}
+.negativ .poll a.button,
+.negativ .poll a.button:hover,
+.negativ .poll a.button:visited,
+.negativ .poll a.button:active {
+    color: #aaa;
+}
+
+/* form */
+.poll fieldset {
+    border:0 none;
+    overflow:hidden;
+    position:relative;
+    -moz-box-shadow:none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+}
+
+.poll label {
+    padding:0 0 10px;
+}
+
+.poll header a{
+    float:right;
+}
+
+.poll .validation{
+    color: red;
+    font-size: 10px;
+    position: relative;
+}
+
+/* result */
+.pollLabels {
+    -moz-box-shadow: 0 0 5px #aaf;
+    -webkit-box-shadow: 0 0 5px #aaf;
+    box-shadow: 0 0 5px #aaf;
+    float:right;
+    font-size:12px;
+        line-height:1;
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-top:5px;
+    width:47%;
+}
+
+.pollLabels li {
+    padding:3px 3px 3px 13px;
+    position:relative;
+}
+
+.pollLabels .label {
+    position:absolute;
+        top:5px;
+        left:3px;
+    width:7px;
+        height:7px
+}
+
+.pollLabels .f-small {
+    font-size:8px;
+}

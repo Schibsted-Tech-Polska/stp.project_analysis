@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!-- field groups definitions for actionLinks widget -->
+  <!-- general fields of actionLinks widget-->
+  <field-group name="actionLinks-general-fields">
+    <field name="view" type="enumeration">
+      <ui:label>View</ui:label>
+      <ui:description>The view of this widget</ui:description>
+      <enumeration value="default">
+        <ui:label>Default</ui:label>
+      </enumeration>
+      <ui:value-if-unset>default</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <!-- default fields of actionLinks widget-->
+  <field-group name="actionLinks-default-fields">
+    <field name="showTitle" type="boolean">
+      <ui:label>Display title?</ui:label>
+      <ui:description>Configures if title will be shown or not</ui:description>
+      <ui:boolean-label value="true">Show title</ui:boolean-label>
+      <ui:boolean-label value="false">Do not show title</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+        <required>true</required>
+      </constraints>
+    </field>
+    <field name="actionLinksFields" type="enumeration" multiple="true">
+      <ui:label>Action Links Fields</ui:label>
+      <ui:description>The fields of Action Link widget to display</ui:description>
+      <enumeration value="profileLink">
+        <ui:label>Show profile link</ui:label>
+      </enumeration>
+      <enumeration value="addStoryLink">
+        <ui:label>Show add story link</ui:label>
+      </enumeration>
+      <enumeration value="editStoryLink">
+        <ui:label>Show edit story link</ui:label>
+      </enumeration>
+      <enumeration value="deleteStoryLink">
+        <ui:label>Show delete story link</ui:label>
+      </enumeration>
+      <enumeration value="addPictureLink">
+        <ui:label>Show add picture link</ui:label>
+      </enumeration>
+      <enumeration value="editPictureLink">
+        <ui:label>Show edit picture link</ui:label>
+      </enumeration>
+      <enumeration value="deletePictureLink">
+        <ui:label>Show delete picture link</ui:label>
+      </enumeration>
+      <enumeration value="logoutLink">
+        <ui:label>Show logout link</ui:label>
+      </enumeration>
+    </field>
+    <field name="profileLinkText" type="basic" mime-type="text/plain">
+      <ui:label>Profile link text</ui:label>
+      <ui:description>The lable of profile link</ui:description>
+      <ui:value-if-unset>My profile</ui:value-if-unset>
+    </field>
+    <field name="addStoryLinkText" type="basic" mime-type="text/plain">
+      <ui:label>Add story link text</ui:label>
+      <ui:description>The lable of add story link</ui:description>
+      <ui:value-if-unset>Post a story</ui:value-if-unset>
+    </field>
+    <field name="editStoryLinkText" type="basic" mime-type="text/plain">
+      <ui:label>Edit story link text</ui:label>
+      <ui:description>The lable of edit story link</ui:description>
+      <ui:value-if-unset>Edit this story</ui:value-if-unset>
+    </field>
+    <field name="deleteStoryLinkText" type="basic" mime-type="text/plain">
+      <ui:label>Delete story link text</ui:label>
+      <ui:description>The lable of delete story link</ui:description>
+      <ui:value-if-unset>Delete this story</ui:value-if-unset>
+    </field>
+    <field name="addPictureLinkText" type="basic" mime-type="text/plain">
+      <ui:label>Add picture link text</ui:label>
+      <ui:description>The lable of add picture link</ui:description>
+      <ui:value-if-unset>Upload a picture</ui:value-if-unset>
+    </field>
+    <field name="editPictureLinkText" type="basic" mime-type="text/plain">
+      <ui:label>Edit picture link text</ui:label>
+      <ui:description>The lable of edit picture link</ui:description>
+      <ui:value-if-unset>Edit this picture</ui:value-if-unset>
+    </field>
+    <field name="deletePictureLinkText" type="basic" mime-type="text/plain">
+      <ui:label>Delete picture link text</ui:label>
+      <ui:description>The lable of delete picture link</ui:description>
+      <ui:value-if-unset>Delete this picture</ui:value-if-unset>
+    </field>
+    <field name="logoutLinkText" type="basic" mime-type="text/plain">
+      <ui:label>Logout link text</ui:label>
+      <ui:description>The lable of logout link</ui:description>
+      <ui:value-if-unset>Log out</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <!-- content type definition for actionLinks widget -->
+  <content-type name="widget_actionLinks">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Action Links Widget</ui:label>
+    <ui:description>A widget for displaying Action Links.</ui:description>
+    <ui:title-field>title</ui:title-field>
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The general fields for configuring actionLinks widget</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="actionLinks-general-fields"/>
+    </panel>
+    <panel name="default">
+      <ui:label>Default</ui:label>
+      <ui:description>The default fields for configuring actionLinks widget</ui:description>
+      <ref-field-group name="actionLinks-default-fields"/>
+    </panel>
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-private-fields"/>
+    </panel>
+    <summary>
+      <ui:label>Summary</ui:label>
+      <field type="basic" mime-type="text/plain" name="title">
+        <ui:label>Title</ui:label>
+        <ui:description>The title of the widget</ui:description>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

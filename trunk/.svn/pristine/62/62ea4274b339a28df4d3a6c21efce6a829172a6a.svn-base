@@ -1,0 +1,11 @@
+#rating widget
+rating.widget.starRating.title.suffix=out of {0} stars
+
+rating.widget.favorite.resultText.prefix1={0} user(s)
+rating.widget.favorite.resultText.prefix2=You and {0} other user(s)
+rating.widget.favorite.resultText.prefix3=You
+rating.widget.favorite.resultText.suffix=liked this article.
+rating.widget.favorite.addFavourite.linkText=Add to favorite
+
+rating.widget.flagging.resultText=Abuse reported.
+rating.widget.flagging.addFlagging.linkText=Report abuse

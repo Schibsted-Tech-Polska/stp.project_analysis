@@ -1,0 +1,42 @@
+#footer {
+    clear: both;
+    color: #fff;
+    font-size: 11px;
+    background-color: #000;
+}
+
+#footer dl,
+#footer dd,
+#footer dt {
+    font-size: 11px;
+    padding: 0;
+    margin: 0;
+    width: auto;
+}
+
+#footer dt {
+    padding-right: 3px;
+    float:left;
+}
+
+#footer a {
+    /*text-decoration: none;*/
+    color: #fff;
+}
+
+#footer .colophon {
+    margin: 10px;
+}
+
+#footer .colophon dt {
+    font-weight: bold;
+}
+
+#footer .disclaimer {
+    margin: 10px;
+    padding: 0;
+}
+
+#footer .menuBar {
+    border-bottom: 1px solid white;
+}

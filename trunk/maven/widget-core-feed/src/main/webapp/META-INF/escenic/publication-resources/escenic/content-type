@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!--Field group definitions for RSS widget -->
+  <field-group name="feed-widget-basic-fields">
+    <field name="view" type="enumeration">
+      <ui:label>View</ui:label>
+      <ui:description>The view of the widget</ui:description>
+      <enumeration value="rssHeadline">
+        <ui:label>RSS Headlines</ui:label>
+      </enumeration>
+      <enumeration value="rssFull">
+        <ui:label>RSS Full</ui:label>
+      </enumeration>
+      <enumeration value="twitter">
+        <ui:label>Twitter</ui:label>
+      </enumeration>
+      <ui:value-if-unset>rssHeadline</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="feed-widget-rssHeadline-fields">
+    <field name="sourceUrlsRssHeadLine" type="uri">
+      <ui:label>Source URLs for RSS Headline view</ui:label>
+      <ui:description>The source URLs for the RSS Headline view</ui:description>
+      <array default="1"/>
+    </field>
+
+    <field name="maxArticlesRssHeadline" type="number">
+      <ui:label>Max Articles</ui:label>
+      <ui:description>Maximum number of articles that will be displayed in Headlines view</ui:description>
+      <format>###</format>
+      <constraints>
+        <minimum>1</minimum>
+        <maximum>100</maximum>
+      </constraints>
+      <ui:value-if-unset>5</ui:value-if-unset>
+    </field>
+
+    <field name="updateIntervalRssHeadline" type="number">
+      <ui:label>Update Interval (Minutes)</ui:label>
+      <ui:description>Update interval for RSS feed in minutes</ui:description>
+      <format>##</format>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>10</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="feed-widget-rssFull-fields">
+    <field name="sourceUrlsRssFull" type="uri">
+      <ui:label>Source URLs for RSS Full view</ui:label>
+      <ui:description>The source URLs for the RSS Full view</ui:description>
+      <array default="1"/>
+    </field>
+
+    <field name="maxArticlesRssFull" type="number">
+      <ui:label>Max Articles</ui:label>
+      <ui:description>Maximum number of articles that will be displayed in Full view</ui:description>
+      <format>###</format>
+      <constraints>
+        <minimum>1</minimum>
+        <maximum>100</maximum>
+      </constraints>
+      <ui:value-if-unset>5</ui:value-if-unset>
+    </field>
+
+    <field name="showSummary" type="boolean">
+      <ui:label>Show summary</ui:label>
+      <ui:description>Show the summary of the feed</ui:description>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="maxCharactersInSummary" type="number">
+      <ui:label>Maximum number of characters in summary</ui:label>
+      <ui:description>Maximum number of characters in summary</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>###</format>
+      <ui:value-if-unset>100</ui:value-if-unset>
+    </field>
+
+    <field name="showImage" type="boolean">
+      <ui:label>Show first image (if available)</ui:label>
+      <ui:description>Show image if it is available in feed body</ui:description>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showAuthor" type="boolean">
+      <ui:label>Show author</ui:label>
+      <!-- XXX description?  What about e-mail address? where is it displayed? -->
+      <ui:description>A boolean value to indicate if author name should be displayed</ui:description>
+      <ui:boolean-label value="true">Show the authors of the article</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the authors of the article</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showSource" type="boolean">
+      <ui:label>Show source</ui:label>
+      <!-- XXX description?  What is the source? where is it displayed? -->
+      <ui:boolean-label value="true">Show the source of the article</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the source of the article</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showDateRssFull" type="boolean">
+      <ui:label>Show date</ui:label>
+      <ui:boolean-label value="true">Show the date</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the date</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="dateFormat" type="basic" mime-type="text/plain">
+      <ui:label>Date Format</ui:label>
+      <ui:description>Date format for full view</ui:description>
+      <ui:value-if-unset>dd MMMM yyyy hh:mm a</ui:value-if-unset>
+    </field>
+
+    <field name="updateIntervalRssFull" type="number">
+      <ui:label>Update Interval (Minutes)</ui:label>
+      <ui:description>Update interval for RSS feed in minutes</ui:description>
+      <format>##</format>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>10</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="feed-widget-twitter-fields">
+    <field name="twitterSearchOption" type="enumeration">
+      <ui:label>Twitter search option</ui:label>
+      <ui:description>Twitter search option</ui:description>
+      <enumeration value="searchWithKeywords">
+        <ui:label>Search with keywords</ui:label>
+      </enumeration>
+      <enumeration value="searchWithUserNames">
+        <ui:label>Search user tweets</ui:label>
+      </enumeration>
+      <enumeration value="searchWithArticleTags">
+        <ui:label>Search with article tags</ui:label>
+      </enumeration>
+      <ui:value-if-unset>searchWithKeywords</ui:value-if-unset>
+    </field>
+
+    <field name="twitterMessageCount" type="number">
+      <ui:label>Number of twitter messages</ui:label>
+      <ui:description>Number of twitter messages</ui:description>
+      <format>###</format>
+      <constraints>
+        <minimum>1</minimum>
+        <maximum>100</maximum>
+      </constraints>
+      <ui:value-if-unset>5</ui:value-if-unset>
+    </field>
+
+    <field name="showAvatarImage" type="boolean">
+      <ui:label>Show avatar images with tweets</ui:label>
+      <ui:description>Show avatar images with tweets</ui:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showDateTwitter" type="boolean">
+      <ui:label>Show date</ui:label>
+      <ui:description>Show date with tweets</ui:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="twitterUserNames" type="basic" mime-type="text/plain">
+      <ui:label>Twitter user names</ui:label>
+      <ui:description>The comma-separated names of twitter users whose tweets will be shown</ui:description>
+    </field>
+
+    <field name="twitterSearchKeywords" type="basic" mime-type="text/plain">
+      <ui:label>Twitter search keywords</ui:label>
+      <ui:description>The comma-separated keywords used in twitter search</ui:description>
+    </field>
+  </field-group>
+
+  <!-- content type definition for RSS widget -->
+  <content-type name="widget_feed">
+    <ui:label>Feed Widget</ui:label>
+    <ui:description>A widget for fetching and displaying feed from external sources</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The basic configuration fields</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="feed-widget-basic-fields"/>
+    </panel>
+
+    <panel name="rssHeadline">
+      <ui:label>RSS Headlines</ui:label>
+      <ui:description>The configuration fields for RSS Headlines view</ui:description>
+      <ref-field-group name="feed-widget-rssHeadline-fields"/>
+    </panel>
+
+    <panel name="rssFull">
+      <ui:label>RSS Full</ui:label>
+      <ui:description>The configuration fields for RSS Full view</ui:description>
+      <ref-field-group name="feed-widget-rssFull-fields"/>
+    </panel>
+
+    <panel name="twitter">
+      <ui:label>Twitter</ui:label>
+      <ui:description>The configuration fields for RSS Full view</ui:description>
+      <ref-field-group name="feed-widget-twitter-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-public-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Content Summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

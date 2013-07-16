@@ -1,0 +1,16 @@
+.notifications.categories ul li {
+    border: 1px solid #999;
+    border-radius: 10px;
+    display: block;
+    width: 60%;
+    margin-right: 10px;
+    padding: 25px 10px 10px 17px;
+}
+
+.notifications.categories ul li ul li {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    float: none;
+    width: 100%;
+}

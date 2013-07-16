@@ -1,0 +1,80 @@
+/* drop down long term weather widget */
+.dropdownLongterm {
+    background-color: #f4f4f4;
+}
+.dropdownLongterm .selectDropDown .button {
+    background: rgb(240,240,240); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(240,240,240,1) 0%, rgba(190,190,190,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,240,240,1)), color-stop(100%,rgba(190,190,190,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(240,240,240,1) 0%,rgba(190,190,190,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(240,240,240,1) 0%,rgba(190,190,190,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(240,240,240,1) 0%,rgba(190,190,190,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(240,240,240,1) 0%,rgba(190,190,190,1) 100%); /* W3C */
+
+    color:#000;
+}
+.dropdownLongterm a {
+    color: #000;
+}
+.dropdownLongterm a:hover {
+    text-decoration: none;
+}
+.dropdownLongterm select:focus {
+    background-color: #f9f9f9;
+}
+.dropdownLongterm select option:hover {
+    background-color: red;
+}
+.dropdownLongterm li {
+    padding: 0 20px;
+}
+.dropdownLongterm li:nth-child(2n+1) {
+    background-color: #f4f4f4;
+}
+.dropdownLongterm li:nth-child(2n) {
+    background-color: #e9e9e9;
+}
+
+.dropdownLongterm li time,
+.dropdownLongterm li .temp,
+.dropdownLongterm li .wind {
+    display: inline-block;
+    position: relative;
+    top: -20px;
+}
+.dropdownLongterm li .direction {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+}
+.dropdownLongterm li time {
+    width: 35%;
+}
+.dropdownLongterm li .temp {
+    text-align: right;
+    width: 25%;
+}
+.dropdownLongterm li .wind {
+    text-align: right;
+    width: 20%;
+}
+
+.dropdownLongterm .today {
+    font-size: 18px;
+}
+.dropdownLongterm .today .temp {
+    font-size: 20px;
+    width: 24%;
+}
+.dropdownLongterm .wind {
+    font-size: 12px;
+}
+.dropdownLongterm .today .wind {
+    font-size: 14px;
+}
+
+.dropdownLongterm .weatherSelect,
+.dropdownLongterm .selectDropDown {
+    margin: 10px 20px;
+    width: 340px;
+}

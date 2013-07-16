@@ -1,0 +1,138 @@
+.widget.jobAdSearch2.jobSearchResultsMobile {
+    padding: 0;
+    -webkit-tap-highlight-color:rgba(220,0,0,0.4);
+}
+
+.widget.jobSearchResultsMobile .searchbox {
+    position: relative;
+    border-top: 1px solid #cfcfcf;
+    background: #999;
+    background: -ms-gradient(linear, 0% 0%, 0% 100%, from(#bbb), color-stop(50%, #a3a3a3), color-stop(51%, #999), color-stop(97%, #666), to(#444));
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bbb), color-stop(50%, #a3a3a3), color-stop(51%, #999), color-stop(97%, #666), to(#444));
+    background: -moz-gradient(linear, 0% 0%, 0% 100%, from(#bbb), color-stop(50%, #a3a3a3), color-stop(51%, #999), color-stop(97%, #666), to(#444));
+    height: 35px;
+}
+
+.widget.jobSearchResultsMobile .searchbox input {
+    -webkit-appearance: none;
+    position: absolute;
+    left:  6px;
+    right: 6px;
+    top: 4px;
+    padding: 5px 24px 0 1.55em;
+    border-radius: 1em;
+    font-size: 17px;
+    background: #fff url(/skins/global/gfx/jobb/find.png) no-repeat 7px 55%;
+    -webkit-box-shadow: inset 0 2px 2px rgba(0,0,0,.3), inset 0 1px 1px rgba(0,0,0,.55);
+    box-shadow: inset 0 2px 2px rgba(0,0,0,.3), inset 0 1px 1px rgba(0,0,0,.55);
+    border: 0;
+}
+
+.widget.jobSearchResultsMobile .searchbox input::-webkit-input-placeholder {
+    color: #cfcfcf;
+}
+
+.widget.jobSearchResultsMobile .searchbox input::-moz-input-placeholder {
+    color: #cfcfcf;
+}
+
+.widget.jobSearchResultsMobile .searchbox .cross {
+    background: rgba(0, 0, 0, .35) url(/skins/global/gfx/icons/job2_sprite_mobile.png) -320px -21px;
+    border-radius: 9px;
+    position: absolute;
+    right: 11px;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    box-shadow: 1px 1px 0 #ddd;
+    display: none;
+    cursor: pointer;
+}
+
+.widget.jobSearchResultsMobile .searchbox .cross:hover {
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,.6);
+    box-shadow: 0 0 4px rgba(0,0,0,.6);
+}
+
+.widget.jobSearchResultsMobile .searchbox input:focus {
+    outline: none;
+}
+
+.widget.jobSearchResultsMobile .jobList a {
+    position: relative;
+    display: block;
+    padding: 8px 24px 7px 8px;
+    color: #222;
+    font-size: 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.widget.jobSearchResultsMobile .results a {
+    min-height: 43px;
+}
+
+.widget.jobSearchResultsMobile .jobList img {
+    width: 44px;
+    margin-right: 8px;
+    float: left;
+}
+
+.widget.jobSearchResultsMobile .title,
+.widget.jobSearchResultsMobile .description {
+    position: absolute;
+    left: 61px;
+}
+
+.widget.jobSearchResultsMobile .title {
+    font-weight: bold;
+}
+
+.widget.jobSearchResultsMobile .description {
+    top: 31px;
+    color: #777;
+}
+
+.widget.jobSearchResultsMobile .num {
+    position: absolute;
+    top: 6px;
+    right: 28px;
+    padding: 2px 4px 2px 5px;
+    min-width: 1.6em;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    border-radius: 49.9%;
+    vertical-align: baseline;
+}
+
+.widget.jobSearchResultsMobile .arrow {
+    position: absolute;
+    top: 0;
+    right: 9px;
+    width: 9px;
+    height: 13px;
+    border-width: 13px 0;
+    border-style:solid;
+    border-color: #fff;
+    background: url(/skins/global/gfx/icons/job2_sprite_mobile.png) -205.5px -24px;
+    z-index: 10;
+}
+
+.widget.jobSearchResultsMobile .results .arrow {
+    top: 12px;
+}
+
+.widget.jobSearchResultsMobile .num,
+.widget.jobSearchResultsMobile .results .arrow {
+    -webkit-box-shadow: 0 0 40px 8px #fff, 0 0 40px 8px #fff, 0 0 40px 8px #fff, 0 0 40px 8px #fff, 0 0 65px 8px #fff, 0 0 65px 8px #fff, 0 0 5px 10px #fff;
+    box-shadow: 0 0 40px 8px #fff, 0 0 40px 8px #fff, 0 0 40px 8px #fff, 0 0 40px 8px #fff, 0 0 65px 8px #fff, 0 0 65px 8px #fff, 0 0 5px 10px #fff;
+}
+
+.widget.jobSearchResultsMobile .loader {
+    height: 16px !important;
+    width: 16px !important;
+}

@@ -1,0 +1,34 @@
+#header .offCanvasLeft .searchField.default {
+    margin:0;
+    position:relative;
+}
+
+.offCanvasLeft .searchField.default .pillBox {
+    background:#fff;
+    border: 0 none;
+    float:none;
+}
+
+.offCanvasLeft .searchField.default input {
+    border: 0 none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    float:none;
+    padding-right:40px;
+    padding-right:2.5rem;
+    width:100%;
+    height:30px;
+    height:1.875rem;
+}
+
+.offCanvasLeft .searchField.default button {
+    border: 0 none;
+    position:absolute;
+    top:0;
+    right:0;
+    width:40px;
+    width:2.5rem;
+    height:30px;
+    height:1.875rem;
+}

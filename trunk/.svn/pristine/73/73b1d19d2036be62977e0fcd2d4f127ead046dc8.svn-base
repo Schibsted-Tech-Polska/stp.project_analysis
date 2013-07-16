@@ -1,0 +1,99 @@
+/* TODO: Rydde opp i klassebruk. For generelle regler */
+.question {
+    background:#fff;
+       filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#15000000');
+           -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#15000000')";
+           background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.1));
+           background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(0,0,0,0)),color-stop(1, rgba(0,0,0,0.1)));
+           background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.1));
+           background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.1));
+    border:1px solid #999;
+        -moz-border-radius:10px;
+        -webkit-border-radius:10px;
+        border-radius:10px;
+    overflow:hidden;
+    margin-top:10px;
+    padding:10px 10px 10px 40px;
+    position:relative;
+}
+
+.number {
+    background:#ccc;
+        filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#80ffffff', endColorstr='#00ffffff');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#80ffffff', endColorstr='#00ffffff')";
+        background-image: -moz-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,0));
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(255,255,255,0.5)),color-stop(1, rgba(255,255,255,0)));
+        background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,0));
+        background-image: linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,0));
+    border-right:1px solid #999;
+        -moz-border-radius:9px 0 0 9px;
+        -webkit-border-radius:9px 0 0 9px;
+        border-radius:9px 0 0 9px;
+    color:#999;
+    line-height:35px;
+    position:absolute;
+        top:0;
+        left:0;
+    text-align:center;
+        text-shadow:0 1px 1px #fff;
+    width:20px;
+        height:100%;
+    }
+
+.finished ol {
+    font-size:10px;
+    padding-left:20px;
+}
+
+.quizContainer .finished ol li {
+    padding:0 0 0 25px;
+}
+
+.quizContainer .normal {
+    color:#666;
+}
+
+.quizContainer .bold {
+    color:#080;
+    font-weight:bold;
+}
+
+.correct {
+    background:url(/skins/global/gfx/quiz/correct.png) top left no-repeat;
+}
+
+.wrong {
+    background:url(/skins/global/gfx/quiz/wrong.png) top left no-repeat;
+}
+
+.question h2 {
+    font-size:16px;
+}
+
+#quizContent .media {
+    border: 1px solid #666;
+    margin-bottom: 4px;
+    overflow: hidden;
+}
+
+#scoreDesc {
+    background:#f0fff0;
+    border-top:1px solid #999;
+    border-bottom:1px solid #999;
+    padding:10px;
+    margin:20px 0;
+}
+
+#scoreDesc .quizResult {
+    font-size:18px;
+        font-weight:bold;
+}
+
+#scoreDesc p {
+    font-size:12px;
+    margin:0;
+}
+
+.quiz.singleQuiz {
+    max-width:100%;
+}

@@ -1,0 +1,22 @@
+.weatherSelect {
+    width:100%;
+}
+
+.weatherSelect optgroup{
+    font-weight: bold;
+    font-style: normal;
+}
+
+.weatherSelect option:active{
+    background-color:#ffffcc;
+}
+
+.weatherSelect option{
+    display: block;
+    width: 95%;
+    height: 95%;
+    margin: 2px;
+    -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        border-radius:5px;
+}

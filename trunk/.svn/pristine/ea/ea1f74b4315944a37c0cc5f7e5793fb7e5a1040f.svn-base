@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!-- field group definitions for mobileSlideshow widget -->
+  <field-group name="mobile-slideshow-widget-basic-fields">
+    <field name="source" type="enumeration">
+      <ui:label>Pictures source</ui:label>
+      <ui:description>The source of pictures for the widget</ui:description>
+      <enumeration value="desked">
+        <ui:label>Desked content</ui:label>
+      </enumeration>
+      <enumeration value="related">
+        <ui:label>Article related pictures</ui:label>
+      </enumeration>
+      <ui:value-if-unset>desked</ui:value-if-unset>
+    </field>
+    <field name="groupName" type="basic" mime-type="text/plain">
+      <ui:label>Group name</ui:label>
+      <ui:description>The name of the group from which pictures will be fetched from various contents</ui:description>
+    </field>
+    <field name="maxPictures" type="number">
+      <ui:label>Maximum number of Pictures</ui:label>
+      <ui:description>Maximum number of pictures to be displayed in the slideshow</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>#</format>
+    </field>
+    <field type="number" name="size">
+      <ui:label>Image Size</ui:label>
+      <ui:description>Image size in percent of the screen</ui:description>
+      <constraints>
+        <minimum>10</minimum>
+        <maximum>100</maximum>
+      </constraints>
+      <ui:value-if-unset>100</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="mobile-slideshow-widget-advanced-fields">
+    <field name="pictureArticleTypeName" type="basic" mime-type="text/plain">
+      <ui:label>Picture content type name</ui:label>
+      <ui:description>The content type name for pictures</ui:description>
+      <ui:value-if-unset>picture</ui:value-if-unset>
+    </field>
+    <field name="sectionUniqueName" type="basic" mime-type="text/plain">
+      <ui:label>Section Unique Name</ui:label>
+      <ui:description>Section uniquename of the section the widget will look into for a group with content to be
+        displayed in the widget
+      </ui:description>
+    </field>
+    <field name="imageRepresentation" type="basic" mime-type="text/plain">
+      <ui:label>Image Representation</ui:label>
+      <ui:description>The name of the image representation that will be used</ui:description>
+    </field>
+  </field-group>
+
+  <!-- content type definition for mobileSlideshow widget-->
+  <content-type name="widget_mobileSlideshow">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Mobile Slideshow Widget</ui:label>
+    <ui:description>This widget is used to create a mobile slideshow</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The general fields of the slideshow widget</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="mobile-slideshow-widget-basic-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration options for slideshow widget</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="mobile-slideshow-widget-advanced-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Content Summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

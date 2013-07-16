@@ -1,0 +1,43 @@
+.publishInfo {
+    border-bottom: 2px solid #7c7b7b;
+        border-top: 2px solid #7c7b7b;
+    margin-bottom:15px;
+    padding: 5px 4px;
+}
+
+.publishInfo .byline {
+    background: #fff;
+    border-left: 0 none;
+    font-size:14px;
+        font-weight:bold;
+    padding:0;
+}
+
+.publishInfo .byline .prefix {
+    display:none;
+}
+
+.publishInfo .bylineTag {
+    border-right: 1px solid #E4E3DC;
+    float: left;
+    font-family: publicoHeadlineWeb, Cambria, Times, 'Times New Roman', serif;
+        font-size: 30px;
+        font-weight: bold;
+    margin-right: 5px;
+    padding-right: 5px;
+    position: relative;
+        z-index: 2;
+}
+
+.ie .publishInfo .bylineTag {
+    font-family: publicoHeadlineWeb, Cambria, Times, 'Times New Roman', serif;
+}
+
+.publishInfo.meninger {
+    overflow: hidden;
+    width:100%;
+}
+
+.publishInfo.meninger .byline {
+    padding-top:7px;
+}

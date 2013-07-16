@@ -1,0 +1,13 @@
+.tvGuide header {
+    height: 12px;
+    margin-bottom: 10px;
+}
+
+.tvGuide header.header a.floatRight {
+    color: #000;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+    margin-top: -1px;
+}

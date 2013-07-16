@@ -1,0 +1,213 @@
+/* taken from old main.css to perserve new look foreignObject jobdirekte */
+
+.jobAdListings2.jobbdirekte .cells .gridRow {
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+}
+
+.jobAdListings2.jobbdirekte .cells .gridRow:last-child {
+    border-bottom: none;
+}
+
+.jobAdListings2.jobbdirekte .cells .span2:first-child {
+    border-right: 1px solid #ccc;
+    margin-right:-1px;
+}
+
+.jobAdListings2.jobbdirekte .cells .span2:last-child {
+    border-left: 1px solid #ccc;
+    margin-left:0;
+    padding-left:9px;
+}
+
+.jobAdListings2.jobbdirekte .cells .span2 {
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.jobAdListings2.jobbdirekte footer {
+    text-align: right;
+}
+
+/* ------------------------------------ */
+
+.jobAdListings2.jobbdirekte {
+    background: url(/skins/global/gfx/marked/jobbdirekte-rullebanner.jpg) no-repeat left top;
+    height: 500px;
+    text-align: center;
+    padding: 0 !important;
+    font-family: Calibri, Gill Sans, Myriad, Tahoma, Geneva, Arial, sans-serif;
+}
+
+.jobAdListings2.jobbdirekte p {
+    margin: 0;
+}
+
+.jobAdListings2.jobbdirekte header {
+    border: 0;
+    margin: 0 0 3px;
+    padding: 0;
+    background: transparent none;
+    position: static;
+    filter: none;
+    -ms-filter: none;
+}
+
+.jobAdListings2.jobbdirekte header a {
+    display: block;
+    height: 60px;
+}
+
+.jobAdListings2.jobbdirekte footer {
+    margin: 0;
+    padding: 10px 0 0;
+}
+
+.jobAdListings2.jobbdirekte footer a {
+    text-transform:none;
+}
+
+.jobAdListings2.jobbdirekte .bg.btm,
+.jobAdListings2.jobbdirekte .bg.top {
+    border: 0;
+    background: #fff;
+    position: absolute;
+        top: 64px;
+    height: 29px;
+    width: 158px;
+    z-index: 3;
+    opacity: 0.65;
+    filter: alpha(opacity = 65);
+    left: 11px;
+}
+
+.jobAdListings2.jobbdirekte .bg.btm {
+    bottom: 7px;
+    height: 23px;
+    top: auto;
+}
+
+.jobAdListings2.jobbdirekte .content {
+    position: relative;
+    z-index: 4;
+    margin: 0 10px;
+}
+
+.jobAdListings2.jobbdirekte ul {
+    position: relative;
+    z-index: 4;
+    height: 353px;
+    background: #fff;
+    width: 142px;
+    left: 8px;
+}
+
+.jobAdListings2.jobbdirekte .list {
+    position: relative;
+    z-index: 3;
+    border: 1px solid #7e8ba2;
+    background: #fff;
+    overflow: hidden;
+    height: 364px;
+	padding: 0 0 8px;
+    font-size: 9pt;
+}
+
+.jobAdListings2.jobbdirekte li img {
+    display: block;
+    width: 142px;
+}
+
+.jobAdListings2.jobbdirekte li div {
+    margin: 0 0 3px 0;
+}
+
+.jobAdListings2.jobbdirekte .slogan {
+    color:#000;
+    font-size: 11px;
+        font-weight: bold;
+    float:right;
+    padding:10px;
+}
+
+.jobAdListings2.jobbdirekte a, .jobAdListings2.jobbdirekte a:hover, .jobAdListings2.jobbdirekte a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+#adRight .jobAdListings2.jobbdirekte a {
+    white-space: normal;
+}
+
+.jobAdListings2.jobbdirekte footer a {
+    color: #000;
+    font-size: 10px;
+}
+
+.jobAdListings2.jobbdirekte footer a:hover {
+    text-decoration: underline;
+}
+
+.jobAdListings2.jobbdirekte footer{
+    height: 26px;
+    background: #cde2b9;
+}
+
+.jobAdListings2.jobbdirekte .navCanvas {
+    line-height: 12px;
+    position: relative;
+    z-index: 4;
+}
+
+.jobAdListings2.jobbdirekte h2 {
+    display: none;
+}
+
+.jobAdListings2.jobbdirekte h3 {
+    margin: 0;
+	line-height: 1;
+	font-size: 9pt;
+    font-weight: bold;
+    position: relative;
+    z-index: 4;
+    padding: 8px 0;
+    border: 1px solid #858e9f;
+}
+
+.jobAdListings2.jobbdirekte ul li {
+    list-style-type: none;
+    float: left;
+    margin: 0 0 15px;
+    clear: both;
+}
+
+.jobAdListings2.jobbdirekte li a {
+    font-weight: bold;
+    display: block;
+    float: left;
+    width: 142px;
+}
+
+.jobAdListings2.jobbdirekte li a:hover {
+    text-decoration: underline;
+}
+
+.jobAdListings2.jobbdirekte li p {
+    color: #0f1e50;
+}
+
+.jobAdListings2.jobbdirekte .navCanvas {
+    font-size: 9pt;
+        font-weight: bold;
+    padding:4px 0 6px;
+        margin: 0 10px;
+    border: 1px solid #858e9f;
+}
+
+.ie7 .jobAdListings2.jobbdirekte .content {
+    height: 407px;
+}
+
+.ie7 .jobAdListings2.jobbdirekte .bg.btm {
+    height: 23px;
+}

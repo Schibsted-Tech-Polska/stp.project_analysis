@@ -1,0 +1,22 @@
+#header .breakingnews {
+    line-height:1;
+    height:14px;
+    padding: 2px 0;
+}
+
+#header .breakingnews a {
+    color: #444;
+}
+
+#header .breakingnews .latest {
+    color: #0086a3;
+}
+
+#header .breakingnews .breaking {
+    color: #990000;
+    font-size:1.2em;
+}
+
+#header .breakingnews .breaking a {
+    color: #990000;
+}

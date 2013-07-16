@@ -1,0 +1,21 @@
+.widget.pageTools.print{
+    clear: both;
+}
+.pageTools.print {
+    position:relative;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+
+.pageTools.print .print {
+    background:url(/skins/global/gfx/print.png) no-repeat center left;
+    border-right:1px solid #666;
+    float:left;
+    margin-right:5px;
+    padding:0 5px 0 20px;
+}
+
+.pageTools.print img {
+    height:15px;
+    vertical-align:baseline;
+}

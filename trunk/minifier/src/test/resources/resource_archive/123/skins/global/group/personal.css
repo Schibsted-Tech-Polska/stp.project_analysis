@@ -1,0 +1,33 @@
+.group.personal h1 {
+    font-size:40px;
+}
+
+.group.personal .relatedContents {
+    border:1px solid #ccc;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+    -moz-transform:rotate(5deg);
+        -webkit-transform:rotate(5deg);
+        transform:rotate(5deg);
+    padding:10px;
+}
+
+.group.personal .relatedContents.span3 {
+    margin: 0 auto 10px;
+    -moz-transform:rotate(2deg);
+        -webkit-transform:rotate(2deg);
+        transform:rotate(2deg);
+}
+
+.group.personal .relatedContents .hmedia {
+    border:1px solid #333;
+    box-shadow:0 0 5px #000000 inset
+}
+
+.group.personal .relatedContents img {
+    border:0 none;
+    width:100%;
+}
+
+.group.personal .relatedContents header {
+    display:none;
+}

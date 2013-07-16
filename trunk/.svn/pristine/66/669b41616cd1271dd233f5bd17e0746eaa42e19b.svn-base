@@ -1,0 +1,3 @@
+.weatherSearchFors .pillBox{
+    width:158px !important;
+}

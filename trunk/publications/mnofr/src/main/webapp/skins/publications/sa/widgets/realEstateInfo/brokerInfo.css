@@ -1,0 +1,25 @@
+.widget.realEstateInfo.brokerInfo .logo {
+    margin: auto;
+    width: auto;
+    max-width: 60%;
+    max-height: 50px;
+}
+
+.widget.realEstateInfo.brokerInfo .button {
+    background-color: #f0f8ff!important;
+    border-color: #dddddd!important;
+    color: #666!important;
+
+    width: 95%;
+    margin-top: 5px;
+}
+
+.widget.realEstateInfo .brokerLinks a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #777!important;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    font-family: Verdana;
+    text-align: center;
+}

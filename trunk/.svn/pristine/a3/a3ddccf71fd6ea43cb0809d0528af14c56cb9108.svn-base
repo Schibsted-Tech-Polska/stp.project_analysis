@@ -1,0 +1,105 @@
+/* store article */
+.storearticle {
+    text-align: center;
+}
+
+.storearticle a {
+    width: 55px;
+    height: 22px;
+    background-image: url(/skins/publications/bt/gfx/icons/sprite.png);
+    background-position: 0px -56px;
+    background-size: 55px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.81em;
+    padding-top: 33px;
+    margin-bottom: 10px;
+    background-size: 100%;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.storearticle a.saved {
+    background-position: 0px 0px;
+}
+
+.hasNotAccess .storearticle a {
+    display: none;
+}
+
+/* Stored articles list */
+.storedArticles.storedArticlesTrigger {
+    float: right;
+}
+
+.storedArticles.storedArticlesTrigger a:hover {
+    color: #FFF;
+}
+
+.storedArticles.storedArticlesTrigger .text {
+    color: white;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: .02em;
+}
+
+.storedArticles.storedArticlesTrigger .icon {
+    opacity: 0;
+    display: none;
+}
+
+.storedArticles.storedArticlesTrigger .count {
+    background-image: url(/skins/publications/bt/gfx/icons/star.png);
+    display: inline-block;
+    opacity: 1;
+    color: white;
+    height: 16px;
+    width: 30px;
+    background-position: 10px 2px;
+    background-repeat: no-repeat;
+}
+
+.storedArticles.listArticles h2 {
+    font-size: 20px;
+}
+
+.storedArticles.listArticles article {
+    width:255px;
+    margin-bottom: 25px;
+}
+
+.storedArticles.listArticles article h2 {
+    font-family: "Calibre", Arial, sans-serif;
+    font-weight: 500;
+    color: #FF0000;
+}
+
+.storedArticles.listArticles article h2:hover {
+    color: #000;
+}
+
+.storedArticles.listArticles article img {
+    width: 65px;
+}
+
+.storedArticles.listArticles article img[src=""] {
+    display: none;
+}
+
+.storedArticles.listArticles .info {
+    margin: 5px 0px;
+}
+
+.storedArticles.listArticles .published, .storedArticles.listArticles .stored {
+    font-size: 14px;
+    line-height: 1em;
+}
+
+.storedArticles.listArticles .published, .storedArticles.listArticles .dates {
+    width: 150px;
+}
+
+.storedArticles.listArticles .published, .storedArticles.listArticles .dates .f-bold{
+    font-weight: normal;
+}

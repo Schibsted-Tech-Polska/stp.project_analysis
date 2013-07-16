@@ -1,0 +1,12 @@
+h2.subTitle {
+    font-family: arial, sans-serif;
+    font-size: 24px;
+}
+
+/* right ad banner */
+#adRight {
+    margin-left: 0;
+}
+a {
+    color: #014075;
+}

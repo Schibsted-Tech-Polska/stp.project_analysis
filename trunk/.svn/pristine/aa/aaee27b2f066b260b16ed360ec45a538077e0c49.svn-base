@@ -1,0 +1,35 @@
+.storedArticles.storedArticlesTrigger {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.storedArticles.storedArticlesTrigger a {
+    color: #fff;
+    display: block;
+    padding: 0.5rem 0.3125rem
+}
+
+.storedArticles.storedArticlesTrigger a:hover {
+    background:rgba(0,0,0,.5);
+    color: #fff;
+}
+
+.storedArticles.storedArticlesTrigger .text {
+    color: white;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: .02em;
+}
+
+.storedArticles.storedArticlesTrigger .icon {
+    opacity: 0;
+    display: none;
+}
+
+.storedArticles.storedArticlesTrigger .count {
+    float:right;
+}
+
+.storedArticles.storedArticlesTrigger .count:before {
+    margin-right: 5px;
+    margin-right: .3125rem;
+}

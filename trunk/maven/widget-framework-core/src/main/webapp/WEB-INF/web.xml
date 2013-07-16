@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/branches/1.4/widget-framework-core/src/main/webapp/WEB-INF/web.xml#1 $
+ * Last edited by : $Author: shah $ $Date: 2010/10/18 $
+ * Version        : $Revision: #1 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>com.escenic.framework.ApplicationResources</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>presentation-loader</param-name>
+    <param-value>nursery:/neo/xredsys/presentation/PresentationLoader</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>api</param-name>
+    <param-value>nursery://global/io/api/API</param-value>
+  </context-param>
+
+  <!-- ECE Profile Filter Configuration -->
+  <filter>
+    <filter-name>ECEProfileFilter</filter-name>
+    <filter-class>com.escenic.servlet.ECEProfileFilter</filter-class>
+  </filter>
+
+  <!-- Filter -->
+  <filter>
+    <filter-name>ECETimerFilter</filter-name>
+    <filter-class>com.escenic.servlet.TimerFilter</filter-class>
+    <init-param>
+      <param-name>collector</param-name>
+      <param-value>/neo/io/reports/HitCollector</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>BootstrapFilter</filter-name>
+    <filter-class>com.escenic.presentation.servlet.BootstrapFilter</filter-class>
+    <init-param>
+      <param-name>oncePerRequest</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+
+  <filter>
+    <filter-name>EscenicStandardFilterChain</filter-name>
+    <filter-class>com.escenic.presentation.servlet.CompositeFilter</filter-class>
+    <init-param>
+      <param-name>oncePerRequest</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>chain</param-name>
+      <param-value>nursery:/com/escenic/servlet/StandardFilter</param-value>
+    </init-param>
+  </filter>
+
+  <!-- Cache Filter Configuration -->
+  <filter>
+    <filter-name>cache</filter-name>
+    <filter-class>com.escenic.presentation.servlet.multimedia.CacheFilter</filter-class>
+    <init-param>
+      <param-name>oncePerRequest</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+
+  <!-- image version filter configuration -->
+  <filter>
+    <filter-name>imageVersionFilter</filter-name>
+    <filter-class>com.escenic.presentation.servlet.ImageVersionFilter</filter-class>
+  </filter>
+
+  <!-- TrimWS Filter Configuration -->
+  <filter>
+    <filter-name>trimws</filter-name>
+    <filter-class>com.escenic.servlet.TrimWhiteSpaceFilter</filter-class>
+    <init-param>
+      <param-name>oncePerRequest</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+
+  <!-- UTF8 filter for struts action -->
+  <filter>
+    <filter-name>UTF8Filter</filter-name>
+    <filter-class>com.escenic.framework.struts.UTF8Filter</filter-class>
+  </filter>
+
+  <!--filter for validating captcha -->
+  <filter>
+    <filter-name>captchaValidatorFilter</filter-name>
+    <filter-class>com.escenic.captcha.CaptchaValidatorFilter</filter-class>
+  </filter>
+
+  <!-- Filter Mappings -->
+  <filter-mapping>
+    <filter-name>ECEProfileFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>UTF8Filter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>trimws</filter-name>
+    <url-pattern>*.ece</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>trimws</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>ECETimerFilter</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>ECETimerFilter</filter-name>
+    <url-pattern>*.ece</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>BootstrapFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>EscenicStandardFilterChain</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>cache</filter-name>
+    <servlet-name>binaryFieldRetriever</servlet-name>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>imageVersionFilter</filter-name>
+    <servlet-name>binaryFieldRetriever</servlet-name>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+
+  <!-- captcha validator filter mapping -->
+  <filter-mapping>
+    <filter-name>captchaValidatorFilter</filter-name>
+    <url-pattern>/forum/addCaptchaComment.do</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>captchaValidatorFilter</filter-name>
+    <url-pattern>/forum/addCaptchaComplaint.do</url-pattern>
+  </filter-mapping>
+
+
+  <!-- bootstrap listener -->
+  <listener>
+    <description>Escenic Presentation layer bootstrap listener</description>
+    <listener-class>com.escenic.presentation.servlet.PresentationBootstrapper</listener-class>
+  </listener>
+  <!-- Listener for Escenic forum plugin -->
+  <listener>
+    <description>Escenic Forum Presentation layer bootstrap listener</description>
+    <listener-class>com.escenic.forum.presentation.servlet.PresentationBootstrapper</listener-class>
+  </listener>
+  <!-- Escenic Redirect Servlet - redirects a request, depending on the parameters given, to an article page.  -->
+  <servlet>
+    <servlet-name>ECERedirectServlet</servlet-name>
+    <servlet-class>com.escenic.presentation.servlet.RedirectServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>escenicCaptcha</servlet-name>
+    <servlet-class>com.escenic.captcha.servlet.CaptchaServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <!-- Standard Action Servlet Configuration (with debugging) -->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>
+        /WEB-INF/struts-config-search.xml,
+        /WEB-INF/struts-config-forum.xml,
+        /WEB-INF/struts-config-poll.xml,
+        /WEB-INF/struts-config-email.xml,
+        /WEB-INF/struts-config.xml
+      </param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    <!--
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    -->
+    <init-param>
+      <param-name>validate</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>locale</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <servlet>
+    <servlet-name>binaryFieldRetriever</servlet-name>
+    <servlet-class>com.escenic.presentation.servlet.BinaryFieldRetrieverServlet</servlet-class>
+    <init-param>
+      <param-name>storage</param-name>
+      <param-value>nursery://global/com/escenic/storage/Storage</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>XmlRpcServlet</servlet-name>
+    <servlet-class>org.apache.xmlrpc.webserver.XmlRpcServlet</servlet-class>
+    <init-param>
+      <param-name>enabledForExtensions</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </servlet>
+
+  <!-- servlet mappings -->
+  <servlet-mapping>
+    <servlet-name>XmlRpcServlet</servlet-name>
+    <url-pattern>/xmlrpc</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ECERedirectServlet</servlet-name>
+    <url-pattern>/eceRedirect</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>escenicCaptcha</servlet-name>
+    <url-pattern>/escenicCaptcha</url-pattern>
+  </servlet-mapping>
+
+  <!-- Standard Action Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+  <!-- The Usual Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <error-page>
+    <error-code>401</error-code>
+    <location>/template/framework/errorpages/401.jsp</location>
+  </error-page>
+
+  <error-page>
+    <error-code>404</error-code>
+    <location>/template/framework/errorpages/404.jsp</location>
+  </error-page>
+
+  <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/template/framework/errorpages/generalError.jsp</location>
+  </error-page>
+</web-app>

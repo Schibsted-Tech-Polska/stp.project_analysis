@@ -1,0 +1,121 @@
+.moodlisttabs {
+    border-bottom:1px solid #555;
+    height:27px;
+    width:100%;
+}
+
+.moodlisttabs li {
+    float:left;
+    margin:0 1px;
+    cursor: pointer;
+    border:1px solid #555;
+    -moz-border-radius:5px 5px 0 0;
+        -webkit-border-radius:5px 5px 0 0;
+        border-radius:5px 5px 0 0;
+    border-bottom:0 none;
+    display:block;
+    font-size:.85em;
+        font-weight:bold;
+    padding:11px 2px;
+    color: #fff;
+    text-align: center;
+    line-height:0;
+    max-width: 40px;
+    overflow: hidden;
+}
+
+.moodlisttabs li:first-child{
+    margin-left:10px;
+}
+
+.moodlisttabs li.active{
+    padding-bottom:12px;
+}
+
+.moodlisttabs li.moodtab0{
+    color: #000;
+    background-color: #fff;
+}
+
+.moodlisttabs li.moodtab1,
+hr.moodtab1{
+    background-color:#f7941e;
+}
+.moodlisttabs li.moodtab2,
+hr.moodtab2{
+    background-color:#964e8a;
+}
+.moodlisttabs li.moodtab3,
+hr.moodtab3{
+    background-color:#a6ce39;
+}
+.moodlisttabs li.moodtab4,
+hr.moodtab4{
+    background-color:#99bfd1;
+}
+.moodlisttabs li.moodtab5,
+hr.moodtab5{
+    background-color:#d2232a;
+}
+.moodlisttabs li.moodtab6,
+hr.moodtab6{
+    background-color:#36b4ce;
+}
+
+.moodpanel span.moodarticle1{
+    background-color:#945912;
+}
+.moodpanel span.moodarticle2{
+    background-color:#5A2F53;
+}
+.moodpanel span.moodarticle3{
+    background-color:#647C22;
+}
+.moodpanel span.moodarticle4{
+    background-color:#5C737D;
+}
+.moodpanel span.moodarticle5{
+    background-color:#7E1519;
+}
+.moodpanel span.moodarticle6{
+    background-color:#1C6472;
+}
+
+.moodpanel li{
+    line-height: 30px;
+    border-bottom: 1px solid #999;
+}
+
+.moodpanel span.rating{
+    float:right;
+    width: 50px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    height: 29px;
+    line-height: 25px;
+    font-family: 'publicoHeadlineWeb',Cambria,Times,'Times New Roman',serif;
+    font-weight: bold;
+}
+
+.moodpanel span.ratingtext{
+    font-size: 0.6em;
+    display: block;
+    line-height: 0;
+    position: relative;
+    top: -2px;
+    font-family: Arial,sans-serif;
+    font-weight: normal;
+}
+
+.moodpanel li{
+    padding-left: 4px;
+}
+
+hr.currenttab{
+    height: 5px;
+    margin: 0;
+    padding: 0;
+    border:none;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * File           : $Header: //depot/projects/template-framework/src/main/webapp/META-INF/escenic/publication-resources/escenic/teaser-type#1 $
+ * Last edited by : $Author: shaon $ $Date: 2009/06/22 $
+ * Version        : $Revision: #1 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<teaser-types xmlns="http://xmlns.escenic.com/2008/content-type"
+              xmlns:ui="http://xmlns.escenic.com/2008/interface-hints">
+  <teaser-type name="dummy"/>
+</teaser-types>

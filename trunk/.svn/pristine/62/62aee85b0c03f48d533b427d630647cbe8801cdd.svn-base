@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!-- field group definitions for mobileMap widget -->
+  <field-group name="mobileMap-widget-basic-fields">
+    <field name="source" type="enumeration">
+      <ui:label>Source</ui:label>
+      <ui:description>The source of the mobileMap articles</ui:description>
+      <enumeration value="deskedMaps">
+        <ui:label>Desked Maps</ui:label>
+      </enumeration>
+      <enumeration value="relatedMaps">
+        <ui:label>Article Related Maps</ui:label>
+      </enumeration>
+      <ui:value-if-unset>deskedMaps</ui:value-if-unset>
+    </field>
+
+    <field name="groupName" type="basic" mime-type="text/plain">
+      <ui:label>Group Name</ui:label>
+      <ui:description>The name of the group that will act as a source of articles for the widget</ui:description>
+    </field>
+
+    <field name="begin" type="number">
+      <ui:label>Begin</ui:label>
+      <ui:description>Begin index</ui:description>
+      <format>###</format>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>1</ui:value-if-unset>
+    </field>
+
+    <field name="end" type="number">
+      <ui:label>End</ui:label>
+      <ui:description>End index</ui:description>
+      <format>###</format>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+    </field>
+  </field-group>
+
+  <field-group name="mobileMap-widget-advanced-fields">
+     <field type="boolean" name="showNavigationLinks">
+       <ui:label>Show navigation links</ui:label>
+       <ui:description>Set to true if the navigation links should be shown</ui:description>
+       <ui:value-if-unset>true</ui:value-if-unset>
+       <constraints>
+	      <required>true</required>
+	    </constraints>
+     </field>
+     <field type="boolean" name="showZoomLinks">
+       <ui:label>Show zoom links</ui:label>
+       <ui:description>Set to true if the zoom links should be shown</ui:description>
+       <ui:value-if-unset>true</ui:value-if-unset>
+       <constraints>
+	      <required>true</required>
+	    </constraints>
+     </field>
+    <field type="boolean" name="showMapTypeSwitcher">
+       <ui:label>Show map type switcher</ui:label>
+       <ui:description>Set to true if the map type switcher should be shown</ui:description>
+       <ui:value-if-unset>true</ui:value-if-unset>
+       <constraints>
+	      <required>true</required>
+	    </constraints>
+     </field>
+    <field name="zoomLevel" type="number">
+      <ui:label>Zoom level</ui:label>
+      <ui:description>Zoom level of the map</ui:description>
+      <format>###</format>
+      <ui:value-if-unset>10</ui:value-if-unset>
+      <constraints>
+        <minimum>0</minimum>
+        <maximum>19</maximum>
+      </constraints>
+    </field>
+    <field name="iconSize" type="number">
+      <ui:label>Icon size</ui:label>
+      <ui:description>Icon size</ui:description>
+      <format>###</format>
+      <ui:value-if-unset>18</ui:value-if-unset>
+      <constraints>
+        <minimum>5</minimum>
+        <maximum>100</maximum>
+      </constraints>
+    </field>
+    <field name="sectionUniqueName" type="basic" mime-type="text/plain">
+      <ui:label>Section unique name</ui:label>
+      <ui:description>The name of the section from which Maps will be fetched</ui:description>
+    </field>
+  </field-group>
+
+  <!-- content type definition for mobileMap widget-->
+  <content-type name="widget_mobileMap">
+    <ui:label>Mobile Map Widget</ui:label>
+    <ui:description>This widget displays one or more Maps</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>Mobile Map widget general fields</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="mobileMap-widget-basic-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields</ui:description>
+      <ref-field-group name="mobileMap-widget-advanced-fields"/>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-public-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Content Summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+							 xmlns:doc="http://xmlns.vizrt.com/2010/documentation"
+               version="4">
+  <!-- field group for code widget -->
+  <field-group name="code-widget-basic-fields">
+    <field name="view" type="enumeration">
+      <ui:label>View</ui:label>
+      <ui:description>The view chosen for the code widget</ui:description>
+      <enumeration value="html">
+        <ui:label>HTML</ui:label>
+				<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+					<p>Select this view if your custom component is written in HTML.</p>
+				</doc:description>
+      </enumeration>
+      <enumeration value="jsp">
+        <ui:label>JSP</ui:label>
+				<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+					<p>Select this view if your custom component is written in JSP.</p>
+				</doc:description>
+      </enumeration>
+      <ui:value-if-unset>html</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="code-widget-html-fields">
+    <field name="code" type="basic" mime-type="text/plain">
+      <ui:label>Code</ui:label>
+      <ui:description>The code to be rendered</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Paste your custom HTML code into this field.</p>
+			</doc:description>
+      <ui:layout rows="5" cols="40"/>
+    </field>
+  </field-group>
+
+  <field-group name="code-widget-jsp-fields">
+    <field name="path" type="basic" mime-type="text/plain">
+      <ui:label>Path</ui:label>
+      <ui:description>The relative path of the JSP page will will be included</ui:description>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Enter the path of the file containing your custom JSP code. The path must be specified relative to 
+            the <i>webapp</i><code>/template/widgets/code/view</code> folder.</p>
+			</doc:description>
+    </field>
+  </field-group>
+
+  <field-group name="code-widget-advanced-fields">
+    <field name="showDiv" type="boolean">
+      <ui:label>Show surrounding div</ui:label>
+      <ui:description>Decides if you should show the surrounding div or not.</ui:description>
+      <ui:boolean-label value="true">Show surrounding div</ui:boolean-label>
+      <ui:boolean-label value="false">Hide surrounding div</ui:boolean-label>
+			<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+				<p>Check this option if you want the custom code to be wrapped in an HTML <code>div</code> element.</p>
+			</doc:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+
+  <!-- content type definition for code widget-->
+  <content-type name="widget_code">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Code Widget</ui:label>
+    <ui:description>The widget to render provided code or a JSP page</ui:description>
+		<doc:description xmlns="http://www.w3.org/1999/xhtml" >
+			<p>Displays a custom component of your own written either in HTML or JSP. The Widget Framework does
+        not interact with your custom code in any way: it simply places it on the rendered page, optionally
+        wrapping it in an HTML <code>div</code> element.</p>
+		</doc:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The basic fields of code widget</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="code-widget-basic-fields"/>
+    </panel>
+
+    <panel name="html">
+      <ui:label>HTML</ui:label>
+      <ui:description>The HTML view specific fields</ui:description>
+      <ref-field-group name="code-widget-html-fields"/>
+    </panel>
+
+    <panel name="jsp">
+      <ui:label>JSP</ui:label>
+      <ui:description>The JSP view specific fields</ui:description>
+      <ref-field-group name="code-widget-jsp-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced fields</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="code-widget-advanced-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-public-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Content Summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

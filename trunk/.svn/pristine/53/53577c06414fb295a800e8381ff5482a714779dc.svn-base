@@ -1,0 +1,12 @@
+.tabList h2 {
+    margin-bottom:.22em;
+}
+
+.tabList .review {
+    float:left;
+    margin-right:10px;
+}
+
+.tabList .reviewContainer {
+    padding-bottom:10px;
+}

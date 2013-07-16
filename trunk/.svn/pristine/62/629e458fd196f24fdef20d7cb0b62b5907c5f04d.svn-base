@@ -1,0 +1,70 @@
+.jobAdListings2.profiled {
+    line-height: 16px;
+    background:#fff;
+    border-bottom:1px solid #ccc;
+    border-right:1px solid #ccc;
+    border-left:1px solid #ccc;
+    border-top: 3px solid #014687;
+    padding: 0 0 12px 0;
+}
+
+.jobAdListings2.profiled header {
+    padding: 5px 0 7px 5px;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #dbdbdb;
+    margin: 0;
+}
+
+.jobAdListings2.profiled a {
+    padding-left: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.jobAdListings2.profiled ul {
+    padding: 0 5px;
+    display: inline-block;
+}
+
+.jobAdListings2.profiled li p {
+    color: #000;
+}
+
+.jobAdListings2.profiled li a, .jobAdListings2.profiled li a:visited {
+    padding-left: 0;
+    text-transform: none;
+    font-weight: normal;
+    font-size: 13px;
+    margin: 0 0 3px 0;
+}
+
+.jobAdListings2.profiled li img {
+     margin-bottom: 8px;
+}
+
+.rightArea .jobAdListings2.profiled li img {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.jobAdListings2.profiled.simpleNoImages{
+    border: 0;
+}
+
+.jobAdListings2.profiled.simpleNoImages .header{
+    border-bottom: 0;
+    padding:0;
+}
+
+.jobAdListings2.profiled.simpleNoImages li a {
+    display: block;
+    font-weight: bold;
+}
+
+.jobAdListings2.profiled.simpleNoImages li span {
+    color: #666666;
+    display: block;
+    font-size: 12px;
+}

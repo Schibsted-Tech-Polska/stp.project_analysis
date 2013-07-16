@@ -1,0 +1,12 @@
+.stories.list .span6 h2 {
+    font-size:31px;
+}
+
+.stories.list .gridUnit .teaserText {
+    font-size:14px;
+        line-height:17px;
+}
+
+.gridUnit.span5 + section.list {
+	clear: both;
+}

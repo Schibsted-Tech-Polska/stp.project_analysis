@@ -1,0 +1,65 @@
+.xstream {
+    color: #fff;
+}
+.xstream a,
+.xstream a:visited {
+    color: #fff;
+    text-decoration: none !important;
+}
+.xstream ul {
+    clear: both;
+}
+.xstream li,
+.xstream .categories li a {
+    float: left;
+    display: inline;
+}
+.xstream .categories li {
+    margin-right: 5px;
+}
+.xstream .categories li a {
+    -moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.xstream .categories li a {
+    padding: 6px 10px 5px;
+}
+.xstream .categories li a,
+.xstream .paging a {
+    background: #2c2b30;
+}
+.xstream .categories li a.active,
+.xstream .paging a.active {
+    background: #000;
+}
+.xstream .categories li a.selected,
+.xstream .paging a.selected {
+    background: #000;
+}
+.xstream ul.videos {
+    background: #000;
+    float: left;
+    width: 980px;
+    min-height: 180px;
+}
+.xstream .videos li {
+    padding: 13px 0 13px 13px;
+    width: 180px;
+}
+.xstream .paging {
+    text-align: center;
+    clear: both;
+    margin: 0 0 15px;
+}
+.xstream .paging a {
+    line-height: 1.7em;
+    margin-top: 11px;
+    padding: 4px 12px 8px;
+}
+.xstream .clearLeft {
+    clear: left;
+}

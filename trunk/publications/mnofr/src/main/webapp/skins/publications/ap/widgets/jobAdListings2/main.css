@@ -1,0 +1,6 @@
+@font-face {
+    font-family: "Klavika";
+    src: url("/skins/publications/ap/fonts/KlavikaWebBasicRegular.woff") format("woff"),
+    src: url("/skins/publications/ap/fonts/KlavikaWebBasicRegular.eot") format("embedded-opentype");
+    font-style:normal;
+}

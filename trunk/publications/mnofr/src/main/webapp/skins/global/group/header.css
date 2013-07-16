@@ -1,0 +1,74 @@
+/**
+  Header
+  Global header styles
+  @fileinfo
+  */
+
+/**
+  Header
+  @group structure
+  @style
+  #header Parent of main site header
+  */
+
+#header {
+    margin-bottom:15px;
+}
+
+#viewport #header {
+    margin-bottom:0;
+    padding-bottom:15px;
+}
+
+#header .gridRow{
+    margin-top:5px;
+}
+#header .gridRow:first-child{
+    margin-top:0;
+}
+
+.smallHeader {
+    background:#fff;
+    border-bottom:1px solid #999;
+    -moz-box-shadow:0 0 15px #ccc;
+    -webkit-box-shadow:0 0 15px #ccc;
+    box-shadow:0 0 15px #ccc;
+    padding:3px;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+}
+
+#smallHeader input {
+    width:100px;
+}
+#smallHeader a {
+    height:auto;
+    padding: 5px 10px 5px 5px;
+    line-height:1;
+}
+
+#smallHeader .logo {
+    padding:0;
+}
+
+#innerSmallHeader {
+    margin:0 auto;
+}
+
+#mobilelink {
+    display:none;
+}
+@media handheld, only screen and (max-device-width: 480px) {
+    #mobilelink {
+        display:block;
+        text-decoration:none;
+        text-align:center;
+        font-family:Arial, Sans-Serif;
+        font-weight:bold;
+        font-size:3.3em;
+        margin:0px 0 40px 0;
+    }
+}

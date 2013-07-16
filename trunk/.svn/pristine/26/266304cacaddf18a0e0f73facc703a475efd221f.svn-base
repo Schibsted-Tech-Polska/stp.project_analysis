@@ -1,0 +1,22 @@
+.stories .e24 ul{
+    list-style: none;
+    padding:0;
+}
+
+.e24 header h2{
+    display:inline;
+}
+
+.e24 header a{
+    color: black;
+}
+
+.e24 img{
+    width: 40px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.e24.list h2 {
+    padding-left: 50px;
+}

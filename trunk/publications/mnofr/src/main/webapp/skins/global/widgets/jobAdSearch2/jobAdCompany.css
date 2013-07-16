@@ -1,0 +1,122 @@
+/* company information */
+.jobAdSearch2.jobAdCompany .companyLogo {
+    width: 100%;
+    height: 216px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 34px solid transparent;
+    position: relative;
+}
+
+.jobAdSearch2.jobAdCompany .companyLogo img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.jobAdSearch2.jobAdCompany .companyProfile {
+    color: #808080;
+    margin-left: 0;
+}
+
+.jobAdSearch2.jobAdCompany dl {
+    margin: 0;
+}
+
+.jobAdSearch2.jobAdCompany dt,
+.jobAdSearch2.jobAdCompany dd {
+    float: left;
+    width: 50%;
+}
+
+.jobAdSearch2.jobAdCompany dt {
+    font-weight: bold;
+}
+
+.jobAdSearch2.jobAdCompany dd {
+    margin: 0;
+}
+
+.jobAdSearch2.jobAdCompany .positionKeyfigures {
+    clear: both;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.profileText {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.positionDetails {
+    margin: 1em 0;
+}
+
+.positionDetails li {
+    background-image: url(/skins/global/gfx/icons/job2_sprite.png);
+    border-left-style: solid;
+    border-left-width: 16px;
+    position: relative;
+    height: 16px;
+    padding: 0 0 0 10px;
+    margin: 0 0 10px 0;
+}
+
+.positionDetails li:before {
+    background-image: url(/skins/global/gfx/icons/job2_sprite.png);
+    content: '';
+    display: block;
+    position: absolute;
+    left: -16px;
+    height: 16px;
+    width: 16px;
+    top: 0;
+}
+
+.positionDetails strong {
+    padding-right: 10px;
+}
+
+.icon_suitcase:before {
+    background-position: 32px  0px;
+}
+
+.icon_man:before {
+    background-position: 32px  -32px;
+}
+
+.icon_building:before {
+    background-position: 32px  -64px;
+}
+
+.icon_marker:before {
+    background-position: 32px  -96px;
+}
+
+.icon_clock:before {
+    background-position: 32px  -128px;
+}
+
+.icon_note:before {
+    background-position: 32px  -160px;
+}
+
+.icon_calendar:before {
+    background-position: 32px  -192px;
+}
+
+.positionDetails .no_icon {
+    padding: 0;
+    border: 0;
+}
+
+.positionDetails .no_icon:before {
+    content: none;
+    display: none;
+}

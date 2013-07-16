@@ -1,0 +1,93 @@
+.weatherForecast{
+    display:block;
+}
+
+.weatherForecast div{
+    display:block;
+    float:left;
+    font-size:12px;
+}
+
+.weatherForecast table{
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        right bottom,
+        color-stop(0, rgb(231,236,238)),
+        color-stop(0.58, rgb(255,255,255))
+    );
+    background-image: -moz-linear-gradient(
+        left center,
+        rgb(231,236,238) 0%,
+        rgb(255,255,255) 58%
+    );
+}
+.weatherForecast th{
+    background:#fff;
+}
+
+.weatherForecast td.cityName{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.weatherForecast td > div{
+    margin-top:3px;
+    margin-right: 10px;
+}
+
+
+.weatherForecast .weather-icon{
+    margin-top:6px;
+}
+
+.weatherForecast .wind{
+   margin-right: 15px;
+}
+
+.weatherForecast .direction {
+    float: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.weatherForecast .speed{
+    float: none;
+}
+
+.weatherForecast .temp{
+    margin-left: 7px;
+    margin-top: 10px;
+}
+
+.weatherForecast th{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+
+}
+
+.weatherForecast .timePeriod,
+.weatherForecast .timePeriodHeader{
+    border-right:1px solid #eee;
+    border-bottom:1px solid #eee;
+    text-transform:capitalize;
+    padding: 5px;
+}
+.weatherForecast .timePeriod.last,
+.weatherForecast .timePeriodHeader.last{
+    border-right:none;
+}
+
+.weatherForecast .after24h{
+    background-color:#F5F5F5;
+}
+
+.weatherForecast .nextDays{
+    border-right:1px solid #eee;
+    border-left:1px solid #eee;
+    background-color:#F5F5F5;
+}

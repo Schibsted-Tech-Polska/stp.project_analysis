@@ -1,0 +1,60 @@
+.stormWeather {
+    border-left: 1px solid #616974;
+    color: #fff;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#header .stormWeather {
+    float:right;
+}
+
+.linksAndSearch .stormWeather a {
+    float: left;
+    padding-left:7px;
+    text-align: left;
+}
+
+.stormWeather .stormWeather-degrees {
+    color: #34aac2;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.stormWeather .stormWeather-degrees.warm {
+    color: #cc0000;
+}
+
+.stormWeather .label {
+    display:none;
+}
+
+.stormWeather .sted {
+    text-transform: capitalize;
+}
+
+#header .stormWeather {
+    height: 14px;
+    font-size:14px;
+        line-height:14px;
+    padding-top:11px;
+    position:relative;
+    z-index:2;
+}
+
+#header .stormWeather a {
+    color:#fff;
+}
+
+#header .stormWeather .sted {
+    padding-left:30px;
+}
+
+#header .stormWeather .stormWeather-symbol {
+    -webkit-transition: background-position 1s ease-in-out;
+        -moz-transition: background-position 1s ease-in-out;
+        transition: background-position 1s ease-in-out;
+    position:absolute;
+        left:10px;
+        bottom:0;
+}

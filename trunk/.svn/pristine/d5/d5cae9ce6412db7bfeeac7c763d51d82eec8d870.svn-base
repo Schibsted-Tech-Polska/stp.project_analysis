@@ -1,0 +1,5 @@
+#mobileWarning widget
+mobileWarning.widget.error.javascript.title=WARNING
+mobileWarning.widget.error.javascript.message=You should turn on javascript on your phone to use all the features on this site.
+mobileWarning.widget.error.css.title=WARNING
+mobileWarning.widget.error.css.message=You have no support for css or have css turned of. Please consult the browser settings and turn it on to view this page the best way.

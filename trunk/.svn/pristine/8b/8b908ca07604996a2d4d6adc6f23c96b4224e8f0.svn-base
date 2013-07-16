@@ -1,0 +1,62 @@
+.group.personal h1 {
+    font-size:40px;
+}
+
+.group.personal .relatedContents {
+    border:1px solid #ccc;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+    -moz-transform:rotate(4deg);
+    -webkit-transform:rotate(4deg);
+    transform:rotate(4deg);
+    padding:10px;
+}
+
+.group.personal .relatedContents.span3 {
+    margin: 0px 0px 15px 10px;
+    -moz-transform:rotate(2deg);
+    -webkit-transform:rotate(2deg);
+    transform:rotate(2deg);
+}
+
+.group.personal .relatedContents .hmedia {
+    border:1px solid #333;
+}
+
+.group.personal .relatedContents img {
+    border:0 none;
+    width:100%;
+}
+
+.group.personal .relatedContents header {
+    display:none;
+}
+
+.group.personal .birthday {
+    display: block;
+    line-height:20px;
+        text-align: center;
+    position: absolute;
+        top:-0px;
+        right:-60px;
+    width:60px;
+
+}
+
+.group.personal .birthday:before {
+    content:'\25CF';
+    color:#ec008c;
+    font-size:100px;
+        text-shadow:1px 1px 5px rgba(0,0,0,.2);
+    position: absolute;
+        top:-6px;
+        left:0;
+}
+
+.group.personal .birthday span {
+    color:#fff;
+    font-size:12px;
+        font-weight: bold;
+    position: relative;
+        z-index: 2;
+    vertical-align: middle;
+}

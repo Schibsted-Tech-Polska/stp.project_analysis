@@ -1,6 +1,6 @@
-var gitModule = require('gitModule');
+var repoModule = require('repositoriesModule');
 var sonarModule = require('sonarModule');
-var utilModule = require('fileModule');
+var fileModule = require('fileModule');
 var flow = require('nimble');
 
 exports.form = function(req, res){
@@ -40,17 +40,19 @@ function startAnalysisProcess(link, language, javaBuildCommand){
 		//TODO make 3 functions
 		flow.series([
 			function(callback){
-				nameOfGitRepo = gitModule.getNameOfRepo(link);
+				nameOfGitRepo = repoModule.getNameOfRepo(link);
+				console.log('--> extract nameOfGitRepo : ' + nameOfGitRepo);
 				callback();//inlnie
 			},
 			function(callback){
-				gitModule.cloneRepo(link,callback);
+				repoModule.downloadRepo(link,callback);
 			},
 			function(callback){
 
 
 				 console.log("--->third callback");
-				 var projectLocation = utilModule.buildAbsolutePath(nameOfGitRepo);
+				 var projectLocation = fileModule.buildAbsolutePath(nameOfGitRepo);
+				 console.log('---> projectLocation after build Absolute Path : ' + projectLocation);
 				 var properties = {
 				 	'language' : language,
 				 	'projectLocation' : projectLocation,

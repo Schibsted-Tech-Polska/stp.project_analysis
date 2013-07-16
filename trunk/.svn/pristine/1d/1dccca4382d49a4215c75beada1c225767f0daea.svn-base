@@ -1,0 +1,30 @@
+{{each weather}}
+<li{{if getDate(time_from_millis) == today}} class="today"{{/if}}>
+    {{if pentUrl != ''}}
+        <a href="${pentUrl}">
+    {{else}}
+        <a href="${searchPage}?${getPlaceQuery(place)}">
+    {{/if}}
+        <time datetime="${time_from}">
+            {{if getDate(time_from_millis) == today}}
+                I dag kl. ${getHours(time_from_millis)}
+            {{else}}
+                ${getDay(time_from_millis)} kl. ${getHours(time_from_millis)}
+            {{/if}}
+        </time>
+
+        <span class="weather-icon icon${symbol_number}" title="${symbol_name}"></span>
+
+        <span class="temp {{if temperature_value > 0}}warm{{else}}cold{{/if}}">
+            ${temperature_value}&deg;
+        </span>
+
+        <span class="wind">
+            <span class="speed" title="${windSpeed_name}">
+                ${round(windSpeed_mps)}m/s
+            </span>
+            <span class="direction ${getWindSymbolClass(windSpeed_mps)} degree${windDirection_code}" title="${windDirection_name}"></span>
+        </span>
+    </a>
+</li>
+{{/each}}

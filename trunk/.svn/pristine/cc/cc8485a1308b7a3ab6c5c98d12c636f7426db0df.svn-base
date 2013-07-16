@@ -1,0 +1,20 @@
+<div class="adFrame">
+     <a href="${adUrl}">
+         <img src='http://${lisaLevel}.aftenposten.no/utils/img.php?src=${imgUrl}${adId}_${adImage}&amp;width=${maxWidth}' alt='${title}'/>
+    </a>
+   Tittel: ${title}<br />
+   Tekst: ${text}<br />
+   Firma: ${company} <br />
+    {{if compLogo}}
+        <img src='http://${lisaLevel}.aftenposten.no/utils/img.php?src=${logoUrl}${adId}_${compLogo}&amp;width=50' alt='${title}'/>
+    {{/if}}
+   {{if oldPrice && newPrice}}
+        F&oslash;r: ${oldPrice}<br/>
+        N&aring;:${newPrice}
+    {{/if}}
+    {{if !oldPrice && !newPrice}}
+        <a href="${adUrl}">
+        Se det gode tilbudet
+    </a>
+    {{/if}}
+<div>

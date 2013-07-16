@@ -1,0 +1,128 @@
+.actionList {
+    position: absolute;
+    top:0;
+    left: 0;
+    float: none;
+    background-color: #fff;
+    height: auto;
+    min-width: 255px;
+    color: #231f20;
+    padding: 0 0 35px;
+    margin-top: 8px;
+    box-shadow: 0 2px 35px 10px rgba(0, 0, 0, 0.6);
+    display: none;
+}
+.actionList h3 {
+    font-family: Cambria,Times,'Times New Roman',serif;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1em;
+    border-bottom: 1px solid #e4e4e5;
+    border-top: 1px solid #405372;
+    padding: 13px 0 13px 30px;
+    text-align: left;
+    position: relative;
+}
+.actionList h3:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 15px;
+    top: 0;
+    bottom: 0;
+    background-color: #0099c3;
+}
+
+.actionList .selectDropDown .button {
+    width:20px;
+}
+.mnoDropdownContent {
+    position: relative;
+}
+.mnoDropdown .arrow {
+    display: none;
+    border: 0 none;
+}
+
+.mnoDropdown .close {
+    display: none;
+}
+.mnoDropdownContent > .actionList {
+    display: block;
+}
+/*.mnoDropdownContent {*/
+/*padding: 0;*/
+/*}*/
+.actionList .button {
+    background-color: #e8e7dd;
+    background-repeat: no-repeat;
+    background-image: url("/skins/publications/bt/gfx/icons/paywall-icons.png");
+    min-height: 44px;
+    border-radius: 22px 0 0 22px;
+    margin-left: 24px;
+    margin-bottom: 10px;
+    display: block;
+    box-shadow: none;
+    border: 0 none;
+    padding: 12px 0 12px 60px;
+    color: #231f20;
+    font-weight: bold;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+.actionList .button:after {
+    content: '';
+    height: 18px;
+    width: 18px;
+    display: block;
+    position: absolute;
+    /*background: url("/skins/publications/bt/gfx/icons/paywall-icons.png") 0 0 no-repeat;*/
+    right: 17px;
+    top:13px;
+}
+.actionList .button:before {
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    left: 46px;
+    top:0;
+    bottom: 0;
+    width: 3px;
+}
+.actionList .button:hover {
+    text-decoration: none;
+    text-shadow: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.actionList .button:active {
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
+}
+.actionList .button.logout {
+    background-position: 7px -26px;
+}
+.actionList .button.register {
+    background-position: 7px -26px;
+}
+.actionList .button.login {
+    background-position: 7px -26px;
+}
+
+.actionList .link-list a {
+    display: block;
+    border-bottom: 1px solid #d6d7d8;
+    padding: 16px 10px 16px 30px;
+    line-height: 18px;
+    color: #404041;
+    font-weight: normal;
+    height: auto;
+    text-align: left;
+}
+.actionList .link-list p.plain {
+    padding: 0 30px;
+}

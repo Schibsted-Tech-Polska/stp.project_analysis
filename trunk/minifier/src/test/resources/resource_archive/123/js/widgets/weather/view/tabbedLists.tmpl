@@ -1,0 +1,34 @@
+<ul role="tablist">
+    {{each(i, value) lists}}
+        <li id="tab${uniqueId}${i+1}" role="tab" tabindex="${i===0 ? 0 : -1}" aria-selected="${i===0 ? 'true' : 'false'}" aria-label="${i===0 ? 'selected' : 'not selected'}">
+            {{html list.name}}
+        </li>
+    {{/each}}
+</ul>
+
+{{each(i, value) lists}}
+    <div role="tabpanel" aria-labelledby="tab${uniqueId}${i+1}" aria-hidden="${i===0 ? 'false' : 'true'}">
+        <ul class="content">
+            {{each(j, item) items}}
+                {{if text_tabular_hourly.length>0 && text_tabular.length>0}}
+                    <li>
+                        <span class="name"><a href="{{html searchPage}}?${getPlaceQuery(name, kommune, fylke)}&list=${list.id}">
+                            {{if showName!=''}}
+                                {{html showName}}
+                            {{else}}
+                                {{html name}}
+                            {{/if}}
+                        </a></span>
+                        <span class="localtime">kl.${findHours(text_tabular_hourly[0].time_from_millis)}:00</span>
+                        <span class="prognosis">
+                            <span class="weather-icon {{if text_tabular_hourly[0].symbol_var.indexOf('n')!=-1}}{{/if}} icon{{html text_tabular_hourly[0].symbol_number}}" title="{{html text_tabular_hourly[0].symbol_name}}">
+                                &nbsp;
+                            </span>
+                            <span class="temp {{if text_tabular_hourly[0].temperature_value>0}}warm{{else}}cold{{/if}}">{{html text_tabular_hourly[0].temperature_value}}&deg;</span>
+                        </span>
+                    </li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+{{/each}}

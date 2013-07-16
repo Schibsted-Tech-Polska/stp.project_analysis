@@ -1,0 +1,12 @@
+.verticalListMenu * {
+    text-align: right;
+}
+.verticalListMenu a.head{
+    border-bottom: 3px solid #005395;
+    color: #000;
+    display: block;
+    line-height: 1em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}

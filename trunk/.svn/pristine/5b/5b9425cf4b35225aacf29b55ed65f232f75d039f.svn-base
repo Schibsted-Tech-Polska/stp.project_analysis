@@ -1,0 +1,42 @@
+.relatedContents.flyout.active {
+    background: #fff;
+    color:#000;
+    padding: 0;
+}
+
+.relatedContents.flyout.active a {
+    color:#000;
+    text-decoration:none;
+}
+
+.relatedContents.flyout .header h2:before {
+    background: none;
+    display:none;
+}
+.relatedContents.flyout .header {
+    margin-bottom:0;
+}
+.relatedContents.flyout .header h2 {
+    background-color: #000;
+    background-image:none;
+    color:#fff;
+    font-size:12px;
+        letter-spacing: 0;
+        line-height: 1;
+        text-transform: uppercase;
+    padding: 4px 10px 1px;
+}
+
+.relatedContents.flyout .content {
+    font-size:12px;
+    padding: 5px 10px;
+}
+
+.relatedContents.flyout .content h2 {
+    font-family:ClanWeb, Arial, sans-serif;
+        font-size:18px;
+}
+
+.ie .relatedContents.flyout .content h2 {
+    font-family:ClanWebBold, Arial, sans-serif;
+}

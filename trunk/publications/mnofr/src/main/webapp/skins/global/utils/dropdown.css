@@ -1,0 +1,35 @@
+.mnoDropdown {
+    float:left;
+    height:0;
+    overflow: hidden;
+    -moz-transition: height 250ms ease-in-out;
+        -webkit-transition: height 250ms ease-in-out;
+        -o-transition: height 500ms ease-in-out;
+        -ms-transition: height 500ms ease-in-out;
+        transition: height 250ms ease-in-out;
+    position:absolute;
+    z-index: 11000;
+}
+
+.mnoDropdown .close {
+    cursor:pointer;
+    position:absolute;
+        top:20px;
+        right:10px;
+}
+
+.mnoDropdownContent {
+    background:#eee;
+    -moz-box-shadow: 0 10px 10px rgba(0,0,0,.5);
+        -webkit-box-shadow: 0 10px 10px rgba(0,0,0,.5);
+        box-shadow: 0 10px 10px rgba(0,0,0,.5);
+    padding:10px;
+}
+
+.mnoDropdown .arrow {
+    border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 20px solid #eee;
+    width:0;
+        height:0;
+}

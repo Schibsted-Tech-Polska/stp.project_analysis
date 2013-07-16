@@ -1,0 +1,49 @@
+    {{each items}}
+        <li>
+            <div class="calendarPart">
+                <div class="calendarBackground">
+
+                    <time class="dateFrom" datetime=${datetime_from}>
+                        <span class="month">${monthFrom}</span>
+                        <span class="day_num">${dayFrom}</span>
+                        <span class="day">${dayFromName}</span>
+                    </time>
+
+                    {{if monthTo}}
+                        <time class="dateTo" datetime=${datetime_to}>
+                            <span class="month">${monthTo}</span>
+                            <span class="day_num">${dayTo}</span>
+                            <span class="day">${dayToName}</span>
+                        </time>
+                    {{/if}}
+                </div>
+                <time class="time" datetime={{html datetime_time}}>{{html time}}</time>
+            </div>
+
+            <div class="informationPart">
+
+                <h2>
+                    <a href="${link}">${name}</a>
+                </h2>
+                <div class="categories">${categories}</div>
+                <div class="place_det">${place}</div>
+                <div class="common_rating">
+                    <div id="rating_${id}" class="rating"></div>
+                    {{each(index, value) commonTags }}
+                        <span class="${value}">${value}</span>
+                    {{/each}}
+                </div>
+
+                {{if moreShows}}
+                    <div class="movie_link"><a href="${moreShows}">See other showtimes & cinemas</a></div>
+                {{/if}}
+
+            </div>
+
+            {{if image}}
+                <div class="imagePart">
+                    {{html image}}
+                </div>
+            {{/if}}
+        </li>
+    {{/each}}

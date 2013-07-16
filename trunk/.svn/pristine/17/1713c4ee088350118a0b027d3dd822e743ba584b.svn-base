@@ -1,0 +1,45 @@
+
+<ul>
+    {{each items}}
+    <li>
+        <h2>{{html header}}</h2>
+
+
+    here ul
+
+
+    </li>
+    {{/each}}
+</ul>
+
+
+        for (i = 0, len = data.values.length; i < len; i += 1) {
+
+        isChecked = false;
+        if (selectedFilters.cuisineToFind.indexOf(data.values[i].id.toString()) !== -1) {
+        isChecked = true;
+        }
+        isInTop = false;
+        if (data.values[i].position < numberOfTopElements) {
+        isInTop = true;
+        }
+
+        result += '<li name="refCatLi_' + data.values[i].id + '"';
+        if (!isInTop) {
+        result += ' class="lowCounter"';
+        }
+        result += '>';
+        result += '<input type="checkbox"';
+        if (isChecked) {
+        result += ' checked="checked" ';
+        }
+        result += '/>&nbsp;' + data.values[i].value + ' <span>(' + data.values[i].counter + ')</span>';
+        result += '</li>';
+        }
+
+        result += '</ul>';
+        if (showAllCuisines) {
+        result += '<span class="showMoreLess" name="low">less</span>';
+        } else {
+        result += '<span class="showMoreLess" name="top">more</span>';
+        }

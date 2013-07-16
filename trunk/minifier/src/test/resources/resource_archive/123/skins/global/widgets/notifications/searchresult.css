@@ -1,0 +1,19 @@
+.notifications.searchresult .searchresult-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.notifications.searchresult .companyName {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.notifications.searchresult .category {
+    color: #5F5E55;
+    font-size: 75%;
+}
+
+.notifications.searchresult .date {
+    color: #5F5E55;
+    font-size: 75%;
+}

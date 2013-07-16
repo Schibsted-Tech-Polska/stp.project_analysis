@@ -1,0 +1,25 @@
+.widget.realEstateInfo.keyInfoBar {
+    line-height: 24px;
+    font-family: 'PT Sans', Arial, Helvetica, Sans-serif;
+}
+
+.widget.realEstateInfo.keyInfoBar .propertyPrice {
+    color: #004687;
+    font-size: 24px;
+}
+
+.widget.realEstateInfo.keyInfoBar .keyFeatures {
+    font-size: 15px;
+    color: #666;
+}
+
+.widget.realEstateInfo.keyInfoBar .keyFeatures  li {
+    font-style: italic;
+    text-transform: none;
+}
+
+@media only screen and (max-width: 640px) {
+    .widget.realEstateInfo.keyInfoBar .keyFeatures {
+        font-size: 12px !important;
+    }
+}

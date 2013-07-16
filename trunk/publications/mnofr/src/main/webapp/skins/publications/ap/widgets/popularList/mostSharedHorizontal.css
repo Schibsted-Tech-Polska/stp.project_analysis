@@ -1,0 +1,16 @@
+.popularList.mostSharedHorizontal {
+    border-top: 2px solid #a7a48b;
+        border-bottom: 2px solid #a7a48b;
+}
+
+.popularList.mostSharedHorizontal h2 {
+    font-family:ClanWeb, arial, sans-serif;
+}
+
+.ie .popularList.mostSharedHorizontal h2 {
+    font-family:ClanWebBold, arial, sans-serif;
+}
+
+.popularList.mostSharedHorizontal article {
+    border-left: 1px solid #a7a48b;
+}

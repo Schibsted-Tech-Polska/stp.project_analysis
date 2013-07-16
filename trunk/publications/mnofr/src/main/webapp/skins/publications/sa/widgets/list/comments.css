@@ -1,0 +1,9 @@
+.list.comments .content a:hover{
+    background:#e8e6e9;
+}
+
+.list.comments .content {
+    max-height:190px;
+}
+
+

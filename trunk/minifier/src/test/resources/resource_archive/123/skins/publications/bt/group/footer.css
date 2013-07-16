@@ -1,0 +1,13 @@
+#footer {
+    position:relative;
+        top:-15px;
+}
+
+#footer .footerWrapper {
+    border: 1px solid #bbb;
+        border-top: 0 none;
+    background: #fff;
+    margin-left:-10px;
+    padding: 0 10px;
+    width:983px;
+}

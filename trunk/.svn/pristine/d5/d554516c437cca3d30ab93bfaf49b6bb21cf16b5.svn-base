@@ -1,0 +1,1 @@
+# This is a file src/main/resources folder

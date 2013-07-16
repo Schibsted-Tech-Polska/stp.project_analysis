@@ -1,0 +1,38 @@
+a {
+    color: rgb(75,134,198);
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h2.subTitle {
+    font-family: arial, sans-serif;
+    font-size: 24px;
+}
+
+/* e-avis code widget */
+.e-avis header h2:after{
+    content: '';
+    background-color: rgb(157, 0, 0);
+    border-radius: 1em;
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 0;
+    display: inline-block;
+    vertical-align: 0;
+    margin-left:10px;
+}
+
+.e-avis header h2 {
+    font-weight:bold;
+    color:black;
+    text-transform:uppercase;
+    line-height: 22px;
+    font-size:12px;
+    border-bottom:2px solid rgb(75,134,197)
+}
+
+/* right ad banner */
+#adRight {
+    margin-left: 0;
+}

@@ -1,0 +1,11 @@
+.jobAdSearch2.searchresult .searchresult-title {
+    font-size:18px;
+    font-weight:bold;
+}
+.jobAdSearch2.searchresult .companyName {
+    font-size:12px;
+    font-style:italic;
+}
+.jobAdSearch2.searchresult img{
+    width: auto;
+}

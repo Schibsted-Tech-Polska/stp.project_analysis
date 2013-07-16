@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'Klavika';
+    src: url('/skins/publications/bt/fonts/KlavikaWebBasicRegular.eot?#iefix') format('embedded-opentype'),
+    url('/skins/publications/bt/fonts/KlavikaWebBasicRegular.woff') format('woff');
+    font-style:normal;
+}
+
+.jobAdSearch2,
+.jobAdSearch2 input,
+.jobAdSearch2 h2,
+.jobAdSearch2 .header h2,
+.jobDisclaimer,
+.jobSearchResults,
+.jobSearchResults h2,
+.jobAdSearch2.jobAdDescription h1,
+.jobSearchFilters,
+.jobSearchFilters h2{
+    font-family: Klavika, Arial, sans-serif;
+}
+
+.widget.pageTools.jobAdDetailTools .addthis_button_facebook,.jobAdShare .addthis_button_facebook {
+    background-color: #014687;
+}
+
+.widget.pageTools.jobAdDetailTools .addthis_button_twitter,.jobAdShare .addthis_button_twitter {
+    background-color: #346b9f;
+}
+
+.widget.pageTools.jobAdDetailTools .addthis_button_linkedin,.jobAdShare .addthis_button_linkedin {
+    background-color: #80a2c3;
+}
+
+.widget.pageTools.jobAdDetailTools .addthis_button_email,.jobAdShare .addthis_button_email {
+    background-color: #b2c7db;
+}
+
+.jobColumn4x6 .span6,.jobSearchResults .result ul li {
+    border-left-color: #014687;
+}
+
+.jobAdSearch2 .jobButton {
+    background-color: #199100;
+    color: #fff!important;
+}
+
+.jobAdSearch2 .jobButton2,.jobAdSearch2.searchbox input[type="submit"],
+.jobSearchResults .pagination > *,.jobSearchResults .pagination ul li,
+.jobSearchResults .pagination .navBtn,.jobSearchResults select,
+.jobSearchResults div.pillBox,.jobSearchResults div.pillBox input,
+.jobSearchResults div.pillBox span{
+    background-color: #014687;
+    background-image: none;
+    color: #fff!important;
+}
+
+.jobSearchResults .pagination ul li button.selected {
+    background: #4e82b3;
+    color: #fff;
+}
+
+.jobSearchResults .pagination button {
+    color: #fff;
+}
+
+.positionDetails li,.icon_phone,.icon_mail,.positionDetails strong {
+    border-left-color: #014687;
+}
+
+.jobAdSearch2.searchbox .header { /* make sure that BT header is similar to AP one */
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+.jobAdSearch2.searchbox h2 { /* make sure that BT header is similar to AP one */
+    line-height: 20px;
+}
+
+.jobSearchResults .entryWrap {
+    font-size: 16px;
+}
+
+.jobSearchResults .entryWrap .icon_building:before {
+    background-position: 16px -128px;
+}
+
+.jobSearchResults .entryWrap .icon_calendar:before {
+    background-position: 16px -144px;
+}
+
+.jobAdSearch2.searchbox h2,.jobAdSearch2.searchbox h2 a,
+.jobSearchResults h2,.jobSearchResults .resultsMessage,
+.jobAdSearch2 .clearer a{
+    color: #014687;
+}
+
+/* less than iPad's 768px */
+/* mobile object page */
+@media only screen and (max-width : 767px) {
+    .relatedCompanyJobs h4,.relatedCategoryJobs h4,.latestJobs h4 {
+        background-color: #014687;
+        color: #fff;
+        text-indent: 2.25em;
+    }
+    .relatedCompanyJobs h4:before,.relatedCategoryJobs h4:before,.latestJobs h4:before {
+        background: url(/skins/publications/bt/gfx/bt_sprite.png) -10px -35px no-repeat;
+    }
+}

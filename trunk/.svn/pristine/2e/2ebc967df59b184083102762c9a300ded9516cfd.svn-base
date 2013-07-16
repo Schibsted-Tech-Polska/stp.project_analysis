@@ -1,0 +1,75 @@
+.jobAdListings2.mgmt {
+    line-height: 16px;
+    background:#fff;
+    border-bottom:1px solid #ccc;
+    border-right:1px solid #ccc;
+    border-left:1px solid #ccc;
+    border-top: 3px solid #014687;
+    padding: 0 0 12px 0;
+}
+.jobAdListings2.mgmt header {
+    padding: 5px 0 7px 5px;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #dbdbdb;
+    margin: 0;
+}
+
+.jobAdListings2.mgmt a {
+    padding-left: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.jobAdListings2.mgmt ul {
+    padding: 0 5px 0 5px;
+}
+
+.jobAdListings2.mgmt li p {
+    color: #000;
+}
+.jobAdListings2.mgmt li a, .jobAdListings2.mgmt li a:visited {
+    padding-left: 0;
+    text-transform: none;
+    font-weight: normal;
+    font-size: 13px;
+    margin: 0 0 3px 0;
+}
+.jobAdListings2.mgmt li img {
+     margin-bottom: 8px;
+}
+.rightArea .jobAdListings2.mgmt li img {
+    float: left;
+    margin-right: 10px;
+}
+.jobAdListings2.mgmt .content {
+    overflow:hidden;
+}
+.jobAdListings2.mgmt .content:hover {
+    overflow-y:auto;
+}
+
+.jobAdListings2.mgmt li p,
+.jobAdListings2.mgmt li .block {
+    padding-right:19px;
+}
+
+.jobAdListings2.mgmt:hover li p,
+.jobAdListings2.mgmt:hover li .block {
+    padding-right:0;
+}
+
+#adRight .jobAdListings2.mgmt .content {
+    overflow:visible;
+}
+#adRight .jobAdListings2.mgmt .content:hover {
+    overflow-y:visible;
+}
+
+#adRight .jobAdListings2.mgmt li p,
+#adRight .jobAdListings2.mgmt li .block {
+    padding-right:0;
+}
+
+.jobAdListings2.mgmt footer {
+    text-align: right;
+}

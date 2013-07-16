@@ -1,0 +1,71 @@
+.currencyCalc .userMessage {
+    margin: 8px 0;
+}
+
+.currencyCalc input {
+    text-align:center;
+    width:50px;
+}
+
+.currencyCalc select {
+    width:100px;
+}
+
+.currencyCalc label {
+    float:left;
+    font-size:12px;
+    text-indent:10px;
+    width:170px;
+}
+
+.currencyCalc label * {
+    font-size:14px;
+    text-indent:0;
+}
+
+.currencyCalc label > .pillBox {
+    margin-top:5px;
+}
+
+.currencyCalc fieldset{
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    padding-top: 11px;
+    border-bottom: none;
+    margin-top:0;
+}
+
+.flytoget{
+    background-color: #000;
+    width: 380px;
+    margin-bottom: 49px;
+    height: 17px;
+}
+
+.flytoget p{
+    font-size: 12px;
+    font-family: ClanWeb,Arial,sans-serif;
+    font-weight: bold;
+    color: #fff;
+    z-index: 9999;
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+.flytoget img{
+    width: 380px;
+}
+
+.currencyCalc legend{
+    display: none;
+}
+
+.currencyCalc header{
+    width: 380px;
+    padding: 0;
+    margin: 0;
+}
+
+.rightArea section.inpage-widget-6769488{
+    margin-bottom: 0;
+}

@@ -1,0 +1,69 @@
+.quizIcon {
+	background:url(/skins/global/gfx/quiz/quiz-icons.png) no-repeat 0 0;
+	width:80px;
+		height:76px;
+}
+.quizIcon.icon1 {
+	background-position:0 -76px;
+}
+.quizIcon.icon39 {
+	background-position:0 -152px;
+}
+.quizIcon.icon40 {
+	background-position:0 -228px;
+}
+.quizIcon.icon41 {
+	background-position:0 -304px;
+}
+.quizIcon.icon42 {
+	background-position:0 -380px;
+}
+.quizIcon.icon44 {
+	background-position:0 0;
+}
+.quizIcon.icon45 {
+	background-position:0 -456px;
+}
+.quizIcon.icon46 {
+	background-position:0 -532px;
+}
+
+.quizIconSmall {
+	background:url(/skins/global/gfx/quiz/quiz-icons.png) no-repeat -80px 0;
+	display:inline-block;
+	width:26px;
+		height:25px;
+}
+.ie .quizIconSmall {
+    display:inline;
+}
+
+.quizIconSmall.icon1 {
+	background-position:-80px -25px;
+}
+.quizIconSmall.icon39 {
+	background-position:-80px -50px;
+}
+.quizIconSmall.icon40 {
+	background-position:-80px -75px;
+}
+.quizIconSmall.icon41 {
+	background-position:-80px -100px;
+}
+.quizIconSmall.icon42 {
+	background-position:-80px -125px;
+}
+.quizIconSmall.icon44 {
+	background-position:-80px 0;
+}
+.quizIconSmall.icon45 {
+	background-position:-80px -150px;
+}
+.quizIconSmall.icon46 {
+	background-position:-80px -175px;
+}
+
+.quizIconSmall.iconUserQuiz {
+	background:url(/skins/global/gfx/quiz/quiz-icons-user-small.png) no-repeat 0 0;
+	width:108px;
+}

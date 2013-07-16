@@ -1,0 +1,60 @@
+.rotator .content {
+    background: #333;
+    padding-left:280px;
+    position:relative;
+}
+
+.rotator .item {
+    border-bottom:2px solid #fff;
+    overflow: hidden;
+    margin-left:10px;
+    padding:10px 0 5px 10px;
+}
+
+.rotator .item a {
+    color:#fff;
+}
+
+.rotator .item:hover a,
+.rotator .item.active a {
+    color:#000;
+}
+
+.rotator .item:hover,
+.rotator .item.active {
+    background: #fff;
+}
+
+.rotator .item:first-child:hover,
+.rotator .item:first-child.active {
+    box-shadow:none;
+}
+
+.rotator h2 {
+    font-size:16px;
+}
+
+.rotator .teaserText {
+    display:none;
+}
+
+.rotator .large {
+    background: #fff;
+    padding-right:10px;
+    position: absolute;
+        left: -10000px;
+        top: 0;
+}
+
+.rotator .item:hover .large,
+.rotator .active .large {
+    left:0;
+}
+
+.rotator .large h2 {
+    font-size:30px;
+}
+
+.rotator .large .teaserText {
+    display:block;
+}

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/branches/1.4/widget-framework-mobile/src/main/webapp/WEB-INF/web.xml#1 $
+ * Last edited by : $Author: shah $ $Date: 2010/10/18 $
+ * Version        : $Revision: #1 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+    <!-- Mobiletech stuff -->
+    <servlet>
+        <description>Serves Widget script and images</description>
+        <display-name>WidgetServlet</display-name>
+        <servlet-name>WidgetServlet</servlet-name>
+        <servlet-class>com.mobiletech.dxf.taghandler.widget.servlet.WidgetServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>WidgetServlet</servlet-name>
+        <url-pattern>*.widget</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>reloadWurfl</servlet-name>
+        <servlet-class>
+            com.mobiletech.dxf.core.servlet.WurflServletReload
+        </servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>initQuartz</servlet-name>
+        <servlet-class>
+            com.mobiletech.dxf.util.DXFScheduler
+        </servlet-class>
+        <load-on-startup>4</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ImageServlet</servlet-name>
+        <servlet-class>com.mobiletech.dxf.core.content.image.ImageServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <display-name>DownloadImageServlet</display-name>
+        <servlet-name>DownloadImageServlet</servlet-name>
+        <servlet-class>com.mobiletech.dxf.core.content.image.DownloadImageServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <description>Responsible for flushing a specific cache entry</description>
+        <display-name>FlushCacheServlet</display-name>
+        <servlet-name>FlushCacheServlet</servlet-name>
+        <servlet-class>com.mobiletech.dxf.core.servlet.FlushCacheServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <description>This is the servlet needed for cache.type servlet, returns the packed resources</description>
+        <display-name>PackServlet</display-name>
+        <servlet-name>PackServlet</servlet-name>
+        <servlet-class>com.mobiletech.dxf.core.servlet.PackServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PackServlet</servlet-name>
+        <url-pattern>*.pack</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <description>Serves vCalendars</description>
+        <display-name>VCalendarServlet</display-name>
+        <servlet-name>VCalendarServlet</servlet-name>
+        <servlet-class>com.mobiletech.dxf.core.servlet.VCalendarServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DeviceRepo</servlet-name>
+        <servlet-class>com.mobiletech.dxf.core.servlet.DeviceRepoInit</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeviceRepo</servlet-name>
+        <url-pattern>/reloadDevices</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>Serves vCards</description>
+        <display-name>VCardServlet</display-name>
+        <servlet-name>VCardServlet</servlet-name>
+        <servlet-class>com.mobiletech.dxf.core.servlet.VCardServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>reloadWurfl</servlet-name>
+        <url-pattern>/servlet/reloadWurfl</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FlushCacheServlet</servlet-name>
+        <url-pattern>/flushcache/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ImageServlet</servlet-name>
+        <url-pattern>/img/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DownloadImageServlet</servlet-name>
+        <url-pattern>/img-save/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>VCalendarServlet</servlet-name>
+        <url-pattern>/servlet/VCalendarServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>VCardServlet</servlet-name>
+        <url-pattern>/servlet/VCardServlet</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <description>Mobiletech Widget Resource Filter</description>
+        <filter-name>Widget Resource filter</filter-name>
+        <filter-class>com.mobiletech.dxf.core.servlet.WidgetResourceFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>Widget Resource filter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+</web-app>

@@ -1,0 +1,46 @@
+#footer {
+    position:relative;
+        top:-15px;
+}
+
+#footer .footerWrapper {
+    background: #fff;
+    padding: 15px 10px;
+    margin-left:-10px;
+}
+
+#footer .footer {
+    background-color: #051d37;
+        background-image: url('/template/common/gfx/highlight.jsp?x1=50&y1=20&r=50&colorStop=6c8cc7|0|0.4,6c8cc7|100|0&w=400&h=400');
+        background-repeat: no-repeat;
+        background-position: 20px 0;
+}
+#footer .footer,
+#footer .footer a,
+#footer .footer .header h2,
+#footer .footer a:hover {
+    color:#fff;
+}
+#footer .footer .header h2 {
+    background:#091a33;
+    text-shadow:0 1px 1px #000;
+}
+
+#footer .footer .logo.white {
+    background-color: #fff;
+}
+
+#footer .footer .header {
+    background:#fff;
+    -moz-box-shadow: 0 1px 1px #000;
+        -webkit-box-shadow: 0 1px 1px #000;
+        box-shadow: 0 1px 1px #000;
+}
+
+/* branding */
+#footer #mnodigital {
+    background:none transparent;
+}
+#footer #mnodigital:after {
+    color: #fff;
+}

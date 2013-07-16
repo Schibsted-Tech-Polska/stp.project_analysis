@@ -1,0 +1,20 @@
+<ul class="resultItemResultList">
+{{each items}}
+<li>
+    <a class="resultItemLink" target="_blank" href="{{html url}}">
+    <span class="resultItemName">
+    {{if (defaultLogo !== null)}}
+    <img class="resultItemLogo" src="{{html defaultLogo}}" alt="{{if (organisation)}}{{html organisation}}{{/if}}"/>
+    {{/if}}
+    </span>
+        {{if (price !== undefined && price !== '0' && price !== null)}}
+            <div class="resultItemPrice">{{html price}},-</div>
+        {{/if}}
+        {{if (defaultImageUrl)}}
+            <img class="resultItemThumb" alt="{{html heading}}" src="{{html defaultImageUrl}}"/>
+        {{/if}}
+        <span class="resultItemText">{{html heading}}</span>
+    </a>
+</li>
+{{/each}}
+</ul>

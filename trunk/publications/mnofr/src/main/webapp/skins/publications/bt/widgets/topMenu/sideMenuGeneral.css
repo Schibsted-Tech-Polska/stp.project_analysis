@@ -1,0 +1,86 @@
+/* trigger */
+.sideMenuTrigger > div {
+    background-image: url("/skins/global/gfx/icons/sprite_mobile.png");
+        background-size: 22px 24px;
+        background-position: 50% 3px;
+    background-repeat: no-repeat;
+    height:28px;
+        width:32px;
+    margin: 6px auto;
+    padding: 4px 7px;
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) inset;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* side menu */
+.surround {
+    background-color: #fff;
+}
+
+#sideMenu {
+    box-shadow: none;
+    font-family: "Calibre", Arial, sans-serif;
+        font-weight: normal;
+    text-transform: lowercase;
+    background-color: #fff;
+}
+
+#sideMenu nav {
+    color: #0b1f46;
+    font-family: "Calibre", Arial, sans-serif;
+}
+
+#sideMenu nav li {
+    border-bottom: 1px solid #b2b4b6;
+    border-top: 1px solid #fff;
+}
+
+#sideMenu .sideMenuHeader,
+#sideMenu .menuHeader {
+    background-color: #7a9eb7;
+        background-image: none;
+    border-bottom: 0 none;
+        border-top: 1px solid #fff;
+    color: #fff;
+        font-family: "Calibre", Arial, sans-serif;
+    text-align: left;
+}
+
+#sideMenu nav li.activeSection,
+#sideMenu nav li.activeSection li.activeSection {
+    background: #7a9eb7;
+    border-top: 1px solid #fff;
+}
+
+#sideMenu nav li.activeSection li {
+    background: #c7d8e4;
+}
+
+#sideMenu nav ul li ul {
+    border-top: 1px solid #fff;
+}
+
+/* search field in the menu */
+.sideMenuSearch {
+    position: relative;
+}
+#sideMenu .sideMenuSearch {
+    width: auto;
+    background-color: #7a9eb7;
+    padding: 14px 0 0 10px;
+}
+#sideMenu .sideMenuSearch #pillText {
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: #a9a9a9;
+}
+#sideMenu .sideMenuSearch #pillText:focus {
+    color: #0b1f46 !important;
+}
+
+#sideMenu #resetButton {
+    background-color: #7a9eb7;
+    color: #fff !important;
+}

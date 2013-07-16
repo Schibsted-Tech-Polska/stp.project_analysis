@@ -1,0 +1,50 @@
+<project name="svn-build" default="OS-TEST" basedir="../../../">
+  <target name="info">
+    <echo>This ant script replaces the content-type resource of the war archive created by shade plugin with the content
+      type resource that additionally contains custom widget definitions
+    </echo>
+  </target>
+
+  <!-- set the operating system test properties -->
+  <condition property="isMac">
+    <os family="mac"/>
+  </condition>
+
+  <condition property="isWindows">
+    <os family="windows"/>
+  </condition>
+
+  <condition property="isUnix">
+    <os family="unix"/>
+  </condition>
+
+  <!-- define the operating system specific targets -->
+  <target name="doMac" if="isMac">
+    <echo message="Came into the Mac target"/>
+    <!-- do whatever you want to do here for Mac systems -->
+  </target>
+
+  <target name="doWindows" if="isWindows">
+    <echo message="Came into the Windows target"/>
+  </target>
+
+  <target name="doUnix" if="isUnix">
+    <exec dir="." executable="svn"
+          output="src/main/resources/version_${project.name}.xml">
+      <arg line="info --xml"/>
+    </exec>
+    <exec dir="." executable="svn"
+          output="src/main/resources/last_commits_${project.name}.xml">
+      <arg line="log --limit 20 --xml"/>
+    </exec>
+    <tstamp>
+      <format property="build.time" pattern="ddMMyyyy HH:mm:ss"/>
+    </tstamp>
+    <echo file="src/main/resources/build_ts.xml">
+      &lt;buildtime&gt;${build.time}&lt;/buildtime&gt;
+    </echo>
+  </target>
+  <!-- define our main/default target -->
+  <target name="OS-TEST" depends="doWindows, doUnix">
+  </target>
+</project>

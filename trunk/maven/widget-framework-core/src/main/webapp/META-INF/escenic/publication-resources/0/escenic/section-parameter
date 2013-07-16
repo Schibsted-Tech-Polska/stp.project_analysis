@@ -1,0 +1,51 @@
+###
+ # File           : $Header: //depot/projects/widget-framework/src/main/webapp/META-INF/escenic/publication-resources/0/escenic/section-parameter#1 $
+ # Last edited by : $Author: shaon $ $Date: 2009/06/22 $
+ # Version        : $Revision: #1 $
+ #
+ # Copyright (C) 2009 Escenic AS.
+ # All Rights Reserved.  No use, copying or distribution of this
+ # work may be made except in accordance with a valid license
+ # agreement from Escenic AS.  This notice must be included on
+ # all copies, modifications and derivatives of this work.
+###
+
+# Set this to true to enable the generation of <esi:include/> tags (Edge Side Includes)
+template.enableESI=false
+
+template.wireframe.markup.file=default
+skin=escenic-times
+
+# The following two parameters are required for article comments widget
+comments.unmoderated.forumId=
+comments.moderated.forumId=
+
+eae.logger.url=http://localhost:8080/analysis-logger/Logger
+eae.queryservice.url=http://localhost:8080/analysis-qs/QueryService
+google.map.key=ABQIAAAAU-Z8dwjYMDWqfVicMyUMFhRyEeoA4PV_8j2fsFTxdnmDU7ptBxR6AO-H1Vr1RwwdgNZHQi7z-yRl1A
+
+# The maximum allowed level of nesting of layout groups
+nesting.limit=3
+
+# The maximum allowed level of nesting for master widget
+master.widget.nesting.limit=2
+
+# Turn jsp.statistics=on, if you want to enable JSP statistics
+jsp.statistics=off
+
+# Community-engine related section parameters
+usercontent.userProfile.articleTypeName=userProfile
+usercontent.userProfile.uniqueName=profile
+usercontent.news.uniqueName=content
+
+# RSS feed widget required section parameters
+rss.copyright=2009 Escenic Times
+rss.description=The RSS feed of Escenic Times
+rss.ttl=10
+rss.webmaster=widgetframework@escenic.com (Widget Framework)
+
+# Language code. Decides the active resource bundle. Setting the language.code
+# to 'ar' means that ApplicationResources_ar.properties will be used.   
+# language.code=
+
+

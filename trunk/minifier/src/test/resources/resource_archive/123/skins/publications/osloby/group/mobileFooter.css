@@ -1,0 +1,37 @@
+#footer {
+    text-align: center;
+    padding: 5px 0;
+    font-size: 11px;
+}
+
+#footer .logo {
+    margin: 0 auto;
+    width: 150px;
+}
+
+#footer p,
+#footer div {
+    padding: 5px 5px;
+}
+
+#footer .addthis_surround,
+#footer .addthis_surround .cell {
+    padding: 0;
+    text-shadow: none;
+    color: #000;
+}
+
+#footer a {
+    text-decoration: none;
+}
+
+#footer .f-center,
+#footer .f-center p {
+    display: inline;
+    text-align: left;
+    float: left;
+}
+
+#footer p.goto {
+    font-size: 14px;
+}

@@ -1,0 +1,24 @@
+body div#topAd{
+     clear:none;
+ }
+#topAd div.ad{
+    clear:none;
+    position:relative;
+}
+
+.hestesko{
+    left:-180px;
+    top:0;
+    position:absolute !important;
+}
+#hestesko_topp img{
+    position:absolute;
+    left:0;
+
+}
+#topAd object {
+    vertical-align: sub;
+}
+#adRight object {
+    vertical-align: sub;
+}

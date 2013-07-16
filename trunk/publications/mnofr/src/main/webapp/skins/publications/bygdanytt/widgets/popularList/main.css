@@ -1,0 +1,59 @@
+.popularList .withDate a {
+    font-size: 12px;
+    color: rgb(75,134,198);
+    font-weight: 500;
+}
+
+.popularList a:hover {
+    text-decoration: underline;
+}
+
+
+.popularList header h2::after{
+    content: '';
+    background-color: rgb(157, 0, 0);
+    border-radius: 1em;
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 0;
+    display: inline-block;
+    vertical-align: 0;
+    margin-left:10px;
+}
+
+.popularList header h2, .feed header h2 {
+    font-weight:bold;
+    color:black;
+    text-transform:uppercase;
+    line-height: 22px;
+    font-size:12px;
+    border-bottom:2px solid rgb(75,134,197)
+}
+.hoverFix {
+    padding-right: 40px;
+}
+
+.sectionPage .span3 .popularList.simple .content {
+    height:118px;
+    overflow:hidden;
+}
+
+.sectionPage .span3 .popularList.simple .content:hover {
+    overflow-y:auto;
+}
+
+.withDate time{
+    font-size: 12px;
+    color: black;
+    font-weight: 500;
+}
+.sectionPage .span3 .popularList.simple .content a, {
+    padding-right:19px;
+}
+
+.sectionPage .span3 .popularList.simple .content:hover a {
+    padding-right:0;
+}
+.singleLine.popularList .content li {
+    border-bottom:none;
+}

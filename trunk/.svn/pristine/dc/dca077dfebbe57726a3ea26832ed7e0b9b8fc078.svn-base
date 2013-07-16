@@ -1,0 +1,58 @@
+.pollContent {
+    background:#fff;
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#15000000');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#15000000')";
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.1)); /* FF3.6 */
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(0,0,0,0)),color-stop(1, rgba(0,0,0,0.1)));
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.1));
+    background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.1));
+    border:1px solid #999;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:10px;
+    padding:5px;
+    position:relative;
+}
+
+.pollContent form fieldset{
+    border:none;
+}
+
+.pollContent h2{
+    font-size:12px;
+}
+
+.pollContent a{
+    font-size:smaller;
+    padding-left:5px;
+}
+
+.pollContent .pollQuestion{
+    margin: 5px;
+    font-weight: bolder;
+    border:none;
+    padding-left:5px;
+    text-indent:-5px;
+    font-size:14px;
+}
+
+.pollOptions{
+    float:left;
+    padding-left:10px;
+    text-indent:-18px;
+    margin-bottom:5px;
+}
+
+.pollButtons{
+    clear:both;
+    float:left;
+}
+
+.pollContent .pollResults{
+    margin-left:10px;
+}
+
+.pollContent .pollResults p{
+    margin-bottom: 0;
+    margin-top: 5px;
+}

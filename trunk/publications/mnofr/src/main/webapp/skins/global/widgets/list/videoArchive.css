@@ -1,0 +1,71 @@
+.xstream {
+    color: #fff;
+}
+
+.xstream a,
+.xstream a:visited {
+    color: #fff;
+    text-decoration: none !important;
+}
+
+.xstream ul {
+    clear: both;
+}
+.xstream li,
+.xstream .categories li a {
+    float: left;
+    display: inline;
+}
+.xstream .categories li {
+    margin-right: 5px;
+}
+.xstream .categories li a {
+    -moz-border-radius: 5px 5px 0 0;
+	    -webkit-border-radius: 5px 5px 0 0;
+	    border-radius: 5px 5px 0 0;
+}
+.xstream .categories li a {
+    padding: 6px 10px 5px 10px;
+}
+
+.xstream .categories li a,
+.xstream .paging a {
+    background: #333;
+}
+.xstream .categories li a.selected,
+.xstream .paging a.selected,
+.xstream .categories li a.active,
+.xstream .paging a.active {
+    background: #000;
+}
+
+.xstream ul.videos {
+    background: #000;
+    float: left;
+    width: 100%;
+}
+.xstream .videos li {
+    padding: 13px 0 13px 13px;
+    width: 180px;
+}
+
+.xstream .paging {
+    text-align: center;
+    clear: both;
+    margin-bottom: 15px;
+}
+.xstream .paging a {
+    display: inline-block;
+    padding: 5px 10px 6px 10px;
+    -moz-border-radius: 0 0 5px 5px;
+	    -webkit-border-radius: 0 0 5px 5px;
+	    border-radius: 0 0 5px 5px;
+}
+
+.xstream .clearLeft {
+    clear: left;
+}
+
+.videoArchive .dateline {
+    font-size: 11px;
+}

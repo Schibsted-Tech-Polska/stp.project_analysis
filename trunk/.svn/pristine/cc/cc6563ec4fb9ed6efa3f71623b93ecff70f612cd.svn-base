@@ -1,0 +1,69 @@
+div #tipsContainer form {
+
+}
+
+div #tipsContainer form legend {
+
+}
+
+div #tipsContainer form textarea {
+    width: 300px;
+    height: 100px;
+}
+
+
+/*For mobile devices, smaller screens*/
+@media only screen and (max-width: 480px) {
+
+    div #tipsContainer form {
+        width: 95%;
+        border: 1px solid #FEF7D6;
+    }
+
+    div #tipsContainer form legend {
+
+    }
+
+    div #tipsContainer form textarea {
+        width: 90%;
+        height: 100px;
+    }
+
+    div #tipsContainer form input[type="text"]  {
+        width: 90%;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+    div #tipsContainer form {
+        width: 100%;
+        border-top: 1px solid #FEF7D6;
+    }
+
+    div #tipsContainer form fieldset {
+       border: none ;
+    }
+
+    div #tipsContainer form legend {
+
+    }
+
+    div #tipsContainer form textarea {
+        width: 95%;
+        height: 100px;
+    }
+
+    div #tipsContainer form input[type="text"] {
+        width: 95%;
+    }
+
+     #recaptcha_area ,#recaptcha_table{
+        margin-left: -15px;
+
+    }
+
+}
+
+

@@ -1,0 +1,50 @@
+.quote {
+    font-family:Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+    font-weight:bold;
+}
+
+.articleTitle blockquote {
+    font-weight:normal;
+        font-style:italic;
+}
+
+h1.articleTitle blockquote {
+    margin-left:0px;
+    width:920px;
+    padding-bottom: 10px;
+    font-size: 40px;
+    color:#121212;
+
+
+}
+
+
+.articleTitle blockquote  cite {
+    display:block;
+    font-family:arial, helvetica, sans-serif;
+        font-size:14px;
+        font-style:normal;
+        font-weight:normal;
+        text-align: right;
+}
+
+div.politiFactVerdict {
+    background-color: #EDEDED;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+.byline {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+.byline .role {
+    color: #333;
+    font-family: Cambria, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 12px;
+}
+.storyContent blockquote:before, .quote:before{
+    font-weight: lighter;
+}

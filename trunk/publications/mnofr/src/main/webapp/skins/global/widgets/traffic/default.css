@@ -1,0 +1,58 @@
+.evIcon,
+.rvIcon {
+    font-size:12px;
+        font-weight:bold;
+    line-height:16px;
+    text-align:center;
+    width:28px;
+        height:18px;
+}
+
+.evIcon {
+    background:#4aac34;
+    color:#fff;
+    padding:1px;
+}
+
+.evIcon-inner,
+.rvIcon-inner {
+    -moz-border-radius:3px;
+        -wekbit-border-radius:3px;
+        border-radius:3px;
+}
+
+.evIcon-inner {
+    border:1px solid #fff;
+}
+
+.rvIcon-inner {
+    border:1px solid #000;
+}
+
+.traffic .articleList  li {
+    padding-left:40px;
+    width:auto;
+}
+
+.traffic .articleList .evIcon,
+.traffic .articleList .rvIcon {
+    float:left;
+    margin-left:-40px;
+}
+
+.traffic.sectionblock .articleList {
+    border-bottom:2px solid #ccc;
+    max-height:185px;
+    overflow-y:hidden;
+}
+.traffic.sectionblock .articleList li {
+    padding-right:19px;
+}
+
+.traffic.sectionblock .articleList:hover {
+    overflow-y:scroll;
+}
+
+.traffic.sectionblock .articleList:hover li {
+    padding-right:0;
+}

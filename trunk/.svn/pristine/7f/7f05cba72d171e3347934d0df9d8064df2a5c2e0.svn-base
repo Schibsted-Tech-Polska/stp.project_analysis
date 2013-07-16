@@ -1,0 +1,4 @@
+.ie .topMenu.offCanvas li a {
+    border-top:1px solid #003a74;
+    border-bottom:1px solid #001c37;
+}

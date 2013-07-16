@@ -1,0 +1,14 @@
+.dateline {
+	font-size:12px;
+	color: #646464;
+}
+.dateline span.date:first-child {
+	margin-right:15px;
+}
+.dateline .f-small, .dateline .prefix {
+font-size: 12px;
+}
+
+.dateline .f-bold.prefix{
+	color:black;
+}

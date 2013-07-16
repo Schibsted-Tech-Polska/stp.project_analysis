@@ -1,0 +1,416 @@
+.gridRow.jobColumn10 {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.jobColumn4x6 .span6 {
+    border-left-width: 4px;
+    border-left-style: solid;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    position: relative;
+}
+
+.jobColumn4x6 .span6 .jobButton {
+    margin-left: -20px;
+}
+
+/* HR that have to be placed as code widget below 'jobColumn4x6' gridrow */
+
+.jobLineBreak {
+    background: -moz-linear-gradient(top,  rgba(238,238,238,1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom,  rgba(238,238,238,1) 0%,rgba(255,255,255,0) 100%);
+    border: 0;
+    border-top: 1px solid #ddd;
+    height: 1.5em;
+    margin: 2em 0px;
+    position: relative;
+}
+
+.jobLineBreak:before,.jobLineBreak:after {
+    content: '';
+    display: block;
+    width: 200px;
+    position: absolute;
+    height: 15px;
+    top: -1px;
+}
+
+.jobLineBreak:before {
+    background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    left: 0px;
+}
+
+.jobLineBreak:after {
+    background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    right: 0px;
+}
+
+/* ----------------------- end of jobLineBreak ------------------------ */
+
+.jobAdSearch2 {
+    font-size: 14px;
+}
+
+.jobAdSearch2 .header h2 {
+    font-size: 22px;
+}
+
+/* header reset */
+.jobAdSearch2.searchbox h2,
+.jobAdSearch2.searchbox h2 a {
+    background-color: transparent;
+    background-image: none;
+    letter-spacing: normal;
+    padding: 0;
+}
+
+.jobAdSearch2.searchbox h2:before {
+    display: none;
+}
+
+/* job diclaimer */
+.jobDisclaimer {
+    color: #808080;
+    font-size: 18px;
+}
+
+.jobDisclaimer span {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.jobDisclaimer div {
+    border-top: 1px dotted #222;
+    border-bottom: 1px dotted #222;
+    padding: 8px 0;
+    margin: 2px 0;
+}
+
+.jobDisclaimer a {
+    margin: 25px;
+}
+
+.jobDisclaimer a.firstChild,
+.jobDisclaimer a:first-child {
+    margin-left: 0;
+}
+
+.jobDisclaimer a.lastChild,
+.jobDisclaimer a:last-child {
+    margin-right: 0;
+}
+
+/* job button */
+.jobAdSearch2 .jobButton, .jobAdSearch2 .jobButton2 {
+    color: #fff !important;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    font-size: 15px;
+    width: auto;
+    padding: 0 12px;
+}
+
+.jobAdSearch2 .jobButton:hover,.jobAdSearch2 .jobButton2:hover {
+    opacity: .8;
+}
+
+/* pageTools for Job project */
+
+.jobAdDetailTools a,.jobAdShare a {
+    background-image: url(/skins/global/gfx/icons/job2_sprite.png);
+}
+
+.jobAdDetailTools a:hover,.jobAdShare a:hover {
+    opacity: .8;
+}
+
+.widget.jobAdDetailTools,.widget.pageTools.jobAdDetailTools {
+    clear: right;
+    width: 54px;
+    float: right;
+    margin-right: -20px;
+    z-index: 1000;
+}
+
+.widget.jobAdDetailTools a,.widget.pageTools.jobAdDetailTools a,.jobAdShare a {
+    cursor: pointer;
+    float: left;
+    width: 100%;
+    height: 54px;
+    text-indent: 100%;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.widget.jobAdDetailTools a span,.widget.pageTools.jobAdDetailTools a span,.jobAdShare a span {
+    display: none;
+}
+
+.widget.jobAdDetailTools .addthis_button_facebook,.jobAdShare .button_facebook {
+    background-position: 0 170px;
+}
+
+.widget.jobAdDetailTools .addthis_button_twitter,.jobAdShare .button_twitter {
+    background-position: 0 116px;
+}
+
+.widget.jobAdDetailTools .addthis_button_linkedin,.jobAdShare .button_linkedin {
+    background-position: 0 62px;
+}
+
+.widget.jobAdDetailTools .addthis_button_email,.jobAdShare .button_email {
+    background-position: 0 0;
+}
+
+.jobAdDetailTools .font {
+    display: none;
+}
+
+/* ------------------------------ Related Jobs ------------------------------ */
+
+.relatedJobs {
+    border-top: 1px dotted #7d7d7d;
+    margin: 5px 0 2em 0;
+}
+
+.relatedJobs li {
+    border-bottom: 1px dotted #7d7d7d;
+    position: relative;
+}
+
+.relatedJobs a {
+    color: #000;
+    display: block;
+    font-size: 13px;
+    line-height: 1.5em;
+    padding: 5px 20px 5px 60px;
+    position: relative;
+    text-decoration: none;
+}
+
+.relatedJobs img {
+    bottom: 0;
+    left: 5px;
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    width: auto;
+}
+
+.relatedJobs .title {
+    font-weight: bold;
+}
+
+.relatedJobs .arrow {
+    background-color: #fff;
+    bottom: 0;
+    -moz-box-shadow: 0 0 20px 20px #fff;
+    -webkit-box-shadow: 0 0 20px 20px #fff;
+    box-shadow: 0 0 20px 20px #fff;
+    color: #999;
+    font-size: 18px;
+    font-weight: bold;
+    height: 1em;
+    line-height: 1em;
+    margin: auto 0;
+    padding: 1em 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 20px;
+    z-index: 1;
+}
+
+.jobAdSearch2 .clearer a {
+    font-size: 12px;
+    text-decoration: none;
+    border-left: 4px solid;
+    padding: 0 1em;
+}
+
+.jobAdSearch2 .clearer a:hover {
+    background-color: #f6f6f6;
+}
+
+/* less than iPad's 768px */
+/* mobile object page */
+@media only screen and (max-width : 767px) {
+    .gridUnit .statImage {
+        display: none;
+    }
+    #page .jobAdSearch2 {
+        padding: 0;
+    }
+    #page .widget.jobAdDetailTools, #page .widget.pageTools.jobAdDetailTools {
+        margin-right: 0;
+        padding: 0;
+    }
+    .widget.jobAdDetailTools img {
+        height: 0;
+        width: auto;
+    }
+    .jobAdSearch2 .jobButton {
+        font-size: 20px;
+        line-height: 2em;
+        height: 2em;
+        padding: 0 1em;
+    }
+    .jobAdSearch2.jobAdCompany .companyLogo {
+        border-right-width: 54px;
+    }
+    .jobAdSearch2.jobAdCompany .companyLogo img {
+        max-height: 100%;
+        width: auto;
+    }
+    .positionDetails {
+        overflow: hidden;
+    }
+    .positionDetails li {
+        white-space: nowrap;
+    }
+    .jobAdCompany .nav {
+        background-color: #fff;
+        border-bottom: 1px solid #ebebeb;
+        border-top: 1px solid #ebebeb;
+        box-sizing: border-box;
+        box-shadow: 0 -10px 20px whitesmoke, 0 2px 5px whitesmoke;
+        height: 94px;
+        line-height: 94px;
+        margin: 2em 0;
+        padding: 0 1em;
+        position: relative;
+        width: 100%;
+    }
+    .jobAdCompany .nav .item {
+        font-size: 0.9em;
+        text-align: center;
+        float: left;
+        font-weight: bold;
+        position: relative;
+        width: 50%;
+    }
+    .jobAdCompany .nav .item:hover {
+        opacity: 0.75;
+    }
+    .jobAdCompany .item span:after {
+        background-color: #333;
+        background-image: url(/skins/global/gfx/icons/job2_sprite_mobile.png);
+        content: '';
+        display: block;
+        height: 60px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 8px;
+        width: 60px;
+        z-index: 1;
+    }
+    .jobAdCompany .about span:after {
+        background-position-x: -60px;
+    }
+    .jobAdCompany .contact span:after {
+        background-position-x: -120px;
+    }
+    .jobAdCompany .nav span {
+        line-height: 39px;
+        margin-top: 55px;
+        display: block;
+    }
+    #page .jobAdDescription {
+        padding: 0 1em;
+    }
+
+    .jobAdSearch2.jobAdDescription .wysiwyg {
+        margin: 2em 0;
+        min-height: 0;
+    }
+
+    .relatedJobsHeader {
+        line-height: 2em;
+        position: relative;
+    }
+    .relatedJobsHeader:before {
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 20px;
+        left: 5px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        width: 20px;
+        z-index: 1;
+    }
+
+    .relatedJobs {
+        border-top: none;
+        margin: 0 0 2em 0;
+    }
+
+    .relatedJobs .arrow {
+        font-size: 14px;
+    }
+
+    .jobAdSearch2 .ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@media print {
+    .jobAdSearch2 .jobButton,.jobAdSearch2 .backButton,.jobAdSearch2.jobAdCompany .companyProfile a,.jobAdSearch2.jobAdInsider,
+    .jobAdListings2,.jobAdSearch2.searchbox {
+        display: none!important;
+    }
+    .jobAdSearch2, .jobAdSearch2 input, .jobAdSearch2 .header h2,
+    .jobAdListings2.profiledCompanies, .jobAdListings2.categoryJobadsCombo,
+    .jobAdListings2.mgmt, .jobAdListings2.profiled, .jobAdListings2.recruiting {
+        font-family: Arial, sans-serif;
+    }
+    .jobAdSearch2.jobAdCompany .positionKeyfigures {
+        float: left;
+        font-size: 12px;
+        width: 100%;
+    }
+    .jobAdSearch2.jobAdCompany dt, .jobAdSearch2.jobAdCompany dd {
+        float: left;
+    }
+    .jobAdSearch2.jobAdCompany dt {
+        padding-right: 5px;
+    }
+    .jobAdSearch2.jobAdCompany dd {
+        margin: 0 10px 0 0;
+    }
+    .sectionPage .gridRow {
+        border: 0!important;
+    }
+    #footer ~ * {
+        visibility: hidden;
+    }
+}

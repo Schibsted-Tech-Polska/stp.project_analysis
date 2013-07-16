@@ -1,0 +1,87 @@
+/* test ie selectorer*/
+.tabs {
+    /*overflow: hidden;*/
+    width:100%;
+}
+
+ul[role=tablist] {
+    background: #fff;
+    margin-left:-1px;
+        margin-bottom:-2px;
+    overflow: hidden;
+    padding: 0 1px;
+    position:relative;
+        top:1px;
+    width:100%;
+        height:35px;
+}
+
+#page ul[role=tablist] {
+    padding: 0 1px;
+}
+
+ul[role=tablist]:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+ul[role=tablist] {
+    display: inline-block;
+}
+
+html ul[role=tablist] {
+    display: block;
+}
+
+.ie7 ul[role=tablist] {
+    height: 1%;
+}
+
+li[role=tab] {
+    background-color:#f0f0f0;
+    border:1px solid #999;
+        border-bottom:0 none;
+    color:#333;
+    cursor:pointer;
+    float:left;
+    margin:0 2px 0 0;
+    padding: 6px 10px 5px;
+}
+
+.ie7 li[role=tab] {
+    zoom:1;
+    display:inline;
+}
+
+ul[role=tablist] li[aria-selected=true] {
+    background:#fff;
+    color:#000;
+    padding-bottom:6px;
+    position:relative;
+        z-index:3;
+}
+
+div[role=tabpanel],
+section[role=tabpanel] {
+    border:  1px solid #999;
+    -moz-box-shadow:0 -2px 2px rgba(0,0,0,.3);
+        -webkit-box-shadow:0 -2px 2px rgba(0,0,0,.3);
+        box-shadow:0 -2px 2px rgba(0,0,0,.3);
+    padding: 10px;
+    position:relative;
+        z-index:2;
+}
+
+body div[aria-hidden=true],
+body section[aria-hidden=true]{
+    display:none;
+}
+
+body div[aria-hidden=false],
+body section[aria-hidden=false]{
+    display:block;
+}

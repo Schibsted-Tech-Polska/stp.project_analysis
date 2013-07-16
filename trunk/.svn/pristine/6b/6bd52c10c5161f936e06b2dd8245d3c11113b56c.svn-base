@@ -1,0 +1,284 @@
+#whatsOnContainer {
+	margin: 5px auto;
+	float: left;
+	padding-bottom: 7px;
+	overflow: hidden;
+}
+
+#whatsOnContainer ul[role=tablist] {
+    height:20px;
+}
+
+#whatsOnContainer ul[role=tablist] a {
+    height:19px;
+    padding:0 5px;
+    color: #444;
+    border: 1px #999;
+    border-style: solid solid none;
+    background: url("/skins/global/gfx/backgrounds/ui-bg_highlight-soft_50_dddddd_1x100.png") repeat-x scroll 50% 50% #ddd;
+}
+
+#whatsOnContainer ul[role=tablist] a[aria-selected=true] {
+    height:20px;
+    background: #fff;
+    color: #ff6600;
+}
+
+#whatsOnFooter{
+    clear:both;
+    margin-bottom: 20px;
+}
+
+.woContent {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.woResult {
+	width: 100%;
+	height: 326px;
+	overflow: hidden;
+}
+
+.woMax {
+	/* used to decide whether to maximize or minimize result */
+	display: none;
+	float: right;
+}
+
+.woTopColumn {
+	width: 240px;
+	height: 326px;
+	float: left;
+}
+
+.woBottomColumn {
+	width: 240px;
+	float: left;
+}
+
+.woCalendar {
+	position: absolute;
+	top: 12px;
+	right: 45px;
+	font-size: 90%;
+}
+
+.woEvent {
+	position: relative;
+	padding-left: 10px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+}
+
+.woDate {
+	text-transform: uppercase;
+	font-size:85%;
+	padding: 3px;
+	height: 32px;
+}
+.woDateContent {
+	width: 200px;
+}
+
+.woEventInfoLink {
+	position: absolute;
+	top: 5px;
+	right: 15px;
+}
+
+.woEventInfoLink:hover {
+	cursor: pointer;
+}
+
+.woEventName {
+	font-size: small;
+	padding-left: 3px;
+	padding-top: 3px;
+	display: inline;
+}
+
+.woEventInfo {
+	width: 600px;
+}
+
+.woEventInfoTitle {
+	font-size: x-large;
+}
+
+.woEventInfoShortDescription {
+	padding-top: 10px;
+}
+
+.woEventInfoDescription {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.woEventInfoTime {
+	background: url('/skins/publications/bt/gfx/icons/ico-calendar.gif') no-repeat bottom left;
+	padding-top: 10px;
+	text-indent: 25px;
+}
+
+.woEventInfoWhere {
+	background: url('/skins/publications/bt/gfx/icons/ico-home.gif') no-repeat bottom left;
+	padding-top: 10px;
+	text-indent: 25px;
+	color: #005395;
+}
+
+.woEventInfoWhere:hover {
+	cursor: pointer;
+}
+
+.woEventVenueLink {
+	font-size: 85%;
+	color: #005395;
+	padding: 5px;
+	height: 25px;
+}
+
+.woEventVenueLink:hover {
+	cursor: pointer;
+}
+
+.woEventTime {
+	display: inline;
+	font-size: 85%;
+    padding: 5px;
+}
+
+.woEventCategory {
+	font-size: 80%;
+	padding-left: 3px;
+	height: 3px;
+}
+
+#venueInfoDialog{
+    height: 350px;
+}
+
+.woVenueInfo {
+	width: 500px;
+}
+
+.woVenueInfoTitle {
+	font-size: x-large;
+}
+
+.woVenueInfoPhone {
+	background: url('/skins/publications/bt/gfx/icons/ico-phone.gif') no-repeat bottom left;
+	padding-top: 10px;
+	text-indent: 25px;
+	font-weight: bold;
+}
+
+.woVenueInfoUrlImg {
+	background: url('/skins/publications/bt/gfx/icons/ico-link.gif') no-repeat center left;
+	padding-top: 10px;
+	float: left;
+	text-indent: 25px;
+	overflow: hidden;
+	display: block;
+	width: 25px;
+}
+.woVenueInfoUrl {
+	padding-top: 10px;
+	margin-left: 25px;
+}
+
+
+.woVenueInfoStreet {
+	background: url('/skins/publications/bt/gfx/icons/ico-home.gif') no-repeat bottom left;
+	padding-top: 10px;
+	text-indent: 25px;
+}
+
+.woVenueInfoCity {
+	padding-top: 10px;
+	text-indent: 25px;
+}
+
+.woVenueMap {
+	position: absolute;
+	top: 50px;
+	right: 20px;
+	width: 250px;
+	height: 300px;
+}
+
+.woLoad{
+	background: url('/skins/publications/bt/gfx/icons/loading.gif') no-repeat center;
+	width: 600px;
+	height: 150px;
+}
+/*bugfixes*/
+.timeframes{
+	clear: both;
+	width: 200px;
+	padding-top:210px;
+}
+
+.timeframes label{
+    margin-left: 10px;
+}
+
+#woColumn6 .woEvent{
+	padding-right: 0;
+	}
+
+.ui-icon {
+    display: block;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+.ui-icon {
+    width: 16px;
+    height: 16px;
+    background-image: url('/skins/global/gfx/icons/ui-icons_ff6600_256x240.png');
+}
+
+.ui-icon-info {
+    background-position: -16px -144px;
+}
+
+.woEventContent {
+    background: #fff url('/skins/global/gfx/backgrounds/ui-bg_flat_75_ffffff_40x100.png') 50% 50% repeat-x;
+    color: #444;
+    border: 1px solid #ddd;
+    -moz-border-radius:10px;
+        -webkit-border-radius:10px;
+        border-radius:10px;
+    overflow: hidden;
+}
+
+.ie .mnoDialogClose {
+    behavior: url(/skins/global/PIE.htc);
+}
+
+.woEventContent a,
+.woEventHeader a {
+    color: #444;
+}
+.woEventHeader {
+    background: #dddddd url('/skins/global/gfx/backgrounds/ui-bg_highlight-soft_50_dddddd_1x100.png') 50% 50% repeat-x;
+    color: #444;
+    font-weight: bold;
+    padding: 5px;
+    -moz-border-radius-topleft:10px;
+        -webkit-border-radius-topleft:10px;
+        border-radius-topleft:10px;
+    -moz-border-radius-topright:10px;
+        -webkit-border-radius-topright:10px;
+        border-radius-topright:10px;
+}
+
+.ie .woEventHeader {
+    behavior: url(/skins/global/PIE.htc);
+}
+

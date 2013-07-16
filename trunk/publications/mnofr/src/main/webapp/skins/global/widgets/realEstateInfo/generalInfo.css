@@ -1,0 +1,40 @@
+.widget.realEstateInfo.generalInfo {
+    padding-bottom: 10px;
+}
+
+.widget.realEstateInfo.generalInfo .informationItem {
+    margin: -7px 0 0;
+}
+
+.widget.realEstateInfo.generalInfo .informationItem header {
+    display: block;
+    background-color: #F5F3EB;
+    background-clip: padding-box;
+    font-size: 14px;
+    color: #888;
+    padding: 0 3px; /* + 7px of border */
+    text-shadow: 0 0 5px white, 1px 1px 3px white, 0 0 1px white;
+    margin:0;
+}
+
+.widget.realEstateInfo.generalInfo .informationItem:nth-child(2n+1) header {
+    background-color: white;
+}
+
+.widget.realEstateInfo.generalInfo .informationItem header .seeMore {
+    float: right;
+    line-height: 20px;
+    margin-left: -200px;
+    display: none;
+}
+.widget.realEstateInfo.generalInfo .informationItem header .seeMore img {
+    width: 16px!important;
+    height: 16px!important;
+}
+
+.widget.realEstateInfo.generalInfo .content {
+    overflow: hidden;
+    clear: both;
+    padding: 0 10px;
+}
+

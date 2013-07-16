@@ -1,0 +1,559 @@
+/*
+  Print stylesheet
+  @fileinfo
+  */
+
+/* General styles */
+img {
+    max-width:100%;
+        height:auto;
+}
+
+.padded10,
+.padded20 {
+    padding:0;
+}
+
+/**
+  Page properties
+  Sets the text displayed in the top of every page. Curently browser support is bad.
+  */
+@page {
+    size:portrait;
+    margin:1cm;
+    content:"Utskriftsvennlig versjon";
+}
+
+/* http://adserver.adtech.de/adserv|3.0|995.1|3637799|0|16|ADTECH;loc=300;alias=AP_Print_Telling_1x1;key=key1+key2+key3+key4;grp=[group];cookie=info*/
+
+/**
+  Hide everything outside viewport
+  Hide div, iframe etc. outside of #viewport
+  */
+
+body > div,
+body > iframe {
+    display:none;
+}
+
+#viewport {
+    display:block;
+    min-height: 0;
+}
+
+/**
+  Hidden elements
+  Remove all ads and widgets flagged as no print
+  @style
+  .ad
+  .noPrint Remove widget from print stylesheet
+  */
+
+.ad,
+.ad.block,
+.mnopolarisAd,
+#topAd,
+#adRight,
+#banner1,
+#smallHeader,
+#netboard1,
+#miniboard1,
+#topArea,
+#preFooter,
+#header,
+#footer,
+.noPrint,
+.adaLogo,
+.pageTools,
+.rssInternationalNews,
+.videoMarker,
+form {
+    display : none !important;
+}
+
+/**
+ Visible elements
+ Elements visible when printing
+ @style
+ .noPrint Element visible when printing
+ */
+.printOnly {
+    display:inline !important;
+}
+
+.forcePrint .ad,
+.forcePrint .noPrint {
+    display: block !important;
+}
+
+section.printOnly,
+div.printOnly {
+    display:block !important;
+}
+
+/**
+  Set percent widths
+  Set width to percent instead of pixels for gridUnits
+  */
+#page {
+    border: 0 none !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.gridRow {width:100%;}
+.span10 {width:100% !important;}
+.span9 {width:90% !important;}
+.span8 {width:80% !important;}
+.span7 {width:70% !important;}
+.span6 {width:60% !important;}
+.span5 {width:50% !important;}
+.span4 {width:40% !important;}
+.span3 {width:30% !important;}
+.span2 {width:20% !important;}
+.span1 {width:10% !important;}
+
+.gridUnit {
+    -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    padding:0 !important;
+    margin-left: -1px !important;
+    margin-right:0 !important;
+}
+
+.gridUnit:first-child,
+.themeHeadline + .gridUnit {
+    margin-left:0 !important;
+}
+
+.ie7 {
+    border:0 none !important;
+}
+
+.gridUnit > * {
+    padding: 10px 10px 0;
+}
+
+.gridUnit > :first-child {
+    padding-top:0;
+}
+
+#header .gridUnit > * {
+    padding: 0;
+}
+
+#page .gridUnit > .gridRow {
+    padding:0;
+}
+
+/**
+  Remove width
+  Set with to auto to cover available space
+  @style
+  .grid12 Wrapper
+  .span10 To
+  .span5
+*/
+.grid12 {
+    padding:0;
+}
+
+.grid12,
+.span10,
+article .span9,
+article .span8,
+article .span7,
+article .span6,
+article .span5,
+article .span4 {
+    clear:both;
+    float:none;
+    width:auto !important;
+}
+
+article .gridRow:after {
+    clear:none;
+    content:'';
+    display:none;
+}
+
+#content,
+article .gridUnit > * {
+    padding:0;
+}
+
+/**
+  Print Header
+  Contains logo and date
+  */
+#printHeader {
+    border-bottom:3px solid #000;
+    margin-bottom:10px;
+}
+
+/**
+  Headlines
+  Remove dynamic font-size.
+  */
+.span10 h1,
+.span10 h2,
+.span9 h1,
+.span9 h2,
+.span8 h1,
+.span8 h2 {
+    font-size:40px;
+}
+
+.span7 h1,
+.span7 h2,
+.span6 h1,
+.span6 h2,
+.span5 h1,
+.span5 h2 {
+    font-size:25pt;
+}
+
+.span4 h1,
+.span4 h2,
+.span3 h1,
+.span3 h2,
+.split3 h1,
+.split3 h2,
+.span2 h1,
+.span2 h2,
+.span1 h1,
+.span1 h2 {
+    font-size:15pt;
+}
+
+a.scale {
+    font-size:1em !important;
+}
+
+/**
+  Image layout
+  Create print layout for images in top slideshow
+  */
+
+.slideshow-wrapper {
+    background: none;
+    /*float:left;*/
+    /*width:60%;*/
+}
+
+.slideshow-list,
+.slideshow-list .slideshow-element {
+    overflow:visible !important;
+    width:100% !important;
+        height:auto !important;
+        min-height:0 !important;
+}
+
+.slideshow-list .slideshow-element img {
+    max-width:none;
+    width:100% !important;
+        height:auto !important;
+}
+
+.w980 .slideShowItemContainer .caption,
+.slideShowItemContainer .caption-inner {
+    position:static;
+    width:auto;
+}
+
+.slideShowItemContainer .caption .credits {
+    display:inline;
+    margin:0;
+}
+
+.slideshow-list .slideshow-element,
+.slideShowPrev,
+.slideShowNext,
+.slideshow .counter {
+    display:none;
+    float:none;
+}
+
+.slideshow-list .picture:first-child {
+    display:block;
+}
+
+/**
+  Widget headers
+  Remove background color and images and add borders
+  */
+
+section .header h1,
+article .header h1,
+section .header h2,
+article .header h2,
+section .header h3,
+article .header h3 {
+    background: #fff !important;
+    border-top: 4px solid #000;
+    border-bottom: 1px solid #000;
+    color:#000;
+    font-size:11pt;
+    padding: 2px 5px 0;
+}
+
+section .header h1:before,
+article .header h1:before,
+section .header h2:before,
+article .header h2:before,
+section .header h3:before,
+article .header h3:before {
+    background: none;
+    display:none;
+}
+
+/**
+  Section pages
+  Print styles for section pages
+  */
+.rowTheme {
+    page-break-inside: avoid;
+}
+
+.sectionPage .gridRow {
+    border-bottom:1px solid #ccc;
+    margin-bottom:10px;
+    padding-bottom:10px;
+}
+
+/** Style article text
+    Font-size and set body text to two columns
+*/
+h1.articleTitle {
+    font-size:40pt;
+}
+
+.subTitle:before {
+    background:none;
+    content:'\25A0';
+    margin-top:0;
+}
+
+.leadText {
+    font-size:13pt;
+}
+
+article .gridUnit > .publishInfo {
+    padding:4px 5px;
+}
+
+.bodyText {
+    font-size:9pt;
+    -moz-column-count: 3;
+        -moz-column-gap: 1.5em;
+        -moz-column-rule:1px solid #ccc;
+        -webkit-column-count: 3;
+        -webkit-column-gap: 1.5em;
+        -webkit-column-rule:1px solid #ccc;
+        column-count: 3;
+        column-gap: 1.5em;
+        column-rule:1px solid #ccc;
+    text-align: justify;
+    page-break-before:avoid;
+}
+
+.bodyText h2 {
+    font-size:11pt;
+        text-align: left;
+    margin-top:1em;
+    page-break-before:avoid;
+}
+
+.bodyText p {
+    margin-bottom:0;
+    text-indent:1em;
+}
+
+.bodyText h2 + p,
+.bodyText h3 + p,
+.bodyText p:first-child {
+    text-indent:0;
+}
+
+#page .relationArticle {
+    background: #f0f0f0;
+    border-bottom: 4px solid #000000;
+    clear: none;
+    -webkit-column-break-inside:avoid;
+        -moz-column-break-inside:avoid;
+        column-break-inside:avoid;
+    float: none;
+    line-height: 1;
+    margin: 10px 0;
+    padding: 0 5px 5px;
+    width: auto !important;
+}
+
+.ie #page .relationArticle,
+.ie9 #page .relationArticle {
+    float:left;
+    width:33%;
+}
+
+.relationArticle .content {
+    background: none;
+}
+
+.relationArticle .content.withImg {
+    padding: 0;
+}
+
+.relationArticle .content.withImg img {
+    float:none;
+    margin: 0;
+    width:100%;
+}
+
+#page .relationArticle a {
+    float:none;
+}
+
+.relationArticle .teaserText {
+    font-size:8pt;
+    line-height: 1;
+}
+
+/**
+  Quotes
+  Add style for printed quotes
+  */
+
+.storyContent .quote,
+.quote {
+    display: block;
+    float:none;
+    margin: 15px 0 10px;
+    width:auto;
+}
+
+.ie .storyContent .quote,
+.ie9 .storyContent .quote,
+.ie .quote,
+.ie9 .quote {
+    float:none;
+    width:33%;
+}
+
+blockquote:before,
+blockquote p:before,
+blockquote p:after {
+    display:none !important; /* TODO styles this */
+}
+
+blockquote p {
+    padding-top:0;
+}
+
+/**
+  Related Contents
+  Create a grid of related contents for Print
+  */
+
+article .span4.lastChild .relatedContents {
+    overflow: hidden;
+    page-break-inside: avoid;
+    width:100%;
+}
+
+article .span4.lastChild .relatedContents.pictures img {
+    float:left;
+    margin-right:3%;
+    width:30%;
+}
+
+article .span4.lastChild .relatedContents.mapbox {
+    page-break-before: always;
+}
+
+/**
+  Reset themes
+  Remove background colors and set foreground to black
+  */
+.rowTheme,
+.artTheme {
+    background:#fff !important;
+    border-color:#000 !important;
+    color:#000 !important;
+    text-shadow: none !important;
+}
+
+.rowTheme {
+    padding-top:10px;
+}
+
+.artTheme {
+    border: 0 none !important;
+    padding:0;
+}
+
+.rowTheme a,
+.artTheme a {
+    color:#000 !important;
+}
+
+.rowTheme .themeHeadline,
+.artTheme .themeHeadline {
+    background: none !important;
+    border-bottom:1px solid #000;
+    font-size: 13pt;
+        font-weight: normal;
+    height: auto;
+    margin-bottom:10px;
+    padding:2px 0 0 !important;
+    position: static;
+        top:0;
+    text-shadow: none;
+    visibility: visible;
+    z-index: 2;
+}
+
+.artTheme .themeHeadline {
+    border-bottom: 0 none;
+    margin-bottom: 0;
+        margin-top:3px;
+}
+
+/**
+  Footnotes
+  Every link in body text gets a footnote when printed. Footnotes is appended to the article
+  @style
+  .footnotes Container for footnotes
+  */
+.footnotes h2 {
+    font-size:13pt;
+    margin-top:5px;
+}
+
+.footnotes {
+    border-top:1px solid #999;
+    border-bottom:1px solid #999;
+    color:#999;
+    font-size:7pt;
+}
+
+ /*Fjerner innrykk for hovedteksten*/
+.gridRow .pre1, .pre1{
+    margin-left: 0;
+}
+
+/* storyContent styles article */
+.storyContent .pull1 {
+   margin-left: 0;
+}
+
+.storyContent .left,
+.storyContent .floatLeft {
+    clear:both;
+}
+
+.storyContent h1,
+.storyContent h2,
+.storyContent h3 {
+    clear:both;
+}

@@ -1,0 +1,111 @@
+/* tv guide schedule starts here */
+.tvGuide dt{
+    border-bottom:3px solid #3C3C3C;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.tvGuide dd{
+    margin-bottom: 2px;
+}
+
+.tvGuide .hiddenDescription{
+    display:none;
+    font-size:12px;
+}
+
+.tvGuide .hiddenDescription img{
+    float:left;
+    width:40px;
+}
+
+.tvGuide .selected{
+    background-color:#FFCC00;
+    margin-right: -20px;
+}
+
+.tvGuide .last .selected{
+    margin-right:0;    
+}
+
+.tvGuide .passed,
+.tvGuide .passed .time{
+    color: #ccc;
+}
+
+.tvGuide dd .time{
+    color:#666;
+    display: block;
+    float:left;
+}
+
+.tvGuide dd .title a{
+    color:#000;
+    text-decoration:none;
+}
+
+.tvGuide dd .title a:hover{
+    color:#000;
+    text-decoration:underline;
+}
+
+
+.tvGuide dd .title{
+    display: block;
+    float:left;
+    padding-left: 4px;
+    width: 140px;
+}
+
+.tvGuide .head{
+    background-color:#000;
+    padding-left:10px;
+        padding-right: 10px;
+        padding-bottom:3px;
+        padding-top:3px;
+}
+
+.tvGuide .head a{
+    color:#fff;
+    display:block;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.tvGuide .head a:hover{
+    text-decoration:underline
+}
+
+/* tv guide schedule ends here */
+
+
+.tvGuide .hidden{
+    display:none;
+}
+
+
+/* icons */
+.tvGuide .tv-icon {
+    background: url(/skins/global/gfx/tvguide/icons_35x50.png) no-repeat 0 0;
+    display: block;
+    height: 35px;
+        width: 50px;
+}
+
+.tvGuide .iconNRK1 {
+    background-position: 0 -35px;
+}
+.tvGuide .iconNRK2 {
+    background-position: 0 -70px;
+}
+.tvGuide .iconTV2NORGE {
+    background-position: 0 -105px;
+}
+.tvGuide .iconTV3NORGE {
+    background-position: 0 -140px;
+}
+.tvGuide .iconTVNORGE {
+    background-position: 0 -175px;
+}
+.tvGuide .iconTVNORGEMAX {
+    background-position: 0 -210px;
+}

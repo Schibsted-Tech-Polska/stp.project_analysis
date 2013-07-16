@@ -1,0 +1,159 @@
+/*---------------------------- Horizontal ----------------------------*/
+
+.widget.classifiedBox.horizontal.mobile {
+    width: 100%;
+    padding: 0!important;
+    float: none!important;
+}
+
+.widget.classifiedBox.horizontal.mobile.itemsCount_2 {
+    width: 100%;
+}
+
+.widget.classifiedBox.horizontal.mobile .headlineWrap .categoriesList {
+    float: right;
+    margin-left: 0;
+    width: 95%!important;
+}
+
+.widget.classifiedBox.horizontal.mobile .categories strong {
+    color: white;
+    float: left;
+    font-size: 14px;
+    line-height: 32px;
+}
+
+.widget.classifiedBox.horizontal.mobile .categories .dropdown {
+    background-color: #b7b7b7;
+    color: #515151;
+}
+
+.widget.classifiedBox.horizontal.mobile .carouselHolder {
+    padding: 0!important;
+    width: 100%!important;
+}
+
+.widget.classifiedBox.horizontal.mobile .carouselHolder .itemList {
+    margin-left: 0;
+}
+
+.widget.classifiedBox.horizontal.mobile .itemWrap {
+    width: 100%;
+}
+
+.widget.classifiedBox.horizontal.mobile .itemWrap .itemInner {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+}
+
+.widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .listPrice span {
+    display: block;
+    padding: 0 5px;
+    width: 90px;
+}
+
+.widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .imgWrap {
+    border-bottom: 2px solid white;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .itemThumb {
+    border: 0;
+    position: static;
+    height: auto;
+    width: 100%;
+}
+
+.widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .itemText {
+    display: none;
+}
+
+@media (min-width : 321px) {
+    .widget.classifiedBox.horizontal.mobile {
+        height: 260px;
+    }
+    .widget.classifiedBox.horizontal.mobile .carouselHolder {
+        height: 228px;
+        margin-top: -98px;
+    }
+    .widget.classifiedBox.horizontal.mobile .carouselHolder .itemList {
+        margin-top: -114px;
+    }
+    .widget.classifiedBox.horizontal.mobile .carouselHolder .itemList li {
+        height: 228px;
+        width: 240px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap {
+        height: 228px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap .itemInner {
+        height: 228px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .listPrice:before {
+        left: -55px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .listPrice:after {
+        right: -55px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .imgWrap {
+        height: 158px;
+    }
+    .widget.classifiedBox.horizontal .itemWrap .itemInner .itemOrganization {
+        height: 27px;
+        line-height: 27px;
+        margin-top: -7px;
+    }
+    .widget.classifiedBox.horizontal .itemWrap .itemInner .address {
+        top: 170px;
+    }
+    .widget.classifiedBox.horizontal .itemWrap .itemInner .listPrice {
+        top: 170px;
+    }
+}
+
+@media (max-width: 320px) {
+    .widget.classifiedBox.horizontal.mobile {
+        height: 218px;
+    }
+    .widget.classifiedBox.horizontal.mobile .carouselHolder {
+        height: 186px;
+        margin-top: -77px;
+    }
+    .widget.classifiedBox.horizontal.mobile .carouselHolder .itemList {
+        margin-top: -93px;
+    }
+    .widget.classifiedBox.horizontal.mobile .carouselHolder .itemList li {
+        height: 186px;
+        width: 160px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap {
+        height: 186px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap .itemInner {
+        height: 186px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .listPrice:before {
+        left: -20px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .listPrice:after {
+        right: -20px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .listPrice {
+        top: 130px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .imgWrap {
+        height: 103px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .itemOrganization {
+        top: 103px;
+    }
+    .widget.classifiedBox.horizontal.mobile .itemWrap .itemInner .address {
+        top: 120px;
+    }
+}

@@ -1,0 +1,40 @@
+.taxSearch {
+    background: #fff;
+    border: 1px solid #333;
+    -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    box-shadow: 0 2px 2px #ccc;
+    padding: 10px;
+}
+
+.taxSearch header.header {
+    background:none;
+    -moz-box-shadow:none;
+        -webkit-box-shadow:none;
+        box-shadow:none;
+    border:0 none;
+    height:auto;
+    margin:0 0 5px;
+}
+
+.taxSearch header.header h2 {
+    background:transparent;
+    float:none;
+    margin:0;
+    padding:0;
+    text-shadow: none;
+}
+
+.taxSearch {
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#E7EAEF', endColorstr='#F3F4F7');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#E7EAEF', endColorstr='#F3F4F7')";
+       background-image: -moz-linear-gradient(top, #E7EAEF, #F3F4F7);
+       background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#E7EAEF),color-stop(1,#F3F4F7));
+       background-image: -webkit-linear-gradient(top, #E7EAEF, #F3F4F7);
+       background-image: linear-gradient(top, #E7EAEF, #F3F4F7);
+    border: 1px solid #8899B2;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+}

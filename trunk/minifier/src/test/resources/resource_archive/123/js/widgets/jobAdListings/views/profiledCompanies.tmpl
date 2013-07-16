@@ -1,0 +1,23 @@
+<ul>
+{{each(i,specialCategory) items}}
+    <li>
+        {{if specialCategory.url}}
+            <a href="${rubrikkUrl}statistics/?companyId=${specialCategory.companies[0].companyId}&amp;objectType=COMPANY_LOGO_PROFILED_COMPANIES${statAppend}&amp;redirect={{html Base64.encode(specialCategory.url)}}">
+                {{if specialCategory.specialCategoryLogos[0]}}
+                    <img alt="${specialCategory.name}" src="http://${lisaLevel}.aftenposten.no/utils/img.php?src=${specialCategory.specialCategoryLogos[0].specialCategoryLogoPath}&amp;maxWidth=140&amp;maxHeight=40"/>
+                {{else}}
+                    ${specialCategory.name}
+                {{/if}}
+            </a>
+        {{else}}
+            <a href="${adUrl}?companyId=${specialCategory.companies[0].name}">
+                {{if specialCategory.specialCategoryLogos[0]}}
+                    <img alt="${specialCategory.name}" src="http://${lisaLevel}.aftenposten.no/utils/img.php?src=${specialCategory.specialCategoryLogos[0].specialCategoryLogoPath}&amp;maxWidth=140&amp;maxHeight=40"/>
+                {{else}}
+                    ${specialCategory.name}
+                {{/if}}
+            </a>
+        {{/if}}
+    </li>
+{{/each}}
+</ul>

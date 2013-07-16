@@ -1,0 +1,28 @@
+.currencyCalc .userMessage {
+    margin: 8px 0;
+}
+
+.currencyCalc input {
+    text-align:center;
+    width:50px;
+}
+
+.currencyCalc select {
+    width:100px;
+}
+
+.currencyCalc label {
+    float:left;
+    font-size:12px;
+    text-indent:10px;
+    width:170px;
+}
+
+.currencyCalc label * {
+    font-size:14px;
+    text-indent:0;
+}
+
+.currencyCalc label > .pillBox {
+    margin-top:5px;
+}

@@ -1,0 +1,16 @@
+.sectionPage .span3 .list.netmeeting .content {
+    height:118px;
+    overflow:hidden;
+}
+
+.sectionPage .span3 .list.netmeeting .content:hover {
+    overflow-y:auto;
+}
+
+.sectionPage .span3 .list.netmeeting .content a {
+    padding-right:19px;
+}
+
+.sectionPage .span3 .list.netmeeting .content:hover a {
+    padding-right:0;
+}

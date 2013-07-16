@@ -1,0 +1,14 @@
+#header .breakingnews {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#header .breakingnews a {
+    display: inline-block;
+}
+
+#header .breakingnews .latest,
+#header .breakingnews .breaking {
+    font-weight:bold;
+}

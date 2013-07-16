@@ -1,0 +1,120 @@
+.widget.realEstateCarousel.overview section {
+    display: none;
+}
+
+.widget.realEstateCarousel.overview {;
+    width: 100%;
+    margin: 10px 0;
+}
+
+/*.widget.realEstateCarousel.overview .resultListBox {
+    clear: both;
+    display: block;
+    float: left;
+    width: inherit;
+}*/
+
+.widget.realEstateCarousel.overview .resultItemResultList {
+    list-style-type: none;
+}
+
+.widget.realEstateCarousel.overview .resultItemResultList li {
+    float: left;
+    height: 250px;
+    margin: 10px 14px;
+    max-height: 100%;
+    width: 298px;
+}
+
+.widget.realEstateCarousel.overview .resultListBox .resultItemLogo {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.widget.realEstateCarousel.overview .resultListBox .resultItemLink {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    color: #000000;
+    float: left;
+    min-height: 250px;
+    position: relative;
+    text-decoration: none;
+    text-shadow: none;
+    width: 288px;
+}
+
+.ie7 .widget.realEstateCarousel.overview .resultListBox .resultItemLink,
+.ie8 .widget.realEstateCarousel.overview .resultListBox .resultItemLink {
+    border: 1px solid #D2D2D2;
+}
+
+
+.widget.realEstateCarousel.overview .resultListBox .resultItemName {
+    color: #444444;
+    float: left;
+    font-size: 10px;
+    font-weight: bold;
+    height: 27px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.widget.realEstateCarousel.overview .resultListBox .resultItemPrice {
+    background: none repeat scroll 0 0 #393939;
+    border: 1px solid #000000;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+    color: #FFFFFF;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 5px;
+    position: absolute;
+    right: 5px;
+    top: 26px;
+}
+
+.widget.realEstateCarousel.overview.priceBadge .resultListBox .resultItemPrice {
+    right: 5px;
+    top: 10px;
+    -moz-transform: rotate(5deg);
+    -webkit-transform:rotate(5deg);
+    -o-transform:rotate(5deg);
+    -ms-transform:rotate(5deg);
+}
+
+.ie7 .widget.realEstateCarousel.overview .resultListBox .resultItemPrice {
+    float: right;
+    width: 70px;
+}
+
+.widget.realEstateCarousel.overview .resultListBox .resultItemThumb {
+    border-top: 1px solid #333333;
+    width: 100%;
+}
+
+.widget.realEstateCarousel.overview .resultListBox .resultItemText {
+    background-color: #FFFFFF;
+    bottom: 0;
+    font-size: 11px;
+    left: 0;
+    line-height: 1.25;
+    min-height: 28px;
+    padding: 2px 10px;
+    position: absolute;
+    white-space: normal;
+    width: 268px;
+}
+
+.ie7 .widget.realEstateCarousel.overview  .resultListBox .resultItemText {
+    background-color: #fff;
+}
+
+.widget.realEstateCarousel.overview .error {
+    color: #FF0000;
+    display: block;
+    padding: 10px 0;
+}

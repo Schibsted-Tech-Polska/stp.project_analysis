@@ -1,0 +1,161 @@
+#header {
+    width: 100%;
+    background: #5fd8fb;
+    font-family: Verdana, sans-serif;
+}
+.mainHeaderArea {
+    min-height: 145px;
+    position: relative;
+    background: transparent;
+}
+.mainHeaderArea:before {
+    background: url(/skins/publications/strilen/gfx/strilen-bg.png) no-repeat 0 0;
+    content: '';
+    position: absolute;
+    width: 720px;
+    height: 254px;
+    top: -26px;
+    left: -56px;
+}
+.mainHeaderArea > .span10 {
+    position: relative;
+}
+.mainHeaderArea .partof-desc {
+    position: absolute;
+    top: 0;
+    right: -165px;
+    font-weight: bold;
+    font-size: 12px;
+    vertical-align: top;
+    text-align: right;
+    z-index: 100;
+}
+.mainHeaderArea .partof-desc span,
+.mainHeaderArea .partof-desc img {
+    vertical-align: top;
+}
+.mainHeaderArea .partof-desc span {
+    display: inline-block;
+    padding-top: 28px;
+    width: 90px;
+    line-height: 1.1em;
+}
+.mainHeaderArea .logo {
+    padding-top: 18px;
+    padding-left: 40px;
+    float: left;
+}
+.mainHeaderArea .searchField {
+    float: left;
+    margin-top: 28px;
+    margin-left: 285px;
+    position: relative;
+}
+.mainHeaderArea .searchField .pillBox {
+    border: 0 none;
+    border-radius: 0;
+    overflow: visible;
+}
+.mainHeaderArea .searchField:before {
+    content: 'SØK';
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 7px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    line-height: 30px;
+}
+.mainHeaderArea .searchField .pillBox button {
+    display: none;
+}
+.mainHeaderArea .searchField .pillBox input {
+    margin:0;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: none;
+    height: 24px;
+    width: 216px;
+}
+.subHeaderArea {
+    width: 100%;
+    background-color: #00a6de;
+    position: relative;
+}
+.subHeaderArea .contact-us {
+    float: right;
+    line-height: 38px;
+    font-size: 18px;
+    margin:0  20px;
+}
+.subHeaderArea .span10 .fb-btn {
+    float: right;
+    margin-bottom: 0;
+}
+.subHeaderArea .topMainMenu {
+    float: left;
+}
+.ie8 .subHeaderArea .topMainMenu li {
+    float: left;
+}
+.subHeaderArea .topMainMenu a {
+    background: transparent;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 16px;
+    margin: 4px;
+    height: 30px;
+    border-radius: 4px;
+    color: #000;
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+.subHeaderArea .topMainMenu a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,0.3);
+}
+.subHeaderArea .pageTools.article .fontWrapper {
+    display: none;
+}
+.subHeaderArea .pageTools.article .shareButton {
+    margin-top: 6px;
+    margin-right: 0;
+    padding-right: 0;
+    border-right: 0 none;
+    color: #000;
+}
+
+/* small header */
+#smallHeader {
+    background-color: #5FD8FB;
+}
+#smallHeader .standardMenu a {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 24px;
+    padding: 0 10px;
+    background-color: #5FD8FB;
+    border-radius: 4px;
+    color: #000;
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+#smallHeader .standardMenu a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,0.3);
+}
+#smallHeader .logo {
+    margin-right: 10px;
+}
+#innerSmallHeader {
+    padding-top: 0;
+}
+#innerSmallHeader .standardMenu {
+    padding-top: 5px;
+    margin-bottom: 2px;
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<security>
+    <!-- Group related action which should be done only by user -->
+    <action pattern="RequestGroupMembership" user="true"/>
+    <action pattern="DeclineGroupInvitation" user="true"/>
+    <action pattern="AcceptGroupInvitation" user="true"/>
+    <action pattern="ResignGroupMembership" user="true"/>
+
+    <!-- Group related action which should be done only by group admin -->
+    <action pattern="AcceptGroupRequest">
+        <permission>moderateGroupUser</permission>
+    </action>
+    <action pattern="DeclineGroupRequest">
+        <permission>moderateGroupUser</permission>
+    </action>
+    <action pattern="RemoveGroupMembership">
+        <permission>moderateGroupUser</permission>
+    </action>
+    <action pattern="InviteGroupMembership">
+        <permission>inviteToGroup</permission>
+    </action>
+
+    <!-- Friendship related action which should be done only by user :
+  - RequestFriendship
+  - DeclineFriendship
+  - AcceptFriendship
+  - ResignFriendship
+  - RemoveFriendship -->
+    <action pattern="*Friendship" user="true"/>
+    <action pattern="ClearFriendshipNotification" user="true"/>
+
+    <ajax pattern="TagPluginAjax.addTag" user="true">
+        <permission>rate</permission>
+    </ajax>
+    <ajax pattern="QualificationPluginAjax.submitStarRating" user="true" author="true">
+        <permission>rate</permission>
+    </ajax>
+    <ajax pattern="QualificationPluginAjax.submitFlagging" user="true" author="true">
+        <permission>flag</permission>
+    </ajax>
+</security>

@@ -1,0 +1,10 @@
+.relatedContents.pictures{
+    overflow:hidden;
+}
+
+.relatedContents.pictures .hmedia .caption{
+    padding: 3px 10px;
+    color :white;
+    text-align:left;
+    background-color:#3a3839;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr//dwr20.dtd">
+
+<dwr>
+	<allow>
+		<!-- USER CONTENT PLUGIN -->
+		<!-- Generic content management -->
+		<create
+			creator="spring"
+			javascript="UserContentPluginAjax">
+			<param
+				name="beanName"
+				value="userContentAjaxAccess" />
+			<include method="createQuickArticle" />
+		</create>
+		<convert
+			converter="bean"
+			match="com.ndc.usercontent.plugin.ajax.DirectArticle" />
+
+		<!--  Content validation -->
+		<create
+			creator="spring"
+			javascript="FieldValidator">
+			<param
+				name="beanName"
+				value="newFieldValidator" />
+			<include method="validateFieldDirect" />
+		</create>
+
+		<convert
+			converter="bean"
+			match="com.ndc.usercontent.api.validator.InputField" />
+		<convert
+			converter="bean"
+			match="com.ndc.usercontent.api.validator.InputError" />
+
+		<!-- Content upload -->
+		<create
+			creator="new"
+			javascript="UploadMonitor">
+			<param
+				name="class"
+				value="com.ndc.usercontent.plugin.util.upload.UploadMonitor" />
+		</create>
+		<convert
+			converter="bean"
+			match="com.ndc.usercontent.plugin.util.upload.UploadInfo" />
+
+		<!--  QUALIFICATION PLUGIN -->
+
+		<create
+			creator="spring"
+			javascript="QualificationPluginAjax">
+			<param
+				name="beanName"
+				value="qualificationPluginAjax" />
+			<include method="submitStarRating" />
+			<include method="submitFlagging" />
+			<include method="submitFavorite" />
+			<include method="deleteFavorite" />
+		</create>
+
+		<convert
+			converter="bean"
+			match="com.ndc.qualification.api.domain.StarRating" />
+		<convert
+			converter="bean"
+			match="com.ndc.qualification.api.domain.Flagging" />
+
+		<convert
+			converter="bean"
+			match="com.ndc.ajax.util.MetaData" />
+
+		<convert
+			match="com.ndc.auth.api.exception.AuthorizationException"
+			converter="exception" />
+
+		<convert
+			match="com.ndc.exceptions.UnauthorizedException"
+			converter="exception" />
+
+		<convert
+			match="com.ndc.qualification.api.exception.AlreadyFavoriteException"
+			converter="exception" />
+		<convert
+			match="com.ndc.qualification.api.exception.AlreadyFlaggedException"
+			converter="exception" />
+		<convert
+			match="com.ndc.qualification.api.exception.AlreadyRatedException"
+			converter="exception" />
+
+		<!--  QUALIFICATION PLUGIN -->
+
+		<create
+			creator="spring"
+			javascript="TagPluginAjax">
+			<!-- The spring bean defined in community-plugin-beans.xml  -->
+			<param
+				name="beanName"
+				value="tagAjaxAccess" />
+			<!-- The java methods that you can use in dwr/javascript -->
+			<include method="addTag" />
+			<include method="updateTag" />
+			<include method="removeTagFromContent" />
+			<include method="suggestTagsAlphabetical" />
+			<include method="getAllParents" />
+			<include method="addTree" />
+			<include method="addTreeNode" />
+			<include method="viewLevelLabel" />
+			<include method="addLevelLabel" />
+			<include method="deleteStructureItem" />
+			<include method="deleteLevelLabel" />
+			<include method="deleteAllThemeTags" />
+		</create>
+
+		<convert
+			converter="bean"
+			match="com.ndc.tag.api.domain.Tag" />
+		<convert
+			converter="bean"
+			match="com.ndc.tag.api.domain.LevelLabel" />
+		<convert
+			converter="collection"
+			match="java.util.Collection" />
+		<convert
+			converter="bean"
+			match="com.ndc.ajax.util.AjaxException" />
+
+		<!--  COMMUNITY PLUGIN -->
+		<create
+			creator="spring"
+			javascript="CommunityPluginAjaxAccess">
+			<param
+				name="beanName"
+				value="communityPluginAjaxAccess" />
+			<include method="clearGroupMembershipNotification" />
+			<include method="clearGroupDeclineNotification" />
+			<include method="clearFriendAcceptNotification" />
+			<include method="clearFriendDeclineNotification" />
+		</create>
+
+		<!--  STATISTICS PLUGIN -->
+		<create
+			creator="spring"
+			javascript="StatisticsPluginAjax">
+			<param
+				name="beanName"
+				value="statisticsPluginAjax" />
+			<include method="deleteActionHistoryAction" />
+		</create>
+
+		<!--  MESSAGING PLUGIN -->
+		<create
+			creator="spring"
+			javascript="MessagingPluginAjax">
+			<param
+				name="beanName"
+				value="messagingPluginAjax" />
+		</create>
+<convert
+	match="com.ndc.auth.api.exception.AuthorizationException"
+	converter="exception" />
+<convert
+	match="com.ndc.exceptions.UnauthorizedException"
+	converter="exception" />
+	</allow>
+</dwr>

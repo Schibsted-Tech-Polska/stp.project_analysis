@@ -1,0 +1,140 @@
+.widget.classifiedBox.overview {
+    clear: both;
+    float: left;
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+    z-index: 1;
+}
+
+.widget.classifiedBox.overview .header {
+    display: none;
+}
+
+.widget.classifiedBox.overview .resultListBox {
+    float: left;
+    width: inherit;
+    clear: both;
+    display: block;
+}
+
+.widget.classifiedBox.overview .resultListBox .loader {
+    background: none;
+    height: 11px;
+    width: 16px;
+}
+
+.widget.classifiedBox.overview .resultListBox .resultItemResultList li {
+    float: left;
+    width: 315px;
+    height: 320px;
+    margin: 10px 5px;
+    overflow: hidden;
+}
+
+.widget.classifiedBox.overview .resultListBox .resultItemLink {
+    color: black;
+    text-decoration: none;
+    text-shadow: none;
+    width: 288px;
+}
+
+.widget.classifiedBox.overview .resultListBox .resultItemLink .resultItemThumb {
+    height: 210px;
+    width: 100%;
+}
+
+.widget.classifiedBox.overview .resultListBox .pagelinks {
+    float: left;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.widget.classifiedBox.overview .resultListBox .pagelinks li {
+    background: white;
+    background: -moz-linear-gradient(top, white 0%, #b2b2b2 100%);
+    background: -webkit-linear-gradient(top, white 0%, #b2b2b2 100%);
+    background: -o-linear-gradient(top, white 0%, #b2b2b2 100%);
+    background: -ms-linear-gradient(top, white 0%, #b2b2b2 100%);
+    background: linear-gradient(top, #ffffff 0%, #b2b2b2 100%);
+    border: 1px solid #b2b2b2;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 0 1px 0 #ccc;
+    -webkit-box-shadow: 0 0 1px 0 #ccc;
+    box-shadow: 0 0 1px 0 #ccc;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.widget.classifiedBox.overview .resultListBox .pagelinks li.skip {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    box-shadow: none;
+}
+
+.widget.classifiedBox.overview .resultListBox .pagelinks li.current {
+    background: #eeeeee;
+    background: -moz-linear-gradient(top, #eeeeee 0%, #dddddd 100%);
+    background: -webkit-linear-gradient(top, #eeeeee 0%, #dddddd 100%);
+    background: -o-linear-gradient(top, #eeeeee 0%, #dddddd 100%);
+    background: -ms-linear-gradient(top, #eeeeee 0%, #dddddd 100%);
+    background: linear-gradient(top, #eeeeee 0%, #dddddd 100%);
+}
+
+.widget.classifiedBox.overview .resultListBox .pagelinks a {
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0 5px;
+    text-decoration: none;
+}
+
+.widget.classifiedBox.overview .categories {
+    background: white;
+    background: -moz-linear-gradient(top, white 0%, #f2f2f2 100%);
+    background: -webkit-linear-gradient(top, white 0%, #f2f2f2 100%);
+    background: -o-linear-gradient(top, white 0%, #f2f2f2 100%);
+    background: -ms-linear-gradient(top, white 0%, #f2f2f2 100%);
+    background: linear-gradient(top, #ffffff 0%, #f2f2f2 100%);
+    float: left;
+    width: 100%;
+    border-left-color: transparent;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    border-right: 1px solid #bfbfbf;
+}
+
+.widget.classifiedBox.overview .categories li {
+    border: 0 none;
+    display: block;
+    float: left;
+}
+
+.widget.classifiedBox.overview .categories li a, .widget.classifiedBox.overview .categories li span, .widget.classifiedBox.overview .categories li strong {
+    border-left: 1px solid #bfbfbf;
+    border-right: 0;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 7px;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.widget.classifiedBox.overview .categories li span {
+    color: #0159ac;
+}
+
+.widget.classifiedBox.overview .categories li:nth-child(1) span {
+    border-left: 0;
+    color: #A8A8A8;
+    font-weight: normal;
+}
+
+.widget.classifiedBox.overview .categories li.selected a, .widget.classifiedBox.overview .categories li a:hover {
+    color: #012c54;
+}

@@ -1,0 +1,12 @@
+/**
+  Charset
+  @fileinfo
+  */
+
+/**
+  UTF-8
+  Set charset for all css files to UTF-8. Necessary for content properties
+  @group charset
+  */
+
+@charset "utf-8";

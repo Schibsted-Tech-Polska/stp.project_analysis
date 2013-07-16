@@ -1,0 +1,93 @@
+/* Top Menu - standardMenu - general styles*/
+.standardMenu  li {
+    height:auto;
+}
+
+.standardMenu a {
+    color: #FFFFFF;
+    line-height: 35px;
+    background-color:transparent;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 0 12px;
+    height: auto;
+        -webkit-transition-duration: 0.2s;
+        -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+        -moz-transition-timing-function: ease-in-out;
+        -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+.standardMenu li:last-child a {
+    padding-right: 0;
+}
+
+.standardMenu a:hover {
+    text-decoration: none;
+}
+
+.standardMenu a:hover,
+.standardMenu .activeSection a {
+    color:#f30501;
+}
+
+.standardMenu ul ul {
+    top: 35px;
+    padding:10px 10px 0px 10px;
+    background: #ececec;
+    margin-left:13px;
+}
+.standardMenu ul ul:before {
+    content: "";
+    border-bottom: 7px solid #ececec;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: relative;
+    top: -17px;
+    display: block;
+    width: 0;
+    height: 0;
+}
+.standardMenu ul ul a {
+    -moz-transition:none;
+        -webkit-transition:none;
+        -ms-transition:none;
+        -o-transition:none;
+        -khtml-transition:none;
+        transition:none;
+    font-size: 14px;
+    font-weight: normal;
+    min-width: 150px;
+    z-index: 598;
+    background: #ececec;
+    border-top: 1px solid rgba(0,0,0,0.18);
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    color: #646464;
+    padding: 0px 3px;
+    text-align: left;
+    line-height: 30px;
+}
+/* top info menu */
+.infomenuWrapper .standardMenu li {
+
+}
+.infomenuWrapper .standardMenu a {
+    color: #000;
+    line-height: 24px;
+    padding: 0 10px;
+    font-size: 18px;
+}
+.infomenuWrapper .standardMenu a:hover,
+.infomenuWrapper .standardMenu .activeSection a{
+    color: #f30501;
+}
+
+/* small header menu */
+.smallHeader {
+    padding: 0 3px;
+    line-height: 35px;
+    background-color: #000;
+    box-shadow: 0 0 6px 1px rgba(0,0,0,0.3);
+    border-bottom: 0 none;
+}
+

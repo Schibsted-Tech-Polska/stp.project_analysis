@@ -1,0 +1,27 @@
+ul.weatherListsTabs{
+    border-bottom: solid 1px #333;
+    margin-bottom: 10px;
+    height: 30px;
+}
+
+ul.weatherListsTabs li{
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    border: solid 1px #333;
+    -moz-border-radius:5px 5px 0 0;
+        -webkit-border-radius:5px 5px 0 0;
+        border-radius:5px 5px 0 0;
+}
+
+ul.weatherListsTabs li.active{
+    background-color: white;
+    color: black;
+    border-bottom: none;
+    padding-bottom: 6px;
+}
+
+.weather.tabbedLists.mobile.tabs{
+    width: auto;
+}

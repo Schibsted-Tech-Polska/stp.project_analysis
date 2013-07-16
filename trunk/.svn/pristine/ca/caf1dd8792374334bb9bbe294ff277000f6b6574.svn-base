@@ -1,0 +1,23 @@
+.stormWeather {
+    text-align: left;
+}
+
+.linksAndSearch .stormWeather a {
+    float: left;
+    padding-left:7px;
+    text-align: left;
+}
+
+.stormWeather .stormWeather-symbol {
+    color: #007AA6;
+    display:block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.stormWeather .stormWeather-symbol.warm {
+    color: #990000;
+}
+
+
+

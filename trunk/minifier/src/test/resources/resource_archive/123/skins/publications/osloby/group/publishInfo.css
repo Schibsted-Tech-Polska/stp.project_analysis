@@ -1,0 +1,11 @@
+.publishInfo {
+    background:#ccc;
+    font-family: ClanWeb, sans-serif;
+    overflow: hidden;
+    padding:5px 10px;
+    position: relative;
+}
+
+.ie .dateline .date {
+    font-family: ClanWebNormal, sans-serif;
+}

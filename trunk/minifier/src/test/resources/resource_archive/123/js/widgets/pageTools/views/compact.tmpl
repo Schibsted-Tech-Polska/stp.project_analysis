@@ -1,0 +1,13 @@
+{{each(i, value) items}}
+<a class="shareButton addthis_32x32_style addthis_button_${value}">
+
+    {{if value == 'print'}}
+    {{else value == 'compact'}}
+    {{else value == 'email'}}
+    Send p&aring epost
+    {{else}}
+    Del p&aring; ${value}
+    {{/if}}
+
+</a>
+        {{/each}}

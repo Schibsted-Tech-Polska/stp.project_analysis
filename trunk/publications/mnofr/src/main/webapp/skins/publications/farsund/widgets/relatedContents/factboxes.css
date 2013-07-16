@@ -1,0 +1,8 @@
+.relatedContents.factboxes .content{
+    background-color:#ececec;
+    padding: 5px 10px;
+    border:none;
+}
+.relatedContents.factboxes header h2{
+	background: black;
+}

@@ -1,0 +1,77 @@
+#header .standardMenu.topMainMenu {
+    margin: 30px 0 0 -40px;
+}
+
+.standardMenu .hasChildren > a {
+    padding-bottom: 7px !important;
+}
+
+.standardMenu a {
+    background-color: transparent;
+    color: #fff;
+        font-family: "Myriad Web Pro", Arial, sans-serif;
+        font-size: 20px;
+        font-weight: normal;
+}
+
+.standardMenu li:hover > a {
+    color: #6c8cc7;
+}
+.standardMenu li.sport:hover > a {
+    color: #eb8c1c;
+}
+.standardMenu li.nytte:hover > a {
+    color: #2dbdb6;
+}
+.standardMenu li.kultur:hover > a {
+    color: #b37ab5;
+}
+.standardMenu li.folk:hover > a {
+    color: #9dc435;
+}
+
+.standardMenu ul ul {
+    background: #e3e9ed;
+    border-bottom: 3px solid #123466;
+    top: auto;
+}
+
+.standardMenu ul ul a {
+    color: #000;
+}
+
+.standardMenu ul ul li:hover a {
+    background-color: #123466;
+    color: #fff;
+}
+
+/* info menu */
+.standardMenu#serviceMenu {
+    float: right;
+}
+
+.standardMenu#serviceMenu a {
+    font-size: 12px;
+        font-weight: bold;
+}
+.standardMenu#serviceMenu a:hover {
+    color: #c2c2c2;
+}
+
+/* smallHeader */
+.smallHeader .standardMenu {
+    margin-top: 8px;
+}
+
+.smallHeader .standardMenu a {
+    font-size: 16px;
+}
+
+/* subMenu */
+#header .subMenu .standardMenu.topMainMenu {
+    margin: 0;
+}
+
+#header .subMenu .standardMenu > ul li > a {
+    font-size: 16px;
+}

@@ -1,0 +1,199 @@
+.penger_no {
+	background: transparent url('/skins/global/gfx/trafficfund/pengerno/penger_bg_180x500.jpg') no-repeat left top;
+	width: 180px;
+	height: 418px;
+	color: #fff;
+    font-family: Arial, sans-serif;
+	margin: 0;
+}
+
+.penger_no img {
+    border: 0;
+}
+
+.penger_no .logo {
+    width: 140px;
+    height: 140px;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.penger_no h1 {
+	font-size: 10px;
+	font-weight: normal;
+	text-align: center;
+    font-family: Geneva, Tahoma, Arial, sans-serif;
+    margin-top: 7px;
+}
+
+.penger_no .buttons {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 37px;
+    margin-left: 0;
+}
+
+.penger_no .buttons li {
+	background: transparent url('/skins/global/gfx/trafficfund/pengerno/penger_button_168.png') no-repeat left top;
+    width: 168px;
+    height: 53px;
+    font-size: 11px;
+    margin: 0 0 1px 6px;
+    float: left;
+}
+
+.penger_no  li a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.penger_no h2 {
+	line-height:15px;
+	font-weight: bold;
+	margin: 0 0 4px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+
+/* nyttige verktoy */
+.pengerno.toolsAd a,
+.pengerno.toolsAd a:hover {
+    color: #2c835e;
+        font-size: 12px;
+        text-decoration: none;
+    display: block;
+}
+
+.pengerno.toolsAd ul {
+    border-bottom: 1px solid #e5e5e5;
+}
+.pengerno.toolsAd li {
+    border-top: 1px solid #e5e5e5;
+    padding: 6px;
+}
+
+.pengerno.toolsAd img {
+    display: inline-block;
+    height: 32px;
+    margin-right: 6px;
+}
+
+.pengerno.toolsAd .logoDinePenger {
+    background-image: url('/skins/global/gfx/trafficfund/pengerno/ident-penger-horizontal-black.png');
+        background-size: 113px 17px;
+        background-repeat: no-repeat;
+    display: inline-block;
+    float: right;
+    height: 17px;
+        width: 113px;
+    margin: 8px 0;
+}
+.pengerno.toolsAd .logoNabolag {
+    background-image: url('/skins/global/gfx/trafficfund/nabolag/nabo1.png');
+        background-size: 100px 25px;
+        background-repeat: no-repeat;
+    display: inline-block;
+    float: right;
+    height: 25px;
+        width: 100px;
+    margin: 4px 0;
+}
+.pengerno.toolsAd .logoFlytteportalen {
+    background-image: url('/skins/global/gfx/trafficfund/flytteportalen/flyttep.png');
+        background-size: 108px 29px;
+        background-repeat: no-repeat;
+    display: inline-block;
+    float: right;
+    height: 29px;
+        width: 108px;
+    margin: 2px 0;
+}
+.pengerno.toolsAd .logoLendo {
+    background-image: url('/skins/global/gfx/trafficfund/lendo/lendo.png');
+        background-size: 52px 27px;
+        background-repeat: no-repeat;
+    display: inline-block;
+    float: right;
+    height: 27px;
+        width: 52px;
+    margin: 2px 0;
+}
+
+/* car registration number */
+.pengerno.carRegAd {
+    background: url('/skins/global/gfx/trafficfund/pengerno/ad-390x262.jpg') top right no-repeat;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.pengerno.carRegAd.ad:before {
+    left: 0;
+}
+
+.pengerno.carRegAd a,
+.pengerno.carRegAd a:hover {
+    color: #2c835e;
+        text-decoration: none;
+}
+
+.pengerno.carRegAd img {
+    height: 80px;
+        width: 149px;
+}
+
+.pengerno.carRegAd h2 {
+    font-family: "proxima-nova", sans-serif;
+        font-size: 20px;
+        line-height: 26px;
+        text-shadow: 1px 1px 0 #fff;
+}
+
+.pengerno.carRegAd img,
+.pengerno.carRegAd h2,
+.pengerno.carRegAd form {
+    margin-bottom: 10px;
+}
+
+.pengerno.carRegAd input[type="text"] {
+    background: #fff url('/skins/global/gfx/trafficfund/pengerno/icon-car.png') 8px center no-repeat;
+    border: 3px solid #a5bab1;
+    -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    font-size: 16px;
+        text-indent: 32px;
+    padding: 7px 6px 7px;
+    width: auto;
+}
+
+.pengerno.carRegAd input[type="submit"] {
+    background-color: #684280;
+        background-image: -moz-linear-gradient(bottom, #46225c, #684280);
+        background-image: -webkit-gradient(linear, left bottom, left top, from(#46225c), to(#684280));
+        background-image: -webkit-linear-gradient(bottom, #46225c, #684280);
+        background-image: -o-linear-gradient(bottom, #46225c, #684280);
+        background-image: linear-gradient(bottom, #46225c, #684280);
+    border-color: #47235d;
+        border-style: solid;
+        border-width: 0 1px 1px 0;
+    -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+    box-shadow: none;
+    font-family: "proxima-nova", sans-serif;
+        font-size: 17px;
+        font-weight: bold;
+        text-shadow: -1px -1px 0 black;
+    padding: 6px 40px 6px;
+}
+.pengerno.carRegAd input[type="submit"]:hover {
+    background-color: #845b9c;
+        background-image: -moz-linear-gradient(bottom, #47235c, #845b9c);
+        background-image: -webkit-gradient(linear, left bottom, left top, from(#47235c), to(#845b9c));
+        background-image: -webkit-linear-gradient(bottom, #47235c, #845b9c);
+        background-image: -o-linear-gradient(bottom, #47235c, #845b9c);
+        background-image: linear-gradient(bottom, #47235c, #845b9c);
+}

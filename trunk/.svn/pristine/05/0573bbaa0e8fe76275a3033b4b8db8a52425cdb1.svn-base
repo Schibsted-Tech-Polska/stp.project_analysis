@@ -1,0 +1,87 @@
+.moodboard .barChart {
+    margin: 30px 0 35px;
+    position: relative;
+    word-spacing:-4px;
+}
+
+.moodboard .barChartBar {
+    cursor: pointer;
+    display:inline-block;
+    margin: 0;
+    position:relative;
+    text-align: center;
+    vertical-align:bottom;
+    width: 15.9%;
+        height: 200px;
+}
+
+.moodboard .label {
+    bottom:-20px;
+    font-size:12px;
+        font-weight:normal;
+        text-decoration:underline;
+    text-decoration:underline;
+    overflow: hidden;
+}
+
+.moodboard .label,
+.moodboard .count {
+    position: absolute;
+        left:0;
+    width: 100%;
+}
+
+.moodboard .inlineMood,
+.moodboard .label,
+.moodboard .count {
+    font-family: 'publicoHeadlineWeb', Cambria, Times, 'Times New Roman', serif;
+}
+
+.ie .moodboard .inlineMood,
+.ie .moodboard .label,
+.ie .moodboard .count {
+    font-family: 'publicoHeadlineWebNormal', Cambria, Times, 'Times New Roman', serif;
+}
+
+.moodboard .inlineMood {
+    font-size:18px;
+    text-transform:lowercase;
+}
+
+.moodboard .count {
+    font-weight: bold;
+    top: -20px;
+}
+
+.moodboard .barChart .count.huge {
+    font-size: 140%;
+    height: 25px;
+    top: -25px;
+}
+
+.moodboard .barChart .count.large {
+    font-size: 130%;
+    height: 25px;
+    top: -25px;
+}
+
+.moodboard .barChart .count.medium {
+    font-size: 120%;
+}
+
+.moodboard .barChart .count.small {
+    font-size: 110%;
+}
+
+.moodboard .barChart .count.tiny {
+    font-size: 100%;
+}
+
+.moodboard .mood {
+    font-weight: bold;
+}
+
+.moodboard .share {
+    font-size: 0.9em;
+        color: #444;
+}

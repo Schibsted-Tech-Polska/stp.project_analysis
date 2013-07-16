@@ -1,0 +1,16 @@
+#header .dateline {
+    color: #fff;
+    float:right;
+    font-size:14px;
+        line-height:14px;
+    height:14px;
+    padding-top: 11px;
+    position:relative;
+        z-index:2;
+}
+
+#header .nowForecastForHeader + .dateline {
+    border-right: 1px solid #616974;
+    margin-right:10px;
+    padding-right: 10px;
+}

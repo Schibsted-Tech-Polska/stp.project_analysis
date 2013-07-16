@@ -1,0 +1,146 @@
+#colorbox, #cboxOverlay, #cboxWrapper {
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+}
+#cboxOverlay {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+#cboxWrapper {
+    height: 100%;
+    width: 100%;
+}
+#cboxMiddleLeft, #cboxBottomLeft {
+    clear: left;
+}
+#cboxContent {
+    position: relative;
+}
+#cboxLoadedContent {
+    overflow: auto;
+}
+#cboxTitle {
+    margin: 0;
+}
+#cboxLoadingOverlay, #cboxLoadingGraphic {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow {
+    cursor: pointer;
+}
+.cboxPhoto {
+    border: 0 none;
+    display: block;
+    float: left;
+    margin: auto;
+}
+.cboxIframe {
+    border: 0 none;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+#cboxOverlay {
+}
+#colorbox {
+}
+#cboxTopLeft {
+    background: url("/skins/global/gfx/marked/colorbox/border1.png") no-repeat scroll 0 0 transparent;
+    height: 25px;
+    width: 25px;
+}
+#cboxTopCenter {
+    background: url("/skins/global/gfx/marked/colorbox/border1.png") repeat-x scroll 0 -50px transparent;
+    height: 25px;
+}
+#cboxTopRight {
+    background: url("/skins/global/gfx/marked/colorbox/border1.png") no-repeat scroll -25px 0 transparent;
+    height: 25px;
+    width: 25px;
+}
+#cboxBottomLeft {
+    background: url("/skins/global/gfx/marked/colorbox/border1.png") no-repeat scroll 0 -25px transparent;
+    height: 25px;
+    width: 25px;
+}
+#cboxBottomCenter {
+    background: url("/skins/global/gfx/marked/colorbox/border1.png") repeat-x scroll 0 -75px transparent;
+    height: 25px;
+}
+#cboxBottomRight {
+    background: url("/skins/global/gfx/marked/colorbox/border1.png") no-repeat scroll -25px -25px transparent;
+    height: 25px;
+    width: 25px;
+}
+#cboxMiddleLeft {
+    background: url("/skins/global/gfx/marked/colorbox/border2.png") repeat-y scroll 0 0 transparent;
+    width: 25px;
+}
+#cboxMiddleRight {
+    background: url("/skins/global/gfx/marked/colorbox/border2.png") repeat-y scroll -25px 0 transparent;
+    width: 25px;
+}
+#cboxContent {
+    background: none repeat scroll 0 0 #fff;
+    overflow: hidden;
+}
+.cboxIframe {
+    background: none repeat scroll 0 0 #fff;
+}
+#cboxError {
+    border: 1px solid #ccc;
+    padding: 50px;
+}
+#cboxLoadedContent {
+    margin-bottom: 20px;
+}
+#cboxTitle {
+    bottom: 0;
+    color: #999;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+#cboxCurrent {
+    bottom: 0;
+    color: #999;
+    left: 100px;
+    position: absolute;
+}
+#cboxSlideshow {
+    bottom: 0;
+    color: #444;
+    position: absolute;
+    right: 42px;
+}
+#cboxPrevious {
+    bottom: 0;
+    color: #444;
+    left: 0;
+    position: absolute;
+}
+#cboxNext {
+    bottom: 0;
+    color: #444;
+    left: 63px;
+    position: absolute;
+}
+#cboxLoadingOverlay {
+    background: url("/skins/global/gfx/marked/colorbox/loading.gif") no-repeat scroll 5px 5px #fff;
+}
+#cboxClose {
+    bottom: 0;
+    color: #444;
+    display: block;
+    position: absolute;
+    right: 0;
+}

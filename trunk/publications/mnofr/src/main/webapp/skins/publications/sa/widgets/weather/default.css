@@ -1,0 +1,68 @@
+/* table */
+.weather th,
+.weather.articleLongtermForecast th {
+    background: #f9f9f9;
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#20000000');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#20000000')";
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,.15));
+		background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(0,0,0,0)),color-stop(1, rgba(0,0,0,.15)));
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.15));
+		background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.15));
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    color: #000;
+        font-weight: bold;
+}
+.weather.articleLongtermForecast th.corner {
+    background: #f9f9f9;
+}
+
+
+.weather.default {
+    line-height:25px;
+    text-align: left;
+}
+
+#header .weather.default {
+    position:absolute;
+        top:10px;
+        left:60px;
+}
+
+.weather.default .weatherTitle:after {
+    content:':';
+}
+
+.weather.default a {
+    display:inline;
+    font-size:10px;
+        color:#999;
+    float:none;
+    text-align: left;
+}
+
+.weather.default .weather-symbol {
+    color: #007AA6;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.weather.default .weather-symbol img {
+    position:relative;
+        top:-2px;
+}
+
+.weather.default .weather-symbol.warm {
+    color: #990000;
+}
+
+.weatherSectionElement {
+    margin-left: 10px;
+        margin-top: -4px;
+}
+
+.weather.default .weather-today,
+.weather.default .weather-tomorrow,
+.weather.default .weather-symbol {
+    display:inline;
+}

@@ -1,0 +1,51 @@
+.stories {
+    font-family: Tahoma, Arial, sans-serif;
+}
+.stories header {
+    border-bottom: 3px solid #4B86C6;
+    margin-bottom: 5px;
+    line-height: 1.1em;
+}
+.stories header h4 {
+    font-family: Tahoma, Arial, sans-serif;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 0;
+}
+.stories header h4:after {
+    content: '';
+    background-color: #9D0000;
+    border-radius: 1em;
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: 0;
+}
+.stories .content {
+    color: rgb(157, 0, 0);
+    list-style-type: square;
+    list-style-position: inside;
+}
+.stories .content a {
+    color: rgb(75,134,198);
+    font-weight: bold;
+}
+.stories .content .teaserText {
+    color: #000;
+}
+.relatedContents.stories li.first {
+    margin-top: 8px;
+}
+.relatedContents.stories li.withImg {
+    margin-left: 0;
+}
+.relationArticle .content.withImg img {
+    margin-left: 0;
+    margin-right: 10px;
+}
+.relationArticle .content.withImg {
+    padding-left: 0;
+}

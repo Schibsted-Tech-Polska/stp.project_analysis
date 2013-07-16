@@ -1,0 +1,7 @@
+.widget.realEstateInfo.generalInfo .informationItem header {
+    background-color: #f0f0f0;
+}
+
+.widget.realEstateInfo.generalInfo .content {
+    padding: 0 20px;
+}

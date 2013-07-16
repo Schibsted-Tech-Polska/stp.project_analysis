@@ -1,0 +1,13 @@
+.tvGuide header {
+    height: auto;
+    line-height: 20px;
+}
+
+.tvGuide header a,
+.tvGuide header a:hover {
+    color:#fff;
+}
+
+.tvGuide header a.floatRight {
+    margin-right:5px;
+}

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!-- define dateline widget field groups -->
+  <!-- general fields -->
+  <field-group name="dateline-general-fields">
+    <field name="view" type="enumeration">
+      <ui:label>View</ui:label>
+      <ui:description>View used to render the widget</ui:description>
+      <enumeration value="default">
+        <ui:label>Default</ui:label>
+      </enumeration>
+      <enumeration value="custom">
+        <ui:label>Custom</ui:label>
+      </enumeration>
+      <enumeration value="newsletter">
+        <ui:label>Newsletter</ui:label>
+      </enumeration>
+      <ui:value-if-unset>default</ui:value-if-unset>
+    </field>
+  </field-group>
+  <!-- default view fields-->
+  <field-group name="dateline-default-fields">
+    <field type="basic" mime-type="text/plain" name="todaysDateFormat">
+      <ui:label>Today's date format</ui:label>
+      <ui:description>The simple date format, that will be used for for today's date</ui:description>
+      <ui:value-if-unset>EEEE dd MMMM yyyy</ui:value-if-unset>
+    </field>
+    <field type="basic" mime-type="text/plain" name="lastUpdatedDateFormat">
+      <ui:label>Last updated date format</ui:label>
+      <ui:description>The simple date format, that will be used for for last updated date</ui:description>
+      <ui:value-if-unset>dd MMMM yyyy hh:mm a</ui:value-if-unset>
+    </field>
+    <field type="boolean" name="showDifference">
+      <ui:label>Show time difference</ui:label>
+      <ui:description>A relative time figures out how long ago an item was changed and shows "2 hours ago" or "5 weeks
+        ago" and so on.
+      </ui:description>
+      <ui:boolean-label value="true">Time is shown relative to current time</ui:boolean-label>
+      <ui:boolean-label value="false">Time is shown as a full date</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+
+  <!-- newsletter view fields-->
+  <field-group name="dateline-newsletter-fields">
+    <field type="basic" mime-type="text/plain" name="todaysDateFormat_newsletter">
+      <ui:label>Today's date format</ui:label>
+      <ui:description>The simple date format, that will be used for for today's date</ui:description>
+      <ui:value-if-unset>EEEE dd MMMM yyyy</ui:value-if-unset>
+    </field>
+    <field type="basic" mime-type="text/plain" name="lastUpdatedDateFormat_newsletter">
+      <ui:label>Last updated date format</ui:label>
+      <ui:description>The simple date format, that will be used for for last updated date</ui:description>
+      <ui:value-if-unset>dd MMMM yyyy hh:mm a</ui:value-if-unset>
+    </field>
+    <field type="boolean" name="showDifference_newsletter">
+      <ui:label>Show time difference</ui:label>
+      <ui:description>A relative time figures out how long ago an item was changed and shows "2 hours ago" or "5 weeks
+        ago" and so on.
+      </ui:description>
+      <ui:boolean-label value="true">Time is shown relative to current time</ui:boolean-label>
+      <ui:boolean-label value="false">Time is shown as a full date</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+
+  <!-- custom view fields-->
+  <field-group name="dateline-custom-fields">
+    <field type="complex" name="dates">
+      <ui:label>Dates</ui:label>
+      <complex>
+        <field type="enumeration" name="dateType">
+          <ui:label>Date type</ui:label>
+          <ui:description>The type of the date</ui:description>
+          <enumeration value="current">
+            <ui:label>Current Date</ui:label>
+          </enumeration>
+          <enumeration value="modified">
+            <ui:label>Last Modified Date</ui:label>
+          </enumeration>
+          <enumeration value="published">
+            <ui:label>Published Date</ui:label>
+          </enumeration>
+          <ui:value-if-unset>current</ui:value-if-unset>
+        </field>
+        <field type="basic" mime-type="text/plain" name="dateFormat">
+          <ui:label>Date format</ui:label>
+          <ui:description>The simple date format, that will be used for the date</ui:description>
+          <ui:value-if-unset>dd MMMM yyyy hh:mm a</ui:value-if-unset>
+        </field>
+        <field type="basic" mime-type="text/plain" name="datePrefix">
+          <ui:label>Date prefix</ui:label>
+          <ui:description>The plain text that will be used before the date</ui:description>
+        </field>
+        <field type="boolean" name="showDifference">
+          <ui:label>Date shown as relative</ui:label>
+          <ui:description>A relative time figures out how long ago an item was changed and shows "2 hours ago" or "5
+            weeks ago" and so on.
+          </ui:description>
+          <ui:boolean-label value="true">Time is shown relative to current time</ui:boolean-label>
+          <ui:boolean-label value="false">Time is shown as a full date</ui:boolean-label>
+          <ui:value-if-unset>false</ui:value-if-unset>
+          <constraints>
+            <required>true</required>
+          </constraints>
+        </field>
+      </complex>
+      <array default="2" max="5"/>
+    </field>
+    <field type="basic" mime-type="text/plain" name="timeZone">
+      <ui:label>Time Zone</ui:label>
+      <ui:description>The time zone of the dateline</ui:description>
+    </field>
+    <field name="languageCountry" type="enumeration">
+      <ui:label>Language and Country</ui:label>
+      <ui:description>This option is used to select the locale of dateline widget.</ui:description>
+      <enumeration value="custom">
+        <ui:label>Custom</ui:label>
+      </enumeration>
+      <enumeration value="ar_SA">
+        <ui:label>Arabic (Saudi Arabia)</ui:label>
+      </enumeration>
+      <enumeration value="zh_CN">
+        <ui:label>Chinese (China)</ui:label>
+      </enumeration>
+      <enumeration value="nl_NL">
+        <ui:label>Dutch (Netherlands)</ui:label>
+      </enumeration>
+      <enumeration value="en_GB">
+        <ui:label>English (United Kingdom)</ui:label>
+      </enumeration>
+      <enumeration value="en_US">
+        <ui:label>English (United States)</ui:label>
+      </enumeration>
+      <enumeration value="fi_FI">
+        <ui:label>Finnish (Finland)</ui:label>
+      </enumeration>
+      <enumeration value="fr_FR">
+        <ui:label>French (France)</ui:label>
+      </enumeration>
+      <enumeration value="de_DE">
+        <ui:label>German (Germany)</ui:label>
+      </enumeration>
+      <enumeration value="iw_IL">
+        <ui:label>Hebrew (Israel)</ui:label>
+      </enumeration>
+      <enumeration value="hi_IN">
+        <ui:label>Hindi (India)</ui:label>
+      </enumeration>
+      <enumeration value="it_IT">
+        <ui:label>Italian (Italy)</ui:label>
+      </enumeration>
+      <enumeration value="no_NO">
+        <ui:label>Norwegian (Norway)</ui:label>
+      </enumeration>
+      <enumeration value="ru_RU">
+        <ui:label>Russian (Russia)</ui:label>
+      </enumeration>
+      <enumeration value="es_ES">
+        <ui:label>Spanish (Spain)</ui:label>
+      </enumeration>
+      <enumeration value="sv_SE">
+        <ui:label>Swedish (Sweden)</ui:label>
+      </enumeration>
+      <enumeration value="th_TH">
+        <ui:label>Thai (Thailand)</ui:label>
+      </enumeration>
+      <ui:value-if-unset>custom</ui:value-if-unset>
+    </field>
+    <field type="basic" mime-type="text/plain" name="locale">
+      <ui:label>Locale</ui:label>
+      <ui:description>The locale of the dateline</ui:description>
+    </field>
+  </field-group>
+
+  <!-- define dateline widget content-type -->
+  <content-type name="widget_dateline">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Dateline Widget</ui:label>
+    <ui:description>A widget for displaying the first published date and the last modifed date
+      in section page or article page
+    </ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The general fields for configuring the Dateline widget</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="dateline-general-fields"/>
+    </panel>
+
+    <panel name="default">
+      <ui:label>Default</ui:label>
+      <ui:description>The fields related to the default view</ui:description>
+      <ref-field-group name="dateline-default-fields"/>
+    </panel>
+
+    <panel name="custom">
+      <ui:label>Custom</ui:label>
+      <ui:description>The fields related to the custom view</ui:description>
+      <ref-field-group name="dateline-custom-fields"/>
+    </panel>
+
+    <panel name="newsletter">
+      <ui:label>Newsletter</ui:label>
+      <ui:description>The fields related to the newsletter view</ui:description>
+      <ref-field-group name="dateline-newsletter-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-public-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Summary</ui:label>
+      <field type="basic" mime-type="text/plain" name="title">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

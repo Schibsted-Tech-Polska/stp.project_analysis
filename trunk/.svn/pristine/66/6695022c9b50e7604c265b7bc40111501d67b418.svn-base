@@ -1,0 +1,9 @@
+<div class="address">${obj.properties.address1}, ${obj.properties.addressPostcode} ${obj.properties.postalName}</div>
+<ul class="features">
+    {{each features}}
+    <li>
+        <span class="label">${label}</span>
+        <span class="value">${value}</span>
+    </li>
+    {{/each}}
+</ul>

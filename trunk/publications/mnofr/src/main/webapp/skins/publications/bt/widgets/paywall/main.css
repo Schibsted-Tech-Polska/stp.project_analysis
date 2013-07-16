@@ -1,0 +1,38 @@
+.loginDialogs.user  {
+    float: right;
+    color:#fff;
+    font-size: 14px;
+    height: 21px;
+    line-height: 21px;
+}
+.paywall a {
+    color:#fff;
+    font-weight: 500;
+    border-left: 2px solid #FFFFFF;
+    padding:0 10px;
+    display: inline-block;
+    height: 21px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+}
+.ie7 .paywall .userAccount .icon {
+    display: inline;
+    zoom:1;
+}
+.paywall .userAccount .icon {
+    text-indent: -9999px;
+    background: url("/skins/publications/bt/gfx/icons/lock.png") no-repeat 0 0;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.hasAccess .paywall .userAccount .icon {
+    background-position: 0 -45px;
+}
+
+.loginDialogs.paywall .mnoDropdownContent {
+    padding: 0;
+}

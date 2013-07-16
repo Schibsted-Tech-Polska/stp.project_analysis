@@ -1,0 +1,50 @@
+.widget.realEstateInfo ul.features {
+    padding: 0 10px 4px;
+}
+
+.widget.realEstateInfo ul.features li {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+}
+
+.widget.realEstateInfo ul.features li:nth-child(2n+1) {
+    background-color: #f0f0f0;
+}
+
+.widget.realEstateInfo ul.features li .value {
+    float: right;
+    font-weight: bold;
+}
+
+.widget.realEstateInfo header {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'PT Sans', Arial, Helvetica, Sans-serif;
+}
+
+.widget.realEstateInfo img[width="25"] {
+    width: 25px !important;
+}
+
+.boligtilbud .widget.sharingIcons {
+    float: right;
+    min-width: 150px;
+    margin-top: -12px;
+    margin-bottom: 0px;
+}
+
+.boligtilbud .widget.sharingIcons a {
+}
+
+.widget.realEstateInfo.visitingInfo .addToCal img {
+    margin: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+@media only screen and (min-width: 800px) {
+    .widget.realEstateInfo.visitingInfo .addToCal img {
+        margin-top: 35px;
+        margin-bottom: -40px;
+    }
+}

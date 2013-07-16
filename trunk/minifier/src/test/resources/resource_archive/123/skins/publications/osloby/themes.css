@@ -1,0 +1,84 @@
+.f-cyan {color:#00aeef;}
+.f-magenta {color:#ec008c;}
+.f-lime {color:#8dc63f;}
+.f-purple {color:#5b57a6;}
+
+.b-cyan {background-color:#00aeef;}
+.b-magenta {background-color:#ec008c;}
+.b-lime {background-color:#8dc63f;}
+.b-purple {background-color:#5b57a6;}
+
+/**
+ Header styles
+ */
+
+.header:before {
+    background: url("/skins/publications/osloby/gfx/icons.png") no-repeat;
+    content: " ";
+    position: absolute;
+        right: 35px;
+        top: -2px;
+        z-index: 2;
+    width: 16px;
+        height: 16px;
+}
+
+/**
+  Icons
+  Set the theme headline
+  */
+.widget.oslopuls .header:before {
+    background-position:  -378px -471px;
+}
+
+/**
+  Magenta
+  */
+
+.widget.oslobyMagenta .header {
+    background-color: #EC008C;
+}
+
+.widget.oslobyMagenta .header h2,
+.widget.oslobyMagenta .header h3 {
+    color: #EC008C;
+}
+
+/**
+  Cyan
+  */
+
+.widget.oslobyCyan .header {
+    background-color: #00aeef;
+}
+
+.widget.oslobyCyan .header h2,
+.widget.oslobyCyan .header h3 {
+    color: #00aeef;
+}
+
+/**
+  Lime
+  */
+
+.widget.oslobyLime .header {
+    background-color: #8dc63f;
+}
+
+.widget.oslobyLime .header h2,
+.widget.oslobyLime .header h3 {
+    color: #8dc63f;
+}
+
+/**
+  Purple
+  */
+
+.widget.oslobyPurple .header {
+    background-color: #5b57a6;
+}
+
+.widget.oslobyPurple .header h2,
+.widget.oslobyPurple .header h3 {
+    color: #5b57a6;
+}

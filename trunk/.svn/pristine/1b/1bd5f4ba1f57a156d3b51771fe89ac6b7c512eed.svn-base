@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!--field group for section stories widget -->
+  <field-group name="stories-widget-general-fields">
+    <field name="view" type="enumeration">
+      <ui:label>View</ui:label>
+      <ui:description>This option is used to select the view for the stories widget.</ui:description>
+      <enumeration value="default">
+        <ui:label>Default</ui:label>
+      </enumeration>
+      <enumeration value="headline">
+        <ui:label>Headline</ui:label>
+      </enumeration>
+      <enumeration value="topstory">
+        <ui:label>Top story</ui:label>
+      </enumeration>
+      <enumeration value="newsletter">
+        <ui:label>Newsletter</ui:label>
+      </enumeration>
+      <enumeration value="custom">
+        <ui:label>Custom</ui:label>
+      </enumeration>
+      <ui:value-if-unset>default</ui:value-if-unset>
+    </field>
+
+    <field name="groupName" type="basic" mime-type="text/plain">
+      <ui:label>Group name</ui:label>
+      <ui:description>The name of the group from where the widget will fetch content</ui:description>
+    </field>
+  </field-group>
+
+  <field-group name="stories-widget-default-fields">
+
+    <field name="sourceDefault" type="enumeration">
+      <ui:label>Source</ui:label>
+      <ui:description>This option is used to select the source for the stories widget.</ui:description>
+      <enumeration value="desked">
+        <ui:label>Desked content</ui:label>
+      </enumeration>
+      <enumeration value="automatic">
+        <ui:label>Automatic list</ui:label>
+      </enumeration>
+      <enumeration value="fallback">
+        <ui:label>Desked content with fallback to list</ui:label>
+      </enumeration>
+      <ui:value-if-unset>desked</ui:value-if-unset>
+    </field>
+    <field name="beginDefault" type="number">
+      <ui:label>Begin</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+      <ui:value-if-unset>1</ui:value-if-unset>
+    </field>
+
+    <field name="endDefault" type="number">
+      <ui:label>End</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+    </field>
+
+    <field name="showSectionTitleDefault" type="boolean">
+      <ui:label>Show section name as title</ui:label>
+      <ui:description>When enabled, the home section of the first article is shown on top of the widget,
+        before rendering the content items within this widget.
+      </ui:description>
+      <ui:boolean-label value="true">Show the name of the section</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the section name</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="selectSectionNameDefault" type="enumeration">
+      <ui:label>Section name</ui:label>
+      <ui:description>This option is used to select which section name to display.</ui:description>
+      <enumeration value="current">
+        <ui:label>Current section</ui:label>
+      </enumeration>
+      <enumeration value="first">
+        <ui:label>First article home section</ui:label>
+      </enumeration>
+      <ui:value-if-unset>current</ui:value-if-unset>
+    </field>
+
+    <field name="maxCharactersDefault" type="number">
+      <ui:label>Maximum Characters</ui:label>
+      <ui:description>Maximum number of characters of the lead text that will be displayed.
+        The widget will cut off the text around the character limit,
+        cutting off at the first space that can be found after the max character.
+        The widget will not cut off words.
+        If the lead text is shortened an ellipsis will be shown, putting three dots behind the text (...).
+        If no maxCharacter is defined, the complete lead will be displayed (default setting)
+      </ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>###</format>
+    </field>
+
+    <field name="headingSizeDefault" type="number">
+      <ui:label>Heading size</ui:label>
+      <ui:description>Size of the header to be used to display the article title.
+        This is measured from 1-6, matching the HTML elements h1 to h6.
+      </ui:description>
+      <constraints>
+        <minimum>1</minimum>
+        <maximum>6</maximum>
+      </constraints>
+      <format>#</format>
+      <ui:value-if-unset>3</ui:value-if-unset>
+    </field>
+
+    <field name="readMoreDefault" type="basic" mime-type="text/plain">
+      <ui:label>Read more text</ui:label>
+      <ui:description>Setting this view option will display the provided string at the end of the lead,
+        linking to the article page. Typically this is used to render a link like "Read more...".
+        If none is provided, no such link will be displayed
+      </ui:description>
+    </field>
+
+    <field name="imagePositionDefault" type="enumeration">
+      <ui:label>Image Position</ui:label>
+      <ui:description>Position of the image relative to the lead text. Valid options are left or right.</ui:description>
+      <enumeration value="left">
+        <ui:label>Left</ui:label>
+      </enumeration>
+      <enumeration value="right">
+        <ui:label>Right</ui:label>
+      </enumeration>
+      <enumeration value="top">
+        <ui:label>Top</ui:label>
+      </enumeration>
+      <ui:value-if-unset>left</ui:value-if-unset>
+    </field>
+
+    <field name="showCommentsDefault" type="boolean">
+      <ui:label>Show comments</ui:label>
+      <ui:description>Enabling this options adds the term "23 comments" to the headline</ui:description>
+      <ui:boolean-label value="true">Show the number of comments</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the number of comments</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+
+  <field-group name="stories-widget-newsletter-fields">
+    <field name="sourceNewsletter" type="enumeration">
+      <ui:label>Source</ui:label>
+      <ui:description>This option is used to select the source for the stories widget.</ui:description>
+      <enumeration value="desked">
+        <ui:label>Desked content</ui:label>
+      </enumeration>
+      <enumeration value="automatic">
+        <ui:label>Automatic list</ui:label>
+      </enumeration>
+      <enumeration value="fallback">
+        <ui:label>Desked content with fallback to list</ui:label>
+      </enumeration>
+      <ui:value-if-unset>desked</ui:value-if-unset>
+    </field>
+    <field name="beginNewsletter" type="number">
+      <ui:label>Begin</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+      <ui:value-if-unset>1</ui:value-if-unset>
+    </field>
+
+    <field name="endNewsletter" type="number">
+      <ui:label>End</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+    </field>
+
+    <field name="showSectionTitleNewsletter" type="boolean">
+      <ui:label>Show section name as title</ui:label>
+      <ui:description>When enabled, the home section of the first article is shown on top of the widget,
+        before rendering the content items within this widget.
+      </ui:description>
+      <ui:boolean-label value="true">Show the name of the section</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the section name</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="selectSectionNameNewsletter" type="enumeration">
+      <ui:label>Section name</ui:label>
+      <ui:description>This option is used to select which section name to display.</ui:description>
+      <enumeration value="current">
+        <ui:label>Current section</ui:label>
+      </enumeration>
+      <enumeration value="first">
+        <ui:label>First article home section</ui:label>
+      </enumeration>
+      <ui:value-if-unset>current</ui:value-if-unset>
+    </field>
+    <field name="maxCharactersNewsletter" type="number">
+      <ui:label>Maximum Characters</ui:label>
+      <ui:description>Maximum number of characters of the lead text that will be displayed.
+        The widget will cut off the text around the character limit,
+        cutting off at the first space that can be found after the max character.
+        The widget will not cut off words.
+        If the lead text is shortened an ellipsis will be shown, putting three dots behind the text (...).
+        If no maxCharacter is defined, the complete lead will be displayed (default setting)
+      </ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>###</format>
+    </field>
+
+    <field name="headingSizeNewsletter" type="number">
+      <ui:label>Heading size</ui:label>
+      <ui:description>Size of the header to be used to display the article title.
+        This is measured from 1-6, matching the HTML elements h1 to h6.
+      </ui:description>
+      <constraints>
+        <minimum>1</minimum>
+        <maximum>6</maximum>
+      </constraints>
+      <format>#</format>
+      <ui:value-if-unset>3</ui:value-if-unset>
+    </field>
+
+    <field name="readMoreNewsletter" type="basic" mime-type="text/plain">
+      <ui:label>Read more text</ui:label>
+      <ui:description>Setting this view option will display the provided string at the end of the lead,
+        linking to the article page. Typically this is used to render a link like "Read more...".
+        If none is provided, no such link will be displayed
+      </ui:description>
+    </field>
+
+    <field name="imagePositionNewsletter" type="enumeration">
+      <ui:label>Image Position</ui:label>
+      <ui:description>Position of the image relative to the lead text. Valid options are left or right.</ui:description>
+      <enumeration value="left">
+        <ui:label>Left</ui:label>
+      </enumeration>
+      <enumeration value="right">
+        <ui:label>Right</ui:label>
+      </enumeration>
+      <enumeration value="top">
+        <ui:label>ToshowSectionTitle</ui:label>
+      </enumeration>
+      <ui:value-if-unset>left</ui:value-if-unset>
+    </field>
+
+    <!--<field name="showCommentsNewsletter" type="boolean">
+      <ui:label>Show comments</ui:label>
+      <ui:description>Enabling this options adds the term "23 comments" to the headline</ui:description>
+      <ui:boolean-label value="true">Show the number of comments</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the number of comments</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>-->
+  </field-group>
+
+  <field-group name="stories-widget-headline-fields">
+    <field name="sourceHeadline" type="enumeration">
+      <ui:label>Source</ui:label>
+      <ui:description>This option is used to select the source for the stories widget.</ui:description>
+      <enumeration value="desked">
+        <ui:label>Desked content</ui:label>
+      </enumeration>
+      <enumeration value="automatic">
+        <ui:label>Automatic list</ui:label>
+      </enumeration>
+      <enumeration value="fallback">
+        <ui:label>Desked content with fallback to list</ui:label>
+      </enumeration>
+      <ui:value-if-unset>desked</ui:value-if-unset>
+    </field>
+    <field name="beginHeadline" type="number">
+      <ui:label>Begin</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+      <ui:value-if-unset>1</ui:value-if-unset>
+    </field>
+
+    <field name="endHeadline" type="number">
+      <ui:label>End</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+    </field>
+
+    <field name="showSectionTitleHeadline" type="boolean">
+      <ui:label>Show section name as title</ui:label>
+      <ui:description>When enabled, the home section of the first article is shown on top of the widget,
+        before rendering the content items within this widget.
+      </ui:description>
+      <ui:boolean-label value="true">Show the name of the section</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the section name</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="selectSectionNameHeadline" type="enumeration">
+      <ui:label>Section name</ui:label>
+      <ui:description>This option is used to select which section name to display.</ui:description>
+      <enumeration value="current">
+        <ui:label>Current section</ui:label>
+      </enumeration>
+      <enumeration value="first">
+        <ui:label>First article home section</ui:label>
+      </enumeration>
+      <ui:value-if-unset>current</ui:value-if-unset>
+    </field>
+    <field name="headingSizeHeadline" type="number">
+      <ui:label>Heading size</ui:label>
+      <ui:description>Size of the header to be used to display the article title.
+        This is measured from 1-6, matching the HTML elements h1 to h6.
+      </ui:description>
+      <constraints>
+        <minimum>1</minimum>
+        <maximum>6</maximum>
+      </constraints>
+      <format>#</format>
+      <ui:value-if-unset>6</ui:value-if-unset>
+    </field>
+
+    <field name="showCommentsHeadline" type="boolean">
+      <ui:label>Show comments</ui:label>
+      <ui:description>Enabling this options adds the term "23 comments" to the headline</ui:description>
+      <ui:boolean-label value="true">Show the number of comments</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the number of comments</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+
+  <field-group name="stories-widget-topstory-fields">
+    <field name="sourceTopstory" type="enumeration">
+      <ui:label>Source</ui:label>
+      <ui:description>This option is used to select the source for the stories widget.</ui:description>
+      <enumeration value="desked">
+        <ui:label>Desked content</ui:label>
+      </enumeration>
+      <enumeration value="automatic">
+        <ui:label>Automatic list</ui:label>
+      </enumeration>
+      <enumeration value="fallback">
+        <ui:label>Desked content with fallback to list</ui:label>
+      </enumeration>
+      <ui:value-if-unset>desked</ui:value-if-unset>
+    </field>
+    <field name="beginTopstory" type="number">
+      <ui:label>Begin</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+      <ui:value-if-unset>1</ui:value-if-unset>
+    </field>
+
+    <field name="endTopstory" type="number">
+      <ui:label>End</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+    </field>
+
+    <field name="showSectionTitleTopstory" type="boolean">
+      <ui:label>Show section name as title</ui:label>
+      <ui:description>When enabled, the home section of the first article is shown on top of the widget,
+        before rendering the content items within this widget.
+      </ui:description>
+      <ui:boolean-label value="true">Show the name of the section</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the section name</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="selectSectionNameTopstory" type="enumeration">
+      <ui:label>Section name</ui:label>
+      <ui:description>This option is used to select which section name to display.</ui:description>
+      <enumeration value="current">
+        <ui:label>Current section</ui:label>
+      </enumeration>
+      <enumeration value="first">
+        <ui:label>First article home section</ui:label>
+      </enumeration>
+      <ui:value-if-unset>current</ui:value-if-unset>
+    </field>
+
+    <field name="enableSlideshowTopstory" type="boolean">
+      <ui:label>Enable slidehow</ui:label>
+      <ui:description>This controls how related images are shown. Either a slide show embedded in the page, or a list
+        with links to each image
+      </ui:description>
+      <ui:boolean-label value="true">Show related teaser images as a slide show</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show related teaser images as a slide show</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="imagePositionTopstory" type="enumeration">
+      <ui:label>Image position</ui:label>
+      <ui:description>Position of the image in the topstory. Valid options are aboveTitle or belowTitle.
+      </ui:description>
+      <enumeration value="aboveTitle">
+        <ui:label>Above title</ui:label>
+      </enumeration>
+      <enumeration value="belowTitle">
+        <ui:label>Below title</ui:label>
+      </enumeration>
+      <ui:value-if-unset>aboveTitle</ui:value-if-unset>
+    </field>
+
+    <field name="showCaptionTopstory" type="enumeration">
+      <ui:label>Show caption</ui:label>
+      <ui:description>Option to configure the image caption. Three valid options:
+        hide will not show the caption at all
+        always will always display the caption on a semi-transparent overlay on the image,
+        hover will display the caption on a semi-transparent overlay on the image when mouse is hovering on the image
+      </ui:description>
+      <enumeration value="hover">
+        <ui:label>Mouse hover</ui:label>
+      </enumeration>
+      <enumeration value="always">
+        <ui:label>Always</ui:label>
+      </enumeration>
+      <enumeration value="hide">
+        <ui:label>Hide</ui:label>
+      </enumeration>
+      <ui:value-if-unset>hover</ui:value-if-unset>
+    </field>
+
+    <field name="showCommentsTopstory" type="boolean">
+      <ui:label>Show comments</ui:label>
+      <ui:description>Enabling this options adds the term "23 comments" to the headline</ui:description>
+      <ui:boolean-label value="true">Show the number of comments</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the number of comments</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+
+  <field-group name="stories-widget-custom-fields">
+    <field name="sourceCustom" type="enumeration">
+      <ui:label>Source</ui:label>
+      <ui:description>This option is used to select the source for the stories widget.</ui:description>
+      <enumeration value="desked">
+        <ui:label>Desked content</ui:label>
+      </enumeration>
+      <enumeration value="automatic">
+        <ui:label>Automatic list</ui:label>
+      </enumeration>
+      <enumeration value="fallback">
+        <ui:label>Desked content with fallback to list</ui:label>
+      </enumeration>
+      <ui:value-if-unset>desked</ui:value-if-unset>
+    </field>
+    <field name="beginCustom" type="number">
+      <ui:label>Begin</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+      <ui:value-if-unset>1</ui:value-if-unset>
+    </field>
+
+    <field name="endCustom" type="number">
+      <ui:label>End</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+    </field>
+
+    <field name="showSectionTitleCustom" type="boolean">
+      <ui:label>Show section name as title</ui:label>
+      <ui:description>When enabled, the home section of the first article is shown on top of the widget,
+        before rendering the content items within this widget.
+      </ui:description>
+      <ui:boolean-label value="true">Show the name of the section</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the section name</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="selectSectionNameCustom" type="enumeration">
+      <ui:label>Section name</ui:label>
+      <ui:description>This option is used to select which section name to display.</ui:description>
+      <enumeration value="current">
+        <ui:label>Current section</ui:label>
+      </enumeration>
+      <enumeration value="first">
+        <ui:label>First article home section</ui:label>
+      </enumeration>
+      <ui:value-if-unset>current</ui:value-if-unset>
+    </field>
+
+    <field name="headingSizeCustom" type="number">
+      <ui:label>Heading size</ui:label>
+      <ui:description>Size of the header to be used to display the article title.
+        This is measured from 1-6, matching the HTML elements h1 to h6.
+      </ui:description>
+      <constraints>
+        <minimum>1</minimum>
+        <maximum>6</maximum>
+      </constraints>
+      <format>#</format>
+      <ui:value-if-unset>3</ui:value-if-unset>
+    </field>
+
+    <field name="showIntroCustom" type="boolean">
+      <ui:label>Show lead text</ui:label>
+      <ui:boolean-label value="true">Show lead text of the story item</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show lead text of the story item</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="maxCharactersCustom" type="number">
+      <ui:label>Max Characters</ui:label>
+      <ui:description>Maximum number of characters of the lead text that will be displayed</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>###</format>
+    </field>
+
+    <field name="readMoreCustom" type="basic" mime-type="text/plain">
+      <ui:label>Read more text</ui:label>
+      <ui:description>Setting this view option will display the provided string at the end of the lead text,
+        linking to the article page. Typically this is used to render a link like "Read more...".
+        If none is provided, no such link will be displayed
+      </ui:description>
+    </field>
+
+    <field name="showImageCustom" type="boolean">
+      <ui:label>Show image</ui:label>
+      <ui:boolean-label value="true">Show related images</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show related images</ui:boolean-label>
+      <ui:description>Defines if the widget will display related images or not</ui:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="imagePositionCustom" type="enumeration">
+      <ui:label>Image Position</ui:label>
+      <ui:description>Position of the image relative to the lead text. Valid options are left or right or top.
+      </ui:description>
+      <enumeration value="top">
+        <ui:label>Top</ui:label>
+      </enumeration>
+      <enumeration value="left">
+        <ui:label>Left</ui:label>
+      </enumeration>
+      <enumeration value="right">
+        <ui:label>Right</ui:label>
+      </enumeration>
+      <ui:value-if-unset>left</ui:value-if-unset>
+    </field>
+
+    <field name="imageWidthCustom" type="enumeration">
+      <ui:label>Image Width</ui:label>
+      <ui:description>Width of the image in right or left position</ui:description>
+      <enumeration value="80px"/>
+      <enumeration value="140px"/>
+      <enumeration value="220px"/>
+      <enumeration value="300px"/>
+      <enumeration value="380px"/>
+      <enumeration value="460px"/>
+      <enumeration value="620px"/>
+      <ui:value-if-unset>140px</ui:value-if-unset>
+    </field>
+
+    <field name="textWrapCustom" type="boolean">
+      <ui:label>Wrap text around image</ui:label>
+      <ui:boolean-label value="true">Wrap the text around the image</ui:boolean-label>
+      <ui:boolean-label value="false">Image displayed next to the text</ui:boolean-label>
+      <ui:description>Specifies whether to float the image inside the lead text, or display it next to the text
+      </ui:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="enableSlideshowCustom" type="boolean">
+      <ui:label>Enable slidehow</ui:label>
+      <ui:description>This controls how related images are shown. Either a slide show embedded in the page, or a list
+        with links to each image
+      </ui:description>
+      <ui:boolean-label value="true">Show related teaser images as a slide show</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show related teaser images as a slide show</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showCaptionCustom" type="enumeration">
+      <ui:label>Show caption</ui:label>
+      <ui:description>Option to configure the image caption. Three valid options:
+        hide will not show the caption at all
+        always will always display the caption on a semi-transparent overlay on the image,
+        hover will display the caption on a semi-transparent overlay on the image when mouse is hovering on the image
+      </ui:description>
+      <enumeration value="hover">
+        <ui:label>Mouse hover</ui:label>
+      </enumeration>
+      <enumeration value="always">
+        <ui:label>Always</ui:label>
+      </enumeration>
+      <enumeration value="hide">
+        <ui:label>Hide</ui:label>
+      </enumeration>
+      <ui:value-if-unset>hover</ui:value-if-unset>
+    </field>
+
+    <field name="relatedContentHeaderCustom" type="basic" mime-type="text/plain">
+      <ui:label>Header to related content</ui:label>
+      <ui:description>Will create a simple header to be displayed above the related items.</ui:description>
+    </field>
+
+    <field name="showRelatedCustom" type="enumeration" multiple="true">
+      <ui:label>Show related articles</ui:label>
+      <ui:description>Select from which relation box to display related content. You can select multiple relation boxes.
+      </ui:description>
+      <enumeration value="none">
+        <ui:label>None</ui:label>
+        <ui:description>Will not display any related content. This is the default value if none is selected.
+        </ui:description>
+      </enumeration>
+      <enumeration value="teaserRel">
+        <ui:label>Teaser</ui:label>
+        <ui:description>Display related content from the 'Related teaser' box.</ui:description>
+      </enumeration>
+      <enumeration value="storyRel">
+        <ui:label>Story</ui:label>
+        <ui:description>Display related content from the 'Related story' box.</ui:description>
+      </enumeration>
+      <enumeration value="pictureRel">
+        <ui:label>Photo</ui:label>
+        <ui:description>Display related content from the 'Related photo' box.</ui:description>
+      </enumeration>
+      <enumeration value="videoRel">
+        <ui:label>Video</ui:label>
+        <ui:description>Display related content from the 'Related video' box.</ui:description>
+      </enumeration>
+      <enumeration value="mediaRel">
+        <ui:label>Media</ui:label>
+        <ui:description>Display related content from the 'Related media' box.</ui:description>
+      </enumeration>
+      <ui:value-if-unset>none</ui:value-if-unset>
+    </field>
+
+    <field name="showCommentsCustom" type="boolean">
+      <ui:label>Show comments</ui:label>
+      <ui:description>Enabling this options adds the term "23 comments" to the headline</ui:description>
+      <ui:boolean-label value="true">Show the number of comments</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the number of comments</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="showSectionNameCustom" type="boolean">
+      <ui:label>Show the section name</ui:label>
+      <ui:description>Enabling this options will add the section name above the article</ui:description>
+      <ui:boolean-label value="true">Show the section name</ui:boolean-label>
+      <ui:boolean-label value="false">Don't show the section name</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="sectionNameLinkCustom" type="boolean">
+      <ui:label>Provide a link to the section</ui:label>
+      <ui:description>Will make the section name,
+        which will be displayed if 'Show the section name' is turned on,
+        clickable and create a link to that section.
+      </ui:description>
+      <ui:boolean-label value="true">Create section link</ui:boolean-label>
+      <ui:boolean-label value="false">Don't create a section link</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="sectionNamePrefixCustom" type="basic" mime-type="text/plain">
+      <ui:label>Prefix for the section name</ui:label>
+      <ui:description>String containing prefix text for the section Name. If not provided no prefix will be displayed.
+      </ui:description>
+    </field>
+  </field-group>
+
+  <field-group name="stories-widget-advanced-fields">
+    <field name="sectionUniqueName" type="basic" mime-type="text/plain">
+      <ui:label>Section Unique Name</ui:label>
+      <ui:description>Section uniquename of the section the widget will look into for a group with content to be
+        displayed in the widget.
+        Setting this parameter will override the default current section.
+      </ui:description>
+    </field>
+
+    <field name="includeSubsections" type="boolean">
+      <ui:label>Include Subsections</ui:label>
+      <ui:description>If the source for the stories widget is automatic, this field will decide if we use subsections or
+        not.
+      </ui:description>
+      <ui:boolean-label value="true">Include subsections if the source is automatic</ui:boolean-label>
+      <ui:boolean-label value="false">Don't include subsections</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="listSort" type="enumeration">
+      <ui:label>Automatic List sorting</ui:label>
+      <ui:description>If the source for the stories widget is automatic, this will decide if we sort by publish date or
+        last modified date.
+      </ui:description>
+      <enumeration value="publishDate">
+        <ui:label>Publish Date (newest first)</ui:label>
+      </enumeration>
+      <enumeration value="lastModifiedDate">
+        <ui:label>Last Modified Date (newest first)</ui:label>
+      </enumeration>
+      <enumeration value="+publishDate">
+        <ui:label>Publish Date (oldest first)</ui:label>
+      </enumeration>
+      <enumeration value="+lastModifiedDate">
+        <ui:label>Last Modified Date (oldest first)</ui:label>
+      </enumeration>
+      <ui:value-if-unset>publishDate</ui:value-if-unset>
+    </field>
+
+    <field name="contentType" type="basic" mime-type="text/plain">
+      <ui:label>Content type</ui:label>
+      <ui:description>Specify the name of the content type that the widget will use.
+        Can be multiple content types, comma separated. Other content types will be ignored by the widget.
+      </ui:description>
+    </field>
+
+    <field name="imageVersion" type="basic" mime-type="text/plain">
+      <ui:label>Image representation</ui:label>
+      <ui:description>Name of the image representation to be used.</ui:description>
+      <ui:value-if-unset>w140</ui:value-if-unset>
+    </field>
+
+    <field name="softCrop" type="boolean">
+      <ui:label>Soft cropping</ui:label>
+      <ui:description>Defines if the widget should use the the original uncropped image or
+        if the widget should ise a cropped image.
+        Cropped images are recommended for full width images.
+        Original image is recommended for portrait image
+      </ui:description>
+      <ui:boolean-label value="true">Use cropped image</ui:boolean-label>
+      <ui:boolean-label value="false">Use original image</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+
+    <field name="linkBehaviour" type="enumeration">
+      <ui:label>Link clicked behaviour</ui:label>
+      <ui:description>Defines the the behaviour of user click on article title, can goto article page or article's home
+        section page
+      </ui:description>
+      <enumeration value="articlePage">
+        <ui:label>Show article page</ui:label>
+      </enumeration>
+      <enumeration value="sectionPage">
+        <ui:label>Show home section page</ui:label>
+      </enumeration>
+      <ui:value-if-unset>articlePage</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <!--content type definitions -->
+  <!-- content type for section stories widget -->
+  <content-type name="widget_stories">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Stories Widget</ui:label>
+    <ui:description>A widget that produces a list of stories in a section</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>General configuration of the widget</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="stories-widget-general-fields"/>
+    </panel>
+
+    <panel name="default">
+      <ui:label>Default</ui:label>
+      <ui:description>Configuration of the default view</ui:description>
+      <ref-field-group name="stories-widget-default-fields"/>
+    </panel>
+
+    <panel name="headline">
+      <ui:label>Headline</ui:label>
+      <ui:description>Configuration of the headline view</ui:description>
+      <ref-field-group name="stories-widget-headline-fields"/>
+    </panel>
+
+    <panel name="topstory">
+      <ui:label>Top Story</ui:label>
+      <ui:description>Configuration of the top story view</ui:description>
+      <ref-field-group name="stories-widget-topstory-fields"/>
+    </panel>
+
+    <panel name="newsletter">
+      <ui:label>Newsletter</ui:label>
+      <ui:description>Configuration of the newsletter view</ui:description>
+      <ref-field-group name="stories-widget-newsletter-fields"/>
+    </panel>
+
+    <panel name="custom">
+      <ui:label>Custom</ui:label>
+      <ui:description>Configuration of the custom view</ui:description>
+      <ref-field-group name="stories-widget-custom-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="stories-widget-advanced-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-public-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Content Summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

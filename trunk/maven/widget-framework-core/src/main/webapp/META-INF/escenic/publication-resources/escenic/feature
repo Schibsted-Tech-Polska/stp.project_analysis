@@ -1,0 +1,25 @@
+###
+ # File           : $Header: //depot/projects/template-framework/src/main/webapp/META-INF/escenic/publication-resources/escenic/feature#1 $
+ # Last edited by : $Author: shaon $ $Date: 2009/06/22 $
+ # Version        : $Revision: #1 $
+ #
+ # Copyright (C) 2009 Escenic AS.
+ # All Rights Reserved.  No use, copying or distribution of this
+ # work may be made except in accordance with a valid license
+ # agreement from Escenic AS.  This notice must be included on
+ # all copies, modifications and derivatives of this work.
+###
+
+# Enable dynamic image versions. Images will automatically be scaled on demand
+multimedia.image.virtualVersions=true
+
+# article listing age
+article.list.age.max=2880
+article.list.age.default=2880
+
+qualification.userQualificationEnabled=true
+usercontent.picture.file.maxsize=5242880
+qualification.flaggingThreshold=5
+qualification.flaggedSectionUniqueName=flagged
+
+

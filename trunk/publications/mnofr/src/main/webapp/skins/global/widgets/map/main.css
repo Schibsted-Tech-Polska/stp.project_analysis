@@ -1,0 +1,29 @@
+.span10 .map,
+.span10.map{
+    height:480px;
+    width: 980px;
+}
+
+.span7 .map
+.span7.map {
+    height: 480px;
+    width: 680px;
+}
+
+.span6 .map,
+.span6.map {
+    height: 380px;
+    width: 580px;
+}
+
+.span4 .map,
+.span4.map{
+    height:380px;
+    width:380px;
+}
+
+.span3 .map,
+.span3.map{
+    width:280px;
+        height:180px;
+}

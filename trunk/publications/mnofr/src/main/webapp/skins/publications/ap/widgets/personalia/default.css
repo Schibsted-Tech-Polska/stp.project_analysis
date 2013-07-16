@@ -1,0 +1,46 @@
+.personalia .pager {
+    padding-bottom: 0;
+}
+.personalia .pager,
+.personalia .pager li {
+    margin-bottom: 0;
+}
+
+.personaliaAdWrapper h3 {
+    margin-bottom: 5px;
+}
+
+.personalia.searchbox .pillBox {
+    margin-right: 10px;
+}
+
+.personalia.searchbox div.dateChoice {
+    display: none;
+}
+
+/* sorter */
+.sorter li {
+    display: inline-block;
+	margin: 0 5px 10px 0;
+}
+
+.sorter .active.asc:before,
+.sorter .active.desc:before {
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
+	content: "";
+	display: inline-block;
+	font-weight: bold;
+		text-align: center;
+	margin-right: 5px;
+	width: 16px;
+		height: 16px;
+		line-height: 18px;
+}
+.sorter .active.asc:before {
+	content: "\02C4";
+}
+.sorter .active.desc:before {
+	content: "\02C5";
+}

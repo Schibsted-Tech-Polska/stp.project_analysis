@@ -1,0 +1,7 @@
+.loader {
+    background:url(/skins/global/gfx/loader.gif) center center no-repeat #000;
+    opacity:.5;
+    position:absolute;
+    width:100%;
+        height:100%;
+}

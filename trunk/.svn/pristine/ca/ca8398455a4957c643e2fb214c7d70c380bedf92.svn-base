@@ -1,0 +1,7 @@
+#mobileWeather widget
+mobileWeather.widget.temperature.label=Temperature
+mobileWeather.widget.humidity.label=Humidity
+mobileWeather.widget.wind.label=Wind
+mobileWeather.widget.high.label=H
+mobileWeather.widget.low.label=L
+mobileWeather.widget.error.message=Sorry, currently weather forecasting for the city '{0}' is not available.

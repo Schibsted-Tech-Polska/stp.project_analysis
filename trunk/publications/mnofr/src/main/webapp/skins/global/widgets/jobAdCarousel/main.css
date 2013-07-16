@@ -1,0 +1,11 @@
+.desktop.jobAdCarousel.billboard,
+.desktop.jobAdCarousel.billboard-wide,
+.desktop.jobAdCarousel.billboard-with-tabs,
+.desktop.jobAdCarousel.billboard-with-header {
+    margin: 0 -10px;
+}
+
+.jobAdCarousel {
+    margin-bottom: 10px;
+    padding: 0; /* Resets mobile grid super-feature */
+}

@@ -1,0 +1,10 @@
+.relatedContents.stories ul{
+    background-color:#ececec;
+    padding: 5px 10px;
+    border:none;
+}
+
+.relatedContents.stories ul a{
+    color:black;
+    line-height:14px;
+}

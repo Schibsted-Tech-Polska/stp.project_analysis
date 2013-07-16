@@ -1,0 +1,27 @@
+#bmiCalculator .bmiScale {
+    width: 150px;
+}
+
+#bmiCalculator dl {
+    margin: 6px 0;
+}
+
+#bmiCalculator dt {
+    font-weight: bold;
+    float: left;
+    width: 70px;
+}
+
+#bmiCalculator dd {
+    margin: 0 0 0.4em;
+    float: left;
+}
+
+#bmiCalculator .userMessage {
+    margin: 8px 0;
+}
+
+#bmiCalculator .rightAlignedLabels {
+    padding-left: 80px;
+    position: relative;
+}

@@ -1,0 +1,15 @@
+.relatedContents.factboxes{
+	margin-top:15px;
+}
+
+.relatedContents.factboxes .content{
+    background-color:#F9F9F9;
+    padding: 5px 10px;
+    border:none;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.relatedContents.factboxes header h2{
+	background: black;
+}

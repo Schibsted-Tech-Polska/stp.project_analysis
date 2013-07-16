@@ -1,0 +1,83 @@
+.popularList a {
+    text-decoration: none;
+}
+.popularList .withDate time{
+    padding-right:5px;
+}
+.popularList a:hover {
+    text-decoration: underline;
+}
+
+
+.popularList header{
+    border-top: 1px solid #b6222a;
+    background: #e23d30;
+    background: -moz-linear-gradient(top,  #e23d30 0%, #af302d 76%, #a04032 77%, #544540 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e23d30), color-stop(76%,#af302d), color-stop(77%,#a04032), color-stop(100%,#544540));
+    background: -webkit-linear-gradient(top,  #e23d30 0%,#af302d 76%,#a04032 77%,#544540 100%);
+    background: -o-linear-gradient(top,  #e23d30 0%,#af302d 76%,#a04032 77%,#544540 100%);
+    background: -ms-linear-gradient(top,  #e23d30 0%,#af302d 76%,#a04032 77%,#544540 100%);
+    background: linear-gradient(to bottom,  #e23d30 0%,#af302d 76%,#a04032 77%,#544540 100%);
+
+    position: relative;
+}
+.ie9 .popularList header{
+    filter:none;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UyM2QzMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc2JSIgc3RvcC1jb2xvcj0iI2FmMzAyZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc3JSIgc3RvcC1jb2xvcj0iI2EwNDAzMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1NDQ1NDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+}
+.ie8 .popularList header{
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e23d30', endColorstr='#544540',GradientType=0 );
+}
+
+.popularList header:before {
+    content: url(/skins/publications/lindesnes/gfx/lindesnes-red.png);
+    position: absolute;
+    top: -3px;
+    left: 10px;
+}
+
+.popularList header h2 {
+    padding-left: 40px;
+    font-weight:bold;
+    font-size: 14px;
+    color:#fff;
+    text-transform:none;
+    line-height: 19px;
+    height: 20px;
+    background: transparent;
+}
+.hoverFix {
+    padding-right: 40px;
+}
+
+.sectionPage .span3 .popularList.simple .content {
+    height:118px;
+    overflow:hidden;
+}
+
+.sectionPage .span3 .popularList.simple .content:hover {
+    overflow-y:auto;
+}
+
+.sectionPage .span3 .popularList.simple .content a, .sectionPage .span3 .popularList.simple .content a time, .popularList .withDate time,  {
+    font-size: 10px;
+    color: black;
+    font-weight: 500;
+    padding-right: 15px; 
+}
+
+.popularList .withDate a {
+    font-size:12px;
+    color:black;
+    text-decoration:none;
+}
+.sectionPage .span3 .popularList.simple .content a, {
+    padding-right:19px;
+}
+
+.sectionPage .span3 .popularList.simple .content:hover a {
+    padding-right:0;
+}
+.singleLine .popularList .content li {
+    border-bottom:none;
+}

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!-- define navigation widget configuration field groups -->
+  <!-- general fields -->
+  <field-group name="navigation-general-fields">
+    <field name="view" type="enumeration">
+      <ui:label>View</ui:label>
+      <ui:description>View used to render the widget</ui:description>
+      <enumeration value="breadcrumb">
+        <ui:label>Breadcrumb</ui:label>
+      </enumeration>
+      <enumeration value="pagetitle">
+        <ui:label>Page title</ui:label>
+      </enumeration>
+      <enumeration value="sectiontitle">
+        <ui:label>Section title</ui:label>
+      </enumeration>
+      <ui:value-if-unset>breadcrumb</ui:value-if-unset>
+    </field>
+  </field-group>
+  <!-- breadcrumb view fields-->
+  <field-group name="navigation-breadcrumb-fields">
+    <field mime-type="text/plain" type="basic" name="menuName">
+      <ui:label>Menu tree name</ui:label>
+      <ui:description>The name of the menu tree which will be used by the navigation widget</ui:description>
+      <constraints>
+        <required>false</required>
+      </constraints>
+    </field>
+    <field type="boolean" name="displayArticleTitle">
+      <ui:label>Show article in bread crumbs?</ui:label>
+      <ui:description>The bread crumbs show the sections and optionally this content item. If the item is shown, the
+        title of the item is shown in the bread crumbs.
+      </ui:description>
+      <ui:boolean-label value="true">Display the content item in the bread crumbs</ui:boolean-label>
+      <ui:boolean-label value="false">Don't display the content item in the bread crumbs</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="label" type="basic" mime-type="text/plain">
+      <ui:label>Label</ui:label>
+      <ui:description>Label for bread crumb path</ui:description>
+    </field>
+    <field name="separator" type="basic" mime-type="text/plain">
+      <ui:label>Separator</ui:label>
+      <ui:description>Character to use as separator</ui:description>
+    </field>
+  </field-group>
+  <!-- pagetitle view fields-->
+  <field-group name="navigation-pagetitle-fields">
+    <field name="pagetitle" type="basic" mime-type="text/plain">
+      <ui:label>Page title</ui:label>
+      <ui:description>The page title to display</ui:description>
+    </field>
+    <field name="pagetitlelinked" type="boolean">
+      <ui:label>Linked</ui:label>
+      <ui:description>Make the page title linked to the section</ui:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+  </field-group>
+  <!-- sectiontitle view fields-->
+  <field-group name="navigation-sectiontitle-fields">
+    <field name="sectionheader" type="basic" mime-type="text/plain">
+      <ui:label>Section header</ui:label>
+      <ui:description>The section header to display</ui:description>
+    </field>
+    <field name="sectionuniquename" type="basic" mime-type="text/plain">
+      <ui:label>Section Unique Name</ui:label>
+      <ui:description>The unique name of the section to link to</ui:description>
+    </field>
+    <field name="sectionheaderlink" type="boolean">
+      <ui:label>Link section header</ui:label>
+      <ui:description>Make the section header linked to the section URL</ui:description>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+	      <required>true</required>
+	    </constraints>
+    </field>
+    <field name="sectionlinktext" type="basic" mime-type="text/plain">
+      <ui:label>Section link text</ui:label>
+      <ui:description>The link text for the additional link</ui:description>
+    </field>
+  </field-group>
+
+  <field-group name="navigation-advanced-fields">
+    <field name="updateInterval" type="number">
+      <ui:label>Update Interval (Minutes)</ui:label>
+      <ui:description>Update interval for navigation in minutes</ui:description>
+      <format>##</format>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>60</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <!--define navigation widget content-type -->
+  <content-type name="widget_navigation">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Navigation Widget</ui:label>
+    <ui:description>A widget for displaying navigational path of the current section page or article page
+    </ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The general fields for configuring navigation widget</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="navigation-general-fields"/>
+    </panel>
+
+    <panel name="breadcrumb">
+      <ui:label>Breadcrumb</ui:label>
+      <ui:description>The breadcrumb fields for configuring the navigation widget</ui:description>
+      <ref-field-group name="navigation-breadcrumb-fields"/>
+    </panel>
+
+    <panel name="pagetitle">
+      <ui:label>Page title</ui:label>
+      <ui:description>The page title fields for configuring the navigation widget</ui:description>
+      <ref-field-group name="navigation-pagetitle-fields"/>
+    </panel>
+
+    <panel name="sectiontitle">
+      <ui:label>Section title</ui:label>
+      <ui:description>The section title fields for configuring the navigation widget</ui:description>
+      <ref-field-group name="navigation-sectiontitle-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The Advanced fields specially used for styling navigation widget</ui:description>
+     <ref-field-group  name="navigation-advanced-fields"/>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-public-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Summary</ui:label>
+      <field type="basic" mime-type="text/plain" name="title">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

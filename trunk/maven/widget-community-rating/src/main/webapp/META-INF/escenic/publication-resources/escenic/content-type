@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!-- field groups definitions for rating widget -->
+  <!-- general fields of rating widget-->
+  <field-group name="rating-widget-basic-fields">
+    <field name="view" type="enumeration">
+      <ui:label>View</ui:label>
+      <ui:description>The view of this widget</ui:description>
+      <enumeration value="starRating">
+        <ui:label>Star Rating</ui:label>
+      </enumeration>
+      <enumeration value="favorite">
+        <ui:label>Favorite</ui:label>
+      </enumeration>
+      <enumeration value="flagging">
+        <ui:label>Flagging</ui:label>
+      </enumeration>
+      <ui:value-if-unset>starRating</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <!-- starRating fields of rating widget-->
+  <field-group name="rating-widget-starRating-fields">
+    <field name="maxStars" type="number">
+      <ui:label>Maximum number of stars</ui:label>
+      <ui:description>The maximum number of stars</ui:description>
+      <format>#</format>
+      <constraints>
+        <minimum>2</minimum>
+        <maximum>10</maximum>
+      </constraints>
+      <ui:value-if-unset>5</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <!-- favorite fields of rating widget-->
+  <field-group name="rating-widget-favorite-fields">
+    <field name="favoriteLinkText" type="basic" mime-type="text/plain">
+      <ui:label>Add to favorite link text</ui:label>
+      <ui:description>Label of add to favorite link</ui:description>
+      <ui:value-if-unset>Add to favorite</ui:value-if-unset>
+    </field>
+    <field name="favoriteResultText" type="basic" mime-type="text/plain">
+      <ui:label>Add to favorite result suffix</ui:label>
+      <ui:description>Add to favorite result suffix</ui:description>
+      <ui:value-if-unset>liked this article!</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <!-- flagging fields of rating widget-->
+  <field-group name="rating-widget-flagging-fields">
+    <field name="flaggingLinkText" type="basic" mime-type="text/plain">
+      <ui:label>Flagging link text</ui:label>
+      <ui:description>Label of flagging link</ui:description>
+      <ui:value-if-unset>Report abuse</ui:value-if-unset>
+    </field>
+    <field name="flaggingResultText" type="basic" mime-type="text/plain">
+      <ui:label>Flagging result text</ui:label>
+      <ui:description>Flagging result text</ui:description>
+      <ui:value-if-unset>Abuse reported!</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <!-- content type definition for rating widget -->
+  <content-type name="widget_rating">
+    <ui:label>Rating Widget</ui:label>
+    <ui:description>A widget for rating an article.</ui:description>
+    <ui:title-field>title</ui:title-field>
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The basic configuration fields</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="rating-widget-basic-fields"/>
+    </panel>
+    <panel name="starRating">
+      <ui:label>Star Rating</ui:label>
+      <ui:description>Star Rating configuration fields</ui:description>
+      <ref-field-group name="rating-widget-starRating-fields"/>
+    </panel>
+    <panel name="favorite">
+      <ui:label>Favorite</ui:label>
+      <ui:description>Favorite rating configuration fields</ui:description>
+      <ref-field-group name="rating-widget-favorite-fields"/>
+    </panel>
+    <panel name="flagging">
+      <ui:label>Flagging</ui:label>
+      <ui:description>Flagging rating configuration fields</ui:description>
+      <ref-field-group name="rating-widget-flagging-fields"/>
+    </panel>
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-private-fields"/>
+    </panel>
+    <summary>
+      <ui:label>Content Summary</ui:label>
+      <field name="title" type="basic" mime-type="text/plain">
+        <ui:label>Title</ui:label>
+        <ui:description>The title of the widget</ui:description>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

@@ -1,0 +1,8 @@
+#header .logo.default {
+    position:relative;
+    z-index:2;
+}
+#header .logo.default img {
+    display:block;
+    padding: 10px 0 0;
+}

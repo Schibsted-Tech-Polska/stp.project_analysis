@@ -1,0 +1,30 @@
+.netmeeting.chat .statusTxt {
+    margin: 0 5px 5px 40px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    display: block;
+    font-size: 12px;
+}
+
+.netmeeting.chat #alias {
+    margin: 0 5px 0 0;
+    padding: 0;
+    border: 0;
+    float: right;
+    display: block;
+    font-size: 12px;
+    clear:both;
+}
+
+.netmeeting.chat fieldset {
+    clear:both;
+    font-size: 16px;
+}
+
+.netmeeting header.header {
+    background: transparent url(/skins/global/gfx/icons/chat-icon.png) left center no-repeat;
+    display: block;
+    text-indent: -1000px;
+    height:25px;
+}

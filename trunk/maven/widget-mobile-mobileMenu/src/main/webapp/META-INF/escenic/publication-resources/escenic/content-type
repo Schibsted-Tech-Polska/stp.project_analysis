@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!-- field group definitions for mobile related widgets-->
+  <!-- field group definitions for mobileMenu widget -->
+  <field-group name="mobile-menu-general-fields">
+    <field type="basic" mime-type="text/plain" name="menuName">
+      <ui:label>Menu Name</ui:label>
+      <ui:description>The name of the menu-tree created in Menu editor</ui:description>
+    </field>
+    <field type="basic" mime-type="text/plain" name="subMenuName">
+      <ui:label>Sub Menu Name</ui:label>
+      <ui:description>The name of the sub menu-tree created in Menu editor</ui:description>
+    </field>
+    <field type="enumeration" name="view">
+      <ui:label>View</ui:label>
+      <ui:description>This option is used to set the orientation of the menu.
+      </ui:description>
+      <enumeration value="horizontal">
+        <ui:label>Horizontal Menu</ui:label>
+      </enumeration>
+      <ui:value-if-unset>horizontal</ui:value-if-unset>
+    </field>
+    <field type="number" name="menuDepth">
+      <ui:label>Menu depth</ui:label>
+      <ui:description>Set the depth of the menu to how many levels to include.</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+        <maximum>2</maximum>
+      </constraints>
+      <format>#</format>
+      <ui:value-if-unset>1</ui:value-if-unset>
+    </field>
+    <field type="enumeration" name="displayItems">
+      <ui:label>Display Items</ui:label>
+      <ui:description>Specify which of the items to include in the menu.</ui:description>
+      <enumeration value="active">
+        <ui:label>Active Subitems</ui:label>
+      </enumeration>
+      <enumeration value="all">
+        <ui:label>All Subitems</ui:label>
+      </enumeration>
+      <ui:value-if-unset>active</ui:value-if-unset>
+    </field>
+  </field-group>
+
+  <field-group name="mobile-menu-advanced-fields">
+    <field name="updateInterval" type="number">
+      <ui:label>Update Interval (Minutes)</ui:label>
+      <ui:description>Update interval for mobile menu in minutes</ui:description>
+      <format>##</format>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <ui:value-if-unset>60</ui:value-if-unset>
+    </field>
+  </field-group>
+  <!-- content type definition for mobileMenu widget -->
+  <content-type name="widget_mobileMenu">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Mobile Menu Widget</ui:label>
+    <ui:description>A widget for displaying menu using MenuEditor plugin</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The fields for configuring the menu</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="mobile-menu-general-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The advanced configuration fields</ui:description>
+      <ref-field-group name="mobile-menu-advanced-fields"/>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Summary</ui:label>
+      <field type="basic" mime-type="text/plain" name="title">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

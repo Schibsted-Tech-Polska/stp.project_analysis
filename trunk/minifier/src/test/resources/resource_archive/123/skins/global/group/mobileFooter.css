@@ -1,0 +1,47 @@
+#footer {
+    background-color: #222;
+    color: #DFDFDF;
+    font-size: 11px;
+    padding: 0;
+}
+
+#footer .logo {
+    background: url("/skins/publications/osloby/gfx/mobile/dev_osloby.png");
+    height: 46px;
+    width: 96px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#footer p {
+    padding: 5px;
+    text-align: center;
+}
+
+#footer a {
+    color: #DFDFDF;
+    text-decoration: underline;
+}
+
+#footer .goto {
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#footer .goto a {
+    text-decoration: none;
+
+}
+
+#footer .addthis_toolbox {
+    width: 100%;
+    text-align: center;
+}
+
+#footer .addthis_toolbox .addthis_surround {
+    margin: 7px;
+}
+

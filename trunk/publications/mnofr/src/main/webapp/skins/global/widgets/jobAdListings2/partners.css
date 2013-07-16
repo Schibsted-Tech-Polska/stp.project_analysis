@@ -1,0 +1,20 @@
+.jobAdListings2.partners {
+    font-size: 75%;
+}
+
+.jobAdListings2.partners .info {
+    float:left;
+    padding-left:85px;
+    margin-right:10px;
+    margin-top:0;
+    width:115px;
+}
+
+.jobAdListings2.partners .info img{
+    float:left;
+    margin-left:-85px;
+}
+
+.jobAdListings2.partners .more {
+    margin-top: 10px;
+}

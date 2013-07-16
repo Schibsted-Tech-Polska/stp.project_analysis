@@ -1,0 +1,26 @@
+#adRight .jobAdListings {
+    border-top:0 none;
+}
+
+.jobAdListings header h2 {
+    background:transparent;
+    color:#fff;
+        line-height:1;
+        text-shadow:none;
+    float:none;
+    margin:0;
+}
+
+.jobAdListings header {
+    /* Firefox 3.6+ */
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.2));
+        /* Chrome 7+ & Safari 5.03+ */
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,0,0,0)), color-stop(1, rgba(0,0,0,.2)));
+        /* IE5.5 - IE7 */
+        filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#00000000,EndColorStr=#22000000);
+        /* IE8 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#00000000,EndColorStr=#22000000)";
+        background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.2));
+    height:auto;
+    padding:5px 0 7px 5px;
+}

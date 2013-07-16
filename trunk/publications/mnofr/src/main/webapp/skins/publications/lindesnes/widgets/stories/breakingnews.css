@@ -1,0 +1,14 @@
+#header .breakingnews {
+    float: left;
+    margin-bottom: 0;
+    line-height: 35px;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+#header .breakingnews .breaking {
+    font-weight: normal;
+    color: #373536;
+}
+#header .breakingnews a {
+    font-weight: bold;
+    color: #0e0a0b;
+}

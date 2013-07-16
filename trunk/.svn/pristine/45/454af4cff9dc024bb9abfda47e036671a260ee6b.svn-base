@@ -1,0 +1,3 @@
+.logo.original a:active {
+    opacity:1;
+}

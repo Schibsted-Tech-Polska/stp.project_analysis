@@ -1,0 +1,12 @@
+.hourByHour .wind {
+    color: #333;
+        text-align: center;
+    margin: 0 auto;
+    width: 25px;
+    margin-top: -5px;
+}
+
+.hourByHour .speed {
+    white-space: nowrap;
+    font-size: 0.8em;
+}

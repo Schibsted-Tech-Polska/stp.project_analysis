@@ -1,0 +1,99 @@
+body .mnoTree {
+    display:block;
+    margin-left:5px;
+}
+
+.mnoTree ul {
+    position:relative;
+}
+
+.mnoTree li {
+    cursor:pointer;
+    padding-left:15px;
+    position:relative;
+}
+
+.mnoTree li:before {
+    border-left:1px dotted #999;
+    content:" ";
+    position:absolute;
+        top:0;
+        left:0;
+    width:1px;
+        height:100%;
+}
+
+.mnoTree li:last-child:before,
+.mnoTree li.lastChild:before {
+    border-left:1px dotted #999;
+    content:" ";
+    position:absolute;
+        top:0;
+        left:0;
+    width:1px;
+        height:10px;
+}
+
+.mnoTree li > *:first-child:before {
+    border-top:1px dotted #999;
+    content:" ";
+    position:absolute;
+        top:10px;
+        left:0;
+    width:10px;
+        height:1px;
+}
+
+.mnoTree .mnoTree-expand,
+.mnoTree .mnoTree-collapse {
+    background: -moz-linear-gradient(center top , #f0f0f0, #ccc) #F0F0F0;
+        background: -webkit-linear-gradient(center top , #f0f0f0, #ccc) #F0F0F0;
+        background: linear-gradient(center top , #f0f0f0, #ccc) #F0F0F0;
+    /* TODO resten av graderinger*/
+    border: 1px solid #999;
+        -moz-border-radius: 2px;
+    color: #666;
+    display: inline-block;
+    line-height: 9px;
+    position: absolute;
+        left: -5px;
+        top:4px;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+    width: 9px;
+        height: 9px;
+}
+
+.mnoTree .expanded ul {
+    display:block;
+}
+
+.mnoTree .expanded .mnoTree-expand {
+    display:none;
+}
+
+.mnoTree .expanded .mnoTree-collapse {
+    display:inline-block;
+}
+
+.mnoTree .collapsed .mnoTree-expand {
+    display:inline-block;
+}
+
+.mnoTree .collapsed .mnoTree-collapse {
+    display:none;
+}
+
+.mnoTree .collapsed ul {
+    display:none;
+}
+
+.mnoTree-line {
+    border-top:1px dotted #999;
+    display:inline-block;
+    height:1px;
+    position:absolute;
+        top:10px;
+        left:0;
+    width:10px;
+}

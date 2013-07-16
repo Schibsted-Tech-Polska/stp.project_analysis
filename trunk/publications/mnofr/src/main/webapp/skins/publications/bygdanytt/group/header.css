@@ -1,0 +1,173 @@
+#header {
+    background-color: rgb(75,134,197);
+    margin: 0 0 10px;
+    padding: 0;
+    width: 100%;
+}
+#header .span10 {
+    position: relative;
+    text-align: right;
+    padding-top: 10px;
+}
+.mainHeaderArea .datebox {
+    width: 60px;
+    height: 58px;
+    display: inline-block;
+    vertical-align: bottom;
+    background-color: #b5332d;
+    color: #fff;
+    padding: 7px 10px 5px;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.65em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: bold;
+}
+#header .mainHeaderArea .nowForecastForHeader {
+    width: 57px;
+    height: 40px;
+    padding: 7px 10px 5px;
+    float: none;
+    position: absolute;
+    bottom: 0;
+    left: 85px;
+}
+#header .mainHeaderArea .nowForecastForHeader a:hover {
+    text-decoration: none;
+}
+#header .mainHeaderArea .nowForecastForHeader .sted {
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+.datebox .day {
+    font-weight: bold;
+    font-size: 12px;
+}
+.mainHeaderArea .contact-us {
+    width: 90px;
+    height: 58px;
+    padding:0 5px 5px;
+    display: inline-block;
+    vertical-align: bottom;
+    background-color: #fff;
+    color: #0f121c;
+    margin-bottom: 0;
+    text-align: center;
+    color: #b5332d;
+    font-size: 11px;
+}
+.mainHeaderArea .contact-us span {
+    display: block;
+    margin-bottom: 2px;
+}
+.mainHeaderArea .contact-us b {
+    font-weight: bold;
+    display: block;
+    padding: 4px 0 6px;
+    color: #0f121c;
+    font-size: 13px;
+}
+.mainHeaderArea .wrap-center {
+    width: 460px;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 10px;
+}
+.mainHeaderArea .wrap-center .logo {
+    padding-bottom: 10px;
+}
+.mainHeaderArea .topMainMenu a {
+    background-color: transparent;
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 1.4em;
+    padding: 0 3px;
+}
+.mainHeaderArea .topMainMenu a:hover {
+    text-decoration: underline;
+}
+.mainHeaderArea .wrap-center .topMainMenu a {
+    font-size: 14px;
+    padding: 5px;
+}
+.mainHeaderArea .wrap-top-right {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    text-align: right;
+}
+.mainHeaderArea .wrap-top-right .topMainMenu {
+     display: inline-block;
+    vertical-align: top;
+}
+.mainHeaderArea .wrap-top-right .partof-desc {
+    display: inline-block;
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: normal;
+    vertical-align: top;
+    padding: 0 5px;
+}
+.mainHeaderArea .wrap-right {
+    margin-left: 75px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.mainHeaderArea .wrap-right .logo {
+    text-align: center;
+    padding-bottom: 13px;
+}
+.searchField .pillBox {
+    border: 0 none;
+    border-radius: 0;
+    padding-bottom: 0;
+}
+.searchField .pillBox input {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 108px;
+    height: 17px;
+    border: 0 none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-size: 11px;
+    color: #0F121C;
+}
+.searchField .pillBox button {
+    width: 24px;
+    height: 17px;
+    margin-left: 2px;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0 none;
+    border-radius: 0;
+    background-color: #b5332d;
+    color: #fff;
+    font-size: 9px;
+}
+
+#smallHeader {
+    background-color: rgb(75,134,197);
+    color: #fff;
+}
+#smallHeader .logo {
+    margin-right: 10px;
+}
+#smallHeader a {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 20px;
+    padding: 0 10px;
+    color: #fff;
+    background-color: rgb(75,134,197);
+}

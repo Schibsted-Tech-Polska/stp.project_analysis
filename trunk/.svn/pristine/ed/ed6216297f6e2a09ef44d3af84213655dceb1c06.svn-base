@@ -1,0 +1,7 @@
+.epaper header h2{
+    background-color: #000000;
+}
+
+.span2 section .header h2{
+    font-size:  12px;
+}

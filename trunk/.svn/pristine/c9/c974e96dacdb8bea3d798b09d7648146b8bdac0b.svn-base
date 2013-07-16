@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * File           : $Header: //depot/escenic/widget-framework/trunk/widget-framework-core/src/main/webapp/META-INF/escenic/publication-resources/escenic/content-type#2 $
+ * Last edited by : $Author: shah $ $Date: 2010/05/10 $
+ * Version        : $Revision: #2 $
+ *
+ * Copyright (C) 2009 Escenic AS.
+ * All Rights Reserved.  No use, copying or distribution of this
+ * work may be made except in accordance with a valid license
+ * agreement from Escenic AS.  This notice must be included on
+ * all copies, modifications and derivatives of this work.
+-->
+
+<content-types xmlns="http://xmlns.escenic.com/2008/content-type"
+               xmlns:ui="http://xmlns.escenic.com/2008/interface-hints"
+               xmlns:geocode="http://xmlns.escenic.com/2009/studio/plugin/geocode"
+               xmlns:rep="http://xmlns.escenic.com/2009/representations"
+               version="4">
+  <!--Field groups for video widget -->
+  <!-- general fields -->
+  <field-group name="video-widget-general-fields">
+    <field name="view" type="enumeration">
+      <ui:label>View</ui:label>
+      <ui:description>The view used to render the widget</ui:description>
+      <enumeration value="flowplayer">
+        <ui:label>Flow Player</ui:label>
+      </enumeration>
+      <enumeration value="youtube">
+        <ui:label>YouTube</ui:label>
+      </enumeration>
+      <enumeration value="windowsMediaPlayer">
+        <ui:label>Windows Media Player</ui:label>
+      </enumeration>
+      <ui:value-if-unset>flowplayer</ui:value-if-unset>
+    </field>
+
+    <field name="source" type="enumeration">
+      <ui:label>Video source</ui:label>
+      <ui:description>The source of video files for the widget</ui:description>
+      <enumeration value="desked">
+        <ui:label>Desked videos</ui:label>
+      </enumeration>
+      <enumeration value="latest">
+        <ui:label>Latest videos</ui:label>
+      </enumeration>
+      <enumeration value="related">
+        <ui:label>Article related videos</ui:label>
+      </enumeration>
+      <enumeration value="article">
+        <ui:label>Video article</ui:label>
+      </enumeration>
+      <ui:value-if-unset>desked</ui:value-if-unset>
+    </field>
+
+    <field name="groupName" type="basic" mime-type="text/plain">
+      <ui:label>Group name</ui:label>
+      <ui:description>The name of the group from which videos will be fetched</ui:description>
+    </field>
+  </field-group>
+
+  <!-- flowplayer view fields -->
+  <field-group name="video-widget-flowplayer-fields">
+    <field name="flowplayerStyle" type="enumeration">
+      <ui:label>Flow player style</ui:label>
+      <ui:description>The style of the flow player</ui:description>
+      <enumeration value="single">
+        <ui:label>Single player for all videos</ui:label>
+      </enumeration>
+      <enumeration value="multiple">
+        <ui:label>Separate player for each video</ui:label>
+      </enumeration>
+      <ui:value-if-unset>single</ui:value-if-unset>
+    </field>
+
+    <field name="autoPlayFlowplayer" type="boolean">
+      <ui:label>Auto play</ui:label>
+      <ui:boolean-label value="true">Start video automatically</ui:boolean-label>
+      <ui:boolean-label value="false">Don't start video automatically</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+        <required>true</required>
+      </constraints>
+    </field>
+
+    <field name="repeatFlowplayer" type="boolean">
+      <ui:label>Repeat</ui:label>
+      <ui:boolean-label value="true">Repeat the video when it reaches the end point</ui:boolean-label>
+      <ui:boolean-label value="false">Don't repeat the video when it reaches the end point</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+        <required>true</required>
+      </constraints>
+    </field>
+
+    <field name="autoBufferingFlowplayer" type="boolean">
+      <ui:label>Auto buffering</ui:label>
+      <ui:boolean-label value="true">Enable auto buffering</ui:boolean-label>
+      <ui:boolean-label value="false">Disable auto buffering</ui:boolean-label>
+      <ui:value-if-unset>true</ui:value-if-unset>
+      <constraints>
+        <required>true</required>
+      </constraints>
+    </field>
+
+    <field name="maxScrollpaneItemsFlowplayer" type="number">
+      <ui:label>Max. number of items in the Flow player scroll pane</ui:label>
+      <constraints>
+        <minimum>3</minimum>
+        <maximum>9</maximum>
+      </constraints>
+      <format>#</format>
+      <ui:value-if-unset>5</ui:value-if-unset>
+    </field>
+
+    <field name="nextClipPopupTimeFlowplayer" type="number">
+      <ui:label>Next clip popup time (in second)</ui:label>
+      <ui:description>When next clip div to popup</ui:description>
+      <constraints>
+        <minimum>-500</minimum>
+        <maximum>500</maximum>
+      </constraints>
+      <format>#</format>
+      <ui:value-if-unset>-10</ui:value-if-unset>
+    </field>
+
+    <field name="maxTitleLengthFlowplayer" type="number">
+      <ui:label>Max number of characters in title</ui:label>
+      <ui:description>Max number of characters in title</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>#</format>
+      <ui:value-if-unset>15</ui:value-if-unset>
+    </field>
+
+    <field name="maxBodyLengthFlowplayer" type="number">
+      <ui:label>Max number of characters in body</ui:label>
+      <ui:description>Max number of characters in body</ui:description>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>#</format>
+      <ui:value-if-unset>20</ui:value-if-unset>
+    </field>
+
+    <field name="adSourceFlowplayer" type="enumeration">
+      <ui:label>Advertisements source</ui:label>
+      <ui:description>Related ad or external verser advertisement to use</ui:description>
+      <enumeration value="internal">
+        <ui:label>Internal</ui:label>
+      </enumeration>
+      <enumeration value="external">
+        <ui:label>External</ui:label>
+      </enumeration>
+      <ui:value-if-unset>internal</ui:value-if-unset>
+    </field>
+
+    <field name="flowplayerAd" type="enumeration">
+      <ui:label>Advertisements style</ui:label>
+      <ui:description>Where to place ad, if at all</ui:description>
+      <enumeration value="none">
+        <ui:label>No advertisements</ui:label>
+      </enumeration>
+      <enumeration value="pre">
+        <ui:label>Pre-roll</ui:label>
+      </enumeration>
+      <enumeration value="mid">
+        <ui:label>Mid-roll</ui:label>
+      </enumeration>
+      <enumeration value="post">
+        <ui:label>Post-roll</ui:label>
+      </enumeration>
+      <ui:value-if-unset>none</ui:value-if-unset>
+    </field>
+    <field name="flowplayerAdTime" type="complex">
+      <ui:label>Where to place mid-roll ad</ui:label>
+      <complex>
+        <field name="hh" type="number">
+          <ui:label>hh</ui:label>
+          <format>##</format>
+          <ui:value-if-unset>00</ui:value-if-unset>
+        </field>
+        <field name="mm" type="number">
+          <ui:label>mm</ui:label>
+          <format>##</format>
+          <ui:value-if-unset>00</ui:value-if-unset>
+        </field>
+        <field name="ss" type="number">
+          <ui:label>ss</ui:label>
+          <format>##</format>
+          <ui:value-if-unset>10</ui:value-if-unset>
+        </field>
+      </complex>
+    </field>
+  </field-group>
+
+  <!-- windowsMediaPlayer view fields -->
+  <field-group name="video-widget-windowsMediaPlayer-fields">
+    <field name="autoPlayWindowsMediaPlayer" type="boolean">
+      <ui:label>Auto play</ui:label>
+      <ui:boolean-label value="true">Start video automatically</ui:boolean-label>
+      <ui:boolean-label value="false">Don't start video automatically</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+        <required>true</required>
+      </constraints>
+    </field>
+
+    <field name="repeatWindowsMediaPlayer" type="boolean">
+      <ui:label>Repeat</ui:label>
+      <ui:boolean-label value="true">Repeat the video when it reaches the end point</ui:boolean-label>
+      <ui:boolean-label value="false">Don't repeat the video when it reaches the end point</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+        <required>true</required>
+      </constraints>
+    </field>
+  </field-group>
+
+  <!-- advanced fields -->
+  <field-group name="video-widget-advanced-fields">
+    <field name="begin" type="number">
+      <ui:label>Begin</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+      <ui:value-if-unset>1</ui:value-if-unset>
+    </field>
+
+    <field name="end" type="number">
+      <ui:label>End</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+    </field>
+
+    <field name="sectionUniqueName" type="basic" mime-type="text/plain">
+      <ui:label>Section Unique Name</ui:label>
+      <ui:description>Section uniquename of the section the widget will look into for a group with content to be
+        displayed in the widget
+      </ui:description>
+    </field>
+
+    <field name="contentTypes" type="basic" mime-type="text/plain">
+      <ui:label>Content types</ui:label>
+      <ui:description>Only articles with this types will be selected to be displayed in the video widget
+      </ui:description>
+    </field>
+
+    <field name="maxLatestVideos" type="number">
+      <ui:label>Max latest videos</ui:label>
+      <constraints>
+        <minimum>1</minimum>
+      </constraints>
+      <format>##</format>
+      <ui:value-if-unset>5</ui:value-if-unset>
+    </field>
+
+    <field name="includeSubsections" type="boolean">
+      <ui:label>Include Subsections</ui:label>
+      <ui:boolean-label value="true">Include subsections for latest videos</ui:boolean-label>
+      <ui:boolean-label value="false">Don't include subsections</ui:boolean-label>
+      <ui:value-if-unset>false</ui:value-if-unset>
+      <constraints>
+        <required>true</required>
+      </constraints>
+    </field>
+  </field-group>
+
+  <!-- content type for video widget -->
+  <content-type name="widget_video">
+    <ui:icon>generic</ui:icon>
+    <ui:label>Video Widget</ui:label>
+    <ui:description>A widget for displaying Video</ui:description>
+    <ui:title-field>title</ui:title-field>
+
+    <panel name="general">
+      <ui:label>General</ui:label>
+      <ui:description>The general fields for configuring video widget</ui:description>
+      <ref-field-group name="basic-widget-fields"/>
+      <ref-field-group name="video-widget-general-fields"/>
+    </panel>
+
+    <panel name="flowplayer">
+      <ui:label>Flow Player</ui:label>
+      <ui:description>The configuration fields for the flow player view</ui:description>
+      <ref-field-group name="video-widget-flowplayer-fields"/>
+    </panel>
+
+    <panel name="windowsMediaPlayer">
+      <ui:label>Windows Media Player</ui:label>
+      <ui:description>The configuration fields for the windows Media Player view</ui:description>
+      <ref-field-group name="video-widget-windowsMediaPlayer-fields"/>
+    </panel>
+
+    <panel name="advanced">
+      <ui:label>Advanced</ui:label>
+      <ui:description>The Advanced fields for video widget</ui:description>
+      <ref-field-group name="basic-widget-style-fields"/>
+      <ref-field-group name="video-widget-advanced-fields"/>
+      <ref-field-group name="noPrint-fields"/>
+    </panel>
+
+    <panel name="caching">
+      <ui:label>Caching</ui:label>
+      <ui:description>Allows you to control web cache settings</ui:description>
+      <ref-field-group name="caching-basic-fields"/>
+      <ref-field-group name="cache-control-public-fields"/>
+    </panel>
+
+    <summary>
+      <ui:label>Summary</ui:label>
+      <field type="basic" mime-type="text/plain" name="title">
+        <ui:label>Title</ui:label>
+      </field>
+    </summary>
+  </content-type>
+</content-types>

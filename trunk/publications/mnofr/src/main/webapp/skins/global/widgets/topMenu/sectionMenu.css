@@ -1,0 +1,30 @@
+/* sectionMenu global*/
+.sectionMenu ul {
+    display: block;
+    height: 25px;
+    font-size:12px;
+        font-weight: bold;
+}
+
+.sectionMenu li {
+    float: left;
+    height:25px;
+    line-height:25px;
+}
+
+.sectionMenu .link,
+.sectionMenu a,
+.sectionMenu a:visited {
+    color: #000;
+    display:block;
+    padding: 0 10px;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.sectionMenu .link:hover,
+.sectionMenu .link.activeSection,
+.sectionMenu a:hover,
+.sectionMenu .activeSection a {
+    color: #000;
+    text-decoration: underline;
+}

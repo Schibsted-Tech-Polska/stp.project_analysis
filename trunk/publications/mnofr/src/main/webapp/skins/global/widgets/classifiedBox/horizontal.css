@@ -1,0 +1,587 @@
+.widget.classifiedBox.horizontal {
+    background-color: white;
+    border: 1px solid #b5b5b5;
+    border-top: 0;
+    clear: both;
+    float: none !important;
+    height: 292px;
+    margin: 32px 0 20px;
+    padding: 0;
+    position: relative;
+    text-shadow: 0 0 0 white;
+    visibility: hidden;
+    width: 978px;
+}
+
+.widget.classifiedBox.horizontal.rowTheme:before, .widget.classifiedBox.horizontal.rowTheme:after {
+    content: none;
+}
+
+.widget.classifiedBox.horizontal.itemsCount_1 {
+    width: 287px;
+}
+
+.widget.classifiedBox.horizontal.itemsCount_2 {
+    width: 518px;
+}
+
+.widget.classifiedBox.horizontal.itemsCount_3 {
+    width: 749px;
+}
+
+.widget.classifiedBox.horizontal .overviewLink {
+    bottom: 4px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 21px;
+    position: absolute;
+    right: 60px;
+    text-decoration: none;
+}
+
+.ie7 .widget.classifiedBox.horizontal .overviewLink {
+    float: right;
+    width: 100px;
+    height: 21px;
+}
+
+.widget.classifiedBox.horizontal .overviewLink span {
+    float: right;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 1px 0 0 5px;
+}
+
+.ie7 .widget.classifiedBox.horizontal .overviewLink span {
+    float: none;
+}
+
+.widget.classifiedBox.horizontal .themeHeadline {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    z-index: 5;
+}
+
+.widget.classifiedBox.horizontal .headlineWrap {
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    height: 32px;
+    left: -1px;
+    position: relative;
+    width: 100%;
+}
+
+.widget.classifiedBox.horizontal .headlineWrap .categoriesList {
+    float: right;
+    overflow: hidden;
+}
+
+.ie7 .widget.classifiedBox.horizontal .headlineWrap .categoriesList {
+    position: relative !important;
+}
+
+.widget.classifiedBox.horizontal .categories {
+    font-family: 'ClanWeb', Arial, sans-serif;
+    font-size: 25px;
+    line-height: 22px;
+    position: relative !important;
+    z-index: 1;
+}
+
+.widget.classifiedBox.horizontal .categories .dropdown {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    height: 32px;
+    padding: 1px 1px 1px 5px;
+    margin: 0;
+    border: 0;
+}
+
+.widget.classifiedBox.horizontal .categories li {
+    border-right: 3px solid black;
+    border-left-width: 0px;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.widget.classifiedBox.horizontal .categories li a, .widget.classifiedBox.horizontal .categories li span {
+    display: block;
+    padding: 6px 10px 3px;
+}
+
+.widget.classifiedBox.horizontal .categories li a {
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.widget.classifiedBox.horizontal .categories li a:hover {
+    background-color: black;
+    color: white;
+}
+
+.widget.classifiedBox.horizontal .categories li.selected a {
+    background-color: black;
+    color: white;
+}
+
+.widget.classifiedBox.horizontal .carouselHolder {
+    height: 260px;
+    margin-top: -114px;
+    padding: 0 39px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+}
+
+.ie7 .widget.classifiedBox.horizontal .carouselHolder {
+    left: 0px !important;
+}
+
+.widget.classifiedBox.horizontal .carouselHolder .itemList {
+    float: left;
+    width: 9000px;
+    list-style-type: none;
+    left: 0;
+    margin: -130px 0 0 40px;
+    position: absolute;
+    top: 50%;
+}
+
+.widget.classifiedBox.horizontal .carouselHolder .itemList li {
+    float: left;
+    width: 210px;
+    color: white;
+    font-size: 12px;
+    height: 192px;
+    margin-bottom: 10px;
+    margin-right: 6px;
+    position: relative;
+}
+
+.widget.classifiedBox.horizontal .carouselHolder .listNavHolder {
+    background-color: white;
+    height: 212px;
+    position: absolute;
+    top: 32px;
+    width: 56px;
+    z-index: 4;
+}
+
+.widget.classifiedBox.horizontal .carouselHolder .listNavHolder.left {
+    position: absolute;
+    left: 0;
+}
+
+.widget.classifiedBox.horizontal .carouselHolder .listNavHolder.right {
+    position: absolute;
+    right: 0;
+}
+
+.widget.classifiedBox.horizontal .carouselHolder .listNavHolder .listNav {
+    border-width: 3px;
+    font-size: 4px;
+    height: 76px;
+    margin-top: -38px;
+    width: 76px;
+}
+
+.widget.classifiedBox.horizontal .carouselHolder .listNavHolder .listNav span {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: url(/skins/global/gfx/classifiedBox/horizontal_arrows.png) no-repeat;
+    border: 0 none;
+    color: black;
+    height: 33px;
+    left: 10px;
+    line-height: 30px;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -1000em;
+    top: 45%;
+    width: 25px;
+    text-shadow: none;
+}
+
+.widget.classifiedBox.horizontal .carouselHolder .listNavHolder .listScrollLeft span {
+    background-position: 5px 0px;
+}
+
+.widget.classifiedBox.horizontal .carouselHolder .listNavHolder .listScrollRight span {
+    background-position: -22px 0px;
+}
+
+.widget.classifiedBox.horizontal .itemWrap {
+    float: left;
+    width: 210px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 0 solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    height: 192px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    float: left;
+    width: 223px;
+    color: black;
+    height: 260px;
+    margin-left: -1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner:before, .widget.classifiedBox.horizontal .itemWrap .itemInner:after {
+    position: absolute;
+    width: 15px;
+    height: 100%;
+    content: '';
+    top: 0;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner:before {
+    background: rgba(255, 255, 255, 0.1);
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    left: 0;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner:after {
+    background: rgba(0, 0, 0, 0);
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+    right: 0;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner .itemOrganization {
+    font-size: 11px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    margin-top: -12px;
+    margin-left: -51%;
+    position: absolute;
+    padding: 0;
+    top: 150px;
+    width: 200%;
+    z-index: 1;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner .itemOrganization img {
+    border: 1px solid white;
+    height: 25px;
+    margin: 0 auto;
+    width: auto!important;
+    z-index: 1;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner .address {
+    color: white;
+    height: 25px;
+    line-height: 25px;
+    position: relative;
+    top: 165px;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner .listPrice {
+    color: white;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    position: relative;
+    text-decoration: none;
+    top: 165px;
+    z-index: 4;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner .listPrice:before, .widget.classifiedBox.horizontal .itemWrap .itemInner .listPrice:after {
+    font-weight: normal;
+    height: 1px;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    width: 112.5px;
+    z-index: -1;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner .listPrice:before {
+    left: -51.25px;
+    text-align: left;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner .listPrice:after {
+    right: -51.25px;
+    text-align: right;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner .listPrice span {
+    padding: 0 15px;
+}
+
+.imgWrap {
+    border-bottom: 2px solid white;
+    width: 100%;
+    left: 0;
+    position: absolute;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner .itemThumb {
+    font-size: 0;
+    height: 150px;
+    width: auto;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .itemInner .itemText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    color: white;
+    bottom: 0;
+    font-size: 10px;
+    height: 24px;
+    left: 0;
+    line-height: 24px;
+    padding: 0 5% 3px;
+    position: absolute;
+    width: 90%;
+    z-index: 4;
+}
+
+.ie .widget.classifiedBox.horizontal .itemWrap {
+    background-color: #7f7f7f;
+}
+
+.ie7 .widget.classifiedBox.horizontal .itemWrap {
+    border: 0px solid #7f7f7f;
+}
+
+.widget.classifiedBox.horizontal .itemWrap.zoom {
+    z-index: 6;
+}
+
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner {
+    margin: 0;
+    border-color: white;
+}
+
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .itemOrganization {
+    font-size: 14px;
+}
+
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .itemOrganization img {
+    width: 350px;
+    height: 33px;
+    top: 0;
+}
+
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .listPrice {
+    display: block;
+    top: 32px;
+}
+
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .itemThumb {
+    border: 0;
+    top: 34px;
+}
+
+.widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .itemText {
+    text-overflow: clip;
+    visibility: visible;
+    white-space: normal;
+    word-wrap: normal;
+    border-top: 0 none;
+    color: white;
+    display: inline;
+    font-size: 12px;
+    height: auto;
+    line-height: 15px;
+    max-height: 30px;
+    margin: 10px 0;
+    padding: 0 5%;
+    position: absolute;
+}
+
+.ie .widget.classifiedBox.horizontal .itemWrap.zoom .itemInner .itemText {
+    background-color: #7f7f7f;
+}
+
+.widget.classifiedBox.horizontal .itemWrap.zoom .listNav {
+    display: block;
+}
+
+.widget.classifiedBox.horizontal .itemWrap.zoom .listNav.disabled {
+    background: none repeat scroll 0 0 #666666;
+    border-color: #555555 !important;
+    cursor: default;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .listNav {
+    display: none;
+    height: 50px;
+    margin-top: -25px;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .listNav:hover {
+    background: #555555;
+    background: -moz-linear-gradient(top, #555555 0%, #333333 100%);
+    background: -webkit-linear-gradient(top, #555555 0%, #333333 100%);
+    background: -o-linear-gradient(top, #555555 0%, #333333 100%);
+    background: -ms-linear-gradient(top, #555555 0%, #333333 100%);
+    background: linear-gradient(top, #555555 0%, #333333 100%);
+    border-color: #cccccc !important;
+    cursor: pointer;
+}
+
+.widget.classifiedBox.horizontal .listNav {
+    background: white;
+    background: -moz-linear-gradient(top, white 0%, #eeeeee 100%);
+    background: -webkit-linear-gradient(top, white 0%, #eeeeee 100%);
+    background: -o-linear-gradient(top, white 0%, #eeeeee 100%);
+    background: -ms-linear-gradient(top, white 0%, #eeeeee 100%);
+    background: linear-gradient(top, #ffffff 0%, #eeeeee 100%);
+    border: 1px solid #b2b2b2;
+    font-size: 1px;
+
+    height: 25px;
+    margin-top: -12px;
+    position: absolute;
+    top: 50%;
+    width: 25px;
+    z-index: 4;
+}
+
+.widget.classifiedBox.horizontal .listNav:hover {
+    background: #fafafa;
+    background: -moz-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+    background: -webkit-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+    background: -o-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+    background: -ms-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+    background: linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+    z-index: 5;
+}
+
+.widget.classifiedBox.horizontal .listNav span {
+    height: 0;
+    position: absolute;
+    text-indent: -1000em;
+    top: 50%;
+    width: 0;
+}
+
+.ie7 .widget.classifiedBox.horizontal .listNav span {
+    margin-top: -2em;
+}
+
+.widget.classifiedBox.horizontal .listScrollLeft {
+    border-bottom-right-radius: 50%;
+    border-left: 0 none;
+    border-top-right-radius: 50%;
+    left: 0;
+}
+
+.widget.classifiedBox.horizontal .listScrollLeft span {
+    border-bottom: 6em solid transparent;
+    border-right: 9em solid #777777;
+    border-top: 6em solid transparent;
+    left: 3em;
+    margin-top: -6em;
+}
+
+.widget.classifiedBox.horizontal .listScrollRight {
+    border-bottom-left-radius: 50%;
+    border-right: 0 none;
+    border-top-left-radius: 50%;
+    right: 0;
+}
+
+.widget.classifiedBox.horizontal .listScrollRight span {
+    border-bottom: 6em solid transparent;
+    border-left: 9em solid #777777;
+    border-top: 6em solid transparent;
+    margin-top: -6em;
+    right: 3em;
+}
+
+.widget.classifiedBox.horizontal .itemWrap.zoom .listScrollLeft.disabled span {
+    border-right-color: #555555;
+}
+
+.widget.classifiedBox.horizontal .itemWrap.zoom .listScrollRight.disabled span {
+    border-left-color: #555555;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .listScrollLeft {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50% 0 0 50%;
+    border-right: 0 none;
+    left: 5px;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .listScrollLeft span {
+    left: 7em;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .listScrollLeft:hover span {
+    border-right-color: #eeeeee;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .listScrollRight {
+    border-left: 0 none;
+    border-radius: 0 50% 50% 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    right: 5px;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .listScrollRight span {
+    right: 7em;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .listScrollRight:hover span {
+    border-left-color: #eeeeee;
+}
+
+.widget.classifiedBox.horizontal .itemWrap .listNav span {
+    border-bottom: 12em solid transparent;
+    border-top: 12em solid transparent;
+    margin-top: -12em;
+}
+
+.ie7 .widget.classifiedBox.horizontal .itemWrap .listNav span {
+    margin-top: -1em;
+}
+
+.surround > section:last-child {
+    display: none;
+}
+
+@-moz-document url-prefix() {
+  .widget.classifiedBox.horizontal .carouselHolder .listNavHolder .listNav span {
+    line-height: 23px;
+    width: 20px;
+  }
+}

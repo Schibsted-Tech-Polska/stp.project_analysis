@@ -1,0 +1,40 @@
+.widget.mobilePopupBox {
+	background:#f0f0f0;
+	filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#10000000');
+    	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#10000000')";
+       	background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,.05));
+       	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(0,0,0,0)),color-stop(1, rgba(0,0,0,.05)));
+       	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.05));
+       	background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.05));
+	border:1px solid #999;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+	-moz-box-shadow:0 0 5px #999;
+		-webkit-box-shadow:0 0 5px #999;
+		box-shadow:0 0 5px #999;
+	position:absolute;
+		left :50%;
+	margin-left:-100px;
+	width:200px;
+		height:100px;
+}
+
+.widget.mobilePopupBox .inner {
+	border:1px solid #fff;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+		border-radius:4px;
+	padding:10px;
+}
+
+.widget.mobilePopupBox .popupIcon {
+	-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+		border-radius:4px;
+	float:left;
+	margin-right:10px;
+	width:57px;
+		height:57px;
+}
+

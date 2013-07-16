@@ -1,0 +1,52 @@
+.jobAdContact {
+    margin-top: 4em;
+}
+
+.jobAdContact ul {
+    border-bottom: 1px solid #7f7f7f;
+    margin: 0 45% 1em 0;
+}
+
+.jobAdContact li {
+    margin: 0.75em 0;
+    line-height: 16px;
+}
+
+.jobAdContact a.ellipsis {
+    display: block;
+}
+
+.jobAdContact .icon_phone:before, .jobAdContact .icon_mail:before {
+    background-image: url(/skins/global/gfx/icons/job2_sprite.png);
+    height: 16px;
+    position: absolute;
+    left: -16px;
+    display: block;
+    content: '';
+    width: 16px;
+}
+
+.icon_phone,.icon_mail {
+    border-left-width: 16px;
+    border-left-style: solid;
+    position: relative;
+    padding-left: 10px;
+}
+
+.icon_phone:before {
+    background-position: 16px -16px;
+}
+
+.icon_mail:before {
+    background-position: 16px -48px;
+}
+
+/* less than iPad's 768px */
+@media only screen and (max-device-width : 767px) {
+    .jobAdContact {
+        margin: 2em 1em;
+    }
+    .jobAdContact ul {
+        margin: 0;
+    }
+}

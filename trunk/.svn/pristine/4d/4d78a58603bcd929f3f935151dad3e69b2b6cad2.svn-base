@@ -1,0 +1,12 @@
+.forecastSummary .dailySummary{
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+    border: solid 1px #6D869F;
+    width: 215px;
+    padding: 5px;
+    -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        border-radius:5px;
+    vertical-align:top;
+}

@@ -1,0 +1,71 @@
+#header .nowForecastForHeader {
+    float:right;
+    font-size: 14px;
+        line-height: 14px;
+    height: 25px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: left;
+}
+
+#header .nowForecastForHeader label {
+    display:block;
+}
+
+#header .nowForecastForHeader .sted {
+    text-transform: capitalize;
+}
+
+#header .nowForecastForHeader a {
+    color: #fff;
+}
+
+#header .nowForecastForHeader .temp.warm {
+    color: #CC0000;
+    text-shadow: 0 0 0 !important;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width : 320px) {
+    #header .nowForecastForHeader{
+        margin-top:10px;
+        line-height: 25px;
+    }
+
+    #header .nowForecastForHeader .label {
+        margin-right: 3px;
+    }
+
+    #header .nowForecastForHeader .weather-icon {
+        float:left;
+        margin-right:5px;
+    }
+}
+
+@media only screen and (min-width : 321px) {
+    #header .nowForecastForHeader.large {
+        font-size: 18px;
+        height: 55px;
+        line-height: 55px;
+        position: relative;
+        z-index: 2;
+        float: right;
+        color: #fff;
+        text-align: left;
+    }
+
+    #header .nowForecastForHeader .label {
+        margin-right: 10px;
+    }
+
+    #header .nowForecastForHeader.large .temp {
+        font-size:22px;
+    }
+
+    #header .nowForecastForHeader.large .weather-icon {
+        float:left;
+        margin-right:5px;
+    }
+}

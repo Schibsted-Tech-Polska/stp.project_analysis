@@ -1,0 +1,53 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400italic,400&subset=latin,latin-ext);
+
+.widget.realEstateInfo {
+    font-size: 13px;
+}
+
+.widget.realEstateInfo ul.features li {
+    background-color: #f0f0f0;
+    clear: both;
+}
+
+.widget.realEstateInfo ul.features li:nth-child(2n+1) {
+    background-color: #ffffff;
+}
+
+.widget.realEstateInfo header,
+.widget.realEstateInfo.keyInfoBar {
+    color: #004687 !important;
+}
+
+.widget.realEstateInfo.generalInfo {
+    padding-top:10px;
+}
+
+.widget.realEstateInfo.generalInfo .informationItem header .seeMore img {
+    display: none;
+}
+
+.widget.realEstateInfo > header,
+.widget.realEstateInfo .informationItem header,
+.widget.realEstateInfo.keyInfoBar {
+    border-style: solid;
+    background-color: #f8f4f0 !important;
+}
+.widget.realEstateInfo.generalInfo .informationItem:nth-child(2n+1) header {
+    background-color: #f8f4f0 !important;
+}
+.widget.realEstateInfo header,
+.widget.realEstateInfo.keyInfoBar {
+    text-transform: uppercase;
+}
+.widget.realEstateInfo header,
+.widget.realEstateInfo.keyInfoBar {
+    padding: 3px 20px;
+    border-width: 1px 0 1px 0;
+    border-color: #e0e0e0;
+}
+.widget.realEstateInfo.generalInfo .informationItem {
+    margin-top: -4px;
+}
+.widget.realEstateInfo .informationItem header {
+    padding: 6px 20px !important;
+}

@@ -1,0 +1,7 @@
+.stories.breakingnews .breaking {
+    color:#900;
+}
+
+.stories.breakingnews .breaking a {
+    font-weight:normal;
+}

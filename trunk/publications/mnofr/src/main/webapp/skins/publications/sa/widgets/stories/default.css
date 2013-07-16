@@ -1,0 +1,51 @@
+.stories footer {
+    font-size:12px;
+        line-height:1;
+    width:100%;
+}
+
+.stories footer a {
+    margin-bottom:0;
+}
+
+.stories footer .category {
+    color:#888;
+    float:left;
+        margin-right:3px;
+}
+
+.stories footer .category:after {
+    content:":";
+}
+
+#header .stories h2 {
+    font-size:18px;
+}
+
+#header .stories img {
+    max-width:100%;
+}
+
+#footer .stories article {
+    padding-top:30px;
+}
+
+#footer .stories article .imageLeft,
+#footer .stories article .imageRight {
+    margin-top:-30px;
+}
+
+#footer h2[itemprop=teaserTitle] {
+    font-family:arial, sans-serif;
+        font-size:14px;
+        font-weight:bold;
+    margin-top:10px;
+}
+/* Energi header */
+#header .energi .stories {
+    height: 70px;
+    margin-top: -12px;
+}
+#header .energi .stories img {
+    cursor: pointer;
+}

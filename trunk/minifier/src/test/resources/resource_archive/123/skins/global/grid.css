@@ -1,0 +1,1770 @@
+/**
+980 grid system
+@fileinfo
+@version 1.0
+@copyright Media Norge Digital
+@author Jonas Nilsson, Adresseavisen
+@author Tor Brekke Skjøtskift, Media Norge
+*/
+
+/**
+ Basic grid
+ Defines the basic 12 column grid.<br/>
+ The layout consists of columns of 80px width and a 20px gutter.<br/>
+ This makes a total of 1180px and 12 columns.
+ @style
+ .grid12 Centers the page and sets the with to 1180px
+ .gridRow Creates a new row
+ .gridUnit Creates a unit within a row
+ .gridUnit.span3 Creates a unit spanning 3 columns
+ @group grid
+ @example
+    <div class="grid12">
+        <div class="gridRow">
+            <div class="gridUnit span3" style="background:#ccc">
+                Content width: <br/>
+                (80 * 3) + (20 * 2) = 280px
+            </div>
+            <section class="gridUnit span7" style="background:#ccc">
+                Content width: <br/>
+                (80 * 7) + (20 * 6) = 680px
+            </section>
+            <div class="gridUnit span2" style="background:#ccc">
+                Content width: <br/>
+                (80 * 2) + (20 * 1) = 180px
+            </div>
+        </div>
+    </div>
+ */
+.grid12 {
+    margin:0 auto;
+    overflow:visible;
+    padding: 0 10px;
+    width: 1180px;
+}
+
+.gridRow { clear:both; }
+.gridUnit { margin-left: 20px;float: left;}
+.gridUnit:first-child,
+.themeHeadline + .gridUnit {margin-left: 0;}
+.ie6 .gridUnit{display:inline;}
+
+.gridUnit.firstChild,
+.ie6 .gridUnit.firstChild,
+.ie7 .gridUnit.firstChild { margin-left: 0; }
+
+.span12{ width:1180px; }
+.span10{ width: 980px; }
+.span9{ width: 880px; }
+.span8{ width: 780px; }
+.span7{ width: 680px; }
+.span6{ width: 580px; }
+.span5{ width: 480px; }
+.span4{ width: 380px; }
+.span3{ width: 280px; }
+.span2{ width: 180px; }
+.span1{ width: 80px; }
+
+/**
+  Grid splits
+  Splits within default grid units.<br/>
+  Use these classes to split into units that is not within the default grid.
+  @style
+  .split5 Creates a unit that has the with of the parent gridUnit divided by 5
+  @group grid
+  @example
+    <div class="gridRow">
+        <div class="span10 gridUnit">
+            <div class="gridRow">
+                <div class="gridUnit split3">
+                    Three equal units. Width =313px
+                </div>
+                <div class="gridUnit split3">
+                    Three equal units. Width =313px
+                </div>
+                <div class="gridUnit split3">
+                    Three equal units. Width =313px
+                </div>
+            </div>
+        </div>
+    </div>
+
+*/
+.span10 .split5 { width: 180px; }
+.span10 .split4 { width: 230px; }
+.span10 .split3 { width: 313px; } /* Missing 1px */
+.span10 .split2 { width: 480px; }
+.span9 .split5 { width: 160px; }
+.span9 .split4 { width: 205px; }
+.span9 .split3 { width: 280px; }
+.span9 .split2 { width: 430px; }
+.span8 .split5 { width: 140px; }
+.span8 .split4 { width: 180px; }
+.span8 .split3 { width: 246px; } /* Missing 2px */
+.span8 .split2 { width: 380px; }
+.span7 .split5 { width: 120px; }
+.span7 .split4 { width: 155px; }
+.span7 .split3 { width: 213px; } /* Missing 1px */
+.span7 .split2 { width: 330px; }
+.span6 .split5 { width: 100px; }
+.span6 .split4 { width: 130px; }
+.span6 .split3 { width: 180px; }
+.span6 .split2 { width: 280px; }
+.span5 .split5 { width: 80px; }
+.span5 .split4 { width: 105px; }
+.span5 .split3 { width: 146px; } /* Missing 2px */
+.span5 .split2 { width: 230px; }
+.span4 .split5 { width: 60px; }
+.span4 .split4 { width: 80px; }
+.span4 .split3 { width: 113px; } /* Missing 1px */
+.span4 .split2 { width: 180px; }
+.span3 .split5 { width: 40px; }
+.span3 .split4 { width: 55px; }
+.span3 .split3 { width: 80px; }
+.span3 .split2 { width: 130px; }
+.span2 .split5 { width: 20px; }
+.span2 .split4 { width: 30px; }
+.span2 .split3 { width: 46px; } /* Missing 2px */
+.span2 .split2 { width: 80px; }
+
+/**
+ Grid padding
+ Padding for units, lines and splits
+ @style
+ .padded20 Creates 20px padding around .gridUnits
+ .padded10 Creates 10px padding around .gridUnits
+ @group grid
+ @example
+ <div class="span10">
+    <div class="gridRow padded20" style="background:#999">
+        <div class="gridUnit span4" style="background:#f0f0f0">
+            A four column gridUnit with 20px padding
+        </div>
+        <div class="gridUnit span3" style="background:#f0f0f0">
+            A three column gridUnit with 20px padding
+        </div>
+        <div class="gridUnit span3" style="background:#f0f0f0">
+            A three column gridUnit with 20px padding
+        </div>
+    </div>
+    <div class="gridRow padded10" style="background:#999">
+        <div class="gridUnit span4" style="background:#f0f0f0">
+            A four column gridUnit with 10px padding
+        </div>
+        <div class="gridUnit span3" style="background:#f0f0f0">
+            A three column gridUnit with 10px padding
+        </div>
+        <div class="gridUnit span3" style="background:#f0f0f0">
+            A three column gridUnit with 10px padding
+        </div>
+    </div>
+ </div>
+ */
+.padded20 { padding: 20px; }
+.padded20 .gridUnit { margin-left: 20px; }
+.padded20 .gridUnit.firstChild,
+.padded20 .gridUnit:first-child,
+.padded20 .themeHeadline + .gridUnit { margin-left: 0; }
+.padded10 { padding: 10px; }
+.padded10 .gridUnit { margin-left: 10px; }
+.padded10 .gridUnit.firstChild,
+.padded10 .gridUnit:first-child,
+.padded10 .themeHeadline + .gridUnit { margin-left: 0; }
+
+/* Padding for Basic Units */
+.span10 .padded20 .span10 { width: 940px; }
+.span10 .padded20 .span9 { width: 844px; }
+.span10 .padded20 .span8 { width: 748px; }
+.span10 .padded20 .span7 { width: 652px; }
+.span10 .padded20 .span6 { width: 556px; }
+.span10 .padded20 .span5 { width: 460px; }
+.span10 .padded20 .span4 { width: 364px; }
+.span10 .padded20 .span3 { width: 267px; }
+.span10 .padded20 .span2 { width: 172px; }
+.span10 .padded20 .span1 { width: 76px; }
+.span10 .padded10 .span10 { width: 960px; }
+.span10 .padded10 .span9 { width: 863px; }
+.span10 .padded10 .span8 { width: 766px; }
+.span10 .padded10 .span7 { width: 669px; }
+.span10 .padded10 .span6 { width: 572px; }
+.span10 .padded10 .span5 { width: 474px; }
+.span10 .padded10 .span4 { width: 378px; }
+.span10 .padded10 .span3 { width: 280px; }
+.span10 .padded10 .span2 { width: 182px; }
+.span10 .padded10 .span1 { width: 86px; }
+.span9 .padded20 .span9 { width: 840px; }
+.span9 .padded20 .span8 { width: 744px; }
+.span9 .padded20 .span7 { width: 648px; }
+.span9 .padded20 .span6 { width: 553px; }
+.span9 .padded20 .span5 { width: 457px; }
+.span9 .padded20 .span4 { width: 362px; }
+.span9 .padded20 .span3 { width: 266px; }
+.span9 .padded20 .span2 { width: 171px; }
+.span9 .padded20 .span1 { width: 75px; }
+.span9 .padded10 .span9 { width: 860px; }
+.span9 .padded10 .span8 { width: 763px; }
+.span9 .padded10 .span7 { width: 666px; }
+.span9 .padded10 .span6 { width: 570px; }
+.span9 .padded10 .span5 { width: 473px; }
+.span9 .padded10 .span4 { width: 376px; }
+.span9 .padded10 .span3 { width: 280px; }
+.span9 .padded10 .span2 { width: 183px; }
+.span9 .padded10 .span1 { width: 86px; }
+.span8 .padded20 .span8 { width: 740px; }
+.span8 .padded20 .span7 { width: 645px; }
+.span8 .padded20 .span6 { width: 550px; }
+.span8 .padded20 .span5 { width: 455px; }
+.span8 .padded20 .span4 { width: 360px; }
+.span8 .padded20 .span3 { width: 265px; }
+.span8 .padded20 .span2 { width: 170px; }
+.span8 .padded20 .span1 { width: 75px; }
+.span8 .padded10 .span8 { width: 760px; }
+.span8 .padded10 .span7 { width: 663px; }
+.span8 .padded10 .span6 { width: 567px; }
+.span8 .padded10 .span5 { width: 471px; }
+.span8 .padded10 .span4 { width: 375px; }
+.span8 .padded10 .span3 { width: 278px; }
+.span8 .padded10 .span2 { width: 182px; }
+.span8 .padded10 .span1 { width: 86px; }
+.span7 .padded20 .span7 { width: 640px; }
+.span7 .padded20 .span6 { width: 545px; }
+.span7 .padded20 .span5 { width: 451px; }
+.span7 .padded20 .span4 { width: 357px; }
+.span7 .padded20 .span3 { width: 262px; }
+.span7 .padded20 .span2 { width: 168px; }
+.span7 .padded20 .span1 { width: 74px; }
+.span7 .padded10 .span7 { width: 660px; }
+.span7 .padded10 .span6 { width: 564px; }
+.span7 .padded10 .span5 { width: 468px; }
+.span7 .padded10 .span4 { width: 372px; }
+.span7 .padded10 .span3 { width: 277px; }
+.span7 .padded10 .span2 { width: 181px; }
+.span7 .padded10 .span1 { width: 85px; }
+.span6 .padded20 .span6 { width: 540px; }
+.span6 .padded20 .span5 { width: 446px; }
+.span6 .padded20 .span4 { width: 353px; }
+.span6 .padded20 .span3 { width: 260px; }
+.span6 .padded20 .span2 { width: 166px; }
+.span6 .padded20 .span1 { width: 73px; }
+.span6 .padded10 .span6 { width: 560px; }
+.span6 .padded10 .span5 { width: 465px; }
+.span6 .padded10 .span4 { width: 370px; }
+.span6 .padded10 .span3 { width: 275px; }
+.span6 .padded10 .span2 { width: 180px; }
+.span6 .padded10 .span1 { width: 85px; }
+.span5 .padded20 .span5 { width: 440px; }
+.span5 .padded20 .span4 { width: 348px; }
+.span5 .padded20 .span3 { width: 256px; }
+.span5 .padded20 .span2 { width: 164px; }
+.span5 .padded20 .span1 { width: 72px; }
+.span5 .padded10 .span5 { width: 460px; }
+.span5 .padded10 .span4 { width: 366px; }
+.span5 .padded10 .span3 { width: 272px; }
+.span5 .padded10 .span2 { width: 178px; }
+.span5 .padded10 .span1 { width: 84px; }
+.span4 .padded20 .span4 { width: 340px; }
+.span4 .padded20 .span3 { width: 250px; }
+.span4 .padded20 .span2 { width: 160px; }
+.span4 .padded20 .span1 { width: 70px; }
+.span4 .padded10 .span4 { width: 360px; }
+.span4 .padded10 .span3 { width: 267px; }
+.span4 .padded10 .span2 { width: 174px; }
+.span4 .padded10 .span1 { width: 82px; }
+.span3 .padded20 .span3 { width: 240px; }
+.span3 .padded20 .span2 { width: 153px; }
+.span3 .padded20 .span1 { width: 66px; }
+.span3 .padded10 .span3 { width: 260px; }
+.span3 .padded10 .span2 { width: 170px; }
+.span3 .padded10 .span1 { width: 80px; }
+.span2 .padded20 .span2 { width: 140px; }
+.span2 .padded20 .span1 { width: 60px; }
+.span2 .padded10 .span2 { width: 160px; }
+.span2 .padded10 .span1 { width: 75px; }
+
+/* 05 | Padding for splits */
+.span10 .padded20 .split5 { width: 172px; }
+.span10 .padded20 .split4 { width: 220px; }
+.span10 .padded20 .split3 { width: 300px; }
+.span10 .padded20 .split2 { width: 460px; }
+.span10 .padded10 .split5 { width: 184px; }
+.span10 .padded10 .split4 { width: 232px; } /* Missing 2px */
+.span10 .padded10 .split3 { width: 313px; } /* Missing 1px */
+.span10 .padded10 .split2 { width: 475px; }
+.span9 .padded20 .split5 { width: 152px; }
+.span9 .padded20 .split4 { width: 195px; }
+.span9 .padded20 .split3 { width: 266px; } /* Missing 2px */
+.span9 .padded20 .split2 { width: 410px; }
+.span9 .padded10 .split5 { width: 164px; }
+.span9 .padded10 .split4 { width: 207px; } /* Missing 2px */
+.span9 .padded10 .split3 { width: 280px; }
+.span9 .padded10 .split2 { width: 425px; }
+.span8 .padded20 .split5 { width: 132px; }
+.span8 .padded20 .split4 { width: 170px; }
+.span8 .padded20 .split3 { width: 233px; } /* Missing 1px */
+.span8 .padded20 .split2 { width: 360px; }
+.span8 .padded10 .split5 { width: 144px; }
+.span8 .padded10 .split4 { width: 182px; } /* Missing 2px */
+.span8 .padded10 .split3 { width: 246px; } /* Missing 2px */
+.span8 .padded10 .split2 { width: 375px; }
+.span7 .padded20 .split5 { width: 112px; }
+.span7 .padded20 .split4 { width: 145px; }
+.span7 .padded20 .split3 { width: 200px; }
+.span7 .padded20 .split2 { width: 310px; }
+.span7 .padded10 .split5 { width: 124px; }
+.span7 .padded10 .split4 { width: 157px; } /* Missing 2px */
+.span7 .padded10 .split3 { width: 213px; } /* Missing 1px */
+.span7 .padded10 .split2 { width: 325px; }
+.span6 .padded20 .split5 { width: 92px; }
+.span6 .padded20 .split4 { width: 120px; }
+.span6 .padded20 .split3 { width: 166px; } /* Missing 2px */
+.span6 .padded20 .split2 { width: 260px; }
+.span6 .padded10 .split5 { width: 104px; }
+.span6 .padded10 .split4 { width: 132px; } /* Missing 2px */
+.span6 .padded10 .split3 { width: 180px; }
+.span6 .padded10 .split2 { width: 275px; }
+.span5 .padded20 .split5 { width: 72px; }
+.span5 .padded20 .split4 { width: 95px; }
+.span5 .padded20 .split3 { width: 133px; } /* Missing 1px */
+.span5 .padded20 .split2 { width: 210px; }
+.span5 .padded10 .split5 { width: 84px; }
+.span5 .padded10 .split4 { width: 107px; } /* Missing 2px */
+.span5 .padded10 .split3 { width: 146px; } /* Missing 2px */
+.span5 .padded10 .split2 { width: 225px; }
+.span4 .padded20 .split5 { width: 52px; }
+.span4 .padded20 .split4 { width: 70px; }
+.span4 .padded20 .split3 { width: 100px; }
+.span4 .padded20 .split2 { width: 160px; }
+.span4 .padded10 .split5 { width: 64px; }
+.span4 .padded10 .split4 { width: 82px; } /* Missing 2px */
+.span4 .padded10 .split3 { width: 113px; } /* Missing 1px */
+.span4 .padded10 .split2 { width: 175px; }
+.span3 .padded20 .split5 { width: 32px; }
+.span3 .padded20 .split4 { width: 45px; }
+.span3 .padded20 .split3 { width: 66px; } /* Missing 2px */
+.span3 .padded20 .split2 { width: 110px; }
+.span3 .padded10 .split5 { width: 44px; }
+.span3 .padded10 .split4 { width: 57px; } /* Missing 2px */
+.span3 .padded10 .split3 { width: 80px; }
+.span3 .padded10 .split2 { width: 125px; }
+.span2 .padded20 .split5 { width: 12px; }
+.span2 .padded20 .split4 { width: 20px; }
+.span2 .padded20 .split3 { width: 33px; } /* Missing 1px */
+.span2 .padded20 .split2 { width: 60px; }
+.span2 .padded10 .split5 { width: 24px; }
+.span2 .padded10 .split4 { width: 32px; } /* Missing 2px */
+.span2 .padded10 .split3 { width: 46px; } /* Missing 2px */
+.span2 .padded10 .split2 { width: 75px; }
+
+/* 06 | Redefine Splits Inside Padded Container */
+.span10 .padded20 .span10 .split5 { width: 172px; }
+.span10 .padded20 .span10 .split4 { width: 220px; }
+.span10 .padded20 .span10 .split3 { width: 300px; }
+.span10 .padded20 .span10 .split2 { width: 460px; }
+.span10 .padded20 .span9 .split5 { width: 152px; } /* Missing 4px */
+.span10 .padded20 .span9 .split4 { width: 196px; }
+.span10 .padded20 .span9 .split3 { width: 268px; }
+.span10 .padded20 .span9 .split2 { width: 412px; }
+.span10 .padded20 .span8 .split5 { width: 133px; } /* Missing 3px */
+.span10 .padded20 .span8 .split4 { width: 172px; }
+.span10 .padded20 .span8 .split3 { width: 236px; }
+.span10 .padded20 .span8 .split2 { width: 364px; }
+.span10 .padded20 .span7 .split5 { width: 114px; } /* Missing 2px */
+.span10 .padded20 .span7 .split4 { width: 148px; }
+.span10 .padded20 .span7 .split3 { width: 204px; }
+.span10 .padded20 .span7 .split2 { width: 316px; }
+.span10 .padded20 .span6 .split5 { width: 95px; } /* Missing 1px */
+.span10 .padded20 .span6 .split4 { width: 124px; }
+.span10 .padded20 .span6 .split3 { width: 172px; }
+.span10 .padded20 .span6 .split2 { width: 268px; }
+.span10 .padded20 .span5 .split5 { width: 76px; }
+.span10 .padded20 .span5 .split4 { width: 100px; }
+.span10 .padded20 .span5 .split3 { width: 140px; }
+.span10 .padded20 .span5 .split2 { width: 220px; }
+.span10 .padded20 .span4 .split4 { width: 76px; }
+.span10 .padded20 .span4 .split3 { width: 108px; }
+.span10 .padded20 .span4 .split2 { width: 172px; }
+.span10 .padded20 .span3 .split3 { width: 76px; }
+.span10 .padded20 .span3 .split2 { width: 124px; }
+.span10 .padded20 .span2 .split2 { width: 76px; }
+.span10 .padded10 .span10 .split5 { width: 184px; }
+.span10 .padded10 .span10 .split4 { width: 232px; } /* Missing 2px */
+.span10 .padded10 .span10 .split3 { width: 313px; } /* Missing 1px */
+.span10 .padded10 .span10 .split2 { width: 475px; }
+.span10 .padded10 .span9 .split5 { width: 164px; } /* Missing 3px */
+.span10 .padded10 .span9 .split4 { width: 208px; } /* Missing 1px */
+.span10 .padded10 .span9 .split3 { width: 281px; }
+.span10 .padded10 .span9 .split2 { width: 426px; } /* Missing 1px */
+.span10 .padded10 .span8 .split5 { width: 145px; } /* Missing 1px */
+.span10 .padded10 .span8 .split4 { width: 184px; }
+.span10 .padded10 .span8 .split3 { width: 248px; } /* Missing 2px */
+.span10 .padded10 .span8 .split2 { width: 378px; }
+.span10 .padded10 .span7 .split5 { width: 125px; } /* Missing 4px */
+.span10 .padded10 .span7 .split4 { width: 159px; } /* Missing 3px */
+.span10 .padded10 .span7 .split3 { width: 216px; } /* Missing 1px */
+.span10 .padded10 .span7 .split2 { width: 329px; } /* Missing 1px */
+.span10 .padded10 .span6 .split5 { width: 106px; } /* Missing 2px */
+.span10 .padded10 .span6 .split4 { width: 135px; } /* Missing 2px */
+.span10 .padded10 .span6 .split3 { width: 184px; }
+.span10 .padded10 .span6 .split2 { width: 281px; }
+.span10 .padded10 .span5 .split5 { width: 87px; }
+.span10 .padded10 .span5 .split4 { width: 111px; } /* Missing 1px */
+.span10 .padded10 .span5 .split3 { width: 151px; } /* Missing 2px */
+.span10 .padded10 .span5 .split2 { width: 232px; } /* Missing 1px */
+.span10 .padded10 .span4 .split5 { width: 67px; } /* Missing 3px */
+.span10 .padded10 .span4 .split4 { width: 87px; }
+.span10 .padded10 .span4 .split3 { width: 119px; } /* Missing 1px */
+.span10 .padded10 .span4 .split2 { width: 184px; }
+.span10 .padded10 .span3 .split4 { width: 62px; } /* Missing 3px */
+.span10 .padded10 .span3 .split3 { width: 87px; }
+.span10 .padded10 .span3 .split2 { width: 135px; } /* Missing 1px */
+.span10 .padded10 .span2 .split2 { width: 87px; }
+.span9 .padded20 .span9 .split5 { width: 134px; } /* Missing 4px */
+.span9 .padded20 .span9 .split4 { width: 173px; } /* Missing 2px */
+.span9 .padded20 .span9 .split3 { width: 238px; }
+.span9 .padded20 .span9 .split2 { width: 367px; }
+.span9 .padded20 .span8 .split5 { width: 117px; } /* Missing 3px */
+.span9 .padded20 .span8 .split4 { width: 152px; }
+.span9 .padded20 .span8 .split3 { width: 209px; } /* Missing 1px */
+.span9 .padded20 .span8 .split2 { width: 324px; }
+.span9 .padded20 .span7 .split5 { width: 100px; } /* Missing 2px */
+.span9 .padded20 .span7 .split4 { width: 130px; } /* Missing 2px */
+.span9 .padded20 .span7 .split3 { width: 180px; } /* Missing 2px */
+.span9 .padded20 .span7 .split2 { width: 281px; }
+.span9 .padded20 .span6 .split5 { width: 83px; } /* Missing 1px */
+.span9 .padded20 .span6 .split4 { width: 109px; }
+.span9 .padded20 .span6 .split3 { width: 152px; }
+.span9 .padded20 .span6 .split2 { width: 238px; }
+.span9 .padded20 .span5 .split5 { width: 66px; }
+.span9 .padded20 .span5 .split4 { width: 87px; } /* Missing 2px */
+.span9 .padded20 .span5 .split3 { width: 123px; } /* Missing 1px */
+.span9 .padded20 .span5 .split2 { width: 195px; }
+.span9 .padded20 .span4 .split4 { width: 66px; }
+.span9 .padded20 .span4 .split3 { width: 94px; } /* Missing 2px */
+.span9 .padded20 .span4 .split2 { width: 152px; }
+.span9 .padded20 .span3 .split3 { width: 66px; }
+.span9 .padded20 .span3 .split2 { width: 109px; }
+.span9 .padded20 .span2 .split2 { width: 66px; }
+.span9 .padded10 .span9 .split5 { width: 146px; } /* Missing 3px */
+.span9 .padded10 .span9 .split4 { width: 185px; } /* Missing 3px */
+.span9 .padded10 .span9 .split3 { width: 251px; }
+.span9 .padded10 .span9 .split2 { width: 381px; } /* Missing 1px */
+.span9 .padded10 .span8 .split5 { width: 129px; } /* Missing 1px */
+.span9 .padded10 .span8 .split4 { width: 164px; }
+.span9 .padded10 .span8 .split3 { width: 222px; }
+.span9 .padded10 .span8 .split2 { width: 338px; }
+.span9 .padded10 .span7 .split5 { width: 111px; } /* Missing 4px */
+.span9 .padded10 .span7 .split4 { width: 142px; } /* Missing 1px */
+.span9 .padded10 .span7 .split3 { width: 193px; }
+.span9 .padded10 .span7 .split2 { width: 294px; } /* Missing 1px */
+.span9 .padded10 .span6 .split5 { width: 94px; } /* Missing 2px */
+.span9 .padded10 .span6 .split4 { width: 120px; } /* Missing 2px */
+.span9 .padded10 .span6 .split3 { width: 164px; }
+.span9 .padded10 .span6 .split2 { width: 251px; }
+.span9 .padded10 .span5 .split5 { width: 77px; }
+.span9 .padded10 .span5 .split4 { width: 98px; } /* Missing 3px */
+.span9 .padded10 .span5 .split3 { width: 135px; }
+.span9 .padded10 .span5 .split2 { width: 207px; } /* Missing 1px */
+.span9 .padded10 .span4 .split4 { width: 77px; }
+.span9 .padded10 .span4 .split3 { width: 106px; }
+.span9 .padded10 .span4 .split2 { width: 164px; }
+.span9 .padded10 .span3 .split3 { width: 77px; }
+.span9 .padded10 .span3 .split2 { width: 120px; } /* Missing 1px */
+.span9 .padded10 .span2 .split2 { width: 77px; }
+.span8 .padded20 .span8 .split5 { width: 101px; } /* Missing 3px */
+.span8 .padded20 .span8 .split4 { width: 132px; }
+.span8 .padded20 .span8 .split3 { width: 182px; } /* Missing 2px */
+.span8 .padded20 .span8 .split2 { width: 284px; }
+.span8 .padded20 .span7 .split5 { width: 86px; } /* Missing 2px */
+.span8 .padded20 .span7 .split4 { width: 113px; }
+.span8 .padded20 .span7 .split3 { width: 157px; } /* Missing 1px */
+.span8 .padded20 .span7 .split2 { width: 246px; }
+.span8 .padded20 .span6 .split5 { width: 71px; } /* Missing 1px */
+.span8 .padded20 .span6 .split4 { width: 94px; }
+.span8 .padded20 .span6 .split3 { width: 132px; }
+.span8 .padded20 .span6 .split2 { width: 208px; }
+.span8 .padded20 .span5 .split4 { width: 75px; }
+.span8 .padded20 .span5 .split3 { width: 106px; } /* Missing 2px */
+.span8 .padded20 .span5 .split2 { width: 170px; }
+.span8 .padded20 .span4 .split3 { width: 81px; } /* Missing 1px */
+.span8 .padded20 .span4 .split2 { width: 132px; }
+.span8 .padded20 .span3 .split2 { width: 94px; }
+.span8 .padded10 .span8 .split5 { width: 113px; } /* Missing 1px */
+.span8 .padded10 .span8 .split4 { width: 144px; }
+.span8 .padded10 .span8 .split3 { width: 195px; } /* Missing 1px */
+.span8 .padded10 .span8 .split2 { width: 298px; }
+.span8 .padded10 .span7 .split5 { width: 97px; } /* Missing 4px */
+.span8 .padded10 .span7 .split4 { width: 124px; } /* Missing 3px */
+.span8 .padded10 .span7 .split3 { width: 169px; } /* Missing 2px */
+.span8 .padded10 .span7 .split2 { width: 259px; } /* Missing 1px */
+.span8 .padded10 .span6 .split5 { width: 82px; } /* Missing 2px */
+.span8 .padded10 .span6 .split4 { width: 105px; } /* Missing 2px */
+.span8 .padded10 .span6 .split3 { width: 144px; }
+.span8 .padded10 .span6 .split2 { width: 221px; }
+.span8 .padded10 .span5 .split5 { width: 67px; }
+.span8 .padded10 .span5 .split4 { width: 86px; } /* Missing 1px */
+.span8 .padded10 .span5 .split3 { width: 118px; } /* Missing 1px */
+.span8 .padded10 .span5 .split2 { width: 182px; } /* Missing 1px */
+.span8 .padded10 .span4 .split4 { width: 67px; }
+.span8 .padded10 .span4 .split3 { width: 92px; } /* Missing 2px */
+.span8 .padded10 .span4 .split2 { width: 144px; }
+.span8 .padded10 .span3 .split3 { width: 67px; }
+.span8 .padded10 .span3 .split2 { width: 105px; } /* Missing 1px */
+.span8 .padded10 .span2 .split2 { width: 67px; }
+.span7 .padded20 .span7 .split5 { width: 72px; } /* Missing 2px */
+.span7 .padded20 .span7 .split4 { width: 95px; } /* Missing 2px */
+.span7 .padded20 .span7 .split3 { width: 134px; }
+.span7 .padded20 .span7 .split2 { width: 211px; }
+.span7 .padded20 .span6 .split4 { width: 79px; }
+.span7 .padded20 .span6 .split3 { width: 112px; }
+.span7 .padded20 .span6 .split2 { width: 178px; }
+.span7 .padded20 .span5 .split4 { width: 62px; } /* Missing 2px */
+.span7 .padded20 .span5 .split3 { width: 90px; }
+.span7 .padded20 .span5 .split2 { width: 145px; }
+.span7 .padded20 .span4 .split3 { width: 68px; }
+.span7 .padded20 .span4 .split2 { width: 112px; }
+.span7 .padded20 .span3 .split2 { width: 79px; }
+.span7 .padded10 .span7 .split5 { width: 83px; } /* Missing 4px */
+.span7 .padded10 .span7 .split4 { width: 107px; } /* Missing 1px */
+.span7 .padded10 .span7 .split3 { width: 146px; } /* Missing 1px */
+.span7 .padded10 .span7 .split2 { width: 224px; } /* Missing 1px */
+.span7 .padded10 .span6 .split5 { width: 70px; } /* Missing 2px */
+.span7 .padded10 .span6 .split4 { width: 90px; } /* Missing 2px */
+.span7 .padded10 .span6 .split3 { width: 124px; }
+.span7 .padded10 .span6 .split2 { width: 191px; }
+.span7 .padded10 .span5 .split4 { width: 73px; } /* Missing 3px */
+.span7 .padded10 .span5 .split3 { width: 101px; } /* Missing 2px */
+.span7 .padded10 .span5 .split2 { width: 157px; } /* Missing 1px */
+.span7 .padded10 .span4 .split3 { width: 79px; } /* Missing 1px */
+.span7 .padded10 .span4 .split2 { width: 124px; }
+.span7 .padded10 .span3 .split2 { width: 90px; } /* Missing 1px */
+.span6 .padded20 .span6 .split4 { width: 64px; }
+.span6 .padded20 .span6 .split3 { width: 92px; }
+.span6 .padded20 .span6 .split2 { width: 148px; }
+.span6 .padded20 .span5 .split3 { width: 73px; } /* Missing 1px */
+.span6 .padded20 .span5 .split2 { width: 120px; }
+.span6 .padded20 .span4 .split2 { width: 92px; }
+.span6 .padded20 .span3 .split2 { width: 64px; }
+.span6 .padded10 .span6 .split4 { width: 75px; } /* Missing 2px */
+.span6 .padded10 .span6 .split3 { width: 104px; }
+.span6 .padded10 .span6 .split2 { width: 161px; }
+.span6 .padded10 .span5 .split4 { width: 61px; } /* Missing 1px */
+.span6 .padded10 .span5 .split3 { width: 85px; }
+.span6 .padded10 .span5 .split2 { width: 132px; } /* Missing 1px */
+.span6 .padded10 .span4 .split3 { width: 66px; }
+.span6 .padded10 .span4 .split2 { width: 104px; }
+.span6 .padded10 .span3 .split2 { width: 75px; } /* Missing 1px */
+.span5 .padded20 .span5 .split2 { width: 95px; }
+.span5 .padded20 .span4 .split2 { width: 72px; }
+.span5 .padded10 .span5 .split3 { width: 68px; } /* Missing 1px */
+.span5 .padded10 .span5 .split2 { width: 107px; } /* Missing 1px */
+.span5 .padded10 .span4 .split2 { width: 84px; }
+.span4 .padded10 .span4 .split2 { width: 64px; }
+
+/**
+  Grid lines
+  Creates vertical lines between gridUnits
+  @group grid
+  @style
+  .gridRow.columnLines Draws a line between gridUnits
+  .noLines Removes grid lines for children
+  @example
+    <div class="gridRow columnLines">
+        <div class="gridUnit span5">
+            <div class="gridRow noLines">
+                <div class="gridUnit span3">
+                    A three column gridUnit<br/> with no grid lines
+                </div>
+                <div class="gridUnit span2">
+                    A two column gridUnit<br/> with no grid lines
+                </div>
+            </div>
+        </div>
+        <div class="gridUnit span2">
+            A two column gridUnit<br/> with grid lines
+        </div>
+        <div class="gridUnit span3">
+            A three column gridUnit<br/> with grid lines
+        </div>
+    </div>
+ */
+
+.columnLines .gridUnit {
+    border-right: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+    margin-left: -1px;
+    padding-right: 9px;
+        padding-left: 10px;
+}
+
+.columnLines .gridUnit:first-child,
+.columnLines .gridUnit.firstChild,
+.columnLines .themeHeadline + .gridUnit {
+    border-left:0 none;
+    margin-left:0;
+    padding-left:0;
+}
+
+.columnLines .gridUnit .gridUnit,
+.columnLines .noLines .gridUnit {
+    border:0 none;
+    margin-left:20px;
+    margin-right:0;
+    padding:0;
+}
+
+.columnLines .gridUnit .gridUnit:first-child,
+.columnLines .gridUnit .gridUnit.firstChild,
+.ie .columnLines .gridUnit .gridUnit.firstChild {
+    margin-left:0;
+}
+
+.columnLines .gridUnit.lastChild,
+.columnLines .gridUnit:last-child {
+   border-right: none;
+   margin-right: 0;
+   padding-right: 0;
+}
+
+.ie .columnLines .gridUnit {
+    border-right: 1px solid #ddd;
+        border-left:0 none;
+    margin-left:0;
+    padding-left: 10px;
+    padding-right:9px;
+}
+
+.ie .columnLines .gridUnit.firstChild {
+    padding-left:0;
+}
+
+.ie .columnLines .gridUnit.lastChild {
+    border-right: 0 none;
+    padding-right:0;
+}
+
+.ie .columnLines .gridRow .gridUnit .gridRow .gridUnit {
+    border:0 none;
+    margin-left:20px;
+    margin-right:0;
+    padding:0;
+}
+
+.ie .columnLines .gridRow .gridUnit .gridRow .gridUnit:first-child {
+    margin-left:0;
+}
+
+.ie .columnLines .gridRow .gridUnit .gridRow .gridUnit:first-child {
+    margin-left:0;
+}
+
+.rowLines .gridRow {
+    border-bottom:1px solid #ddd;
+    padding-bottom:9px;
+    margin-bottom:10px;
+}
+
+.rowLines .noLines .gridRow {
+    border-bottom:0 none;
+    padding-bottom:10px;
+}
+
+.columnLines .padded20 .gridUnit,
+.columnLines .padded10 .gridUnit,
+.ie #page .columnLines .padded20 .gridUnit,
+.ie #page .columnLines .padded10 .gridUnit {
+    border:0 none;
+    margin-right:0;
+    padding:0;
+}
+
+.columnLines .padded20 .gridUnit,
+.ie #page .columnLines .padded20 .gridUnit {
+    margin-left:20px;
+}
+
+.columnLines .padded10 .gridUnit,
+.ie #page .columnLines .padded10 .gridUnit {
+    margin-left:11px;
+}
+
+.columnLines .padded20 .gridUnit:first-child,
+.columnLines .padded10 .gridUnit:first-child,
+.columnLines .padded10 .themeHeadline + .gridUnit,
+.columnLines .padded20 .themeHeadline + .gridUnit,
+.ie #page .columnLines .padded20 .gridUnit:first-child,
+.ie #page .columnLines .padded10 .gridUnit:first-child,
+.ie #page .columnLines .padded10 .themeHeadline + .gridUnit,
+.ie #page .columnLines .padded20 .themeHeadline + .gridUnit {
+    margin-left:0;
+}
+
+/* 09 | PRE, POST, PULL og PUSH - Legger til tom luft */
+/* Intervalene følger gridsplater */
+
+/* Pre */
+
+.gridRow .pre1,
+.pre1 {
+	margin-left:100px;
+}
+
+.gridRow .pre2,
+.pre2 {
+	margin-left:220px;
+}
+
+.gridRow .pre3,
+.pre3 {
+	margin-left:320px;
+}
+
+.gridRow .pre4,
+.pre4 {
+	margin-left:420px;
+}
+
+.gridRow .pre5,
+.pre5 {
+	margin-left:520px;
+}
+
+.gridRow .pre6,
+.pre6 {
+	margin-left:620px;
+}
+
+.gridRow .pre7,
+.pre7 {
+	margin-left:720px;
+}
+
+.gridRow .pre8,
+.pre8 {
+	margin-left:820px;
+}
+
+.gridRow .pre9,
+.pre9 {
+	margin-left:920px;
+}
+
+/* Post */
+
+.gridRow .post1,
+.post1 {
+	margin-right:100px;
+}
+
+.gridRow .post2,
+.post2 {
+	margin-right:180px;
+}
+
+.gridRow .post3,
+.post3 {
+	margin-right:280px;
+}
+
+.gridRow .post4,
+.post4 {
+	margin-right:380px;
+}
+
+.gridRow .post5,
+.post5 {
+	margin-right:480px;
+}
+
+.gridRow .post6,
+.post6 {
+	margin-right:580px;
+}
+
+.gridRow .post7,
+.post7 {
+	margin-right:680px;
+}
+
+.gridRow .post8,
+.post8 {
+	margin-right:780px;
+}
+
+.gridRow .post9,
+.post9 {
+	margin-right:880px;
+}
+
+/* Push */
+
+.push1 {
+	margin: 0 -100px 0 20px;
+}
+
+.push2 {
+	margin: 0 -200px 0 20px;
+}
+
+.push3 {
+	margin: 0 -300px 0 20px;
+}
+
+.push4 {
+	margin: 0 -400px 0 20px;
+}
+
+.push5 {
+	margin: 0 -500px 0 20px;
+}
+
+.push6 {
+	margin: 0 -600px 0 20px;
+}
+
+.push7 {
+	margin: 0 -700px 0 20px;
+}
+
+.push8 {
+	margin: 0 -800px 0 20px;
+}
+
+.push9 {
+	margin: 0 -900px 0 0;
+}
+
+/* Pull */
+
+.pull1 {
+	margin: 0 20px 0 -100px;
+}
+
+.pull2 {
+	margin: 0 20px 0 -200px;
+}
+
+.pull3 {
+	margin: 0 20px 0 -300px;
+}
+
+.pull4 {
+	margin: 0 20px 0 -400px;
+}
+
+.pull5 {
+	margin: 0 20px 0 -500px;
+}
+
+.pull6 {
+	margin: 0 20px 0 -600px;
+}
+
+.pull7 {
+	margin: 0 20px 0 -700px;
+}
+
+.pull8 {
+	margin: 0 20px 0 -800px;
+}
+
+.pull9 {
+	margin: 0 20px 0 -900px;
+}
+
+/* 10 | Main structure containers */
+
+/* Setter tallet 10 har bare for å ha noe å gå på, hehe */
+/* Her kan vi ha de definerte hovedområdene liggende. */
+/* Kommer til å bli brukt på alt vi lager uansett, så greit å ha grunndefinisjonen et sted */
+/* Dagens #viewportAds heter #outer i ECE5x. Et bedre navn spør du meg, da det kan inneholde mer enn bare reklame */
+
+#page {
+	position:relative;
+}
+
+/*#header {
+}
+
+#content {
+}
+
+#footer {
+}*/
+
+/* 11 | Main class library */
+
+/* Her kan vi sette inn properties vi bruker ofte som vi kan kalle med et klassenavn */
+/* Clear, floating, popping etc. Se igjennom. */
+/* Slenger på #page forran klassenavn for å vekte litt høyere. Kan fjernes, men kan vises seg å være lurt. */
+/*
+#page .clearfix {
+	clear: both;
+	height: 0px;
+	overflow: hidden;
+	position: relative;
+}
+*/
+
+/**
+  Float left
+  @style
+  .floatLeft Floats an element to the left
+  @group generic
+  @example
+  <p>
+    <span class="floatLeft" style="width:40px;height:40px; background:#900">&nbsp;</span>
+    Lorem ipsum dolor sit amet
+  </p>
+   */
+#page .floatLeft,
+.floatLeft {
+	float: left;
+}
+
+/**
+  Float right
+  @style
+  .floatRight Floats an element to the right
+  @group generic
+  @example
+  <p>
+    <span class="floatRight" style="width:40px;height:40px; background:#900">&nbsp;</span>
+    Lorem ipsum dolor sit amet
+  </p>
+   */
+#page .floatRight,
+.floatRight {
+	float:right;
+}
+
+/**
+  Float left with clear
+  @style
+  .left Floats an element to the left and clears left
+  @group generic
+  @example
+  <p>
+    <span class="left" style="width:40px;height:40px; background:#900">&nbsp;</span>
+    <span class="left" style="width:40px;height:40px; background:#090">&nbsp;</span>
+    Lorem ipsum dolor sit amet
+  </p>
+   */
+#page .left,
+.left {
+    clear:left;
+	float: left;
+}
+
+/**
+  Float right with clear
+  @style
+  .right Floats an element to the right and clears right
+  @group generic
+  @example
+  <p>
+    <span class="right" style="width:40px;height:40px; background:#900">&nbsp;</span>
+    <span class="right" style="width:40px;height:40px; background:#090">&nbsp;</span>
+    Lorem ipsum dolor sit amet
+  </p>
+   */
+#page .right,
+.right {
+    clear:right;
+	float:right;
+}
+
+/**
+  Negative left
+  Add a 20px negative margin on the left
+  @style
+  .negativeLeft
+  @group generic
+  @example
+    <div class="floatLeft" style="width:40px;height:40px; background:#900">&nbsp;</div>
+    <div class="negativeLeft" style="width:40px;height:40px; background:#090">&nbsp;</div>
+   */
+#page .negativeLeft,
+.negativeLeft {
+	margin-left: -20px;
+
+}
+
+/**
+  Negative top left
+  Add a 20px negative margin on the left and top
+  @style
+  .negativeTopLeft
+  @group generic
+  @example
+    <div style="width:40px;height:40px; background:#900">&nbsp;</div>
+    <div class="negativeTopLeft" style="width:40px;height:40px; background:#090">&nbsp;</div>
+   */
+#page .negativeTopLeft,
+.negativeTopLeft {
+	margin-top: -20px;
+	margin-left: -20px;
+	position: relative;
+}
+
+/**
+  Negative top
+  Add a 20px negative top margin
+  @style
+  .negativeTop
+  @group generic
+  @example
+    <div style="width:40px;height:40px; background:#900">&nbsp;</div>
+    <div class="negativeTop" style="width:40px;height:40px; background:#090">&nbsp;</div>
+   */
+#page .negativeTop,
+.negativeTop {
+	margin-top: -20px;
+	position: relative;
+}
+
+/**
+  Negative top right
+  Add a 20px negative margin on the right and top
+  @style
+  .negativeTopRight
+  @group generic
+  @example
+    <div class="negativeTopRight" style="width:40px;height:40px; background:#900">&nbsp;</div>
+    <div style="width:40px;height:40px; background:#090">&nbsp;</div>
+   */
+#page .negativeTopRight,
+.negativeTopRight {
+	margin-top: -20px;
+	margin-right: -20px;
+	position: relative;
+}
+
+/**
+  Negative right
+  Add a 20px negative margin on the right
+  @style
+  .negativeTopLeft
+  @group generic
+  @example
+    <div class="negativeRight" style="width:40px;height:40px; background:#900">&nbsp;</div>
+    <div style="width:40px;height:40px; background:#090">&nbsp;</div>
+   */
+#page .negativeRight,
+.negativeRight {
+	margin-right: -20px;
+	position: relative;
+}
+
+/**
+  Negative bottom right
+  Add a 20px negative margin on the right and bottom
+  @style
+  .negativeBottomRight
+  @group generic
+  @example
+    <div style="width:40px;height:40px; background:#900">&nbsp;</div>
+    <div class="negativeBottomRight" style="width:40px;height:40px; background:#090">&nbsp;</div>
+   */
+#page .negativeBottomRight,
+.negativeBottomRight {
+	margin-bottom: -20px;
+	margin-right: -20px;
+	position: relative;
+}
+
+/**
+  Negative bottom
+  Add a 20px negative bottom margin
+  @style
+  .negativeBottom
+  @group generic
+  @example
+    <div style="width:40px;height:40px; background:#900">&nbsp;</div>
+    <div class="negativeBottom" style="width:40px;height:40px; background:#090">&nbsp;</div>
+   */
+#page .negativeBottom,
+.negativeBottom {
+	margin-bottom: -20px;
+	position: relative;
+}
+
+/**
+  Negative bottom left
+  Add a 20px negative margin on the left and bottom
+  @style
+  .negativeBottomLeft
+  @group generic
+  @example
+    <div style="width:40px;height:40px; background:#900">&nbsp;</div>
+    <div class="negativeBottomLeft" style="width:40px;height:40px; background:#090">&nbsp;</div>
+   */
+#page .negativeBottomLeft,
+.negativeBottomLeft {
+	margin-bottom: -20px;
+	margin-left: -20px;
+	position: relative;
+}
+
+/**
+  Negative all
+  Add a 20px negative margin on all sides
+  @style
+  .negativeAll
+  @group generic
+  @example
+    <div style="width:40px;height:40px; background:#900">&nbsp;</div>
+    <div class="negativeAll" style="width:40px;height:40px; background:#090">&nbsp;</div>
+   */
+#page .negativeAll,
+.negativeAll {
+	margin: -20px;
+	position: relative;
+}
+
+/**
+  Top margins
+  Adds top margin to an element
+  @style
+  .m-top-20 20px
+  .m-top-15 15px
+  .m-top-10 10px
+  @example
+  <div>Lorem ipsum</div>
+  <div class="m-top-20">Lorem ipsum</div>
+  */
+.m-top-20 {margin-top:20px;}
+.m-top-15 {margin-top:15px;}
+.m-top-10 {margin-top:10px;}
+
+/* 12 | Typography */
+
+body {
+    font-size:14px;
+        line-height:1.4;
+}
+
+/**
+  Headings
+  Heading size and line-heights. <br/>
+  The size of the headings change proportionally woth the size of the parent gridUnit
+  @style
+  a Anchors within headings are black without underlines
+  @group typography
+  @example
+  <div class="gridRow">
+    <div class="gridUnit span5">
+        <h2><a href="#">Heading 2</a></h2>
+    </div>
+    <div class="gridUnit span3">
+        <h2>Heading 2</h2>
+    </div>
+    <div class="gridUnit span2">
+        <h2>Heading 2</h2>
+    </div>
+  </div>
+  */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height:1;
+    text-rendering: optimizeLegibility;
+    word-wrap:break-word;
+}
+
+h1,
+h2 {
+    margin-bottom:.22em;
+}
+
+.span10 h1,
+.span10 h2 {
+    font-size:81px;
+}
+
+.span9 h1,
+.span9 h2 {
+    font-size:73px;
+}
+
+.span8 h1,
+.span8 h2 {
+    font-size:65px;
+}
+
+.span7 h1,
+.span7 h2 {
+    font-size:56px;
+}
+
+.span6 h1,
+.span6 h2 {
+    font-size:48px;
+}
+
+.span5 h1,
+.span5 h2 {
+    font-size:40px;
+}
+
+.span4 h1,
+.span4 h2 {
+    font-size:31px;
+}
+
+.span3 h1,
+.span3 h2,
+.split3 h1,
+.split3 h2 {
+    font-size:23px;
+}
+
+.span2 h1,
+.span2 h2 {
+    font-size:16px;
+}
+
+.span1 h1,
+.span1 h2 {
+    font-size:14px;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color:#000;
+    text-decoration:none;
+}
+
+p {
+    margin-bottom:1em;
+}
+
+/**
+  Form styles
+  Basic styling for forms
+  @group form
+  @style
+  .noBorder Removes fieldset border
+  @example
+  <form action ="#" method="post">
+    <fieldset>
+        <legend>My form</legend>
+        <label for="text">My label </label><input type="text" id="text" name="text" />
+        <input type="submit" value="Ok" />
+    </fieldset>
+    <fieldset class="noBorder">
+        <textarea name="myTextarea"></textarea>
+        <button>A button</button>
+    </fieldset>
+  </form>
+*/
+fieldset {
+	border: 1px solid #333;
+        -moz-border-radius:0;
+        -webkit-border-radius:0;
+        border-radius:0;
+	line-height:1;/* Alignment of radio/checkboxes. Remember to wrap in fieldset */
+	padding:5px 10px;
+	margin:0 0 5px;
+}
+
+fieldset.noBorder {
+    border: 0 none;
+}
+
+legend {
+	color:#333;
+	font-size:10px;
+}
+
+label {
+	padding-top: 5px; /*For floated labels */
+}
+
+select,
+input,
+textarea {
+	font-size:99%;
+}
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+	line-height: 17px !important;/* Override FF default styles*/
+	margin-bottom:5px;
+}
+
+input[type="radio"],
+input.radio,
+input[type="checkbox"],
+input.checkbox {
+	margin-bottom:0;
+	vertical-align: baseline; /* Alignment of input with label */
+}
+
+.ie6 input {
+	vertical-align: text-bottom;
+}
+
+/* Remove extra padding og buttons */
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button {
+	background:#000;
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#40000000');
+	    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#40000000')";
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.25)); /* FF3.6 */
+		background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(0,0,0,0)),color-stop(1, rgba(0,0,0,0.25)));
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.25));
+		background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.25));
+	border:1px solid #000;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+	-moz-box-sizing: content-box;
+		-webkit-box-sizing: content-box;
+		box-sizing: content-box;
+	-moz-box-shadow:0 1px 2px rgba(0,0,0,0.5);
+		-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.5);
+		box-shadow:0 1px 2px rgba(0,0,0,0.5);
+	color:#fff;
+	display:inline-block;
+	overflow: visible; /* For IE */
+    line-height:23px;
+	padding: 0 5px;
+	position:relative;
+	text-decoration: none;
+    vertical-align:top;
+	width: auto;
+		height:23px;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:hover {
+    color:#fff;
+	text-shadow: #999 0 0 2px;
+	-webkit-transition: all 0.3s linear;
+	    -ms-transition: all 0.3s linear;
+	    -moz-transition: all 0.3s linear;
+	    transition: all 0.3s linear;
+}
+
+button:active ,
+input[type="submit"]:active ,
+input[type="reset"]:active ,
+input[type="button"]:active ,
+.button:active {
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#40000000', endColorstr='#00000000');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#40000000', endColorstr='#00000000')";
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.25), rgba(0,0,0,0)); /* FF3.6 */
+		background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(0,0,0,0.25)),color-stop(1, rgba(0,0,0,00)));
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.25), rgba(0,0,0,0,0));
+		background-image: linear-gradient(top, rgba(0,0,0,0.25), rgba(0,0,0,0,0));
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding:0;
+	border:none;
+}
+
+
+/* Need class button on <input type="button .../> for IE6 (if you care about people using IE6) */
+.ie6 button,
+.ie6 .button {
+	width:0;
+}
+
+input[type=text],
+input[type=color],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=file],
+input[type=image],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=range],
+input[type=reset],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+input.text,
+select,
+textarea {
+	background:#f9f9f9;
+	border:1px solid #666;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+	-moz-box-shadow:1px 1px 2px #ccc inset;
+		-webkit-box-shadow:1px 1px 2px #ccc inset;
+		box-shadow:1px 1px 2px #ccc inset;
+    height:17px;
+	padding:3px 5px;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display:none;
+}
+
+select,
+textarea {
+    height:auto;
+}
+
+input[type="text"]:focus,
+input[type="color"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus,
+input[type="image"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="range"]:focus,
+input[type="reset"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus,
+input.text:focus,
+select:focus,
+textarea:focus {
+	background-color:#FFFFCC;
+	outline:none;
+	-webkit-transition: all 0.3s linear;
+}
+
+.selectDropDown {
+	position:absolute;
+}
+
+.selectDropDown input {
+	margin-right:12px;
+}
+
+
+/* TODO: FLYTTES TIL RIKITG STED */
+/* gridRow clear floats */
+.gridRow:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+	.gridRow {
+		display: inline-block;
+	}
+
+	html .gridRow {
+		display: block;
+	}
+
+	* html .gridRow {
+		height: 1%;
+	}
+	/* gridRow clear floats END */
+
+	.noBorder {
+		border:none !important;
+	}
+
+/* general stuff */
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+	.clearfix {
+		display: inline-block;
+	}
+
+	html .clearfix {
+		display: block;
+	}
+
+	* html .clearfix {
+		height: 1%;
+	}
+/* / TODO*/
+
+/* Styling of input type=file */
+.fileInput {
+	position:relative;
+}
+
+/* Hand cursor on clickable input elements */
+label,
+input[type=button],
+input[type=submit],
+button,
+.button {
+	cursor: pointer;
+}
+
+.formCharCounter {
+    color:#999;
+    font-size:10px;
+    margin:-20px 0 0 5px;
+    position:absolute;
+}
+
+/* Alternative Form design patterns */
+.rightAlignedLabels {
+	position:relative;
+	padding-left:150px;
+}
+
+.rightAlignedLabels label {
+	text-align:right;
+	position:absolute;
+		left:0;
+		top:auto;
+	width:145px;
+}
+
+.rightAlignedLabels input {
+	display:block;
+}
+
+.pillBox {
+	border:1px solid #666;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+	float:left;
+	overflow:hidden;
+}
+
+.pillBox input,
+.pillBox input[type="text"],
+.pillBox select,
+.pillBox button,
+.pillBox .button {
+	border:0 none;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		border-radius:0;
+	float:left;
+	margin:0;
+	vertical-align:top;
+}
+.pillBox button,
+.pillBox .button {
+	border-left:1px solid rgba(255,255,255,0.2);
+	border-right:1px solid rgba(0,0,0,.5);
+	-moz-box-shadow:none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+}
+
+.pillBox *:first-child,
+.pillBox .first,
+.pillBox .pillBox:first-child *:first-child {
+	border-left:0 none;
+		-moz-border-radius-topleft: 4px;
+		-webkit-border-top-left-radius: 4px;
+		border-top-left-radius: 4px;
+		-moz-border-radius-bottomleft: 4px;
+		-webkit-border-bottom-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+}
+
+.ie .pillBox .first,
+.ie .pillBox .pillBox:first-child *:first-child {
+    border-left:0 none;
+}
+
+.pillBox *:last-child,
+.pillBox .last {
+	border-right:0 none;
+		-moz-border-radius-topright: 4px;
+		-webkit-border-top-right-radius: 4px;
+		border-top-right-radius: 4px;
+		-moz-border-radius-bottomright: 4px;
+		-webkit-border-bottom-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+}
+
+.ie .pillBox .last {
+    border-right:0 none;
+}
+
+.pillBox .pillBox,
+.pillBox .pillBox *:first-child,
+.pillBox .pillBox *:last-child,
+.pillBox .pillBox *{
+    border-width:0;
+    -moz-border-radius:0;
+        -webkit-border-radius:0;
+        border-radius:0;
+}
+
+.ie .pillBox .pillBox div,
+.ie .pillBox .pillBox .button {
+    border-width: 0;
+}
+
+.pillBox .pillBox:first-child *:last-child {
+	-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		border-radius: 0;
+}
+
+.pillBox .pillBox:last-child *:first-child {
+	-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		border-radius: 0;
+}
+
+.pillBox .pillBox:last-child *:last-child{
+    -moz-border-radius: 0 4px 4px 0;
+        -webkit-border-radius: 0 4px 4px 0;
+        border-radius: 0 4px 4px 0;
+}
+
+.pillBox .pillBox:first-child *:first-child{
+    -moz-border-radius: 4px 0 0 4px;
+        -webkit-border-radius:4px 0 0 4px;
+        border-radius: 4px 0 0 4px;
+}
+
+/*datepicker*/
+.mnoDatePicker {
+    background:#fff;
+    border:2px solid #666;
+    -moz-box-shadow:0 0 15px #999;
+        -webkit-box-shadow:0 0 15px #999;
+        box-shadow:0 0 15px #999;
+    position:absolute;
+        z-index:1000;
+    text-align:center;
+}
+
+.mnoDatePicker th,
+.mnoDatePicker td {
+    border:1px solid #ccc;
+    line-height:30px;
+    padding:0;
+    vertical-align:middle;
+    width:30px;
+        height:30px;
+}
+
+.mnoDatePicker .monthYear th {
+    background-color:#ccc;
+}
+
+.mnoDatePicker th {
+    background-color:#333;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#20000000');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#20000000')";
+        background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,.15)); /* FF3.6 */
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(0,0,0,0)),color-stop(1, rgba(0,0,0,.15)));
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.15)); /* FF3.6 */
+        background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.15)); /* FF3.6 */
+    color:#fff;
+    font-size:12px;
+}
+
+.mnoDatePicker tbody td:nth-child(6),
+.mnoDatePicker tbody td:nth-child(7) {
+    background-color:#e8e8e8;
+}
+
+.mnoDatePicker div {
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#20000000');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#20000000')";
+        background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,.15)); /* FF3.6 */
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(0,0,0,0)),color-stop(1, rgba(0,0,0,.15)));
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.15));
+        background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.15));
+    border-top:1px solid #fff;
+        border-left:1px solid #fff;
+    cursor:pointer;
+    display:block;
+    font-weight:bold;
+    width:30px;
+        height:30px;
+}
+
+.mnoDatePicker .current div {
+    background-color:#ffc;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#20000000', endColorstr='#00000000');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#20000000', endColorstr='#00000000')";
+        background-image: -moz-linear-gradient(top, rgba(0,0,0,.15), rgba(0,0,0,0)); /* FF3.6 */
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(0,0,0,.15)),color-stop(1, rgba(0,0,0,0)));
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0,.15), rgba(0,0,0,0));
+        background-image: linear-gradient(top, rgba(0,0,0,.15), rgba(0,0,0,0));
+    border-top:1px solid #b0b0b0;
+        border-left:1px solid #b0b0b0;
+}
+
+.mnoDatePicker div:hover {
+    background-color:#ffc;
+}
+
+.mnoDatePicker select {
+    margin-bottom:2px;
+}
+
+.none {
+    display: none;
+}
+
+.ohidden {
+    overflow: hidden;
+}
+
+/* Code convetion */
+
+/*.coderManWithIndenting {
+	background-image: url(GitHub/nyhetsgrid/test.jpg);
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+	clear: both;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+		font-size: 13px;
+		line-height: 18px;
+		font-weight: bold;
+	position: relative;
+		top: 20px;
+		left: 400px;
+	width: 200px;
+		min-width: 180px;
+		height: auto;
+}*/

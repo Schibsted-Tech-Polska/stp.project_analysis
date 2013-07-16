@@ -1,0 +1,7 @@
+body.jobb.okonomi.nyheter #topAd,body.jobbsok.okonomi.nyheter #topAd {
+    display: none;
+}
+
+body.jobb.okonomi.nyheter #content .gridRow {
+    margin-bottom: 15px;
+}

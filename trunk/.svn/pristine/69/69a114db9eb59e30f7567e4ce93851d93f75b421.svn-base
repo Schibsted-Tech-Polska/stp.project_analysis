@@ -1,0 +1,57 @@
+.quote {
+    font-family:Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+}
+
+.articleTitle blockquote {
+    font-weight:normal;
+        font-style:italic;
+}
+
+.articleTitle blockquote  cite {
+    display:block;
+    font-family:arial, sans-serif;
+        font-size:14px;
+        font-style:normal;
+        font-weight:bold;
+}
+
+div.politiFactVerdict {
+    background-color: #EDEDED;
+    padding: 4px;
+}
+
+/****  review fields ***/
+#page .storyContent .reviewSubjectTitle,
+#page .storyContent .reviewPerformer,
+#page .storyContent div.review {
+    border-top:0 none;
+    font-size: 16px;
+    width:135px
+}
+#page .storyContent .reviewSubjectTitle {
+    padding-bottom: 10px;
+}
+
+#page .storyContent .reviewPerformer {
+    border-top:1px solid #999;
+}
+
+.storyContent .review .grade {
+    font-size:16px;
+    line-height: 25px;
+    width:25px;
+    height:25px;
+}
+
+.ie .storyContent .review .grade {
+    background-position: 0 -131px
+}
+
+.ie .storyContent .review .grade.set {
+    background-position:0 -81px;
+}
+
+.ie .storyContent .review .grade.setHover,
+.ie .storyContent .review .grade.userRating {
+    background-position: 0 -106px;
+}

@@ -1,0 +1,83 @@
+.offCanvas.offCanvasLabel {
+    height:100%;
+    padding-top:0;
+}
+
+.offCanvas.offCanvasLabel .button {
+    border-radius: 3px;
+        border-radius:.1875rem;
+    cursor: pointer;
+    display: inline-block;
+    height:37px;
+        height: 2.3125rem;
+    line-height:32px; /*<ie8*/
+        line-height: 2rem;
+        text-shadow:none;
+    -moz-transition: background 250ms ease-in-out;
+        -ms-transition: background 250ms ease-in-out;
+        -webkit-transition: background 250ms ease-in-out;
+        transition: background 250ms ease-in-out;
+    padding: 3px 16px 0;
+        padding: 0.1875rem 1rem 0;
+    user-select: none;
+    vertical-align: middle;
+}
+
+.offCanvas.offCanvasLabel .highlight {
+    background-color: #770;
+}
+
+@media screen and (min-width:641px) {
+    .offCanvas.offCanvasLabel:before {
+        content: ' ';
+        display: inline-block;
+        height:100%;
+        vertical-align: middle;
+    }
+}
+
+.ie .offCanvas.offCanvasLabel:before {
+    content: ' ';
+    display: inline-block;
+    height:100%;
+    vertical-align: middle;
+}
+
+.ie #header .offCanvas.offCanvasLabel {
+    margin-top:13px;
+}
+/*remove*/
+.offCanvas.offCanvasLabel .button:before {
+    font-size: 32px; /*<ie8*/
+    font-size: 2rem;
+    vertical-align: top;
+}
+
+.ie .offCanvas.offCanvasLabel .button:before {
+    position:relative;
+    top:-20px;
+}
+
+@media all and (max-width:767px) {
+    .offCanvas.offCanvasLabel .button {
+        width:2.3125rem;
+        overflow:hidden;
+    }
+}
+
+@media all and (max-width:640px) {
+    .offCanvas.offCanvasLabel {
+        -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        display:block;
+        float:none;
+        padding:4px 5px 3px;
+        width: 16%;
+    }
+
+    .offCanvas.offCanvasLabel .button {
+        padding: 3px 3px 0;
+            padding: 0.1875rem .1875rem 0;
+    }
+}

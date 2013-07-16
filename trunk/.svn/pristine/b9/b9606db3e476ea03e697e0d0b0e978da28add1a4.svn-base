@@ -1,0 +1,15 @@
+.feed.twitter .articleList li {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 12px;
+    margin-bottom: 0;
+}
+.feed.twitter .twitterFall h2 {
+    line-height: 1.5em;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.feed.twitter .twitterFall p {
+    font-size: 12px;
+    line-height: 1.3em;
+    margin-bottom: 0;
+}

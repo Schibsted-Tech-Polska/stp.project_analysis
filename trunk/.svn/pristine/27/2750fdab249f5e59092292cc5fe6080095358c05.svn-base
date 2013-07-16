@@ -1,0 +1,21 @@
+.profiledCompanies .header {
+    margin-bottom: 0;
+}
+
+.profiledCompanies ul {
+    border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    padding: 0 5px;
+}
+
+.profiledCompanies ul li {
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    height: 50px;
+    padding: 5px;
+    vertical-align: middle;
+    width: 45%;
+}
+.profiledCompanies ul li:nth-child(odd) {
+    border-right: 1px solid #ccc;
+}

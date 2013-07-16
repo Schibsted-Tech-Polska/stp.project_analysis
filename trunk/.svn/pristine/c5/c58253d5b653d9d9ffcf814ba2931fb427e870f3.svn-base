@@ -1,0 +1,17 @@
+.notifications.categories a {
+    text-decoration: none;
+}
+.notifications.categories a:hover {
+    text-decoration: underline;
+}
+
+.notifications.categories > ul > li {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.notifications.categories ul li ul li {
+    list-style: disc;
+    margin-left: 20px;
+}

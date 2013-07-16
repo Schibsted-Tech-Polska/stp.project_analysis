@@ -1,0 +1,43 @@
+# forum widget
+forum.widget.threads.forum.linkText=View all topics
+forum.widget.threads.byline.prefix=by
+forum.widget.thread.form.post.linkText=Post new topic
+forum.widget.thread.form.login.linkText=Login to post new topic
+forum.widget.thread.form.new.headline=Post a new topic
+forum.widget.thread.form.title.field.label=Title:
+forum.widget.thread.form.body.field.label=Body:
+forum.widget.thread.form.submit.button.label=Post new topic
+forum.widget.thread.form.cancel.button.label=Cancel
+forum.widget.threads.title.header=Title
+forum.widget.threads.author.header=Author
+forum.widget.threads.posts.header=Posts
+forum.widget.threads.latestPost.header=Latest post
+
+forum.widget.postings.rating.notloggedin.message.text=You have to login first to rate this posting.
+forum.widget.postings.rating.unauthorizedMsg.text=You do not have permission to rate this posting.
+forum.widget.postings.rating.alreadyRatedMsg.text=You have already rated this posting.
+forum.widget.postings.posts.text=post(s)
+forum.widget.postings.latestPost.text=latest post
+forum.widget.postings.byline.prefix=by
+forum.widget.postings.in.prefix=in
+forum.widget.postings.forum.go.prefix=Go back to the forum:
+forum.widget.postings.form.reply.headline=New posting
+forum.widget.postings.form.reply.post.linktext=Reply to this post
+forum.widget.postings.form.reply.submit.label=Post reply
+forum.widget.postings.form.report.headline=New complaint
+forum.widget.postings.form.report.post.linktext=Report Abuse
+forum.widget.postings.form.report.submit.label=Post complaint
+forum.widget.posting.show.linkText=Show posting
+forum.widget.posting.form.input.text.restriction.message=characters left
+
+forum.widget.posting.form.headline=Share your opinion
+
+forum.widget.thread.form.input.title.empty=Topic title field cannot be empty.
+forum.widget.thread.form.input.body.empty=Topic body field cannot be empty.
+forum.widget.posting.form.input.body.empty=Posting body field cannot be empty.
+forum.widget.complaint.form.input.body.empty=Complaint body field cannot be empty.
+
+forum.section.custom.headline=Forums
+forum.section.custom.terms.text1=Use of and participation in this Sports Online interactive community is contingent upon your acceptance of the
+forum.section.custom.terms.text2=terms and conditions
+forum.section.custom.terms.text3=By participating in this interactive community, you acknowledge your acceptance of these terms.

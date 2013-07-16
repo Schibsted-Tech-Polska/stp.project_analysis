@@ -1,0 +1,53 @@
+.relatedContents.stories li a {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.relatedContents.stories li.first{
+    margin-top: 10px;
+}
+.relatedContents.stories li.withImg{
+    list-style: none;
+    color: black;
+    margin-left: -15px;
+}
+.relatedContents.stories li.noImg{
+    list-style: none;
+    color: black;
+    margin-left: -15px;
+}
+
+/* relation article */
+.relatedContents.stories .relationArticle .content {
+    background-color: transparent;
+}
+
+.relatedContents.stories span.docLink {
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    overflow:hidden;
+    padding-left:25px;
+    padding-bottom: 25px;
+}
+
+
+.relatedContents.stories span.docLink.docx, .relatedContents.stories span.docLink.doc {
+    background:url(/skins/global/gfx/icons/doc_sprite_25.png) no-repeat 0px -0px;
+}
+
+.relatedContents.stories span.docLink.pdf {
+    background:url(/skins/global/gfx/icons/doc_sprite_25.png) no-repeat 0px -49px;
+}
+
+.relatedContents.stories span.docLink.pptx {
+    background:url(/skins/global/gfx/icons/doc_sprite_25.png) no-repeat 0px -73px;
+}
+
+.relatedContents.stories span.docLink.xls,
+.relatedContents.stories span.docLink.xlsx,
+.relatedContents.stories span.docLink.xlt {
+    background:url(/skins/global/gfx/icons/doc_sprite_25.png) no-repeat 0px -25px;
+}

@@ -1,0 +1,8 @@
+.singleLineList header {
+    margin-bottom:0;
+}
+
+.singleLineList .content li {
+    background-color: #fff;
+    border-bottom: 1px solid #d3d2c5;
+}

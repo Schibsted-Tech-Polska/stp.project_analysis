@@ -1,0 +1,28 @@
+
+.span6 .feed.instagram img {
+    float: left;
+    margin: 5px 5px;
+}
+
+.span4 .feed.instagram img {
+    float: left;
+    margin: 5px 5px;
+    width: 30% !important;  /*the use of mno.utils.expand give element style width 100%; !important overrules this... */
+    height: 30% !important;
+}
+
+
+@media only screen and (max-width: 480px) {
+    .feed.instagram {
+    margin-left: -2px;
+}
+
+    .feed.instagram img.imgSmall {
+        float: left;
+        margin-bottom: 2%;
+        margin-left: 2%;
+        width: 30% !important;  /*the use of mno.utils.expand give element style width 100%; !important overrules this... */
+        height: 30% !important;
+    }
+}
+

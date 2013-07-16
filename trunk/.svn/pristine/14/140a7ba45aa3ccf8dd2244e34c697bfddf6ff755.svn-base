@@ -1,0 +1,10 @@
+&nbsp;
+<ul>
+    {{each items}}
+        <li>
+    {{html di}}<p><span class="author {{html dx}}">{{html da}}</span>
+    <span>{{html dm}}</span><br/>
+    <span class="chatTextDate">{{html dt}}</span></p>
+        </li>
+    {{/each}}
+</ul>

@@ -1,0 +1,49 @@
+.widget.realEstateInfo.heading {
+    position: relative;
+}
+.widget.realEstateInfo.heading,
+.widget.realEstateInfo.heading  h1 {
+    font-family: 'PT Sans',Arial,Helvetica,Sans-serif;
+}
+
+.widget.realEstateInfo.heading h1 {
+    font-weight: normal;
+    font-size: 26px;
+}
+
+.widget.realEstateInfo.heading .lastUpdate,
+.widget.realEstateInfo.heading .finnkode {
+    float: left;
+    margin-right: 40px;
+    font-size: 12px;
+    color: #888;
+}
+
+.widget.realEstateInfo.heading .sharing {
+    position: absolute;
+    right: 0;
+}
+
+.widget.realEstateInfo.heading .address {
+    display: none;
+}
+
+@media only screen and (max-width: 480px) {
+    .widget.realEstateInfo.heading h1 {
+        font-size: 14px;
+    }
+
+    .widget.realEstateInfo.heading .lastUpdate,
+    .widget.realEstateInfo.heading .finnkode {
+        display: none;
+    }
+
+    .widget.realEstateInfo.heading .address {
+        display: block;
+        clear: both;
+        font-size: 18px;
+        font-family: 'PT Sans',Arial,Helvetica,Sans-serif;
+        /* gotham book */
+        padding-bottom: 8px;
+    }
+}

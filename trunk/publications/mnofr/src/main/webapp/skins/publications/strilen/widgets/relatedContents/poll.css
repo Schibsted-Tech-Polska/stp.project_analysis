@@ -1,0 +1,19 @@
+.poll h2 {
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 0;
+    background: #F9F9F9;
+    border: 1px solid #CCC;
+    border-width: 0 1px 0 1px;
+}
+.poll input[type=radio] {
+    margin-right: 5px;
+}
+.poll .content {
+    background: #F9F9F9;
+    border: 1px solid #CCC;
+    border-width: 0 1px 1px 1px;
+}
+.poll .content .button {
+    margin: 0 0 10px 10px;
+}

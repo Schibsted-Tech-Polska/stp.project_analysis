@@ -1,0 +1,16 @@
+.storedArticles.saveArticle {
+    background: url(/skins/publications/sa/gfx/icons/saveArticle.png) no-repeat;
+    color: #003366;
+    font-size: 14px;
+        font-size: .875rem;
+    display: block;
+    padding-top: 40px;
+        padding-top: 2.75rem;
+    text-decoration: none;
+        text-indent: 4px;
+        text-indent: .25rem;
+}
+
+.hasNotAccess .storedArticles.saveArticle {
+    display: none;
+}

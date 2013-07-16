@@ -1,0 +1,8 @@
+host=www.jobbdirekte.no
+port=80
+protocol=http
+site=/export/apXML
+encoding=UTF-8
+output=/home/mno/strategiske-tjenester/rubrikk/regionene-felles/xtra_jobbdirekte/jobbdirekte.json
+backupdir=/home/mno/strategiske-tjenester/rubrikk/regionene-felles/xtra_jobbdirekte/history/
+json_callbackmethod=callJobbDirekte

@@ -1,0 +1,30 @@
+.poll fieldset {
+    border:0 none;
+    overflow:hidden;
+    position:relative;
+    -moz-box-shadow:none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+}
+
+.poll header{
+    width: 100%;
+}
+
+.poll header h3{
+    display: inline;
+}
+
+.poll label {
+    padding:0 0 10px;
+}
+
+.poll header a{
+    float:right;
+}
+
+.poll .validation{
+    color: red;
+    font-size: 10px;
+    position: relative;
+}

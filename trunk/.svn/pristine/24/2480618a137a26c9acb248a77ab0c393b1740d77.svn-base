@@ -1,0 +1,99 @@
+.widget.realEstateInfo.requestForm form fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.widget.realEstateInfo.requestForm form legend {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-width: 1px 0px;
+    border-color: #E0E0E0;
+    border-style: solid;
+    background-color: #F8F4F0;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+    padding: 3px 4px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.widget.realEstateInfo.requestForm form ul {
+    padding: 10px;
+    float: left;
+}
+
+.widget.realEstateInfo.requestForm form li {
+    float: left;
+    width: 48%;
+    margin: 5px 0;
+}
+
+@media (min-width : 321px) {
+    .widget.realEstateInfo.requestForm form li {
+        width: 100%;
+        margin: 5px 0!important;
+    }
+    .widget.realEstateInfo.requestForm form select {
+        width: 74%!important;
+    }
+}
+
+@media (max-width: 320px) {
+    .widget.realEstateInfo.requestForm form li {
+        width: 100%;
+        margin: 5px 0!important;
+    }
+    .widget.realEstateInfo.requestForm form select {
+        width: 74%!important;
+    }
+}
+
+.widget.realEstateInfo.requestForm form li.submit {
+    float: right;
+}
+
+.widget.realEstateInfo.requestForm form li:nth-child(2n){
+    margin-left: 4%;
+}
+
+.widget.realEstateInfo.requestForm form label {
+    padding: 0;
+    width: 20%;
+    float: left;
+    line-height: 25px;
+}
+
+.widget.realEstateInfo.requestForm form input,.widget.realEstateInfo.requestForm form select {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 0;
+    width: 70%;
+    float: right;
+}
+
+.widget.realEstateInfo.requestForm form select {
+    width: 75%;
+}
+
+.widget.realEstateInfo.requestForm form button {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    float: right;
+}
+
+.widget.realEstateInfo.requestForm .notification {
+    visibility: hidden;
+    padding: 0px 10px;
+    color: green;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.widget.realEstateInfo.requestForm .notification.error {
+    color:red;
+}

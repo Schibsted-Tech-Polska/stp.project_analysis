@@ -1,0 +1,19 @@
+{{each(i, value) items}}
+    {{if value == 'facebook'}}
+        <a class="shareButton addthis_32x32_style addthis_button_facebook_like" fb:like:layout="box_count" fb:like:action="recommend" fb:like:send="true" fb:like:width="65"></a>
+    {{else value == 'twitter'}}
+        <a class="shareButton addthis_32x32_style addthis_button_tweet" tw:count="vertical" {{if twitterHashtag}}tw:hashtags="${twitterHashtag}"{{/if}}></a>
+    {{else value == 'google'}}
+        <a class="shareButton addthis_32x32_style addthis_button_google_plusone" g:plusone:size="tall"></a>
+    {{else value == 'tips'}}
+        <a class="shareButton addthis_32x32_style mnoTips" title="Tips oss" href="/tips/">
+            <span></span>
+        </a>
+    {{else value == 'favourite'}}
+        <a class="shareButton addthis_32x32_style mnoStoreArticle" title="Lagre artikkel" href="#">
+            <span></span>
+        </a>
+    {{else}}
+        <a class="shareButton addthis_32x32_style addthis_button_${value}"></a>
+    {{/if}}
+{{/each}}
