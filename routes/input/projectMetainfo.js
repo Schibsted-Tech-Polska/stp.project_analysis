@@ -3,10 +3,12 @@ var sonarModule = require('sonarModule');
 var fileModule = require('fileModule');
 var flow = require('nimble');
 var validationModule = require('validationModule');
+var jsFilesToOmit=require('javaScriptFilesToOmit');
 
 exports.form = function(req, res){
 res.render('inputForm', {
-	title: 'analysis tool'
+	title: 'analysis tool',
+	jsFilesToOmit:jsFilesToOmit.getFiles()
 	});
 };
 
