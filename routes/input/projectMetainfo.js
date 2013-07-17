@@ -2,6 +2,7 @@ var repoModule = require('repositoriesModule');
 var sonarModule = require('sonarModule');
 var fileModule = require('fileModule');
 var flow = require('nimble');
+var validationModule = require('validationModule');
 
 exports.form = function(req, res){
 res.render('inputForm', {
@@ -16,50 +17,63 @@ exports.submit = function(data){
 	return function(req, res, next){
 
 		var link = req.body.link;
-		console.log('receive data ' + link);
-		var language = req.body.targetLanguage;
-		console.log('targetLanguage : ' + language);
-		var javaBuildCommand = req.body.command;
-		console.log('javaBuildCommand: ' + javaBuildCommand);
+		//var language = req.body.targetLanguage;
+		//var javaBuildCommand = req.body.command;
+		//var gitCommand = req.body.gitCommand;
 
-        startAnalysisProcess(link, language, javaBuildCommand);
+		 var properties = {
+				 	'language' : req.body.targetLanguage,
+				 	'link' : link,
+				 	'gitCommand' : req.body.gitCommand,
+				 	'javaBuildCommand' : req.body.javaBuildCommand
+				 };
+        
+        startAnalysisProcess(properties);
 
         var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(link);
 		console.log("-------link to analyzed project : " + linkToAnalyzedProject);
 		res.setHeader('202');
 		res.redirect(linkToAnalyzedProject);
 
+
+
      };
 }
 
-function startAnalysisProcess(link, language, javaBuildCommand){
+function startAnalysisProcess(properties){
 
         
 
-        var nameOfGitRepo;
+        //var nameOfGitRepo;
 		//TODO make 3 functions
 		flow.series([
 			function(callback){
-				nameOfGitRepo = repoModule.getNameOfRepo(link);
-				console.log('--> extract nameOfGitRepo : ' + nameOfGitRepo);
+				console.log('--> after validationModule ');
+				validationModule.validateInput(properties, callback);
+
+			},
+			function(callback){
+				properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
+				console.log('--> extract nameOfGitRepo : ' + properties.nameOfGitRepo);
 				callback();//inlnie
 			},
 			function(callback){
-				repoModule.downloadRepo(link,callback);
+				repoModule.downloadRepo(properties,callback);
 			},
 			function(callback){
 
 
 				 console.log("--->third callback");
-				 var projectLocation = fileModule.buildAbsolutePath(nameOfGitRepo);
+				 var projectLocation = fileModule.buildAbsolutePath(properties.nameOfGitRepo);
 				 console.log('---> projectLocation after build Absolute Path : ' + projectLocation);
-				 var properties = {
+				 /*var properties = {
 				 	'language' : language,
 				 	'projectLocation' : projectLocation,
 				 	'link' : link,
 				 	'nameOfGitRepo' : nameOfGitRepo,
 				 	'javaBuildCommand' : javaBuildCommand
-				 };
+				 };*/
+				 properties.projectLocation = projectLocation;
 				 sonarModule.analyze(properties);
 				 console.log("- prop lang : "+ properties.language);
 				 console.log("---->third finished");

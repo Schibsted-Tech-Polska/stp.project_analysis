@@ -7,14 +7,15 @@
   <body>
     <h1><%= title %></h1>
     <form method='post'>
-    <p><input type='text', name='link', placeholder='Name'/>
+    <p><input type='text', name='gitCommand', placeholder='type git command'/>
+      <input type='text', name='link', placeholder='link', size='35'/>
     </p>
     <select name="targetLanguage" id="targetLanguage">
       <option value="java">java</option>
       <option value="php">php</option>
       <option value="js">js</option>
     </select>
-    <p><input type='text', name='command', placeholder='java build  command'/>
+    <p><input type='text', name='javaBuildCommand', placeholder='java build  command'/>
     </p>
 
     <p><input type='submit', value='linkToRepo'/></p>
