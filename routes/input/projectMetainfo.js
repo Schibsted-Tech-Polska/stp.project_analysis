@@ -22,7 +22,7 @@ exports.submit = function(data){
 		//var language = req.body.targetLanguage;
 		//var javaBuildCommand = req.body.command;
 		//var gitCommand = req.body.gitCommand;
-
+        console.log('controller get link : ' + link);
 		 var properties = {
 				 	'language' : req.body.targetLanguage,
 				 	'link' : link,
