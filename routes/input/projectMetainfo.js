@@ -15,7 +15,6 @@ res.render('inputForm', {
 
 exports.submit = function(data){
 	
-	
 	return function(req, res, next){
 
 		var link = req.body.link;
@@ -37,17 +36,11 @@ exports.submit = function(data){
 		console.log("-------link to analyzed project : " + linkToAnalyzedProject);
 		res.setHeader('202');
 		res.redirect(linkToAnalyzedProject);
-
-
-
-     };
+	};
 }
 
 function startAnalysisProcess(properties){
-
-        
-
-        //var nameOfGitRepo;
+		//var nameOfGitRepo;
 		//TODO make 3 functions
 		flow.series([
 			function(callback){
@@ -60,7 +53,7 @@ function startAnalysisProcess(properties){
 				console.log('--> extract nameOfGitRepo : ' + properties.nameOfGitRepo);
 				callback();//inlnie
 			},
-			function(callback){
+			function(callback){//TODO fix crashing node when link is in bad format
 				repoModule.downloadRepo(properties,callback);
 			},
 			function(callback){
@@ -83,6 +76,4 @@ function startAnalysisProcess(properties){
 			}
 
 		]);
-
-
 }
