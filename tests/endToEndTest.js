@@ -4,8 +4,8 @@ var assert = require('assert');
 var linkToProject="https://github.com/tomekl007/exapmleMavenProject";
 var expectedStatusCode = 302;
 
-describe('post with proper parameters', function(){
-	it('should return redirect status code :  ' + expectedStatusCode , function(done){
+describe('trigger project analysis and generating report ', function(){
+	it('should show location the future locaiton of report  ' + expectedStatusCode , function(done){
 
 	  
 	 
@@ -18,7 +18,7 @@ describe('post with proper parameters', function(){
 	}}, function(error,response,body){
 			console.log("response :" + body + "status code : " +response.statusCode);
 			var statusCode = response.statusCode;
-			assert.equal(statusCode, expectedStatusCode);
+			assert.equal(statusCode, expectedStatusCode);//TODO extract from link 
 			done();
 		});
 	

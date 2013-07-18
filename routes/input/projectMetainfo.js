@@ -27,7 +27,8 @@ exports.submit = function(data){
 				 	'language' : req.body.targetLanguage,
 				 	'link' : link,
 				 	'gitCommand' : req.body.gitCommand,
-				 	'javaBuildCommand' : req.body.javaBuildCommand
+				 	'javaBuildCommand' : req.body.javaBuildCommand,
+				 	'filesToOmit': req.body.filesToOmit
 				 };
         
         startAnalysisProcess(properties);
