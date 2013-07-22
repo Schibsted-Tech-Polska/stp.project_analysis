@@ -1,10 +1,15 @@
 var validationModule = require('validationModule');
 var assert = require('assert');
-var properties = {
-				 	'gitCommand' : '',
-				 	'javaBuildCommand' : ''
-				 };
+var properties; 
 var gitCloneCommand = 'git clone';
+
+beforeEach(function(){
+	properties = {
+				 	'gitCommand' : '',
+				 	'javaBuildCommand' : '',
+				 	'filesToOmit': new String('none')
+				 };
+})
 
 describe('validate git command', function(){
 	it('after validation should be equal to : ' + gitCloneCommand , function(){

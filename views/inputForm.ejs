@@ -4,9 +4,24 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+    <script type="text/javascript">
+  function validateForm(){
+    var gitLinkValue = document.forms[0]['link'].value;
+    var delimeter = '/';
+    var splittedLink = gitLinkValue.split(delimeter);
+    //alert(gitLinkValue);
+    //alert(splittedLink.length);
+    if(splittedLink.length == 5){
+      return true;
+    }
+      return false;
+  
+  }
+  </script>
+
   <body>
     <h1><%= title %></h1>
-    <form method='post'>
+    <form method='post', onsubmit='return validateForm()'/>
     <p><input type='text', name='gitCommand', placeholder='type git command', value='git clone'/>
       <input type='text', name='link', placeholder='link', size='35'/>
     </p>

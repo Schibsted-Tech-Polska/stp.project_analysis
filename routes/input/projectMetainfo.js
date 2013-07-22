@@ -62,13 +62,7 @@ function startAnalysisProcess(properties){
 				 console.log("--->third callback");
 				 var projectLocation = fileModule.buildAbsolutePath(properties.nameOfGitRepo);
 				 console.log('---> projectLocation after build Absolute Path : ' + projectLocation);
-				 /*var properties = {
-				 	'language' : language,
-				 	'projectLocation' : projectLocation,
-				 	'link' : link,
-				 	'nameOfGitRepo' : nameOfGitRepo,
-				 	'javaBuildCommand' : javaBuildCommand
-				 };*/
+			
 				 properties.projectLocation = projectLocation;
 				 sonarModule.analyze(properties);
 				 console.log("- prop lang : "+ properties.language);
