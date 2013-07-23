@@ -5,7 +5,7 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
+ 
   , http = require('http')
   , path = require('path')
   , projectMetainfo = require('./routes/input/projectMetainfo');
@@ -34,7 +34,7 @@ app.get('/', routes.index);
 
 app.get('/qualityAnalysis', projectMetainfo.form );
 app.post('/qualityAnalysis', projectMetainfo.submit(app.get('qualityAnalysis')));
-app.get('/users', user.list);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

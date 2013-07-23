@@ -15,7 +15,7 @@ describe('find src for testDirectory ' , function(){
 	it('should propertiesToChange.SRC equal : ', function(done){
 		
 		var extension = '.js';
-		var filesToOmit = ['omit'];
+		var filesToOmit = ['**/*omitThis.js'];
 		var parameters = {
 							'extension':extension,
 							'projectLocation':projectLocation,
@@ -25,7 +25,7 @@ describe('find src for testDirectory ' , function(){
 		sourceFinderModule.findSrcLocation(parameters,propertiesToChange,
 			function(propertiesToChange){
 				console.log("find : " +propertiesToChange.SRC);
-				assert.equal(propertiesToChange.SRC.length,2);
+				assert.equal(propertiesToChange.SRC.length,1);
 				done();
 		});
 		

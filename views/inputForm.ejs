@@ -28,13 +28,14 @@
     <select name="targetLanguage" id="targetLanguage">
       <option value="java">java</option>
       <option value="php">php</option>
-      <option value="js">js</option>
+      <option value="js-sonar">js sonar</option>
+      <option value="js-plato">js plato</option>
     </select>
     <p><input type='text', name='javaBuildCommand', placeholder='java build  command'/>
     </p>
    
 
-    <p>files to ignore: <input type'text' name='filesToOmit', placeholder=<%= jsFilesToOmit %> /></p>
+    <p>files to ignore: <textarea type'text', rows="5", cols="20", name='filesToOmit', placeholder=<%= jsFilesToOmit %> /></textarea></p>
    
     <p><input type='submit', value='start analysis'/></p>
 
