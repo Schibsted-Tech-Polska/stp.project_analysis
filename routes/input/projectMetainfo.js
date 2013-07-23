@@ -4,6 +4,9 @@ var fileModule = require('fileModule');
 var flow = require('nimble');
 var validationModule = require('validationModule');
 var jsFilesToOmit=require('javaScriptFilesToOmit');
+var logger = require('winston');
+//configuration if loggin should go to file
+//logger.add(logger.transports.File, { filename: 'logfile.log'} );
 
 exports.form = function(req, res){
 res.render('inputForm', {
@@ -14,15 +17,12 @@ res.render('inputForm', {
 
 
 exports.submit = function(data){
+
 	
 	return function(req, res, next){
 
 		var link = req.body.link;
-		//var language = req.body.targetLanguage;
-		//var javaBuildCommand = req.body.command;
-		//var gitCommand = req.body.gitCommand;
-        console.log('controller get link : ' + link);
-		 var properties = {
+		var properties = {
 				 	'language' : req.body.targetLanguage,
 				 	'link' : link,
 				 	'gitCommand' : req.body.gitCommand,
@@ -34,7 +34,7 @@ exports.submit = function(data){
         startAnalysisProcess(properties);
 
         var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(properties);
-		console.log("-------link to analyzed project : " + linkToAnalyzedProject);
+        logger.info('projectMetainfo', ' link to analyzed project : ' + linkToAnalyzedProject);
 		res.setHeader('202');
 		res.redirect(linkToAnalyzedProject);
 	};
@@ -45,7 +45,6 @@ function startAnalysisProcess(properties){
 		//TODO make 3 functions
 		flow.series([
 			function(callback){
-				console.log('--> after validationModule ');
 				validationModule.validateInput(properties, callback);
 
 			},
@@ -58,16 +57,14 @@ function startAnalysisProcess(properties){
 				repoModule.downloadRepo(properties,callback);
 			},
 			function(callback){
-
-
-				 console.log("--->third callback");
+				
 				 var projectLocation = fileModule.buildAbsolutePath(properties.nameOfGitRepo);
-				 console.log('---> projectLocation after build Absolute Path : ' + projectLocation);
+				 logger.info('projectMetainfo', '---> projectLocation after build Absolute Path : ' + projectLocation);
 			
 				 properties.projectLocation = projectLocation;
 				 sonarModule.analyze(properties);
-				 console.log("- prop lang : "+ properties.language);
-				 console.log("---->third finished");
+				
+				
 			}
 
 		]);
