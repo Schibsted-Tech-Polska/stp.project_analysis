@@ -8,7 +8,7 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , projectMetainfo = require('./routes/input/projectMetainfo')
-  , paths = require('paths');
+  , paths = require('./custom_modules/paths');
 
 
 var app = express();
@@ -18,6 +18,7 @@ app.set('port', process.env.PORT || paths.getPort());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.set('input', __dirname + '/public/input');
+console.log("dirname : " + __dirname);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());

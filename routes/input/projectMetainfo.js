@@ -1,11 +1,13 @@
-var repoModule = require('repositoriesModule');
-var sonarModule = require('sonarModule');
-var fileModule = require('fileModule');
+var repoModule = require('../../custom_modules/repositoriesModule');
+var sonarModule = require('../../custom_modules/sonarModule');
+var fileModule = require('../../custom_modules/fileModule');
 var flow = require('nimble');
-var validationModule = require('validationModule');
-var jsFilesToOmit=require('javaScriptFilesToOmit');
+var validationModule = require('../../custom_modules/validationModule');
+var jsFilesToOmit=require('../../custom_modules/javaScriptFilesToOmit');
 var logger = require('winston');
-//configuration if loggin should go to file
+
+
+//uncomment if loggin should go to file
 //logger.add(logger.transports.File, { filename: 'logfile.log'} );
 
 exports.form = function(req, res){
