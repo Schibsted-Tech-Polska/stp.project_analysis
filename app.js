@@ -5,16 +5,16 @@
 
 var express = require('express')
   , routes = require('./routes')
- 
   , http = require('http')
   , path = require('path')
-  , projectMetainfo = require('./routes/input/projectMetainfo');
+  , projectMetainfo = require('./routes/input/projectMetainfo')
+  , paths = require('paths');
 
 
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || paths.getPort());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.set('input', __dirname + '/public/input');
@@ -24,6 +24,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(paths.locationOfFolderWithProjects()));
 
 // development only
 if ('development' == app.get('env')) {

@@ -30,9 +30,10 @@ exports.submit = function(data){
 				 	'filesToOmit': req.body.filesToOmit
 				 };
         
+        properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
         startAnalysisProcess(properties);
 
-        var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(link);
+        var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(properties);
 		console.log("-------link to analyzed project : " + linkToAnalyzedProject);
 		res.setHeader('202');
 		res.redirect(linkToAnalyzedProject);
@@ -48,11 +49,11 @@ function startAnalysisProcess(properties){
 				validationModule.validateInput(properties, callback);
 
 			},
-			function(callback){
-				properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
-				console.log('--> extract nameOfGitRepo : ' + properties.nameOfGitRepo);
-				callback();//inlnie
-			},
+			//function(callback){
+			//	properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
+			//	console.log('--> extract nameOfGitRepo : ' + properties.nameOfGitRepo);
+			//	callback();//inlnie
+			//},
 			function(callback){//TODO fix crashing node when link is in bad format
 				repoModule.downloadRepo(properties,callback);
 			},
