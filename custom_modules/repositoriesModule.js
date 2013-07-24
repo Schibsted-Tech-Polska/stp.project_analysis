@@ -1,4 +1,4 @@
-var exec = require('child_process').exec;
+ var exec = require('child_process').exec;
 var paths = require('../custom_modules/paths');
 var logger = require('winston');
 var svnCheckoutCommand = 'svn checkout';
@@ -10,7 +10,7 @@ exports.downloadRepo = function(properties,callback){
 	
 	var link = properties.link;
 	var gitCommand = properties.gitCommand;
-	logger.info(nameOfModule, 'dow')
+	logger.info(nameOfModule, 'downloadRepo from : ' + link );
 	
 	if(contains(link, "git")){
 		downloadFromVersionControl(gitCommand, link, callback);

@@ -1,6 +1,6 @@
 //run this test with flag -A 
-var sourceFinderModule = require('sourceFinderModule');
-var fileModule = ('fileModule');
+var sourceFinderModule = require('../custom_modules/sourceFinderModule');
+var fileModule = ('../custom_modules/fileModule');
 
 var projectLocation = __dirname + "/testDir";
 var exec = require('child_process').exec;
@@ -19,7 +19,7 @@ describe('find src for testDirectory ' , function(){
 		var parameters = {
 							'extension':extension,
 							'projectLocation':projectLocation,
-							'filesToOmit':filesToOmit
+							'filesToOmit': filesToOmit
 						};
 		var propertiesToChange = {};
 		sourceFinderModule.findSrcLocation(parameters,propertiesToChange,

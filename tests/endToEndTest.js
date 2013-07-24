@@ -13,9 +13,9 @@ describe('trigger project analysis and generating report ', function(){
 	form:{
 		link:linkToProject,
 		gitCommand:'git clone',
-		javaBuildCommand:'none',
+		javaBuildCommand:'',
 		targetLanguage:'java',
-		filesToOmit:''
+		filesToOmit:'**/*nothing\n**/*twoNothing'
 	}}, function(error,response,body){
 			console.log("response :" + body + "status code : " +response.statusCode);
 			var statusCode = response.statusCode;

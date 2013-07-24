@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
     <script type="text/javascript">
@@ -19,12 +20,14 @@
   }
   </script>
 
+
+
   <body>
     <h1><%= title %></h1>
     <form method='post', onsubmit='return validateForm()'/>
     <p><input type='text', name='gitCommand', placeholder='type git command', value='git clone'/>
       <input type='text', name='link', placeholder='link', size='35'/>
-    </p>
+     <%if (errorMessages.gitCommand){%> <%= errorMessages.gitCommand %> <% } %> </p>
     <select name="targetLanguage" id="targetLanguage">
       <option value="java">java</option>
       <option value="php">php</option>
@@ -32,13 +35,21 @@
       <option value="js-plato">js plato</option>
     </select>
     <p><input type='text', name='javaBuildCommand', placeholder='java build  command'/>
+    <%if (errorMessages.javaBuildCommand){ %> <%= errorMessages.javaBuildCommand %> <% } %>
     </p>
-   
+     
+     <!--
+     <h2>choose language.</h2>
+    <div class="languagebox"><div data-lang="js" title="JavaScript" class="language"><div class="icon-prog-js01"></div><p>JavaScript</p></div><div data-lang="java" title="Java" class="language"><div class="icon-prog-java"></div><p>Java</p></div><div data-lang="py" title="Python" class="language"><div class="icon-prog-python"></div><p>Python</p></div><div data-lang="scala" title="Scala" class="language"><div class="icon-prog-scala"></div><p>Scala</p></div></div>
+   -->
 
-    <p>files to ignore: <textarea type'text', rows="5", cols="20", name='filesToOmit', placeholder=<%= jsFilesToOmit %> /></textarea></p>
-   
+    <p class="formfield">
+      <label for='textarea'> files to ignore: </label> 
+      <textarea id='textarea', type'text', rows="5", cols="20", name='filesToOmit'/> <%= jsFilesToOmit %> </textarea></p>
     <p><input type='submit', value='start analysis'/></p>
 
     </form>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

@@ -13,7 +13,7 @@ describe('trigger project analysis and generating report ', function(){
 	form:{
 		link:linkToProject,
 		gitCommand:'git clone',
-		javaBuildCommand:'none',
+		javaBuildCommand:'',
 		targetLanguage:'js-plato',
 		filesToOmit:''
 	}}, function(error,response,body){

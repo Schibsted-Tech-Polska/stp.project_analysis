@@ -6,16 +6,19 @@ var validationModule = require('../../custom_modules/validationModule');
 var jsFilesToOmit=require('../../custom_modules/javaScriptFilesToOmit');
 var logger = require('winston');
 var check = require('validator').check;
-
+var viewFormatter = require('../../custom_modules/viewFormatter');
 
 //uncomment if loggin should go to file
 //logger.add(logger.transports.File, { filename: 'logfile.log'} );
+var getParameters = {
+					title: 'Analysis tool',
+					jsFilesToOmit: jsFilesToOmit.getFiles().join('\n'),
+					errorMessages: ''
+					};
 
 exports.form = function(req, res){
-res.render('inputForm', {
-	title: 'analysis tool',
-	jsFilesToOmit:jsFilesToOmit.getFiles()
-	});
+	getParameters.errorMessages = '';
+	res.render('inputForm', getParameters);
 };
 
 
@@ -24,25 +27,34 @@ exports.submit = function(data){
 	
 	return function(req, res){
 
-		//check(req.body.link).isInt();
-		//req.checkBody('postparam', 'invalid postparam').notEmpty().isInt();
-
 		var link = req.body.link;
+		
 		var properties = {
 				 	'language' : req.body.targetLanguage,
 				 	'link' : link,
 				 	'gitCommand' : req.body.gitCommand,
 				 	'javaBuildCommand' : req.body.javaBuildCommand,
-				 	'filesToOmit': req.body.filesToOmit
+				 	'filesToOmit':  req.body.filesToOmit.split('\n')
 				 };
-        
-        properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
-        startAnalysisProcess(properties);
 
-        var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(properties);
-        logger.info('projectMetainfo', ' link to analyzed project : ' + linkToAnalyzedProject);
-		res.setHeader('202');
-		res.redirect(linkToAnalyzedProject);
+		
+		//TODO watch out for possible race conditions!
+		validationModule.validateInput(properties);
+		
+		if(validationModule.hasErrors(properties)){
+			getParameters.errorMessages = properties.errorMessages;
+			//res.writeHead(400); 
+			//res.setHeader('400', {'Content-Type': 'text/html' });
+			res.render('inputForm', getParameters);
+		}else{
+			properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
+	        startAnalysisProcess(properties);
+
+	        var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(properties);
+	        logger.info('projectMetainfo', ' link to analyzed project : ' + linkToAnalyzedProject);
+			//res.setHeader('302');
+			res.redirect(linkToAnalyzedProject);
+		}
 	};
 }
 
@@ -50,10 +62,10 @@ function startAnalysisProcess(properties){
 		//var nameOfGitRepo;
 		//TODO make 3 functions
 		flow.series([
-			function(callback){
-				validationModule.validateInput(properties, callback);
-
-			},
+			//function(callback){
+			//	validationModule.validateInput(properties, callback);
+			//
+			//},
 			function(callback){//TODO fix crashing node when link is in bad format
 				repoModule.downloadRepo(properties,callback);
 			},

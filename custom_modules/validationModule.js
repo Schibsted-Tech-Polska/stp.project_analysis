@@ -1,44 +1,53 @@
 var underscore = require('underscore');
 var logger = require('winston');
 
-exports.validateInput = function(properties, callback){
+exports.validateInput = function(properties){
 	//TODO 
 	var forbiddenCommands = [";", "|", "||", "&&","rm","cp","cat","ls","at","net","netstat","del","copy"];
 	var gitCommandMustStartWith = ["git"];
 	var javaBuildCommandMustStartWith = ["mvn","ant"];
 	var safeGitCommand = 'git clone';
 	var doNothing = function(){};
+	properties.errorMessages = {};
+	//var errorMessages;
+
+	console.log('validatie git command : ' + properties.gitCommand);
 
 	var v1 = validate(properties.gitCommand,forbiddenCommands,underscore.contains);
 	v1(function(){
-		properties.gitCommand = safeGitCommand;
+		properties.errorMessages.gitCommand = 'bad git command';
+		//properties.gitCommand = safeGitCommand;
 	}, doNothing);//TODO assign to var DoNothing
 
 	var v2 = validate(properties.gitCommand,gitCommandMustStartWith,startsWith);
-	v2(doNothing
-		,function(){
-		properties.gitCommand = safeGitCommand;
+	v2(doNothing, function(){
+		properties.errorMessages.gitCommand = 'bad git command';
+		//properties.gitCommand = safeGitCommand;
 	});
 
 	var v3 = validate(properties.javaBuildCommand,forbiddenCommands,underscore.contains);
 	v3(function(){
-		properties.javaBuildCommand = '';
+		//properties.javaBuildCommand = '';
+		properties.errorMessages.javaBuildCommand = 'bad java build command';
 	},doNothing);
 
 	var v4=validate(properties.javaBuildCommand,javaBuildCommandMustStartWith,startsWith);	
 	v4(doNothing,function(){
-		properties.javaBuildCommand = '';
+		if( !isEqual (properties.javaBuildCommand,'') )
+			properties.errorMessages.javaBuildCommand = 'bad java build command';
+		//properties.javaBuildCommand = '';
 	});
 
+
 	var filesToOmitForbiddenCommands = [''];
-	var v5 = validate(properties.filesToOmit, filesToOmitForbiddenCommands,isEqual);
+	var v5 = validate(properties.filesToOmit[0], filesToOmitForbiddenCommands,isEqual);
 	v5(function(){
-		var emptyArray=[];
+		var emptyArray=['**/nothing'];
 		properties.filesToOmit = emptyArray;
-	},function(){
-		properties.filesToOmit = properties.filesToOmit.split(',');
-	})
+	}, doNothing)
 	
+
+
 	
 
 
@@ -58,11 +67,9 @@ exports.validateInput = function(properties, callback){
 		}else{
 			properties.analysisTool = 'sonar';
 		}
-		
-		
-		});
+	});
 
-	callback();
+	//callback();
 }
 
 
@@ -89,6 +96,8 @@ function isEqual(firstArg, secondArg){
 	return firstArg === secondArg;
 }
 
+
+
 function startsWith(string, properStartCommand){	
 	console.log(string + " -> " + properStartCommand);
 	var result = false;
@@ -96,11 +105,14 @@ function startsWith(string, properStartCommand){
 		if(string.substring(0, properStartCommand.length)  === properStartCommand){
 			result = true;
 		}
-	
-	console.log("not start with : " + result)
 	return result;
 }
 
 
-
+exports.hasErrors = function(properties){
+	for(error in properties.errorMessages){
+		return true;		
+	}
+	return false;
+}
 

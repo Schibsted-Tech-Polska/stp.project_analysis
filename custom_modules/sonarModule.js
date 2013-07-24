@@ -42,7 +42,7 @@ AnalyzeExecution.prototype.toString = function(){
 function PropertiesGenerator( properties ){
 	var filesToOmit = properties.filesToOmit;
 	
-	this.coma=",";
+	
 
 	this.parameters = {
 		'projectLocation':properties.projectLocation,
@@ -50,9 +50,9 @@ function PropertiesGenerator( properties ){
 	}
 
 	if( properties.language=='js' ){
-		this.parameters.filesToOmit = jsFilesToOmit.getFiles().concat(filesToOmit);
+		this.parameters.filesToOmit = filesToOmit;
 	}else{
-		this.parameters.filesToOmit = jsFilesToOmit.getFiles();//TODO must be at least one
+		this.parameters.filesToOmit = filesToOmit;//TODO must be at least one
 	}
 	logger.info(nameOfModule, 'files that will be ingnored by propertiesGenerator ' + this.parameters.filesToOmit );
 }

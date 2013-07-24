@@ -1,4 +1,4 @@
-var validationModule = require('validationModule');
+var validationModule = require('../custom_modules/validationModule');
 var assert = require('assert');
 var properties; 
 var gitCloneCommand = 'git clone';

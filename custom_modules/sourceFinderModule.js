@@ -21,6 +21,7 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 	var projectLocation = parameters.projectLocation;
 	var finder = findit.find(projectLocation);
 	var filesToOmit = parameters.filesToOmit;
+	logger.info(nameOfModule, 'filesToOmit by findSrcLocation : ' + filesToOmit);
 	var allFiles = [];
 	var matches = [];
 	var countOfGlobMatches = filesToOmit.length-1;
@@ -50,6 +51,7 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 				});
 				//on error
 				glob.on('end', function(set){
+					console.log('match');
 					if(countOfGlobMatches == 0){
 						callback();
 					}

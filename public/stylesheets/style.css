@@ -1,8 +1,43 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #3498db;
+}
+h1 {
+  color: white;
 }
 
 a {
   color: #00B7FF;
+}
+
+.language {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  font-size: 80px;
+  text-align: left;
+}
+.language.active div,
+.language.active p,
+.language:hover div,
+.language:hover p {
+  color: #fff;
+}
+.language div {
+  text-decoration: none;
+  color: #34495e;
+  cursor: pointer;
+}
+.language p {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: -20px;
+  margin-top: -15px;
+}
+
+.formfield * {
+    vertical-align: middle;
 }

@@ -1,4 +1,4 @@
-var repositoriesModule = require('repositoriesModule');
+var repositoriesModule = require('../custom_modules/repositoriesModule');
 var assert = require('assert');
 var link = "https://github.com/tomekl007/mulitmethods_like_clojure";
 var expectedNameOfRepo = "mulitmethods_like_clojure";
