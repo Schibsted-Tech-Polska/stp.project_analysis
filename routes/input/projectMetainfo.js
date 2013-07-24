@@ -5,6 +5,7 @@ var flow = require('nimble');
 var validationModule = require('../../custom_modules/validationModule');
 var jsFilesToOmit=require('../../custom_modules/javaScriptFilesToOmit');
 var logger = require('winston');
+var check = require('validator').check;
 
 
 //uncomment if loggin should go to file
@@ -21,7 +22,10 @@ res.render('inputForm', {
 exports.submit = function(data){
 
 	
-	return function(req, res, next){
+	return function(req, res){
+
+		//check(req.body.link).isInt();
+		//req.checkBody('postparam', 'invalid postparam').notEmpty().isInt();
 
 		var link = req.body.link;
 		var properties = {
@@ -50,11 +54,6 @@ function startAnalysisProcess(properties){
 				validationModule.validateInput(properties, callback);
 
 			},
-			//function(callback){
-			//	properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
-			//	console.log('--> extract nameOfGitRepo : ' + properties.nameOfGitRepo);
-			//	callback();//inlnie
-			//},
 			function(callback){//TODO fix crashing node when link is in bad format
 				repoModule.downloadRepo(properties,callback);
 			},
@@ -65,8 +64,6 @@ function startAnalysisProcess(properties){
 			
 				 properties.projectLocation = projectLocation;
 				 sonarModule.analyze(properties);
-				
-				
 			}
 
 		]);
