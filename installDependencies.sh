@@ -41,6 +41,8 @@ fi
 
 export PATH=$HOME/env/sonar-runner-2.2.2/bin:$PATH
 
-sudo npm install -g
+sudo npm install
+sudo npm install -g mocha
+sudo npm install -g plato
 
 
