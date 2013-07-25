@@ -1,16 +1,22 @@
 mkdir env
 cd ./env/
 
+
+if [ -f "sonar-3.6.1.zip" ]
+then
+echo "sonar already downloaded"
+else
 wget http://dist.sonar.codehaus.org/sonar-3.6.1.zip
 unzip sonar-3.6.1.zip
 wget http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/2.2.2/sonar-runner-dist-2.2.2.zip
 unzip sonar-runner-dist-2.2.2.zip
+fi
 
 if [ "$(uname -s)" == "Darwin" ];then #this is mac
-brew install git
-brew install subversion
-brew install maven
-brew install node
+sudo brew install git
+sudo brew install subversion
+sudo brew install maven
+sudo brew install node
 #ant is already on mac
 
 #start sonar server, will be listen on port 9000
