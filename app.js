@@ -34,10 +34,10 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+//app.get('/', routes.index);
 
-app.get('/qualityAnalysis', projectMetainfo.form );
-app.post('/qualityAnalysis', projectMetainfo.submit(app.get('qualityAnalysis')));
+app.get('/', projectMetainfo.form );
+app.post('/', projectMetainfo.submit(app.get('/')));
 
 
 http.createServer(app).listen(app.get('port'), function(){
