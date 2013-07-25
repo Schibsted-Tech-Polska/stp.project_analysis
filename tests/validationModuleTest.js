@@ -7,44 +7,46 @@ beforeEach(function(){
 	properties = {
 				 	'gitCommand' : '',
 				 	'javaBuildCommand' : '',
-				 	'filesToOmit': new String('none')
+				 	'filesToOmit': new String('none'),
+				 	'link': 'https://github.com/jhnns/rewire'
+				 	
 				 };
 })
 
 describe('validate git command', function(){
-	it('after validation should be equal to : ' + gitCloneCommand , function(){
+	it('after validation should have error messages: ' + gitCloneCommand , function(){
 		properties.gitCommand = "ntoProper git command";
 		validationModule.validateInput(properties,function(){
-			console.log('callback');
+			assert.equal(validationModule.hasErrors(properties),true);
 		})
-		assert.equal(properties.gitCommand, gitCloneCommand);
+		
 		
 	})
 })
 
 
 describe('validate java command', function(){
-	it('after validation javaBuildCommand should be empty: ' , function(){
+	it('after validation should have error messages' , function(){
 		properties.javaBuildCommand = "java";
 		validationModule.validateInput(properties,function(){
-			console.log('callback');
+			assert.equal(validationModule.hasErrors(properties),true);
+		
 		})
-		assert.equal(properties.javaBuildCommand, '');
 		
 	})
 })
 
 describe('java and git commands', function(){
-	it('should not change after successful validation: ' , function(){
+	it('should not have errorMessages ' , function(){
 		var antBuildCommand = "ant build";
 		var gitCloneCommand = "git clone --recursive";
 		properties.javaBuildCommand = antBuildCommand;
 		properties.gitCommand = gitCloneCommand;
 		validationModule.validateInput(properties,function(){
 			console.log('callback');
+			assert.equal(validationModule.hasErrors(properties), false);
 		})
-		assert.equal(properties.javaBuildCommand, antBuildCommand);
-		assert.equal(properties.gitCommand, gitCloneCommand);
+		
 		
 	})
 })
@@ -83,6 +85,31 @@ describe('language set to ' + language, function(){
 		})
 		assert.equal(properties.language, language);
 		assert.equal(properties.analysisTool, 'sonar');
+		
+	})
+})
+
+
+describe('link set to not proper value ' + language, function(){
+	it('validation should result in link validation messages ' , function(){
+ 	 	properties.link="https://github.com/schibstednorge/smarttv/blob/master/app/scenes/Article.js#L274";
+							
+		validationModule.validateInput(properties,function(){
+			assert.equals(properties.errorMessages.link, 'bad link');
+		})
+		
+		
+	})
+})
+
+describe('link set to proper value ' + language, function(){
+	it('validation should result in no link validation messages ' , function(){
+ 	 	properties.link="https://github.com/tomekl007/js_structure_for_testing";
+							
+		validationModule.validateInput(properties,function(){
+			assert.equals(validationModule.hasErrors(properties), false);
+		})
+		
 		
 	})
 })

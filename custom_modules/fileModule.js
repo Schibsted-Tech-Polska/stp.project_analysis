@@ -98,3 +98,11 @@ var deleteFolderRecursive =  function(path) {
 
 }
 
+
+exports.extractDirectoryFromPath = function(path){
+  var array = path.split('/');
+  array.pop();
+  return array.join('/');
+
+}
+

@@ -26,8 +26,8 @@ var basePropertiesPath = function(){
 };
 
 //--------------------------------------
-function AnalyzeExecution(options){
-	this.options = options;
+function AnalyzeExecution(){
+	this.options = [];
 	this.commands = [];
 };
 AnalyzeExecution.prototype.execute = function(lastCallback){
@@ -35,13 +35,22 @@ AnalyzeExecution.prototype.execute = function(lastCallback){
 	executeCommands(this.options, this.commands, lastCallback);
 };
 AnalyzeExecution.prototype.toString = function(){
-	return this.options + this.commands[0];
+	var self = this;
+   return this.commands.map(function(current,i){
+		console.log('commands nr ' + i + " : " + current + " location : " + " location : " + self.commands[i].cwd) ;
+	}) ;
+
+	//var result2 =  this.commands.map(function(current,i){
+	//	return console.log('commands nr ' + i + " : " + current + " location : ";
+	//}) ;
 };
 
 //TODO ProjectMetainfo not properties
 function PropertiesGenerator( properties ){
+	console.log('-->sources : ' + properties.sources);
 	var filesToOmit = properties.filesToOmit;
-	
+	this.SRC = properties.sources;
+	//var startFinder = false;
 	
 
 	this.parameters = {
@@ -49,16 +58,29 @@ function PropertiesGenerator( properties ){
 		'extension':"."+properties.language
 	}
 
-	if( properties.language=='js' ){
+	//if(properties.sources != undefined){
+	//	startFinder = true;
+	//}
+
+	//if( properties.language=='js' ){
 		this.parameters.filesToOmit = filesToOmit;
-	}else{
-		this.parameters.filesToOmit = filesToOmit;//TODO must be at least one
-	}
+	//}else{
+	//	this.parameters.filesToOmit = filesToOmit;//TODO must be at least one
+	//}
 	logger.info(nameOfModule, 'files that will be ingnored by propertiesGenerator ' + this.parameters.filesToOmit );
+
+
 }
 
 PropertiesGenerator.prototype.generate = function(propertiesToChange,callback){
-	sourceFinder.findSrcLocation(this.parameters ,propertiesToChange, callback);
+	console.log('this.sources : ' + this.SRC);
+	if(this.SRC == undefined ){
+		sourceFinder.findSrcLocation(this.parameters ,propertiesToChange, callback);	
+	}else{
+		console.log('--->user type sources location @ : ' + this.SRC );
+		propertiesToChange.SRC = this.SRC;
+		callback(propertiesToChange);		
+	}
 }
 //-------------------------------------------------------
 exports.analyze = function(properties){
@@ -104,9 +126,11 @@ function startJavaClient(properties){
             cwd: projectLocation
 	 	 };
 	 	 
-	 	 var project = new AnalyzeExecution(options)
-			project.commands[0] = javaBuildCommand;
-            project.commands[1] = sonarRunnerCommand;
+	 	var project = new AnalyzeExecution();
+	 	project.options[0] = options;
+	 	project.options[1] = options;
+		project.commands[0] = javaBuildCommand;
+        project.commands[1] = sonarRunnerCommand;
 		 
 		project.execute();
 	}
@@ -122,7 +146,9 @@ function startOtherLanguagesClient(properties){
 	 	 };
 
 
-	 	 var project = new AnalyzeExecution(options)
+	 	 var project = new AnalyzeExecution();
+	 	 project.options[0] = options;
+	 	 project.options[1] = options;
 	 	 project.commands[1] = 'none';
 	 	 if(properties.analysisTool=='plato'){
 	 	 	var doNothing = function(){};
@@ -196,24 +222,53 @@ function checkTypeOfJavaProject(projectLocation){
     var typeOfProject = [];
 	var locationsOfBuildFiles = [];
     var counter = 0;
+
+    var currentFindProjects = new AnalyzeExecution();
 	
 	//This listens for files found
 	finder.on('file', function (file) {//TODO only first file is important
 		
 		if(file.indexOf('pom.xml') != -1){
 			//typeOfProject = 'maven';
-			var currentFindProject = new AnalyzeExecution(options)
-			currentFindProject.commands[0] = 'mvn clean install';
-            currentFindProject.commands[1] = sonarRunnerCommand;  //'mvn sonar:sonar';
-            typeOfProject.push(currentFindProject);
-			locationsOfBuildFiles.push(file);
+			//options.cwd = file;
+			
+			//currentFindProject.commands[0] = 'mvn clean install';
+            //currentFindProject.commands[1] = sonarRunnerCommand; //'mvn sonar:sonar';  //;
+
+            var options = {
+            		cwd: fileModule.extractDirectoryFromPath(file)
+            };
+            currentFindProjects.commands.push('mvn clean install');
+            currentFindProjects.options.push(options);
+           // var options1 = {
+           // 		cwd: projectLocation
+           // };
+
+            //currentFindProject.options[1] = options1;
+          
+            //currentFindProject.options[0] = options0;
+
+            //typeOfProject.push(currentFindProject);
+			//locationsOfBuildFiles.push(file);
 			
 		}else if(file.indexOf('build.xml') != -1){
-			var currentFindProject = new AnalyzeExecution(options);
-			currentFindProject.commands[0] = 'ant build';
-            currentFindProject.commands[1] = sonarRunnerCommand;
-            typeOfProject.push(currentFindProject);
-			locationsOfBuildFiles.push(file);
+			//options.cwd = file;
+			//var currentFindProject = new AnalyzeExecution();
+			currentFindProjects.commands.push('ant build');
+            //currentFindProject.commands[1] = sonarRunnerCommand;
+
+            var options = {
+            		cwd: fileModule.extractDirectoryFromPath(file)
+            };
+            //var options1 = {
+            //		cwd: projectLocation
+            //};
+			//currentFindProject.options[0] = options0;
+			//currentFindProject.options[1] = options1;
+			currentFindProjects.options.push(options);
+
+            //typeOfProject.push(currentFindProject);
+			//locationsOfBuildFiles.push(file);
 		}
 		
   		
@@ -222,27 +277,45 @@ function checkTypeOfJavaProject(projectLocation){
 	finder.on('end',function(){
 		logger.info(nameOfModule, 'find type of java project : ' + typeOfProject[0]);
 		
-		if(typeOfProject.length === 0) {
+		//if(typeOfProject.length === 0) {
 			//typeOfProject = 'gradle';
-			var currentFindProject = new AnalyzeExecution(options);
-		    currentFindProject.commands[0] = sonarRunnerCommand;
-            currentFindProject.commands[1] = 'none';
-            typeOfProject.push(currentFindProject);
-        }
+		//	var currentFindProject = new AnalyzeExecution(options);
+		  //  currentFindProject.commands[0] = sonarRunnerCommand;
+           // currentFindProject.commands[1] = 'none';
+          
+            
+            var options = {
+            		cwd: projectLocation
+            };
+            currentFindProjects.commands.push(sonarRunnerCommand);
+            currentFindProjects.options.push(options);
+			//currentFindProject.options[0] = options;
+			//currentFindProject.options[1] = options;
+          
+            //typeOfProject.push(currentFindProject);
+        
 
-		  typeOfProject[0].execute();
+		  //typeOfProject[0].execute();
+		  //typeOfProject.map(function(current){
+		  //	current.execute();
+		  //})
+			currentFindProjects.execute();
+		  console.log('all finded projects : ' + currentFindProjects.toString() );
 	});
 }
 
 function executeCommands(options, commands, lastFunction){
 	
 	var firstCall = true;
+	console.log("---> options[0] : " + options[0].cwd + " [1] : " + options[1].cwd);
+	var reversedOptions = options.reverse();
 	
 	var arrayOfExec = 
 	commands.map(function(currentCommand){
 		
 			return function(callback){
-				exec(currentCommand, options, function(err,stdout,stderr){
+				exec(currentCommand, reversedOptions.pop(), function(err,stdout,stderr){
+					logger.info(nameOfModule, 'stdout : ' + stdout);
 					if(err){
 						logger.info(nameOfModule, 'error when executing : ' + currentCommand);
 						logger.info(nameOfModule, 'stdout : ' + stdout);
@@ -255,11 +328,11 @@ function executeCommands(options, commands, lastFunction){
 	});
 	
 
-	arrayOfExec.push(function(callback){
-		        logger.info(nameOfModule, 'before executing last callback');
-			    lastFunction();
-				callback();	
-			});
+	//arrayOfExec.push(function(callback){
+	//	        logger.info(nameOfModule, 'before executing last callback');
+	//		    lastFunction();
+	//			callback();	
+	//		});
 
 	flow.series(arrayOfExec);//apply(flow,arrayOfExec);
 	

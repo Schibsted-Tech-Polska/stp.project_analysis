@@ -69,9 +69,42 @@ exports.validateInput = function(properties){
 		}
 	});
 
-	//callback();
+
+	var link = properties.link;
+	if(!validateLink(link)){
+		properties.errorMessages.linkMsg = 'bad link';
+	}
+
 }
 
+function validateLink(link){
+	if(contains(link, "git")){
+		var delimeter = '/';
+    	var splittedLink = link.split(delimeter);
+	    //alert(gitLinkValue);
+	    //alert(splittedLink.length);
+	    if(splittedLink.length == 5){
+	      return true;
+	    }
+	    return false;
+	}else if(contains(link, "svn")){
+		return true;
+	}
+	return false;
+}
+
+/*
+function and(function1, function2){
+	return function(arg1, args2){
+		function1(arg1,arg2) && function2(arg1,arg2);
+	}
+}*/
+function contains(path, expression){
+	if(path.indexOf(expression) != -1) 
+		return true;
+	return false;
+
+} 
 
 function validate(commandToValidate, forbiddenCommands,predicate){//TODO validate
 	return function(actionWhenFail, actionWhenPass){
@@ -88,7 +121,6 @@ function validate(commandToValidate, forbiddenCommands,predicate){//TODO validat
 	  	}else{
 	  		actionWhenPass();
 	  	}
-
 	}
 }
 
@@ -99,7 +131,6 @@ function isEqual(firstArg, secondArg){
 
 
 function startsWith(string, properStartCommand){	
-	console.log(string + " -> " + properStartCommand);
 	var result = false;
 	
 		if(string.substring(0, properStartCommand.length)  === properStartCommand){

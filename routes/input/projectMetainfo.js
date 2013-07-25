@@ -34,7 +34,8 @@ exports.submit = function(data){
 				 	'link' : link,
 				 	'gitCommand' : req.body.gitCommand,
 				 	'javaBuildCommand' : req.body.javaBuildCommand,
-				 	'filesToOmit':  req.body.filesToOmit.split('\n')
+				 	'filesToOmit':  req.body.filesToOmit.split('\n'),
+				 	'sources': req.body.sources
 				 };
 
 		

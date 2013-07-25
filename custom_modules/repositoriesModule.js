@@ -10,7 +10,7 @@ exports.downloadRepo = function(properties,callback){
 	
 	var link = properties.link;
 	var gitCommand = properties.gitCommand;
-	logger.info(nameOfModule, 'downloadRepo from : ' + link );
+	logger.info(nameOfModule, 'downloadRepo from : ' + link + 'with command : ' + gitCommand);
 	
 	if(contains(link, "git")){
 		downloadFromVersionControl(gitCommand, link, callback);

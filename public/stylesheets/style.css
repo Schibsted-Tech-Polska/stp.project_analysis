@@ -11,6 +11,7 @@ a {
   color: #00B7FF;
 }
 
+ 
 .language {
   display: inline-block;
   width: 100px;
@@ -41,3 +42,12 @@ a {
 .formfield * {
     vertical-align: middle;
 }
+/*
+select#targetLanguage option[value="java"]   { content:url(/img/java.png);   }
+select#gender option[value="female"] { background-image:url(female.png); }
+select#gender option[value="others"] { background-image:url(others.png); }
+*/
+
+
+
+
