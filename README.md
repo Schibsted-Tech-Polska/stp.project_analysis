@@ -1,16 +1,18 @@
 ProjectAnalysis
 ================
 
-Tool which analyze code quality of java, js and php projects.
-This application uses sonar, and plato.
+Tool which analyzes code quality of java, js and php projects.
+This application uses sonar for java, js, php , and plato fo js.
 
 Getting started
 --------
 
-Prerequisites: sonar, sonar-runner, git, subversion, maven, ant, node, plato
-Script configEnv.sh will prepare environment, then start sonar and node.
+Prerequisites: sonar, sonar-runner, git, subversion, maven, ant, node, plato  
+Script installDependencies.sh will prepare environment.  
+Script startApplication will start sonar and node.
 
 1.  git clone _repo_url_
 2.  cd projects_analysis
-3.  sh configEnv.sh
-4.  Go to http://localhost:3000/qualityAnalysis
+3.  sh installDependencies.sh
+4.  sh startApplication.sh 
+5.  Go to http://localhost:3000/qualityAnalysis
