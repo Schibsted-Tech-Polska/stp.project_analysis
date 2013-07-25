@@ -45,4 +45,8 @@ sudo npm install
 sudo npm install -g mocha
 sudo npm install -g plato
 
+export PATH=$HOME/env/sonar-runner-2.2.2/bin:$PATH
+
+source startApplication.sh
+
 

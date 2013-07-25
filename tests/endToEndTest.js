@@ -9,7 +9,7 @@ describe('trigger project analysis and generating report ', function(){
 
 	  
 	 
-	request.post({url:'http://localhost:3000/qualityAnalysis',
+	request.post({url:'http://localhost:3000/',
 	form:{
 		link:linkToProject,
 		gitCommand:'git clone',
