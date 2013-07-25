@@ -41,4 +41,6 @@ fi
 
 export PATH=$HOME/env/sonar-runner-2.2.2/bin:$PATH
 
+npm install
+
 
