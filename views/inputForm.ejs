@@ -5,44 +5,32 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-    <script type="text/javascript">
-  function validateForm(){
-    var gitLinkValue = document.forms[0]['link'].value;
-    var delimeter = '/';
-    var splittedLink = gitLinkValue.split(delimeter);
-    //alert(gitLinkValue);
-    //alert(splittedLink.length);
-    if(splittedLink.length == 5){
-      return true;
-    }
-      return false;
-  
-  }
-  </script>
-
 
 
   <body>
     <h1><%= title %></h1>
-    <form method='post', onsubmit='return validateForm()'/>
+    <form method='post'/>
     <p><input type='text', name='gitCommand', placeholder='type git command', value='git clone'/>
       <input type='text', name='link', placeholder='link', size='35'/>
-     <%if (errorMessages.gitCommand){%> <%= errorMessages.gitCommand %> <% } %> </p>
+     <%if (errorMessages.gitCommand){%> <%= errorMessages.gitCommand %> <% } %> 
+      <%if (errorMessages.linkMsg){ %> <%= errorMessages.linkMsg %> <% } %>
+     </p>
     <select name="targetLanguage" id="targetLanguage">
       <option value="java">java</option>
       <option value="php">php</option>
       <option value="js-sonar">js sonar</option>
       <option value="js-plato">js plato</option>
     </select>
-    <p><input type='text', name='javaBuildCommand', placeholder='java build  command'/>
+    <p><input type='text', name='javaBuildCommand', placeholder='java build  command' />
+      <input type='text', name='sources', placeholder='location of sources' />
     <%if (errorMessages.javaBuildCommand){ %> <%= errorMessages.javaBuildCommand %> <% } %>
     </p>
+
      
      <!--
      <h2>choose language.</h2>
-    <div class="languagebox"><div data-lang="js" title="JavaScript" class="language"><div class="icon-prog-js01"></div><p>JavaScript</p></div><div data-lang="java" title="Java" class="language"><div class="icon-prog-java"></div><p>Java</p></div><div data-lang="py" title="Python" class="language"><div class="icon-prog-python"></div><p>Python</p></div><div data-lang="scala" title="Scala" class="language"><div class="icon-prog-scala"></div><p>Scala</p></div></div>
-   -->
-
+    <div class="languagebox"><div data-lang="js" title="JavaScript" class="language"><div class="icon-prog-js01"></div><p>JavaScript</p></div><div data-lang="java" title="Java" class="language"><div class="icon-prog-java"></div><p>Java</p></div><div data-lang="php" title="Php" class="language"><div class="icon-prog-php"></div><p>Php</p></div>
+-->
     <p class="formfield">
       <label for='textarea'> files to ignore: </label> 
       <textarea id='textarea', type'text', rows="5", cols="20", name='filesToOmit'/> <%= jsFilesToOmit %> </textarea></p>
