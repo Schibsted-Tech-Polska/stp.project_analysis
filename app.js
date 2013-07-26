@@ -9,7 +9,10 @@ var express = require('express')
   , path = require('path')
   , projectMetainfo = require('./routes/input/projectMetainfo')
   , paths = require('./custom_modules/paths')
-  , validator = require("validator");;
+  , validator = require("validator");
+  //, mongodb = require('mongodb');
+
+
 
 
 var app = express();
@@ -28,6 +31,7 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(paths.locationOfFolderWithProjects()));
+//GLOBAL.progressCounter = 0;
 
 // development only
 if ('development' == app.get('env')) {
@@ -35,7 +39,7 @@ if ('development' == app.get('env')) {
 }
 
 //app.get('/', routes.index);
-
+//app.get('/status', projectStatus )
 app.get('/', projectMetainfo.form );
 app.post('/', projectMetainfo.submit(app.get('/')));
 

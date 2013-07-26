@@ -14,7 +14,7 @@ describe('trigger project analysis and generating report ', function(){
 		link:linkToProject,
 		gitCommand:'git clone',
 		javaBuildCommand:'',
-		targetLanguage:'js-plato',
+		targetLanguage:'java',
 		filesToOmit:'',
 		sources:'oca/oca-model/src/main/java'
 	}}, function(error,response,body){

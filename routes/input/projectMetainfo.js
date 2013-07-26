@@ -7,6 +7,7 @@ var jsFilesToOmit=require('../../custom_modules/javaScriptFilesToOmit');
 var logger = require('winston');
 var check = require('validator').check;
 var viewFormatter = require('../../custom_modules/viewFormatter');
+var databaseModule = require('../../custom_modules/databaseModule');
 
 //uncomment if loggin should go to file
 //logger.add(logger.transports.File, { filename: 'logfile.log'} );
@@ -48,13 +49,39 @@ exports.submit = function(data){
 			//res.setHeader('400', {'Content-Type': 'text/html' });
 			res.render('inputForm', getParameters);
 		}else{
-			properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
-	        startAnalysisProcess(properties);
+			//res.render('projectStatus');
+			var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(properties);
+			databaseModule.addNewAnalysis2(linkToAnalyzedProject);
 
-	        var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(properties);
-	        logger.info('projectMetainfo', ' link to analyzed project : ' + linkToAnalyzedProject);
-			//res.setHeader('302');
+			properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
+			startAnalysisProcess(properties);
+			/*var monitor = function(res){
+				//return function(){
+					var progressCounter = 0
+					return function(){
+						console.log('progressCounter++ is now ' + progressCounter);
+						progressCounter++;
+						res.render('projectStatus', {'progressCounter' : progressCounter});
+						if(progressCounter == 2 ){
+							
+							  
+					        var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(properties);
+					        logger.info('projectMetainfo', ' link to analyzed project : ' + linkToAnalyzedProject);
+							//res.setHeader('302');
+
+							res.redirect(linkToAnalyzedProject);
+						}
+					}
+				//}
+			}*/
+			
+			logger.info('projectMetainfo', ' link to analyzed project : ' + linkToAnalyzedProject);
+							//res.setHeader('302');
+
 			res.redirect(linkToAnalyzedProject);
+			
+
+	        
 		}
 	};
 }
@@ -62,21 +89,25 @@ exports.submit = function(data){
 function startAnalysisProcess(properties){
 		//var nameOfGitRepo;
 		//TODO make 3 functions
+		//monitor();
 		flow.series([
 			//function(callback){
 			//	validationModule.validateInput(properties, callback);
 			//
 			//},
 			function(callback){//TODO fix crashing node when link is in bad format
+				//monitor();
 				repoModule.downloadRepo(properties,callback);
+				
 			},
 			function(callback){
-				
+				 //monitor();
 				 var projectLocation = fileModule.buildAbsolutePath(properties.nameOfGitRepo);
 				 logger.info('projectMetainfo', '---> projectLocation after build Absolute Path : ' + projectLocation);
 			
 				 properties.projectLocation = projectLocation;
 				 sonarModule.analyze(properties);
+				 
 			}
 
 		]);
