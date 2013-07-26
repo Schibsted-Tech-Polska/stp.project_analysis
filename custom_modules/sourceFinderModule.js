@@ -30,9 +30,11 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 	flow.series([
 		function(callback){
 			finder.on('file', function (file) {
-				var extracted = extractDirectory(file);
-				if(shouldPushNewPath(allFiles,extracted)){
-					allFiles.push(extracted);
+				if(contains(file,parameters.extension)){
+					var extracted = extractDirectory(file);
+					if(shouldPushNewPath(allFiles,extracted)){
+						allFiles.push(extracted);
+					}
 				}
 		    });
 			finder.on('end', function(){
@@ -44,6 +46,7 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 				var glob = new Glob(pattern, { cwd: projectLocation });
 				
 				glob.on('match', function(m){
+					console.log('match : ' + m);
 					var extracted = extractDirectory([projectLocation, m].join("/"));
 					if(shouldPushNewPath(matches,extracted)){
 						matches.push(extracted);
@@ -51,7 +54,7 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 				});
 				//on error
 				glob.on('end', function(set){
-					console.log('match');
+					
 					if(countOfGlobMatches == 0){
 						callback();
 					}
@@ -72,6 +75,7 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 }
 
 function shouldPushNewPath(directoriesWithFile,extracted){
+	console.log('trying to add path : ' + extracted);
 	return !underscore.contains(directoriesWithFile,extracted)
     			&& !isSubpath(directoriesWithFile, extracted);
 }

@@ -1,7 +1,7 @@
 var http = require('http');
 var request = require('request');
 var assert = require('assert');
-var linkToProject="https://github.com/schibstednorge/aftenposten-windows8";
+var linkToProject="https://github.com/schibstednorge/oca";
 var expectedStatusCode = 302;
 
 describe('trigger project analysis and generating report ', function(){
@@ -15,7 +15,8 @@ describe('trigger project analysis and generating report ', function(){
 		gitCommand:'git clone',
 		javaBuildCommand:'',
 		targetLanguage:'js-plato',
-		filesToOmit:''
+		filesToOmit:'',
+		sources:'oca/oca-model/src/main/java'
 	}}, function(error,response,body){
 			console.log("response :" + body + "status code : " +response.statusCode);
 			var statusCode = response.statusCode;

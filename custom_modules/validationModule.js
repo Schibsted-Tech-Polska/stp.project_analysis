@@ -74,7 +74,22 @@ exports.validateInput = function(properties){
 	if(!validateLink(link)){
 		properties.errorMessages.linkMsg = 'bad link';
 	}
+	if(!validateSources(properties)){
+		properties.errorMessages.sourcesMsg = 'you must type sources';
+	}
 
+}
+
+function validateSources(properties){
+	console.log(' validator sources : ' + properties.sources);
+	var result = true;
+	if(isEqual(properties.language,'java') ){
+		console.log('java');
+		if(emptyOrUndefined(properties.sources)){
+			result = false;
+		}
+	}
+	return result;
 }
 
 function validateLink(link){
@@ -122,6 +137,10 @@ function validate(commandToValidate, forbiddenCommands,predicate){//TODO validat
 	  		actionWhenPass();
 	  	}
 	}
+}
+
+function emptyOrUndefined(arg){
+	return isEqual(arg,'') || isEqual(arg, undefined);
 }
 
 function isEqual(firstArg, secondArg){

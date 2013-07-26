@@ -37,7 +37,7 @@ AnalyzeExecution.prototype.execute = function(lastCallback){
 AnalyzeExecution.prototype.toString = function(){
 	var self = this;
    return this.commands.map(function(current,i){
-		console.log('commands nr ' + i + " : " + current + " location : " + " location : " + self.commands[i].cwd) ;
+		console.log('commands nr ' + i + " : " + current +" location : " + self.commands[i].cwd) ;
 	}) ;
 
 	//var result2 =  this.commands.map(function(current,i){
@@ -74,7 +74,7 @@ function PropertiesGenerator( properties ){
 
 PropertiesGenerator.prototype.generate = function(propertiesToChange,callback){
 	console.log('this.sources : ' + this.SRC);
-	if(this.SRC == undefined ){
+	if(this.SRC == undefined || this.SRC ==''){
 		sourceFinder.findSrcLocation(this.parameters ,propertiesToChange, callback);	
 	}else{
 		console.log('--->user type sources location @ : ' + this.SRC );
@@ -315,7 +315,7 @@ function executeCommands(options, commands, lastFunction){
 		
 			return function(callback){
 				exec(currentCommand, reversedOptions.pop(), function(err,stdout,stderr){
-					logger.info(nameOfModule, 'stdout : ' + stdout);
+					//logger.info(nameOfModule, 'stdout : ' + stdout);
 					if(err){
 						logger.info(nameOfModule, 'error when executing : ' + currentCommand);
 						logger.info(nameOfModule, 'stdout : ' + stdout);
