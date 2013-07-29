@@ -9,7 +9,8 @@ var express = require('express')
   , path = require('path')
   , projectMetainfo = require('./routes/input/projectMetainfo')
   , paths = require('./custom_modules/paths')
-  , projectStatus = require('./routes/projectStatus');
+  , projectStatus = require('./routes/projectStatus')
+  , datastoreModule = require('./custom_modules/datastoreModule');
  // , validator = require("validator")
   //, mongodb = require('mongodb');
 
@@ -53,11 +54,17 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 var io = require ('socket.io').listen(server);
 
 io.sockets.on('connection', function(socket){
-	socket.emit('statusChanged', PROGRESS_STATUS);
+	socket.on('getStatus', function(data){
+		console.log('--> nameOfGitRepo : ' + data.nameOfGitRepo);
+		var record = datastoreModule.getRecordForProjectName(data.nameOfGitRepo);
+		console.log('--> find record : ' + record);
+		socket.emit('statusChanged', record );
+	});
+   	/*socket.emit('statusChanged', PROGRESS_STATUS);
 	socket.on('event', function(data){
 		//console.log('receive data from client : ' + data);
 		socket.emit('statusChanged', PROGRESS_STATUS);
-	});
+	});*/
 });
 
 

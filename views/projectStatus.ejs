@@ -14,32 +14,27 @@
   //var datastoreModule = require('../../custom_modules/datastoreModule');
   console.log('linkToAnalyzedProject :  ' + linkToAnalyzedProject );
   var socket = io.connect('http://localhost');
+
+  socket.emit('getStatus', {'nameOfGitRepo': nameOfGitRepo});
+
+  
   socket.on('statusChanged', function (data) {
     console.log(data);
-    var result = findByProjectName(data, nameOfGitRepo);
     console.log('clientSide result: ' + data);
    
-    setDataInResultDiv(result.status);
+    setDataInResultDiv(data.status);
     var interval = 8000;
 
-    if(result.status === numberOfStates)
+    if(data.status === numberOfStates)
     	window.location.href = linkToAnalyzedProject;
     
     setTimeout(function(){
-    	socket.emit('event', { clientData: 'sendEvent' })
+    	socket.emit('getStatus', {'nameOfGitRepo': nameOfGitRepo});
     }, interval );
     
   });
 
-  	function findByProjectName(source, projectName) {
-	  for (var i = 0; i < source.length; i++) {
-	    if (source[i].projectName === projectName) {
-	      return source[i];
-	    }
-	  }
-	  console.log("Couldn't find object with projecetName: " + projectName);
-	}
-
+  	
   function setDataInResultDiv(dataToSet){
   	console.log('setDataInDiv :' + dataToSet);
   	var div = document.getElementById('result');

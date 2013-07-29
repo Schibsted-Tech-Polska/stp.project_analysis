@@ -43,7 +43,9 @@ a {
     vertical-align: middle;
 }
 .progressbar {
-  content: url('/img/waitGif.gif');
+  content: url('/img/waitGif5.gif');
+  width: 150px;
+  height: 150px;
 }
 /*
 #progressbar {

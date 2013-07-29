@@ -16,7 +16,10 @@ exports.incrementStatus = function(projectName){
 	record = {'projectName' : projectName,
 			   'status' : ++record.status };
 }
-   
+
+exports.getRecordForProjectName = function(projectName){
+	return findByProjectName(PROGRESS_STATUS, projectName);
+}   
 
 function findByProjectName(source, projectName) {
   for (var i = 0; i < source.length; i++) {
