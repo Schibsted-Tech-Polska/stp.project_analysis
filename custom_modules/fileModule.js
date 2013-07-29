@@ -75,9 +75,10 @@ var writeAndCall = function(callback){
   }
 }
 
-exports.deleteFolder = function(path){
+exports.deleteFolder = function(path, invokeAfter){
   return function(){ 
     deleteFolderRecursive(path);
+    invokeAfter();
   }
   
 }
@@ -104,4 +105,11 @@ exports.extractDirectoryFromPath = function(path){
   return array.join('/');
 
 }
+
+exports.extractFileNameFromPath = function(path){
+  var array = path.split('/');
+  return array.pop();
+}
+
+
 

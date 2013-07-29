@@ -7,7 +7,8 @@ var jsFilesToOmit=require('../../custom_modules/javaScriptFilesToOmit');
 var logger = require('winston');
 var check = require('validator').check;
 var viewFormatter = require('../../custom_modules/viewFormatter');
-var databaseModule = require('../../custom_modules/databaseModule');
+var datastoreModule = require('../../custom_modules/datastoreModule');
+//var databaseModule = require('../../custom_modules/databaseModule');
 
 //uncomment if loggin should go to file
 //logger.add(logger.transports.File, { filename: 'logfile.log'} );
@@ -50,38 +51,20 @@ exports.submit = function(data){
 			res.render('inputForm', getParameters);
 		}else{
 			//res.render('projectStatus');
-			var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(properties);
-			databaseModule.addNewAnalysis2(linkToAnalyzedProject);
-
 			properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
-			startAnalysisProcess(properties);
-			/*var monitor = function(res){
-				//return function(){
-					var progressCounter = 0
-					return function(){
-						console.log('progressCounter++ is now ' + progressCounter);
-						progressCounter++;
-						res.render('projectStatus', {'progressCounter' : progressCounter});
-						if(progressCounter == 2 ){
-							
-							  
-					        var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(properties);
-					        logger.info('projectMetainfo', ' link to analyzed project : ' + linkToAnalyzedProject);
-							//res.setHeader('302');
-
-							res.redirect(linkToAnalyzedProject);
-						}
-					}
-				//}
-			}*/
+			var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(properties);
 			
+
+			datastoreModule.addNewAnalysis(properties.nameOfGitRepo);
+			startAnalysisProcess(properties);
+			datastoreModule.incrementStatus(properties.nameOfGitRepo);
 			logger.info('projectMetainfo', ' link to analyzed project : ' + linkToAnalyzedProject);
 							//res.setHeader('302');
 
-			res.redirect(linkToAnalyzedProject);
-			
-
-	        
+		    res.render('projectStatus',
+		    	{ 'linkToAnalyzedProject' : linkToAnalyzedProject,
+		    	   'nameOfGitRepo' : properties.nameOfGitRepo });
+			//res.redirect(linkToAnalyzedProject);
 		}
 	};
 }
@@ -96,18 +79,16 @@ function startAnalysisProcess(properties){
 			//
 			//},
 			function(callback){//TODO fix crashing node when link is in bad format
-				//monitor();
 				repoModule.downloadRepo(properties,callback);
-				
+				console.log('increment after downloadRepo');
 			},
 			function(callback){
-				 //monitor();
+				
 				 var projectLocation = fileModule.buildAbsolutePath(properties.nameOfGitRepo);
 				 logger.info('projectMetainfo', '---> projectLocation after build Absolute Path : ' + projectLocation);
-			
+			     
 				 properties.projectLocation = projectLocation;
 				 sonarModule.analyze(properties);
-				 
 			}
 
 		]);

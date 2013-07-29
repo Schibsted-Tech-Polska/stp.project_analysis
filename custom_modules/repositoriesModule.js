@@ -4,6 +4,7 @@ var logger = require('winston');
 var svnCheckoutCommand = 'svn checkout';
 var locationOfFolderWithProjects = paths.locationOfFolderWithProjects();
 var nameOfModule = 'repositoriesModule';
+var datastoreModule = require('../custom_modules/datastoreModule');
 
 exports.downloadRepo = function(properties,callback){
 
@@ -13,14 +14,15 @@ exports.downloadRepo = function(properties,callback){
 	logger.info(nameOfModule, 'downloadRepo from : ' + link + 'with command : ' + gitCommand);
 	
 	if(contains(link, "git")){
-		downloadFromVersionControl(gitCommand, link, callback);
+		downloadFromVersionControl(gitCommand, properties, callback);
 	}else if(contains(link, "svn")){
-		downloadFromVersionControl(svnCheckoutCommand, link, callback);
+		downloadFromVersionControl(svnCheckoutCommand, properties, callback);
 	}
 	
 }
   
-function downloadFromVersionControl(command, link, callback){
+function downloadFromVersionControl(command, properties, callback){
+	var link = properties.link;
 	var options = {
 		cwd : locationOfFolderWithProjects
 	};
@@ -31,6 +33,7 @@ function downloadFromVersionControl(command, link, callback){
 				logger.info(nameOfModule, " error" + error + " while executing command : " + command +
 										  "\n with link : " + link );
 			}
+			datastoreModule.incrementStatus(properties.nameOfGitRepo);
 			callback();
 		});
 }

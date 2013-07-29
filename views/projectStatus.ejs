@@ -5,9 +5,59 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+  <script src="/socket.io/socket.io.js"></script>
+<script>
+   var numberOfStates = 3;
+   var nameOfGitRepo = '<%- nameOfGitRepo %>';
+   var linkToAnalyzedProject = '<%-linkToAnalyzedProject %>';
+   //console.log(nameOfGitRepo);
+  //var datastoreModule = require('../../custom_modules/datastoreModule');
+  console.log('linkToAnalyzedProject :  ' + linkToAnalyzedProject );
+  var socket = io.connect('http://localhost');
+  socket.on('statusChanged', function (data) {
+    console.log(data);
+    var result = findByProjectName(data, nameOfGitRepo);
+    console.log('clientSide result: ' + data);
+   
+    setDataInResultDiv(result.status);
+    var interval = 8000;
+
+    if(result.status === numberOfStates)
+    	window.location.href = linkToAnalyzedProject;
+    
+    setTimeout(function(){
+    	socket.emit('event', { clientData: 'sendEvent' })
+    }, interval );
+    
+  });
+
+  	function findByProjectName(source, projectName) {
+	  for (var i = 0; i < source.length; i++) {
+	    if (source[i].projectName === projectName) {
+	      return source[i];
+	    }
+	  }
+	  console.log("Couldn't find object with projecetName: " + projectName);
+	}
+
+  function setDataInResultDiv(dataToSet){
+  	console.log('setDataInDiv :' + dataToSet);
+  	var div = document.getElementById('result');
+  	div.innerHTML = dataToSet + " of 3 steps" ;
+  }
+</script>
 
 
   <body>
-     status <%= progressCounter %>    
+     <h1> status of "<%= nameOfGitRepo %>" analysis : </h1>
+
+     <div id='result'> </div>
+
+
+    <div class="progressbar"> </div>
+
+
+    
+  
   </body>
 </html>

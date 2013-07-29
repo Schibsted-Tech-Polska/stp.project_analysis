@@ -75,7 +75,7 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 }
 
 function shouldPushNewPath(directoriesWithFile,extracted){
-	console.log('trying to add path : ' + extracted);
+	//console.log('trying to add path : ' + extracted);
 	return !underscore.contains(directoriesWithFile,extracted)
     			&& !isSubpath(directoriesWithFile, extracted);
 }

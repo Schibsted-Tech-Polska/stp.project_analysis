@@ -42,12 +42,21 @@ a {
 .formfield * {
     vertical-align: middle;
 }
+.progressbar {
+  content: url('/img/waitGif.gif');
+}
 /*
-select#targetLanguage option[value="java"]   { content:url(/img/java.png);   }
-select#gender option[value="female"] { background-image:url(female.png); }
-select#gender option[value="others"] { background-image:url(others.png); }
-*/
-
-
+#progressbar {
+    background-color: white;
+    border-radius: 13px; 
+    padding: 3px;
+}
+    
+#progressbar div {
+    background-color: orange;
+    width: 6%; 
+    height: 20px;
+    border-radius: 10px;
+}*/
 
 

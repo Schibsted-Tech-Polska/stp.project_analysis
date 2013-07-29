@@ -7,6 +7,8 @@ var paths = require('../custom_modules/paths');
 var logger = require('winston');
 var executor = require('../custom_modules/executorModule');
 var nameOfModule = 'sonarModule';
+var sonarModule = require('../custom_modules/sonarModule');
+var datastoreModule = require('../custom_modules/datastoreModule');
 
 
 var languageToFileMap = {'java' : 'java.properties',
@@ -20,6 +22,7 @@ var platoCommand = 'plato -r -d reports . ';
 var nameOfPropertiesFile = 'sonar-project.properties';
 
 
+
 //TODO this module is to big
 var basePropertiesPath = function(){
 	return __dirname.replace('custom_modules','base_properties');
@@ -31,7 +34,11 @@ function AnalyzeExecution(){
 	this.commands = [];
 };
 AnalyzeExecution.prototype.execute = function(lastCallback){
-	lastCallback = lastCallback || fileModule.deleteFolder(this.options[this.options.length-1].cwd);
+	var locationOfProject = this.options[this.options.length-1].cwd;
+	var progressIncrementator = function(){
+		datastoreModule.incrementStatus(fileModule.extractFileNameFromPath(locationOfProject));
+	}
+	lastCallback = lastCallback || fileModule.deleteFolder(locationOfProject, progressIncrementator);
 	executor.executeCommands(this.options, this.commands, lastCallback);
 };
 AnalyzeExecution.prototype.toString = function(){
@@ -149,7 +156,9 @@ function startOtherLanguagesClient(properties){
 	 	 project.options[1] = options;
 	 	 project.commands[1] = 'none';
 	 	 if(properties.analysisTool=='plato'){
-	 	 	var doNothing = function(){};
+	 	 	var doNothing = function(){
+				datastoreModule.incrementStatus(properties.nameOfGitRepo);
+		 	};
 	 	 	project.commands[0] = platoCommand;
 	 	 	project.execute(doNothing);
 	 	 }else{

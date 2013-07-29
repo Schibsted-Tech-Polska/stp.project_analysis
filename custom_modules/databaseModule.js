@@ -28,7 +28,7 @@ exports.addNewAnalysis = function(projectId){
 }*/
 
 //to start mongodb in shell mongod
-var Db = require('mongodb').Db;
+/*var Db = require('mongodb').Db;
 var Server = require('mongodb').Server;
 var db = new Db('pa', new Server('localhost', 27017));
 
@@ -48,7 +48,7 @@ exports.addNewAnalysis2 = function(projectId){
 						console.log("id of inserted data : " + documentId);
 					});
 	});
-	db.close();
+	db.close();*/
 	/*setTimeout(function() {
 	// Fetch the document
   		collection.findOne({hello:'world_no_safe'}, function(err, item) {
@@ -74,4 +74,4 @@ exports.addNewAnalysis2 = function(projectId){
 	});
 
 	connection.end();*/
-}
+//}
