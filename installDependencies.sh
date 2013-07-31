@@ -1,3 +1,4 @@
+mkdir env
 cd ./env/
 
 
@@ -37,12 +38,15 @@ sudo npm install
 sudo npm install -g mocha
 sudo npm install -g plato
 
-mv sonar-php-plugin-1.2.jar sonar-3.6.1/extensions/plugins/
+http://repository.codehaus.org/org/codehaus/sonar-plugins/javascript/sonar-javascript-plugin/1.3/sonar-javascript-plugin-1.3.jar
 mv sonar-javascript-plugin-1.3.jar sonar-3.6.1/extensions/plugins/
 
-#exporting path variable for sonar-runner
-export PATH=$HOME/env/sonar-runner-2.2.2/bin:$PATH
+http://repository.codehaus.org/org/codehaus/sonar-plugins/php/sonar-php-plugin/1.2/sonar-php-plugin-1.2.jar
+mv sonar-php-plugin-1.2.jar sonar-3.6.1/extensions/plugins/
 
-source ../startApplication.sh
+#exporting path variable for sonar-runner
+
+sh ../startApplication.sh
+
 
 
