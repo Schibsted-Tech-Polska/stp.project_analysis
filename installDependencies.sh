@@ -45,8 +45,8 @@ http://repository.codehaus.org/org/codehaus/sonar-plugins/php/sonar-php-plugin/1
 mv sonar-php-plugin-1.2.jar sonar-3.6.1/extensions/plugins/
 
 #exporting path variable for sonar-runner
-
-sh ../startApplication.sh
+cd ..
+sh startApplication.sh
 
 
 
