@@ -1,20 +1,17 @@
 var fs = require('fs');
 var flow = require('nimble');
 var fileModule = require('../custom_modules/fileModule');
-var sourceFinder = require('../custom_modules/sourceFinderModule');
-var jsFilesToOmit = require('../custom_modules/javaScriptFilesToOmit');
 var paths = require('../custom_modules/paths');
 var logger = require('winston');
 var executor = require('../custom_modules/executorModule');
 var nameOfModule = 'sonarModule';
-var sonarModule = require('../custom_modules/sonarModule');
 var datastoreModule = require('../custom_modules/datastoreModule');
+var PropertiesGenerator = require('../custom_modules/PropertiesGenerator');
 
 
-var languageToFileMap = {'java' : 'java.properties',
-						  'php' : 'php.properties' ,
-						   'js' : 'js.properties' };
-
+var languageToFileMap = {	'java' : 'java.properties',
+							'php' : 'php.properties' ,						
+							'js' : 'js.properties'	};
 
 var sonarRunnerCommand= 'sonar-runner';
 var platoCommand = 'plato -r -d reports . ';
@@ -37,56 +34,17 @@ AnalyzeExecution.prototype.execute = function(lastCallback){
 	var locationOfProject = this.options[this.options.length-1].cwd;
 	var progressIncrementator = function(){
 		datastoreModule.incrementStatus(fileModule.extractFileNameFromPath(locationOfProject));
-	}
-	lastCallback = lastCallback || fileModule.deleteFolder(locationOfProject, progressIncrementator);
+	};
+	lastCallback =  lastCallback || fileModule.deleteFolder(locationOfProject, progressIncrementator);
 	executor.executeCommands(this.options, this.commands, lastCallback);
 };
 AnalyzeExecution.prototype.toString = function(){
 	var self = this;
    return this.commands.map(function(current,i){
 		console.log('commands nr ' + i + " : " + current +" location : " + self.commands[i].cwd) ;
-	}) ;
-
-	
+	});
 };
 
-//TODO ProjectMetainfo not properties
-function PropertiesGenerator( properties ){
-	console.log('-->sources : ' + properties.sources);
-	var filesToOmit = properties.filesToOmit;
-	this.SRC = properties.sources;
-	//var startFinder = false;
-	
-
-	this.parameters = {
-		'projectLocation':properties.projectLocation,
-		'extension':"."+properties.language
-	}
-
-	//if(properties.sources != undefined){
-	//	startFinder = true;
-	//}
-
-	//if( properties.language=='js' ){
-		this.parameters.filesToOmit = filesToOmit;
-	//}else{
-	//	this.parameters.filesToOmit = filesToOmit;//TODO must be at least one
-	//}
-	logger.info(nameOfModule, 'files that will be ingnored by propertiesGenerator ' + this.parameters.filesToOmit );
-
-
-}
-
-PropertiesGenerator.prototype.generate = function(propertiesToChange,callback){
-	console.log('this.sources : ' + this.SRC);
-	if(this.SRC == undefined || this.SRC ==''){
-		sourceFinder.findSrcLocation(this.parameters ,propertiesToChange, callback);	
-	}else{
-		console.log('--->user type sources location @ : ' + this.SRC );
-		propertiesToChange.SRC = this.SRC;
-		callback(propertiesToChange);		
-	}
-}
 //-------------------------------------------------------
 exports.analyze = function(properties){
 
@@ -106,7 +64,7 @@ exports.analyze = function(properties){
 		}
 	  ]);
      
-}
+};
 
 function startSonarRunnerClient(properties){
 		
@@ -155,7 +113,7 @@ function startOtherLanguagesClient(properties){
 	 	 project.options[0] = options;
 	 	 project.options[1] = options;
 	 	 project.commands[1] = 'none';
-	 	 if(properties.analysisTool=='plato'){
+	 	 if(properties.analysisTool === 'plato'){
 	 	 	var doNothing = function(){
 				datastoreModule.incrementStatus(properties.nameOfGitRepo);
 		 	};
@@ -188,7 +146,7 @@ function generatePropertiesFile(properties ,propertiesToChange, callback) {
 			});
 	};
     //TODO 
-	var propertiesGenerator = new PropertiesGenerator(properties);
+	var propertiesGenerator = PropertiesGenerator.create(properties);
 	propertiesGenerator.generate(propertiesToChange,saveNewProperties);
 }
 
@@ -205,7 +163,7 @@ function replaceAll(find, replace, str) {
 
 exports.getUrlOfAnalyzedProject = function(properties){
 
-	if(properties.analysisTool == 'sonar'){
+	if(properties.analysisTool === 'sonar'){
 		var sonarUrl = paths.sonarUrl();
     	return sonarUrl+escapeCharacters(properties.link);
 	}else{
@@ -222,17 +180,13 @@ function checkTypeOfJavaProject(projectLocation){
 	 	 };
 
 	var finder = require('findit').find(projectLocation);
-
     var typeOfProject = [];
-	var locationsOfBuildFiles = [];
-    var counter = 0;
-
     var currentFindProjects = new AnalyzeExecution();
 	
 	//This listens for files found
 	finder.on('file', function (file) {//TODO only first file is important
 		
-		if(file.indexOf('pom.xml') != -1){
+		if(file.indexOf('pom.xml') !== -1){
 		
             var options = {
             		cwd: fileModule.extractDirectoryFromPath(file)
@@ -240,7 +194,7 @@ function checkTypeOfJavaProject(projectLocation){
             currentFindProjects.commands.push('mvn clean install');
             currentFindProjects.options.push(options);
           
-		}else if(file.indexOf('build.xml') != -1){
+		}else if(file.indexOf('build.xml') !== -1){
 		
 			currentFindProjects.commands.push('ant build');
         

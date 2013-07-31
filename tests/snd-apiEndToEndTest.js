@@ -2,7 +2,7 @@ var http = require('http');
 var request = require('request');
 var assert = require('assert');
 var linkToProject="https://github.com/schibstednorge/snd-api";
-var expectedStatusCode = 302;
+var expectedStatusCode = 200;
 
 describe('trigger project analysis and generating report ', function(){
 	it('should show location the future locaiton of report  ' + expectedStatusCode , function(done){

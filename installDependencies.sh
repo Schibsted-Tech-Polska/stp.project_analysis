@@ -1,4 +1,3 @@
-mkdir env
 cd ./env/
 
 
@@ -21,32 +20,29 @@ sudo brew install node
 
 
 else
+
 yum install apt
 yum install apt-get
 
 sudo apt-get install git
-
-yum install subversion
 sudo apt-get install subversion
-
 sudo apt-get install maven
-
 sudo apt-get install ant
+sudo apt-get install node
+sudo apt-get install npm
 
-sudo apt-get install nodejs
-sh ./env/sonar-3.6.1/bin/linux-x86-32/sonar.sh start
 fi
-
-#exporting path variable for sonar-runnerls
-
-export PATH=$HOME/env/sonar-runner-2.2.2/bin:$PATH
 
 sudo npm install
 sudo npm install -g mocha
 sudo npm install -g plato
 
+mv sonar-php-plugin-1.2.jar sonar-3.6.1/extensions/plugins/
+mv sonar-javascript-plugin-1.3.jar sonar-3.6.1/extensions/plugins/
+
+#exporting path variable for sonar-runner
 export PATH=$HOME/env/sonar-runner-2.2.2/bin:$PATH
 
-source startApplication.sh
+source ../startApplication.sh
 
 

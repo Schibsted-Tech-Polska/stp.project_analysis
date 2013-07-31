@@ -2,40 +2,35 @@ var underscore = require('underscore');
 var logger = require('winston');
 
 exports.validateInput = function(properties){
-	//TODO 
+	
 	var forbiddenCommands = [";", "|", "||", "&&","rm","cp","cat","ls","at","net","netstat","del","copy"];
 	var gitCommandMustStartWith = ["git"];
 	var javaBuildCommandMustStartWith = ["mvn","ant"];
-	var safeGitCommand = 'git clone';
 	var doNothing = function(){};
 	properties.errorMessages = {};
-	//var errorMessages;
 
 	console.log('validatie git command : ' + properties.gitCommand);
 
 	var v1 = validate(properties.gitCommand,forbiddenCommands,underscore.contains);
 	v1(function(){
 		properties.errorMessages.gitCommand = 'bad git command';
-		//properties.gitCommand = safeGitCommand;
-	}, doNothing);//TODO assign to var DoNothing
+	}, doNothing);
 
 	var v2 = validate(properties.gitCommand,gitCommandMustStartWith,startsWith);
 	v2(doNothing, function(){
 		properties.errorMessages.gitCommand = 'bad git command';
-		//properties.gitCommand = safeGitCommand;
 	});
 
 	var v3 = validate(properties.javaBuildCommand,forbiddenCommands,underscore.contains);
 	v3(function(){
-		//properties.javaBuildCommand = '';
 		properties.errorMessages.javaBuildCommand = 'bad java build command';
 	},doNothing);
 
 	var v4=validate(properties.javaBuildCommand,javaBuildCommandMustStartWith,startsWith);	
 	v4(doNothing,function(){
-		if( !isEqual (properties.javaBuildCommand,'') )
+		if( !isEqual (properties.javaBuildCommand,'') ){
 			properties.errorMessages.javaBuildCommand = 'bad java build command';
-		//properties.javaBuildCommand = '';
+		}
 	});
 
 
@@ -46,11 +41,6 @@ exports.validateInput = function(properties){
 		properties.filesToOmit = emptyArray;
 	}, doNothing)
 	
-
-
-	
-
-
 	var possibleLanguages = ['js','php','java'];
 	validate(properties.language, possibleLanguages, underscore.contains)
 	(function(){
@@ -78,7 +68,7 @@ exports.validateInput = function(properties){
 		properties.errorMessages.sourcesMsg = 'you must type sources';
 	}
 
-}
+};
 
 function validateSources(properties){
 	console.log(' validator sources : ' + properties.sources);
@@ -96,9 +86,8 @@ function validateLink(link){
 	if(contains(link, "git")){
 		var delimeter = '/';
     	var splittedLink = link.split(delimeter);
-	    //alert(gitLinkValue);
-	    //alert(splittedLink.length);
-	    if(splittedLink.length == 5){
+	    
+	    if(splittedLink.length === 5){
 	      return true;
 	    }
 	    return false;
@@ -115,13 +104,13 @@ function and(function1, function2){
 	}
 }*/
 function contains(path, expression){
-	if(path.indexOf(expression) != -1) 
+	if(path.indexOf(expression) !== -1) 
 		return true;
 	return false;
 
 } 
 
-function validate(commandToValidate, forbiddenCommands,predicate){//TODO validate
+function validate(commandToValidate, forbiddenCommands,predicate){
 	return function(actionWhenFail, actionWhenPass){
 		var result = true;
 		forbiddenCommands.map(function(currentCommand){
@@ -136,7 +125,7 @@ function validate(commandToValidate, forbiddenCommands,predicate){//TODO validat
 	  	}else{
 	  		actionWhenPass();
 	  	}
-	}
+	};
 }
 
 function emptyOrUndefined(arg){
@@ -147,8 +136,6 @@ function isEqual(firstArg, secondArg){
 	return firstArg === secondArg;
 }
 
-
-
 function startsWith(string, properStartCommand){	
 	var result = false;
 	
@@ -158,11 +145,10 @@ function startsWith(string, properStartCommand){
 	return result;
 }
 
-
 exports.hasErrors = function(properties){
 	for(error in properties.errorMessages){
 		return true;		
 	}
 	return false;
-}
+};
 

@@ -7,8 +7,6 @@ var nameOfModule = 'repositoriesModule';
 var datastoreModule = require('../custom_modules/datastoreModule');
 
 exports.downloadRepo = function(properties,callback){
-
-	
 	var link = properties.link;
 	var gitCommand = properties.gitCommand;
 	logger.info(nameOfModule, 'downloadRepo from : ' + link + 'with command : ' + gitCommand);
@@ -18,8 +16,7 @@ exports.downloadRepo = function(properties,callback){
 	}else if(contains(link, "svn")){
 		downloadFromVersionControl(svnCheckoutCommand, properties, callback);
 	}
-	
-}
+};
   
 function downloadFromVersionControl(command, properties, callback){
 	var link = properties.link;
@@ -30,7 +27,7 @@ function downloadFromVersionControl(command, properties, callback){
 	exec([command,link].join(' '), options,
 		function (error, stdout, stderr) {
 			if(error){
-				logger.info(nameOfModule, " error" + error + " while executing command : " + command +
+				logger.info(nameOfModule, " error" + error + stderr + stdout + " while executing command : " + command +
 										  "\n with link : " + link );
 			}
 			datastoreModule.incrementStatus(properties.nameOfGitRepo);
@@ -45,14 +42,16 @@ exports.getNameOfRepo = function(link){
 	var splittedLink = link.split(delimeter);
 	var indexOfLastElem = splittedLink.length - 1;
 	
-	if(splittedLink[indexOfLastElem] == '')
+	if(splittedLink[indexOfLastElem] === ''){
 		return splittedLink[indexOfLastElem-1];	
+	}
 	return splittedLink[indexOfLastElem];
-}
+};
 
 function contains(path, expression){
-	if(path.indexOf(expression) != -1) 
+	if(path.indexOf(expression) !== -1){
 		return true;
+	}
 	return false;
 
 } 

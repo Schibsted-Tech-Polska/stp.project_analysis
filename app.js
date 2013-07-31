@@ -34,7 +34,7 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(paths.locationOfFolderWithProjects()));
 GLOBAL.PROGRESS_STATUS = [];
-GLOBAL.PROJECT_ID = 0;
+//GLOBAL.PROJECT_ID = 0;
 
 // development only
 if ('development' == app.get('env')) {
@@ -55,16 +55,9 @@ var io = require ('socket.io').listen(server);
 
 io.sockets.on('connection', function(socket){
 	socket.on('getStatus', function(data){
-		console.log('--> nameOfGitRepo : ' + data.nameOfGitRepo);
 		var record = datastoreModule.getRecordForProjectName(data.nameOfGitRepo);
-		console.log('--> find record : ' + record);
 		socket.emit('statusChanged', record );
 	});
-   	/*socket.emit('statusChanged', PROGRESS_STATUS);
-	socket.on('event', function(data){
-		//console.log('receive data from client : ' + data);
-		socket.emit('statusChanged', PROGRESS_STATUS);
-	});*/
 });
 
 

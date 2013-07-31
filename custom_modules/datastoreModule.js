@@ -1,3 +1,6 @@
+var logger = require('winston');
+var nameOfModule = 'datastoreModule';
+
 exports.addNewAnalysis = function(projectName){
 	var current = findByProjectName(PROGRESS_STATUS, projectName);
 	if(current === undefined ){
@@ -7,19 +10,18 @@ exports.addNewAnalysis = function(projectName){
 	}else{
 		current.status = 0;
 	}
-}
-
+};
 //TODO fix when same project analyzed twice
 exports.incrementStatus = function(projectName){
 	console.log('incrementStatus');
 	var record = findByProjectName(PROGRESS_STATUS, projectName);
 	record = {'projectName' : projectName,
 			   'status' : ++record.status };
-}
+};
 
 exports.getRecordForProjectName = function(projectName){
 	return findByProjectName(PROGRESS_STATUS, projectName);
-}   
+};   
 
 function findByProjectName(source, projectName) {
   for (var i = 0; i < source.length; i++) {
@@ -27,6 +29,7 @@ function findByProjectName(source, projectName) {
       return source[i];
     }
   }
+  logger.info(nameOfModule, "Couldn't find object with projecetName: " + projectName);
   return undefined;
-  console.log("Couldn't find object with projecetName: " + projectName);
+  
 }

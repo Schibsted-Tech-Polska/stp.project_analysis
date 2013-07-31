@@ -6,7 +6,7 @@ var nameOfModule = 'fileModule';
 exports.buildAbsolutePath = function(nameOfFile){
   var locationOfFolderWithProjects = paths.locationOfFolderWithProjects();
   return [locationOfFolderWithProjects,nameOfFile].join('/');
-}
+};
 
 exports.copyFile = function(source, target, cb) {
   var cbCalled = false;
@@ -19,7 +19,7 @@ exports.copyFile = function(source, target, cb) {
   wr.on("error", function(err) {
     done(err);
   });
-  wr.on("close", function(ex) {
+  wr.on("close", function() {
     done();
   });
   rd.pipe(wr);
@@ -30,12 +30,17 @@ exports.copyFile = function(source, target, cb) {
       cbCalled = true;
     }
   }
-}
+};
 
+var writeAndCall = function(callback){
+  return function(path, data){
+    writeTextFile(path, data, callback);
+  };
+}
 
 exports.copyFileAndChangeProperties = function(source, target,propertiesToChange, callback ){
   readTextFileAndModifyContent(source,target,propertiesToChange, writeAndCall(callback));
-}
+};
 
 
 
@@ -46,7 +51,7 @@ readTextFileAndModifyContent = function(source, target, propertiesToChange,cb){
    }
    
    var stringData = data.toString();
-   var replaced;  
+   var replaced; 
    for(var property in propertiesToChange){
       replaced = stringData.replace(property, propertiesToChange[property]);
       stringData = replaced;
@@ -55,7 +60,7 @@ readTextFileAndModifyContent = function(source, target, propertiesToChange,cb){
     
   });
 
-}
+};
 
 
 writeTextFile = function(path, data, callback){
@@ -67,25 +72,11 @@ writeTextFile = function(path, data, callback){
     }
     callback();
   });
-}
-
-var writeAndCall = function(callback){
-  return function(path, data){
-    writeTextFile(path, data, callback);
-  }
-}
-
-exports.deleteFolder = function(path, invokeAfter){
-  return function(){ 
-    deleteFolderRecursive(path);
-    invokeAfter();
-  }
-  
-}
+};
 
 var deleteFolderRecursive =  function(path) {
   if( fs.existsSync(path) ) {
-    fs.readdirSync(path).forEach(function(file,index){
+    fs.readdirSync(path).forEach(function(file){
       var curPath = path + "/" + file;
       if(fs.statSync(curPath).isDirectory()) { // recurse
         deleteFolderRecursive(curPath);
@@ -95,21 +86,26 @@ var deleteFolderRecursive =  function(path) {
     });
     fs.rmdirSync(path);
   }
+};
 
-}
-
+exports.deleteFolder = function(path, invokeAfter){
+  return function(){ 
+    deleteFolderRecursive(path);
+    invokeAfter();
+  }
+};
 
 exports.extractDirectoryFromPath = function(path){
   var array = path.split('/');
   array.pop();
   return array.join('/');
 
-}
+};
 
 exports.extractFileNameFromPath = function(path){
   var array = path.split('/');
   return array.pop();
-}
+};
 
 
 

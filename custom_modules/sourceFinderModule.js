@@ -1,12 +1,9 @@
 var underscore = require('underscore');
 var Glob = require("glob");
-var underscore = require("underscore");
 var flow = require('nimble');
 var nameOfModule = 'sourceFinderModule';
 var logger = require('winston');
 var findit = require('findit');
-//var jsFilesToOmit = require('javaScriptFilesToOmit');
-
 /**
 *@param {parameters} should contain : projectLocation, extension, filesToOmit[]
 
@@ -53,9 +50,9 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 					}
 				});
 				//on error
-				glob.on('end', function(set){
+				glob.on('end', function(){
 					
-					if(countOfGlobMatches == 0){
+					if(countOfGlobMatches === 0){
 						callback();
 					}
 					countOfGlobMatches--;
@@ -72,7 +69,7 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 			cb(propertiesToChange);
 		}
 		]);
-}
+};
 
 function shouldPushNewPath(directoriesWithFile,extracted){
 	//console.log('trying to add path : ' + extracted);
@@ -91,7 +88,7 @@ function isSubpath(paths, path){
 }
 
 function contains(path, expression){
-	if(path.indexOf(expression) != -1) 
+	if(path.indexOf(expression) !== -1) 
 		return true;
 	return false;
 

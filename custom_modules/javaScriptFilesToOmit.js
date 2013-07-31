@@ -2,4 +2,4 @@ var filesToOmit = ["**/*jshint","**/*jquery","**/*min"];//TODO change omit to ig
 
 exports.getFiles = function(){
 	return filesToOmit;
-}
+};
