@@ -26,16 +26,24 @@ var basePropertiesPath = function(){
 };
 
 //--------------------------------------
-function AnalyzeExecution(){
+function AnalyzeExecution(absoluteLocationOfProject){
+	this.absoluteLocationOfProject = absoluteLocationOfProject;
 	this.options = [];
 	this.commands = [];
 };
 AnalyzeExecution.prototype.execute = function(lastCallback){
-	var locationOfProject = this.options[this.options.length-1].cwd;
-	var progressIncrementator = function(){
-		datastoreModule.incrementStatus(fileModule.extractFileNameFromPath(locationOfProject));
+	console.log('absoluteLocationOfProject : ' + this.absoluteLocationOfProject);
+	//var locationOfProject = this.options[this.options.length-1].cwd;
+	var progressIncrementator = function(absoluteLocationOfProject){
+		return function(){
+			//var absoluteLocationOfProject = this.absoluteLocationOfProject;
+			console.log('absoluteLocationOfProject : ' + absoluteLocationOfProject);
+			var nameOfProject = fileModule.extractFileNameFromPath(absoluteLocationOfProject);
+			datastoreModule.incrementStatus(nameOfProject);
+		}
 	};
-	lastCallback =  lastCallback || fileModule.deleteFolder(locationOfProject, progressIncrementator);
+
+	lastCallback =  progressIncrementator(this.absoluteLocationOfProject); //lastCallback || fileModule.deleteFolder(this.absoluteLocationOfProject , progressIncrementator);
 	executor.executeCommands(this.options, this.commands, lastCallback);
 };
 AnalyzeExecution.prototype.toString = function(){
@@ -79,10 +87,35 @@ function startSonarRunnerClient(properties){
 }
 
 function startJavaClient(properties){
+	var options={};
 
 	var projectLocation = properties.projectLocation; 
 	var javaBuildCommand = properties.javaBuildCommand;
+	var binariesLocation = properties.binaries;
+	var project = new AnalyzeExecution(projectLocation);
 
+	console.log('projectLocation : ' + projectLocation);
+	if(javaBuildCommand.indexOf('mvn') !== -1){
+
+		var locationOfExectuting = [projectLocation,binariesLocation].join('/'); 
+		options.cwd = fileModule.extractDirectoryFromPath(locationOfExectuting);
+		console.log('--> after extractDirectoryFromPath options.cwd : ' +options.cwd);
+		project.options[0] = options;
+	 	project.options[1] = options;
+		project.commands[0] = javaBuildCommand;
+        project.commands[1] = 'mvn sonar:sonar';
+		 
+	}else{
+		options.cwd = projectLocation;
+		project.options[0] = options;
+	 	project.options[1] = options;
+		project.commands[0] = javaBuildCommand;
+        project.commands[1] =  sonarRunnerCommand;
+	}
+
+	project.execute();
+
+    /*
 	if(javaBuildCommand){
 		logger.info(nameOfModule, "userTypedJavaBuildCommand : " + javaBuildCommand);
 		var options = {
@@ -99,7 +132,7 @@ function startJavaClient(properties){
 	}
 	else{
 		checkTypeOfJavaProject(projectLocation);
-	}
+	}*/
 }
 
 
@@ -109,7 +142,7 @@ function startOtherLanguagesClient(properties){
 	 	 };
 
 
-	 	 var  project = new AnalyzeExecution();
+	 	 var  project = new AnalyzeExecution(properties.projectLocation);
 	 	 project.options[0] = options;
 	 	 project.options[1] = options;
 	 	 project.commands[1] = 'none';
@@ -191,8 +224,12 @@ function checkTypeOfJavaProject(projectLocation){
             var options = {
             		cwd: fileModule.extractDirectoryFromPath(file)
             };
+            console.log('---> options.cwd : ' + options.cwd);
             currentFindProjects.commands.push('mvn clean install');
             currentFindProjects.options.push(options);
+
+            //currentFindProjects.commands.push('mvn sonar:sonar');
+            //currentFindProjects.options.push(options);
           
 		}else if(file.indexOf('build.xml') !== -1){
 		
@@ -214,6 +251,7 @@ function checkTypeOfJavaProject(projectLocation){
             var options = {
             		cwd: projectLocation
             };
+            console.log('--> options.projectLocation' + options.cwd);
             currentFindProjects.commands.push(sonarRunnerCommand);
             currentFindProjects.options.push(options);
 

@@ -13,10 +13,11 @@ describe('trigger project analysis and generating report ', function(){
 	form:{
 		link:linkToProject,
 		gitCommand:'git clone',
-		javaBuildCommand:'',
+		javaBuildCommand:'mvn clean install',
 		targetLanguage:'java',
 		filesToOmit:'**/*nothing\n**/*twoNothing',
-		sources:'src'
+		sources:'src',
+		binaries:'target'
 	}}, function(error,response,body){
 			console.log("response :" + body + "status code : " +response.statusCode);
 			var statusCode = response.statusCode;

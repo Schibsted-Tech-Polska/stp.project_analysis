@@ -11,6 +11,7 @@ function PropertiesGenerator( properties ){
 	console.log('-->sources : ' + properties.sources);
 	var filesToOmit = properties.filesToOmit;
 	this.SRC = properties.sources;
+	this.BIN = properties.binaries;
 	//var startFinder = false;
 	
 
@@ -40,6 +41,7 @@ PropertiesGenerator.prototype.generate = function(propertiesToChange,callback){
 	}else{
 		console.log('--->user type sources location @ : ' + this.SRC );
 		propertiesToChange.SRC = this.SRC;
+		propertiesToChange.BIN = this.BIN;
 		callback(propertiesToChange);		
 	}
 };

@@ -37,7 +37,8 @@ exports.submit = function(data){
 				 	'gitCommand' : req.body.gitCommand,
 				 	'javaBuildCommand' : req.body.javaBuildCommand,
 				 	'filesToOmit':  req.body.filesToOmit.split('\n'),
-				 	'sources': req.body.sources
+				 	'sources': req.body.sources,
+				 	'binaries': req.body.binaries
 				 };
 
 		
@@ -60,7 +61,8 @@ exports.submit = function(data){
 			datastoreModule.incrementStatus(properties.nameOfGitRepo);
 			logger.info('projectMetainfo', ' link to analyzed project : ' + linkToAnalyzedProject);
 							//res.setHeader('302');
-
+            //TODO render in get
+           //setTimeout(function() {}, 10);
 		    res.render('projectStatus',
 		    	{ 'linkToAnalyzedProject' : linkToAnalyzedProject,
 		    	   'nameOfGitRepo' : properties.nameOfGitRepo });

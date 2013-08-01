@@ -13,10 +13,11 @@ describe('trigger project analysis and generating report ', function(){
 	form:{
 		link:linkToProject,
 		gitCommand:'git clone',
-		javaBuildCommand:'',
+		javaBuildCommand:'mvn clean install',
 		targetLanguage:'java',
 		filesToOmit:'**/*nothing\n**/*twoNothing',
-		sources:'abdera-extensions-snd-json/src/main/java'
+		sources:'abdera-extensions-snd-json-collection/src',
+		binaries:'abdera-extensions-snd-json-collection/binaries'
 	}}, function(error,response,body){
 			console.log("response :" + body + "status code : " +response.statusCode);
 			var statusCode = response.statusCode;

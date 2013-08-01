@@ -103,6 +103,7 @@ exports.extractDirectoryFromPath = function(path){
 };
 
 exports.extractFileNameFromPath = function(path){
+  console.log('--path : ' +  path );
   var array = path.split('/');
   return array.pop();
 };

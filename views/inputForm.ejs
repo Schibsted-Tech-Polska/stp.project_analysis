@@ -6,11 +6,10 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
 
-
   <body>
     <h1><%= title %></h1>
     <form method='post'/>
-    <p><input type='text', name='gitCommand', placeholder='type git command', value='git clone'/>
+    <p class='warning'><input type='text', name='gitCommand', placeholder='type git command', value='git clone'/>
       <input type='text', name='link', placeholder='link', size='35'/>
      <%if (errorMessages.gitCommand){%> <%= errorMessages.gitCommand %> <% } %> 
       <%if (errorMessages.linkMsg){ %> <%= errorMessages.linkMsg %> <% } %>
@@ -21,11 +20,14 @@
       <option value="js-sonar">js sonar</option>
       <option value="js-plato">js plato</option>
     </select>
-    <p><input type='text', name='javaBuildCommand', placeholder='java build  command' />
+    <p ><input type='text', name='javaBuildCommand', placeholder='java build  command'/>
       <input type='text', name='sources', placeholder='location of sources' />
     <%if (errorMessages.javaBuildCommand){ %> <%= errorMessages.javaBuildCommand %> <% } %>
     <%if (errorMessages.sourcesMsg){ %> <%= errorMessages.sourcesMsg %> <% } %>
     
+    </p>
+    <p class='warning' ><input type='text' name='binaries', placeholder='location of complied classes' />
+    <%if (errorMessages.binariesMsg){ %> <%= errorMessages.binariesMsg %> <% } %> 
     </p>
 
      
@@ -41,5 +43,36 @@
     </form>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  $(function () {
+    $("#targetLanguage").change(function() {
+      var val = $(this).val();
+      console.log('val : ' + val);
+      if(val === "java") {
+          show(document.getElementsByName('javaBuildCommand')[0]);
+          show(document.getElementsByName('sources')[0]);
+          show(document.getElementsByName('binaries')[0]);
+      }
+      else {
+        console.log('else')
+          var jbc = $('#javaBuildCommand');
+          hide(document.getElementsByName('javaBuildCommand')[0]);
+          hide(document.getElementsByName('sources')[0]);
+          hide(document.getElementsByName('binaries')[0]);
+          //console.log(jbc);
+          //jbc.css('display', 'none');
+          //$("#javaBuildCommand").hide('fast');
+          //$("#sources").hide();
+      }
+    });
+  })
+
+  function hide(element){
+    element.style.display = 'none';
+  }
+  function show(element){
+    element.style.display = 'inline';
+  }
+  </script>
   </body>
 </html>

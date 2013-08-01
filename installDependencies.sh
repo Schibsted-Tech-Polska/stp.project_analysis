@@ -38,11 +38,14 @@ sudo npm install
 sudo npm install -g mocha
 sudo npm install -g plato
 
-http://repository.codehaus.org/org/codehaus/sonar-plugins/javascript/sonar-javascript-plugin/1.3/sonar-javascript-plugin-1.3.jar
+wget http://repository.codehaus.org/org/codehaus/sonar-plugins/javascript/sonar-javascript-plugin/1.3/sonar-javascript-plugin-1.3.jar
 mv sonar-javascript-plugin-1.3.jar sonar-3.6.1/extensions/plugins/
 
-http://repository.codehaus.org/org/codehaus/sonar-plugins/php/sonar-php-plugin/1.2/sonar-php-plugin-1.2.jar
+wget http://repository.codehaus.org/org/codehaus/sonar-plugins/php/sonar-php-plugin/1.2/sonar-php-plugin-1.2.jar
 mv sonar-php-plugin-1.2.jar sonar-3.6.1/extensions/plugins/
+
+wget http://repository.codehaus.org/org/codehaus/sonar-plugins/sonar-groovy-plugin/0.6/sonar-groovy-plugin-0.6.jar
+mv sonar-groovy-plugin-0.6.jar sonar-3.6.1/extensions/plugins/
 
 #exporting path variable for sonar-runner
 cd ..

@@ -2,7 +2,7 @@ var http = require('http');
 var request = require('request');
 var assert = require('assert');
 var linkToProject="https://github.com/schibstednorge/Calendar";
-var expectedStatusCode = 302;
+var expectedStatusCode = 200;
 
 describe('trigger project analysis and generating report ', function(){
 	it('should show location the future locaiton of report  ' + expectedStatusCode , function(done){
@@ -12,11 +12,12 @@ describe('trigger project analysis and generating report ', function(){
 	request.post({url:'http://localhost:3000/',
 	form:{
 		link:linkToProject,
-		gitCommand:'git clone --recursive',
-		javaBuildCommand:'',
+		gitCommand:'git clone',
+		javaBuildCommand:'mvn',
 		targetLanguage:'java',
 		filesToOmit:'**/*nothing\n**/*twoNothing',
-		sources:'server/src/main/java'
+		sources:'server/src',
+		binaries:'server/target'
 	}}, function(error,response,body){
 			console.log("response :" + body + "status code : " +response.statusCode);
 			var statusCode = response.statusCode;

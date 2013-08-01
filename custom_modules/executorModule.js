@@ -5,17 +5,23 @@ var nameOfModule = 'executorModule';
 
 exports.executeCommands = function(options, commands, lastFunction){
 	var reversedOptions = options.reverse();
+	options.map(function(current, i){
+		console.log('-->options.cwd ' + i + " : " + current.cwd );
+	})
+	commands.map(function(current, i){
+		console.log('-->command ' + i + " : " + current );
+	})
 	
 	var arrayOfExec =
 	commands.map(function(currentCommand){
 		
 			return function(callback){
 				exec(currentCommand, reversedOptions.pop(), function(err,stdout,stderr){
-					//logger.info(nameOfModule, 'stdout : ' + stdout);
+					logger.info(nameOfModule, 'stdout : ' + stdout);
 					if(err){
 						logger.info(nameOfModule, 'error when executing : ' + currentCommand);
 						logger.info(nameOfModule, 'stdout : ' + stdout);
-						logger.info(nameOfModule, 'stderr ; ' + stderr);
+						logger.info(nameOfModule, 'stderr : ' + stderr);
 						
 					}
 					callback();	

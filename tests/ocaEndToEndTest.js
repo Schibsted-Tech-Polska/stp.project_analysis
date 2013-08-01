@@ -13,10 +13,11 @@ describe('trigger project analysis and generating report ', function(){
 	form:{
 		link:linkToProject,
 		gitCommand:'git clone',
-		javaBuildCommand:'',
+		javaBuildCommand:'mvn clean install',
 		targetLanguage:'java',
 		filesToOmit:'',
-		sources:'oca/oca-model/src/main/java'
+		sources:'oca/oca-web-module/src',
+		binaries:'oca/oca-web-module/target'
 	}}, function(error,response,body){
 			console.log("response :" + body + "status code : " +response.statusCode);
 			var statusCode = response.statusCode;

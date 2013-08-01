@@ -64,18 +64,20 @@ exports.validateInput = function(properties){
 	if(!validateLink(link)){
 		properties.errorMessages.linkMsg = 'bad link';
 	}
-	if(!validateSources(properties)){
+	if(!validateParameter(properties, properties.sources)){
 		properties.errorMessages.sourcesMsg = 'you must type sources';
+	}
+	if(!validateParameter(properties, properties.binaries)){
+		properties.errorMessages.binariesMsg = 'you must type binaries';
 	}
 
 };
 
-function validateSources(properties){
-	console.log(' validator sources : ' + properties.sources);
+function validateParameter(properties, parameter){
 	var result = true;
 	if(isEqual(properties.language,'java') ){
 		console.log('java');
-		if(emptyOrUndefined(properties.sources)){
+		if(emptyOrUndefined(parameter)){
 			result = false;
 		}
 	}

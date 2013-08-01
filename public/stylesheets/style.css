@@ -47,6 +47,10 @@ a {
   width: 150px;
   height: 150px;
 }
+
+p.warning {
+  color: red;
+}
 /*
 #progressbar {
     background-color: white;
