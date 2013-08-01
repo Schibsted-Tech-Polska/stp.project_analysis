@@ -47,49 +47,39 @@ exports.submit = function(data){
 		
 		if(validationModule.hasErrors(properties)){
 			getParameters.errorMessages = properties.errorMessages;
-			//res.writeHead(400); 
-			//res.setHeader('400', {'Content-Type': 'text/html' });
 			res.render('inputForm', getParameters);
 		}else{
-			//res.render('projectStatus');
 			properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
-			var linkToAnalyzedProject = sonarModule.getUrlOfAnalyzedProject(properties);
-			
-
-			datastoreModule.addNewAnalysis(properties.nameOfGitRepo);
 			startAnalysisProcess(properties);
-			datastoreModule.incrementStatus(properties.nameOfGitRepo);
-			logger.info('projectMetainfo', ' link to analyzed project : ' + linkToAnalyzedProject);
-							//res.setHeader('302');
-            //TODO render in get
-           //setTimeout(function() {}, 10);
-		    res.render('projectStatus',
-		    	{ 'linkToAnalyzedProject' : linkToAnalyzedProject,
-		    	   'nameOfGitRepo' : properties.nameOfGitRepo });
-			//res.redirect(linkToAnalyzedProject);
+			
+			res.render('projectStatus',
+		    	  {'nameOfGitRepo' : properties.nameOfGitRepo });
+			
 		}
 	};
 }
 
 function startAnalysisProcess(properties){
-		//var nameOfGitRepo;
-		//TODO make 3 functions
-		//monitor();
 		flow.series([
-			//function(callback){
-			//	validationModule.validateInput(properties, callback);
-			//
-			//},
+			function(callback){
+				var projectLocation = fileModule.buildAbsolutePath(properties.nameOfGitRepo);
+				logger.info('projectMetainfo', '---> projectLocation after build Absolute Path : ' + projectLocation);
+			    properties.projectLocation = projectLocation;
+				sonarModule.getUrlOfAnalyzedProject(properties, callback);
+			},
+			function(callback){
+				datastoreModule.addNewAnalysis(properties.nameOfGitRepo, properties.linkToAnalyzedProject);
+				datastoreModule.incrementStatus(properties.nameOfGitRepo);
+				logger.info('projectMetainfo', 'link to analyzed project : ' + properties.linkToAnalyzedProject);
+				callback();
+
+			},
 			function(callback){//TODO fix crashing node when link is in bad format
 				repoModule.downloadRepo(properties,callback);
 				console.log('increment after downloadRepo');
 			},
 			function(callback){
 				
-				 var projectLocation = fileModule.buildAbsolutePath(properties.nameOfGitRepo);
-				 logger.info('projectMetainfo', '---> projectLocation after build Absolute Path : ' + projectLocation);
-			     
-				 properties.projectLocation = projectLocation;
 				 sonarModule.analyze(properties);
 			}
 

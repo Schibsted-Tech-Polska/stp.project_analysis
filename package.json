@@ -18,6 +18,8 @@
     "winston" : "0.7.2",
     "validator": "1.3.0",
     "plato": "0.6.1",
-    "socket.io": "0.9.16"
+    "socket.io": "0.9.16",
+    "xml2js": "0.2.8",
+    "eyes":"0.1.8"
   }
 }

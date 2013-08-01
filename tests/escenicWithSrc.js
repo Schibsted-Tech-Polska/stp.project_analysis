@@ -13,10 +13,11 @@ describe('trigger project analysis and generating report ', function(){
 	form:{
 		link:linkToProject,
 		gitCommand:'git clone --recursive',
-		javaBuildCommand:'',
+		javaBuildCommand:'ant',
 		targetLanguage:'java',
 		filesToOmit:'**/*nothing\n**/*twoNothing',
-		sources:'src'
+		sources:'src',
+		binaries:'build/artifacts/EscenicToDrMobileConverterWeb-dev.build.jar.classes' 
 	}}, function(error,response,body){
 			console.log("response :" + body + "status code : " +response.statusCode);
 			var statusCode = response.statusCode;

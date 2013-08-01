@@ -9,10 +9,10 @@
 <script>
    var numberOfStates = 3;
    var nameOfGitRepo = '<%- nameOfGitRepo %>';
-   var linkToAnalyzedProject = '<%-linkToAnalyzedProject %>';
-   //console.log(nameOfGitRepo);
+   
+  //console.log(nameOfGitRepo);
   //var datastoreModule = require('../../custom_modules/datastoreModule');
-  console.log('linkToAnalyzedProject :  ' + linkToAnalyzedProject );
+  //console.log('linkToAnalyzedProject :  ' + linkToAnalyzedProject );
   var socket = io.connect('http://localhost');
 
   socket.emit('getStatus', {'nameOfGitRepo': nameOfGitRepo});
@@ -21,7 +21,7 @@
   socket.on('statusChanged', function (data) {
     console.log(data);
     console.log('clientSide result: ' + data);
-   
+    var linkToAnalyzedProject = data.linkToAnalyzedProject;
     setDataInResultDiv(data.status);
     var interval = 8000;
 

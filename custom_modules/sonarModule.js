@@ -7,6 +7,7 @@ var executor = require('../custom_modules/executorModule');
 var nameOfModule = 'sonarModule';
 var datastoreModule = require('../custom_modules/datastoreModule');
 var PropertiesGenerator = require('../custom_modules/PropertiesGenerator');
+var xmlParserModule = require('../custom_modules/xmlParserModule');
 
 
 var languageToFileMap = {	'java' : 'java.properties',
@@ -194,19 +195,33 @@ function replaceAll(find, replace, str) {
 }
 
 
-exports.getUrlOfAnalyzedProject = function(properties){
+exports.getUrlOfAnalyzedProject = function(properties, callback){
+    
+    if(properties.javaBuildCommand.indexOf('mvn') !== -1 ){
+    	var locationOfExectuting = [properties.projectLocation, properties.binaries].join('/'); 
+		var pathToPomFile = fileModule.extractDirectoryFromPath(locationOfExectuting);
+		var locationOfPomFile = [pathToPomFile,'pom.xml'].join('/');
 
-	if(properties.analysisTool === 'sonar'){
+		console.log('-->location of pom file : ' + locationOfPomFile);
+   		properties.locationOfPomFile = locationOfPomFile;
+   		properties.sonarUrl = paths.sonarUrl();
+		//properties.linkToAnalyzedProject = paths.sonarUrl() + xmlParserModule.getIdFromPomFile(locationOfPomFile, callback);
+		xmlParserModule.constructLinkToAnalyzedProject(properties, callback);
+
+	}else if(properties.analysisTool === 'sonar'){
 		var sonarUrl = paths.sonarUrl();
-    	return sonarUrl+escapeCharacters(properties.link);
+    	properties.linkToAnalyzedProject = sonarUrl+escapeCharacters(properties.link);
+    	callback();
 	}else{
 		var appUrl = paths.applicationUrl();
 		var platoSuffix = "/reports/index.html";
-		return [appUrl, properties.nameOfGitRepo, platoSuffix].join('');
+		properties.linkToAnalyzedProject =  [appUrl, properties.nameOfGitRepo, platoSuffix].join('');
+		callback();	
 	}
+
 }
 
-
+/*
 function checkTypeOfJavaProject(projectLocation){
 	 var options = {
             cwd: projectLocation
@@ -260,4 +275,4 @@ function checkTypeOfJavaProject(projectLocation){
 	});
 }
 
-
+*/
