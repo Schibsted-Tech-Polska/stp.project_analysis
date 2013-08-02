@@ -10,6 +10,7 @@ exports.addNewAnalysis = function(projectName, linkToAnalyzedProject){
 		console.log('adding new analysis : ' + PROGRESS_STATUS);
 	}else{
 		current.status = 0;
+		current.linkToAnalyzedProject = linkToAnalyzedProject;
 	}
 };
 //TODO fix when same project analyzed twice

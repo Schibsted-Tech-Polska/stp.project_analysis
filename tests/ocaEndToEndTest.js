@@ -2,7 +2,7 @@ var http = require('http');
 var request = require('request');
 var assert = require('assert');
 var linkToProject="https://github.com/schibstednorge/oca";
-var expectedStatusCode = 200;
+var expectedStatusCode = 302;
 
 describe('trigger project analysis and generating report ', function(){
 	it('should show the future location of report  ' + expectedStatusCode , function(done){
@@ -13,11 +13,11 @@ describe('trigger project analysis and generating report ', function(){
 	form:{
 		link:linkToProject,
 		gitCommand:'git clone',
-		javaBuildCommand:'mvn clean install',
+		javaBuildCommand:'mvn clean vaadin:update-widgetset -Pcompile-widgetset install',
 		targetLanguage:'java',
 		filesToOmit:'',
-		sources:'oca/oca-web-module/src',
-		binaries:'oca/oca-web-module/target'
+		sources:'oca/oca-model/src',
+		binaries:'oca/oca-model/target'
 	}}, function(error,response,body){
 			console.log("response :" + body + "status code : " +response.statusCode);
 			var statusCode = response.statusCode;

@@ -100,6 +100,10 @@ function startJavaClient(properties){
 
 		var locationOfExectuting = [projectLocation,binariesLocation].join('/'); 
 		options.cwd = fileModule.extractDirectoryFromPath(locationOfExectuting);
+
+		var locationOfSources = [projectLocation, properties.sources].join('/');
+		var options2 = {cwd : fileModule.extractDirectoryFromPath(locationOfSources) };
+
 		console.log('--> after extractDirectoryFromPath options.cwd : ' +options.cwd);
 		project.options[0] = options;
 	 	project.options[1] = options;
@@ -196,6 +200,8 @@ function replaceAll(find, replace, str) {
 
 
 exports.getUrlOfAnalyzedProject = function(properties, callback){
+
+	console.log('*analysisTool : ' + properties.analysisTool);
     
     if(properties.javaBuildCommand.indexOf('mvn') !== -1 ){
     	var locationOfExectuting = [properties.projectLocation, properties.binaries].join('/'); 

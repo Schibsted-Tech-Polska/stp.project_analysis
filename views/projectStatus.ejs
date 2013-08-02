@@ -6,51 +6,17 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <script src="/socket.io/socket.io.js"></script>
-<script>
-   var numberOfStates = 3;
-   var nameOfGitRepo = '<%- nameOfGitRepo %>';
-   
-  //console.log(nameOfGitRepo);
-  //var datastoreModule = require('../../custom_modules/datastoreModule');
-  //console.log('linkToAnalyzedProject :  ' + linkToAnalyzedProject );
-  var socket = io.connect('http://localhost');
-
-  socket.emit('getStatus', {'nameOfGitRepo': nameOfGitRepo});
-
-  
-  socket.on('statusChanged', function (data) {
-    console.log(data);
-    console.log('clientSide result: ' + data);
-    var linkToAnalyzedProject = data.linkToAnalyzedProject;
-    setDataInResultDiv(data.status);
-    var interval = 8000;
-
-    if(data.status === numberOfStates)
-    	window.location.href = linkToAnalyzedProject;
-    
-    setTimeout(function(){
-    	socket.emit('getStatus', {'nameOfGitRepo': nameOfGitRepo});
-    }, interval );
-    
-  });
-
-  	
-  function setDataInResultDiv(dataToSet){
-  	console.log('setDataInDiv :' + dataToSet);
-  	var div = document.getElementById('result');
-  	div.innerHTML = dataToSet + " of 3 steps" ;
-  }
-</script>
+  <script src="/js/handlingSocketConnection.js"></script>
 
 
   <body>
-     <h1> status of "<%= nameOfGitRepo %>" analysis : </h1>
+     <h1 id='nameOfGitRepo' data-project='<%= nameOfGitRepo %>'> status of "<%= nameOfGitRepo %>" analysis : </h1>
 
      <div id='result'> </div>
 
 
     <div class="progressbar"> </div>
-
+    <a id='linkToAnalyzedProject'> </a> 
 
     
   

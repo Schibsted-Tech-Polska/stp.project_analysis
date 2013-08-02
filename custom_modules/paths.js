@@ -7,6 +7,9 @@ exports.locationOfFolderWithProjects =function(){
 exports.sonarUrl = function(){
 	return "http://localhost:9000/dashboard/index/";
 };
+exports.sonarUrlPort = function(){
+	return "http://localhost:9000/";
+}
 
 var port = 3000;
 exports.getPort = function(){

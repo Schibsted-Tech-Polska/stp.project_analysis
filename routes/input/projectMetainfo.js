@@ -52,8 +52,8 @@ exports.submit = function(data){
 			properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
 			startAnalysisProcess(properties);
 			
-			res.render('projectStatus',
-		    	  {'nameOfGitRepo' : properties.nameOfGitRepo });
+			res.redirect('/projectStatus/' + properties.nameOfGitRepo);
+		    	  //{'nameOfGitRepo' : properties.nameOfGitRepo });
 			
 		}
 	};
@@ -61,11 +61,14 @@ exports.submit = function(data){
 
 function startAnalysisProcess(properties){
 		flow.series([
+			function(callback){//TODO fix crashing node when link is in bad format
+				repoModule.downloadRepo(properties,callback);
+			},
 			function(callback){
 				var projectLocation = fileModule.buildAbsolutePath(properties.nameOfGitRepo);
 				logger.info('projectMetainfo', '---> projectLocation after build Absolute Path : ' + projectLocation);
 			    properties.projectLocation = projectLocation;
-				sonarModule.getUrlOfAnalyzedProject(properties, callback);
+			    sonarModule.getUrlOfAnalyzedProject(properties, callback);
 			},
 			function(callback){
 				datastoreModule.addNewAnalysis(properties.nameOfGitRepo, properties.linkToAnalyzedProject);
@@ -74,13 +77,11 @@ function startAnalysisProcess(properties){
 				callback();
 
 			},
-			function(callback){//TODO fix crashing node when link is in bad format
-				repoModule.downloadRepo(properties,callback);
-				console.log('increment after downloadRepo');
-			},
+			
 			function(callback){
 				
 				 sonarModule.analyze(properties);
+				 datastoreModule.incrementStatus(properties.nameOfGitRepo);
 			}
 
 		]);

@@ -30,7 +30,7 @@ function downloadFromVersionControl(command, properties, callback){
 				logger.info(nameOfModule, " error" + error + stderr + stdout + " while executing command : " + command +
 										  "\n with link : " + link );
 			}
-			datastoreModule.incrementStatus(properties.nameOfGitRepo);
+			//datastoreModule.incrementStatus(properties.nameOfGitRepo);
 			callback();
 		});
 }

@@ -2,7 +2,7 @@ var http = require('http');
 var request = require('request');
 var assert = require('assert');
 var linkToProject="https://github.com/schibstednorge/aftenposten-windows8";
-var expectedStatusCode = 200;
+var expectedStatusCode = 302;
 
 describe('trigger project analysis and generating report ', function(){
 	it('should show the future location of report  ' + expectedStatusCode , function(done){

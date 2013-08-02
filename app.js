@@ -42,7 +42,8 @@ if ('development' == app.get('env')) {
 }
 
 //app.get('/', routes.index);
-app.put('/projectStatus', projectStatus.status );
+app.get('/projectStatus/:id', projectStatus.status );
+app.get('/projectStatus', projectStatus.allStatuses);
 app.get('/', projectMetainfo.form );
 app.post('/', projectMetainfo.submit(app.get('/')));
 
