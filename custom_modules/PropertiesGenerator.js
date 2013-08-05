@@ -35,13 +35,16 @@ function PropertiesGenerator( properties ){
 }
 
 PropertiesGenerator.prototype.generate = function(propertiesToChange,callback){
-	console.log('this.sources : ' + this.SRC);
-	if(this.SRC == undefined || this.SRC ==''){
-		sourceFinder.findSrcLocation(this.parameters ,propertiesToChange, callback);	
-	}else{
-		console.log('--->user type sources location @ : ' + this.SRC );
-		propertiesToChange.SRC = this.SRC;
+	//console.log('this.sources : ' + this.SRC);
+	//if(this.SRC == undefined || this.SRC ==''){
+	//	sourceFinder.findSrcLocation(this.parameters ,propertiesToChange, callback);	
+
+	if(this.BIN){
 		propertiesToChange.BIN = this.BIN;
-		callback(propertiesToChange);		
 	}
+		propertiesToChange.SRC = this.SRC;
+		callback(propertiesToChange);		
+	
+
+
 };

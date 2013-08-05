@@ -64,16 +64,23 @@ exports.validateInput = function(properties){
 	if(!validateLink(link)){
 		properties.errorMessages.linkMsg = 'bad link';
 	}
-	if(!validateParameter(properties, properties.sources)){
+	if(!validateParameter(properties.sources, emptyOrUndefined)){
 		properties.errorMessages.sourcesMsg = 'you must type sources';
 	}
-	if(!validateParameter(properties, properties.binaries)){
+	if(!validateParameter(properties.binaries, emptyOrUndefined) 
+		&& isEqual(properties.language, 'java') ){
 		properties.errorMessages.binariesMsg = 'you must type binaries';
 	}
 
 };
 
-function validateParameter(properties, parameter){
+
+function validateParameter(parameter, predicate){
+	return ( !predicate(parameter) )
+}
+
+/*
+function validateParameter(parameter, predicate, next){
 	var result = true;
 	if(isEqual(properties.language,'java') ){
 		console.log('java');
@@ -82,7 +89,7 @@ function validateParameter(properties, parameter){
 		}
 	}
 	return result;
-}
+}*/
 
 function validateLink(link){
 	if(contains(link, "git")){
@@ -132,6 +139,12 @@ function validate(commandToValidate, forbiddenCommands,predicate){
 
 function emptyOrUndefined(arg){
 	return isEqual(arg,'') || isEqual(arg, undefined);
+}
+
+function isEqualTo(value){
+	return function(arg){
+		return value === arg;
+	}
 }
 
 function isEqual(firstArg, secondArg){

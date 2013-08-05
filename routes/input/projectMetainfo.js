@@ -25,22 +25,18 @@ exports.form = function(req, res){
 
 
 exports.submit = function(data){
-
 	
 	return function(req, res){
-
-		var link = req.body.link;
 		
 		var properties = {
 				 	'language' : req.body.targetLanguage,
-				 	'link' : link,
+				 	'link' : req.body.link,
 				 	'gitCommand' : req.body.gitCommand,
 				 	'javaBuildCommand' : req.body.javaBuildCommand,
 				 	'filesToOmit':  req.body.filesToOmit.split('\n'),
 				 	'sources': req.body.sources,
 				 	'binaries': req.body.binaries
 				 };
-
 		
 		//TODO watch out for possible race conditions!
 		validationModule.validateInput(properties);
@@ -53,8 +49,6 @@ exports.submit = function(data){
 			startAnalysisProcess(properties);
 			
 			res.redirect('/projectStatus/' + properties.nameOfGitRepo);
-		    	  //{'nameOfGitRepo' : properties.nameOfGitRepo });
-			
 		}
 	};
 }

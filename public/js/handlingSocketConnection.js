@@ -9,17 +9,20 @@
 
     
     socket.on('statusChanged', function (data) {
-      console.log(data);
-      console.log('clientSide result: ' + data);
-      var linkToAnalyzedProject = data.linkToAnalyzedProject;
-      setDataInResultDiv(data.status);
-      var interval = 8000;
+      if(data){
+        console.log(data);
+        console.log('clientSide result: ' + data);
+        
+        var linkToAnalyzedProject = data.linkToAnalyzedProject;
+        
+        setDataInResultDiv(data.status);
+        var interval = 8000;
 
-      if(data.status === numberOfStates){
-      	projectAnalysisReady(linkToAnalyzedProject);
-        //window.location.href = linkToAnalyzedProject;
+        if(data.status === numberOfStates){
+        	projectAnalysisReady(linkToAnalyzedProject);
+          //window.location.href = linkToAnalyzedProject;
+        }
       }
-      
       setTimeout(function(){
       	socket.emit('getStatus', {'nameOfGitRepo': nameOfGitRepo});
       }, interval );

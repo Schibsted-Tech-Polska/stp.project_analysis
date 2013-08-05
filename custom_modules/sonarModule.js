@@ -44,7 +44,9 @@ AnalyzeExecution.prototype.execute = function(lastCallback){
 		}
 	};
 
-	lastCallback =  progressIncrementator(this.absoluteLocationOfProject); //lastCallback || fileModule.deleteFolder(this.absoluteLocationOfProject , progressIncrementator);
+	lastCallback = progressIncrementator(this.absoluteLocationOfProject); // lastCallback || 
+	//fileModule.deleteFolder(this.absoluteLocationOfProject , progressIncrementator(this.absoluteLocationOfProject));
+	
 	executor.executeCommands(this.options, this.commands, lastCallback);
 };
 AnalyzeExecution.prototype.toString = function(){
@@ -59,7 +61,8 @@ exports.analyze = function(properties){
 
 	logger.info(nameOfModule, 'used analysisTool : ' + properties.analysisTool);
 	var configPlaceholders = {'UNIQUE_KEY' : escapeCharacters(properties.link),
-							  'NAME' : properties.nameOfGitRepo };//config placeholders 
+							  'NAME' : properties.nameOfGitRepo,
+							  'EXCL' : properties.filesToOmit };//config placeholders 
 	
 	flow.series([
 		 function(callback){
@@ -120,24 +123,6 @@ function startJavaClient(properties){
 
 	project.execute();
 
-    /*
-	if(javaBuildCommand){
-		logger.info(nameOfModule, "userTypedJavaBuildCommand : " + javaBuildCommand);
-		var options = {
-            cwd: projectLocation
-	 	 };
-	 	 
-	 	var project = new AnalyzeExecution();
-	 	project.options[0] = options;
-	 	project.options[1] = options;
-		project.commands[0] = javaBuildCommand;
-        project.commands[1] = sonarRunnerCommand;
-		 
-		project.execute();
-	}
-	else{
-		checkTypeOfJavaProject(projectLocation);
-	}*/
 }
 
 
@@ -226,59 +211,3 @@ exports.getUrlOfAnalyzedProject = function(properties, callback){
 	}
 
 }
-
-/*
-function checkTypeOfJavaProject(projectLocation){
-	 var options = {
-            cwd: projectLocation
-	 	 };
-
-	var finder = require('findit').find(projectLocation);
-    var typeOfProject = [];
-    var currentFindProjects = new AnalyzeExecution();
-	
-	//This listens for files found
-	finder.on('file', function (file) {//TODO only first file is important
-		
-		if(file.indexOf('pom.xml') !== -1){
-		
-            var options = {
-            		cwd: fileModule.extractDirectoryFromPath(file)
-            };
-            console.log('---> options.cwd : ' + options.cwd);
-            currentFindProjects.commands.push('mvn clean install');
-            currentFindProjects.options.push(options);
-
-            //currentFindProjects.commands.push('mvn sonar:sonar');
-            //currentFindProjects.options.push(options);
-          
-		}else if(file.indexOf('build.xml') !== -1){
-		
-			currentFindProjects.commands.push('ant build');
-        
-		    var options = {
-            		cwd: fileModule.extractDirectoryFromPath(file)
-            };
-           	
-           	currentFindProjects.options.push(options);
-
-		}
-	});
-
-	finder.on('end',function(){
-		logger.info(nameOfModule, 'find type of java project : ' + typeOfProject[0]);
-          
-            
-            var options = {
-            		cwd: projectLocation
-            };
-            console.log('--> options.projectLocation' + options.cwd);
-            currentFindProjects.commands.push(sonarRunnerCommand);
-            currentFindProjects.options.push(options);
-
-			currentFindProjects.execute();
-		  console.log('all finded projects : ' + currentFindProjects.toString() );
-	});
-}
-
-*/

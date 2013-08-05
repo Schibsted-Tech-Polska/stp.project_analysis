@@ -8,9 +8,9 @@
 
   <body>
     <h1><%= title %></h1>
-    <form method='post'/>
+    <form data-persist="garlic" method='post'>
     <p class='warning'><input type='text', name='gitCommand', placeholder='type git command', value='git clone'/>
-      <input type='text', name='link' placeholder='link' size='35'/>
+      <input type="url" value="http://" name='link' placeholder='link' size='35'/>
      <%if (errorMessages.gitCommand){%> <%= errorMessages.gitCommand %> <% } %> 
       <%if (errorMessages.linkMsg){ %> <%= errorMessages.linkMsg %> <% } %>
      </p>
@@ -20,7 +20,7 @@
       <option value="js-sonar">js sonar</option>
       <option value="js-plato">js plato</option>
     </select>
-    <p ><input type='text' name='javaBuildCommand' id='javaBuildCommand' placeholder='java build  command'/>
+    <p class='warning' ><input type='text' name='javaBuildCommand' id='javaBuildCommand' placeholder='java build  command' />
       <input type='text' name='sources' placeholder='location of sources' value='src' />
     <%if (errorMessages.javaBuildCommand){ %> <%= errorMessages.javaBuildCommand %> <% } %>
     <%if (errorMessages.sourcesMsg){ %> <%= errorMessages.sourcesMsg %> <% } %>
@@ -44,5 +44,8 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/inputForm.js"></script>
+    <script src="js/garlic.js"></script>
+
+
   </body>
 </html>

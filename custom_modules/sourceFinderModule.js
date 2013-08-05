@@ -29,7 +29,7 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 			finder.on('file', function (file) {
 				if(contains(file,parameters.extension)){
 					var extracted = extractDirectory(file);
-					if(shouldPushNewPath(allFiles,extracted)){
+					if(shouldPushNewPath(allFiles, extracted)){
 						allFiles.push(extracted);
 					}
 				}
@@ -39,33 +39,8 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 			});
 		},
 		function(callback){
-			filesToOmit.map(function(pattern){
-				var glob = new Glob(pattern, { cwd: projectLocation });
-				
-				glob.on('match', function(m){
-					console.log('match : ' + m);
-					var extracted = extractDirectory([projectLocation, m].join("/"));
-					if(shouldPushNewPath(matches,extracted)){
-						matches.push(extracted);
-					}
-				});
-				//on error
-				glob.on('end', function(){
-					
-					if(countOfGlobMatches === 0){
-						callback();
-					}
-					countOfGlobMatches--;
-				});
-
-				glob.on('error', function(err){
-					logger.info(nameOfModule, 'glob when matching error ocurred : ' + err 
-												+ "\n matches founded to this moment: " + matches);
-				});
-			});
-		},
-		function(callback){
-			propertiesToChange.SRC = underscore.difference(allFiles,matches);
+			console.log('allFiles : ' + allFiles);
+			propertiesToChange.SRC = allFiles; //underscore.difference(allFiles,matches);
 			cb(propertiesToChange);
 		}
 		]);
