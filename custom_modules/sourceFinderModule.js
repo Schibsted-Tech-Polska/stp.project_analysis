@@ -20,8 +20,8 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 	var filesToOmit = parameters.filesToOmit;
 	logger.info(nameOfModule, 'filesToOmit by findSrcLocation : ' + filesToOmit);
 	var allFiles = [];
-	var matches = [];
-	var countOfGlobMatches = filesToOmit.length-1;
+	//var matches = [];
+	//var countOfGlobMatches = filesToOmit.length-1;
 
 
 	flow.series([

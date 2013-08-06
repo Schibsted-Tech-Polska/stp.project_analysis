@@ -18,6 +18,9 @@ sudo brew install subversion
 sudo brew install maven
 sudo brew install node
 #ant is already on mac
+sudo npm install
+sudo npm install -g mocha
+sudo npm install -g plato
 
 
 else
@@ -25,18 +28,20 @@ else
 yum install apt
 yum install apt-get
 
-sudo apt-get install git
-sudo apt-get install subversion
-sudo apt-get install maven
-sudo apt-get install ant
-sudo apt-get install node
-sudo apt-get install npm
+apt-get install git
+apt-get install subversion
+apt-get install maven
+apt-get install ant
+apt-get install node
+apt-get install npm
+
+npm install
+npm install -g mocha
+npm install -g plato
 
 fi
 
-sudo npm install
-sudo npm install -g mocha
-sudo npm install -g plato
+
 
 wget http://repository.codehaus.org/org/codehaus/sonar-plugins/javascript/sonar-javascript-plugin/1.3/sonar-javascript-plugin-1.3.jar
 mv sonar-javascript-plugin-1.3.jar sonar-3.6.1/extensions/plugins/
@@ -44,8 +49,8 @@ mv sonar-javascript-plugin-1.3.jar sonar-3.6.1/extensions/plugins/
 wget http://repository.codehaus.org/org/codehaus/sonar-plugins/php/sonar-php-plugin/1.2/sonar-php-plugin-1.2.jar
 mv sonar-php-plugin-1.2.jar sonar-3.6.1/extensions/plugins/
 
-wget http://repository.codehaus.org/org/codehaus/sonar-plugins/sonar-groovy-plugin/0.6/sonar-groovy-plugin-0.6.jar
-mv sonar-groovy-plugin-0.6.jar sonar-3.6.1/extensions/plugins/
+#wget http://repository.codehaus.org/org/codehaus/sonar-plugins/sonar-groovy-plugin/0.6/sonar-groovy-plugin-0.6.jar
+#mv sonar-groovy-plugin-0.6.jar sonar-3.6.1/extensions/plugins/
 
 #exporting path variable for sonar-runner
 cd ..

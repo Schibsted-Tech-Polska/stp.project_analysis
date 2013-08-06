@@ -103,9 +103,6 @@ function startJavaClient(properties){
 		var locationOfExectuting = [projectLocation,binariesLocation].join('/'); 
 		options.cwd = fileModule.extractDirectoryFromPath(locationOfExectuting);
 
-		var locationOfSources = [projectLocation, properties.sources].join('/');
-		
-		console.log('--> after extractDirectoryFromPath options.cwd : ' +options.cwd);
 		project.options[0] = options;
 	 	project.options[1] = options;
 		project.commands[0] = javaBuildCommand;
