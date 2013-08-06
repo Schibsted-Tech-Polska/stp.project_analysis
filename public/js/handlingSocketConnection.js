@@ -2,7 +2,7 @@
   function handleConnection(){
      var numberOfStates = 3;
      var nameOfGitRepo = getNameOfRepo();
-     var socket = io.connect('http://localhost');
+     var socket = io.connect();
 
 
     socket.emit('getStatus', {'nameOfGitRepo': nameOfGitRepo});
