@@ -15,4 +15,4 @@ Script startApplication will start sonar and node.
 2.  cd projects_analysis
 3.  sh installDependencies.sh
 4.  sh startApplication.sh 
-5.  Go to http://localhost:3000/qualityAnalysis
+5.  Go to http://localhost:3000/
