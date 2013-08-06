@@ -36,7 +36,7 @@ var writeAndCall = function(callback){
   return function(path, data){
     writeTextFile(path, data, callback);
   };
-}
+};
 
 exports.copyFileAndChangeProperties = function(source, target,propertiesToChange, callback ){
   readTextFileAndModifyContent(source,target,propertiesToChange, writeAndCall(callback));
@@ -92,7 +92,7 @@ exports.deleteFolder = function(path, invokeAfter){
   return function(){ 
     deleteFolderRecursive(path);
     invokeAfter();
-  }
+  };
 };
 
 exports.extractDirectoryFromPath = function(path){

@@ -15,6 +15,24 @@ a.listElem{
   font-size: medium;
 }
 
+.questionMark{
+  content: url('/img/questionMark.png');
+  display: inline;
+  width: 75px;
+  height: 75px;
+}
+.questionMark:hover{
+  content: url('/img/exclusionRules.png');
+  display: inline;
+  width: 300px;
+  height: 300px;
+}
+
+.exclusionRules{
+  content: url('/img/exclusionRules.png');
+  width: 300px;
+  height: 300px; 
+}
  
 .language {
   display: inline-block;

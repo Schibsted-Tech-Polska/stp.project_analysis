@@ -20,14 +20,15 @@ var getParameters = {
 
 exports.form = function(req, res){
 	getParameters.errorMessages = '';
+	console.log('fileTo omit : ' + getParameters.jsFilesToOmit);
 	res.render('inputForm', getParameters);
 };
-
 
 exports.submit = function(data){
 	
 	return function(req, res){
-		
+		var filesToOmit = req.body.filesToOmit.split('\n');
+		console.log('filesToOmit after split: ' + filesToOmit);
 		var properties = {
 				 	'language' : req.body.targetLanguage,
 				 	'link' : req.body.link,
@@ -71,7 +72,6 @@ function startAnalysisProcess(properties){
 				callback();
 
 			},
-			
 			function(callback){
 				
 				 sonarModule.analyze(properties);

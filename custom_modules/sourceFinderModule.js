@@ -63,8 +63,9 @@ function isSubpath(paths, path){
 }
 
 function contains(path, expression){
-	if(path.indexOf(expression) !== -1) 
+	if(path.indexOf(expression) !== -1){ 
 		return true;
+	}
 	return false;
 
 } 

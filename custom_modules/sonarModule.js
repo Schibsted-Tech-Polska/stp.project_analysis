@@ -41,7 +41,7 @@ AnalyzeExecution.prototype.execute = function(lastCallback){
 			console.log('absoluteLocationOfProject : ' + absoluteLocationOfProject);
 			var nameOfProject = fileModule.extractFileNameFromPath(absoluteLocationOfProject);
 			datastoreModule.incrementStatus(nameOfProject);
-		}
+		};
 	};
 
 	lastCallback = progressIncrementator(this.absoluteLocationOfProject); // lastCallback || 
@@ -81,7 +81,6 @@ exports.analyze = function(properties){
 function startSonarRunnerClient(properties){
 		
 	 	var language = properties.language;
-		var projectLocation = properties.projectLocation; 
 		
 		if(language === 'java'){
 	 	 	startJavaClient(properties);
@@ -105,8 +104,7 @@ function startJavaClient(properties){
 		options.cwd = fileModule.extractDirectoryFromPath(locationOfExectuting);
 
 		var locationOfSources = [projectLocation, properties.sources].join('/');
-		var options2 = {cwd : fileModule.extractDirectoryFromPath(locationOfSources) };
-
+		
 		console.log('--> after extractDirectoryFromPath options.cwd : ' +options.cwd);
 		project.options[0] = options;
 	 	project.options[1] = options;
@@ -210,4 +208,4 @@ exports.getUrlOfAnalyzedProject = function(properties, callback){
 		callback();	
 	}
 
-}
+};

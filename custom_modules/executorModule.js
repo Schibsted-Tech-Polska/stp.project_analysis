@@ -8,10 +8,10 @@ exports.executeCommands = function(options, commands, lastFunction){
 	options.map(function(current, i){
 		console.log('-->options.cwd ' + i + " : " + current.cwd );
 		current.maxBuffer = 200*1024*5;
-	})
+	});
 	commands.map(function(current, i){
 		console.log('-->command ' + i + " : " + current );
-	})
+	});
 	
 	var arrayOfExec =
 	commands.map(function(currentCommand){
@@ -42,4 +42,4 @@ exports.executeCommands = function(options, commands, lastFunction){
 
 	flow.series(arrayOfExec);
 	
-}	
+};	

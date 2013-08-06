@@ -18,7 +18,7 @@ exports.addNewAnalysis = function(projectName, linkToAnalyzedProject){
 };
 //TODO fix when same project analyzed twice
 exports.incrementStatus = function(projectName){
-	console.log('incrementStatus');
+	console.log('incrementStatus for : ' + projectName);
 	var record = findByProjectName(PROGRESS_STATUS, projectName);
 	record = {'projectName' : projectName,
 			   'status' : ++record.status };

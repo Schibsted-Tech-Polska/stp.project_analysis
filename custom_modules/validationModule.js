@@ -39,7 +39,7 @@ exports.validateInput = function(properties){
 	v5(function(){
 		var emptyArray=['**/nothing'];
 		properties.filesToOmit = emptyArray;
-	}, doNothing)
+	}, doNothing);
 	
 	var possibleLanguages = ['js','php','java'];
 	validate(properties.language, possibleLanguages, underscore.contains)
@@ -76,7 +76,7 @@ exports.validateInput = function(properties){
 
 
 function validateParameter(parameter, predicate){
-	return ( !predicate(parameter) )
+	return !predicate(parameter);
 }
 
 /*
@@ -113,8 +113,9 @@ function and(function1, function2){
 	}
 }*/
 function contains(path, expression){
-	if(path.indexOf(expression) !== -1) 
+	if(path.indexOf(expression) !== -1){ 
 		return true;
+	}
 	return false;
 
 } 
@@ -144,7 +145,7 @@ function emptyOrUndefined(arg){
 function isEqualTo(value){
 	return function(arg){
 		return value === arg;
-	}
+	};
 }
 
 function isEqual(firstArg, secondArg){
