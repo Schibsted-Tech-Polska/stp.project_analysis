@@ -18,28 +18,26 @@ sudo brew install subversion
 sudo brew install maven
 sudo brew install node
 #ant is already on mac
-sudo npm install
-sudo npm install -g mocha
-sudo npm install -g plato
+
 
 
 else
 
-yum install apt
-yum install apt-get
+sudo yum install apt
+sudo yum install apt-get
 
-apt-get install git
-apt-get install subversion
-apt-get install maven
-apt-get install ant
-apt-get install node
-apt-get install npm
-
-npm install
-npm install -g mocha
-npm install -g plato
+sudo apt-get install git
+sudo apt-get install subversion
+sudo apt-get install maven
+sudo apt-get install ant
+sudo apt-get install node
+sudo apt-get install npm
 
 fi
+
+sudo npm install
+sudo npm install -g mocha
+sudo npm install -g plato
 
 
 
