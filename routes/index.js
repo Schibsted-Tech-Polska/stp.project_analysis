@@ -10,6 +10,6 @@ exports.index = function(req, res){
 exports.form = function(req, res){
 res.render('linkToRepo', {
 	title: 'get link'
-	
+
 	});
 };

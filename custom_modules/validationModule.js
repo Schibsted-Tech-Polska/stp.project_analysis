@@ -2,14 +2,14 @@ var underscore = require('underscore');
 var logger = require('winston');
 
 exports.validateInput = function(properties){
+	console.log('filesToOmit : ' + properties.filesToOmit);
 	
 	var forbiddenCommands = [";", "|", "||", "&&","rm","cp","cat","ls","at","net","netstat","del","copy"];
 	var gitCommandMustStartWith = ["git"];
 	var javaBuildCommandMustStartWith = ["mvn","ant"];
 	var doNothing = function(){};
 	properties.errorMessages = {};
-
-	console.log('validatie git command : ' + properties.gitCommand);
+	properties.previousValues = {};
 
 	var v1 = validate(properties.gitCommand,forbiddenCommands,underscore.contains);
 	v1(function(){
@@ -65,14 +65,44 @@ exports.validateInput = function(properties){
 		properties.errorMessages.linkMsg = 'bad link';
 	}
 	if(!validateParameter(properties.sources, emptyOrUndefined)){
-		properties.errorMessages.sourcesMsg = 'you must type sources';
+		properties.errorMessages.sources = 'you must type sources';
 	}
 	if(!validateParameter(properties.binaries, emptyOrUndefined) 
 		&& isEqual(properties.language, 'java') ){
-		properties.errorMessages.binariesMsg = 'you must type binaries';
+		properties.errorMessages.binaries = 'you must type binaries';
 	}
 
+
+	persistPreviousValues(properties);
+
 };
+
+function persistPreviousValues(properties){
+	var difference = compareTwoObjects(properties, properties.errorMessages);
+	console.log('difference : ' + difference);
+	properties.previousValues = underscore.pick(properties, difference);
+	console.log('previousValues : ' + properties.previousValues);
+	interateOverObject(properties.previousValues);
+	//console.log(properties.previousValues.gitCommand);
+}
+
+function compareTwoObjects(first, second){
+	var firstKeys = interateOverObject(first);
+	var secondKeys = interateOverObject(second);
+	return underscore.difference(firstKeys, secondKeys);
+}
+
+function interateOverObject(object){
+	var keys = [];
+	for (var key in object) {
+	   if (object.hasOwnProperty(key)) {
+	      var obj = object[key];
+	      console.log(key + "  = " +obj);
+	      keys.push(key);
+	   }
+	}
+	return keys;
+}
 
 
 function validateParameter(parameter, predicate){

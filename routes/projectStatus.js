@@ -1,6 +1,8 @@
 var request = require('request');
 var paths = require('../custom_modules/paths');
 var xmlParser = require('../custom_modules/xmlParserModule');
+var logger = require('winston');
+var nameOfModule = 'projectStatus';
 
 exports.status = function(req, res){
 	var id = req.params.id;
@@ -15,6 +17,9 @@ exports.allStatuses = function(req, res){
 	request.get({'url':url,
 				json:true},
 	 		function(error,response,body){
+	 			if(err){
+	 				logger.info(nameOfModule, 'error while retriving all statuses from /api/projects/ : '+ err );
+	 			}
 	 		console.log("response :" + body );
 			renderStatuses(res, body);		
 	});

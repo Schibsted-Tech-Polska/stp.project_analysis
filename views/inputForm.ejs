@@ -8,37 +8,44 @@
 
   <body>
     <h1><%= title %></h1>
-    <form data-persist="garlic" method='post'>
-    <p class='warning'><input type='text', name='gitCommand', placeholder='type git command', value='git clone'/>
-      <input type="url" value="http://" name='link' placeholder='link' size='35'/>
-     <%if (errorMessages.gitCommand){%> <%= errorMessages.gitCommand %> <% } %> 
-      <%if (errorMessages.linkMsg){ %> <%= errorMessages.linkMsg %> <% } %>
+    <form method='post'>
+    <p class='warning'>
+      <input type='text' name='gitCommand' placeholder='type git command' value='git clone' required data-project='<%= previousValues.gitCommand %>' />
+      <input type="url" value="http://" name='link' placeholder='link' size='35'
+      require data-project='<%= previousValues.link %>'
+      />
+    <%if (errorMessages.gitCommand){%> <%= errorMessages.gitCommand %> <% } %> 
+    <%if (errorMessages.linkMsg){ %> <%= errorMessages.linkMsg %> <% } %>
+
      </p>
-    <select name="targetLanguage" id="targetLanguage">
+     <p name='analysisTool' data-project='<%= previousValues.analysisTool %>'/>
+      
+    <select name="targetLanguage" id="targetLanguage" require data-project='<%= previousValues.language %>'>
       <option value="java">java</option>
       <option value="php">php</option>
       <option value="js-sonar">js sonar</option>
       <option value="js-plato">js plato</option>
     </select>
-    <p class='warning' ><input type='text' name='javaBuildCommand' id='javaBuildCommand' placeholder='java build  command' />
-      <input type='text' name='sources' placeholder='location of sources' value='src' />
+    <p class='warning' ><input type='text' name='javaBuildCommand' id='javaBuildCommand' placeholder='java build  command' data-project='<%= previousValues.javaBuildCommand %>' />
+      <input type='text' name='sources' placeholder='location of sources' value='src' 
+      require data-project='<%= previousValues.sources %>'
+      />
     <%if (errorMessages.javaBuildCommand){ %> <%= errorMessages.javaBuildCommand %> <% } %>
-    <%if (errorMessages.sourcesMsg){ %> <%= errorMessages.sourcesMsg %> <% } %>
+    <%if (errorMessages.sources){ %> <%= errorMessages.sources %> <% } %>
     
     </p>
-    <p class='warning' ><input type='text' name='binaries', placeholder='location of complied classes' />
-    <%if (errorMessages.binariesMsg){ %> <%= errorMessages.binariesMsg %> <% } %> 
+    <p class='warning' ><input type='text' name='binaries', placeholder='location of complied classes'
+    data-project='<%= previousValues.binaries %>'/>
+    <%if (errorMessages.binaries){ %> <%= errorMessages.binaries %> <% } %> 
     </p>
-    
-
-     
      <!--
      <h2>choose language.</h2>
     <div class="languagebox"><div data-lang="js" title="JavaScript" class="language"><div class="icon-prog-js01"></div><p>JavaScript</p></div><div data-lang="java" title="Java" class="language"><div class="icon-prog-java"></div><p>Java</p></div><div data-lang="php" title="Php" class="language"><div class="icon-prog-php"></div><p>Php</p></div>
 -->
     <div class="formfield">
       <label for='textarea'> files to ignore: </label> 
-      <textarea id='textarea', type'text', rows="5", cols="20", name='filesToOmit'/> <%= jsFilesToOmit %> </textarea>
+      <textarea id='textarea', type'text', rows="5", cols="20", name='filesToOmit'
+        data-project='<%= previousValues.filesToOmit %>'/><%= jsFilesToOmit %> </textarea>
     <!--  <div class='questionMark'/>
     </div>
     <div class='exclusionRules'/>-->

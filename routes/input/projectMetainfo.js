@@ -8,33 +8,34 @@ var logger = require('winston');
 var check = require('validator').check;
 var viewFormatter = require('../../custom_modules/viewFormatter');
 var datastoreModule = require('../../custom_modules/datastoreModule');
-//var databaseModule = require('../../custom_modules/databaseModule');
 
 //uncomment if loggin should go to file
 //logger.add(logger.transports.File, { filename: 'logfile.log'} );
 var getParameters = {
 					title: 'Analysis tool',
-					jsFilesToOmit: jsFilesToOmit.getFiles().join('\n'),
-					errorMessages: ''
+					jsFilesToOmit: jsFilesToOmit.getFiles().join('/\n'),
+					errorMessages: '',
+					previousValues: ''
 					};
 
 exports.form = function(req, res){
 	getParameters.errorMessages = '';
+	getParameters.previousValues='';
 	console.log('fileTo omit : ' + getParameters.jsFilesToOmit);
 	res.render('inputForm', getParameters);
 };
 
-exports.submit = function(data){
+exports.submit = function(){
 	
 	return function(req, res){
-		var filesToOmit = req.body.filesToOmit.split('\n');
+		var filesToOmit = req.body.filesToOmit;
 		console.log('filesToOmit after split: ' + filesToOmit);
 		var properties = {
 				 	'language' : req.body.targetLanguage,
 				 	'link' : req.body.link,
 				 	'gitCommand' : req.body.gitCommand,
 				 	'javaBuildCommand' : req.body.javaBuildCommand,
-				 	'filesToOmit':  req.body.filesToOmit.split('\n'),
+				 	'filesToOmit':  req.body.filesToOmit.split('/\n'),
 				 	'sources': req.body.sources,
 				 	'binaries': req.body.binaries
 				 };
@@ -44,6 +45,7 @@ exports.submit = function(data){
 		
 		if(validationModule.hasErrors(properties)){
 			getParameters.errorMessages = properties.errorMessages;
+			getParameters.previousValues = properties.previousValues;
 			res.render('inputForm', getParameters);
 		}else{
 			properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
@@ -52,7 +54,7 @@ exports.submit = function(data){
 			res.redirect('/projectStatus/' + properties.nameOfGitRepo);
 		}
 	};
-}
+};
 
 function startAnalysisProcess(properties){
 		flow.series([
