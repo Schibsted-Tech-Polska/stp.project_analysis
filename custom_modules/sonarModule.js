@@ -15,7 +15,7 @@ var languageToFileMap = {	'java' : 'java.properties',
 							'js' : 'js.properties'	};
 
 var sonarRunnerCommand= 'sonar-runner';
-var platoCommand = 'plato -r -d reports . ';
+var platoCommand = 'plato -r -d reports .';
  
 var nameOfPropertiesFile = 'sonar-project.properties';
 
@@ -129,14 +129,14 @@ function startOtherLanguagesClient(properties){
 
 	 	 var  project = new AnalyzeExecution(properties.projectLocation);
 	 	 project.options[0] = options;
-	 	 project.options[1] = options;
-	 	 project.commands[1] = 'none';
+	 	 //project.options[1] = options;
+	 	 //project.commands[1] = 'none';
 	 	 if(properties.analysisTool === 'plato'){
-	 	 	var doNothing = function(){
+	 	 	var incrementStatus = function(){
 				datastoreModule.incrementStatus(properties.nameOfGitRepo);
 		 	};
 	 	 	project.commands[0] = platoCommand;
-	 	 	project.execute(doNothing);
+	 	 	project.execute(incrementStatus);
 	 	 }else{
 			project.commands[0] = sonarRunnerCommand;
 			project.execute();

@@ -1,5 +1,5 @@
 var flow = require('nimble');
-var exec = require('child_process').exec;
+var spawn = require('child_process').spawn;
 var logger = require('winston');
 var nameOfModule = 'executorModule';
 
@@ -17,16 +17,26 @@ exports.executeCommands = function(options, commands, lastFunction){
 	commands.map(function(currentCommand){
 		
 			return function(callback){
-				exec(currentCommand, reversedOptions.pop(), function(err,stdout,stderr){
-					logger.info(nameOfModule, 'stdout : ' + stdout);
-					if(err){
-						console.log('err : ', err);
-						logger.info(nameOfModule, 'error when executing : ' + currentCommand);
-						logger.info(nameOfModule, 'stdout : ' + stdout);
-						logger.info(nameOfModule, 'stderr : ' + stderr);
-						
-					}
-					callback();	
+				var args = currentCommand.split(' ');
+				
+				var currentSpawn = spawn(args[0], args.slice(1), reversedOptions.pop());
+				console.log('currentSpawn' + currentSpawn);
+				
+				currentSpawn.stdout.on('data', function (data) {
+				  console.log('stdout: ' + data);
+				});
+
+				currentSpawn.stderr.on('data', function (data) {
+				  console.log('stderr: ' + data);
+				});
+
+				currentSpawn.on('error', function(err){
+					console.log('error :  ' + err);
+				});
+
+				currentSpawn.on('close', function (code) {
+				  console.log('child process exited with code ' + code);
+				  callback();
 				});
 			};
 	});
@@ -39,6 +49,7 @@ exports.executeCommands = function(options, commands, lastFunction){
 			   
 				callback();	
 			});
+	console.log(arrayOfExec);
 
 	flow.series(arrayOfExec);
 	

@@ -15,7 +15,8 @@ describe('trigger project analysis and generating report ', function(){
 		gitCommand:'git clone',
 		javaBuildCommand:'',
 		targetLanguage:'js-plato',
-		filesToOmit:''
+		filesToOmit:'',
+		sources:'aftenposten-windows8'
 	}}, function(error,response,body){
 			console.log("response :" + body + "status code : " +response.statusCode);
 			var statusCode = response.statusCode;
