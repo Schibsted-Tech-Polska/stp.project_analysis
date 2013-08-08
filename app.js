@@ -10,7 +10,9 @@ var express = require('express')
   , projectMetainfo = require('./routes/input/projectMetainfo')
   , paths = require('./custom_modules/paths')
   , projectStatus = require('./routes/projectStatus')
-  , datastoreModule = require('./custom_modules/datastoreModule');
+  , datastoreModule = require('./custom_modules/datastoreModule')
+  , swgger = require('swagger-node-express')
+  , models = require('./custom_modules/models');
  // , validator = require("validator")
   //, mongodb = require('mongodb');
 
@@ -61,5 +63,7 @@ io.sockets.on('connection', function(socket){
 		socket.emit('statusChanged', record );
 	});
 });
+
+swgger.addModels(models);
 
 

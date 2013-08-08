@@ -38,6 +38,7 @@ fi
 sudo npm install
 sudo npm install -g mocha
 sudo npm install -g plato
+sudo npm install -g forever
 
 
 

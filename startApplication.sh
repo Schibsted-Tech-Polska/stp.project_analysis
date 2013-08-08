@@ -7,4 +7,4 @@ else
 sh env/sonar-3.6.1/bin/linux-x86-64/sonar.sh start
 fi
 
-node ./app.js
+forever ./app.js

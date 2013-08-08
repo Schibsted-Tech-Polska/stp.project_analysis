@@ -31,12 +31,17 @@ exports.getRecordForProjectName = function(projectName){
 };  
 
 exports.appendToLog = function(projectName, data){
-	console.log('appending to log : ' + data);
+	//console.log('appending to log : ' + data);
 	var findedProject = findByProjectName(PROGRESS_STATUS, projectName);
 	if (findedProject !== undefined){
 		findedProject.log.push(data);
 	}
 } 
+
+exports.didAnalyzeExist = function(projectName){
+	var result = findByProjectName(PROGRESS_STATUS, projectName);
+	return result !== undefined;
+}
 
 function findByProjectName(source, projectName) {
   for (var i = 0; i < source.length; i++) {
