@@ -15,6 +15,14 @@ a.listElem{
   font-size: medium;
 }
 
+#result{
+  color: white;
+
+}
+
+.log{
+  margin-top: 30px;
+}
 
 .questionMark{
   content: url('/img/questionMark.png');

@@ -35,16 +35,9 @@ function PropertiesGenerator( properties ){
 }
 
 PropertiesGenerator.prototype.generate = function(propertiesToChange,callback){
-	//console.log('this.sources : ' + this.SRC);
-	//if(this.SRC == undefined || this.SRC ==''){
-	//	sourceFinder.findSrcLocation(this.parameters ,propertiesToChange, callback);	
-
 	if(this.BIN){
 		propertiesToChange.BIN = this.BIN;
 	}
 		propertiesToChange.SRC = this.SRC;
 		callback(propertiesToChange);		
-	
-
-
 };

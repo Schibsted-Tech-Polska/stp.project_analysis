@@ -15,17 +15,21 @@
         
         var linkToAnalyzedProject = data.linkToAnalyzedProject;
         
-        setDataInResultDiv(data.status);
-        var interval = 8000;
+        setDataInElement(data.status + " of 3 steps", 'result');
+        appendDataToElement(data.log, 'log');
+        console.log('size:' +  roughSizeOfObject(data.log));
+        var interval = 1000;
 
         if(data.status === numberOfStates){
         	projectAnalysisReady(linkToAnalyzedProject);
-          //window.location.href = linkToAnalyzedProject;
+        }else{
+          setTimeout(function(){
+            socket.emit('getStatus', {'nameOfGitRepo': nameOfGitRepo});
+          }, interval );
         }
+
       }
-      setTimeout(function(){
-      	socket.emit('getStatus', {'nameOfGitRepo': nameOfGitRepo});
-      }, interval );
+     
       
     });
   }
@@ -35,11 +39,18 @@
     return elem.dataset[ 'project' ];
   }
 
+  function appendDataToElement(dataToSet, idOfElem){
+    var elem = document.getElementById(idOfElem);
+    //var txt=document.createTextNode(dataToSet);
+    elem.value = dataToSet;
+    //elem.appendChild(txt);
+  }
+
   	
-  function setDataInResultDiv(dataToSet){
+  function setDataInElement(dataToSet, idOfElem){
   	console.log('setDataInDiv :' + dataToSet);
-  	var div = document.getElementById('result');
-  	div.innerHTML = dataToSet + " of 3 steps" ;
+  	var div = document.getElementById(idOfElem);
+  	div.innerHTML = dataToSet ;
   }
 
   function projectAnalysisReady(linkToAnalyzedProject){
@@ -49,5 +60,39 @@
     aWithLinkToAnalyzedProject.href = linkToAnalyzedProject;
     aWithLinkToAnalyzedProject.innerHTML = 'link to your result';
   }
+
+function roughSizeOfObject( object ) {
+
+    var objectList = [];
+    var stack = [ object ];
+    var bytes = 0;
+
+    while ( stack.length ) {
+        var value = stack.pop();
+
+        if ( typeof value === 'boolean' ) {
+            bytes += 4;
+        }
+        else if ( typeof value === 'string' ) {
+            bytes += value.length * 2;
+        }
+        else if ( typeof value === 'number' ) {
+            bytes += 8;
+        }
+        else if
+        (
+            typeof value === 'object'
+            && objectList.indexOf( value ) === -1
+        )
+        {
+            objectList.push( value );
+
+            for( i in value ) {
+                stack.push( value[ i ] );
+            }
+        }
+    }
+    return bytes;
+}
 
 window.onload = handleConnection;  

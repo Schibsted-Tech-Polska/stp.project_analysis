@@ -9,7 +9,7 @@ $(function () {
 function changeSelectLanguage(val){
   $('#targetLanguage').val(val);
 
-  console.log("changeSelectLanguage : " + val)
+ 
       if(val === "java") {
           $('[name=javaBuildCommand]').show();
           $('[name=binaries]').show();

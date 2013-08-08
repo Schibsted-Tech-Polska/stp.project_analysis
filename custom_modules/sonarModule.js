@@ -34,20 +34,18 @@ function AnalyzeExecution(absoluteLocationOfProject){
 };
 AnalyzeExecution.prototype.execute = function(lastCallback){
 	console.log('absoluteLocationOfProject : ' + this.absoluteLocationOfProject);
-	//var locationOfProject = this.options[this.options.length-1].cwd;
-	var progressIncrementator = function(absoluteLocationOfProject){
+	
+	var progressIncrementator = function(nameOfProject){
 		return function(){
-			//var absoluteLocationOfProject = this.absoluteLocationOfProject;
-			console.log('absoluteLocationOfProject : ' + absoluteLocationOfProject);
-			var nameOfProject = fileModule.extractFileNameFromPath(absoluteLocationOfProject);
 			datastoreModule.incrementStatus(nameOfProject);
 		};
 	};
+	var nameOfProject = fileModule.extractFileNameFromPath(this.absoluteLocationOfProject);
 
-	lastCallback = progressIncrementator(this.absoluteLocationOfProject); // lastCallback || 
+	lastCallback = progressIncrementator(nameOfProject); // lastCallback || 
 	//fileModule.deleteFolder(this.absoluteLocationOfProject , progressIncrementator(this.absoluteLocationOfProject));
 	
-	executor.executeCommands(this.options, this.commands, lastCallback);
+	executor.executeCommands(this.options, this.commands, lastCallback, nameOfProject);
 };
 AnalyzeExecution.prototype.toString = function(){
 	var self = this;
@@ -191,7 +189,6 @@ exports.getUrlOfAnalyzedProject = function(properties, callback){
 		console.log('-->location of pom file : ' + locationOfPomFile);
    		properties.locationOfPomFile = locationOfPomFile;
    		properties.sonarUrl = paths.sonarUrl();
-		//properties.linkToAnalyzedProject = paths.sonarUrl() + xmlParserModule.getIdFromPomFile(locationOfPomFile, callback);
 		xmlParserModule.constructLinkToAnalyzedProject(properties, callback);
 
 	}else if(properties.analysisTool === 'sonar'){

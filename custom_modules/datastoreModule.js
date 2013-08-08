@@ -8,12 +8,14 @@ exports.addNewAnalysis = function(projectName, linkToAnalyzedProject){
 	if(current === undefined ){
 		PROGRESS_STATUS.push({'projectName' : projectName, 
 							  'status' : 0, 
-							  'linkToAnalyzedProject' : linkToAnalyzedProject});
+							  'linkToAnalyzedProject' : linkToAnalyzedProject,
+							  'log': [] });
 		console.log('adding new analysis : ' + PROGRESS_STATUS);
 	}else{
 		console.log('set current status to ' + 0);
 		current.status = 0;
 		current.linkToAnalyzedProject = linkToAnalyzedProject;
+		current.log = '';
 	}
 };
 //TODO fix when same project analyzed twice
@@ -26,7 +28,15 @@ exports.incrementStatus = function(projectName){
 
 exports.getRecordForProjectName = function(projectName){
 	return findByProjectName(PROGRESS_STATUS, projectName);
-};   
+};  
+
+exports.appendToLog = function(projectName, data){
+	console.log('appending to log : ' + data);
+	var findedProject = findByProjectName(PROGRESS_STATUS, projectName);
+	if (findedProject !== undefined){
+		findedProject.log.push(data);
+	}
+} 
 
 function findByProjectName(source, projectName) {
   for (var i = 0; i < source.length; i++) {

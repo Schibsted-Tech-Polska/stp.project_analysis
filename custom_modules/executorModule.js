@@ -2,8 +2,9 @@ var flow = require('nimble');
 var spawn = require('child_process').spawn;
 var logger = require('winston');
 var nameOfModule = 'executorModule';
+var datastoreModule = require('../custom_modules/datastoreModule');
 
-exports.executeCommands = function(options, commands, lastFunction){
+exports.executeCommands = function(options, commands, lastFunction, nameOfProject){
 	var reversedOptions = options.reverse();
 	options.map(function(current, i){
 		console.log('-->options.cwd ' + i + " : " + current.cwd );
@@ -20,22 +21,22 @@ exports.executeCommands = function(options, commands, lastFunction){
 				var args = currentCommand.split(' ');
 				
 				var currentSpawn = spawn(args[0], args.slice(1), reversedOptions.pop());
-				console.log('currentSpawn' + currentSpawn);
 				
 				currentSpawn.stdout.on('data', function (data) {
-				  console.log('stdout: ' + data);
+				  datastoreModule.appendToLog(nameOfProject, data.toString());
 				});
 
 				currentSpawn.stderr.on('data', function (data) {
-				  console.log('stderr: ' + data);
+				  datastoreModule.appendToLog(nameOfProject, data.toString());
 				});
 
+				
 				currentSpawn.on('error', function(err){
-					console.log('error :  ' + err);
+				   datastoreModule.appendToLog(nameOfProject, data.toString());
 				});
 
 				currentSpawn.on('close', function (code) {
-				  console.log('child process exited with code ' + code);
+				  //console.log('child process exited with code ' + code);
 				  callback();
 				});
 			};
