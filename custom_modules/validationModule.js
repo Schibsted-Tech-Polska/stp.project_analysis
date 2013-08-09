@@ -29,19 +29,11 @@ exports.validateInput = function(properties){
     var javaBuildCommandShouldStartsWith = validate(getValue, javaBuildCommandMustStartWith, startsWithOrIsEmpty);//TODO startsWithOrIsEmpty	
 	javaBuildCommandShouldStartsWith('javaBuildCommand', doNothing, reportBadJavaBuildCommand);
 
-
-
-	console.log('current Language: ' + properties.language);
-	if(!emptyOrUndefined(properties.language)){
-		var possibleLanguages = ['js-plato', 'js-sonar', 'php', 'java'];
-		var containsProperLanguage = validate(getValue, possibleLanguages, contains);
-		var reportBadLanguageCommand = createErrorReporter(properties.errorMessages, 'not supported language when fail');
-		containsProperLanguage('language', doNothing, reportBadLanguageCommand);
-	}else{
-		properties.errorMessages.language = 'select language';
-	}
+	// var possibleLanguages = ['js-plato', 'js-sonar', 'php', 'java'];
+	// var containsProperLanguage = validate(getValue, possibleLanguages, contains);
+	// var reportBadLanguageCommand = createErrorReporter(properties.errorMessages, 'not supported language when fail');
+	// containsProperLanguage('language', doNothing, reportBadLanguageCommand);
 	
-
 	var link = properties.link;
 	if(!validateLink(link)){
 		properties.errorMessages.linkMsg = 'bad link';

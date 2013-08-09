@@ -33,11 +33,14 @@ function checkPreviousValues(){
 
 function selectLanguage(nameOfElement){
   var previousValue = getPreviousValue(nameOfElement);
+  console.log('lang : ' + previousValue)
   var tool = getPreviousValue('analysisTool');
   console.log('tool : ' + tool);
   console.log('previousValue : ' + previousValue);
   if(previousValue == 'js'){
     changeSelectLanguage([previousValue, tool].join('-'));
+  }else if(previousValue === 'undefined'){
+    changeSelectLanguage('java');
   }else{
     changeSelectLanguage(previousValue);
   }
