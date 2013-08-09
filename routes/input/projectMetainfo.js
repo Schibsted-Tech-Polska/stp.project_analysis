@@ -50,7 +50,8 @@ exports.submit = function(){
 		}else{
 			properties.nameOfGitRepo = repoModule.getNameOfRepo(properties.link);
 			startAnalysisProcess(properties);
-			
+
+			datastoreModule.addNewAnalysis(properties.nameOfGitRepo);
 			res.redirect('/projectStatus/' + properties.nameOfGitRepo);
 		}
 	};
@@ -68,14 +69,12 @@ function startAnalysisProcess(properties){
 			    sonarModule.getUrlOfAnalyzedProject(properties, callback);
 			},
 			function(callback){
-				datastoreModule.addNewAnalysis(properties.nameOfGitRepo, properties.linkToAnalyzedProject);
-				datastoreModule.incrementStatus(properties.nameOfGitRepo);
+				datastoreModule.addLinkToAnalysis(properties.nameOfGitRepo, properties.linkToAnalyzedProject);
 				logger.info('projectMetainfo', 'link to analyzed project : ' + properties.linkToAnalyzedProject);
 				callback();
 
 			},
 			function(callback){
-				
 				 sonarModule.analyze(properties);
 				 datastoreModule.incrementStatus(properties.nameOfGitRepo);
 			}

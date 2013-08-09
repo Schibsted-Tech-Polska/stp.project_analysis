@@ -13,7 +13,7 @@ describe('trigger project analysis and generating report ', function(){
 	form:{
 		link:linkToProject,
 		gitCommand:'git clone',
-		javaBuildCommand:'mvn',
+		javaBuildCommand:'mvn clean install',
 		targetLanguage:'java',
 		filesToOmit:'**/*nothing\n**/*twoNothing',
 		sources:'server/src',

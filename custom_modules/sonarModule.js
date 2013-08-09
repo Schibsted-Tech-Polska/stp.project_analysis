@@ -106,12 +106,16 @@ function startJavaClient(properties){
 		project.commands[0] = javaBuildCommand;
         project.commands[1] = 'mvn sonar:sonar';
 		 
-	}else{
+	}else if(javaBuildCommand.indexOf('ant') !== -1){
 		options.cwd = projectLocation;
 		project.options[0] = options;
 	 	project.options[1] = options;
 		project.commands[0] = javaBuildCommand;
         project.commands[1] =  sonarRunnerCommand;
+	}else{
+		options.cwd = projectLocation;
+		project.options[0] = options;
+		project.commands[0] = sonarRunnerCommand;
 	}
 
 	project.execute();

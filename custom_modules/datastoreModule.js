@@ -1,21 +1,20 @@
 var logger = require('winston');
 var nameOfModule = 'datastoreModule';
 
-exports.addNewAnalysis = function(projectName, linkToAnalyzedProject){
-	console.log("**** receive linkToAnalyzedProject : " + linkToAnalyzedProject);
+exports.addNewAnalysis = function(projectName){
+	//console.log("**** receive linkToAnalyzedProject : " + linkToAnalyzedProject);
 	var current = findByProjectName(PROGRESS_STATUS, projectName);
 	console.log('current -----> ' + current);
 	if(current === undefined ){
 		PROGRESS_STATUS.push({'projectName' : projectName, 
-							  'status' : 0, 
-							  'linkToAnalyzedProject' : linkToAnalyzedProject,
+							  'status' : 1, 
+							  'linkToAnalyzedProject' : '',
 							  'log': [] });
 		console.log('adding new analysis : ' + PROGRESS_STATUS);
 	}else{
-		console.log('set current status to ' + 0);
-		current.status = 0;
-		current.linkToAnalyzedProject = linkToAnalyzedProject;
-		current.log = '';
+		console.log('set current status to ' + 1);
+		current.status = 1;
+		current.log = [];
 	}
 };
 //TODO fix when same project analyzed twice
@@ -36,12 +35,17 @@ exports.appendToLog = function(projectName, data){
 	if (findedProject !== undefined){
 		findedProject.log.push(data);
 	}
-} 
+};
+
+exports.addLinkToAnalysis = function(projectName, linkToAnalyzedProject){
+	var result = findByProjectName(PROGRESS_STATUS, projectName);
+	result.linkToAnalyzedProject = linkToAnalyzedProject;
+};
 
 exports.didAnalyzeExist = function(projectName){
 	var result = findByProjectName(PROGRESS_STATUS, projectName);
 	return result !== undefined;
-}
+};
 
 function findByProjectName(source, projectName) {
   for (var i = 0; i < source.length; i++) {
