@@ -1,0 +1,2 @@
+s
+class A {def f(n:Int) = 5}

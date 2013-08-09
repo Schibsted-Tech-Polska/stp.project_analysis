@@ -1,64 +1,46 @@
 var underscore = require('underscore');
 var logger = require('winston');
+var analysisToolChecker = require('../custom_modules/analysisToolChecker');
 
 exports.validateInput = function(properties){
 	console.log('filesToOmit : ' + properties.filesToOmit);
-	
+
 	var forbiddenCommands = [";", "|", "||", "&&","rm","cp","cat","ls","at","net","netstat","del","copy"];
 	var gitCommandMustStartWith = ["git"];
 	var javaBuildCommandMustStartWith = ["mvn","ant"];
 	var doNothing = function(){};
 	properties.errorMessages = {};
 	properties.previousValues = {};
-
-	var v1 = validate(properties.gitCommand,forbiddenCommands,underscore.contains);
-	v1(function(){
-		properties.errorMessages.gitCommand = 'bad git command';
-	}, doNothing);
-
-	var v2 = validate(properties.gitCommand,gitCommandMustStartWith,startsWith);
-	v2(doNothing, function(){
-		properties.errorMessages.gitCommand = 'bad git command';
-	});
-
-	var v3 = validate(properties.javaBuildCommand,forbiddenCommands,underscore.contains);
-	v3(function(){
-		properties.errorMessages.javaBuildCommand = 'bad java build command';
-	},doNothing);
-
-	var v4=validate(properties.javaBuildCommand,javaBuildCommandMustStartWith,startsWith);	
-	v4(doNothing,function(){
-		if( !isEqual (properties.javaBuildCommand,'') ){
-			properties.errorMessages.javaBuildCommand = 'bad java build command';
-		}
-	});
-
-
-	var filesToOmitForbiddenCommands = [''];
-	var v5 = validate(properties.filesToOmit[0], filesToOmitForbiddenCommands,isEqual);
-	v5(function(){
-		var emptyArray=['**/nothing'];
-		properties.filesToOmit = emptyArray;
-	}, doNothing);
 	
-	var possibleLanguages = ['js','php','java'];
-	validate(properties.language, possibleLanguages, underscore.contains)
-	(function(){
-		properties.analysisTool = 'sonar';
-	}, 
-	function(){
-		console.log('validation pass ' + properties.language );
-		if( isEqual(properties.language,'js-plato') ){
-			properties.analysisTool = 'plato';
-			properties.language='js';
-		}else if(isEqual(properties.language,'js-sonar')){
-			properties.analysisTool = 'sonar';
-			properties.language='js';
-		}else{
-			properties.analysisTool = 'sonar';
-		}
-	});
+	var getValue = createGetter(properties);
+	var containsForbiddenCommands = validate(getValue, forbiddenCommands, contains);
+	var reportBadGitCommand = createErrorReporter(properties.errorMessages ,'bad git command');
+ 
+	containsForbiddenCommands('gitCommand', reportBadGitCommand, doNothing);
 
+	var gitCommandShouldStartsWith = validate(getValue, gitCommandMustStartWith, startsWith);
+	gitCommandShouldStartsWith('gitCommand', doNothing, reportBadGitCommand);
+
+	
+	var reportBadJavaBuildCommand = createErrorReporter(properties.errorMessages ,'bad java build command');	
+	containsForbiddenCommands('javaBuildCommand', reportBadJavaBuildCommand, doNothing);
+
+    
+    var javaBuildCommandShouldStartsWith = validate(getValue, javaBuildCommandMustStartWith, startsWithOrIsEmpty);//TODO startsWithOrIsEmpty	
+	javaBuildCommandShouldStartsWith('javaBuildCommand', doNothing, reportBadJavaBuildCommand);
+
+
+
+	console.log('current Language: ' + properties.language);
+	if(!emptyOrUndefined(properties.language)){
+		var possibleLanguages = ['js-plato', 'js-sonar', 'php', 'java'];
+		var containsProperLanguage = validate(getValue, possibleLanguages, contains);
+		var reportBadLanguageCommand = createErrorReporter(properties.errorMessages, 'not supported language when fail');
+		containsProperLanguage('language', doNothing, reportBadLanguageCommand);
+	}else{
+		properties.errorMessages.language = 'select language';
+	}
+	
 
 	var link = properties.link;
 	if(!validateLink(link)){
@@ -71,11 +53,31 @@ exports.validateInput = function(properties){
 		&& isEqual(properties.language, 'java') ){
 		properties.errorMessages.binaries = 'you must type binaries';
 	}
+	
+	console.log('errors after validation');
+	interateOverObject(properties.errorMessages);
 
-
+	analysisToolChecker.checkAnalysisTool(properties);
 	persistPreviousValues(properties);
-
 };
+
+
+function createGetter(map){
+	return function getValue(name){ return map[name]; }
+}
+
+function createErrorReporter(map, errorMessage){
+	return function(name){
+		console.log('set errorMessage : ' + errorMessage);
+		map[name] = errorMessage;
+		console.log(map[name]);
+	}
+}
+
+
+function isEmpty(string){
+	return string.trim() === '';
+}
 
 function persistPreviousValues(properties){
 	var difference = compareTwoObjects(properties, properties.errorMessages);
@@ -83,7 +85,6 @@ function persistPreviousValues(properties){
 	properties.previousValues = underscore.pick(properties, difference);
 	console.log('previousValues : ' + properties.previousValues);
 	interateOverObject(properties.previousValues);
-	//console.log(properties.previousValues.gitCommand);
 }
 
 function compareTwoObjects(first, second){
@@ -109,23 +110,11 @@ function validateParameter(parameter, predicate){
 	return !predicate(parameter);
 }
 
-/*
-function validateParameter(parameter, predicate, next){
-	var result = true;
-	if(isEqual(properties.language,'java') ){
-		console.log('java');
-		if(emptyOrUndefined(parameter)){
-			result = false;
-		}
-	}
-	return result;
-}*/
-
 function validateLink(link){
 	if(contains(link, "git")){
 		var delimeter = '/';
     	var splittedLink = link.split(delimeter);
-	    
+
 	    if(splittedLink.length === 5){
 	      return true;
 	    }
@@ -136,12 +125,6 @@ function validateLink(link){
 	return false;
 }
 
-/*
-function and(function1, function2){
-	return function(arg1, args2){
-		function1(arg1,arg2) && function2(arg1,arg2);
-	}
-}*/
 function contains(path, expression){
 	if(path.indexOf(expression) !== -1){ 
 		return true;
@@ -150,20 +133,21 @@ function contains(path, expression){
 
 } 
 
-function validate(commandToValidate, forbiddenCommands,predicate){
-	return function(actionWhenFail, actionWhenPass){
+function validate(getValue, forbiddenCommands,predicate){
+	return function(name, actionWhenFail, actionWhenPass){
 		var result = true;
+		var commandToValidate = getValue(name);
+
 		forbiddenCommands.map(function(currentCommand){
 			if(predicate(commandToValidate,currentCommand)){
-				
 				result =  false;
 			}
 		});	
 		if(!result){
 			logger.info('validation of : [ ' + commandToValidate + " ] FAILED");
-			actionWhenFail();
+			actionWhenFail(name);
 	  	}else{
-	  		actionWhenPass();
+	  		actionWhenPass(name);
 	  	}
 	};
 }
@@ -182,9 +166,13 @@ function isEqual(firstArg, secondArg){
 	return firstArg === secondArg;
 }
 
+function startsWithOrIsEmpty(string, properStartCommand){
+ 	return startsWith(string, properStartCommand) || isEmpty(string);
+}
+
 function startsWith(string, properStartCommand){	
 	var result = false;
-	
+
 		if(string.substring(0, properStartCommand.length)  === properStartCommand){
 			result = true;
 		}
@@ -197,4 +185,3 @@ exports.hasErrors = function(properties){
 	}
 	return false;
 };
-

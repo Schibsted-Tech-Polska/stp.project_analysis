@@ -20,10 +20,6 @@ exports.executeCommands = function(options, commands, lastFunction, nameOfProjec
 			return function(callback){
 				var args = currentCommand.split(' ');
 				
-				//if(args[0] === undefined){
-				//	args[0]='none';
-				//}
-				//console.log(' args[0] : ' + args[0]);
 				var currentSpawn = spawn(args[0], args.slice(1), reversedOptions.pop());
 				
 				currentSpawn.stdout.on('data', function (data) {
@@ -36,7 +32,8 @@ exports.executeCommands = function(options, commands, lastFunction, nameOfProjec
 
 				
 				currentSpawn.on('error', function(err){
-				   datastoreModule.appendToLog(nameOfProject, data.toString());
+					logger.info(nameOfModule,'error when executing ' + currentCommand + ' err: ' + err);
+				   	datastoreModule.appendToLog(nameOfProject, data.toString());
 				});
 
 				currentSpawn.on('close', function (code) {
