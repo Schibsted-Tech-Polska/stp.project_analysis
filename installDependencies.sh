@@ -23,22 +23,22 @@ sudo brew install node
 
 else
 
-sudo yum install apt
-sudo yum install apt-get
+#sudo yum install apt
+#sudo yum install apt-get
 
-sudo apt-get install git
-sudo apt-get install subversion
-sudo apt-get install maven
-sudo apt-get install ant
-sudo apt-get install node
-sudo apt-get install npm
+#sudo apt-get install git
+#sudo apt-get install subversion
+#sudo apt-get install maven
+#sudo apt-get install ant
+#sudo apt-get install node
+#sudo apt-get install npm
 
 fi
 
-sudo npm install
-sudo npm install -g mocha
-sudo npm install -g plato
-sudo npm install -g forever
+#sudo npm install
+#sudo npm install -g mocha
+#sudo npm install -g plato
+#sudo npm install -g forever
 
 
 
