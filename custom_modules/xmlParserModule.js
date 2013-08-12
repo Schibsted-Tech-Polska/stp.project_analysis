@@ -21,7 +21,11 @@ exports.constructLinkToAnalyzedProject = function(properties, callback){
 			logger.info(nameOfModule,
 				'error when read file from : ' + properties.locationOfPomFile + ' err: ' + err);
 		}
-		parser.parseString(data);
+		try{
+			parser.parseString(data);
+		}catch(err){
+			console.log('catch : ' + err);
+		}
 	});
 };
 

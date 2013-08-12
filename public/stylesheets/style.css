@@ -17,7 +17,10 @@ a.listElem{
 
 #result{
   color: white;
+}
 
+#errorWhenExecuting{
+  color: red;
 }
 
 .log{

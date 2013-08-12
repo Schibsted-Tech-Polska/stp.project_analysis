@@ -9,15 +9,16 @@ exports.addNewAnalysis = function(projectName){
 		PROGRESS_STATUS.push({'projectName' : projectName, 
 							  'status' : 1, 
 							  'linkToAnalyzedProject' : '',
-							  'log': [] });
+							  'log': [],
+							  'errorWhenExecuting': false });
 		console.log('adding new analysis : ' + PROGRESS_STATUS);
 	}else{
 		console.log('set current status to ' + 1);
 		current.status = 1;
 		current.log = [];
+		current.errorWhenExecuting = false;
 	}
 };
-//TODO fix when same project analyzed twice
 exports.incrementStatus = function(projectName){
 	console.log('incrementStatus for : ' + projectName);
 	var record = findByProjectName(PROGRESS_STATUS, projectName);
@@ -30,7 +31,6 @@ exports.getRecordForProjectName = function(projectName){
 };  
 
 exports.appendToLog = function(projectName, data){
-	//console.log('appending to log : ' + data);
 	var findedProject = findByProjectName(PROGRESS_STATUS, projectName);
 	if (findedProject !== undefined){
 		findedProject.log.push(data);
@@ -46,6 +46,15 @@ exports.didAnalyzeExist = function(projectName){
 	var result = findByProjectName(PROGRESS_STATUS, projectName);
 	return result !== undefined;
 };
+
+exports.setErrorWhenExecuting = function(projectName){
+	var findedProject = findByProjectName(PROGRESS_STATUS, projectName);
+	console.log('set error for projectName : '+ findedProject.projectName);
+	if (findedProject !== undefined){
+		findedProject.errorWhenExecuting = true;
+	}
+	
+}
 
 function findByProjectName(source, projectName) {
   for (var i = 0; i < source.length; i++) {

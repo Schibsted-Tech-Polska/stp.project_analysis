@@ -5,6 +5,7 @@ var nameOfModule = 'executorModule';
 var datastoreModule = require('../custom_modules/datastoreModule');
 
 exports.executeCommands = function(options, commands, lastFunction, nameOfProject){
+	var correctExitCode = 0; 
 	var reversedOptions = options.reverse();
 	options.map(function(current, i){
 		console.log('-->options.cwd ' + i + " : " + current.cwd );
@@ -27,6 +28,7 @@ exports.executeCommands = function(options, commands, lastFunction, nameOfProjec
 				});
 
 				currentSpawn.stderr.on('data', function (data) {
+			 	  console.log('ERROR : ! ' + data);
 				  datastoreModule.appendToLog(nameOfProject, data.toString());
 				});
 
@@ -37,7 +39,10 @@ exports.executeCommands = function(options, commands, lastFunction, nameOfProjec
 				});
 
 				currentSpawn.on('close', function (code) {
-				  //console.log('child process exited with code ' + code);
+				  console.log('child process exited with code ' + code);
+				  if(code !== correctExitCode){
+				  	datastoreModule.setErrorWhenExecuting(nameOfProject);
+				  }
 				  callback();
 				});
 			};

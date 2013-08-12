@@ -55,7 +55,7 @@ exports.validateInput = function(properties){
 
 
 function createGetter(map){
-	return function getValue(name){ return map[name]; }
+	return function(name){ return map[name]; };
 }
 
 function createErrorReporter(map, errorMessage){
@@ -63,7 +63,7 @@ function createErrorReporter(map, errorMessage){
 		console.log('set errorMessage : ' + errorMessage);
 		map[name] = errorMessage;
 		console.log(map[name]);
-	}
+	};
 }
 
 

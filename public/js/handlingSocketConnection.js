@@ -20,7 +20,9 @@
         console.log('size:' +  roughSizeOfObject(data.log));
         var interval = 1000;
 
-        if(data.status === numberOfStates){
+        if(data.errorWhenExecuting){
+          showThatErrorOccur();
+        }else if(data.status === numberOfStates){
         	projectAnalysisReady(linkToAnalyzedProject);
         }else{
           setTimeout(function(){
@@ -29,9 +31,13 @@
         }
 
       }
-     
-      
     });
+  }
+
+  function showThatErrorOccur(){
+    hideProgressBar();
+    var elementErrorWhenExecuting = document.getElementById('errorWhenExecuting');
+    elementErrorWhenExecuting.innerHTML = 'error occured when executing, see log for details';
   }
 
   function getNameOfRepo(){
@@ -52,10 +58,13 @@
   	var div = document.getElementById(idOfElem);
   	div.innerHTML = dataToSet ;
   }
-
-  function projectAnalysisReady(linkToAnalyzedProject){
+  function hideProgressBar(){
     var progressbar = document.getElementsByClassName('progressbar')[0];
     progressbar.style.display = 'none';
+  }  
+
+  function projectAnalysisReady(linkToAnalyzedProject){
+    hideProgressBar();
     var aWithLinkToAnalyzedProject = document.getElementById('linkToAnalyzedProject');
     aWithLinkToAnalyzedProject.href = linkToAnalyzedProject;
     aWithLinkToAnalyzedProject.innerHTML = 'link to your result';

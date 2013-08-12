@@ -11,4 +11,4 @@ var langageToSonar = {'js-sonar' : 'js'
 exports.checkAnalysisTool = function(properties){
 	properties.analysisTool = languageToAnalysisTool[properties.language];
 	properties.language = langageToSonar[properties.language];
-}
+};
