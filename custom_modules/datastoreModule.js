@@ -2,7 +2,6 @@ var logger = require('winston');
 var nameOfModule = 'datastoreModule';
 
 exports.addNewAnalysis = function(projectName){
-	//console.log("**** receive linkToAnalyzedProject : " + linkToAnalyzedProject);
 	var current = findByProjectName(PROGRESS_STATUS, projectName);
 	console.log('current -----> ' + current);
 	if(current === undefined ){

@@ -10,18 +10,15 @@ var PropertiesGenerator = require('../custom_modules/PropertiesGenerator');
 var xmlParserModule = require('../custom_modules/xmlParserModule');
 
 
-var languageToFileMap = {	'java' : 'java.properties',
-							'php' : 'php.properties' ,						
-							'js' : 'js.properties'	};
+var languageToFileMap = {'java' : 'java.properties',
+						'php' : 'php.properties' ,						
+						'js' : 'js.properties'};
 
 var sonarRunnerCommand= 'sonar-runner';
 var platoCommand = 'plato -r -d reports .';
  
 var nameOfPropertiesFile = 'sonar-project.properties';
 
-
-
-//TODO this module is to big
 var basePropertiesPath = function(){
 	return __dirname.replace('custom_modules','base_properties');
 };
@@ -41,11 +38,11 @@ AnalyzeExecution.prototype.execute = function(lastCallback){
 		};
 	};
 	var nameOfProject = fileModule.extractFileNameFromPath(this.absoluteLocationOfProject);
-
-	lastCallback = progressIncrementator(nameOfProject); // lastCallback || 
-	//fileModule.deleteFolder(this.absoluteLocationOfProject , progressIncrementator(this.absoluteLocationOfProject));
+	//progressIncrementator(nameOfProject);
+	lastCallback =  lastCallback || 
+	fileModule.deleteFolder(this.absoluteLocationOfProject , progressIncrementator(nameOfProject));
 	
-	executor.executeCommands(this.options, this.commands, lastCallback, nameOfProject);
+	executor.executeCommands(this, lastCallback, nameOfProject);
 };
 AnalyzeExecution.prototype.toString = function(){
 	var self = this;

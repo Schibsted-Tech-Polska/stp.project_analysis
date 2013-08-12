@@ -1,22 +1,35 @@
 var nameOfFolderWithProject = 'analyzedProjects';
 
+function getServerPath(){
+	console.log("---======= " + GLOBAL.serverPath);
+	return GLOBAL.serverPath;
+}
+
 exports.locationOfFolderWithProjects =function(){
 	return  __dirname.replace('custom_modules',nameOfFolderWithProject);
 };
-
-exports.sonarUrl = function(){
-	return "http://localhost:9000/dashboard/index/";
+var sonarPort = 9000;
+function sonarUrl(){
+	return "http://"+ getServerPath()+":"+sonarPort+"/";
 };
 exports.sonarUrlPort = function(){
-	return "http://localhost:9000/";
+	return sonarUrl();
+};
+exports.getUrlForAllStatuses = function(){
+	return sonarUrl()+'api/projects/';
+}
+
+exports.sonarUrl = function(){
+	return sonarUrl() + "dashboard/index/";
+	
 };
 
-var port = 3000;
-exports.getPort = function(){
-	return port;
+var applicationPort = 3000;
+exports.getApplicationPort = function(){
+	return applicationPort;
 };
 
 exports.applicationUrl = function(){
-	return "http://localhost:"+port+"/";
+	return "http://"+getServerPath()+":"+applicationPort+"/";
 };
 

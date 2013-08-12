@@ -21,6 +21,7 @@
     "socket.io": "0.9.16",
     "xml2js": "0.2.8",
     "eyes":"0.1.8",
-    "swagger-node-express":"1.2.3"
+    "swagger-node-express":"1.2.3",
+    "selenium-webdriver":"2.34.1"
   }
 }

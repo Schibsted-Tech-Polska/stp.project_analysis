@@ -4,7 +4,9 @@ var logger = require('winston');
 var nameOfModule = 'executorModule';
 var datastoreModule = require('../custom_modules/datastoreModule');
 
-exports.executeCommands = function(options, commands, lastFunction, nameOfProject){
+exports.executeCommands = function(optionsAndCommands, lastFunction, nameOfProject){
+	var options = optionsAndCommands.options;
+	var commands = optionsAndCommands.commands;
 	var correctExitCode = 0; 
 	var reversedOptions = options.reverse();
 	options.map(function(current, i){
