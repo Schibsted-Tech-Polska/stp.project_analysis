@@ -52,6 +52,7 @@ mv sonar-php-plugin-1.2.jar sonar-3.6.1/extensions/plugins/
 #mv sonar-groovy-plugin-0.6.jar sonar-3.6.1/extensions/plugins/
 
 cd ..
+sh checkJavaVersion.sh
 sh startApplication.sh
 
 

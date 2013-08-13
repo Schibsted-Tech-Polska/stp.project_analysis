@@ -46,6 +46,11 @@ exports.didAnalyzeExist = function(projectName){
 	return result !== undefined;
 };
 
+exports.getLinkToAnalyzedProject = function(projectName){
+	var result = findByProjectName(PROGRESS_STATUS, projectName);
+	return result.linkToAnalyzedProject;
+}
+
 exports.setErrorWhenExecuting = function(projectName){
 	var findedProject = findByProjectName(PROGRESS_STATUS, projectName);
 	console.log('set error for projectName : '+ findedProject.projectName);

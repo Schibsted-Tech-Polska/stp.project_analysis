@@ -12,13 +12,13 @@
   <body>
      <h1 id='nameOfGitRepo' data-project='<%= nameOfGitRepo %>'> status of "<%= nameOfGitRepo %>" analysis : </h1>
 
-     <h3 id='result'> </h3>
+     <h3 id='result' class='progress'> </h3>
 
 
     <div class="progressbar"> </div>
-    <div><a id='linkToAnalyzedProject'> </a> </div>
+    <div class="center"><a id='linkToAnalyzedProject' class='resultLink' href='<%= linkToAnalyzedProject %>'></a> </div>
     <div><a id='errorWhenExecuting'> </a></div>
-    <div class='log'><textarea id='log' rows='14' cols="70"></textarea></div>
+    <div ><textarea id='log' class='log'></textarea></div>
      
   
   </body>

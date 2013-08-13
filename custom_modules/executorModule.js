@@ -37,7 +37,7 @@ exports.executeCommands = function(optionsAndCommands, lastFunction, nameOfProje
 				
 				currentSpawn.on('error', function(err){
 					logger.info(nameOfModule,'error when executing ' + currentCommand + ' err: ' + err);
-				   	datastoreModule.appendToLog(nameOfProject, data.toString());
+				   	datastoreModule.appendToLog(nameOfProject, err.toString());
 				});
 
 				currentSpawn.on('close', function (code) {

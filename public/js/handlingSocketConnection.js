@@ -58,17 +58,25 @@
   	var div = document.getElementById(idOfElem);
   	div.innerHTML = dataToSet ;
   }
-  function hideProgressBar(){
-    var progressbar = document.getElementsByClassName('progressbar')[0];
-    progressbar.style.display = 'none';
-  }  
+  
 
   function projectAnalysisReady(linkToAnalyzedProject){
     hideProgressBar();
     var aWithLinkToAnalyzedProject = document.getElementById('linkToAnalyzedProject');
     aWithLinkToAnalyzedProject.href = linkToAnalyzedProject;
     aWithLinkToAnalyzedProject.innerHTML = 'link to your result';
+    showLinkToResult();
   }
+
+  function showLinkToResult(){
+    var element = document.getElementsByClassName('center')[0];
+    element.style.display = 'block';
+
+  }
+
+  function hideProgressBar(){
+    document.body.classList.add('result-ready');
+  }  
 
 function roughSizeOfObject( object ) {
 

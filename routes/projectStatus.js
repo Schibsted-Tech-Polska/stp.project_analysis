@@ -10,16 +10,15 @@ exports.status = function(req, res){
 	console.log('id of requests : ' + id);
 	if(datastoreModule.didAnalyzeExist(id)){
 		res.render('projectStatus',
-		{'nameOfGitRepo':id});
+		{'nameOfGitRepo':id
+		,'linkToAnalyzedProject':datastoreModule.getLinkToAnalyzedProject(id) });
 	}else{
 		res.status(404).send('Not found');
 	}	
-
-	
 };
 
 exports.allStatuses = function(req, res){
-	var url = paths.sonarUrlPort() + 'api/projects/';
+	var url = paths.getUrlForAllStatuses();
 	console.log("url :" + url);
 	request.get({'url':url,
 				json:true},

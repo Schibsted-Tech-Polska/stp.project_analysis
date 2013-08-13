@@ -1,0 +1,3 @@
+curl --data "link=https://github.com/schibstednorge/aftenposten-windows8&gitCommand=git clone&filesToOmit=nothing&targetLanguage=js-sonar&javaBuildCommand=&sources=aftenposten-windows8" http://localhost:3000
+
+http://localhost:3000/projectStatus/aftenposten-windows8

@@ -5,6 +5,8 @@ body {
 }
 h1 {
   color: white;
+  margin-top: 0em;
+  margin-bottom: 1em;
 }
 
 a {
@@ -15,8 +17,32 @@ a.listElem{
   font-size: medium;
 }
 
-#result{
-  color: white;
+.progress{
+  font-size: 0.8em;
+  color:white;
+}
+
+.center {
+    text-align: center;
+    margin: 2em auto 1em;
+    background-color: #3445db;
+    padding: .8em 0.2em 1em;
+    border-radius: .5em;
+    width: 19em;
+    display: none;
+}
+.resultLink {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #98db34;
+  text-decoration: none;
+  border-bottom: 2px solid #98db34;
+  padding-bottom: 0.1em;
+
+}
+.resultLink:after {
+  content: "\00BB";
+  padding-left: 0.3em;
 }
 
 #errorWhenExecuting{
@@ -25,6 +51,49 @@ a.listElem{
 
 .log{
   margin-top: 30px;
+  width: 100%;
+  height: 20em;
+}
+
+.result-ready #result {
+  display: none;
+}
+.result-ready .progressbar {
+  display: none;
+}
+
+.whiteText{
+  color: white;
+}
+
+.submit-button {
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #93cef0), color-stop(1, #f0f0f0) );
+  background:-moz-linear-gradient( center top, #93cef0 5%, #f0f0f0 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#93cef0', endColorstr='#f0f0f0');
+  background-color:#93cef0;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #290029;
+  display:inline-block;
+  color:#777777;
+  font-family:arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #ffffff;
+}.submit-button:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f0f0f0), color-stop(1, #93cef0) );
+  background:-moz-linear-gradient( center top, #f0f0f0 5%, #93cef0 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#93cef0');
+  background-color:#f0f0f0;
+}.submit-button:active {
+  position:relative;
+  top:1px;
 }
 
 .questionMark{
