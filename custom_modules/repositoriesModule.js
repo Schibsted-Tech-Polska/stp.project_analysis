@@ -12,14 +12,28 @@ exports.downloadRepo = function(properties,callback){
 	logger.info(nameOfModule, 'downloadRepo from : ' + link + 'with command : ' + gitCommand);
 	
 	if(contains(link, "git")){
-		downloadFromVersionControl(gitCommand, properties, callback);
+		var sshLink = makeSshLinkForGit(link);
+		downloadFromVersionControl(gitCommand, sshLink, callback);
 	}else if(contains(link, "svn")){
-		downloadFromVersionControl(svnCheckoutCommand, properties, callback);
+		downloadFromVersionControl(svnCheckoutCommand, link, callback);
 	}
 };
+
+exports.convertGitHttpToSsh = function(link){
+	return makeSshLinkForGit(link);
+}
+
+function makeSshLinkForGit(link){
+	var prefix = 'git@github.com:';
+	var delimeter = '/';
+	var splittedLink = link.split(delimeter);
+	var indexOfLastElem = splittedLink.length - 1;
+	var suffix = [splittedLink[indexOfLastElem-1],splittedLink[indexOfLastElem]].join('/');
+	return prefix + suffix  + '.git';
+}
   
-function downloadFromVersionControl(command, properties, callback){
-	var link = properties.link;
+function downloadFromVersionControl(command, link, callback){
+	//var link = properties.link;
 	var options = {
 		cwd : locationOfFolderWithProjects
 	};
@@ -35,7 +49,9 @@ function downloadFromVersionControl(command, properties, callback){
 		});
 }
 
-
+//function getNameAndOrganization(){
+//
+//}
 
 exports.getNameOfRepo = function(link){
 	var delimeter = '/';
@@ -53,5 +69,4 @@ function contains(path, expression){
 		return true;
 	}
 	return false;
-
 } 

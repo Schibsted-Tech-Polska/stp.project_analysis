@@ -1,3 +1,59 @@
+
+.languageBox {
+  margin: 1em;
+  overflow: hidden;
+}
+
+.language {
+  width: 120px;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+
+.language-choice[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.langauge-icon {
+  
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.language-name {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 5px 0 0;
+  display: block;
+}
+
+.language:hover,
+.language:active {
+  color: white;
+}
+.language:hover .langauge-icon,
+.language:active .langauge-icon,
+.language-choice[type="radio"]:checked ~ .langauge-icon {
+  -webkit-filter: contrast(10) grayscale(1) invert(1);
+  -moz-filter: contrast(10) grayscale(1) invert(1);
+  -o-filter: contrast(10) grayscale(1) invert(1);
+  -ms-filter: contrast(10) grayscale(1) invert(1);
+  filter: contrast(10) grayscale(1) invert(1);
+}
+.language-choice[type="radio"]:checked ~ .langauge-icon ~ .language-name {
+  color: white;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -15,6 +71,11 @@ a {
 
 a.listElem{
   font-size: medium;
+}
+
+
+#targetLanguage{
+  
 }
 
 .progress{
@@ -115,32 +176,7 @@ a.listElem{
   height: 300px; 
 }
  
-.language {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
-  font-size: 80px;
-  text-align: left;
-}
-.language.active div,
-.language.active p,
-.language:hover div,
-.language:hover p {
-  color: #fff;
-}
-.language div {
-  text-decoration: none;
-  color: #34495e;
-  cursor: pointer;
-}
-.language p {
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;
-  margin-left: -20px;
-  margin-top: -15px;
-}
+
 
 .formfield * {
     vertical-align: middle;

@@ -28,15 +28,3 @@ exports.constructLinkToAnalyzedProject = function(properties, callback){
 		}
 	});
 };
-
-/*
-exports.getArrayOfProperties = function(data){
-	console.log('parser receive : ' + data);
-	var parser = new xml2js.Parser();
-	//var cleanedString = data.replace("\ufeff", "");
-	parser.parseString(data);
-
-	parser.on('end', function(result){
-		eyes.inspect(result);
-	});
-}*/

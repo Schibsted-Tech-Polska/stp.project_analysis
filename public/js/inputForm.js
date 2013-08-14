@@ -1,10 +1,26 @@
+// $(document).ready(function() {
+//     $('.language').click(function() {
+
+//       var lang = $(this).attr('data-lang');
+//       console.log('click' + lang);
+
+//       $(this).addClass('active');
+//       $(this).siblings().removeClass('active');
+
+//       if (lang) {
+//        //do something with lang 
+//       }
+//     });
+//   });
+
 $(function () {
-    $("#targetLanguage").change(function() {
+    $(".language-choice").change(function() {
       var val = $(this).val();
+      console.log('val' + val);
       changeSelectLanguage(val); 
     });
 
-  })
+});
 
 function changeSelectLanguage(val){
   $('#targetLanguage').val(val);
@@ -68,6 +84,8 @@ function isUndefinedOrEmpty(val){
       $('[name=link]').val('');
     }
   }
+
+
   
   window.onload = checkPreviousValues();  
   window.onload = clearLinkInput();

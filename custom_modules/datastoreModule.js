@@ -49,7 +49,7 @@ exports.didAnalyzeExist = function(projectName){
 exports.getLinkToAnalyzedProject = function(projectName){
 	var result = findByProjectName(PROGRESS_STATUS, projectName);
 	return result.linkToAnalyzedProject;
-}
+};
 
 exports.setErrorWhenExecuting = function(projectName){
 	var findedProject = findByProjectName(PROGRESS_STATUS, projectName);
@@ -58,7 +58,7 @@ exports.setErrorWhenExecuting = function(projectName){
 		findedProject.errorWhenExecuting = true;
 	}
 	
-}
+};
 
 function findByProjectName(source, projectName) {
   for (var i = 0; i < source.length; i++) {

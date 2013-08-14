@@ -22,6 +22,7 @@
     "xml2js": "0.2.8",
     "eyes":"0.1.8",
     "swagger-node-express":"1.2.3",
-    "selenium-webdriver":"2.34.1"
+    "selenium-webdriver":"2.34.1",
+    "coverjs":"0.0.14"
   }
 }
