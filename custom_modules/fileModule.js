@@ -49,15 +49,15 @@ readTextFileAndModifyContent = function(source, target, propertiesToChange,cb){
       if (err) {
        return logger.info(nameOfModule, 'readTextFileAndModifyContent FAILED, err : ' + err);
    }
-   
+
    var stringData = data.toString();
-   var replaced; 
+   var replaced;
    for(var property in propertiesToChange){
       replaced = stringData.replace(property, propertiesToChange[property]);
       stringData = replaced;
    }
      cb(target,replaced);
-    
+
   });
 
 };
@@ -78,9 +78,9 @@ var deleteFolderRecursive =  function(path) {
   if( fs.existsSync(path) ) {
     fs.readdirSync(path).forEach(function(file){
       var curPath = path + "/" + file;
-      if(fs.statSync(curPath).isDirectory()) { // recurse
+      if(fs.statSync(curPath).isDirectory()) {
         deleteFolderRecursive(curPath);
-      } else { // delete file
+      } else {
         fs.unlinkSync(curPath);
       }
     });
@@ -89,7 +89,7 @@ var deleteFolderRecursive =  function(path) {
 };
 
 exports.deleteFolder = function(path, invokeAfter){
-  return function(){ 
+  return function(){
     deleteFolderRecursive(path);
     invokeAfter();
   };

@@ -20,10 +20,7 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 	var filesToOmit = parameters.filesToOmit;
 	logger.info(nameOfModule, 'filesToOmit by findSrcLocation : ' + filesToOmit);
 	var allFiles = [];
-	//var matches = [];
-	//var countOfGlobMatches = filesToOmit.length-1;
-
-
+	
 	flow.series([
 		function(callback){
 			finder.on('file', function (file) {
@@ -47,7 +44,6 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 };
 
 function shouldPushNewPath(directoriesWithFile,extracted){
-	//console.log('trying to add path : ' + extracted);
 	return !underscore.contains(directoriesWithFile,extracted)
     			&& !isSubpath(directoriesWithFile, extracted);
 }

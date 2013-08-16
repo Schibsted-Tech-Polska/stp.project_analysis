@@ -11,29 +11,24 @@ exports.validateInput = function(properties){
 	var doNothing = function(){};
 	properties.errorMessages = {};
 	properties.previousValues = {};
-	
+
 	var getValue = createGetter(properties);
 	var containsForbiddenCommands = validate(getValue, forbiddenCommands, contains);
 	var reportBadGitCommand = createErrorReporter(properties.errorMessages ,'bad git command');
- 
+
 	containsForbiddenCommands('gitCommand', reportBadGitCommand, doNothing);
 
 	var gitCommandShouldStartsWith = validate(getValue, gitCommandMustStartWith, startsWith);
 	gitCommandShouldStartsWith('gitCommand', doNothing, reportBadGitCommand);
 
-	
-	var reportBadJavaBuildCommand = createErrorReporter(properties.errorMessages ,'bad java build command');	
+
+	var reportBadJavaBuildCommand = createErrorReporter(properties.errorMessages ,'bad java build command');
 	containsForbiddenCommands('javaBuildCommand', reportBadJavaBuildCommand, doNothing);
 
-    
-    var javaBuildCommandShouldStartsWith = validate(getValue, javaBuildCommandMustStartWith, startsWithOrIsEmpty);//TODO startsWithOrIsEmpty	
+
+    var javaBuildCommandShouldStartsWith = validate(getValue, javaBuildCommandMustStartWith, startsWithOrIsEmpty);
 	javaBuildCommandShouldStartsWith('javaBuildCommand', doNothing, reportBadJavaBuildCommand);
 
-	// var possibleLanguages = ['js-plato', 'js-sonar', 'php', 'java'];
-	// var containsProperLanguage = validate(getValue, possibleLanguages, contains);
-	// var reportBadLanguageCommand = createErrorReporter(properties.errorMessages, 'not supported language when fail');
-	// containsProperLanguage('language', doNothing, reportBadLanguageCommand);
-	
 	var link = properties.link;
 	if(!validateLink(link)){
 		properties.errorMessages.linkMsg = 'bad link';
@@ -41,11 +36,11 @@ exports.validateInput = function(properties){
 	if(!validateParameter(properties.sources, emptyOrUndefined)){
 		properties.errorMessages.sources = 'you must type sources';
 	}
-	if(!validateParameter(properties.binaries, emptyOrUndefined) 
+	if(!validateParameter(properties.binaries, emptyOrUndefined)
 		&& isEqual(properties.language, 'java') ){
 		properties.errorMessages.binaries = 'you must type binaries';
 	}
-	
+
 	console.log('errors after validation');
 	interateOverObject(properties.errorMessages);
 
@@ -55,7 +50,9 @@ exports.validateInput = function(properties){
 
 
 function createGetter(map){
-	return function(name){ return map[name]; };
+	return function(name){
+	 return map[name];
+	};
 }
 
 function createErrorReporter(map, errorMessage){
@@ -118,12 +115,12 @@ function validateLink(link){
 }
 
 function contains(path, expression){
-	if(path.indexOf(expression) !== -1){ 
+	if(path.indexOf(expression) !== -1){
 		return true;
 	}
 	return false;
 
-} 
+}
 
 function validate(getValue, forbiddenCommands,predicate){
 	return function(name, actionWhenFail, actionWhenPass){
@@ -134,7 +131,7 @@ function validate(getValue, forbiddenCommands,predicate){
 			if(predicate(commandToValidate,currentCommand)){
 				result =  false;
 			}
-		});	
+		});
 		if(!result){
 			logger.info('validation of : [ ' + commandToValidate + " ] FAILED");
 			actionWhenFail(name);
@@ -162,7 +159,7 @@ function startsWithOrIsEmpty(string, properStartCommand){
  	return startsWith(string, properStartCommand) || isEmpty(string);
 }
 
-function startsWith(string, properStartCommand){	
+function startsWith(string, properStartCommand){
 	var result = false;
 
 		if(string.substring(0, properStartCommand.length)  === properStartCommand){
@@ -173,7 +170,7 @@ function startsWith(string, properStartCommand){
 
 exports.hasErrors = function(properties){
 	for(error in properties.errorMessages){
-		return true;		
+		return true;
 	}
 	return false;
 };

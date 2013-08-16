@@ -11,19 +11,19 @@ var xmlParserModule = require('../custom_modules/xmlParserModule');
 
 
 var languageToFileMap = {'java' : 'java.properties',
-						'php' : 'php.properties' ,						
+						'php' : 'php.properties' ,
 						'js' : 'js.properties'};
 
 var sonarRunnerCommand= 'sonar-runner';
 var platoCommand = 'plato -r -d reports .';
- 
+
 var nameOfPropertiesFile = 'sonar-project.properties';
 
 var basePropertiesPath = function(){
 	return __dirname.replace('custom_modules','base_properties');
 };
 
-//--------------------------------------
+
 function AnalyzeExecution(absoluteLocationOfProject){
 	this.absoluteLocationOfProject = absoluteLocationOfProject;
 	this.options = [];
@@ -31,17 +31,17 @@ function AnalyzeExecution(absoluteLocationOfProject){
 };
 AnalyzeExecution.prototype.execute = function(lastCallback){
 	console.log('absoluteLocationOfProject : ' + this.absoluteLocationOfProject);
-	
+
 	var progressIncrementator = function(nameOfProject){
 		return function(){
 			datastoreModule.incrementStatus(nameOfProject);
 		};
 	};
 	var nameOfProject = fileModule.extractFileNameFromPath(this.absoluteLocationOfProject);
-	//progressIncrementator(nameOfProject);
-	lastCallback =  lastCallback || 
+
+	lastCallback =  lastCallback ||
 	fileModule.deleteFolder(this.absoluteLocationOfProject , progressIncrementator(nameOfProject));
-	
+
 	executor.executeCommands(this, lastCallback, nameOfProject);
 };
 AnalyzeExecution.prototype.toString = function(){
@@ -51,32 +51,29 @@ AnalyzeExecution.prototype.toString = function(){
 	});
 };
 
-//-------------------------------------------------------
+
 exports.analyze = function(properties){
 
 	logger.info(nameOfModule, 'used analysisTool : ' + properties.analysisTool);
 	var configPlaceholders = {'UNIQUE_KEY' : escapeCharacters(properties.link),
 							  'NAME' : properties.nameOfGitRepo,
-							  'EXCL' : properties.filesToOmit };//config placeholders 
-	
+							  'EXCL' : properties.filesToOmit };
+
 	flow.series([
 		 function(callback){
 	 		logger.info(nameOfModule, "step1 - generating properties file");
-	 		//TODO propertyFile
-            generatePropertiesFile(properties, configPlaceholders, callback);
+	 		 generatePropertiesFile(properties, configPlaceholders, callback);
  	 	},
 	 	function(callback){
 	 		logger.info(nameOfModule, "step2 -  start sonnarRunnerClient");
 	 		startSonarRunnerClient(properties);
 		}
 	  ]);
-     
+
 };
 
 function startSonarRunnerClient(properties){
-		
-	 	var language = properties.language;
-		
+		var language = properties.language;
 		if(language === 'java'){
 	 	 	startJavaClient(properties);
 	 	 }else{
@@ -87,7 +84,7 @@ function startSonarRunnerClient(properties){
 function startJavaClient(properties){
 	var options={};
 
-	var projectLocation = properties.projectLocation; 
+	var projectLocation = properties.projectLocation;
 	var javaBuildCommand = properties.javaBuildCommand;
 	var binariesLocation = properties.binaries;
 	var project = new AnalyzeExecution(projectLocation);
@@ -95,14 +92,14 @@ function startJavaClient(properties){
 	console.log('projectLocation : ' + projectLocation);
 	if(javaBuildCommand.indexOf('mvn') !== -1){
 
-		var locationOfExectuting = [projectLocation,binariesLocation].join('/'); 
+		var locationOfExectuting = [projectLocation,binariesLocation].join('/');
 		options.cwd = fileModule.extractDirectoryFromPath(locationOfExectuting);
 
 		project.options[0] = options;
 	 	project.options[1] = options;
 		project.commands[0] = javaBuildCommand;
         project.commands[1] = 'mvn sonar:sonar';
-		 
+
 	}else if(javaBuildCommand.indexOf('ant') !== -1){
 		options.cwd = projectLocation;
 		project.options[0] = options;
@@ -128,8 +125,6 @@ function startOtherLanguagesClient(properties){
 
 	 	 var  project = new AnalyzeExecution(properties.projectLocation);
 	 	 project.options[0] = options;
-	 	 //project.options[1] = options;
-	 	 //project.commands[1] = 'none';
 	 	 if(properties.analysisTool === 'plato'){
 	 	 	var incrementStatus = function(){
 				datastoreModule.incrementStatus(properties.nameOfGitRepo);
@@ -140,10 +135,10 @@ function startOtherLanguagesClient(properties){
 			project.commands[0] = sonarRunnerCommand;
 			project.execute();
 		 }
-} 
+}
 
 function generatePropertiesFile(properties ,propertiesToChange, callback) {
-	
+
 	var language = properties.language;
 	var projectLocation = properties.projectLocation;
 
@@ -153,7 +148,7 @@ function generatePropertiesFile(properties ,propertiesToChange, callback) {
 	logger.info(nameOfModule, "generating propertyFile, src : " + srcPath +
 							  "\n dest : " + projectLocation);
 
-	var saveNewProperties = function(propertiesToChange){  
+	var saveNewProperties = function(propertiesToChange){
 		fileModule.copyFileAndChangeProperties(srcPath, destPath, propertiesToChange,
 	  		function(err){
 	  			if(err){
@@ -162,8 +157,7 @@ function generatePropertiesFile(properties ,propertiesToChange, callback) {
 				callback();
 			});
 	};
-    //TODO 
-	var propertiesGenerator = PropertiesGenerator.create(properties);
+  	var propertiesGenerator = PropertiesGenerator.create(properties);
 	propertiesGenerator.generate(propertiesToChange,saveNewProperties);
 }
 
@@ -181,9 +175,9 @@ function replaceAll(find, replace, str) {
 exports.getUrlOfAnalyzedProject = function(properties, callback){
 
 	console.log('*analysisTool : ' + properties.analysisTool);
-    
+
     if(properties.javaBuildCommand.indexOf('mvn') !== -1 ){
-    	var locationOfExectuting = [properties.projectLocation, properties.binaries].join('/'); 
+    	var locationOfExectuting = [properties.projectLocation, properties.binaries].join('/');
 		var pathToPomFile = fileModule.extractDirectoryFromPath(locationOfExectuting);
 		var locationOfPomFile = [pathToPomFile,'pom.xml'].join('/');
 
@@ -200,7 +194,7 @@ exports.getUrlOfAnalyzedProject = function(properties, callback){
 		var appUrl = paths.applicationUrl();
 		var platoSuffix = "/reports/index.html";
 		properties.linkToAnalyzedProject =  [appUrl, properties.nameOfGitRepo, platoSuffix].join('');
-		callback();	
+		callback();
 	}
 
 };

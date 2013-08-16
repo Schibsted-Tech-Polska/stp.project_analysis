@@ -17,7 +17,7 @@ exports.sonarUrlPort = function(){
 };
 exports.getUrlForAllStatuses = function(){
 	return sonarUrl()+'api/projects/';
-}
+};
 
 exports.sonarUrl = function(){
 	return sonarUrl() + "dashboard/index/";

@@ -33,7 +33,7 @@ function makeSshLinkForGit(link){
 }
   
 function downloadFromVersionControl(command, link, callback){
-	//var link = properties.link;
+	
 	var options = {
 		cwd : locationOfFolderWithProjects
 	};
@@ -44,14 +44,10 @@ function downloadFromVersionControl(command, link, callback){
 				logger.info(nameOfModule, " error" + error + stderr + stdout + " while executing command : " + command +
 										  "\n with link : " + link );
 			}
-			//datastoreModule.incrementStatus(properties.nameOfGitRepo);
+			
 			callback();
 		});
 }
-
-//function getNameAndOrganization(){
-//
-//}
 
 exports.getNameOfRepo = function(link){
 	var delimeter = '/';
