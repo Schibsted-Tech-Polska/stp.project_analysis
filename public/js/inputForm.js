@@ -8,7 +8,7 @@
 //       $(this).siblings().removeClass('active');
 
 //       if (lang) {
-//        //do something with lang 
+//        //do something with lang
 //       }
 //     });
 //   });
@@ -16,16 +16,15 @@
 $(function () {
     $(".language-choice").change(function() {
       var val = $(this).val();
-      console.log('val' + val);
-      changeSelectLanguage(val); 
+      console.log('val : ' + val);
+      changeSelectLanguage(val);
     });
 
 });
 
 function changeSelectLanguage(val){
+  console.log('changeSelectLanguage to ' + val);
   $('#targetLanguage').val(val);
-
- 
       if(val === "java") {
           $('[name=javaBuildCommand]').show();
           $('[name=binaries]').show();
@@ -36,6 +35,11 @@ function changeSelectLanguage(val){
           $('[name=javaBuildCommand]').val('');
           $('[name=binaries]').val('');
       }
+    selectCheckbox(val);
+}
+function selectCheckbox(val){
+  var radios = $('input:radio[name=targetLanguage]');
+  radios.filter('[value='+val+']').prop('checked', true);
 }
 
 function checkPreviousValues(){
@@ -86,6 +90,6 @@ function isUndefinedOrEmpty(val){
   }
 
 
-  
-  window.onload = checkPreviousValues();  
+
+  window.onload = checkPreviousValues();
   window.onload = clearLinkInput();

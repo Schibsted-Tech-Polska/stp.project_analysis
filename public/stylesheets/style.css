@@ -4,6 +4,7 @@
   overflow: hidden;
 }
 
+
 .language {
   width: 120px;
   float: left;
@@ -23,7 +24,7 @@
 }
 
 .langauge-icon {
-  
+
   width: 100px;
   height: 100px;
   display: block;
@@ -69,13 +70,26 @@ a {
   color: #00B7FF;
 }
 
+ul{
+  list-style-type: none;
+}
+
+footer{
+  padding-top: 30px;
+}
+
+a.footer{
+  color:white;
+}
+
 a.listElem{
   font-size: medium;
+  color:white;
 }
 
 
 #targetLanguage{
-  
+
 }
 
 .progress{
@@ -173,9 +187,9 @@ a.listElem{
 .exclusionRules{
   content: url('/img/exclusionRules.png');
   width: 300px;
-  height: 300px; 
+  height: 300px;
 }
- 
+
 
 
 .formfield * {
@@ -187,19 +201,19 @@ a.listElem{
   height: 150px;
 }
 
-p.warning {
+.warning {
   color: red;
 }
 /*
 #progressbar {
     background-color: white;
-    border-radius: 13px; 
+    border-radius: 13px;
     padding: 3px;
 }
-    
+
 #progressbar div {
     background-color: orange;
-    width: 6%; 
+    width: 6%;
     height: 20px;
     border-radius: 10px;
 }*/

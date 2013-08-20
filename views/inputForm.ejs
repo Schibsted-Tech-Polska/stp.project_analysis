@@ -14,27 +14,27 @@
         <input type="url" value="http://" name='link' placeholder='link' size='35'
         require data-project='<%= previousValues.link %>'
         />
-          <%if (errorMessages.gitCommand){%> <%= errorMessages.gitCommand %> <% } %> 
+          <%if (errorMessages.gitCommand){%> <%= errorMessages.gitCommand %> <% } %>
           <%if (errorMessages.linkMsg){ %> <%= errorMessages.linkMsg %> <% } %>
 
       </fieldset>
 
       <input type="hidden" name='analysisTool' data-project='<%= previousValues.analysisTool %>'/>
-    
+
       <p class='warning' ><input type='text' name='javaBuildCommand' id='javaBuildCommand' placeholder='java build  command' data-project='<%= previousValues.javaBuildCommand %>' />
-        <input type='text' name='sources' placeholder='location of sources' value='src' 
+        <input type='text' name='sources' placeholder='location of sources' value='src'
         require data-project='<%= previousValues.sources %>'
         />
         <%if (errorMessages.javaBuildCommand){ %> <%= errorMessages.javaBuildCommand %> <% } %>
         <%if (errorMessages.sources){ %> <%= errorMessages.sources %> <% } %>
-      
+
       </p>
       <p class='warning' ><input type='text' name='binaries', placeholder='location of complied classes'
       data-project='<%= previousValues.binaries %>'/>
-        <%if (errorMessages.binaries){ %> <%= errorMessages.binaries %> <% } %> 
+        <%if (errorMessages.binaries){ %> <%= errorMessages.binaries %> <% } %>
       </p>
 
-      <div class="languageBox" id='targetLanguage' name='targetLanguage' data-project='<%= previousValues.language %>'>
+      <div class="languageBox"  name='targetLanguage' data-project='<%= previousValues.language %>'>
         <div data-lang="js" title="JavaScript plato" class="language" >
           <input class="language-choice" type="radio" name="targetLanguage" required value="js-plato" />
           <img class="langauge-icon" src="/img/js01.png" alt="JS"></img>
@@ -55,12 +55,12 @@
           <img class="langauge-icon" src="/img/php.png" alt="php"></img>
           <p class="language-name">Php</p>
         </div>
-       
+
       </div>
 
-  
+
       <div class="formfield">
-        <label for='textarea' class='whiteText'> files to ignore: </label> 
+        <label for='textarea' class='whiteText'> files to ignore: </label>
         <textarea id='textarea', type'text', rows="5", cols="20", name='filesToOmit'
           data-project='<%= previousValues.filesToOmit %>'/><%= jsFilesToOmit %> </textarea>
        <p><input type='submit' value='start analysis' class='submit-button'/></p>
@@ -69,7 +69,13 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/inputForm.js"></script>
-   
+
 
   </body>
+
+  <footer>
+    <a class='footer' href='https://github.com/schibstednorge/projects_analysis'> github </a><br>
+    <a class='footer' href=' https://github.com/schibstednorge/projects_analysis/issues?labels=bug&state=open'> add issue </a><br>
+    <a class='footer' href="mailto:tomasz.lelek@schibsted.pl">email me</a>
+  </footer>
 </html>

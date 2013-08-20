@@ -1,3 +1,8 @@
 node_modules/
 analyzedProjects/
 env/
+err.log
+out.log
+exportPathOnMyMac.sh
+keyNotes
+presentation

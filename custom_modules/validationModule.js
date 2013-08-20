@@ -1,11 +1,14 @@
 var underscore = require('underscore');
 var logger = require('winston');
 var analysisToolChecker = require('../custom_modules/analysisToolChecker');
+var inputCleaner = require('../custom_modules/inputCleaner');
 
 exports.validateInput = function(properties){
+	inputCleaner.cleanInput(properties);
+
 	console.log('filesToOmit : ' + properties.filesToOmit);
 
-	var forbiddenCommands = [";", "|", "||", "&&","rm","cp","cat","ls","at","net","netstat","del","copy"];
+	var forbiddenCommands = [";", "|", "||", "&&","rm","cp","cat","ls","net","netstat","del","copy"];
 	var gitCommandMustStartWith = ["git"];
 	var javaBuildCommandMustStartWith = ["mvn","ant"];
 	var doNothing = function(){};
@@ -169,7 +172,7 @@ function startsWith(string, properStartCommand){
 }
 
 exports.hasErrors = function(properties){
-	for(error in properties.errorMessages){
+	for(var error in properties.errorMessages){
 		return true;
 	}
 	return false;

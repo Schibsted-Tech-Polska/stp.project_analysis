@@ -6,4 +6,5 @@ else
 sh env/sonar-3.6.1/bin/linux-x86-64/sonar.sh start
 fi
 
-forever start -l forever.log -o out.log -e err.log app.js
+#forever start -l forever.log -o out.log -e err.log app.js
+node app.js

@@ -11,7 +11,7 @@ var express = require('express')
   , paths = require('./custom_modules/paths')
   , projectStatus = require('./routes/projectStatus')
   , datastoreModule = require('./custom_modules/datastoreModule')
-  //, swgger = require('swagger-node-express')
+  //, swagger = require('swagger-node-express')
   , envInformationModule = require('./custom_modules/envInformationModule')
   , models = require('./custom_modules/models');
  // , validator = require("validator")
@@ -37,31 +37,25 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(paths.locationOfFolderWithProjects()));
 GLOBAL.PROGRESS_STATUS = [];
-//GLOBAL.PROJECT_ID = 0;
-
-// development only
-//if ('development' == app.get('env')) {
-//  app.use(express.errorHandler());
-//}
 
 app.configure(function(){
   envInformationModule.setHostname(GLOBAL);
   console.log('set for all environments');
-  app.use(express.errorHandler()); 
+  app.use(express.errorHandler());
 });
 
 /*
 app.configure('development', function(){
   GLOBAL.serverPath = 'localhost';
   console.log('set for development');
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function(){
   envInformationModule.setHostname(GLOBAL);
  //console.log('sp : ' + GLOBAL.serverPath);
   console.log('set for production');
-  app.use(express.errorHandler()); 
+  app.use(express.errorHandler());
 });*/
 
 
@@ -87,6 +81,6 @@ io.sockets.on('connection', function(socket){
 	});
 });
 
-//swgger.addModels(models);
+//swagger.addModels(models);
 
 

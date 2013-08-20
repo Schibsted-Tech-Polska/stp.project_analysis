@@ -7,8 +7,8 @@ var expectedStatusCode = 302;
 describe('trigger project analysis and generating report ', function(){
 	it('should show location the future locaiton of report  ' + expectedStatusCode , function(done){
 
-	  
-	 
+
+
 	request.post({url:'http://localhost:3000/',
 	form:{
 		link:linkToProject,
@@ -17,15 +17,15 @@ describe('trigger project analysis and generating report ', function(){
 		targetLanguage:'java',
 		filesToOmit:'**/*nothing\n**/*twoNothing',
 		sources:'src',
-		binaries:'target'
+		binaries:'/target'
 	}}, function(error,response,body){
 			console.log("response :" + body + "status code : " +response.statusCode);
 			var statusCode = response.statusCode;
-			assert.equal(statusCode, expectedStatusCode);//TODO extract from link 
+			assert.equal(statusCode, expectedStatusCode);//TODO extract from link
 			done();
 		});
-	
-		
+
+
     })
 })
 

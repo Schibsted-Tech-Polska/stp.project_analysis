@@ -7,7 +7,7 @@ var findit = require('findit');
 /**
 *@param {parameters} should contain : projectLocation, extension, filesToOmit[]
 
-@example 
+@example
    parameters = {
 				'extension':'.js',
 				'projectLocation':users/you/project/location,
@@ -20,7 +20,7 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 	var filesToOmit = parameters.filesToOmit;
 	logger.info(nameOfModule, 'filesToOmit by findSrcLocation : ' + filesToOmit);
 	var allFiles = [];
-	
+
 	flow.series([
 		function(callback){
 			finder.on('file', function (file) {
@@ -37,7 +37,7 @@ exports.findSrcLocation = function(parameters, propertiesToChange, cb){
 		},
 		function(callback){
 			console.log('allFiles : ' + allFiles);
-			propertiesToChange.SRC = allFiles; //underscore.difference(allFiles,matches);
+			propertiesToChange.SRC = allFiles;
 			cb(propertiesToChange);
 		}
 		]);
@@ -59,12 +59,12 @@ function isSubpath(paths, path){
 }
 
 function contains(path, expression){
-	if(path.indexOf(expression) !== -1){ 
+	if(path.indexOf(expression) !== -1){
 		return true;
 	}
 	return false;
 
-} 
+}
 
 
 
