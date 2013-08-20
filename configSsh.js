@@ -1,8 +1,7 @@
 var customLocation=undefined;
 
 function getDefaultSshLocation(){
-  var defaultSshLocation = "~/.ssh/id_rsa_codequality";
-  return defaultSshLocation;
+  return  "~/.ssh/id_rsa";
 }
 
 function getCustomSshLocation(){
