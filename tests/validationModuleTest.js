@@ -1,6 +1,6 @@
 var validationModule = require('../custom_modules/validationModule');
 var assert = require('assert');
-var properties; 
+var properties;
 var gitCloneCommand = 'git clone';
 
 beforeEach(function(){
@@ -9,7 +9,7 @@ beforeEach(function(){
 				 	'javaBuildCommand' : '',
 				 	'filesToOmit': new String('none'),
 				 	'link': 'https://github.com/jhnns/rewire'
-				 	
+
 				 };
 })
 
@@ -19,8 +19,8 @@ describe('validate git command', function(){
 		validationModule.validateInput(properties,function(){
 			assert.equal(validationModule.hasErrors(properties),true);
 		})
-		
-		
+
+
 	})
 })
 
@@ -30,9 +30,9 @@ describe('validate java command', function(){
 		properties.javaBuildCommand = "java";
 		validationModule.validateInput(properties,function(){
 			assert.equal(validationModule.hasErrors(properties),true);
-		
+
 		})
-		
+
 	})
 })
 
@@ -46,8 +46,8 @@ describe('java and git commands', function(){
 			console.log('callback');
 			assert.equal(validationModule.hasErrors(properties), false);
 		})
-		
-		
+
+
 	})
 })
 
@@ -59,7 +59,7 @@ describe('language set to js-plato', function(){
 		})
 		assert.equal(properties.language, 'js');
 		assert.equal(properties.analysisTool, 'plato');
-		
+
 	})
 })
 
@@ -71,7 +71,7 @@ describe('language set to js-sonar', function(){
 		})
 		assert.equal(properties.language, 'js');
 		assert.equal(properties.analysisTool, 'sonar');
-		
+
 	})
 })
 
@@ -85,7 +85,7 @@ describe('language set to ' + language, function(){
 		})
 		assert.equal(properties.language, language);
 		assert.equal(properties.analysisTool, 'sonar');
-		
+
 	})
 })
 
@@ -93,24 +93,37 @@ describe('language set to ' + language, function(){
 describe('link set to not proper value ' + language, function(){
 	it('validation should result in link validation messages ' , function(){
  	 	properties.link="https://github.com/schibstednorge/smarttv/blob/master/app/scenes/Article.js#L274";
-							
+
 		validationModule.validateInput(properties,function(){
 			assert.equals(properties.errorMessages.link, 'bad link');
 		})
-		
-		
+
+
 	})
 })
 
 describe('link set to proper value ' + language, function(){
 	it('validation should result in no link validation messages ' , function(){
  	 	properties.link="https://github.com/tomekl007/js_structure_for_testing";
-							
+
 		validationModule.validateInput(properties,function(){
 			assert.equals(validationModule.hasErrors(properties), false);
 		})
-		
-		
+
+
+	})
+})
+
+var mvnCommand = 'mvn clean vaadin:update-widgetset -Pcompile-widgetset install';
+describe('validation of mvn command ' + language, function(){
+	it('should result in no validation messages ' , function(){
+ 	 	properties.javaBuildCommand=mvnCommand;
+
+		validationModule.validateInput(properties,function(){
+			assert.equals(validationModule.hasErrors(properties), false);
+		})
+
+
 	})
 })
 

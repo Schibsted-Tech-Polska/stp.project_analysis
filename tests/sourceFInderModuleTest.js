@@ -1,4 +1,4 @@
-//run this test with flag -A 
+//run this test with flag -A
 var sourceFinderModule = require('../custom_modules/sourceFinderModule');
 var fileModule = ('../custom_modules/fileModule');
 
@@ -13,7 +13,7 @@ beforeEach(function(){
 
 describe('find src for testDirectory ' , function(){
 	it('should propertiesToChange.SRC equal : ', function(done){
-		
+
 		var extension = '.js';
 		var filesToOmit = ['**/*omitThis.js'];
 		var parameters = {
@@ -25,9 +25,10 @@ describe('find src for testDirectory ' , function(){
 		sourceFinderModule.findSrcLocation(parameters,propertiesToChange,
 			function(propertiesToChange){
 				console.log("find : " +propertiesToChange.SRC);
-				assert.equal(propertiesToChange.SRC.length,1);
+				var expectedFound = 3
+				assert.equal(propertiesToChange.SRC.length, expectedFound);
 				done();
 		});
-		
+
 	})
 })
