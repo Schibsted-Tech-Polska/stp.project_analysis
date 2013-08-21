@@ -38,8 +38,11 @@ function downloadFromSshForGit(command, link, callback){
 			if(error){
 				logger.info(nameOfModule, " error" + error + stderr + stdout + " while executing command : " + command +
 										  "\n with link : " + link );
+				logger.info(nameOfModule, "trying git clone ");
+				downloadFromVersionControl(command, link, callback);
+			}else{
+				callback();
 			}
-			callback();
 		});
 }
 
@@ -52,7 +55,7 @@ function makeSshLinkForGit(link){
 	var delimeter = '/';
 	var splittedLink = link.split(delimeter);
 	var indexOfLastElem = splittedLink.length - 1;
-	var suffix = [splittedLink[indexOfLastElem-1],splittedLink[indexOfLastElem]].join('/');
+	var suffix = [splittedLink[indexOfLastElem-1], splittedLink[indexOfLastElem]].join('/');
 	return prefix + suffix  + '.git';
 }
 
