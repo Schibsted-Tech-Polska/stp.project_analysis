@@ -9,7 +9,7 @@ exports.validateInput = function(properties){
 	console.log('filesToOmit : ' + properties.filesToOmit);
 
 	var forbiddenCommands = [";", "|", "||", "&&","rm","cp","cat","ls","net","netstat","del","copy"];
-	var gitCommandMustStartWith = ["git"];
+	var gitCommandMustStartWith = ["git", "svn"];
 	var javaBuildCommandMustStartWith = ["mvn","ant"];
 	var doNothing = function(){};
 	properties.errorMessages = {};

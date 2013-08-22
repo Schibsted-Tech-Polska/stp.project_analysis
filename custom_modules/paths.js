@@ -8,6 +8,7 @@ function getServerPath(){
 exports.locationOfFolderWithProjects =function(){
 	return  __dirname.replace('custom_modules',nameOfFolderWithProject);
 };
+
 var sonarPort = 9000;
 function sonarUrl(){
 	return "http://"+ getServerPath()+":"+sonarPort+"/";
@@ -21,7 +22,7 @@ exports.getUrlForAllStatuses = function(){
 
 exports.sonarUrl = function(){
 	return sonarUrl() + "dashboard/index/";
-	
+
 };
 
 var applicationPort = 3000;

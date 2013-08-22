@@ -9,6 +9,29 @@
   <body>
     <h1><%= title %></h1>
     <form method='post'>
+      <div class="languageBox"  name='targetLanguage' data-project='<%= previousValues.language %>'>
+        <div data-lang="js" title="JavaScript plato" class="language" >
+          <input class="language-choice" type="radio" name="targetLanguage" required value="js-plato" />
+          <img class="langauge-icon" src="/img/js01.png" alt="JS"></img>
+          <p class="language-name">JavaScript plato</p>
+        </div>
+        <div data-lang="js" title="JavaScript sonar" class="language" >
+          <input class="language-choice" type="radio" name="targetLanguage" required value="js-sonar" />
+          <img class="langauge-icon" src="/img/js01.png" alt="JS"></img>
+          <p class="language-name">JavaScript sonar</p>
+        </div>
+        <div data-lang="java" title="Java" class="language" >
+          <input class="language-choice" type="radio" name="targetLanguage" required value="java" />
+          <img class="langauge-icon" src="/img/java.png" alt="php"></img>
+          <p class="language-name">Java</p>
+        </div>
+        <div data-lang="php" title="Php" class="language" >
+          <input class="language-choice" type="radio" name="targetLanguage" required value="php" />
+          <img class="langauge-icon" src="/img/php.png" alt="php"></img>
+          <p class="language-name">Php</p>
+        </div>
+
+      </div>
       <fieldset class='warning'>
         <input type='text' name='gitCommand' placeholder='type git command' value='git clone' required data-project='<%= previousValues.gitCommand %>' />
         <input type="url" value="http://" name='link' placeholder='link' size='35'
@@ -34,29 +57,7 @@
         <%if (errorMessages.binaries){ %> <%= errorMessages.binaries %> <% } %>
       </p>
 
-      <div class="languageBox"  name='targetLanguage' data-project='<%= previousValues.language %>'>
-        <div data-lang="js" title="JavaScript plato" class="language" >
-          <input class="language-choice" type="radio" name="targetLanguage" required value="js-plato" />
-          <img class="langauge-icon" src="/img/js01.png" alt="JS"></img>
-          <p class="language-name">JavaScript plato</p>
-        </div>
-        <div data-lang="js" title="JavaScript sonar" class="language" >
-          <input class="language-choice" type="radio" name="targetLanguage" required value="js-sonar" />
-          <img class="langauge-icon" src="/img/js01.png" alt="JS"></img>
-          <p class="language-name">JavaScript sonar</p>
-        </div>
-        <div data-lang="java" title="Java" class="language" >
-          <input class="language-choice" type="radio" name="targetLanguage" required value="java" />
-          <img class="langauge-icon" src="/img/java.png" alt="php"></img>
-          <p class="language-name">Java</p>
-        </div>
-        <div data-lang="php" title="Php" class="language" >
-          <input class="language-choice" type="radio" name="targetLanguage" required value="php" />
-          <img class="langauge-icon" src="/img/php.png" alt="php"></img>
-          <p class="language-name">Php</p>
-        </div>
 
-      </div>
 
 
       <div class="formfield">
