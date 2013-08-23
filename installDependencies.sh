@@ -36,9 +36,9 @@ apt-get install npm
 fi
 
 npm install
-npm install -g mocha
-npm install -g plato
-npm install -g forever
+sudo npm install -g mocha
+sudo npm install -g plato
+sudo npm install -g forever
 
 
 
