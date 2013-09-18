@@ -4,6 +4,8 @@ ProjectAnalysis
 Tool which analyzes code quality of java, js and php projects.
 This application uses sonar for java, js, php , and plato fo js.
 
+See what it can : http://youtu.be/pXLYnlFQe7E
+
 Getting started
 --------
 
