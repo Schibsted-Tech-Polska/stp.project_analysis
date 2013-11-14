@@ -13,7 +13,7 @@ var express = require('express')
   , datastoreModule = require('./custom_modules/datastoreModule')
   //, swagger = require('swagger-node-express')
   , envInformationModule = require('./custom_modules/envInformationModule')
-  , models = require('./custom_modules/models');
+  //, models = require('./custom_modules/models');
  // , validator = require("validator")
   //, mongodb = require('mongodb');
 
